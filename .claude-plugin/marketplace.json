@@ -1,0 +1,20 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "octopad-plugin",
+  "description": "The Octopad plugin: the Octopad connection, its skills and Octoplan.",
+  "owner": {
+    "name": "Sudolab"
+  },
+  "plugins": [
+    {
+      "name": "octopad",
+      "description": "The Octopad connection, its skills and Octoplan.",
+      "author": {
+        "name": "Sudolab"
+      },
+      "category": "productivity",
+      "homepage": "https://octopad.ai",
+      "source": "./plugins/octopad"
+    }
+  ]
+}
