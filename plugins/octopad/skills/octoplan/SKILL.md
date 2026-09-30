@@ -68,4 +68,4 @@ Every Plan needs one fresh independent review before activation. Use at least tw
 
 ## One source, native adaptations
 
-This entrypoint and its references are maintained in `skills/octoplan/` in [sudolab-co/octopad-mcp](https://github.com/sudolab-co/octopad-mcp). Both installable distributions contain the same source files. Change common guarantees once; keep tool names, model routes, and compatibility readers in the runtime profiles. Validate and review both installed paths when shared behavior changes. Never edit installed caches or hand-maintain a second common copy.
+This entrypoint and its references are maintained in `plugins/octopad/skills/octoplan/` in [sudolab-co/octopad-plugin](https://github.com/sudolab-co/octopad-plugin). Both installable distributions contain the same source files. Change common guarantees once; keep tool names, model routes, and compatibility readers in the runtime profiles. Validate and review both installed paths when shared behavior changes. Never edit installed caches or hand-maintain a second common copy.
