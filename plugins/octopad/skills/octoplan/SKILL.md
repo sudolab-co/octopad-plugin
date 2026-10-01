@@ -4,7 +4,7 @@ description: Use when prepared work may benefit from delivery by agents, even wi
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octoplan"` when you open this skill.
 
-Version: 5.0.0
+Version: 5.1.0
 
 # Octoplan
 
