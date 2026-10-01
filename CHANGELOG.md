@@ -1,5 +1,13 @@
 # Changelog
 
+## 11.2.0 - 2026-10-01 (Codex)
+
+Octoplan 5.2.0 starts Codex delivery in a separate supervisor chat when the user has requested or accepted that destination. This chat owns delivery and launches workers and reviewers directly. The planner verifies startup, links the chat and finishes its planning role; no permanent relay or nested supervisor is added.
+
+Launch respects the native tools' permissions, pending setup and directory checks. Resume reuses the recorded owner. Replacement requires predecessor cessation and guarded ownership transfer; unavailable native launch or safe replacement uses a stated manual handoff. Existing child-supervisor deliveries and session-owned Goals remain with their owners until an authorized transition.
+
+Codex capability update only. Model routes, delivery authority and review floors are unchanged; the Claude distribution remains 11.0.0. Shared references defer session mechanics to the runtime profile. This release does not promise continuation after a runtime stops or prove local installation.
+
 ## 11.1.0 - 2026-10-01 (Codex)
 
 Octoplan 5.1.0 uses `gpt-6.1-sol` at `high` for new Codex supervisors and workers with bounded judgment. It also restores the `gpt-6-luna` at `xhigh` first-candidate route published in Octoplan 4.2.0, which was missing from this repository's imported profile. The table and role admission now name the same exact models and efforts.
