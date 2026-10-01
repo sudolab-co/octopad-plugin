@@ -4,9 +4,9 @@ Phases 1 to 3 confirm intent, review the smallest adequate Plan, and activate au
 
 ## Enter or resume
 
-Read production Octopad, target state, and effective instructions; retrieve only material gaps.
+Read production Octopad, target state, and effective instructions; retrieve only material gaps. Apply the [common brief and preparation](../../octopad-planning-and-work-design/SKILL.md) to new work and adopt existing preparation. This reference adds the requirements for governed delivery, not another stream or plan.
 
-Select the actual host profile from [SKILL.md](../SKILL.md). Read an existing Plan and its authority using that profile's compatibility rules; a release number does not invalidate a saved plan. If the confirmed Brief, review coverage, and mandate still hold, follow [supervision.md](supervision.md) without asking again. New plans use `Octoplan brief`, `Octoplan stakes`, `Octoplan plan contract`, `Octoplan delivery authorization`, and `Octoplan supervisor` Decisions. Continue valid legacy names on resume without duplicating the records.
+Select the actual host profile from [SKILL.md](../SKILL.md). Read an existing Plan and its authority using that profile's compatibility rules; a release number does not invalidate a saved plan. If the confirmed Brief, review coverage, and mandate still hold, follow [supervision.md](supervision.md) without asking again. New plans use `Octoplan brief`, `Octoplan stakes`, `Octoplan plan contract`, `Octoplan delivery authorization`, and `Octoplan supervisor` Decisions for missing records. Where existing records already own the confirmed brief, reference their identities and confirmation source in the plan contract instead of copying them or requiring a rename. Continue valid legacy names on resume without duplicating the records.
 
 A changed user outcome or foundational boundary returns to Brief. A changed graph, task meaning, route, verifier, deliverable, review trigger, disclosure, checkpoint, or gate returns affected work to Plan and focused review. Such a return does not itself withdraw authority. Ask only when the user owns a new consequence or a rule requires their decision. Unknown or unsupported saved state uses [recovery.md](recovery.md).
 
@@ -14,7 +14,7 @@ A changed user outcome or foundational boundary returns to Brief. A changed grap
 
 Ask one natural question at a time only about expensive-to-change foundations. State reasonable assumptions; never make the user design implementation.
 
-Every new or materially changed Brief gets an explicit playback. Start that message with the fixed banner and use this localized Markdown shape:
+Every new or materially changed Brief gets an explicit playback and confirmation. Reuse a prior explicit confirmation of the same playback from common preparation when its source and material fields still hold; do not repeat it merely because delivery is changing. A request to create a stream, its name, or its stored description is not that confirmation. Where confirmation is missing, start the playback with the fixed banner and use this localized Markdown shape:
 
 ```markdown
 **Octoplan · Step 1 of 3 — Brief**
@@ -40,17 +40,19 @@ Every new or materially changed Brief gets an explicit playback. Start that mess
 
 Scale playback to the request. Never infer confirmation from invocation. Brief confirmation authorizes planning only, never Delivery or a protected effect.
 
-After confirmation, persist one guarded Brief Decision with those fields and its confirmation source. Any interpretation it fixes records the accepted reading, rejected reading, and countable success; reuse it only while material fields match.
+After confirmation, persist those fields and their confirmation source in the existing owning record, or one guarded Brief Decision if none owns them. Any interpretation it fixes records the accepted reading, rejected reading, and countable success; reuse it only while material fields match.
 
-### Agree autonomy before detailing the Plan
+### Qualify delivery, then agree autonomy
 
-For plan-and-deliver work, explain the known effects and boundaries, recommend **Full autonomy**, **Checkpoints**, or **Step-by-step** with one trade-off, and ask for the mode and mandate to prepare then deliver. Describe any real runtime limitation now. Reuse an explicit applicable choice already made after Brief confirmation; no repeated choice or absence condition. Record the answer's exact source and bounds in the delivery-authorization Decision as a standing mandate, pending Plan review. This is not an active Plan or permission for unknown effects. An optional native continuity feature is offered only when the chosen profile supports it and its own explicit-request conditions are met.
+Use common preparation to identify useful work agents can complete and verify between human interventions. Check the actual host route, tools, access and continuation limits before offering it; the full preflight below completes this check before activation. Repeated unresolved design choices favor direct collaboration, while a few human gates can coexist with substantial agent work. Apply this to the bounded entrusted portion, not to every future task of an ongoing stream.
+
+For plan-and-deliver work that benefits from orchestration, explain the known effects and boundaries, recommend **Full autonomy**, **Checkpoints**, or **Step-by-step** with one trade-off, and ask for the mode and mandate to complete preparation then deliver. Describe any real runtime limitation now. Reuse an explicit applicable choice already made after Brief confirmation; no repeated choice or absence condition. Record the answer's exact source and bounds in the delivery-authorization Decision as a standing mandate, pending Plan review. This is not an active Plan or permission for unknown effects. An optional native continuity feature is offered only when the chosen profile supports it and its own explicit-request conditions are met.
 
 In Checkpoints mode, use the default set unless the user specifies adjustments; Step-by-step uses the agreed units shown in the Plan. Questions that affect the outcome or coverage must be resolved before dependent work. Optional asynchronous questions may accompany independent reads; elapsed time never supplies a required answer. Planning-only requests skip this choice and never launch delivery.
 
 ## Phase 2: compose the Plan
 
-Planning is overhead paid by the outcome. Persist a compact stakes Decision naming the decision served, blast radius, reversibility, countable success, kill question, and any actual user limits. That Decision sizes everything after it (F15): a small reversible stream gets the one-review floor, a Verify slot with only the load-bearing checks, and no repair rounds beyond a same-reviewer recheck. Quote requests for simplicity or efficiency. Use one stream per independently verifiable local success definition and one top-level task per deliverable. Parallel tasks can stay in one stream; several related streams use the Delivery Map, interface and integration rules in [multi-stream.md](multi-stream.md). Put useful supervisor handoff seams in the existing sequencing rationale, not extra tasks or per-task token budgets. After two comparable review rounds without accepted progress, diagnose and simplify or change strategy; an internal planning estimate is not a reason to ask the user a technical question. Actual user limits remain binding across replans and identities. Load [multi-stream.md](multi-stream.md) only when needed.
+Planning is overhead paid by the outcome. Persist a compact stakes Decision naming the decision served, blast radius, reversibility, countable success, kill question, and any actual user limits. That Decision sizes everything after it (F15): a small reversible stream gets the one-review floor, a Verify slot with only the load-bearing checks, and no repair rounds beyond a same-reviewer recheck. Quote requests for simplicity or efficiency. Adopt the stream and tasks already owning the work, completing their missing executable detail in place. Use one top-level task per deliverable; create another stream only for a genuinely distinct effort under the common stream rules. A bounded mandate inside an ongoing stream has its finish line in the plan contract and owning tasks, without changing that stream's cadence. Parallel tasks can stay in one stream; several related streams use the Delivery Map, interface and integration rules in [multi-stream.md](multi-stream.md). Put useful supervisor handoff seams in the existing sequencing rationale, not extra tasks or per-task token budgets. After two comparable review rounds without accepted progress, diagnose and simplify or change strategy; an internal planning estimate is not a reason to ask the user a technical question. Actual user limits remain binding across replans and identities. Load [multi-stream.md](multi-stream.md) only when needed.
 
 Map the full path's secrets without values, credentials, remote surfaces, permissions, effects, and human inputs. Check the capacities and actual inputs that constrain this plan, including tool versions or automatic writers when they affect the result. Preflight connectors, GitHub, CI, messaging, and deployment without effects; record readiness and human action; distinguish authority from credential entry. Never bypass a failed connector on its service. Give each unavailable remote surface one human-only access task; only its consumers depend on it. Independent work continues from authoritative sources. An unavailable code host blocks remote refresh, push, PRs, hosted CI or proof, not local-checkout reads, edits, or tests. Local versus remote never changes authority. The Plan uses the fixed banner, one line per step, and names each effect and rule-required wait with owner.
 
@@ -152,8 +154,8 @@ Activation needs every applicable lens at PASS. Confirm the current task and con
 
 Reread current Octopad schemas, target versions, and effective rules. After the Brief is confirmed:
 
-1. create or adopt each work stream;
-2. create the proposed tasks and dependency edges in the fewest coherent batch calls;
+1. adopt each owning work stream, creating one only when the common stream rules call for it;
+2. complete existing tasks and dependency edges in place, creating only missing work in the fewest coherent batch calls;
 3. record material choices and open questions as Decisions and Questions;
 4. record a Plan-contract Decision with Brief and stakes references, outcome and proof, task set and revisions, review triggers, access map, effect coverage and mandate source, checkpoints, gates, safe branches, supervisor route, and `Awaiting review` status;
 5. run the review floor against that task set and Plan-contract revision; on PASS, persist every receipt and finding disposition;

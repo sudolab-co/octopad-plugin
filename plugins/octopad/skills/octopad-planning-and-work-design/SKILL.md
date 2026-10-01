@@ -1,10 +1,34 @@
 ---
 name: octopad-planning-and-work-design
-description: How work is shaped and how a whole effort is laid out — the number of tasks a request really is, what each one must settle before anyone could run it, nesting, the scales, dates and repeating work, together with goals, streams, order and dependencies, and what an effort owes when it ends or changes shape. Use it when an ask arrives with its own boundaries still open, when several tasks are laid out together as a roadmap, a plan or a launch, when the user wants work already on the board cleared away, re-homed or put right, and when a stream or a goal has moved on from what its tracker still says.
+description: Use for a new or existing stream, a brief, or a delivery-mode choice, even when the user never names Octoplan. How work is shaped and how a whole effort is laid out — the number of tasks a request really is, what each one must settle before anyone could run it, nesting, the scales, dates and repeating work, together with goals, streams, order and dependencies, and what an effort owes when it ends or changes shape. Use it when an ask arrives with its own boundaries still open, when several tasks are laid out together as a roadmap, a plan or a launch, when the user wants work already on the board cleared away, re-homed or put right, and when a stream or a goal has moved on from what its tracker still says.
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-planning-and-work-design"` when you open this skill.
 
-Version: 1.0.0-public-r2 (first declared version; qualified source unchanged)
+Version: 2.0.0
+
+# From a need to prepared work
+
+A stream and an Octoplan use the same brief and work graph. Octoplan is the delivery of that work by agents under an agreed level of autonomy, not a second object. This skill owns the common preparation; [Octoplan](../octoplan/SKILL.md) owns its delivery mandate, executable preparation, review and activation.
+
+## Brief only what the request needs
+
+Read the existing stream, tasks, decisions and relevant sources first. Establish the purpose, intended result and proof, boundaries, constraints, important unknowns and who decides consequences. Ask about missing foundations that could change the result; resolve what the sources already settle yourself. Play back the intended result in proportion to the request, and confirm material interpretations before work that depends on them. A clear capture can need only a sentence, not an interview. Creation or planning is not permission to deliver.
+
+An ongoing stream needs its area of responsibility and routing boundaries, not an invented finish line. A small job may need one task in an existing stream or no new stream. Do not manufacture a goal, task tree or Octoplan records to complete a form. The stream rules below choose the work's home; their task count and duration are never thresholds for autonomy.
+
+## Prepare enough to choose how to deliver
+
+Identify the deliverables, settled choices, real dependencies, usable proof, required inputs, accesses and human interventions. Work within the requested scope: outline only what matters now, leave later details for when their inputs exist. Keep this preparation on the owning stream, tasks and Decisions, linking sources and existing confirmations; no second brief page or progress list.
+
+Evaluate the bounded work agents could actually finish and verify between human interventions, using the current tools and access. Compare that useful work with the cost of dispatch, handoffs and review. Use judgment, not a task count, duration threshold or autonomy score. A few required review or production gates do not rule out useful agent work between them; keep every gate and its owner. If the next meaningful steps depend on repeated user choices, continue direct collaboration and reconsider when those choices settle. Do not pitch orchestration on every turn.
+
+When useful agent delivery is plausible, open [Octoplan](../octoplan/SKILL.md) to verify the actual runtime route before offering it. Explain what agents can finish, what the person must still decide or do, where work pauses, and any continuation limit. The user need not know the name Octoplan. Opening that skill or accepting a brief grants no delivery authority. A planning-only request stays planning-only; do not solicit a delivery choice unless the user changes that scope. If the benefit or capability is unproved, continue the authorized preparation or collaboration and name the concrete gap.
+
+## Keep the same work when delivery changes
+
+Adopt the same stream and task identities, decisions, evidence and progress when moving from collaboration to agent delivery. Carry forward valid explicit brief confirmation; Octoplan checks its source and fills only missing preparation and authority. A stream name or existing graph proves neither confirmation nor a mandate. Never restart completed work or treat old evidence as current without checking its scope.
+
+For an ongoing stream, agree a bounded delivery within it; finishing that mandate does not complete the ongoing stream. Separate a new time-bound initiative only when its actual scope calls for it under the rules below, never just to turn on agent delivery. On resume, check current state and ownership; an existing valid Octoplan follows its own continuation rules without a duplicate choice. Returning to direct collaboration requires reconciling active agents and pending effects through Octoplan recovery first, not leaving them running under a superseded mandate.
 
 # Shaping the work
 

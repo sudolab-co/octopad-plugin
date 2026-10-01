@@ -1,18 +1,18 @@
 ---
 name: octoplan
-description: Use when the user explicitly invokes Octoplan or asks it to plan, replan, flesh out, resume, or supervise a governed Octopad work stream or task. Do not use for generic Octopad actions, onboarding, or execution the user did not authorize.
+description: Use when prepared work may benefit from delivery by agents, even without the name Octoplan, or when the user invokes, plans, resumes or supervises an Octoplan. Qualify the route before offering delivery; opening this skill never authorizes execution. Generic stream preparation belongs to octopad-planning-and-work-design.
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octoplan"` when you open this skill.
 
-Version: 4.2.0
+Version: 5.0.0
 
 # Octoplan
 
-Turn a confirmed outcome into the smallest useful Octopad work graph, then advance every safe ready branch until the outcome is proved or a real human consequence decision is required. Octopad holds the plan, authority, evidence, and progress. The agent environment supplies live planning, delegation, review, and supervision.
+An Octoplan is a stream whose bounded delivery is entrusted to agents with an agreed level of autonomy. Adopt its prepared work graph, then advance every safe ready branch until the outcome is proved or a real human consequence decision is required. Octopad holds the plan, authority, evidence, and progress. The agent environment supplies live planning, delegation, review, and supervision.
 
 ## One visible program
 
-Use the applicable banner as the first line of user-facing Octoplan messages, in both environments:
+Use the applicable banner as the first line once the user enters Octoplan planning or delivery, in both environments. Merely qualifying or offering agent delivery during ordinary stream preparation does not start this program or impose its banners:
 
 ```markdown
 **Octoplan · Step 1 of 3 — Brief**
@@ -22,7 +22,7 @@ Use the applicable banner as the first line of user-facing Octoplan messages, in
 
 The banner is the first line of the message, before any incident narrative, explanation, or table. What the user reads is written in everyday words: name what will happen and who does it, and keep this skill's vocabulary out of it, along with any synonym doing the same job; say the thing itself instead: "your team's own rules already require this", "this cannot be undone", "this sends an email". Records written for other sessions (Decisions, tasks, receipts, prompts) keep the precise wording.
 
-The user describes the need; the planner asks foundational questions, confirms the Brief, then agrees the autonomy and delivery mandate before detailing the Plan. The planner records and reviews the Plan in Octopad, shows it, and launches a fresh supervisor through the selected runtime. The supervisor dispatches prepared tasks, verifies results, and owns incident resolution. An executor produces its task's deliverable. Internal roles add no user-facing stage.
+The user describes the need. Apply the common brief and preparation in [octopad-planning-and-work-design](../octopad-planning-and-work-design/SKILL.md), including for a direct Octoplan request. Reuse valid confirmed intent and the same graph. Prepare enough to judge useful work between human interventions before proposing autonomy; then agree the delivery mandate and complete only the missing executable detail. The planner records and reviews the Plan in Octopad, shows it, and launches a fresh supervisor through the selected runtime. The supervisor dispatches prepared tasks, verifies results, and owns incident resolution. An executor produces its task's deliverable. Internal roles add no user-facing stage.
 
 ## Load only what the work needs
 
@@ -54,7 +54,7 @@ The user describes the need; the planner asks foundational questions, confirms t
 
 ## Autonomy and authority
 
-After Brief confirmation, explain known consequences and the available delivery route, then ask once for the mode and mandate to prepare and deliver. Record the contextual answer and bounds. An earlier applicable explicit choice is reused; silence or absence adds no authority. Brief confirmation alone permits planning only. Show the reviewed Plan before delivery; do not ask for the same mandate again merely because the Plan now exists.
+After Brief confirmation and common preparation establish a useful bounded delivery, verify the actual runtime route, explain its known consequences and human interventions, then ask once for the mode and mandate to complete preparation and deliver. If orchestration adds no useful work between interventions, continue authorized collaboration instead. Planning-only requests make no delivery choice. Record the contextual answer and bounds. An earlier applicable explicit choice is reused; silence or absence adds no authority. Brief confirmation alone permits planning only. Show the reviewed Plan before delivery; do not ask for the same mandate again merely because the Plan now exists.
 
 - **Full autonomy.** Continue covered work and report progress. Ordinary corrections, replanning, review, and supervisor changes preserve the mandate. A new outcome, authority need, protected effect, user-owned consequence, or substantive gate needs only its own new decision. Technical choices and dependency placement alone do not.
 - **Checkpoints.** Also pause at the selected checkpoints. Default to every protected effect, human step, and Plan landing; the user may adjust this set within applicable rules.
