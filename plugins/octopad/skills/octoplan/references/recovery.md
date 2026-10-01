@@ -30,7 +30,7 @@ Two comparable cycles without accepted artifact, review, or integrated proof tri
 
 ## Change supervisor safely
 
-Keep one supervisor per work boundary in stream Decisions. The current supervisor reaches a safe task boundary and persists in-flight facts, actors, effects, and evidence on their owning tasks. Stop or reconcile child workers before replacement; do not abandon uncertain effects. The runtime relay verifies the predecessor stopped, then launches a fresh successor with a bounded pointer to durable state. The successor rereads and updates ownership with the current `expected_updated_at`; a conflict requires reconciliation before acting. No full-history fork or concurrent takeover. Existing authorization carries across the handoff; native continuity ownership follows the selected runtime and is not transferred by a task comment. If no live relay is possible, disclose the manual fallback in [continuation.md](continuation.md).
+Keep one supervisor per work boundary in stream Decisions. The current supervisor reaches a safe task boundary and persists in-flight facts, actors, effects, and evidence on their owning tasks. Stop or reconcile child workers before replacement; do not abandon uncertain effects. Use the runtime's replacement mechanism or the manual fallback in [continuation.md](continuation.md), with a bounded pointer to durable state. The successor verifies predecessor cessation, rereads and updates ownership with the current `expected_updated_at`; a conflict requires reconciliation before acting. No full-history fork or concurrent takeover. Existing authorization carries across the handoff; native continuity ownership follows the selected runtime and is not transferred by a task comment.
 
 ## Replan without stale state
 
