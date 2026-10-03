@@ -1,5 +1,13 @@
 # Changelog
 
+## 12.0.0 - 2026-10-03
+
+octopad-crm 1.1.0 lets the AI run the CRM's contact summaries for the user instead of sending them to the settings page. A new section names the tool and action for each setting and, where one applies, what it costs: the workspace's directions and questions, with a preview before saving; the nightly switch and its cap; which field changes trigger a new summary; summarising chosen contacts now; filtering contacts on their answers; switching a contact's summary off; and reading the spend. Settings change only on the user's instruction, after the AI says what they will cost.
+
+Where the outreach privacy check is on, the AI picks prospects by an answer, the summary switch or a sensitive usage or activity field only through a segment, so the check can refuse it, never by launching on contacts found another way. The import guidance now says that registering a source creates the custom fields it declares.
+
+Shared update for Claude Code and Codex. Both distributions move to 12.0.0; no saved state changes.
+
 ## 11.2.0 - 2026-10-01 (Codex)
 
 Octoplan 5.2.0 starts Codex delivery in a separate supervisor chat when the user has requested or accepted that destination. This chat owns delivery and launches workers and reviewers directly. The planner verifies startup, links the chat and finishes its planning role; no permanent relay or nested supervisor is added.
