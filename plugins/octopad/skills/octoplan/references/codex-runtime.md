@@ -33,7 +33,9 @@ Batch independent reads in one `functions.exec` call with `Promise.allSettled`; 
 
 Yield long commands while independent work continues. Use `functions.wait` only after `functions.exec` returns a running cell; use `write_stdin` for a session returned by `exec_command`. Await every started command before closing the turn.
 
-Use `request_user_input_async` when exposed. Continue independent work while the question is pending; hold work that requires the answer until it arrives.
+Use `request_user_input_async` when exposed and permitted for the question, otherwise ask visibly in chat; use the required approval route for protected effects. Continue independent work while the question is pending; hold work that requires the answer until it arrives. A posted request is not proof that a system notification reached the user.
+
+Local, cloud and remote sessions do not share capabilities automatically; move work only to an authorized destination proved to have its necessary sources, rules and proof. Computer Use cannot control ChatGPT itself; user acceptance does not remove that runtime limit. Projects and memory help retrieval, never replace current Octopad state.
 
 ## Launch a separate supervisor chat
 
@@ -57,7 +59,7 @@ For multiple streams, default to one chat supervising the common outcome. Severa
 
 Use `collaboration.wait_agent` to collect workers and reviewers, `list_agents` to resolve uncertain state, `send_message` for running children and `followup_task` for resumable children. An ended child turn is not a completed deliverable. Before resuming it, check the latest user instruction, authority, ownership, receipt, gates and native state. Resume the same healthy actor for bounded corrections; reconcile uncertain effects first. Never resume a stopped, retiring or retired actor. Two comparable returns without accepted progress trigger diagnosis, not repeated "continue" messages.
 
-While safe authorized work remains, dispatch, collect or wait in this chat. Report progress and answer status questions in commentary, then continue. End a turn with outstanding children only where native wake-up is demonstrated; otherwise wait in the active turn. An open sidebar chat is not proof of a running supervisor. Explain actual continuation limits at mode choice; user stop wins, and no agent or Goal guarantees work after its runtime ends. Add no worker loop, hook or scheduler. Scheduled follow-up needs its own explicit request.
+While safe authorized work remains, dispatch, collect or wait in this chat. Report progress and answer status questions in commentary, then continue. End a turn with outstanding children only where native wake-up is demonstrated; otherwise wait in the active turn. An open sidebar chat is not proof of a running supervisor. Explain actual continuation limits at mode choice, including any handoff the user must start; user stop wins, and no agent or Goal guarantees work after its runtime ends. Add no worker loop, hook or scheduler. Scheduled follow-up needs its own explicit request.
 
 At a real wait or finish, report the evidence under common supervision. Account for independent branches before claiming no safe work. Do not repeatedly wake an unchanged legitimate wait. An idle supervisor means its turn ended, not that the mandate is complete; on user resume, reconcile state and continue in the same chat when valid.
 
