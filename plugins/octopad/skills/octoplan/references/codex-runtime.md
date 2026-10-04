@@ -35,7 +35,7 @@ Yield long commands while independent work continues. Use `functions.wait` only 
 
 Use `request_user_input_async` when exposed and permitted for the question, otherwise ask visibly in chat; use the required approval route for protected effects. Continue independent work while the question is pending; hold work that requires the answer until it arrives. A posted request is not proof that a system notification reached the user.
 
-Local, cloud and remote sessions do not share capabilities automatically; move work only to an authorized destination proved to have its necessary sources, rules and proof. Projects and memory help retrieval, never replace current Octopad state.
+Local, cloud and remote sessions do not share capabilities automatically; move work only to an authorized destination proved to have its necessary sources, rules and proof. Computer Use cannot control ChatGPT itself; user acceptance does not remove that runtime limit. Projects and memory help retrieval, never replace current Octopad state.
 
 ## Launch a separate supervisor chat
 

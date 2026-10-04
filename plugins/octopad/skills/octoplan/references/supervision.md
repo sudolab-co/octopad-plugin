@@ -45,6 +45,8 @@ Octopad: <organization> / <workspace> / <work stream>.
 Use <saved model and effort> and the recorded observation rule.
 Recorded mandate: <source, exact allowed scope, effects and targets>.
 Uncleared checkpoints and effective-rule gates: <relevant waits, or none>.
+Computer Use: <accepted targets and actions with source, or not authorized;
+verified access and remaining permission or runtime limits>.
 
 [Octopad: yes] Connect to production Octopad and read this task.
 [Octopad: no] Do not connect to Octopad. Your task, verbatim:
@@ -57,8 +59,9 @@ authority. Resolve what the next action needs, then start; defer unrelated orien
 user-facing strings, and skills used — [Octopad: yes] on the task,
 incrementally; [Octopad: no] in your final answer.
 
-Do not close tasks, advance the graph, launch other actors, approve, perform
-a protected effect, or use Computer Use or screen-driven GUI automation.
+Do not close tasks, advance the graph, launch other actors, approve, or perform
+a protected effect. Use Computer Use or equivalent screen-driven GUI automation
+only within the stated acceptance, after verifying usable access in your environment.
 Return protected effects to the supervisor for its current
 authority and gate checks. A spec is not permission to expand the mandate.
 Return the handoff if needed; otherwise name artifact and verification result.

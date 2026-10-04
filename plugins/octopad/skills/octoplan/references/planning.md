@@ -56,6 +56,8 @@ Planning is overhead paid by the outcome. Persist a compact stakes Decision nami
 
 Map the full path's secrets without values, credentials, remote surfaces, permissions, effects, human inputs and continuation limits. Check the capacities and actual inputs that constrain this plan, including tool versions or automatic writers when they affect the result. Preflight without effects; distinguish authority from credential entry and tool availability from usable access. For an uncertain capability that could stop the promised outcome, run the smallest authorized probe on the actual target and proof surface. Documentation, a tool declaration or a mock cannot establish that path. If it cannot yet be probed, schedule the probe as early as its inputs allow, name it as a possible first stop, and bound the promise to what is verifiable. Never bypass a failed connector on its service. Diagnose technical failures and evaluate alternatives within the applicable tool and service restrictions before classifying them as human work; never circumvent a permission or safety refusal. Give each confirmed person-only access requirement one human task; only its consumers depend on it. Independent work continues from authoritative sources. An unavailable code host blocks remote refresh, push, PRs, hosted CI or proof, not local-checkout reads, edits, or tests. Local versus remote never changes authority.
 
+When the route needs Computer Use, disclose its purpose, device and apps, actions, visible use of the user's computer, and any setup the user must perform. Obtain any missing scoped acceptance before a GUI probe; reuse valid explicit acceptance without asking again. Verify usable access with the smallest harmless authorized probe in the execution environment, including required system and app permissions. Carry the scope, acceptance and access state into the reviewed summary before the autonomy choice. An untested future actor or target remains a disclosed possible first stop, never a ready unattended route; verify it before dependent work. If refused, unavailable or revoked, adapt through permitted interfaces or expose the person-only step, preserving the outcome and proof requirements. Continue independent authorized work.
+
 Before review, distinguish each independently executable effect and bounded target. Compare it with any recorded mandate, quote its source, and classify it as covered, awaiting the initial mandate or a new decision, or subject to a selected checkpoint or effective-rule gate. Use the Plan contract and owning tasks for this coverage; no extra register. Uncovered or ambiguous effects wait, while independent covered work may proceed after activation. A task specification or chosen mode is never its own authorization source.
 
 Checkpoints default to marking every disclosed protected effect, human step, and Plan landing. The planner may add points; the user may strike some at go.
@@ -67,7 +69,7 @@ Checkpoints default to marking every disclosed protected effect, human step, and
 2. <step and observable result>
 
 **Disclosed effects**
-- <coverage or required decision> <one independently executable consequence, bounded target, and when it occurs>
+- <coverage or required decision> <one independently executable consequence, bounded target, and when it occurs; include any Computer Use scope, acceptance and verified access or remaining setup>
 
 **What can finish without you**
 <verifiable result before the first intervention, or no useful delivery yet>
