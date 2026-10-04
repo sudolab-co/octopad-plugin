@@ -25,7 +25,7 @@ Repeat until the integrated outcome is proved or no safe work remains:
 
 Before parallel dispatch, including within one stream, prove the tasks' actual write surfaces and outputs are independent. Never parallelize migrations, shared generated artifacts, or siblings where one shapes the other's contract. Use isolated workspaces when required; separate branches alone do not prove independent writes.
 
-The planner owns decomposition and task preparation; the supervisor owns advancing the authorized outcome, including incidents. Return an ordinary execution defect to the same healthy worker. Diagnose operational failures directly within the supervisor's scope. Missing context, unsettled project choices, broken dependencies, or a check the activated text can never satisfy go to a suitable planner through the runtime's supported route, never to the user as a technical decision. That planner cannot dispatch workers, take supervisor ownership, or enlarge authority. Review the affected Plan and resume with the same supervisor. Do not replace missing preparation with a stronger worker or ask the user to solve a technical uncertainty. Keep independent ready work moving.
+The supervisor owns delivery of the Brief's outcome, including incidents; the planner owns task preparation and graph repair. Choose the simplest compliant way to meet the reviewed acceptance criteria within recorded authority. Diagnose operational failures directly and return ordinary defects to the same healthy worker. A permission or safety refusal cannot be routed around. A better path changing task meaning, dependencies or proof, missing context, unsettled project choices, or an impossible check goes to a suitable planner through the runtime's supported route, never to the user as a technical decision. That planner cannot dispatch workers, take supervisor ownership, or enlarge authority. Review the affected Plan before dependent work resumes with the same supervisor. Do not replace missing preparation with a stronger worker or ask the user to solve a technical uncertainty. Keep independent ready work moving.
 
 At resume, worker collection, task close, report, and attempt selection, compare observations with the kill question. An answer stops that run generation immediately; never score it as valid, hide it in an average or subset, or rename the failure a limit. Preserve its evidence, diagnose, and repair or replan within the mandate. Stopping an invalid generation does not stop the authorized recovery work. A new run keeps its own premise and evidence identity, and every real user limit still applies.
 
@@ -45,6 +45,8 @@ Octopad: <organization> / <workspace> / <work stream>.
 Use <saved model and effort> and the recorded observation rule.
 Recorded mandate: <source, exact allowed scope, effects and targets>.
 Uncleared checkpoints and effective-rule gates: <relevant waits, or none>.
+Computer Use: <accepted targets and actions with source, or not authorized;
+verified access and remaining permission or runtime limits>.
 
 [Octopad: yes] Connect to production Octopad and read this task.
 [Octopad: no] Do not connect to Octopad. Your task, verbatim:
@@ -58,7 +60,9 @@ user-facing strings, and skills used — [Octopad: yes] on the task,
 incrementally; [Octopad: no] in your final answer.
 
 Do not close tasks, advance the graph, launch other actors, approve, or perform
-a protected effect. Return protected effects to the supervisor for its current
+a protected effect. Use Computer Use or equivalent screen-driven GUI automation
+only within the stated acceptance, after verifying usable access in your environment.
+Return protected effects to the supervisor for its current
 authority and gate checks. A spec is not permission to expand the mandate.
 Return the handoff if needed; otherwise name artifact and verification result.
 ```
@@ -91,7 +95,7 @@ For a timeout, incomplete mutation, worker failure, takeover, or evidence gap, r
 
 ### Consequence handoff
 
-Wait only for a consequence the user owns, a selected checkpoint, or a person named by an effective rule. Record subject, owner, and continuation. Start with `**Octoplan · Step 3 of 3 — Delivery**`, state the handoff outcome in countable units and the one assumption that would make it worthless, then use these six labels in the user's language:
+When a human decision or action becomes necessary, surface it immediately and state whether it stops all delivery or only a branch. Use the runtime's supported input route; if that blocks the actor, finish independent work before invoking it. Restate an unanswered request at the final handoff. Do not bury the need in a progress report or wait for the user to ask. Wait only for a consequence the user owns, a selected checkpoint, a person named by an effective rule, or a verified person-only access or proof step. Record subject, owner, and continuation. Start with `**Octoplan · Step 3 of 3 — Delivery**`, state the handoff outcome in countable units and the one assumption that would make it worthless, then use these six labels in the user's language:
 
 - **State** — where the outcome stands.
 - **Done** — what is finished and proved.

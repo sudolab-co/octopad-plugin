@@ -1,5 +1,13 @@
 # Changelog
 
+## 13.0.0 - 2026-10-04
+
+Octoplan 6.0.0 and octopad-planning-and-work-design 3.0.0 put the reviewed Plan summary before the autonomy choice. It names what agents can finish and verify without the user, the first expected intervention, who must act, affected work and continuation limits. Existing applicable mandates carry forward without a second approval.
+
+Planning probes uncertain capabilities on the actual target before relying on them; unproved access limits the promise. Supervisors own the Brief's outcome, repair the affected Plan when methods change its meaning or proof, and surface human needs promptly while continuing independent work. Both runtime profiles disclose manual session handoffs; Codex also distinguishes native input, notification delivery and capabilities across environments. Computer Use requires disclosed scope, explicit user acceptance and verified access; delegates inherit those bounds, not system permissions. Refusal or unavailable access requires an allowed alternative or a visible human intervention, without weaker proof.
+
+Shared update for Claude Code and Codex. Both distributions move to 13.0.0. Review, acceptance criteria, protected effects, runtime-specific permissions and saved-route compatibility remain binding. No automatic Goal, schedule or migration of active delivery is introduced.
+
 ## 12.0.0 - 2026-10-03
 
 octopad-crm 1.1.0 lets the AI run the CRM's contact summaries for the user instead of sending them to the settings page. A new section names the tool and action for each setting and, where one applies, what it costs: the workspace's directions and questions, with a preview before saving; the nightly switch and its cap; which field changes trigger a new summary; summarising chosen contacts now; filtering contacts on their answers; switching a contact's summary off; and reading the spend. Settings change only on the user's instruction, after the AI says what they will cost.
