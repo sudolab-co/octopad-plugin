@@ -4,7 +4,7 @@ description: Use for a new or existing stream, a brief, or a delivery-mode choic
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-planning-and-work-design"` when you open this skill.
 
-Version: 2.0.0
+Version: 3.0.0
 
 # From a need to prepared work
 
@@ -22,9 +22,9 @@ Identify the deliverables, settled choices, real dependencies, usable proof, req
 
 Evaluate the bounded work agents could actually finish and verify between human interventions, using the current tools and access. Compare that useful work with the cost of dispatch, handoffs and review. Use judgment, not a task count, duration threshold or autonomy score. A few required review or production gates do not rule out useful agent work between them; keep every gate and its owner. If the next meaningful steps depend on repeated user choices, continue direct collaboration and reconsider when those choices settle. Do not pitch orchestration on every turn.
 
-When useful agent delivery is plausible, open [Octoplan](../octoplan/SKILL.md) to verify the actual runtime route before offering it. Explain what agents can finish, what the person must still decide or do, where work pauses, and any continuation limit. The user need not know the name Octoplan. Opening that skill or accepting a brief grants no delivery authority. If the benefit or capability is unproved, continue the authorized preparation or collaboration and name the concrete gap.
+When useful agent delivery is plausible, open [Octoplan](../octoplan/SKILL.md) to qualify the actual runtime route and review the smallest adequate Plan. Before the autonomy choice, show its summary of what agents can finish without the user and every known intervention, including access, proof and continuation limits. The user need not know the name Octoplan. Opening that skill or accepting a brief grants no delivery authority. If the benefit or capability is unproved, continue authorized preparation or collaboration and name the concrete gap; do not promise unattended delivery through it.
 
-Planning-only means the user's request or context limits the outcome to a plan, such as "only the plan" or "we will decide whether to execute later". A missing mandate, or "create the stream/Octoplan" within a delivery discussion, does not establish that limit. For useful agent delivery without a mandate, ask once for autonomy and covered effects before concluding preparation; keep an unanswered choice pending without treating silence as consent. For an actual planning-only request, do not solicit delivery unless the user changes that scope. Respect an explicit pause or postponement.
+Planning-only means the user's request or context limits the outcome to a plan, such as "only the plan" or "we will decide whether to execute later". A missing mandate, or "create the stream/Octoplan" within a delivery discussion, does not establish that limit. For useful agent delivery without a mandate, ask once for autonomy and covered effects after the reviewed Plan summary; keep an unanswered choice pending without treating silence as consent. For an actual planning-only request, do not solicit delivery unless the user changes that scope. Respect an explicit pause or postponement.
 
 ## Keep the same work when delivery changes
 
