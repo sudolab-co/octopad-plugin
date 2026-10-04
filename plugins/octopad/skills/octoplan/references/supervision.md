@@ -57,8 +57,9 @@ authority. Resolve what the next action needs, then start; defer unrelated orien
 user-facing strings, and skills used — [Octopad: yes] on the task,
 incrementally; [Octopad: no] in your final answer.
 
-Do not close tasks, advance the graph, launch other actors, approve, or perform
-a protected effect. Return protected effects to the supervisor for its current
+Do not close tasks, advance the graph, launch other actors, approve, perform
+a protected effect, or use Computer Use or screen-driven GUI automation.
+Return protected effects to the supervisor for its current
 authority and gate checks. A spec is not permission to expand the mandate.
 Return the handoff if needed; otherwise name artifact and verification result.
 ```
