@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "octopad": {
+      "type": "http",
+      "url": "https://mcp.octopad.app/mcp",
+      "tools": {
+        "start_session": {
+          "output_token_limit": 15000
+        }
+      }
+    }
+  }
+}
