@@ -1,5 +1,11 @@
 # Changelog
 
+## 13.0.1 - Unreleased
+
+Codex loads a separate MCP configuration with a 15,000-token output budget for start_session. Claude Code keeps its compatible configuration. The session skill requests a 20,000-token emission budget in Codex Code Mode, stores the response and recovers its entire text in bounded emissions before acting.
+
+The CRM skill's existing description is quoted so its YAML frontmatter parses. This does not deploy the server, change installed plugins or raise other tools' output limits.
+
 ## 13.0.0 - 2026-10-04
 
 Octoplan 6.0.0 and octopad-planning-and-work-design 3.0.0 put the reviewed Plan summary before the autonomy choice. It names what agents can finish and verify without the user, the first expected intervention, who must act, affected work and continuation limits. Existing applicable mandates carry forward without a second approval.
