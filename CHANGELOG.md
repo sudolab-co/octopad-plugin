@@ -1,8 +1,10 @@
 # Changelog
 
-## 13.0.1 - Unreleased
+## 14.0.1 - Unreleased
 
 Codex loads a separate MCP configuration with a 15,000-token output budget for start_session. Claude Code keeps its compatible configuration. The session skill requests a 20,000-token emission budget in Codex Code Mode, stores the response and recovers its entire text in bounded emissions before acting.
+
+This public candidate uses the same 14.0.1 package version and Codex MCP config as the private candidate. Their other bundled skills remain distinct. The server and plugin output-policy changes must ship together (sudolab-co/octopad#1132 and sudolab-co/octopad-plugin#5).
 
 The CRM skill's existing description is quoted so its YAML frontmatter parses. This does not deploy the server, change installed plugins or raise other tools' output limits.
 
