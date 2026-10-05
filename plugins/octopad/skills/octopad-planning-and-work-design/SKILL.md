@@ -4,7 +4,7 @@ description: Use for a new or existing stream, a brief, or a delivery-mode choic
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-planning-and-work-design"` when you open this skill.
 
-Version: 3.0.0
+Version: 4.0.0 (pending_review: acceptance, checks and deploys stay in a task's Done when)
 
 # From a need to prepared work
 
@@ -36,9 +36,9 @@ For an ongoing stream, agree a bounded delivery within it; finishing that mandat
 
 - Where a task's scope is ambiguous at its edge, write down what it does NOT cover; an unstated exclusion is how two people build the same half twice.
 - Count the deliverables before you count tasks: a deliverable is something that could be shipped, reviewed or closed on its own, and the number of those is the number of top-level tasks — no more and no fewer.
-- One reason licenses nesting: a single deliverable needs three or more steps, a step being a piece you would move to `in_progress` and to `done` by itself. Those steps become its subtasks, and nothing else earns a subtask.
+- One reason licenses nesting: a single deliverable breaks into parts, each finished and checked on its own, that fit together into it. Those parts become its subtasks, and nothing else earns a subtask.
 - Never open a top-level task whose only job is to hold the others beneath it. An umbrella restates the stream and delivers nothing of its own.
-- Steps taken one after another are flat all the same — build, then verify, then deploy, is three top-level tasks joined by dependencies and not three phases.
+- Checking a deliverable, getting it accepted, opening its pull request and deploying it are not parts of it: they stay in its Done when, never tasks or subtasks of their own, unless another person owns that step. While only someone's acceptance is left, the task waits in `pending_review`; while it waits on an outside event, it is `blocked`. Deliverables made one after another stay flat all the same: top-level tasks joined by dependencies, not phases.
 - A subtask may not fall due after the task above it.
 - Join two deliverables only where one truly cannot start until the other lands; an edge added for tidiness serialises work that could have run side by side.
 - Order is what dependencies carry, and priority says how much a thing matters within an order already settled. Reaching for priority to make something happen sooner is the sign that a dependency is missing.
@@ -78,7 +78,7 @@ For an ongoing stream, agree a bounded delivery within it; finishing that mandat
 # Laying out a plan
 
 - A page that mirrors the task tree makes a second copy of the plan: it is then read in two places and goes stale as the work lands. Pages carry reference material that outlasts the effort, not a plan the tasks already hold.
-- The default shape of an effort is flat — the stream, its top-level tasks, and the dependencies between them. The second licence to nest is a phase: an effort whose phases each hold three or more steps takes one parent per phase, and nothing else earns a parent.
+- The default shape of an effort is flat — the stream, its top-level tasks, and the dependencies between them. The second licence to nest is a phase: an effort whose phases each hold several deliverables takes one parent per phase, and nothing else earns a parent.
 - When a graph write — a create, a dependency, a change of page links — comes back naming sibling tasks that share the pages you linked, read their order and their gates again before moving on. What changed the plan changed its neighbours, not only the edge you came to add.
 
 **Laying out a five-week launch.**
@@ -89,7 +89,7 @@ User: *"Lay out the launch — research, then design, then build, then ship — 
 - Right: the stream first, then ONE `batch_tasks` call holding the entire graph.
   1. Open the time-bound stream "Launch Q2" with its `definition_of_success`, its goal, and a `target_date` of `2026-05-31`, which is the five-week horizon the user gave, set on the effort itself and never copied down onto its tasks.
   2. ONE `batch_tasks` call for the whole set, the stream given once as the call's default and `depends_on_refs` carrying the order inside it, and never a second pass of `link_dependency` calls over edges the same batch already carried.
-- Why the nesting is right here: each of the four phases really does hold three or more steps. A flat effort — five fixes, a check, a deploy — stays top-level tasks joined by dependencies, with no umbrella and no phase parents.
+- Why the nesting is right here: each of the four phases really does hold several deliverables. A flat effort — five fixes, each checked in its own Done when — stays top-level tasks joined by dependencies, with no umbrella, no phase parents and no check or deploy tasks.
 - Why no date sits on a task here: the user gave a rough span, not four deadlines. That span became the effort's outer horizon and stopped there, and what carries the order between the tasks is `depends_on_refs`.
 
 # When an effort ends or changes shape

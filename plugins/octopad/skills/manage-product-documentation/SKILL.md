@@ -4,7 +4,7 @@ description: Keep one or more products' documentation true to the work as it hap
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "manage-product-documentation"` when you open this skill.
 
-Version: 5.0.0
+Version: 5.1.0
 
 # Manage Product Documentation
 
@@ -44,7 +44,7 @@ These four request classes are defined here and reused by the documentation fami
 - **audit:** inspect a bounded maintained set, repair the unambiguous, and record gaps;
 - **synchronize:** propagate a changed source through this family's projections and hand other outputs to their owners.
 
-A page keeps one Verification block that states the latest check; replace it, never append to it. Release history, install proofs and delivery receipts belong on the Task, pull request or release record, not on the page or in its opening lines.
+A page this skill owns keeps one Verification block that states the latest check; replace it, never append to it. Release history, install proofs and delivery receipts belong on the Task, pull request or release record, not on the page or in its opening lines.
 
 ## Stop before writing
 
@@ -55,7 +55,7 @@ A page keeps one Verification block that states the latest check; replace it, ne
 3. Prove a negative before writing one. `No documentation impact` is a claim about the maintained set for every affected product. Harvest terms from the changed lines and each touched file's header comments. First list that maintained set without a title filter and read its descriptions or summaries; then open likely candidates and supplement the inventory with search over the harvested names and product terms. Record the receipt beside the claim, on one line: affected product or products, terms searched, pages inventoried, candidates read or `no candidate`, and either the document the change cites or `the change cites no document`. Search alone, or an inventory of the wrong product, proves nothing. Behavior that changed while no page owns it is a gap: record one documentation-debt item instead of closing the question.
 4. Treat unknown facts as unknown. Ask only when an unresolved system boundary, product intent, or authority conflict would materially change the result. An explicit unresolved authority conflict affecting this change always meets this bar: preserve both sources and ask instead of choosing or rewriting either one. Otherwise use a concise `Unknown`, `Unverified`, or documentation-debt marker and keep working.
 5. Never fabricate architecture, behavior, ownership, dates, metrics, source revisions, release state, or customer evidence. Derive technical facts from current code and repository configuration when available.
-6. Keep provenance beside material claims: evidence source, observed revision or release, verification state, and last verified time. Do not present an old observation as current.
+6. Keep provenance beside material claims: evidence source, observed revision or release, verification state, and last verified time. Do not present an old observation as current. The Company Overview is the exception: where a change came from goes in the edit's change summary.
 7. Minimize persisted evidence. Never copy secrets, credentials, private local paths, personal or customer identifiers, or unnecessary source bodies into Octopad. Prefer a safe repository link, public revision, or redacted summary that proves the claim without exposing unrelated data.
 
 ## Administer the documentation system
@@ -114,7 +114,7 @@ Product documentation owns product behavior, release truth, and Product Facts. P
 
 For a pure marketing request, do not draft the output here. Load product marketing when it is available; otherwise name that owner and hand the request over without inventing copy.
 
-When owned product truth changes, update this family's canonical records and identify every affected downstream output. Hand each external projection to its owner. If that skill is available, the same request authorizes the downstream edit, and its own gates are satisfied, load it and continue rather than leaving known stale text behind. Until projection assembly is automated, the skill changing an authoritative source may patch only its declared section of a shared Company Overview. Never use that narrow exception to take over another family's canon.
+When owned product truth changes, update this family's canonical records and identify every affected downstream output. Hand each external projection to its owner. If that skill is available, the same request authorizes the downstream edit, and its own gates are satisfied, load it and continue rather than leaving known stale text behind. Until projection assembly is automated, the skill changing an authoritative source patches the facts that source supplies in a shared Company Overview, when the request authorizes it, with facts only: no link, identifier, revision date, source line or maintainer name. Say where the change came from in the edit's change summary, and keep the whole page within 2,000 characters (the session brief cuts the rest): shorten only your own facts, and report an excess you cannot remove. Never use that narrow exception to take over another family's sources.
 
 Product Facts are the operational seam: this skill produces and verifies them per product; product marketing consumes them and owns claims derived from them. A correction or rollback must leave the Fact-to-output dependency visible so affected messages can be reviewed without rewriting unrelated products or outputs.
 

@@ -4,7 +4,7 @@
 
 Creator onboarding already seeds or adopts Company Overview, adapts its wording to the creator, gathers useful profile facts, and stops profiling when enough is known to act. Reuse that page and its identity. Do not rename it proactively, duplicate it, require a Brief, repeat answered questions, or mark onboarding completed from a context update. Preserve its existing confirmation-before-write workflow when operating inside onboarding.
 
-Directly elicited durable facts may remain authoritative in the Overview. Sourced sections remain projections. If existing content mixes current status and durable purpose, do not silently discard it or rewrite onboarding: propose the appropriate destination for transient status under existing platform rules. Onboarding facts and available records are input, not authority to broaden access.
+Directly elicited durable facts may remain authoritative in the Overview. Sections whose question another page owns remain projections. If existing content mixes current status and durable purpose, do not silently discard it or rewrite onboarding: propose the appropriate destination for transient status under existing platform rules. Onboarding facts and available records are input, not authority to broaden access.
 
 The current questions, tutorial, kernel and production behavior are unchanged by this candidate.
 
@@ -30,7 +30,7 @@ Do not ask all of these routinely. The kernel should reuse known answers, explai
 - Reconcile the new section-level authority model with all consumers of the former global “Overview owns no facts” rule. Preserve unique onboarding facts before any extraction.
 - Resolve callers and catalogs using `manage-company-context`, including product documentation, marketing, market intelligence and shared-family rules. Choose one canonical owner; no concurrent competing old/new contract. Do not install this directory as a compatibility alias.
 - Assign shared invariants explicitly in the new kernel/package: source ownership, evidence/Decision distinction, organic page creation, archival treatment, scope/privacy, source minimization and verified writes. Preserve these protections when relocating them; avoid relying on this local candidate to override installed skills.
-- Verify actual section identifiers, projection provenance/freshness and size constraints with the assembler. Human headings may adapt without breaking its machine contract.
+- Verify actual section identifiers with the assembler. Human headings may adapt without breaking its machine contract.
 - Align Key Facts, Overview and execution records so each fact has an owner and changes do not leave contradictory context. Define any migration explicitly; no bulk absorption or silent overwrite.
 - Check existing partially onboarded workspaces as well as new ones. Preserve page IDs, prior answers, permissions and task progress.
 - Run package-level onboarding/evolution integration tests after the question and kernel changes are approved. Local fixture tests do not prove production permissions, onboarding lifecycle or automated assembly.
