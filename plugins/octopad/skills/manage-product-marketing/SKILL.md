@@ -4,7 +4,7 @@ description: Maintain choices about target audiences or beneficiaries, value pro
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "manage-product-marketing"` when you open this skill.
 
-Version: 1.0.0-public-r1 (experimental public candidate; not installed or accepted)
+Version: 1.1.0
 
 # Maintain marketing choices
 
@@ -57,7 +57,7 @@ These are possible homes, not required pages or a completeness checklist:
 
 Synchronize only choices and messages actually affected by context, evidence or price changes. A context update does not authorize new onboarding, an identity change or erasing internal uses. Preserve unrelated scope; report affected output as stale when correction is not authorized.
 
-If an existing overview or other projection depends on a changed PM source, read the destination to identify its section, maintainer and audience. Hand off only the affected projection, source identity and revision verified by final readback, exact authorized change, permitted audience and missing information. Inaccessible is not absent. Do not relay restricted source content or identifiers to an unauthorized audience. A handoff grants neither access nor mutation authority. PM does not edit another owner's context or projection. Distinguish source verified, handoff prepared or delivered, and projection refreshed; claim the last only with evidence of its maintainer's authorized update. A stale marker also needs authorized mutation and readback. Relay within existing authority without inventing a new session or approval gate.
+If an existing overview or other projection depends on a changed PM source, read the destination to identify its section and audience. In a shared Company Overview, when the request authorizes it, PM patches only the facts its own source supplies, with facts only: no link, identifier, revision date, source line or maintainer name. Say where the change came from in the edit's change summary, and keep the whole page within 2,000 characters (the session brief cuts the rest): shorten only your own facts, and report an excess you cannot remove. Those facts are a projection, not a maintained PM section: decision pointers, dates and sources stay on PM's own pages. For any other projection, identify its maintainer and hand off only the affected projection, source identity and revision verified by final readback, exact authorized change, permitted audience and missing information. Inaccessible is not absent. Do not relay restricted source content or identifiers to an unauthorized audience. A handoff grants neither access nor mutation authority. PM does not edit another owner's context or projection. Distinguish source verified, handoff prepared or delivered, and projection refreshed; claim the last only with evidence of its maintainer's authorized update. A stale marker also needs authorized mutation and readback. Relay within existing authority without inventing a new session or approval gate.
 
 ## Use PMM when useful
 
