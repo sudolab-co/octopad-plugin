@@ -1,6 +1,6 @@
 # Changelog
 
-## 14.0.0 - unreleased
+## 14.0.0 - 2026-10-05
 
 This version brings in the skill changes the Octopad team had made in its private copy and not yet published here. From now on, every change to the plugin is made in this repository.
 
