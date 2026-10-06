@@ -1,5 +1,13 @@
 # Changelog
 
+## 14.2.0 - Unreleased
+
+Octoplan 6.2.0 routes Claude workers doing hard bounded code, configuration or command-line work, cross-file coordination and consequential changes included, to Opus 5.5 at `high` instead of `xhigh`. On Anthropic's published per-effort coding results for Opus 5.5, `xhigh` costs 1.8 to 2.1 times `high`, for 2.2 more points on Terminal-Bench 4.0, 2.6 fewer on FrontierCode v1.1 (main set) and the same score on CursorBench 4.0. Hard document or knowledge work, and a mixed task whose document part is the hard one, stays at `xhigh`: on AA-Briefcase v1.1, the same page's long-horizon knowledge-work benchmark, `xhigh` gains 75 Elo for 1.96 times the cost. Reviews, open design (with Fable 5.1 under its existing conditions), plan composition and repair, and broad audits also keep `xhigh`; any other worker gets it only with a recorded reason.
+
+A saved `Sonnet 5` worker route is now read as Opus 5.5 at `medium`, recorded once like the existing `Opus 5` reading, since Claude Code's `sonnet` alias selects Sonnet 5.5 on the Claude API from version 2.1.284. Sonnet stays out of the default routes. Other routes saved at `xhigh` before 6.2.0 keep their reason and run as saved, and other saved routes stay floors.
+
+Claude runtime only: Codex routes are unchanged. Both distributions move to 14.2.0.
+
 ## 14.0.1 - Unreleased
 
 Codex loads its own MCP configuration, `.mcp.codex.json`, which gives `start_session` a 15,000-token output budget so the session brief reaches the AI whole. Claude Code keeps `.mcp.json`, since it refuses that per-tool field. In Codex Code Mode, octopad-session asks for a 20,000-token emission budget, keeps the response and, if it is still cut, reads the rest back in chunks before acting; those numbers are Octopad's choices, not Codex defaults. Ships with the matching server change (sudolab-co/octopad#1132).
