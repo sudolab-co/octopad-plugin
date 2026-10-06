@@ -4,7 +4,7 @@
 
 manage-product-documentation 5.1.1 also loads when a product feature is assessed (a usage or performance review, a diagnosis), so the AI reads the feature's spec before judging it. It matches Octopad's served methodology, which opens the skill before the AI assesses or changes a product feature (sudolab-co/octopad#1159).
 
-## 14.0.1 - Unreleased
+## 14.0.1 - 2026-10-06
 
 Codex loads its own MCP configuration, `.mcp.codex.json`, which gives `start_session` a 15,000-token output budget so the session brief reaches the AI whole. Claude Code keeps `.mcp.json`, since it refuses that per-tool field. In Codex Code Mode, octopad-session asks for a 20,000-token emission budget, keeps the response and, if it is still cut, reads the rest back in chunks before acting; those numbers are Octopad's choices, not Codex defaults. Ships with the matching server change (sudolab-co/octopad#1132).
 
