@@ -1,5 +1,9 @@
 # Changelog
 
+## 14.5.0 - Unreleased
+
+octopad-knowledge-evidence 1.1.0 says that research or analysis for one decision is never kept or offered as a page: its Decision's rationale cites the decisive sources. The skill's list of page-worthy reference no longer names "what a piece of research found", which led an AI to offer to keep a one-off research report as a page once the Decision was recorded. Research that serves more than one decision is still reference that outlives the effort. Ships with the matching server change (sudolab-co/octopad task 0ce4668e).
+
 ## 14.0.1 - Unreleased
 
 Codex loads its own MCP configuration, `.mcp.codex.json`, which gives `start_session` a 15,000-token output budget so the session brief reaches the AI whole. Claude Code keeps `.mcp.json`, since it refuses that per-tool field. In Codex Code Mode, octopad-session asks for a 20,000-token emission budget, keeps the response and, if it is still cut, reads the rest back in chunks before acting; those numbers are Octopad's choices, not Codex defaults. Ships with the matching server change (sudolab-co/octopad#1132).
