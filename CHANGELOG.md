@@ -1,5 +1,9 @@
 # Changelog
 
+## 14.3.0 - Unreleased
+
+octopad-notepad 3.1.0 lets the AI set a reminder on its own when it leaves the user a next step, or sets a task `blocked`, that waits on an event it cannot watch: a pull request merged, a deploy live, a reply received, a date passed. The event may be someone else's act, such as a teammate's merge. The AI sets one only when the event frees something the user must do and a later session can check it. The reminder names the event and what it frees: a check to run, or a task to resume or close. At every opening of a main session, the AI checks whether each such event has happened and, once it has, says so in one line with what it frees as of now, such as the tasks a merge unblocked. Until then it says nothing, and a cleanup never removes a reminder whose event has happened before it is delivered. Work the user hands to another person stays a task assigned to that person. Ships with the matching server change, kernel 2.4.0. Shared update for Claude Code and Codex: both distributions move to 14.3.0.
+
 ## 14.0.1 - Unreleased
 
 Codex loads its own MCP configuration, `.mcp.codex.json`, which gives `start_session` a 15,000-token output budget so the session brief reaches the AI whole. Claude Code keeps `.mcp.json`, since it refuses that per-tool field. In Codex Code Mode, octopad-session asks for a 20,000-token emission budget, keeps the response and, if it is still cut, reads the rest back in chunks before acting; those numbers are Octopad's choices, not Codex defaults. Ships with the matching server change (sudolab-co/octopad#1132).
