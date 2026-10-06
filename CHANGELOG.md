@@ -1,5 +1,9 @@
 # Changelog
 
+## 14.4.0 - Unreleased
+
+octopad-planning-and-work-design 4.1.0 says that getting a deliverable accepted is never a task of its own, even when someone else gives the acceptance. Checking a deliverable, getting it accepted and delivering it (sending, publishing, deploying) stay in its Done when; only a step another person carries out as their own work, such as a deploy they run, can be its own task. The old wording, "unless another person owns that step", led an AI to turn "the client approves the logo" into a task for the client. While only a yes or no on the result is left, the task waits in `pending_review` for its approver, the creator unless one is named. The AI asks the approver now if they are in the conversation; when the yes came outside Octopad, it tells the user who must record it (the approver, the creator or an admin); a refusal sends the task back with `reject_completion` and its reason. A task waiting on a reply is `blocked` only when the reply carries something the work needs. Octoplan 6.2.1 applies the same rule when it plans a stream. Ships with the matching server change (sudolab-co/octopad task ed3632f7), which adds the named approver.
+
 ## 14.0.1 - Unreleased
 
 Codex loads its own MCP configuration, `.mcp.codex.json`, which gives `start_session` a 15,000-token output budget so the session brief reaches the AI whole. Claude Code keeps `.mcp.json`, since it refuses that per-tool field. In Codex Code Mode, octopad-session asks for a 20,000-token emission budget, keeps the response and, if it is still cut, reads the rest back in chunks before acting; those numbers are Octopad's choices, not Codex defaults. Ships with the matching server change (sudolab-co/octopad#1132).
