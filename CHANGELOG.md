@@ -4,6 +4,8 @@
 
 Codex loads its own MCP configuration, `.mcp.codex.json`, which gives `start_session` a 15,000-token output budget so the session brief reaches the AI whole. Claude Code keeps `.mcp.json`, since it refuses that per-tool field. In Codex Code Mode, octopad-session asks for a 20,000-token emission budget, keeps the response and, if it is still cut, reads the rest back in chunks before acting; those numbers are Octopad's choices, not Codex defaults. Ships with the matching server change (sudolab-co/octopad#1132).
 
+octopad-session follows the session brief's **Octopad desktop (early access)** line as written, instead of acting on it before the first reply. The line now says when to open the desktop: right before the AI's first Octopad write, before it shows a list, board or calendar of work, or when the user asks. Ships with the matching server change (sudolab-co/octopad#1168).
+
 ## 14.0.0 - 2026-10-05
 
 This version brings in the skill changes the Octopad team had made in its private copy and not yet published here. From now on, every change to the plugin is made in this repository.
