@@ -4,7 +4,7 @@ description: Use first when the user asks for Octopad or onboarding, and as soon
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-session"` when you open this skill.
 
-Version: 14.0.2
+Version: 14.1.0
 
 # Start an Octopad plugin session
 

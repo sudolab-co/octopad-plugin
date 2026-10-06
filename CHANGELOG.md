@@ -1,8 +1,8 @@
 # Changelog
 
-## 14.0.2 - Unreleased
+## 14.1.0 - Unreleased
 
-manage-product-documentation 5.1.1 also loads when a product feature is assessed (a usage or performance review, a diagnosis), so the AI reads the feature's spec before judging it. It matches Octopad's served methodology, which opens the skill before the AI assesses or changes a product feature (sudolab-co/octopad#1159).
+manage-product-documentation 5.2.0 also loads when a product feature is assessed (a usage or performance review, a diagnosis), so the AI reads the feature's spec before judging it. It matches Octopad's served methodology, which opens the skill before the AI assesses or changes a product feature (sudolab-co/octopad#1159).
 
 ## 14.0.1 - 2026-10-06
 
