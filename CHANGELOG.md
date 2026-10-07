@@ -1,6 +1,6 @@
 # Changelog
 
-## 14.2.0 - Unreleased
+## 14.2.0 - 2026-10-07
 
 Octoplan 6.2.0 routes Claude workers doing hard bounded code, configuration or command-line work, cross-file coordination and consequential changes included, to Opus 5.5 at `high` instead of `xhigh`. On Anthropic's published per-effort coding results for Opus 5.5, `xhigh` costs 1.8 to 2.1 times `high`, for 2.2 more points on Terminal-Bench 4.0, 2.6 fewer on FrontierCode v1.1 (main set) and the same score on CursorBench 4.0. Hard document or knowledge work, and a mixed task whose document part is the hard one, stays at `xhigh`: on AA-Briefcase v1.1, the same page's long-horizon knowledge-work benchmark, `xhigh` gains 75 Elo for 1.96 times the cost. Reviews, open design (with Fable 5.1 under its existing conditions), plan composition and repair, and broad audits also keep `xhigh`; any other worker gets it only with a recorded reason.
 
