@@ -1,6 +1,6 @@
 # Changelog
 
-## 14.6.0 - Unreleased
+## 14.6.0 - 2026-10-07
 
 octopad-session follows the session brief's **Octopad desktop (early access)** line as written, instead of acting on it before the first reply. The line now says when to open the desktop: right before the AI's first Octopad write, before it shows a list, board or calendar of work, or when the user asks. Ships with the matching server change (sudolab-co/octopad#1168). Both distributions move to 14.6.0.
 
