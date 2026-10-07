@@ -1,5 +1,9 @@
 # Changelog
 
+## 14.6.0 - Unreleased
+
+octopad-knowledge-evidence 1.2.0 teaches working pages. Material that later sessions of a task or a time-bound stream need goes on a working page of it, and nothing that matters stays only there: the AI moves it to Key Information, a page or an open task it informs, or proposes a home for it. When the AI hands the work over, it keeps the working pages that are reference as a whole as ordinary pages and archives the rest; when the work reopens, it takes the pages it needs out of Archive. When widened searches still find nothing, it searches Archive. Octoplan 6.3.0 preserves the verbatim answer of a worker without Octopad on a working page of its task. Ships with the matching server changes (sudolab-co/octopad#1176, #1179 and #1175; task 20f9fba6).
+
 ## 14.5.0 - Unreleased
 
 octopad-knowledge-evidence 1.1.0 says that research or analysis for one decision is never kept or offered as a page: its Decision's rationale cites the decisive sources. The skill's list of page-worthy reference no longer names "what a piece of research found", which led an AI to offer to keep a one-off research report as a page once the Decision was recorded. Research that serves more than one decision is still reference that outlives the effort. Ships with the matching server change (sudolab-co/octopad task 0ce4668e).
