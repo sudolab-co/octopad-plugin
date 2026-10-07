@@ -44,7 +44,7 @@ Before drafting a saved record, prepare each claim with:
 - source interest and limits, including promotional, sample and version limits and what remains unestablished;
 - permitted audience and any separate publication clearance.
 
-Save processed findings, never a raw source file (a transcript, recording, survey export, review dump, email thread or screenshot of messages): extract each claim into its packet and tell the user you keep the extract, not the file. Missing attribution, date or provenance prevents acceptance as evidence. Keep a bare unsupported assertion as an attributed unverified lead and exclude it from synthesis support. Firsthand testimony supports the speaker's experience, not an unverified third-party document. Never invent missing data.
+Save each claim of a raw source (a transcript, recording, survey export, review dump, email thread or screenshot of messages) as its packet, never the file. Missing attribution, date or provenance prevents acceptance as evidence. Keep a bare unsupported assertion as an attributed unverified lead and exclude it from synthesis support. Firsthand testimony supports the speaker's experience, not an unverified third-party document. Never invent missing data.
 
 Quotation marks assert original wording only when supplied as an exact quotation or verified at source. Repeating a user's report verbatim does not turn it into an original quotation; a paraphrase stays a paraphrase. Supplied attributed material can be captured without fetching the original when its supplied access mode is saved immediately. One qualification may cover a supplied packet only when it is genuinely shared. Access mode and source independence are different facts.
 

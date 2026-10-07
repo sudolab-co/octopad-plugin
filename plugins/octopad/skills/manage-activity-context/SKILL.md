@@ -46,7 +46,7 @@ Each holds `missing`, `not applicable` or an answer the page supports, essential
 
 # Cut-over from a Company Overview
 
-An organization whose sessions still open on an untyped Company Overview switches to the composed Overview when that page becomes its Activity Overview. Offer the cut-over when you work on the organization's context. Only an organization admin's AI can carry it out, since retyping an organization page is admin-only; a member's AI says so.
+An organization whose sessions still open on an untyped Company Overview switches to the composed Overview when that page becomes its Activity Overview. Offer the cut-over when you work on the organization's context. Only an organization admin's AI can carry it out, since retyping an organization page is admin-only; a member's AI says so and creates no organization Activity Overview beside it.
 
 1. Create the Product Overview of each offer the page describes, and the Market Overview when market content exists, with their En bref, through their skills. Their target, price and difference come only from what the page states; anything you infer stays proposed.
 2. Type the old page itself as the Activity Overview, with its En bref in the same call.
