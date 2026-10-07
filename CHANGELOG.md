@@ -1,5 +1,9 @@
 # Changelog
 
+## 14.8.0 - Unreleased
+
+manage-product-documentation 5.3.0: only an accepted need the request does not cover stays unbuilt. "An accepted but unbuilt need stays visible without becoming an instruction to build it" sat in the check run right after writing a spec, so an AI that wrote a design the user had asked for and accepted read it as a reason to stop before building. Companion of kernel 2.5.1 in sudolab-co/octopad, whose one "When work starts" rule builds an accepted design the user asked for unless they said to stop at the design. Both distributions move to 14.8.0.
+
 ## 14.7.1 - 2026-10-07
 
 octopad-notepad 3.1.1 names the `notepad_purge` tool as the way to erase the owner's Notepad history. 3.1.0 still named the `notepad` action `purge_history`, which since sudolab-co/octopad#1135 deletes nothing and only answers that the purge moved to `notepad_purge`. Wording fix, same behavior. Both distributions move to 14.7.1.

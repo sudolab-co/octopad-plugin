@@ -4,7 +4,7 @@ description: Keep one or more products' documentation true to the work as it hap
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "manage-product-documentation"` when you open this skill.
 
-Version: 5.2.0
+Version: 5.3.0
 
 # Manage Product Documentation
 
@@ -24,7 +24,7 @@ For multi-product work, read [product-scope-and-seams.md](references/product-sco
 
 Before choosing how to serve a user need, establish the requested outcome and constraints from the request, the owning Product Spec read in full, and Decisions that change its scope. A narrow fix may use the spec's purpose, constraints and the clause it restores; name that clause before taking this shortcut. If the fix requires a product choice or its boundaries are unclear, read the whole owning spec. A summary or truncated result is not a full read: retrieve the missing text, or name the access limit and leave dependent conclusions unresolved. Read other specs or history when a dependency, contradiction or the request calls for them, not by default.
 
-Check the result against that same intent before concluding or handing off. Account for the needs within the request: covered with evidence, still unmet, or outside the request with its scope as the reason. An accepted but unbuilt need stays visible without becoming an instruction to build it. Say which source-defined scenarios the request touches were checked and which were not. Never narrow the request afterwards to fit the result; complete the authorized work and name what remains. Use the existing task, PR or reply, not a new document or approval step.
+Check the result against that same intent before concluding or handing off. Account for the needs within the request: covered with evidence, still unmet, or outside the request with its scope as the reason. An accepted need the request does not cover stays visible without becoming an instruction to build it. Say which source-defined scenarios the request touches were checked and which were not. Never narrow the request afterwards to fit the result; complete the authorized work and name what remains. Use the existing task, PR or reply, not a new document or approval step.
 
 When rewriting a spec, keep each need, its constraints and lifecycle state visible. Changing or regrouping the means does not retire the need: name where it is now served, or the attributed Decision that retires or replaces it. Delivery moves the need into evidenced current behavior; it does not erase it. Before your first change, record the spec's version id or `updated_at` on the task or PR as the baseline, and judge your edits against that revision, reconciled with material source changes and explicit user directions during the work. If the baseline is missing or its version has been pruned, name that gap and leave dependent conclusions unresolved. Record a direction already given without asking for it again; unresolved authority conflicts still follow step 4 of [Stop before writing](#stop-before-writing). A required review uses these primary sources, not only the author's summary or rewritten spec.
 
