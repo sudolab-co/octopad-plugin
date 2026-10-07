@@ -4,7 +4,7 @@ description: Use for a new or existing stream, a brief, or a delivery-mode choic
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-planning-and-work-design"` when you open this skill.
 
-Version: 4.0.0 (pending_review: acceptance, checks and deploys stay in a task's Done when)
+Version: 4.1.0 (an acceptance is never a task: the task waits in pending_review for its approver)
 
 # From a need to prepared work
 
@@ -38,7 +38,7 @@ For an ongoing stream, agree a bounded delivery within it; finishing that mandat
 - Count the deliverables before you count tasks: a deliverable is something that could be shipped, reviewed or closed on its own, and the number of those is the number of top-level tasks — no more and no fewer.
 - One reason licenses nesting: a single deliverable breaks into parts, each finished and checked on its own, that fit together into it. Those parts become its subtasks, and nothing else earns a subtask.
 - Never open a top-level task whose only job is to hold the others beneath it. An umbrella restates the stream and delivers nothing of its own.
-- Checking a deliverable, getting it accepted, opening its pull request and deploying it are not parts of it: they stay in its Done when, never tasks or subtasks of their own, unless another person owns that step. While only someone's acceptance is left, the task waits in `pending_review`; while it waits on an outside event, it is `blocked`. Deliverables made one after another stay flat all the same: top-level tasks joined by dependencies, not phases.
+- Checking a deliverable, getting it accepted and delivering it (sending, publishing, deploying) are not parts of it: they stay in its Done when, never tasks or subtasks of their own. Only a step another person carries out as their own work, such as a deploy they run, can be its own task; an acceptance never is, even when someone else gives it. While only a yes or no on the result is left, the task waits in `pending_review` for its approver (the creator unless one is named): ask the approver now if they are in the conversation; when the yes came outside Octopad, tell the user who must record it (the approver, the creator or an admin); a refusal sends the task back with `reject_completion` and its reason. While it waits on an outside event, such as a run or a reply carrying something the work needs, it is `blocked`. Deliverables made one after another stay flat all the same: top-level tasks joined by dependencies, not phases.
 - A subtask may not fall due after the task above it.
 - Join two deliverables only where one truly cannot start until the other lands; an edge added for tidiness serialises work that could have run side by side.
 - Order is what dependencies carry, and priority says how much a thing matters within an order already settled. Reaching for priority to make something happen sooner is the sign that a dependency is missing.
