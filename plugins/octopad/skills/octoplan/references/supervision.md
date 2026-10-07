@@ -67,7 +67,7 @@ authority and gate checks. A spec is not permission to expand the mandate.
 Return the handoff if needed; otherwise name artifact and verification result.
 ```
 
-A worker without Octopad writes nothing there: preserve its final answer verbatim in a linked report (or a comment when short) before adding your compact task receipt, send fixes through the available followup mechanism with the same authority, and use native actor state as liveness evidence. An errored or unverifiable worker suspends affected dispatch while [recovery.md](recovery.md) resolves it; do not silently finish under another identity.
+A worker without Octopad writes nothing there: preserve its final answer verbatim on a working page of the task (or a comment when short) before adding your compact task receipt, send fixes through the available followup mechanism with the same authority, and use native actor state as liveness evidence. An errored or unverifiable worker suspends affected dispatch while [recovery.md](recovery.md) resolves it; do not silently finish under another identity.
 
 ## Proof and review
 
