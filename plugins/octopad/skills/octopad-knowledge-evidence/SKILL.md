@@ -1,21 +1,20 @@
 ---
 name: octopad-knowledge-evidence
-description: Where the workspace's durable knowledge is written, and how a claim about it is proved. Use when decisions, facts, risks, advisories or open questions need recording, when the user hands over a file or a document to keep, when a page or a file is written, linked or tagged, when you need to know whether something is on record already, and to answer anything asked about the corpus.
+description: Where the workspace's durable knowledge is written, and how a claim about it is proved. Use when decisions, facts, risks, advisories or open questions need recording, when the user hands over a file or a document, when a page or a file is written, linked or tagged, when you need to know whether something is on record already, and to answer anything asked about the corpus.
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-knowledge-evidence"` when you open this skill.
 
 # Where knowledge is written
 
-Version: 1.2.0
+Version: 1.3.0
 
 - Three branches hold durable workspace context — `knowledge`, `pages` and `files`. Retrieval reaches only the branch a thing went into, so the branch is chosen on purpose and never by habit.
 - One fact, one choice and its reason, one open point, one threat: each of those is a single atomic item, written with `knowledge`.
 - Reference that outlives the effort — how a system is built, what a meeting settled — is a page, written with `pages`. Research or analysis for one decision is never kept or offered as an ordinary page: its Decision's rationale cites the decisive sources.
 - Material that later sessions of a task or a stream need goes on a working page of it. Nothing that matters stays only there: move it to its home (Key Information, a page, an open task it informs), and propose a home for, or ask about, anything important that has none.
 - When you hand the work over, finish moving what matters, then keep each working page that is, as a whole, reference that outlives the effort, and archive the rest. When the work reopens, take the pages it needs out of Archive.
-- A file or a document the user hands over: offer, on the turn it arrives, to put it into `files` and to attach it to the task it belongs to; what stays in chat is gone once the session closes.
-- When it is not obvious where a shared file belongs, work out its home first, and never advise the user to leave the original outside Octopad because the destination was unclear.
-- An advisory, a security bulletin, a supplier's change of terms, a number you have just measured: each of those is written up on the turn it surfaces, not held back for the close.
+- An authoritative document the user hands over: offer, on the turn it arrives, to put it into `files` and to attach it to the task it belongs to, working out that home first when it is not obvious; what stays in chat is gone once the session closes.
+- With each extract drawn from raw material, keep a pointer to the original where one exists and is permitted; otherwise label the extract unverified.
 - Wire what belongs together: a page or a file onto the task it informs, a page or a file onto the Key Information item it supports, one task onto another with the reason the dependency exists.
 - Search the pages before you attach one, so what lands on the task is the best of them and not the first.
 - Skip the search-and-link step where it cannot pay: a placeholder, a user who has declined it, input too thin to match anything (ask once), or a batch, where one search covers the whole topic.

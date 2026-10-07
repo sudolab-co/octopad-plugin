@@ -4,7 +4,7 @@ description: Use when writing, editing, or reviewing a technical work product in
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "technical-writing"` when you open this skill.
 
-Version: 2.0.0
+Version: 2.0.1
 Candidate status: local and unreleased
 
 # Technical writing
@@ -22,7 +22,7 @@ Apply these principles in English and French. The target language's grammar and 
 - Define a term on first use if the reader may not know it. Write for the reader with the least context who still needs the document.
 - Plain words for a global audience: no idioms, no Latin ("for example", not "e.g."; "that is", not "i.e.").
 - Sentence case for headings. Task headings say the task: "Install the CLI", not "Installation".
-- No em-dash, ever: recast with a comma, full stop, colon, or parentheses.
+- No em-dash, ever: an Octopad house rule that overrides the Google guide. Recast with a comma, full stop, colon, or parentheses.
 
 ## Kill the AI flavor
 

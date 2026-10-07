@@ -1,5 +1,9 @@
 # Changelog
 
+## 15.1.0 - Unreleased
+
+octopad-knowledge-evidence 1.3.0 offers to keep only a document that is authoritative in itself, such as a contract or a price grid, in `files`, attached to its task; it no longer offers to keep every file the user hands over. Kernel 2.6.0 keeps no raw material and captures in the same turn, so the skill drops its line against leaving the original outside Octopad and its own same-turn capture line, and adds only what the kernel does not say: each extract drawn from raw material keeps a pointer to the original where one exists and is permitted, and is otherwise labeled unverified. technical-writing 2.0.1 states the em-dash ban as Octopad's house rule, which overrides the Google guide; same behavior. Needs kernel 2.6.0 (sudolab-co/octopad#1196) and lands with 15.0.0. Both distributions move to 15.1.0.
+
 ## 15.0.0 - Unreleased
 
 The four documentation skills teach head pages and their En bref. Sessions open on the Organization Overview the server composes from the En bref of the head pages each reader can read: the Activity Overview, one Product Overview per offer and the Market Overview, of the organization and of the session's workspace. Each skill names its head page, its keys and its folder, and updates an En bref in the same turn as a change that alters it. No skill patches or trims a Company Overview any more.
