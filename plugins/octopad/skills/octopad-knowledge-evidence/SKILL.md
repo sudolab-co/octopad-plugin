@@ -13,7 +13,7 @@ Version: 1.3.0
 - Reference that outlives the effort — how a system is built, what a meeting settled — is a page, written with `pages`. Research or analysis for one decision is never kept or offered as an ordinary page: its Decision's rationale cites the decisive sources.
 - Material that later sessions of a task or a stream need goes on a working page of it. Nothing that matters stays only there: move it to its home (Key Information, a page, an open task it informs), and propose a home for, or ask about, anything important that has none.
 - When you hand the work over, finish moving what matters, then keep each working page that is, as a whole, reference that outlives the effort, and archive the rest. When the work reopens, take the pages it needs out of Archive.
-- An authoritative document the user hands over: offer, on the turn it arrives, to put it into `files` and to attach it to the task it belongs to, working out that home first when it is not obvious; what stays in chat is gone once the session closes.
+- An authoritative document the user hands over: put it into `files` on the turn it arrives and attach it to the task it belongs to, working out that home first when it is not obvious; what stays in chat is gone once the session closes.
 - With each extract drawn from raw material, keep a pointer to the original where one exists and is permitted; otherwise label the extract unverified.
 - Wire what belongs together: a page or a file onto the task it informs, a page or a file onto the Key Information item it supports, one task onto another with the reason the dependency exists.
 - Search the pages before you attach one, so what lands on the task is the best of them and not the first.
