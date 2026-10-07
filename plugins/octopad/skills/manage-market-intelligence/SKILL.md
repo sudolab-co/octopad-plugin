@@ -2,7 +2,7 @@
 name: manage-market-intelligence
 metadata:
   version: "2.0.0"
-description: Build and maintain sourced knowledge of an activity's environment, including audience needs, other actors, alternatives, offers, practices and relevant changes. Use to capture, compare, refresh or audit these observations and their synthesis, the Market Overview. Applies to commercial and noncommercial activities. Does not own internal activity identity, product specifications or strategic decisions.
+description: Build and maintain sourced knowledge of an activity's environment, including audience needs, other actors, alternatives, offers, practices and relevant changes. Use to capture, compare, refresh or audit these observations and their synthesis. Applies to commercial and noncommercial activities. Does not own internal activity identity, product specifications or strategic decisions.
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "manage-market-intelligence"` when you open this skill.
 
@@ -78,7 +78,7 @@ For a refresh, follow each changed claim through its source locations and consum
 
 Before completion, every affected in-scope MI synthesis is verified current or explicitly unresolved for an independent reason allowed above. A page's nonexistence alone is not evidence of a missing owner or placement. When the current register establishes its name, dependency graph, inputs, workspace and authorized MI destination, create the smallest useful populated view and verify it through one mutation unit. Preserve unrelated sections and other owners.
 
-When your change alters what the Market Overview's En bref says, update it in the same turn. Other owners link to MI evidence rather than copy it, product marketing's customer words included, so a refresh changes each claim in one place.
+When your change alters what the Market Overview's En bref says, update it in the same turn. Other owners link to MI evidence rather than copy it, product marketing's customer words included, so each claim changes in one place.
 
 Prepare requested strategic handoffs with the choice, responsible role or known destination, evidence and limits, and next action. If no role is established, state the concrete next step to resolve ownership while completing independent evidence work; “outside scope” or “competent owner” alone is incomplete. Preparing is not sending. Use activity-context first for identity and organizational context; product-documentation for intended or verified solution behavior, specifications, release truth and Product Facts; the relevant decision owner, including product-marketing for commercial choices, for audience, positioning, pricing and strategy; and technical-writing for prose quality without changing evidence or ownership. MI owns environmental observations and evidence-based synthesis. Storage location does not turn external evidence into product truth, and external perceptions cannot overwrite product records. Do not invent a person when only a role is known. The host environment governs authorization and shared-knowledge mechanics.
 
