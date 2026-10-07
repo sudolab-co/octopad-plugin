@@ -12,7 +12,7 @@ Keep the user's marketing knowledge in Octopad on your own, so another AI can dr
 
 ## Find the owner
 
-Each offer's marketing lives in the Marketing section of its Product Overview, the head page `manage-product-documentation` keeps per offer; products sold together as one bundle share one. Write that section and only that section: the product skill owns the page's structure. There is no Marketing Overview, and a workspace with no offer and no audience to reach gets no marketing content.
+Each offer's marketing lives in the Marketing section of its Product Overview, the head page `manage-product-documentation` keeps per offer; products sold together as one bundle share one. Write that section and only that section: the product skill owns the page's structure. There is no Marketing Overview, and a workspace with no offer and no audience to reach gets no marketing content. Organization-level marketing is read by every member, so a client's offers, prices and messages stay in that client's workspace.
 
 Audience, Positioning and Pricing pages are optional detail: explanation, research pointers and working material, never a competing current answer. Brand and tone shared by several offers live once, on such a page, which the offers reference. File these pages in the Product folder of their scope, or the folder that already holds them; a missing organization folder is created by an admin's AI, while a member's AI leaves the page unfiled and says so.
 

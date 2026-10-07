@@ -36,7 +36,7 @@ Before mutation, distinguish changed facts, the En bref keys they alter, and unc
 
 The Activity Overview is the Activity family's head page (`head_type: activity_overview`): one for the organization, and one in each workspace that is an activity of its own, such as a client mission or a personal project. Find it by its type, whatever its title. Onboarding seeds the organization's with every En bref key `missing`: fill that page, never a second one. File Activity pages in the Activity folder of their scope, or the folder that already holds them; a missing organization folder is created by an admin's AI, while a member's AI leaves the page unfiled and says so.
 
-Each session opens on the En bref of the organization's head pages and its workspace's, binding constraints first and whole; the body is read on demand. Its keys:
+Each session opens on the En bref of the organization's head pages and its workspace's, binding constraints first and whole; the body is read on demand. The Activity Overview's keys:
 
 - `what_we_do`, `for_whom`, `why`: the activity, whom it serves and what it is for.
 - `binding_constraints`: only the durable constraints every session must respect.
