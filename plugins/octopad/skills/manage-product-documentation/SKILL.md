@@ -4,7 +4,7 @@ description: Keep one or more products' documentation true to the work as it hap
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "manage-product-documentation"` when you open this skill.
 
-Version: 5.3.0
+Version: 6.0.0
 
 # Manage Product Documentation
 
@@ -50,20 +50,20 @@ A page this skill owns keeps one Verification block that states the latest check
 
 - Create or activate a Product Fact only after reading evidence, retrieved or supplied, competent to prove its exact claim, product scope and state. Claims of shipped or released behavior, or of software's current capabilities or availability, require verified release evidence, whether or not their wording mentions a release. Facts about a non-software offer, service or physical specification require the relevant authoritative decision, service record or technical evidence for their exact state; approval or validation alone proves neither availability nor launch. A named artifact or an assurance that evidence is available is a pointer, not proof. If the required evidence cannot be found, create no Fact or dependent approved copy and name the gap.
 
-1. Confirm the connected Octopad organization and relevant workspace before writing. Identify the affected product or products from current evidence; do not equate product, repository, project, or workspace. Confirm each repository and branch from current evidence. Follow their local instructions. Before creating a Page, use the workspace's available folder and page-preparation guidance and preserve its established organization.
+1. Confirm the connected Octopad organization and relevant workspace before writing. Identify the affected product or products from current evidence; do not equate product, repository, project, or workspace. Confirm each repository and branch from current evidence. Follow their local instructions. Before creating a Page, file it in the Product folder of its scope, or the folder that already holds such pages, and follow its page-preparation guidance; a missing organization folder is created by an admin's AI, while a member's AI leaves the page unfiled and says so.
 2. Search before creating, and before declaring absence. Read likely matches, not only titles. Reuse and link existing pages, streams, tasks, decisions, repository docs, and PRs. Supersede or redirect duplicates non-destructively after preserving unique facts and links; never automatically delete content or overwrite history.
 3. Prove a negative before writing one. `No documentation impact` is a claim about the maintained set for every affected product. Harvest terms from the changed lines and each touched file's header comments. First list that maintained set without a title filter and read its descriptions or summaries; then open likely candidates and supplement the inventory with search over the harvested names and product terms. Record the receipt beside the claim, on one line: affected product or products, terms searched, pages inventoried, candidates read or `no candidate`, and either the document the change cites or `the change cites no document`. Search alone, or an inventory of the wrong product, proves nothing. Behavior that changed while no page owns it is a gap: record one documentation-debt item instead of closing the question.
 4. Treat unknown facts as unknown. Ask only when an unresolved system boundary, product intent, or authority conflict would materially change the result. An explicit unresolved authority conflict affecting this change always meets this bar: preserve both sources and ask instead of choosing or rewriting either one. Otherwise use a concise `Unknown`, `Unverified`, or documentation-debt marker and keep working.
 5. Never fabricate architecture, behavior, ownership, dates, metrics, source revisions, release state, or customer evidence. Derive technical facts from current code and repository configuration when available.
-6. Keep provenance beside material claims: evidence source, observed revision or release, verification state, and last verified time. Do not present an old observation as current. The Company Overview is the exception: where a change came from goes in the edit's change summary.
+6. Keep provenance beside material claims: evidence source, observed revision or release, verification state, and last verified time. Do not present an old observation as current. An En bref holds answers only: their provenance stays in the page body.
 7. Minimize persisted evidence. Never copy secrets, credentials, private local paths, personal or customer identifiers, or unnecessary source bodies into Octopad. Prefer a safe repository link, public revision, or redacted summary that proves the claim without exposing unrelated data.
 
 ## Administer the documentation system
 
 Use this asymmetric structure:
 
-- Keep one concise **Product Overview** role per product for purpose, experience, design pillars, non-goals, and relationships above system specs. Keep this authority distinct from the Product Map's navigation and status role, even when one existing page serves both through separate sections.
-- Keep exactly one **Product Map** per product as its entry point. A portfolio index may route to several product maps but must not restate their truth. Adopt an existing Product Overview or index when it already serves the product's entry-point authority.
+- Keep one **Product Overview** per offer, a head page (`head_type: product_overview`) for purpose, experience, design pillars, non-goals and relationships above system specs, with a Marketing section that `manage-product-marketing` writes. Products sold together to one audience at one price share one; a product gets its own only when its audience or its price differs. Its En bref key `offer_and_availability` is yours, held to the evidence a Product Fact needs; `audience_and_need`, `promise` and `conditions` are product marketing's.
+- Keep exactly one **Product Map** per product as its entry point, distinct from the Product Overviews it lists. A portfolio index may route to several product maps but must not restate their truth. Adopt an existing index when it already serves as the entry point.
 - Keep one evolving **Product Spec** for each significant product system.
 - Add a **Behavioral Contract** only when risk, ambiguity, or cross-boundary precision warrants one.
 - Keep one short canonical **Architecture Map** in Octopad. Put it in a connected repository instead when the team wants architecture to change in the same review as the code; then keep the Octopad entry as its link, ownership, status, related systems, and verification metadata. Either way, name the one canonical home and do not maintain both.
@@ -110,11 +110,11 @@ When product work needs a Task, reuse suitable existing work and follow the acti
 
 ## Work with the other documentation skills
 
-Product documentation owns product behavior, release truth, and Product Facts. Product marketing consumes Product Facts and owns ICP, positioning, pricing, campaigns, approved claims, and their messages. Company context owns business-level context and the Company Overview shell. Technical writing improves technical and user documentation without deciding its facts or evidence state.
+Product documentation owns product behavior, release truth, Product Facts, and each Product Overview except its Marketing section. Product marketing consumes Product Facts and owns that section, with ICP, positioning, pricing, campaigns, approved claims, and their messages. Activity context owns business-level context and the Activity Overview. Technical writing improves technical and user documentation without deciding its facts or evidence state.
 
 For a pure marketing request, do not draft the output here. Load product marketing when it is available; otherwise name that owner and hand the request over without inventing copy.
 
-When owned product truth changes, update this family's canonical records and identify every affected downstream output. Hand each external projection to its owner. If that skill is available, the same request authorizes the downstream edit, and its own gates are satisfied, load it and continue rather than leaving known stale text behind. Until projection assembly is automated, the skill changing an authoritative source patches the facts that source supplies in a shared Company Overview, when the request authorizes it, with facts only: no link, identifier, revision date, source line or maintainer name. Say where the change came from in the edit's change summary, and keep the whole page within 2,000 characters (the session brief cuts the rest): shorten only your own facts, and report an excess you cannot remove. Never use that narrow exception to take over another family's sources.
+When owned product truth changes, update this family's canonical records, and in the same turn the Product Overview's `offer_and_availability` when the change alters it, then identify every affected downstream output. Hand each one to its owner. If that skill is available, the same request authorizes the downstream edit, and its own gates are satisfied, load it and continue rather than leaving known stale text behind.
 
 Product Facts are the operational seam: this skill produces and verifies them per product; product marketing consumes them and owns claims derived from them. A correction or rollback must leave the Fact-to-output dependency visible so affected messages can be reviewed without rewriting unrelated products or outputs.
 

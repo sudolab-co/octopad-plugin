@@ -17,9 +17,9 @@ These dimensions are optional lenses, not tags to populate or mutually exclusive
 
 ## Decide where context belongs
 
-Read the existing owner first. An association charter can own mission; a project README can own experimental purpose; an onboarding Overview can own the creator's directly stated activity. Keep substantial detail on its owning page rather than copying it.
+Read the existing owner first. An association charter can own mission; a project README can own experimental purpose; the Activity Overview onboarding seeded can own the creator's directly stated activity. Keep substantial detail on its owning page rather than copying it.
 
-Create a separate brief when its independent scope or audience requires it, or when context can no longer stay concise without losing necessary meaning. Before extracting context, identify which section becomes authoritative, preserve its provenance, and obtain any required move/overwrite authorization. Leave a bounded projection in its place. Do not retain two independent copies.
+Create a separate brief when its independent scope or audience requires it, or when context can no longer stay concise without losing necessary meaning. Before extracting context, identify which section becomes authoritative, preserve its provenance, and obtain any required move/overwrite authorization. Leave a link in its place, never a second copy.
 
 A brief may contain purpose, relevant participants/relationships, contribution to value, chosen direction and non-choices, constraints and source links. These are possible content, not mandatory headings. Diagnosis is useful when an actual obstacle drives a choice; do not require “the single obstacle” for every activity. A good choice explains what it changes and excludes; generic aspirational strategy is insufficient.
 

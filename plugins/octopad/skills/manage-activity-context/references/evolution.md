@@ -4,7 +4,7 @@ Treat a change as a scoped event, not a migration to a new organizational templa
 
 1. Read current context and identify exactly what changed and who stated it.
 2. Distinguish established facts, intentions, unresolved questions and required decisions.
-3. Identify affected owners, projections and audiences. Explicitly leave unrelated scopes alone.
+3. Identify affected owners, En bref keys and audiences. Explicitly leave unrelated scopes alone.
 4. Update only authorized context. Propose separately any new ownership, access, move or archival action.
 5. Read back, report remaining gaps and hand off only the necessary product, commercial or execution work.
 
@@ -28,7 +28,7 @@ If the bakery later licenses the ERP to others, retain its internal use and add 
 
 ## Agency and client mission
 
-An agency can build a tool for client A while developing its own product and serving client B. A's changed workflow belongs in A's authorized mission/product context, not in the agency's general strategy or B's workspace. A shared overview may contain an approved safe relationship summary, never private mission details by default. Losing access means “unavailable,” not “deleted” or permission to retrieve through another channel.
+An agency can build a tool for client A while developing its own product and serving client B. A's changed workflow belongs in A's authorized mission/product context, not in the agency's general strategy or B's workspace. The organization's Activity Overview may contain an approved safe relationship summary, never private mission details by default. Losing access means “unavailable,” not “deleted” or permission to retrieve through another channel.
 
 ## Association, research and uncertainty
 

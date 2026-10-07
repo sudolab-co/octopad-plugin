@@ -4,15 +4,15 @@ Use the smallest set of durable artifacts that makes the product understandable 
 
 ## Product Overview
 
-Keep one Product Overview role per product when purpose, intended experience, design pillars, non-goals, and relationships need an authority above system specs. Keep that role distinct from the Product Map's navigation and status role. One established page may serve both through separate sections when creating another would duplicate truth.
+Keep one Product Overview per offer: the head page whose En bref the Organization Overview shows. It holds the offer's purpose, intended experience, design pillars, non-goals, and relationships above system specs, and a Marketing section that product marketing writes. Products sold together to one audience at one price share one. Keep it distinct from the Product Map's navigation and status role.
 
 ## Product Map
 
-Keep one concise Product Map per product as the entry point. A portfolio index may route to several product maps but never restates their product truth. If an existing Product Overview or index already performs the entry-point job, adopt or reshape it instead of creating a competing map. Include:
+Keep one concise Product Map per product as the entry point. A portfolio index may route to several product maps but never restates their product truth. If an existing index already performs the entry-point job, adopt or reshape it instead of creating a competing map. Include:
 
 - confirmed product purpose and intended users;
 - significant product systems and each system's lifecycle state;
-- links to each Product Spec and, when useful, its active work stream;
+- links to each Product Overview, each Product Spec and, when useful, its active work stream;
 - the canonical Architecture Map, when architecture exists;
 - the Ideas page, when one exists;
 - important cross-system relationships;
