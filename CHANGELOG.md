@@ -1,6 +1,6 @@
 # Changelog
 
-## 14.7.0 - Unreleased
+## 14.7.0 - 2026-10-07
 
 octopad-knowledge-evidence 1.2.0 teaches working pages. Material that later sessions of a task or a time-bound stream need goes on a working page of it, and nothing that matters stays only there: the AI moves it to Key Information, a page or an open task it informs, or proposes a home for it. When the AI hands the work over, it keeps the working pages that are reference as a whole as ordinary pages and archives the rest; when the work reopens, it takes the pages it needs out of Archive. When widened searches still find nothing, it searches Archive. Octoplan 6.3.0 preserves the verbatim answer of a worker without Octopad on a working page of its task. Ships with the matching server changes (sudolab-co/octopad#1176, #1179 and #1175; task 20f9fba6).
 
