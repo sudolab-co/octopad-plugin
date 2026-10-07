@@ -4,7 +4,7 @@ description: "Maintain the user's personal Notepad between AI sessions: interrup
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-notepad"` when you open this skill.
 
-Version: 3.1.0
+Version: 3.1.1
 
 # Whose memory
 
@@ -160,7 +160,7 @@ The save must atomically keep the previous document in private history and repla
 - Engaged work belongs in a Task, confirmed durable information in Knowledge, and a working rule the user confirms in Knowledge. A private note is not permission to disclose it: promote only when the user's request already authorizes that audience and content, otherwise ask. Read the destination back and check it holds the entry's substance before retiring the entry; a link to an incomplete destination is not enough.
 - Remove an entry from the active document only with verified evidence or the user's explicit decision; the save's reason names the entry, the outcome and any destination. A partly settled thread keeps its remainder and a verified next step.
 - Each save archives the previous text. History retains the newest snapshots within 10 MB and 1,000 versions, always keeping at least 20, and each save prunes beyond that. Use `list_history` or `search_history`, then `get_history`. If history is unavailable, keep the entry rather than remove it.
-- Only the owner can purge their history, with `purge_history`, which deletes it for good: only at the user's request, after confirming with them.
+- Only the owner can purge their history, with the `notepad_purge` tool, which deletes it for good: only at the user's request, after confirming with them.
 - To recover context, read the relevant version, check what is still true, and add only the useful part through the same conditional save. Never restore a whole old document over newer work to recover one entry.
 
 No deletion to make room, no expiry inferred from age, no promotion inferred from repetition, and no cleanup waiting for an absent author.
