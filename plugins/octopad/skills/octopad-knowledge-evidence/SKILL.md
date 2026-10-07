@@ -6,11 +6,11 @@ If the Octopad connection bundled with this plugin offers the `skill_opened` too
 
 # Where knowledge is written
 
-Version: 1.0.0-public-r1 (local shared-contract candidate, not installed)
+Version: 1.1.0
 
 - Three branches hold durable workspace context — `knowledge`, `pages` and `files`. Retrieval reaches only the branch a thing went into, so the branch is chosen on purpose and never by habit.
 - One fact, one choice and its reason, one open point, one threat: each of those is a single atomic item, written with `knowledge`.
-- Reference that outlives the effort — how a system is built, what a piece of research found, what a meeting settled — is a page, written with `pages`.
+- Reference that outlives the effort — how a system is built, what a meeting settled — is a page, written with `pages`. Research or analysis for one decision is never kept or offered as a page: its Decision's rationale cites the decisive sources.
 - A file or a document the user hands over: offer, on the turn it arrives, to put it into `files` and to attach it to the task it belongs to; what stays in chat is gone once the session closes.
 - When it is not obvious where a shared file belongs, work out its home first, and never advise the user to leave the original outside Octopad because the destination was unclear.
 - An advisory, a security bulletin, a supplier's change of terms, a number you have just measured: each of those is written up on the turn it surfaces, not held back for the close.

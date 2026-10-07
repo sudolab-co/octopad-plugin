@@ -1,10 +1,36 @@
 # Changelog
 
-## 14.0.1 - Unreleased
+## 14.6.0 - Unreleased
+
+octopad-session follows the session brief's **Octopad desktop (early access)** line as written, instead of acting on it before the first reply. The line now says when to open the desktop: right before the AI's first Octopad write, before it shows a list, board or calendar of work, or when the user asks. Ships with the matching server change (sudolab-co/octopad#1168). Both distributions move to 14.6.0.
+
+## 14.5.0 - 2026-10-07
+
+octopad-knowledge-evidence 1.1.0 says that research or analysis for one decision is never kept or offered as a page: its Decision's rationale cites the decisive sources. The skill's list of page-worthy reference no longer names "what a piece of research found", which led an AI to offer to keep a one-off research report as a page once the Decision was recorded. Research that serves more than one decision is still reference that outlives the effort. Ships with the matching server change (sudolab-co/octopad task 0ce4668e).
+
+## 14.4.0 - 2026-10-07
+
+octopad-planning-and-work-design 4.1.0 says that getting a deliverable accepted is never a task of its own, even when someone else gives the acceptance. Checking a deliverable, getting it accepted and delivering it (sending, publishing, deploying) stay in its Done when; only a step another person carries out as their own work, such as a deploy they run, can be its own task. The old wording, "unless another person owns that step", led an AI to turn "the client approves the logo" into a task for the client. While only a yes or no on the result is left, the task waits in `pending_review` for its approver, the creator unless one is named. The AI asks the approver now if they are in the conversation; when the yes came outside Octopad, it tells the user who must record it (the approver, the creator or an admin); a refusal sends the task back with `reject_completion` and its reason. A task waiting on a reply is `blocked` only when the reply carries something the work needs. Octoplan 6.2.1 applies the same rule when it plans a stream. Ships with the matching server change (sudolab-co/octopad task ed3632f7), which adds the named approver.
+
+## 14.3.0 - 2026-10-07
+
+octopad-notepad 3.1.0 lets the AI set a reminder on its own when it leaves the user a next step, or sets a task `blocked`, that waits on an event it cannot watch: a pull request merged, a deploy live, a reply received, a date passed. The event may be someone else's act, such as a teammate's merge. The AI sets one only when the event frees something the user must do and a later session can check it. The reminder names the event and what it frees: a check to run, or a task to resume or close. At every opening of a main session, the AI checks whether each such event has happened and, once it has, says so in one line with what it frees as of now, such as the tasks a merge unblocked. Until then it says nothing, and a cleanup never removes a reminder whose event has happened before it is delivered. Work the user hands to another person stays a task assigned to that person. Ships with the matching server change, kernel 2.4.0. Shared update for Claude Code and Codex: both distributions move to 14.3.0.
+
+## 14.2.0 - 2026-10-07
+
+Octoplan 6.2.0 routes Claude workers doing hard bounded code, configuration or command-line work, cross-file coordination and consequential changes included, to Opus 5.5 at `high` instead of `xhigh`. On Anthropic's published per-effort coding results for Opus 5.5, `xhigh` costs 1.8 to 2.1 times `high`, for 2.2 more points on Terminal-Bench 4.0, 2.6 fewer on FrontierCode v1.1 (main set) and the same score on CursorBench 4.0. Hard document or knowledge work, and a mixed task whose document part is the hard one, stays at `xhigh`: on AA-Briefcase v1.1, the same page's long-horizon knowledge-work benchmark, `xhigh` gains 75 Elo for 1.96 times the cost. Reviews, open design (with Fable 5.1 under its existing conditions), plan composition and repair, and broad audits also keep `xhigh`; any other worker gets it only with a recorded reason.
+
+A saved `Sonnet 5` worker route is now read as Opus 5.5 at `medium`, recorded once like the existing `Opus 5` reading, since Claude Code's `sonnet` alias selects Sonnet 5.5 on the Claude API from version 2.1.284. Sonnet stays out of the default routes. Other routes saved at `xhigh` before 6.2.0 keep their reason and run as saved, and other saved routes stay floors.
+
+Claude runtime only: Codex routes are unchanged. Both distributions move to 14.2.0.
+
+## 14.1.0 - 2026-10-07
+
+manage-product-documentation 5.2.0 also loads when a product feature is assessed (a usage or performance review, a diagnosis), so the AI reads the feature's spec before judging it. It matches Octopad's served methodology, which opens the skill before the AI assesses or changes a product feature (sudolab-co/octopad#1159).
+
+## 14.0.1 - 2026-10-06
 
 Codex loads its own MCP configuration, `.mcp.codex.json`, which gives `start_session` a 15,000-token output budget so the session brief reaches the AI whole. Claude Code keeps `.mcp.json`, since it refuses that per-tool field. In Codex Code Mode, octopad-session asks for a 20,000-token emission budget, keeps the response and, if it is still cut, reads the rest back in chunks before acting; those numbers are Octopad's choices, not Codex defaults. Ships with the matching server change (sudolab-co/octopad#1132).
-
-octopad-session follows the session brief's **Octopad desktop (early access)** line as written, instead of acting on it before the first reply. The line now says when to open the desktop: right before the AI's first Octopad write, before it shows a list, board or calendar of work, or when the user asks. Ships with the matching server change (sudolab-co/octopad#1168).
 
 ## 14.0.0 - 2026-10-05
 
