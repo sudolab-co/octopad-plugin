@@ -6,11 +6,13 @@ If the Octopad connection bundled with this plugin offers the `skill_opened` too
 
 # Where knowledge is written
 
-Version: 1.1.0
+Version: 1.2.0
 
 - Three branches hold durable workspace context — `knowledge`, `pages` and `files`. Retrieval reaches only the branch a thing went into, so the branch is chosen on purpose and never by habit.
 - One fact, one choice and its reason, one open point, one threat: each of those is a single atomic item, written with `knowledge`.
-- Reference that outlives the effort — how a system is built, what a meeting settled — is a page, written with `pages`. Research or analysis for one decision is never kept or offered as a page: its Decision's rationale cites the decisive sources.
+- Reference that outlives the effort — how a system is built, what a meeting settled — is a page, written with `pages`. Research or analysis for one decision is never kept or offered as an ordinary page: its Decision's rationale cites the decisive sources.
+- Material that later sessions of a task or a stream need goes on a working page of it. Nothing that matters stays only there: move it to its home (Key Information, a page, an open task it informs), and propose a home for, or ask about, anything important that has none.
+- When you hand the work over, finish moving what matters, then keep each working page that is, as a whole, reference that outlives the effort, and archive the rest. When the work reopens, take the pages it needs out of Archive.
 - A file or a document the user hands over: offer, on the turn it arrives, to put it into `files` and to attach it to the task it belongs to; what stays in chat is gone once the session closes.
 - When it is not obvious where a shared file belongs, work out its home first, and never advise the user to leave the original outside Octopad because the destination was unclear.
 - An advisory, a security bulletin, a supplier's change of terms, a number you have just measured: each of those is written up on the turn it surfaces, not held back for the close.
@@ -36,7 +38,7 @@ Version: 1.1.0
 - **A claim about content** — whether a page still says X, whether Y appears at all — is settled by `search`ing the text and quoting the passages that match, never from the directory.
 - **A compound question** — every page about X that mentions Y — takes the directory for X, a `search` for Y inside that set, and a full read reserved for the one item the search leaves undecided.
 - **Quoting, rewriting or editing** — pull the whole page with `pages(action:"get")`, and only a page the steps above have already named; reading in full stands in neither for building the set nor for proving the claim.
-- **Nothing found is not proof that nothing exists.** Widen the terms and try again, or open the candidates you did identify; only a search that has really been run over the text itself can rule anything out.
+- **Nothing found is not proof that nothing exists.** Widen the terms and try again, then rerun `search` with `include_archived`, or open the candidates you did identify; only a search that has really been run over the text itself can rule anything out.
 - Low confidence means the claim is not yet proven: sharpen the query, or open the one weak hit and settle it. It is not a licence to work through the pages one by one.
 - Reuse what `build_context` returned without redundant retrieval, except when a consumed source must be revalidated after composition under its owner's freshness contract, or changed evidence makes that snapshot uncertain. Recheck the relevant internal identity, content and revision before the dependent write; this does not authorize a new external investigation or wider scope.
 
