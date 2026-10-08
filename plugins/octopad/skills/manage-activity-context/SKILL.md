@@ -25,31 +25,31 @@ Read [adaptation](references/adaptation.md) before any context, ownership or sco
 
    Later repair never authorizes an earlier out-of-scope write.
 
-2. Read the Activity Overview of the affected scope, with its En bref, and relevant context owners, plus available onboarding facts, before deciding the change. A listing of page titles is not this read; reading the page does not authorize changing it. Search before declaring an owner absent. Inaccessible is not absent. Reuse sufficiently clear facts; ask only about a gap that changes the next action.
+2. Read the Activity Overview of the affected scope, with its At a glance block, and relevant context owners, plus available onboarding facts, before deciding the change. A listing of page titles is not this read; reading the page does not authorize changing it. Search before declaring an owner absent. Inaccessible is not absent. Reuse sufficiently clear facts; ask only about a gap that changes the next action.
 3. Separate the actor, activity, project, built solution, beneficiaries and contribution to value. Distinguish funding from selling that solution. Identify only the relationships needed for this request; do not create a relationship registry.
 4. Locate the authoritative section for each changed question. An Activity Overview, charter, README or brief can own context. Preserve that owner's identity; a familiar page type is not a reason to duplicate it. Custom pages may be explicitly adopted for a named question after reading them; adoption is scoped, not automatic maintenance of all custom content.
 5. Use the smallest adequate document. Keep directly captured context in the Activity Overview if it remains clear and appropriately shared. Create a separate activity/project brief only when an independent durable question, audience, scope or growing detail warrants it. No compulsory Brief, empty skeleton, or second Activity Overview.
 
-Before mutation, distinguish changed facts, the En bref keys they alter, and unchanged pages. Write only the first two. A statement that another project remains unchanged is a preservation constraint, not a request to restate it in that project's page. Opening another skill to understand an interface does not expand the assignment: updating a solution's purpose alone does not require a product map or specification. Hand off product or commercial work only when an actual unresolved request needs that owner, not automatically when software or a sale is mentioned.
+Before mutation, distinguish changed facts, the At a glance keys they alter, and unchanged pages. Write only the first two. A statement that another project remains unchanged is a preservation constraint, not a request to restate it in that project's page. Opening another skill to understand an interface does not expand the assignment: updating a solution's purpose alone does not require a product map or specification. Hand off product or commercial work only when an actual unresolved request needs that owner, not automatically when software or a sale is mentioned.
 
-# The Activity Overview and its En bref
+# The Activity Overview and its At a glance block
 
-The Activity Overview is the Activity family's head page (`head_type: activity_overview`): one for the organization, and one in each workspace that is an activity of its own, such as a client mission or a personal project. Find it by its type, whatever its title. Onboarding seeds the organization's with every En bref key `missing`: fill that page, never a second one. File Activity pages in the Activity folder of their scope; a missing organization folder is created by an admin's AI, while a member's AI leaves the page unfiled and says so.
+The Activity Overview is the Activity family's head page (`head_type: activity_overview`): one for the organization, and one in each workspace that is an activity of its own, such as a client mission or a personal project. Find it by its type, whatever its title. Onboarding seeds the organization's with every At a glance key `missing`: fill that page, never a second one. File Activity pages in the Activity folder of their scope; a missing organization folder is created by an admin's AI, while a member's AI leaves the page unfiled and says so.
 
-Each session opens on the En bref of the organization's head pages and its workspace's, binding constraints first and whole; the body is read on demand. The Activity Overview's keys:
+Each session opens on the At a glance blocks of the organization's head pages and its workspace's, binding constraints first and whole; the body is read on demand. The `pages` tool writes a block through its `at_a_glance` parameter. The Activity Overview's keys:
 
 - `what_we_do`, `for_whom`, `why`: the activity, whom it serves and what it is for.
 - `binding_constraints`: only the durable constraints every session must respect.
 - `who_decides`: a responsibility summary, never a member roster.
 
-Each holds `missing`, `not applicable` or an answer the page supports, essential first. When your change alters what the En bref says, update it in the same turn. The En bref holds answers only: sources, detail and history stay in the body, beside the facts they support. Offers and their prices go in each offer's Product Overview, not here. An organization-level block is read by every member, so client or project detail stays in its workspace's Activity Overview.
+Each holds `missing`, `not applicable` or an answer the page supports, essential first. When your change alters what the At a glance block says, update it in the same turn. The block holds answers only: sources, detail and history stay in the body, beside the facts they support. Offers and their prices go in each offer's Product Overview, not here. An organization-level block is read by every member, so client or project detail stays in its workspace's Activity Overview.
 
 # Cut-over from a Company Overview
 
 An organization whose sessions still open on an untyped Company Overview switches to the composed Overview when that page becomes its Activity Overview. Offer the cut-over when you work on the organization's context. Only an organization admin's AI can carry it out, since retyping an organization page is admin-only; a member's AI says so and creates no organization Activity Overview beside it.
 
-1. Create the Product Overview of each offer the page describes, and the Market Overview when market content exists, with their En bref, through their skills. Their target, price and difference come only from what the page states; anything you infer stays proposed.
-2. Type the old page itself as the Activity Overview, with its En bref in the same call.
+1. Create the Product Overview of each offer the page describes, and the Market Overview when market content exists, with their At a glance blocks, through their skills. Their target, price and difference come only from what the page states; anything you infer stays proposed.
+2. Type the old page itself as the Activity Overview, with its At a glance block in the same call.
 3. With the user's agreement, move its offer, audience and money sections into the Marketing section of the Product Overview they describe.
 
 # Scope, access and durable change
@@ -62,11 +62,11 @@ Preserve project identity and sibling projects through evolution. A new particip
 
 # Exclusions and preservation rules
 
-- Financial models, budgets, runway, legal text, personnel records, operating procedures, internal policies, supplier details and support answers do not belong in these core context summaries. Leave them with their authorized specialist or ordinary workspace owners; a brief may link to them, an En bref never does. Do not generate legal/financial artifacts here. A safe responsibility summary is not a copied member roster.
+- Financial models, budgets, runway, legal text, personnel records, operating procedures, internal policies, supplier details and support answers do not belong in these core context summaries. Leave them with their authorized specialist or ordinary workspace owners; a brief may link to them, an At a glance block never does. Do not generate legal/financial artifacts here. A safe responsibility summary is not a copied member roster.
 - A durable context constraint explains a meaningful boundary on choices. Detailed rules for how work is performed stay in their process owner; summarize only their contextual consequence when useful.
 - No secrets, credentials, private filesystem paths, personal/customer identifiers or wholesale source copies. Persist the least safe evidence needed. Client material stays within its authorized audience, including during summarization.
 - Imports are reviewed one page at a time. Propose destinations; move or archive only under the required approval, after readback confirms an adequate home. No bulk migration. Archived material is not current context.
 
 # Finish check
 
-Did the change answer the actual question without inventing a business? Is ownership unambiguous by section? Were existing onboarding content, unrelated projects and access boundaries preserved? Are hypotheses distinct from established facts? Does each En bref you touched still match its page? Report what was actually verified and the next necessary handoff, not a fictional completed workflow.
+Did the change answer the actual question without inventing a business? Is ownership unambiguous by section? Were existing onboarding content, unrelated projects and access boundaries preserved? Are hypotheses distinct from established facts? Does each At a glance block you touched still match its page? Report what was actually verified and the next necessary handoff, not a fictional completed workflow.

@@ -22,7 +22,7 @@ Outside this skill: why the activity exists, for whom and under which constraint
 
 The Marketing section answers these questions as material arrives, not as mandatory headings: the target and its situation; the promise and its supported difference; the terms; then proof pointers, objections, switching barriers, exclusions, customer vocabulary, tone, channel and the next action expected. Adapt to the circumstance, not to an industry template: separate buyer and user when they differ, funders and volunteers for an association, delivery capacity for a service, distribution for a physical product. An internal tool needs no invented positioning.
 
-Three keys of the Product Overview's En bref are yours: `audience_and_need`, `promise` and `conditions`, the terms. Each holds `missing`, `not applicable` or an answer, essential first; a provisional answer says so. Terms state a model and a status, and a number only with its essential conditions. Proof, tone and channels stay on the page.
+Three keys of the Product Overview's At a glance block are yours: `audience_and_need`, `promise` and `conditions`, the terms. Each holds `missing`, `not applicable` or an answer, essential first; a provisional answer says so. Terms state a model and a status, and a number only with its essential conditions. Proof, tone and channels stay on the page.
 
 Customer words stay on Market pages as short expressions with source and date, and the Marketing section links to them; a count ("4 of 6 interviewed customers") needs that many distinct sources.
 
@@ -34,8 +34,8 @@ At first creation, read onboarding and the existing owners, then seed only ident
 
 ## Refresh narrowly
 
-Changed evidence triggers a review of the claims it affects, not a repositioning: correct the supported facts, keep accepted choices until their authority changes them, and mark copy left without proof as unusable. When your change alters what the En bref says, update those keys in the same turn.
+Changed evidence triggers a review of the claims it affects, not a repositioning: correct the supported facts, keep accepted choices until their authority changes them, and mark copy left without proof as unusable. When your change alters what the At a glance block says, update those keys in the same turn.
 
 ## Finish economically
 
-An ordinary capture costs one read of the destination, one write carrying the section and its En bref keys together, and one verification.
+An ordinary capture costs one read of the destination, one write carrying the section and its At a glance keys together, and one verification.

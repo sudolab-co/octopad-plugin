@@ -4,7 +4,7 @@ Treat a change as a scoped event, not a migration to a new organizational templa
 
 1. Read current context and identify exactly what changed and who stated it.
 2. Distinguish established facts, intentions, unresolved questions and required decisions.
-3. Identify affected owners, En bref keys and audiences. Explicitly leave unrelated scopes alone.
+3. Identify affected owners, At a glance keys and audiences. Explicitly leave unrelated scopes alone.
 4. Update only authorized context. Propose separately any new ownership, access, move or archival action.
 5. Read back, report remaining gaps and hand off only the necessary product, commercial or execution work.
 

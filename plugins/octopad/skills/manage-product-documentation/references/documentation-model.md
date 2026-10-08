@@ -4,7 +4,7 @@ Use the smallest set of durable artifacts that makes the product understandable 
 
 ## Product Overview
 
-Keep one Product Overview per offer: the head page whose En bref the Organization Overview shows. It holds the offer's purpose, intended experience, design pillars, non-goals, and relationships above system specs, and a Marketing section that product marketing writes. Products sold together to one audience at one price share one. Keep it distinct from the Product Map's navigation and status role.
+Keep one Product Overview per offer: the head page whose At a glance block the Organization Overview shows. It holds the offer's purpose, intended experience, design pillars, non-goals, and relationships above system specs, and a Marketing section that product marketing writes. Products sold together to one audience at one price share one. Keep it distinct from the Product Map's navigation and status role.
 
 ## Product Map
 
