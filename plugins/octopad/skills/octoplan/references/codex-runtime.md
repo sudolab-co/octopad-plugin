@@ -69,13 +69,24 @@ At a natural boundary, persist in-flight facts, reconcile children and uncertain
 
 After launch, replacement or a status request, name the scope, accessible chat, observed state, latest receipt and next action or wait. Keep opaque IDs in the ownership record. Never label pending setup or an idle actor "running".
 
-## Optional session-owned Goal
+## Internal supervisor Goal
 
-Offer an optional Goal at autonomy choice only when supported and no incompatible unfinished Goal prevents creation. Use `create_goal` only on explicit user request, after authorization; set `token_budget` only when explicitly requested. Delivery needs no Goal.
+A native Goal keeps the supervisor working toward the entrusted outcome across turns, within the host's actual continuation limits. It adds no delivery mode, approval or user-facing setup question. Octopad still owns the Brief, Plan, authority, progress and proof; the native Goal is not an Octopad business goal or a second task graph.
 
-A Goal stays with the session that created it. Record that owner; children never create, mutate or inherit it. An explicit Goal request for the delivery chat is handled there. A Goal already in the planner stays there without becoming a delivery prerequisite or a reason to add a relay. Only its actual owner can complete it, after verifying its whole objective, and must report final usage when budgeted. Handoff and task completion alone never complete or transfer it.
+After claiming delivery ownership, inspect the exposed Goal tools and current state with `get_goal`. Use a compatible active Goal owned by this supervisor chat; otherwise create one only when all of these hold:
 
-Refresh with `get_goal`; never mutate unrelated Goals. `blocked` obeys the tool's threshold: the same impasse on at least three consecutive genuine Goal turns, without meaningful in-scope progress. Polls are not turns; resumed blocked Goals restart that audit. Never complete to stop, save budget or enable handoff. An older Goal remains with its original parent: reconcile its owner and actors, preserve its history, and continue without a new Goal unless separately requested and legitimately creatable.
+- The runtime permits creation from an applicable explicit user request or system/developer instruction. The delivery mandate, Full autonomy, this skill and an agent-written launch prompt do not supply that permission. Carry an existing request's exact source and scope into the receiving chat; do not broaden it to other actors.
+- No unfinished Goal prevents creation, and the current mandate, gates and ownership allow this chat to pursue the objective. Set `token_budget` only when explicitly requested; never invent or renew a budget.
+
+When these conditions do not hold, continue authorized Octoplan delivery without adding a Goal or asking the user to enable one. Keep unrelated Goals untouched. A paused, blocked or budget-limited Goal is not an active Goal to reuse: follow the host's resume rules and the user's current instruction before continuing work it covers; do not evade a stop or limit through another Goal, actor or ordinary turn.
+
+The objective names the full confirmed Brief outcome within this supervisor's recorded boundary, its acceptance proof, and the Brief and Plan-contract references. For example: "Deliver the agreed onboarding flow under Brief B and Plan P, with its acceptance checks and required approvals evidenced." Do not shorten it to "open the PR", "finish these tasks" or "reach the next gate" unless that is the whole entrusted outcome. Reference the current Octopad records instead of copying the backlog. Record the Goal's returned identity when exposed, owner chat, objective and permission source in the existing supervisor ownership record; add no separate Goal ledger.
+
+On native continuation or resume, refresh `get_goal` and reconcile the current Brief, mandate, ownership, gates and actual results before dispatch. An older objective never overrides a changed mandate; use [recovery](recovery.md) for material drift. A Goal requests more work, not permission for an effect. At a gate, surface the real human need once and continue independent covered work; never repeat the same question merely because the Goal continues.
+
+Use `update_goal` only under its native conditions: `paused` only on the user's explicit pause request; `blocked` only after the same impasse on at least three consecutive genuine Goal turns with no meaningful in-scope progress. Polls are not turns; a user resume after `blocked` starts that audit again. Budget and usage limits belong to the host. Complete only after common supervision proves the whole objective, and report final token usage when budgeted. A partial deliverable, gate, budget limit or handoff is never completion.
+
+The Goal stays with its creator chat. Children never create, mutate or inherit it; a planner's existing Goal stays there without adding a permanent relay. Before replacing a supervisor, reconcile its native continuation as well as its children and prove cessation under [recovery](recovery.md). The successor does not inherit that Goal or its creation permission: reassess any explicitly applicable request in the destination. No fake completion to enable replacement, and no extra loop, hook or scheduler to compensate for missing continuity.
 
 ## Read existing plans unchanged
 

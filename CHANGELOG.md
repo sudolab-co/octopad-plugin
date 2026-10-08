@@ -1,5 +1,11 @@
 # Changelog
 
+## 15.2.0 - Unreleased
+
+Octoplan 6.4.0 makes a Codex native Goal an internal supervisor mechanism instead of an option offered at autonomy choice. A supported, permitted Goal names the full confirmed Brief outcome within the supervisor's boundary and its acceptance proof. The supervisor checks native state, ownership and the current mandate before continuing, respects human gates, and completes only on proof of that whole objective.
+
+Creation still needs an applicable explicit user request or system/developer instruction under the host's rules; choosing delivery or reading this skill grants none. Without that permission or capability, delivery continues without adding a Goal or asking the user to enable one. Existing stops and budgets are respected, and handoff never transfers a Goal or justifies false completion. No new scheduler, delivery mode or Claude runtime behavior. Both distributions move to 15.2.0.
+
 ## 15.1.0 - Unreleased
 
 octopad-knowledge-evidence 1.3.0 puts only a document that is authoritative in itself, such as a contract or a price grid, into `files`, attached to its task, without asking first; it no longer offers to keep every file the user hands over. Kernel 2.6.0 keeps no raw material and captures in the same turn, so the skill drops its line against leaving the original outside Octopad and its own same-turn capture line, and adds only what the kernel does not say: each extract drawn from raw material keeps a pointer to the original where one exists and is permitted, and is otherwise labeled unverified. technical-writing 2.0.1 states the em-dash ban as Octopad's house rule, which overrides the Google guide; same behavior. Needs kernel 2.6.0 (sudolab-co/octopad#1196) and lands with 15.0.0. Both distributions move to 15.1.0.
