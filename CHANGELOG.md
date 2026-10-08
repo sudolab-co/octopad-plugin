@@ -1,5 +1,9 @@
 # Changelog
 
+## 15.3.0 - Unreleased
+
+Octoplan 6.5.0 puts long reports on a working page of the task or stream, links required files, and records execution receipts in task comments rather than Decisions. Required Octoplan Decisions and existing contract-page receipts stay in place. Both distributions move to 15.3.0.
+
 ## 15.2.0 - Unreleased
 
 Octoplan 6.4.0 makes a Codex native Goal an internal supervisor mechanism instead of an option offered at autonomy choice. A supported, permitted Goal names the full confirmed Brief outcome within the supervisor's boundary and its acceptance proof. The supervisor checks native state, ownership and the current mandate before continuing, respects human gates, and completes only on proof of that whole objective.
