@@ -4,7 +4,7 @@ description: Use when prepared work may benefit from delivery by agents, even wi
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octoplan"` when you open this skill.
 
-Version: 6.5.0
+Version: 7.0.0
 
 # Octoplan
 
@@ -43,13 +43,13 @@ The user describes the need. Apply the common brief and preparation in [octopad-
 - **F6, state-bound review.** Reviews name the exact task and contract revisions inspected. Reconcile drift and refresh affected judgments; never carry PASS over a changed premise or overwrite an old receipt.
 - **F7, ready work moves.** Advance safe ready branches inside the mandate. A wait or failure blocks only work that needs it. A failed trial is evidence to diagnose, not proof that the entire mission must stop.
 - **F8, invariant safety.** Autonomy changes interruptions, never applicable rules, verification, review, persistence, or the evidence floor.
-- **F9, recoverable ownership.** One supervisor owns a given work boundary, recorded in stream Decisions. Before retry or replacement, inspect the authoritative target. A successor proves its predecessor stopped before acting. Use `expected_updated_at` on guarded Octopad updates.
+- **F9, recoverable ownership.** One supervisor owns a given work boundary, recorded in the delivery journal under [records.md](references/records.md), or the valid legacy ownership record. Before retry or replacement, inspect the authoritative target. A successor proves its predecessor stopped before acting. Use `expected_updated_at` on guarded Octopad updates.
 - **F10, integrated closure.** Close only from current integrated evidence: `built`, `reviewed`, `merged`, `applied`, `verified`, `released`, `accepted`, or the domain equivalent. Silence, timeouts, irrelevant green checks, and unrun checks are not PASS.
 - **F11, consequence language.** Ask about a consequence the user owns, in words they can answer. Technical uncertainty goes to diagnosis or review; the user does not certify technical correctness.
 - **F12, one program.** Brief, Plan, and Delivery keep the same banners and experience across environments.
 - **F13, protected effects.** Disclose any effect that bills money to any party or cannot be undone, even when no house rule names it. Its authorization must cover the actual effect and target.
 - **F14, environment intact.** Effective target rules, installed skills, hooks, permissions, privacy, and legal boundaries remain binding. Each actor loads guidance applicable to its work; Octoplan does not replace it or prescribe a fixed catalog. Computer Use and equivalent screen-driven GUI automation require explicit user acceptance of the disclosed targets and actions, including for verification or recovery; Full autonomy alone grants none. Apply the [planning preflight](references/planning.md) before relying on this route. Every delegated worker, reviewer and planning brief carries the accepted scope and its source, or `not authorized`, plus known access limits. User acceptance never overrides runtime restrictions or transfers system or app permissions to another actor.
-- **F15, rigor sized to the stakes.** Every verification, review, and recheck is read against the stakes Decision, in both directions: reversible internal work gets the floor and nothing more, irreversible or outward work gets the full floors. Verification that outgrows the decision it protects is a defect, the same as verification that falls short; every round spends the user's time and money against the same stakes the work does.
+- **F15, rigor sized to the stakes.** Every verification, review, and recheck is read against the recorded stakes, in both directions: reversible internal work gets the floor and nothing more, irreversible or outward work gets the full floors. Verification that outgrows the decision it protects is a defect, the same as verification that falls short; every round spends the user's time and money against the same stakes the work does.
 - **F16, no unmeasured technical claims.** Every path, command, version, count, or behavior written into a record was read or measured in this session; what cannot be measured now is written as unknown, never as fact. A precise-sounding wrong fact invites no check, which is what makes it worse than a vague one.
 
 ## Autonomy and authority

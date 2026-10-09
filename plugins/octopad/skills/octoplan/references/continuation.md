@@ -4,7 +4,7 @@ Load this only when a human actually launches an executor or successor, or an ex
 
 ## Pointers and settings
 
-A continuation is a pointer, never a payload. Persist facts, authority, pending effects and work state in Octopad before handing over. The receiving session reads current workspace/task context and the stream's Decisions; it does not infer authority or completion from the block. A block is not an active successor. Manual launch does not widen the mandate or require a duplicate go.
+A continuation is a pointer, never a payload. Persist facts, authority, pending effects and work state in Octopad before handing over. The receiving session reads current workspace/task context and canonical delivery records under [records.md](records.md); it does not infer authority or completion from the block. A block is not an active successor. Manual launch does not widen the mandate or require a duplicate go.
 
 Task pointer:
 
@@ -18,20 +18,21 @@ Supervisor pointer:
 ```text
 Octoplan <work stream>
 Octopad · Organisation: <organisation> · Workspace: <workspace>
+Journal: <page title> (<page ID>) · Workspace: <owning workspace ID>
 ```
 
-Use the stream's plain name without ` (octoplanned)`. Retain these older Claude blocks unchanged when saved. Also accept existing Codex pointers:
+Use the stream's plain name without ` (octoplanned)`. New supervisor pointers identify the canonical journal so separate deliveries in one stream cannot be confused. Retain saved legacy Claude blocks, which have no journal line, unchanged. Also accept existing Codex pointers:
 
 ```text
 Use $octoplan to resume delivery of <work stream>.
 Octopad: <organization> / <workspace>. Delivery authorization is recorded in the stream Decisions; do not ask for it again.
 ```
 
-A third line may name an indispensable environment fact Octopad cannot hold, such as the branch the chain stacks on. Every block emitted to the user has one plain settings line immediately below its fence: exact saved model, effort, and `solo` or `parallel-safe`. Task settings come from its freshly read Exec line; supervisor settings come from the recorded supervisor route. Read only the actual runtime's profile when interpreting these settings. The receiver verifies readiness, ownership, authority and the predecessor's cessation before any work; a block offered before a gate clears is expressly for later use and cannot waive that gate.
+An additional line may name an indispensable environment fact Octopad cannot hold, such as the branch the chain stacks on. Every block emitted to the user has one plain settings line immediately below its fence: exact saved model, effort, and `solo` or `parallel-safe`. Task settings come from its freshly read Exec line; supervisor settings come from the recorded supervisor route. Read only the actual runtime's profile when interpreting these settings. The receiver verifies readiness, ownership, authority and the predecessor's cessation before any work; a block offered before a gate clears is expressly for later use and cannot waive that gate.
 
 ## Next instructions for manual tasks
 
-Write or update Next only where manual execution is actually used. The instruction is plain text in the existing task description, not another task or state system. Fill actual titles, addresses and settings from current Octopad records. It must say to read the stream's contract Decisions before starting and must match the dependency graph.
+Write or update Next only where manual execution is actually used. The instruction is plain text in the existing task description, not another task or state system. Fill actual titles, addresses and settings from current Octopad records. It must say to read the canonical contract, journal or valid legacy records before starting and must match the dependency graph.
 
 - **Sequential:** after verification, check the named successor is open, unclaimed and ready. Emit its two-line task block and saved settings. If not ready, name the written wait instead.
 - **Human gate next:** name the action and its owner. Offer the next executable task's block and saved settings explicitly for use after that action is verified; the receiving session checks the gate again.

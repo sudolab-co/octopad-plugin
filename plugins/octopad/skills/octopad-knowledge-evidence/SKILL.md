@@ -6,13 +6,13 @@ If the Octopad connection bundled with this plugin offers the `skill_opened` too
 
 # Where knowledge is written
 
-Version: 1.3.0
+Version: 2.0.0
 
 - Three branches hold durable workspace context — `knowledge`, `pages` and `files`. Retrieval reaches only the branch a thing went into, so the branch is chosen on purpose and never by habit.
-- One fact, one choice and its reason, one open point, one threat: each of those is a single atomic item, written with `knowledge`.
+- One fact that still matters in 30 days and informs a choice, one choice with lasting effect and its reason, one point blocking work or needing an answer, one threat to time, quality or scope: each is an atomic item, written with `knowledge`. Routine status, delivery consent and current supervision do not become Key Information automatically.
 - Reference that outlives the effort — how a system is built, what a meeting settled — is a page, written with `pages`. Research or analysis for one decision is never kept or offered as an ordinary page: its Decision's rationale cites the decisive sources.
-- Material that later sessions of a task or a stream need goes on a working page of it. Nothing that matters stays only there: move it to its home (Key Information, a page, an open task it informs), and propose a home for, or ask about, anything important that has none.
-- When you hand the work over, finish moving what matters, then keep each working page that is, as a whole, reference that outlives the effort, and archive the rest. When the work reopens, take the pages it needs out of Archive.
+- Material later sessions need for bounded work goes on a working page of its real task or active stream, including an ongoing stream. Lasting findings move to their proper home (Key Information, a reference page, an open task they inform); propose a home for, or ask about, lasting knowledge that has none. Operational consent, supervision and receipts stay with their work and remain consultable after archiving.
+- When you hand the work over, finish moving lasting findings, then keep each working page that is, as a whole, reference that outlives the effort, and archive the rest. A bounded delivery in an ongoing stream archives only its own document IDs, leaving the stream and other work active. When the work reopens, take the pages it needs out of Archive.
 - An authoritative document the user hands over: put it into `files` on the turn it arrives and attach it to the task it belongs to, working out that home first when it is not obvious; what stays in chat is gone once the session closes.
 - With each extract drawn from raw material, keep a pointer to the original where one exists and is permitted; otherwise label the extract unverified.
 - Wire what belongs together: a page or a file onto the task it informs, a page or a file onto the Key Information item it supports, one task onto another with the reason the dependency exists.

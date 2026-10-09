@@ -9,7 +9,7 @@
         }
       },
       "http_headers": {
-        "x-octopad-plugin-version": "16.0.0"
+        "x-octopad-plugin-version": "17.0.0"
       }
     }
   }

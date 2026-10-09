@@ -4,7 +4,7 @@ description: Use for a new or existing stream, a brief, or a delivery-mode choic
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-planning-and-work-design"` when you open this skill.
 
-Version: 4.1.0 (an acceptance is never a task: the task waits in pending_review for its approver)
+Version: 4.2.0
 
 # From a need to prepared work
 
@@ -18,7 +18,7 @@ An ongoing stream needs its area of responsibility and routing boundaries, not a
 
 ## Prepare enough to choose how to deliver
 
-Identify the deliverables, settled choices, real dependencies, usable proof, required inputs, accesses and human interventions. Work within the requested scope: outline only what matters now, leave later details for when their inputs exist. Keep this preparation on the owning stream, tasks and Decisions, linking sources and existing confirmations; no second brief page or progress list.
+Identify the deliverables, settled choices, real dependencies, usable proof, required inputs, accesses and human interventions. Work within the requested scope: outline only what matters now, leave later details for when their inputs exist. Keep this preparation on the owning stream and tasks, linking sources and existing confirmations. Record only lasting choices as Decisions; Octoplan puts missing shared delivery fields on working documents. Keep no second brief or progress list.
 
 Evaluate the bounded work agents could actually finish and verify between human interventions, using the current tools and access. Compare that useful work with the cost of dispatch, handoffs and review. Use judgment, not a task count, duration threshold or autonomy score. A few required review or production gates do not rule out useful agent work between them; keep every gate and its owner. If the next meaningful steps depend on repeated user choices, continue direct collaboration and reconsider when those choices settle. Do not pitch orchestration on every turn.
 

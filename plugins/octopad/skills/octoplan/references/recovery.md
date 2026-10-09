@@ -30,7 +30,7 @@ Two comparable cycles without accepted artifact, review, or integrated proof tri
 
 ## Change supervisor safely
 
-Keep one supervisor per work boundary in stream Decisions. The current supervisor reaches a safe task boundary and persists in-flight facts, actors, effects, and evidence on their owning tasks. Stop or reconcile child workers before replacement; do not abandon uncertain effects. Use the runtime's replacement mechanism or the manual fallback in [continuation.md](continuation.md), with a bounded pointer to durable state. The successor verifies predecessor cessation, rereads and updates ownership with the current `expected_updated_at`; a conflict requires reconciliation before acting. No full-history fork or concurrent takeover. Existing authorization carries across the handoff; native continuity ownership follows the selected runtime and is not transferred by a task comment.
+Keep one supervisor per work boundary in the canonical journal under [records.md](records.md), or the valid legacy ownership record. The current supervisor reaches a safe task boundary and persists in-flight facts, actors, effects, and evidence on their owning tasks. Stop or reconcile child workers before replacement; do not abandon uncertain effects. Use the runtime's replacement mechanism or the manual fallback in [continuation.md](continuation.md), with a bounded pointer to durable state. The successor verifies predecessor cessation, rereads and updates ownership with the current `expected_updated_at`; a conflict requires reconciliation before acting. No full-history fork or concurrent takeover. Existing authorization carries across the handoff; native continuity ownership follows the selected runtime and is not transferred by a task comment.
 
 ## Replan without stale state
 
@@ -38,7 +38,7 @@ A wording fix or stable correction stays on the Plan. Classify material change w
 
 ## Resume without a forced migration
 
-Read the selected runtime's compatibility section. Valid existing Codex v18 and Claude mode-based plans retain their names, routes, authorizations, reviewed scope, and manual continuations. Do not demand new common fields or a new Brief solely because this skill's release version changed. Historical Claude Brief content may remain on its tracker; use that verified confirmation source without copying task status back into the tracker.
+Read the selected runtime's compatibility section. Valid existing working-document, Codex v18 and Claude mode-based plans retain their canonical records, names, routes, authorizations, reviewed scope and manual continuations. Decision-based plans keep those records; do not add a parallel journal or migrate them merely to adopt this release. Do not demand new common fields or a new Brief solely because this skill's release version changed. Historical Claude Brief content may remain on its tracker; use that verified confirmation source without copying task status back into the tracker.
 
 For an unknown, unsupported, or invalid contract, reconcile any live actors and effects first. Read the current user mandate, target rules, and graph. Preserve verifiable facts and authority that still applies, but never upgrade stale PASS or infer missing consent. Rebuild and review only the unproved scope; ask for an actually changed Brief or missing consequence decision. Unsupported pre-v18 Codex control objects are historical evidence, never an execution authority.
 
