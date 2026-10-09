@@ -1,5 +1,9 @@
 # Changelog
 
+## 16.0.0 - Unreleased
+
+Both MCP configurations send the installed plugin version in a static HTTP header. The companion Octopad server checks it at session start only for the target workspace's kernel early-access organization, and its kernel router asks before updating through the user's own client CLI. Other organizations receive neither warning nor update guidance. No update rule is added to the plugin bootstrap. Requires the companion server release; versions that send no header stay silent. Both distributions move to 16.0.0.
+
 ## 15.3.0 - 2026-10-09
 
 Octoplan 6.5.0 puts long reports on a working page of the task or stream, links required files, and records execution receipts in task comments rather than Decisions. Required Octoplan Decisions and existing contract-page receipts stay in place. Both distributions move to 15.3.0.
