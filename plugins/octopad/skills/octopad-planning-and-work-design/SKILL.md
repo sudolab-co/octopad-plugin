@@ -4,7 +4,7 @@ description: Use for a new or existing stream, a brief, or a delivery-mode choic
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-planning-and-work-design"` when you open this skill.
 
-Version: 4.2.0
+Version: 4.2.1
 
 # From a need to prepared work
 
@@ -12,7 +12,7 @@ A stream and an Octoplan use the same brief and work graph. Octoplan is the deli
 
 ## Brief only what the request needs
 
-Read the existing stream, tasks, decisions and relevant sources first. Establish the purpose, intended result and proof, boundaries, constraints, important unknowns and who decides consequences. Ask about missing foundations that could change the result; resolve what the sources already settle yourself. Play back the intended result in proportion to the request, and confirm material interpretations before work that depends on them. A clear capture can need only a sentence, not an interview. Creation or planning is not permission to deliver.
+Read the existing stream, tasks, decisions and relevant sources first. Establish the purpose, intended result and proof, boundaries, constraints, important unknowns and who decides consequences. Ask about missing foundations that could change the result; resolve what the sources already settle yourself. Play back the intended result in proportion to the request, and confirm material interpretations before work that depends on them. A clear capture can need only a sentence, not an interview. Creating a stream or a plan grants no agent-delivery mandate and does not pause work the user already asked you to execute. A request limited to planning stays limited to planning.
 
 An ongoing stream needs its area of responsibility and routing boundaries, not an invented finish line. A small job may need one task in an existing stream or no new stream. Do not manufacture a goal, task tree or Octoplan records to complete a form. The stream rules below choose the work's home; their task count and duration are never thresholds for autonomy.
 
