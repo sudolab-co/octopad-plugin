@@ -18,7 +18,7 @@ Supervisor pointer:
 ```text
 Octoplan <work stream>
 Octopad · Organisation: <organisation> · Workspace: <workspace>
-Journal: <page title> (<page ID>) · Workspace: <owning workspace ID>
+Journal: <page title> (<page ID>) · Boundary: <boundary> · Workspace: <owning workspace ID>
 ```
 
 Use the stream's plain name without ` (octoplanned)`. New supervisor pointers identify the canonical journal so separate deliveries in one stream cannot be confused. Retain saved legacy Claude blocks, which have no journal line, unchanged. Also accept existing Codex pointers:

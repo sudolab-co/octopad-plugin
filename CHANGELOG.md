@@ -2,15 +2,15 @@
 
 ## 17.0.0 - Unreleased
 
-Octoplan 7.0.0 reuses working documents for delivery records: a short shared contract only when needed, and a journal for exact consent, plan reviews, activation and guarded supervision. Tasks remain the Plan and own task evidence. Routine delivery records no longer create automatic Decisions. Valid existing plans keep their records, authority and routes without migration.
+Octoplan 7.0.0 keeps delivery records in working documents instead of Decisions. Tasks stay the plan. Each delivery gets a journal holding your go, plan reviews and current supervision, plus a short contract page only when the tasks lack shared details. New plans no longer add routine Decisions to Key Information. Plans already under way keep their records; nothing is migrated.
 
-Working documents can belong to bounded work in an active ongoing stream. Closing a delivery archives only its document IDs, preserving other work and the stream's cadence. Shared multi-stream records replace duplicate explanatory pages. Knowledge guidance keeps operational history with its work and extracts lasting findings only. Review floors, protected-effect gates and predecessor-cessation proof remain binding; append-only is an agent rule, not server enforcement.
+A bounded delivery in an ongoing stream can keep its working documents on that stream. When it ends, only its own documents move to Archive; the stream and its other work are untouched. Working documents stay searchable until archived. Knowledge guidance records only lasting findings as Key Information.
 
-Both distributions move to 17.0.0. Requires the companion server's ongoing working-document support, released before the public plugin lands. Active working documents remain searchable; no new execution store or retrieval filter is introduced.
+Both distributions move to 17.0.0.
 
 ## 16.0.0 - Unreleased
 
-Both MCP configurations send the installed plugin version in a static HTTP header: Claude Code uses `headers`, and Codex uses `http_headers`. Requires the companion Octopad server release. The session bootstrap behavior is unchanged. Both distributions move to 16.0.0.
+Both MCP configurations now send the installed plugin version to Octopad in the `x-octopad-plugin-version` header (Claude Code `headers`, Codex `http_headers`). Nothing else is added and session behavior is unchanged. Both distributions move to 16.0.0.
 
 ## 15.3.0 - 2026-10-09
 
