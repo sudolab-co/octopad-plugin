@@ -1,5 +1,11 @@
 # Changelog
 
+## 17.0.1 - Unreleased
+
+Planning and work design 4.2.1 clarifies that creating a stream or a plan grants no agent-delivery mandate and does not pause work the user already asked to execute. Requests limited to planning stay limited to planning. Existing autonomy choices and human gates remain in place.
+
+Both distributions move to 17.0.1.
+
 ## 17.0.0 - 2026-10-10
 
 Octoplan 7.0.0 keeps delivery records in working documents instead of Decisions. Tasks stay the plan. Each delivery gets a journal holding your go, plan reviews and current supervision, plus a short contract page only when the tasks lack shared details. New plans no longer add routine Decisions to Key Information. Plans already under way keep their records; nothing is migrated.
