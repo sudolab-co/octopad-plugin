@@ -1,6 +1,6 @@
 # Changelog
 
-## 17.0.0 - Unreleased
+## 17.0.0 - 2026-10-10
 
 Octoplan 7.0.0 keeps delivery records in working documents instead of Decisions. Tasks stay the plan. Each delivery gets a journal holding your go, plan reviews and current supervision, plus a short contract page only when the tasks lack shared details. New plans no longer add routine Decisions to Key Information. Plans already under way keep their records; nothing is migrated.
 
@@ -8,7 +8,7 @@ A bounded delivery in an ongoing stream can keep its working documents on that s
 
 Both distributions move to 17.0.0.
 
-## 16.0.0 - Unreleased
+## 16.0.0 - 2026-10-10
 
 Both MCP configurations now send the installed plugin version to Octopad in the `x-octopad-plugin-version` header (Claude Code `headers`, Codex `http_headers`). Nothing else is added and session behavior is unchanged. Both distributions move to 16.0.0.
 
