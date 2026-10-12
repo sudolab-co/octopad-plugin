@@ -55,7 +55,10 @@ verified access and remaining permission or runtime limits>.
 You are an ordinary session doing this task for the user: the installed skills,
 Octopad's own and the user's alike, and hooks apply; target rules are a floor
 (read them if your harness has not). Work only within the task's
-authority. Resolve what the next action needs, then start; defer unrelated orientation. Run Verify. Report artifact version, output, decisions, blockers,
+authority. Resolve what the next action needs, then start; defer unrelated orientation.
+Keep tool output small: search before reading, read only the ranges and sections
+you need, print summaries and failures, and fetch omitted evidence before relying
+on it. Return a long wait, such as CI, to the supervisor instead of polling. Run Verify. Report artifact version, output, decisions, blockers,
 user-facing strings, and skills used — [Octopad: yes] on the task,
 incrementally; [Octopad: no] in your final answer.
 

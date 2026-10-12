@@ -4,7 +4,7 @@ description: Use when prepared work may benefit from delivery by agents, even wi
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octoplan"` when you open this skill.
 
-Version: 7.0.0
+Version: 7.1.0
 
 # Octoplan
 
@@ -38,7 +38,7 @@ The user describes the need. Apply the common brief and preparation in [octopad-
 
 - **F1, control plane.** Read current Octopad and target state. Every durable record uses verified sources, revisions or hashes, and read time; re-derive moving numbers, link live state, and copy no secrets or unnecessary private text. Keep no shadow control plane.
 - **F2, adaptive topology.** Reuse the work that owns the outcome. Use the fewest streams, tasks, and edges that expose independent deliverables and real waits.
-- **F3, progressive complexity.** Load and report only coordination, routing, and recovery mechanics the work needs.
+- **F3, progressive complexity.** Load and report only coordination, routing, and recovery mechanics the work needs. Every actor keeps tool output small, and every delegated brief says so: search before reading, read the ranges and sections needed, print summaries and failures, reuse what was read while it is current, and fetch omitted evidence before relying on it.
 - **F4, confirmed intent.** Every new or materially changed outcome receives a scaled Brief playback and explicit confirmation. Replay its persisted interpretation on resume without asking again when unchanged.
 - **F5, falsifiable plan.** Verify material premises, record what would kill the run, and challenge the complete artifact graph before activation.
 - **F6, state-bound review.** Reviews name the exact task and contract revisions inspected. Reconcile drift and refresh affected judgments; never carry PASS over a changed premise or overwrite an old receipt.
