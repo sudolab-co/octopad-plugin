@@ -19,7 +19,7 @@ Repeat until the integrated outcome is proved or no safe work remains:
 1. **Refresh.** Read intent, supervisor, reviewed revisions and lenses, ready graph, assignments, artifact versions, checks, effects, and gates.
 2. **Pick.** Choose a ready unassigned task and set it in progress.
 3. **Route.** Dispatch the task's saved worker route with sufficient bounded context and explicit effect coverage. The supervisor owns coordination; workers produce deliverables.
-4. **Collect.** Link the real deliverable, version and verification from its owning task; record compact execution receipts and blockers in comments, never as Decisions. Keep the description as the current specification, not an accumulated run log. Long reports go on a working page of the task or stream; link required files.
+4. **Collect.** Link the real deliverable, version and verification from its owning task; record compact execution receipts and blockers in comments, never as Decisions. Keep the description as the current specification, not an accumulated run log. Long reports go on a working page of the task or stream; link required files. Then await any wait the worker returned.
 5. **Review.** Run targeted checks and the delivery floor. Record cleared gates; return stable fixes to the same healthy worker.
 6. **Advance.** Close only after current proof and every finding disposition are accepted. Persist evidence, then refresh the frontier.
 
@@ -57,8 +57,10 @@ Octopad's own and the user's alike, and hooks apply; target rules are a floor
 (read them if your harness has not). Work only within the task's
 authority. Resolve what the next action needs, then start; defer unrelated orientation.
 Keep tool output small: search before reading, read only the ranges and sections
-you need, print summaries and failures, and fetch omitted evidence before relying
-on it. Return a long wait, such as CI, to the supervisor instead of polling. Run Verify. Report artifact version, output, decisions, blockers,
+you need, print summaries and failures, reuse your own reads unless they may have
+changed, and fetch omitted evidence before relying on it. Run Verify; return any
+long external wait in it, such as CI, to the supervisor, naming what to watch,
+instead of waiting on it yourself. Report artifact version, output, decisions, blockers,
 user-facing strings, and skills used — [Octopad: yes] on the task,
 incrementally; [Octopad: no] in your final answer.
 

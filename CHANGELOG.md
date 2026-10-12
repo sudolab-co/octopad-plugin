@@ -2,7 +2,7 @@
 
 ## 17.1.0 - Unreleased
 
-Octoplan 7.1.0 keeps its agents' context small. Every agent searches before reading, reads only the parts of files and pages it needs, and prints summaries and failures instead of full logs, while still fetching any evidence it left out before relying on it. Workers hand long waits, such as CI, back to the supervisor instead of polling. Agents re-read their whole context on every turn, so less carried output means lower usage. Reviews, gates and records are unchanged.
+Octoplan 7.1.0 keeps its agents' context small. Every agent searches before reading, reads only the parts of files and pages it needs, and prints summaries and failures instead of full logs, while still fetching any evidence it left out before relying on it. Workers hand long external waits, such as CI, back to the supervisor instead of waiting on them. Agents process their whole context again on every turn, so carrying less output should lower usage. Reviews, gates and records are unchanged.
 
 Both distributions move to 17.1.0.
 
