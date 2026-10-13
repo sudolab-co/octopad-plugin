@@ -2,7 +2,7 @@
 
 ## 18.0.0 - Unreleased
 
-Claude Code no longer asks you to sign in to Octopad again after each plugin update. The MCP configuration sent the plugin version in a header, and Claude Code stores the sign-in under the server's whole configuration, so every new version lost it. Both MCP configurations now carry the server address alone. The `octopad-session` skill passes its version to `start_session` as `plugin_version`, which the Octopad server needs to keep its update notice. The README now covers installing from the Claude app as well as Claude Code.
+Claude Code no longer asks you to sign in to Octopad again after each plugin update. The MCP configuration sent the plugin version in a header, and Claude Code stores the sign-in under the server's whole configuration, so every new version lost it. Both MCP configurations now carry the server address alone. Claude Code asks you to sign in once more after this update; later updates keep the sign-in. The `octopad-session` skill passes its version to `start_session` as `plugin_version`, which the Octopad server needs to keep its update notice. The README now covers installing from the Claude app as well as Claude Code.
 
 Both distributions move to 18.0.0.
 

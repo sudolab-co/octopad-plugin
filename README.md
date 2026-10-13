@@ -6,7 +6,7 @@ The Octopad plugin connects your AI to Octopad and loads its skills and Octoplan
 
 Claude app (chat and Cowork, on the web or the desktop app): open [**Customize > Plugins**](https://claude.ai/customize/plugins), select **Add > Add marketplace**, enter `sudolab-co/octopad-plugin`, then add **Octopad**. Open it, go to its **Connectors** tab and connect Octopad. For updates, turn on **Sync automatically** for the marketplace.
 
-The plugin then also reaches Claude Code signed in to the same account, at its next session. Claude Code signs in to Octopad separately: run `/mcp` and connect the entry provided by the Octopad plugin. If `/mcp` also lists an Octopad connector from your claude.ai account, both reach the same Octopad; you can disable that connector there.
+The plugin then also reaches Claude Code signed in to the same account, at its next session, or after `/reload-plugins` in an open one. Claude Code signs in to Octopad separately: run `/mcp` and connect the entry provided by the Octopad plugin. If `/mcp` also lists an Octopad connector from your claude.ai account, both reach the same Octopad; you can disable that connector there.
 
 Claude Code alone, installed from the command line (this install stays on that machine and does not reach the Claude app):
 
