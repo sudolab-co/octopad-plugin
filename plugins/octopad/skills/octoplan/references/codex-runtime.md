@@ -13,13 +13,13 @@ Select workers by the judgment remaining after preparation. Consider `gpt-6-luna
 | Worker: settled choices and reliable verification | `gpt-6-luna · effort xhigh` |
 | Worker: bounded judgment beyond that first candidate | `gpt-6.1-sol · effort high` |
 | Worker: several unresolved reasoning steps in a prepared task | `gpt-6-astra · effort medium` |
-| Reviewer: bounded verification with reliable checks | `gpt-5.6-sol · effort high` |
+| Reviewer: bounded verification with reliable checks | `gpt-6.1-sol · effort high` |
 | Worker or reviewer: difficult reasoning or hard-to-detect errors | `gpt-6-astra · effort high` |
 | Worker or reviewer: weak verification or high consequences | `gpt-6-astra · effort xhigh` |
 
 These defaults do not override an explicit user choice of an available model and effort. Record that choice and reason; capability, independent-review and evidence requirements still apply.
 
-Astra `max` is exceptional after diagnosis, never automatic. Default role admission: planner = `gpt-6-astra` at `xhigh|max`; supervisor = `gpt-6.1-sol` at `high`; worker = `gpt-6-luna` at `xhigh`, `gpt-6.1-sol` at `high` or `gpt-6-astra` at `medium|high|xhigh|max`; reviewer = `gpt-5.6-sol` at `high` or `gpt-6-astra` at `high|xhigh|max`. Review floors do not depend on worker price. Repair insufficient preparation before escalating effort.
+Astra `max` is exceptional after diagnosis, never automatic. Default role admission: planner = `gpt-6-astra` at `xhigh|max`; supervisor = `gpt-6.1-sol` at `high`; worker = `gpt-6-luna` at `xhigh`, `gpt-6.1-sol` at `high` or `gpt-6-astra` at `medium|high|xhigh|max`; reviewer = `gpt-6.1-sol` at `high` or `gpt-6-astra` at `high|xhigh|max`; a `gpt-5.6-sol · high` reviewer route saved before 7.4.0 stays valid. Review floors do not depend on worker price. Repair insufficient preparation before escalating effort.
 
 Valid routes saved before 5.1.0 remain valid; the new defaults apply when preparing new plans. This includes the Sol 6 and Luna 6 routes published in 4.2.0 and saved v18 routes valid under 1.3.0: Luna workers `max`; Sol planners `xhigh|max`, supervisors, reviewers and workers `high|xhigh|max`; Astra planners and supervisors `xhigh|max`, reviewers `high|xhigh|max`, workers `low|medium|high|xhigh|max`. Keep exact saved model IDs and efforts, including active actors; an older Luna or Sol route does not select its successor. A saved-route change returns to Plan and affected review before dispatch; unavailable or invalid routes pause only the affected actor. Never substitute silently.
 

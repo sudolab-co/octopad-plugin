@@ -1,5 +1,11 @@
 # Changelog
 
+## 17.7.0 - Unreleased
+
+Octoplan 7.4.0 lowers the default effort for checkable work in Claude. A bounded task whose tests, build or other deterministic check proves the result now runs on Opus 5.5 at medium effort instead of high, and reruns once at high if those checks fail; work with unresolved judgment or weak checks stays at high. Anthropic measured this pattern on SWE-bench Pro: a slightly higher pass rate at a little over half the cost of running everything at high. In Codex, the default reviewer for bounded verification moves from the retired `gpt-5.6-sol` to `gpt-6.1-sol` at high effort. Routes already saved on existing tasks run as saved.
+
+Both distributions move to 17.7.0.
+
 ## 17.6.0 - Unreleased
 
 Octoplan 7.3.0 gives each newly planned task two routes: a Claude model and effort and a Codex model and effort, each chosen from that tool's own guidance with its reason. A team member who uses only Claude or only ChatGPT can run the task. The planner checks both routes against the task's steps, verification and access, naming an equivalent or recording a blocker where one tool cannot perform a step. The supervisor dispatches its own tool's route, and a manual task launch line shows both. Existing tasks keep their single route; running one in the other tool first adds the missing route, with a short review of that choice. The planning tool checks its route's availability before saving it, the other tool before launch; Fable is saved only once its conditions hold. Consent and takeover rules are unchanged.
