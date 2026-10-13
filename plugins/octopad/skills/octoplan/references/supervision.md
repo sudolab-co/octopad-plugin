@@ -18,7 +18,7 @@ Repeat until the integrated outcome is proved or no safe work remains:
 
 1. **Refresh.** Read intent, supervisor, reviewed revisions and lenses, ready graph, assignments, artifact versions, checks, effects, and gates.
 2. **Pick.** Choose a ready unassigned task and set it in progress.
-3. **Route.** Dispatch the task's saved worker route with sufficient bounded context and explicit effect coverage. The supervisor owns coordination; workers produce deliverables.
+3. **Route.** Dispatch the task's saved worker route for this runtime with sufficient bounded context and explicit effect coverage. The supervisor owns coordination; workers produce deliverables.
 4. **Collect.** Link the real deliverable, version and verification from its owning task; record compact execution receipts and blockers in comments, never as Decisions. Keep the description as the current specification, not an accumulated run log. Long reports go on a working page of the task or stream; link required files. Then await any wait the worker returned.
 5. **Review.** Run targeted checks and the delivery floor. Record cleared gates; return stable fixes to the same healthy worker.
 6. **Advance.** Close only after current proof and every finding disposition are accepted. Persist evidence, then refresh the frontier.
@@ -42,7 +42,7 @@ Reread the task from Octopad, then send a bounded prompt without predecessor his
 ```text
 Deliver one Octopad task: <task title>.
 Octopad: <organization> / <workspace> / <work stream>.
-Use <saved model and effort> and the recorded observation rule.
+Use <this runtime's saved model and effort> and the recorded observation rule.
 Recorded mandate: <source, exact allowed scope, effects and targets>.
 Uncleared checkpoints and effective-rule gates: <relevant waits, or none>.
 Computer Use: <accepted targets and actions with source, or not authorized;

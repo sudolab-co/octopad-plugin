@@ -1,5 +1,11 @@
 # Changelog
 
+## 17.6.0 - Unreleased
+
+Octoplan 7.3.0 gives each newly planned task two routes: a Claude model and effort and a Codex model and effort, each chosen from that tool's own guidance with its reason. A team member who uses only Claude or only ChatGPT can run the task. The planner checks both routes against the task's steps, verification and access, naming an equivalent or recording a blocker where one tool cannot perform a step. The supervisor dispatches its own tool's route, and a manual task launch line shows both. Existing tasks keep their single route; running one in the other tool first adds the missing route, with a short review of that choice. The planning tool checks its route's availability before saving it, the other tool before launch; Fable is saved only once its conditions hold. Consent and takeover rules are unchanged.
+
+Both distributions move to 17.6.0.
+
 ## 17.5.0 - Unreleased
 
 A session that launches sub-agents keeps the Octopad connection for them, whether it works alone or supervises an Octoplan. octopad-session 17.5.0 tells a sub-agent to call no Octopad tool unless its brief grants access. Octoplan 7.2.0 makes no Octopad access the default for a task, kept only when the work or its proof needs it, such as a deliverable that lives in Octopad, and applies the same rule to reviewers and planning helpers. A sub-agent that connected used to receive the whole workspace orientation on its first Octopad call. The served kernel 2.10.0 carries the rule (companion sudolab-co/octopad pull request).
