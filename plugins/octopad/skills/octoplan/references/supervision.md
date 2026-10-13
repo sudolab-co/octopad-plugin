@@ -37,7 +37,7 @@ Do not mirror a scheduler, Plan page, report, or registry. A shared multi-stream
 
 ## Worker prompt
 
-Reread the task from Octopad, then send a bounded prompt without predecessor history, keeping the bracketed blocks matching its `**Octopad**` line (no line: decide from the spec). Reconcile recent decisions and delivered inputs before dispatch; a changed specification receives its affected review. Include the relevant mandate source and bounds, not the entire Decision history. Preserve settled criteria without previous answers where independence requires it. List no fixed catalog of skills or rule files.
+Reread the task from Octopad, then send a bounded prompt without predecessor history, keeping the bracketed blocks matching its `**Octopad**` line (no line: no). Reviewers and planning helpers follow the same rule: without granted access, give them the exact revisions and primary evidence they judge. Reconcile recent decisions and delivered inputs before dispatch; a changed specification receives its affected review. Include the relevant mandate source and bounds, not the entire Decision history. Preserve settled criteria without previous answers where independence requires it. List no fixed catalog of skills or rule files.
 
 ```text
 Deliver one Octopad task: <task title>.
@@ -49,10 +49,10 @@ Computer Use: <accepted targets and actions with source, or not authorized;
 verified access and remaining permission or runtime limits>.
 
 [Octopad: yes] Connect to production Octopad and read this task.
-[Octopad: no] Do not connect to Octopad. Your task, verbatim:
+[Octopad: no] Do not call Octopad, not even `skill_opened`. Your task, verbatim:
 <description without Exec, Review, and Octopad lines>.
 
-You are an ordinary session doing this task for the user: the installed skills,
+You do this task for the user as a delegated session: the installed skills,
 Octopad's own and the user's alike, and hooks apply; target rules are a floor
 (read them if your harness has not). Work only within the task's
 authority. Resolve what the next action needs, then start; defer unrelated orientation.
@@ -61,8 +61,8 @@ you need, print summaries and failures, reuse your own reads unless they may hav
 changed, and fetch omitted evidence before relying on it. Run Verify; return any
 long external wait in it, such as CI, to the supervisor, naming what to watch,
 instead of waiting on it yourself. Report artifact version, output, decisions, blockers,
-user-facing strings, and skills used — [Octopad: yes] on the task,
-incrementally; [Octopad: no] in your final answer.
+user-facing strings, and skills used — on the task, incrementally, when your
+brief grants writes there; otherwise in your final answer.
 
 Do not close tasks, advance the graph, launch other actors, approve, or perform
 a protected effect. Use Computer Use or equivalent screen-driven GUI automation

@@ -1,10 +1,12 @@
 ---
 name: octopad-session
-description: Use first when the user asks for Octopad or onboarding, and as soon as the conversation concerns their company or its product, code, customers, team or plans, even if they never name Octopad. Loads their workspace's context and method.
+description: Use first when the user asks for Octopad or onboarding, and as soon as the conversation concerns their company or its product, code, customers, team or plans, even if they never name Octopad. Loads their workspace's context and method. A sub-agent opens it only when its brief grants Octopad access.
 ---
+A sub-agent whose brief does not grant Octopad access calls no Octopad tool, `skill_opened` included, and returns to its delegating session.
+
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-session"` when you open this skill.
 
-Version: 17.4.0
+Version: 17.5.0
 
 # Start an Octopad plugin session
 
