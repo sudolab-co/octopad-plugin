@@ -1,5 +1,11 @@
 # Changelog
 
+## 17.3.0 - Unreleased
+
+Product documentation 6.1.0 keeps product specs lean. A spec now holds its purpose, its principles, the behavior users get today, the work still to come and one Verified section, in compact language where every line says who does what, when and where. History, delivery notes, release receipts and code inventories move to tasks, pull requests and history pages. Unreleased changes sit under Next with a state label, so a reader never mistakes them for live behavior. The Product Map becomes a plain index: one line per feature, linked to its spec. Before a need, rule, constraint or scenario leaves a spec, your AI records where it went: kept, moved, replaced or unresolved. A substantive rewrite gets a review by someone who did not write it.
+
+Both distributions move to 17.3.0.
+
 ## 17.2.0 - Unreleased
 
 CRM 1.3.0 has the AI agree an Enrich run with the user before launching it. For contacts, it asks which values to buy, email, phone or both (email alone unless chosen), and confirms the most the run may spend: the contacts it names, or its record limit once it targets a segment, times the price of each value. It offers a dry run first, which spends nothing, and says how to buy phones for contacts that already have an email. The cost guidance now says that Scout and Enrich spend Octopad credits per candidate proposed and per value found on Octopad's FullEnrich access, and nothing on the organization's own FullEnrich key.

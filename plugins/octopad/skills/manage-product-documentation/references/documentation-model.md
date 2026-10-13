@@ -4,35 +4,25 @@ Use the smallest set of durable artifacts that makes the product understandable 
 
 ## Product Overview
 
-Keep one Product Overview per offer: the head page whose At a glance block the Organization Overview shows. It holds the offer's purpose, intended experience, design pillars, non-goals, and relationships above system specs, and a Marketing section that product marketing writes. Products sold together to one audience at one price share one. Keep it distinct from the Product Map's navigation and status role.
+Keep one Product Overview per offer: the head page whose At a glance block the Organization Overview shows. It holds the offer's purpose, intended experience, design pillars, non-goals, and relationships above system specs, and a Marketing section that product marketing writes. Products sold together to one audience at one price share one. Keep it distinct from the Product Map, which only indexes.
 
 ## Product Map
 
-Keep one concise Product Map per product as the entry point. A portfolio index may route to several product maps but never restates their product truth. If an existing index already performs the entry-point job, adopt or reshape it instead of creating a competing map. Include:
-
-- confirmed product purpose and intended users;
-- significant product systems and each system's lifecycle state;
-- links to each Product Overview, each Product Spec and, when useful, its active work stream;
-- the canonical Architecture Map, when architecture exists;
-- the Ideas page, when one exists;
-- important cross-system relationships;
-- explicit gaps, stale areas, and last-verification metadata.
-
-Do not turn the map into a second backlog, full architecture document, or copied status report.
+Keep one Product Map per product: the index of every feature. One line per named feature: its name linked to the spec that owns it (features sharing a spec reuse its link), a one-liner, and the audience when it is limited; a feature with no spec says `no spec` and links its documentation-debt work when one exists. Above the list: links to each Product Overview, the Architecture Map, the Ideas page, and the Engineering References in the maintained set. Nothing else: state, gaps, active work and verification live in the specs and Tasks, so the Map never drifts from them. A portfolio index may route to several product maps but never restates their product truth. If an existing index already performs the entry-point job, adopt or reshape it.
 
 ## Product Spec
 
 Keep one evolving Product Spec per significant product system. A system is significant when it owns a coherent user capability, durable behavior, or boundary that people need to reason about independently. Create or adopt it at `idea` once a discussion develops that boundary or behavior far enough to become real design work; a build decision is not required. Keep `idea`, `explored`, `accepted`, `implemented`, `merged`, `released`, and `retired` distinct.
 
-Use the compact shape in [artifact-shapes.md](artifact-shapes.md). Update the existing spec as the system evolves. Split only when distinct system boundaries have emerged. Supersede or link duplicates after preserving unique facts and links; require explicit approval before destructive consolidation.
+Use the shape in [artifact-shapes.md](artifact-shapes.md) and the writing rules in SKILL.md (Write for the reader). What a spec does not hold has a home: vision and offer in the Product Overview; a choice and its rejected alternatives in a Decision; precise shared invariants in a Behavioral Contract; a research trail, dated cases and reviews with lasting value in a supporting record; delivery on Tasks and pull requests; release chronology on the release record; superseded text on the history page; files, internal symbols and mechanical constants in code, while limits users meet stay in the spec. Update the existing spec as the system evolves. Split only when distinct system boundaries have emerged. Supersede or link duplicates after preserving unique facts and links; require explicit approval before destructive consolidation.
 
 ## Parked ideas
 
-Keep an idea the user engaged with and left open as one line in the `Parked ideas` section of the Product Spec it concerns. An idea the user turned down or dropped is discarded; never park it. Give the line the date it was parked, the idea, and one clause on the problem it addresses. Add no owner, priority, status, origin, or rationale: that weight is what stops the list from being written at all, and its absence is what stops the list from becoming a second backlog. Finite execution, owners, and status stay in work streams and Tasks.
+Keep an idea the user engaged with and left open as one `[idea <date>]` line in the Next section of the Product Spec it concerns. An idea the user turned down or dropped is discarded; never park it. Give the line the date it was parked, the idea, and one clause on the problem it addresses. Add no owner, priority, status, origin, or rationale: that weight is what stops the list from being written at all, and its absence is what stops the list from becoming a second backlog. Finite execution, owners, and status stay in work streams and Tasks.
 
 An idea that concerns no existing system yet goes on one Ideas page for this product documentation set. Create that page on the first such idea, never in advance, and link it from the Product Map so it stays findable; creating the page and its map link is part of parking, not a separate authority. Move a line to a system's Product Spec once that system exists. Parking begins once a Product Map exists; before then, keep ideas in the conversation and follow the setup playbooks.
 
-Keep the list self-emptying. When a passing idea becomes substantive design, move its line into the spec at `idea`; when the user accepts it, advance that same item to `accepted`. When the user rejects an idea, remove its line. Any useful rejection reason belongs in history, never in `Parked ideas`; drop the section if it becomes empty. Moving or removing a parked line, or dropping an emptied section, is routine list maintenance, not the content deletion that needs approval. During maintenance and audit, propose removing lines whose problem has lapsed, in one batch; do not remove them silently. Never grow either list into a status report.
+Keep the list self-emptying. When a passing idea becomes substantive design, move its line into the spec at `idea`; when the user accepts it, advance that same item to `accepted`. When the user rejects an idea, remove its line. Any useful reason for a rejected idea belongs in history. Moving or removing a parked line, or dropping an emptied section, is routine list maintenance, not the content deletion that needs approval. During maintenance and audit, propose removing lines whose problem has lapsed, in one batch; do not remove them silently. Never grow either list into a status report.
 
 ## Behavioral Contract
 
@@ -77,9 +67,8 @@ Use links instead of duplicated prose. Maintain useful edges when they exist:
 For each material claim, make it possible to answer:
 
 - What source supports it?
-- At which repository revision or release was it observed?
-- Is it idea, explored, accepted, implemented, merged, released, retired, stale, or unverified?
-- When was it last verified?
+- At which exact source revision or dated authoritative record was it observed, with which method and limits?
+- In a Product Spec: is it in Behavior or Principles (released, covered by a Verified line) or in Next with its state label?
 
 Use explicit unknowns instead of placeholder facts. Never invent a value to make a template look complete.
 

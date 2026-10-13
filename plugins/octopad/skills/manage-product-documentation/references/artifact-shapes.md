@@ -7,66 +7,45 @@ Use these as adaptable shapes, not forms that must be filled. Omit irrelevant se
 ```markdown
 # Product Map
 
-## Product foundation
-- Purpose: <confirmed statement or Unknown>
-- Intended users: <confirmed statement or Unknown>
-- Current evidence: <source and last verified time>
+Index of every system and its spec. State, audience, limits and verification live in each spec.
+Overview: <link> · Architecture: <link> · Ideas: <link>
 
-## Systems
-| System | Responsibility | State | Product Spec | Active work |
-|---|---|---|---|---|
-
-## Architecture
-- Canonical Architecture Map: <Octopad page, repository link when the team keeps it beside the code, or Not established>
-
-## Ideas
-- Ideas page: <link, only when one exists>
-
-## Cross-system relationships
-- <only important relationships>
-
-## Gaps and stale areas
-- <explicit gap, evidence needed, and related documentation-debt work>
+## <Area>
+- [<System>](<spec link>): <one-liner, telex>
+- <System>: <one-liner>; no spec (<task link>)
 ```
+
+One line per named feature, reusing the spec link when several share a spec; audience in the one-liner when limited ("early access"). List the Engineering References of the maintained set on one header line. No state, gaps, active work or verification.
 
 ## Product Spec
 
 ```markdown
-# <System name> — Product Spec
+# <System name>
 
-## Purpose and boundary
-<User need, responsibility, and what is outside the system.>
+Purpose: <user, problem, outcome; 1-3 lines>. Out of scope: <system (link)>, ...
 
-## Released behavior
-<Current production truth only.>
+## Principles
+- <released rule code cannot show>: <why>.
 
-## Changes by evidence state
-<Give each item its own idea, explored, accepted, implemented, or merged state and link it to its Decision or work.>
+## Behavior
+- <released rule, one line; audience when limited>.
+- Scenario: <regression case worth guarding>, when not obvious from the rules.
+Limits
+- <limit or known defect users meet> (<task link>).
 
-## Rules and edge cases
-<Only behavior people must understand. Link a Behavioral Contract when needed.>
+## Next
+**[accepted <date>] <change>.** <links: Decision, Task or stream>.
+- <need → intended behavior; principles it adds; constraints; acceptance scenarios; open choices>.
+**[idea <date>] <direction>.** <supporting record link, read before assessing or building>.
+- <direction; set aside; open questions>.
 
-## Parked ideas
-- <date parked>: <idea>, <the problem it addresses>.
+## Verified
+- <scope>: <source and revision>, <date>; <method and limits>.
 
-## Connections
-- Product Map: <link>
-- Architecture Map: <link or relevant section>
-- Decisions: <links>
-- Work stream and Tasks: <links>
-- User documentation: <links>
-
-## Verification
-- Evidence: <source>
-- Source revision or release: <exact value or Unknown>
-- Last verified: <time or Unknown>
-- Freshness: <current | stale | unverified>
-- Known gaps: <gaps or None found>
+Links: <Product Map> · <Architecture Map> · <related specs and contracts> · <history> · <code entry point>
 ```
 
-Do not mix unreleased behavior into the released section. Put lifecycle state on each material claim or change, not on the Product Spec as a whole. A Product Spec may contain items in several states when they remain visibly separated.
-
-Keep every parked idea to that one line. Omit the section until the system has a parked idea, and drop the section again once the last line leaves it.
+Omit empty sections. Writing rules per SKILL.md. Purpose states the user need and boundary, and says so when nothing is released yet. Principles and Behavior hold released truth only; every unreleased change lives in Next with its state label. A retired or rolled-back behavior leaves Behavior (its text stays on the history page); a released claim that can no longer be verified keeps its line, marked `[unverified]` with its debt link. When part of a change is released, fold that part into Principles and Behavior with its still-applicable constraints and scenarios; keep unmet parts in Next with their state; remove the entry once nothing in it is unmet. Split only at a real system boundary, never for length.
 
 ## Ideas
 
@@ -77,10 +56,10 @@ Create this page only when an idea concerns no existing system yet. Keep one per
 
 Ideas with no system yet. One line each.
 
-- <date parked>: <idea>, <the problem it addresses>.
+- [idea <date>] <idea>, <the problem it addresses>.
 ```
 
-Carry no owner, priority, status, or other Task field here. Move a line into a system's Product Spec once that system exists. Remove a line the user rejects; any useful rejection reason belongs in history, never in `Parked ideas`.
+Carry no owner, priority, status, or other Task field here. Move a line into a system's Product Spec once that system exists. Remove a line the user rejects; any useful rejection reason belongs in history, never in the Next section.
 
 ## Behavioral Contract
 

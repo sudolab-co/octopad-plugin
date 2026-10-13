@@ -4,7 +4,7 @@ description: Keep one or more products' documentation true to the work as it hap
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "manage-product-documentation"` when you open this skill.
 
-Version: 6.0.0
+Version: 6.1.0
 
 # Manage Product Documentation
 
@@ -28,6 +28,15 @@ Check the result against that same intent before concluding or handing off. Acco
 
 When rewriting a spec, keep each need, its constraints and lifecycle state visible. Changing or regrouping the means does not retire the need: name where it is now served, or the attributed Decision that retires or replaces it. Delivery moves the need into evidenced current behavior; it does not erase it. Before your first change, record the spec's version id or `updated_at` on the task or PR as the baseline, and judge your edits against that revision, reconciled with material source changes and explicit user directions during the work. If the baseline is missing or its version has been pruned, name that gap and leave dependent conclusions unresolved. Record a direction already given without asking for it again; unresolved authority conflicts still follow step 4 of [Stop before writing](#stop-before-writing). A required review uses these primary sources, not only the author's summary or rewritten spec.
 
+## Write for the reader
+
+A Product Spec serves the AI or person who must decide, build, change or judge its system without the conversations that shaped it. It holds what code cannot explain (purpose, principles, consequential trade-offs, boundaries) and the behavior the product promises, which stays even when code also expresses it.
+
+- Compact, never ambiguous: one fact per line, no transitions or restatement. Each line names its actor, action, object, condition and scope; a fragment that allows two readings becomes a full sentence; never cut a word that carries meaning. Keep uncertainty, and a short example only when it removes an ambiguity. A fact lives once; elsewhere it is linked. Follow the workspace's own style rule when it sets one, within this rule.
+- Removal test: keep a line only if its absence would make that reader decide, build or judge wrong.
+- Never on the page: history, delivery narratives (progress, branches, test runs, review rounds), file or symbol inventories. Revisions and pull request numbers appear only in Verified lines and state labels. Name only the tools and parameters users and their AIs call.
+- Before a need, rule, constraint or scenario leaves a spec (not for label or link moves), list on the Task, pull request or reply, never on the spec, each one it carries as kept, moved (where), replaced or unresolved; write moved text to its destination and read it back first. A substantive rewrite also gets a reviewer who did not write it.
+
 ## Load the needed guidance
 
 - Read [references/documentation-model.md](references/documentation-model.md) before creating, adopting, splitting, merging, or substantially restructuring product documentation.
@@ -44,7 +53,7 @@ These four request classes are defined here and reused by the documentation fami
 - **audit:** inspect a bounded maintained set, repair the unambiguous, and record gaps;
 - **synchronize:** propagate a changed source through this family's projections and hand other outputs to their owners.
 
-A page this skill owns keeps one Verification block that states the latest check; replace it, never append to it. Release history, install proofs and delivery receipts belong on the Task, pull request or release record, not on the page or in its opening lines.
+A Product Spec ends with a Verified section: one line per group of claims checked together, naming scope, source and exact revision, date, method and limits. A check replaces the lines it covers and no other; a partial check splits a line. Other pages this skill owns keep one verification section under their own heading, replaced the same way; the Product Map indexes only and carries none. Release history, install proofs and delivery receipts belong on the Task, pull request or release record.
 
 ## Stop before writing
 
@@ -55,7 +64,7 @@ A page this skill owns keeps one Verification block that states the latest check
 3. Prove a negative before writing one. `No documentation impact` is a claim about the maintained set for every affected product. Harvest terms from the changed lines and each touched file's header comments. First list that maintained set without a title filter and read its descriptions or summaries; then open likely candidates and supplement the inventory with search over the harvested names and product terms. Record the receipt beside the claim, on one line: affected product or products, terms searched, pages inventoried, candidates read or `no candidate`, and either the document the change cites or `the change cites no document`. Search alone, or an inventory of the wrong product, proves nothing. Behavior that changed while no page owns it is a gap: record one documentation-debt item instead of closing the question.
 4. Treat unknown facts as unknown. Ask only when an unresolved system boundary, product intent, or authority conflict would materially change the result. An explicit unresolved authority conflict affecting this change always meets this bar: preserve both sources and ask instead of choosing or rewriting either one. Otherwise use a concise `Unknown`, `Unverified`, or documentation-debt marker and keep working.
 5. Never fabricate architecture, behavior, ownership, dates, metrics, source revisions, release state, or customer evidence. Derive technical facts from current code and repository configuration when available.
-6. Keep provenance beside material claims: evidence source, observed revision or release, verification state, and last verified time. Do not present an old observation as current. An At a glance block holds answers only: their provenance stays in the page body.
+6. Keep every material claim traceable: its state label and audience sit beside it; its evidence (exact source revision or dated authoritative record, date, method, limits) sits once in the page's verification lines. Do not present an old observation as current. An At a glance block holds answers only: their provenance stays in the page body.
 7. Minimize persisted evidence. Never copy secrets, credentials, private local paths, personal or customer identifiers, or unnecessary source bodies into Octopad. Prefer a safe repository link, public revision, or redacted summary that proves the claim without exposing unrelated data.
 
 ## Administer the documentation system
@@ -63,7 +72,7 @@ A page this skill owns keeps one Verification block that states the latest check
 Use this asymmetric structure:
 
 - Keep one **Product Overview** per offer, a head page (`head_type: product_overview`; at most 10 live per organization and per workspace) for purpose, experience, design pillars, non-goals and relationships above system specs, with a Marketing section that `manage-product-marketing` writes. Products sold together to one audience at one price share one; a product gets its own only when its audience or its price differs. Its At a glance key `offer_and_availability` is yours, held to the evidence a Product Fact needs; `audience_and_need`, `promise` and `conditions` are product marketing's.
-- Keep exactly one **Product Map** per product as its entry point, distinct from the Product Overviews it lists. A portfolio index may route to several product maps but must not restate their truth. Adopt an existing index when it already serves as the entry point.
+- Keep exactly one **Product Map** per product: the index of every system, nothing else (shape in [artifact-shapes.md](references/artifact-shapes.md)). Adopt an existing index when it already serves as the entry point.
 - Keep one evolving **Product Spec** for each significant product system.
 - Add a **Behavioral Contract** only when risk, ambiguity, or cross-boundary precision warrants one.
 - Keep one short canonical **Architecture Map** in Octopad. Put it in a connected repository instead when the team wants architecture to change in the same review as the code; then keep the Octopad entry as its link, ownership, status, related systems, and verification metadata. Either way, name the one canonical home and do not maintain both.
@@ -82,20 +91,20 @@ During product discussion, silently classify the likely documentation impact as:
 - `new system`
 - `technical-only`
 
-A substantive design discussion is different from a passing thought. Once the discussion develops a real user problem, system boundary, behavior, contract, or meaningful alternative, in the same turn: create or adopt the owning Product Spec at `idea`; add or update its Product Map link and `idea` status; then remove any duplicate parked entry while preserving its unique content in the spec. Do this even when nobody has decided to build. It records the thinking without claiming approval or delivery and without inventing an execution Task. When the user accepts a direction, implementation starts, or an active delivery workflow exists, update that same spec and let ordinary work tracking own execution.
+A substantive design discussion is different from a passing thought. Once the discussion develops a real user problem, system boundary, behavior, contract, or meaningful alternative, in the same turn: create or adopt the owning Product Spec and add an `[idea]` entry to its Next section holding the direction, set-aside alternatives and open questions, not the discussion; a research trail or detailed design with lasting value may go to a supporting record linked from the entry, which must then be read before assessing, accepting or building the idea; add its Product Map line; then remove any duplicate parked entry while preserving its unique content in the spec. Do this even when nobody has decided to build. It records the thinking without claiming approval or delivery and without inventing an execution Task. When the user accepts a direction, implementation starts, or an active delivery workflow exists, update that same spec and let ordinary work tracking own execution.
 
-Park what exploration leaves behind. At the end of a brainstorm, and whenever an idea is raised in passing during other work, append each remaining passing idea the user engaged with and left open, without asking: one line carrying the date it was parked, the idea, and the problem it addresses, in the `Parked ideas` section of the Product Spec it concerns, or on the single Ideas page when it concerns no existing system yet. Creating that page on first use and linking it from the Product Map is part of parking, not a separate authority. Add no owner, priority, or status, and keep each line within the persisted-evidence rules. Never park an idea the user turned down or dropped. A line leaves the list when the idea is committed, where ordinary commitment handling takes over, or when the user rejects it; remove it rather than replacing it with a rejected or abandoned line. Moving or removing a parked line is routine list maintenance, not the content deletion that needs approval. Before a Product Map exists, keep ideas in the conversation and follow the setup playbooks.
+Park what exploration leaves behind. At the end of a brainstorm, and whenever an idea is raised in passing during other work, append each remaining passing idea the user engaged with and left open, without asking: one `[idea <date>]` line carrying the idea and the problem it addresses, in the Next section of the Product Spec it concerns, or on the single Ideas page when it concerns no existing system yet. Creating that page on first use and linking it from the Product Map is part of parking, not a separate authority. Add no owner, priority, or status, and keep each line within the persisted-evidence rules. Never park an idea the user turned down or dropped. A line leaves the list when the idea is committed, where ordinary commitment handling takes over, or when the user rejects it; remove it rather than replacing it with a rejected or abandoned line. Moving or removing a parked line is routine list maintenance, not the content deletion that needs approval. Before a Product Map exists, keep ideas in the conversation and follow the setup playbooks.
 
 As evidence advances, make the smallest useful update:
 
-- For a substantively discussed new system, add it to the Product Map and create its Product Spec at `idea`.
+- For a substantively discussed new system, add its Product Map line and create its Product Spec with an `[idea]` entry.
 - For an existing-system change, update the evolving Product Spec with clearly labeled proposed or approved behavior and link the existing execution work.
 - For technical-only work, update architecture or a targeted Engineering Reference only when the change creates durable, non-derivable knowledge.
 - For no impact, create no documentation artifact beyond any parked idea line and, on first use, the Ideas page that holds it.
 
 ## Preserve lifecycle and product scope
 
-Keep `idea`, `explored`, `accepted`, `implemented`, `merged`, `released`, and `retired` distinct. Never infer one from another. If an existing record uses `proposed` or `approved`, preserve its vocabulary while mapping it explicitly to the same evidence boundary.
+Keep `idea`, `explored`, `accepted`, `implemented`, `merged`, `released`, and `retired` distinct. Never infer one from another. If an existing record uses `proposed` or `approved`, preserve its vocabulary while mapping it explicitly to the same evidence boundary. On a spec a state is an inline label with its link (`[accepted 2026-10-11]`, `[merged PR #123]`, `[switched off]`), never a narrative. Principles and Behavior hold released truth only, each covered by a Verified line; every unreleased change lives in Next with its label. Purpose states the need and boundary, never availability. A figure chosen while building, not decided as product behavior, is marked `(impl)` and stays revisable.
 
 - Code or tests can prove implementation, not approval or release.
 - A pull request can prove a proposed source revision.
@@ -104,7 +113,7 @@ Keep `idea`, `explored`, `accepted`, `implemented`, `merged`, `released`, and `r
 
 Attribute every lifecycle claim and Product Fact to its product. A shared component can have one canonical spec, but deployment, activation, rollback, availability, and claim scope advance separately for each consuming product. Evidence for one product never promotes another.
 
-During active implementation, PR, delivery, or release work, maintain documentation impact, links among Tasks and PRs, the smallest relevant draft edits, provenance, and exact source revision. Promote shipped truth only after release verification. If evidence is missing, mark the claim stale or unverified and create or reuse documentation-debt work instead of guessing.
+During implementation and delivery, record progress, heads, tests and reviews on the Task or pull request. On the spec, change only a state label and its link, or the content when intent, behavior, constraints or verification change. A change needing no spec edit still names the spec in the repository's documentation-impact mark. Promote shipped truth only after release verification. If evidence is missing, mark the claim stale or unverified and create or reuse documentation-debt work instead of guessing.
 
 When product work needs a Task, reuse suitable existing work and follow the active kernel and server contract for its shape, hierarchy, and dependencies.
 
