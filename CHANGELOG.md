@@ -1,5 +1,11 @@
 # Changelog
 
+## 18.0.0 - Unreleased
+
+Claude Code no longer asks you to sign in to Octopad again after each plugin update. The MCP configuration sent the plugin version in a header, and Claude Code stores the sign-in under the server's whole configuration, so every new version lost it. Both MCP configurations now carry the server address alone. The `octopad-session` skill passes its version to `start_session` as `plugin_version`, which the Octopad server needs to keep its update notice. The README now covers installing from the Claude app as well as Claude Code.
+
+Both distributions move to 18.0.0.
+
 ## 17.2.0 - Unreleased
 
 CRM 1.3.0 has the AI agree an Enrich run with the user before launching it. For contacts, it asks which values to buy, email, phone or both (email alone unless chosen), and confirms the most the run may spend: the contacts it names, or its record limit once it targets a segment, times the price of each value. It offers a dry run first, which spends nothing, and says how to buy phones for contacts that already have an email. The cost guidance now says that Scout and Enrich spend Octopad credits per candidate proposed and per value found on Octopad's FullEnrich access, and nothing on the organization's own FullEnrich key.

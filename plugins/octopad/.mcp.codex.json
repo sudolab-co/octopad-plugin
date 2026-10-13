@@ -7,9 +7,6 @@
         "start_session": {
           "output_token_limit": 15000
         }
-      },
-      "http_headers": {
-        "x-octopad-plugin-version": "17.2.0"
       }
     }
   }

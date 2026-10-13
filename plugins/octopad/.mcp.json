@@ -2,10 +2,7 @@
   "mcpServers": {
     "octopad": {
       "type": "http",
-      "url": "https://mcp.octopad.app/mcp",
-      "headers": {
-        "x-octopad-plugin-version": "17.2.0"
-      }
+      "url": "https://mcp.octopad.app/mcp"
     }
   }
 }
