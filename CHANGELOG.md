@@ -2,7 +2,7 @@
 
 ## 17.2.0 - Unreleased
 
-CRM 1.3.0 has the AI agree an Enrich run with the user before launching it. For contacts, it asks which values to buy, email, phone or both (email alone unless chosen), and confirms the most the run may spend: the contacts it may enrich times the price of each value. It offers a dry run first, which spends nothing. The cost guidance now says that Scout and Enrich spend Octopad credits per candidate proposed and per value found on Octopad's FullEnrich access, and nothing on the organization's own FullEnrich key.
+CRM 1.3.0 has the AI agree an Enrich run with the user before launching it. For contacts, it asks which values to buy, email, phone or both (email alone unless chosen), and confirms the most the run may spend: the contacts it names, or its record limit once it targets a segment, times the price of each value. It offers a dry run first, which spends nothing, and says how to buy phones for contacts that already have an email. The cost guidance now says that Scout and Enrich spend Octopad credits per candidate proposed and per value found on Octopad's FullEnrich access, and nothing on the organization's own FullEnrich key.
 
 Both distributions move to 17.2.0.
 
