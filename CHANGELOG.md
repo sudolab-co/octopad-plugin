@@ -2,7 +2,7 @@
 
 ## 17.7.0 - Unreleased
 
-Octoplan 7.4.0 lowers the default effort for checkable work in Claude. A bounded task whose tests, build or other deterministic check proves the result now runs on Opus 5.5 at medium effort instead of high, and continues once at high if those checks fail; code, configuration or command-line work with unresolved judgment or weak checks stays at high. In Codex, the default reviewer for bounded verification moves from the retired `gpt-5.6-sol` to `gpt-6.1-sol` at high effort. Routes already saved on existing tasks run as saved.
+Octoplan 7.4.0 lowers the default effort for checkable work in Claude. A bounded task whose tests, build or other deterministic check proves the result now runs on Opus 5.5 at medium effort instead of high, and continues once at high if those checks fail; code, configuration or command-line work with unresolved judgment or weak checks stays at high. In Codex, a worker on settled choices with reliable checks still starts on `gpt-6-luna` at xhigh effort and continues once on `gpt-6.1-sol` at high if its checks fail, and the default reviewer for bounded verification moves from the retired `gpt-5.6-sol` to `gpt-6.1-sol` at high effort. Routes already saved on existing tasks run as saved.
 
 Both distributions move to 17.7.0.
 
