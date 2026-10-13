@@ -9,9 +9,9 @@ Use when there is no product documentation, repository, or established system mo
 Begin this setup after the user explicitly asks to establish product documentation or a substantive design discussion needs its first owner. A passing idea alone is not setup authority.
 
 1. Confirm the product, users, problem, and current evidence state from the conversation. Ask only about a material missing boundary or intent.
-2. Follow the workspace's existing folder and page-preparation guidance, then create one minimal Product Map from [artifact-shapes.md](artifact-shapes.md). Record confirmed foundation, known capability areas, and explicit unknowns. Do not invent milestones, architecture, integrations, or implementation choices.
+2. Follow the workspace's existing folder and page-preparation guidance, then create the Product Map index from [artifact-shapes.md](artifact-shapes.md), one line per known feature. Do not invent milestones, architecture, integrations, or implementation choices.
 3. Keep passing ideas in the active discussion. Park an idea the user engaged with and left open as one line on the Ideas page, created on first use and linked from the map.
-4. Once discussion develops a real system boundary, behavior, contract, or meaningful alternative, add the system to the map and create its Product Spec at `idea` with confirmed material and explicit gaps. Do not invent execution work. Advance it only when later evidence supports the next state.
+4. Once discussion develops a real system boundary, behavior, contract, or meaningful alternative, add its Map line and create its Product Spec with an `[idea]` entry holding confirmed material and open questions. Do not invent execution work. Advance it only when later evidence supports the next state.
 5. Reuse the user's work stream and Tasks or create only the finite execution work needed by the normal workflow. Link that work to the spec; do not copy its changing status into the page.
 6. Do not create an Architecture Map as if architecture exists. Before code exists, retain only confirmed technical constraints or Decisions. Create the map once code gives evidence of stable architecture, in Octopad or in the repository when the team wants it beside the code.
 
@@ -40,7 +40,7 @@ Classify impact continuously without making the conversation feel like a form:
 - `new system`: substantive design establishing a new coherent capability or responsibility, beginning at `idea`;
 - `technical-only`: implementation or operational work with no product behavior change, which can still affect architecture or an Engineering Reference.
 
-During casual exploration, keep the classification local and park only an idea the user engaged with and left open. When the discussion becomes substantive design, create or adopt the owning Product Spec at `idea`, add or update its Product Map link and `idea` status, then remove any duplicate parked entry while preserving its unique content in the spec. Do not wait for a build decision. Acceptance, implementation, merge, and release advance that same record only on their own evidence. If the product or system boundary remains materially ambiguous after reading current context, ask one focused question and continue unaffected organization work.
+During casual exploration, keep the classification local and park only an idea the user engaged with and left open. When the discussion becomes substantive design, create or adopt the owning Product Spec, write its `[idea]` entry in Next (direction, set-aside alternatives, open questions), add its Map line if new, then remove any duplicate parked line while preserving its unique content. Do not wait for a build decision. Acceptance, implementation, merge, and release advance that same record only on their own evidence. If the product or system boundary remains materially ambiguous after reading current context, ask one focused question and continue unaffected organization work.
 
 At the end of a brainstorm, park only the remaining passing ideas the user engaged with and left open that did not become owned design. Park an idea raised in passing during other work the same way. Park nothing the user turned down or dropped. Each line carries the date it was parked, the idea, and one clause on the problem it addresses; [documentation-model.md](documentation-model.md) states where the line lives and how it leaves the list.
 
@@ -59,10 +59,10 @@ Do not load every Product Spec or the whole repository merely because the Produc
 1. Determine documentation impact: none, existing-system change, new system, or technical-only. Record it on the PR in the repository's normal way, naming affected documents or carrying the proven negative receipt. Follow the complete no-impact protocol in `SKILL.md`: inventory the maintained set for every affected product without a title filter, then supplement it with diff-derived search and read likely candidates. `technical-only` does not imply `none` when durable architecture or an Engineering Reference changed. Behavior that changed while no page owns it is documentation debt rather than no impact.
 2. Link the existing Task or work stream to the PR through the repository's normal fields, and link the affected Product Spec back to that work.
 3. Record exact head and base revisions. Re-check after material drift.
-4. Make the smallest draft update needed to preserve intent and reviewability. Keep proposed, approved, and implemented labels separate.
+4. Record heads, tests and progress on the pull request and Task. On the spec, update the change's state label and link, and its content only when intent, behavior, constraints or verification change.
 5. Verify coverage under [Work from product intent](../SKILL.md#work-from-product-intent), using code, tests and the actual diff rather than the PR description alone.
 6. Draft pre-release user-documentation or release-note changes when useful, but label them clearly and bind them to the exact approved, implemented, or merged revision. Do not turn them into shipped wording, Product Facts, or marketing claims.
-7. After merge, record `merged` only. Do not label the behavior released.
+7. After merge, label the change `[merged PR #n]`; for a change merged in parts, name the parts. Do not label the behavior released.
 8. When evidence remains missing, mark the update stale or unverified and create or reuse documentation-debt work.
 
 Follow repository review and merge controls. This skill grants no merge authority and creates no separate approval system.
@@ -75,7 +75,7 @@ Run one full pass per release, when changes actually reach users. This pass is t
 2. Bound the release window. Read the boundary the previous release pass recorded: an exact revision, or failing that a date resolved to a revision. Collect every change between that boundary and this release's exact revision. Never bound on a moving branch head or a bare date; a date boundary silently drops same-day changes. When the boundary is imprecise, over-collect toward the older side and say so in the closing record — a duplicate is visible, a dropped change is not.
 3. Consume each change's documentation-impact mark when the delivery workflow records one. A mark naming a maintained doc puts that doc on the update list with the change as evidence. Recheck an explicit `none` against the diff and its receipt. A missing or wrong owner is resolved by adopting or creating the smallest authorized owner when the evidence is sufficient; otherwise file documentation debt. A mark naming another family's doc is a handoff, not an edit order.
 4. Re-read each affected draft against released code and observed product behavior when available.
-5. Update released behavior in affected Product Specs and relevant Architecture Map sections. Preserve exact release provenance.
+5. Fold each released change into the affected spec's Principles and Behavior, only for the part and audience released; keep its still-applicable constraints and scenarios; remove its Next entry once nothing in it is unmet; replace the Verified lines checked. Keep release chronology and receipts on the release record. Update relevant Architecture Map sections.
 6. Keep unverified claims out of shipped truth. Track them as documentation debt.
 7. Resolve and open each existing product authority affected by the release, including the Product Map and any Product Facts whose dependencies moved. A Product Facts page is born only with the first substantiated public claim; its prior absence is normal. Create or adopt a missing ordinary owner when the released evidence and session authority support it, or record the exact gap. Only a document the product context explicitly marks as locked requires exact before/after approval before editing.
 8. Reconcile pre-release user documentation or release notes against verified released evidence before removing their label. Draft or revise Product Facts here. Hand marketing claims and final marketing wording to product marketing. Preserve every review and publication gate.
@@ -91,8 +91,9 @@ If repository policy explicitly proves that merge equals release, record that po
 4. For each page you will change, check intent and coverage under [Work from product intent](../SKILL.md#work-from-product-intent). Then compare claims with current code, release evidence, Decisions, and user-facing behavior. Mark unsupported claims stale or unverified instead of guessing.
 5. Consolidate duplicates only after preserving unique knowledge and history. Require explicit approval before deletion or irreversible overwrite.
 6. Review parked ideas and the Ideas page. Propose removing lines whose problem has lapsed, in one batch; do not remove them silently.
-7. Create or reuse one bounded documentation-debt Task for related missing evidence, unresolved conflicts, or substantial rewrites. Do not create one task per broken link.
-8. Report repairs, remaining uncertainty, and the evidence needed to resolve it.
+7. Check each spec against SKILL.md's Write for the reader: misplaced history, delivery notes, duplicates, unlabelled states, prose that fails the removal test. Prune under its preservation rule.
+8. Create or reuse one bounded documentation-debt Task for related missing evidence, unresolved conflicts, or substantial rewrites. Do not create one task per broken link.
+9. Report repairs, remaining uncertainty, and the evidence needed to resolve it.
 
 ## Downstream documents
 

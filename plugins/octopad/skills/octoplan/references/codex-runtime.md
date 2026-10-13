@@ -1,6 +1,6 @@
 # Codex runtime
 
-Load only in Codex. Apply common [planning](planning.md), [supervision](supervision.md) and [recovery](recovery.md); this profile adds native mechanics and compatibility.
+Read its Exact routes section when choosing Codex routes from either runtime; load the rest only in Codex. Apply common [planning](planning.md), [supervision](supervision.md) and [recovery](recovery.md); this profile adds native mechanics and compatibility.
 
 ## Exact routes
 
@@ -10,20 +10,22 @@ Select workers by the judgment remaining after preparation. Consider `gpt-6-luna
 |---|---|
 | Planner | `gpt-6-astra · effort xhigh` |
 | Supervisor | `gpt-6.1-sol · effort high` |
-| Worker: settled choices and reliable verification | `gpt-6-luna · effort xhigh` |
+| Worker: settled choices and reliable verification | `gpt-6-luna · effort xhigh, gpt-6.1-sol · effort high on failed checks` |
 | Worker: bounded judgment beyond that first candidate | `gpt-6.1-sol · effort high` |
 | Worker: several unresolved reasoning steps in a prepared task | `gpt-6-astra · effort medium` |
-| Reviewer: bounded verification with reliable checks | `gpt-5.6-sol · effort high` |
+| Reviewer: bounded verification with reliable checks | `gpt-6.1-sol · effort high` |
 | Worker or reviewer: difficult reasoning or hard-to-detect errors | `gpt-6-astra · effort high` |
 | Worker or reviewer: weak verification or high consequences | `gpt-6-astra · effort xhigh` |
 
 These defaults do not override an explicit user choice of an available model and effort. Record that choice and reason; capability, independent-review and evidence requirements still apply.
 
-Astra `max` is exceptional after diagnosis, never automatic. Default role admission: planner = `gpt-6-astra` at `xhigh|max`; supervisor = `gpt-6.1-sol` at `high`; worker = `gpt-6-luna` at `xhigh`, `gpt-6.1-sol` at `high` or `gpt-6-astra` at `medium|high|xhigh|max`; reviewer = `gpt-5.6-sol` at `high` or `gpt-6-astra` at `high|xhigh|max`. Review floors do not depend on worker price. Repair insufficient preparation before escalating effort.
+`gpt-6-luna · effort xhigh, gpt-6.1-sol · effort high on failed checks` is one saved route: when the work itself fails its acceptance checks, the supervisor records it and, once the Luna worker has stopped, dispatches one Sol continuation from the reconciled artifact with the same brief, instead of returning the defect to that worker; plan and infrastructure failures follow recovery. Both attempts count toward recovery's two-cycle trigger, and each actor's native evidence must match its own part of the route.
+
+Astra `max` is exceptional after diagnosis, never automatic. Default role admission: planner = `gpt-6-astra` at `xhigh|max`; supervisor = `gpt-6.1-sol` at `high`; worker = `gpt-6-luna` at `xhigh`, `gpt-6.1-sol` at `high` or `gpt-6-astra` at `medium|high|xhigh|max`; reviewer = `gpt-6.1-sol` at `high` or `gpt-6-astra` at `high|xhigh|max`; a `gpt-5.6-sol · high` reviewer route saved before 7.4.0 stays valid. Review floors do not depend on worker price. Repair insufficient preparation before escalating effort.
 
 Valid routes saved before 5.1.0 remain valid; the new defaults apply when preparing new plans. This includes the Sol 6 and Luna 6 routes published in 4.2.0 and saved v18 routes valid under 1.3.0: Luna workers `max`; Sol planners `xhigh|max`, supervisors, reviewers and workers `high|xhigh|max`; Astra planners and supervisors `xhigh|max`, reviewers `high|xhigh|max`, workers `low|medium|high|xhigh|max`. Keep exact saved model IDs and efforts, including active actors; an older Luna or Sol route does not select its successor. A saved-route change returns to Plan and affected review before dispatch; unavailable or invalid routes pause only the affected actor. Never substitute silently.
 
-Native evidence exposing model and effort must match the saved values exactly. Positive mismatch pauses that actor. Requested settings, prompts and titles are declarations, not observations. Where native metadata is absent, continue with the declared route and record once on the first affected receipt that it is not independently observable here; missing metadata alone is neither a failed review nor `INFEASIBLE`. Reusing a session for a role requires a matching saved route under this same rule; prompting cannot change its model.
+Native evidence exposing model and effort must match the actor's saved Codex route exactly. Positive mismatch pauses that actor. Requested settings, prompts and titles are declarations, not observations. Where native metadata is absent, continue with the declared route and record once on the first affected receipt that it is not independently observable here; missing metadata alone is neither a failed review nor `INFEASIBLE`. Reusing a session for a role requires a matching saved route under this same rule; prompting cannot change its model.
 
 ## Native work
 
@@ -90,7 +92,7 @@ The Goal stays with its creator chat. Children never create, mutate or inherit i
 
 ## Read existing plans unchanged
 
-Existing parent-relay and child-supervisor deliveries retain that topology while valid. Their parent collects and, after checking current authority, receipts and actor state, resumes the same healthy supervisor with `followup_task`; it does not dispatch workers or close tasks. User stop, retirement, uncertain effects, gates and real limits prevent unsafe continuation. Never launch a native chat alongside that owner merely because the skill was updated. A requested topology migration needs affected Plan review, predecessor cessation and guarded ownership transfer under [recovery](recovery.md).
+Existing parent-relay and child-supervisor deliveries retain that topology while valid; such a child supervisor keeps the Octopad access its ownership and recovery need. Their parent collects and, after checking current authority, receipts and actor state, resumes the same healthy supervisor with `followup_task`; it does not dispatch workers or close tasks. User stop, retirement, uncertain effects, gates and real limits prevent unsafe continuation. Never launch a native chat alongside that owner merely because the skill was updated. A requested topology migration needs affected Plan review, predecessor cessation and guarded ownership transfer under [recovery](recovery.md).
 
 Decision-based plans retain the common `Octoplan brief`, `Octoplan stakes`, `Octoplan plan contract`, `Octoplan delivery authorization` and `Octoplan supervisor` records, and these exact saved aliases: `Octoplan 18 brief`, `Octoplan 18 stakes`, `Octoplan 18 plan contract`, and `Octoplan 18 delivery authorization`. Read the existing supervisor Decision by its recorded ownership content; the old source required a stream Decision but did not prescribe a fixed supervisor title. Reuse its identity, revision guards, current receipts and exact route. New plans use [working documents](records.md); resumed records retain their existing aliases and canonical homes. Valid Decisions, task text, receipts and authority need no rename, migration or duplicate go.
 

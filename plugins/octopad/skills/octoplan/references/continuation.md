@@ -28,7 +28,7 @@ Use $octoplan to resume delivery of <work stream>.
 Octopad: <organization> / <workspace>. Delivery authorization is recorded in the stream Decisions; do not ask for it again.
 ```
 
-An additional line may name an indispensable environment fact Octopad cannot hold, such as the branch the chain stacks on. Every block emitted to the user has one plain settings line immediately below its fence: exact saved model, effort, and `solo` or `parallel-safe`. Task settings come from its freshly read Exec line; supervisor settings come from the recorded supervisor route. Read only the actual runtime's profile when interpreting these settings. The receiver verifies readiness, ownership, authority and the predecessor's cessation before any work; a block offered before a gate clears is expressly for later use and cannot waive that gate.
+An additional line may name an indispensable environment fact Octopad cannot hold, such as the branch the chain stacks on. Every block emitted to the user has one plain settings line immediately below its fence: exact saved model and effort, and `solo` or `parallel-safe`. A task block shows each runtime route saved in its freshly read Exec lines; a supervisor block shows the recorded supervisor route. Interpret each runtime's route with its own profile. The receiver verifies readiness, ownership, authority and the predecessor's cessation before any work; a block offered before a gate clears is expressly for later use and cannot waive that gate.
 
 ## Next instructions for manual tasks
 

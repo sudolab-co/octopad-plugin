@@ -2,9 +2,11 @@
 name: octoplan
 description: Use when prepared work may benefit from delivery by agents, even without the name Octoplan, or when the user invokes, plans, resumes or supervises an Octoplan. Qualify the route before offering delivery; opening this skill never authorizes execution. Generic stream preparation belongs to octopad-planning-and-work-design.
 ---
+A worker, reviewer or planning helper without Octopad access in its brief calls no Octopad tool, `skill_opened` included: it works from the evidence given and returns missing sources and proposed record changes to its delegating session.
+
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octoplan"` when you open this skill.
 
-Version: 7.1.0
+Version: 7.4.0
 
 # Octoplan
 
@@ -28,7 +30,7 @@ The user describes the need. Apply the common brief and preparation in [octopad-
 
 - Read [planning.md](references/planning.md) for Brief, autonomy, Plan, review, and activation.
 - Read [supervision.md](references/supervision.md) for Delivery or resume.
-- Select the profile from the actual host, not the model's name: [codex-runtime.md](references/codex-runtime.md) in Codex; [claude-runtime.md](references/claude-runtime.md) in Claude Code. Read only that profile when choosing routes, launching, resuming, or checking capabilities. Unknown hosts must establish capabilities before promising autonomous delivery.
+- Select the profile from the actual host, not the model's name: [codex-runtime.md](references/codex-runtime.md) in Codex; [claude-runtime.md](references/claude-runtime.md) in Claude Code. Read only that profile when launching, resuming, or checking capabilities. When choosing routes, read both profiles' route sections: every task names a route for each runtime ([planning.md](references/planning.md)). Unknown hosts must establish capabilities before promising autonomous delivery.
 - Read [records.md](references/records.md) before reading or writing a delivery contract or journal.
 - Read [multi-stream.md](references/multi-stream.md) only for multiple streams.
 - Read [recovery.md](references/recovery.md) before duplicable or hard-to-undo effects, or for ambiguity, shared-infrastructure distress, actor failure, repeated non-progress, takeover, or replan.

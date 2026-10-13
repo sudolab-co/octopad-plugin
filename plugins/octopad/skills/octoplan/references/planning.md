@@ -113,18 +113,19 @@ Every executable task carries:
 <accepted end state in the real system of record>
 
 **Exec**
-<exact model and effort from the selected runtime profile, with reason>
+Claude: <exact model and effort from the Claude profile, with reason>
+Codex: <exact model and effort from the Codex profile, with reason>
 
 **Review**
 <targeted checks, fresh independent review, and any human reviewer required by effective rules>
 
 **Octopad**
-<yes or no, with reason: no when the spec alone does the job and no slot names Octopad, a page, or the task as a read or write surface>
+<no by default; yes only when the work or its proof needs direct access, such as a deliverable that lives in Octopad: say why and which reads and writes>
 ```
 
 Use the live schema. Top-level tasks require literal **Why**, **What**, **Done when**, `impact`, and `impact_rationale`; subtasks require **Why**, **What**, and impact fields. Every edge carries a rationale. Add `**Preconditions**` only for a live prior artifact or maturing event.
 
-Write `How` as outcome and constraint. Prescribe a technique or precedent only when verified evidence makes it fit. Prepare the task for an efficient capable worker: settled choices, precise sources, constraints, edge cases, expected output, and runnable acceptance checks, so the worker need not rediscover project decisions. Reference live inputs and predecessor outputs precisely; do not copy the whole project or invent details. Choose `Exec` from the judgment remaining after preparation. Plan review challenges sufficiency and route fit together. Extra planning, launches, and reviews also cost. A manual `Next` block is needed only when the selected runtime actually uses manual execution; valid saved blocks need not be removed.
+Write `How` as outcome and constraint. Prescribe a technique or precedent only when verified evidence makes it fit. Prepare the task for an efficient capable worker: settled choices, precise sources, constraints, edge cases, expected output, and runnable acceptance checks, so the worker need not rediscover project decisions. Reference live inputs and predecessor outputs precisely; do not copy the whole project or invent details. Choose `Exec` from the judgment remaining after preparation, once per runtime, each from its own profile's rubric. A review route saved on a task names both runtimes the same way. Check each route against `How`, `Verify` and access: a step only one runtime supports names its equivalent in the other, or that route records the gap as a blocker. Check availability in the runtime you plan in; the other runtime checks its route before launch, and an unavailable model pauses only that actor. A route that needs acceptance, such as Fable's, is saved only once its conditions hold; otherwise save its profile's fallback. A task saved with one runtime's route stays valid there; running it in the other runtime first adds that route through Plan and focused route-fit review. Plan review challenges sufficiency and route fit together. Extra planning, launches, and reviews also cost. A manual `Next` block is needed only when the selected runtime actually uses manual execution; valid saved blocks need not be removed.
 
 Plan only runnable `Verify` steps. Use the preflight access task when a remote surface is unavailable; a seat or UI only a person can exercise is a named human checkpoint, never verification.
 
@@ -169,7 +170,7 @@ Reread current Octopad schemas, target versions, and effective rules. After the 
 
 Apply F1 record integrity to every Decision, comment, receipt, and handoff. A tracker provides navigation, not a competing progress record; reconcile drift without letting it override tasks, Decisions, receipts, or target state. A legacy Claude tracker may still hold the verified Brief confirmation described by its compatibility profile; preserve that source. After incomplete output, inspect uncertain items and retry only what the authoritative target proves absent. Never replay a batch; guard updates with `expected_updated_at`, and reread before every guarded write: Octopad advances a task's `updated_at` on its own after a write and when a dependency closes, with no text change, so a value copied from a write receipt or a handoff goes stale, and drift is judged by comparing content, never timestamps alone.
 
-Before review, reread every executable task from Octopad (what was saved, not what you remember writing) and check: literal **Why**/**What**/**Done when** and impact fields; Exec, Review, and Octopad lines with their reasons; every protected effect named in plain consequence words; `How` names the specific files or sources, never "follow the existing pattern"; every claim measured this session (F16); every `Verify` slot with its proof surface and load-bearing checks with their risk- and surface-appropriate defeat proof; subtasks only for parts each finished and checked on its own; one job per task; every gap a Question, a Decision, or a placeholder. Fix failures on the spot, then recheck the fixed task.
+Before review, reread every executable task from Octopad (what was saved, not what you remember writing) and check: literal **Why**/**What**/**Done when** and impact fields; Exec with a route per runtime (a legacy single route stays valid), Review, and Octopad lines with their reasons; every protected effect named in plain consequence words; `How` names the specific files or sources, never "follow the existing pattern"; every claim measured this session (F16); every `Verify` slot with its proof surface and load-bearing checks with their risk- and surface-appropriate defeat proof; subtasks only for parts each finished and checked on its own; one job per task; every gap a Question, a Decision, or a placeholder. Fix failures on the spot, then recheck the fixed task.
 
 Mark the stream ` (octoplanned)` only when the graph, required working documents, actual knowledge items and receipts exist. Confirm task and contract revisions against PASS receipts before showing the Plan, whose fields show open questions, gates and first ready work.
 

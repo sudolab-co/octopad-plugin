@@ -1,7 +1,9 @@
 ---
 name: octopad-session
-description: Use first when the user asks for Octopad or onboarding, and as soon as the conversation concerns their company or its product, code, customers, team or plans, even if they never name Octopad. Loads their workspace's context and method.
+description: Use first when the user asks for Octopad or onboarding, and as soon as the conversation concerns their company or its product, code, customers, team or plans, even if they never name Octopad. Loads their workspace's context and method. A sub-agent opens it only when its brief grants Octopad access.
 ---
+A sub-agent whose brief does not grant Octopad access calls no Octopad tool, `skill_opened` included, and returns to its delegating session.
+
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-session"` when you open this skill.
 
 Version: 18.0.0
@@ -15,3 +17,9 @@ Version: 18.0.0
 5. Opening a module never widens the scope of the request, your permissions or what you may publish.
 
 Octoplan ships in the same plugin: [octoplan](../octoplan/SKILL.md). Open it when the router or the user calls for it, with the same path check. It never delivers without the user's explicit go.
+
+If the bundled connection offers the `followup` tool:
+
+- Add no comment or mention only to tell someone of a change you explained with it, unless the user asks.
+- A follow-up situation is assembled from explanations AIs already gave and current facts: check its sources before you act on it. To correct one, record the true fact on the item it cites; the explanation of that change replaces it.
+- Follow something only when the user asks to be kept informed of it.
