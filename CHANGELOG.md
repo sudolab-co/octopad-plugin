@@ -1,5 +1,11 @@
 # Changelog
 
+## 17.2.0 - Unreleased
+
+CRM 1.3.0 has the AI agree an Enrich run with the user before launching it. For contacts, it asks which values to buy, email, phone or both (email alone unless chosen), and confirms the most the run may spend: the contacts it may enrich times the price of each value. It offers a dry run first, which spends nothing. The cost guidance now says that Scout and Enrich spend Octopad credits per candidate proposed and per value found on Octopad's FullEnrich access, and nothing on the organization's own FullEnrich key.
+
+Both distributions move to 17.2.0.
+
 ## 17.1.0 - 2026-10-13
 
 Octoplan 7.1.0 keeps its agents' context small. Every agent searches before reading, reads only the parts of files and pages it needs, and prints summaries and failures instead of full logs, while still fetching any evidence it left out before relying on it. Workers hand long external waits, such as CI, back to the supervisor instead of waiting on them. Agents process their whole context again on every turn, so carrying less output should lower usage. Reviews, gates and records are unchanged.

@@ -4,7 +4,7 @@ description: "How a workspace's CRM is read, written and kept true: customer con
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-crm"` when you open this skill.
 
-Version: 1.2.0
+Version: 1.3.0
 
 # Before anything
 
@@ -50,7 +50,8 @@ Each kind of fact has one home; pick it on purpose.
 # Running octobots
 
 - Launch a run only on the user's instruction: `crm_runs` `launch` with `kind` `distill` or `prospect` (`scout` and `enrich` where the organization has them), or `crm_outreach` `draft`, which creates the same prospect run. Before a real run, rehearse with `dry_run`, which calls no model, writes nothing and counts nothing, then state how many contacts it may touch (`max_records`) and what it costs.
-- **Cost.** Distill and Prospect make one model call per contact folded or drafted, and Octopad pays for it today. Where the organization has Scout and Enrich, they spend FullEnrich credits: one per candidate found, one per record sent to be enriched. `crm_runs` `get` shows one run's model calls, tokens and estimated cost; the first page of `list` shows them by month, previews apart. Both are estimates at list price, not charges.
+- **Before an Enrich run on contacts**, ask the user which values to buy: `fields` takes `email` (a work email), `phone` (a mobile) or both, and is `["email"]` when left out; email alone is often enough. Then confirm the most the run may spend: the contacts it may enrich, at most `max_records`, times the price of each value chosen (the `fields` parameter of `crm_runs` gives the prices). Offer a `dry_run` first: it reports the contacts it would enrich and spends nothing. Launch only on the user's go. A company Enrich run takes no `fields`.
+- **Cost.** Distill and Prospect make one model call per contact folded or drafted, and Octopad pays for it today. Where the organization has Scout and Enrich, on Octopad's FullEnrich access they spend Octopad credits: Scout per candidate it proposes, Enrich per value it finds (an email, a phone or a company's details), never for a value not found; a real launch there sets aside the most the run may spend, and its answer says how much. On the organization's own FullEnrich key they spend no Octopad credits. `crm_runs` `get` shows one run's model calls, tokens and estimated cost; the first page of `list` shows them by month, previews apart. Both are estimates at list price, not charges.
 - **Daily budget.** Each organization has a daily budget for those model calls, counted in contacts per UTC day: 200 unless Octopad set another. A launch reserves its `max_records` (fewer when it names fewer contacts and no segment), a preview reserves 3, and the nightly distill takes from the same budget. Nothing is refunded when a run does less than it reserved. The answer to a launch says how much of today's budget the organization has used. Past the budget a launch or preview is refused and nothing is created or spent: launch on fewer contacts, or wait for the reset at 00:00 UTC, which the refusal names. Octopad's allowance shared by every organization can run out too; the refusal then says so.
 - **Following a run.** `get` with `run_id` shows its status, targets, summary, last error and spend; `list` shows the history. `cancel` stops a run only while it is `pending`.
 - **A run that did nothing.** Read its summary with `get` before you report anything.
