@@ -1,5 +1,13 @@
 # Changelog
 
+## 17.4.0 - Unreleased
+
+octopad-session 17.4.0 says what the AI does with Octopad's follow-up when the connection offers the `followup` tool. It adds no comment or mention only to tell someone of a change it explained, unless the user asks. It checks a follow-up situation's sources before acting on it, and corrects one by recording the true fact on the item it cites. It follows something only when the user asks to be kept informed of it. When to explain changes is the served kernel's rule (kernel 2.9.0, in the companion sudolab-co/octopad pull request), not the skill's.
+
+Without the tool, nothing changes. Takes effect once production runs sudolab-co/octopad#1285, #1289, #1292, #1303, #1304, #1305 and the kernel 2.9.0 companion, with the follow-up switched on.
+
+Both distributions move to 17.4.0.
+
 ## 17.3.0 - Unreleased
 
 Product documentation 6.1.0 keeps product specs lean. A spec now holds its purpose, its principles, the behavior users get today, the work still to come and one Verified section, in compact language where every line says who does what, when and where. History, delivery notes, release receipts and code inventories move to tasks, pull requests and history pages. Unreleased changes sit under Next with a state label, so a reader never mistakes them for live behavior. The Product Map becomes a plain index: one line per feature, linked to its spec. Before a need, rule, constraint or scenario leaves a spec, your AI records where it went: kept, moved, replaced or unresolved. A substantive rewrite gets a review by someone who did not write it.
