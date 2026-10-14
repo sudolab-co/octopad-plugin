@@ -1,5 +1,11 @@
 # Changelog
 
+## 19.0.0 - Unreleased
+
+Tasks gain two statuses: `on_hold`, for work paused by choice, and `cancelled`, for work stopped without meeting its Done when. The planning skill 4.3.0 now cancels a task nobody will do, with a status line naming why and what replaces it, instead of archiving it; archiving only takes a task out of sight. The Notepad skill 3.2.0 also sets a reminder for an `on_hold` task waiting on a date or an event. This version needs the Octopad server release that adds these statuses.
+
+Both distributions move to 19.0.0.
+
 ## 18.0.0 - 2026-10-14
 
 Claude Code no longer asks you to sign in to Octopad again after each plugin update. The MCP configuration sent the plugin version in a header, and Claude Code stores the sign-in under the server's whole configuration, so every new version lost it. Both MCP configurations now carry the server address alone. Claude Code asks you to sign in once more after this update; later updates keep the sign-in. The `octopad-session` skill passes its version to `start_session` as `plugin_version`, which the Octopad server needs to keep its update notice. The README now covers installing from the Claude app as well as Claude Code.

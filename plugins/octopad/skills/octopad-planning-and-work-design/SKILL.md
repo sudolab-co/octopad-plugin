@@ -4,7 +4,7 @@ description: Use for a new or existing stream, a brief, or a delivery-mode choic
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-planning-and-work-design"` when you open this skill.
 
-Version: 4.2.1
+Version: 4.3.0
 
 # From a need to prepared work
 
@@ -94,6 +94,6 @@ User: *"Lay out the launch — research, then design, then build, then ship — 
 
 # When an effort ends or changes shape
 
-- Archiving a task says two things at once: it no longer matters, and nobody is going to do it — dropped down the list, overtaken, or folded into another effort.
+- A task nobody is going to do (dropped, overtaken, or folded into another effort) is `cancelled`, its `status_line` naming why and what replaces it. Archiving only takes a task out of sight; it never stands in for `done` or `cancelled`.
 - Only a time-bound stream has a lifecycle, and it runs active, then completed, then archived. Completed keeps it in context and in search until its goal is reached; archived takes it out of context, so archiving ahead of the goal removes what the goal is still working from.
 - **Trackers are system-managed, with two exceptions you append yourself.** Tracker pages live in the system Trackers / Archive folders and render read-only. The system owns the Progress Report and Activity Log — never hand-write those two sections. You append exactly two things: the `## Closing Report` before completing a stream, and the structural-change note below.
