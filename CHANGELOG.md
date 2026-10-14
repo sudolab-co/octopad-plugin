@@ -1,30 +1,30 @@
 # Changelog
 
-## 18.0.0 - Unreleased
+## 18.0.0 - 2026-10-14
 
 Claude Code no longer asks you to sign in to Octopad again after each plugin update. The MCP configuration sent the plugin version in a header, and Claude Code stores the sign-in under the server's whole configuration, so every new version lost it. Both MCP configurations now carry the server address alone. Claude Code asks you to sign in once more after this update; later updates keep the sign-in. The `octopad-session` skill passes its version to `start_session` as `plugin_version`, which the Octopad server needs to keep its update notice. The README now covers installing from the Claude app as well as Claude Code.
 
 Both distributions move to 18.0.0.
 
-## 17.7.0 - Unreleased
+## 17.7.0 - 2026-10-14
 
 Octoplan 7.4.0 lowers the default effort for checkable work in Claude. A bounded task whose tests, build or other deterministic check proves the result now runs on Opus 5.5 at medium effort instead of high, and continues once at high if those checks fail; code, configuration or command-line work with unresolved judgment or weak checks stays at high. In Codex, a worker on settled choices with reliable checks still starts on `gpt-6-luna` at xhigh effort and continues once on `gpt-6.1-sol` at high if its checks fail, and the default reviewer for bounded verification moves from the retired `gpt-5.6-sol` to `gpt-6.1-sol` at high effort. Routes already saved on existing tasks run as saved.
 
 Both distributions move to 17.7.0.
 
-## 17.6.0 - Unreleased
+## 17.6.0 - 2026-10-14
 
 Octoplan 7.3.0 gives each newly planned task two routes: a Claude model and effort and a Codex model and effort, each chosen from that tool's own guidance with its reason. A team member who uses only Claude or only ChatGPT can run the task. The planner checks both routes against the task's steps, verification and access, naming an equivalent or recording a blocker where one tool cannot perform a step. The supervisor dispatches its own tool's route, and a manual task launch line shows both. Existing tasks keep their single route; running one in the other tool first adds the missing route, with a short review of that choice. The planning tool checks its route's availability before saving it, the other tool before launch; Fable is saved only once its conditions hold. Consent and takeover rules are unchanged.
 
 Both distributions move to 17.6.0.
 
-## 17.5.0 - Unreleased
+## 17.5.0 - 2026-10-14
 
 A session that launches sub-agents keeps the Octopad connection for them, whether it works alone or supervises an Octoplan. octopad-session 17.5.0 tells a sub-agent to call no Octopad tool unless its brief grants access. Octoplan 7.2.0 makes no Octopad access the default for a task, kept only when the work or its proof needs it, such as a deliverable that lives in Octopad, and applies the same rule to reviewers and planning helpers. A sub-agent that connected used to receive the whole workspace orientation on its first Octopad call. The served kernel 2.10.0 carries the rule (companion sudolab-co/octopad pull request).
 
 Both distributions move to 17.5.0. Takes effect fully once production runs the kernel 2.10.0 companion.
 
-## 17.4.0 - Unreleased
+## 17.4.0 - 2026-10-14
 
 octopad-session 17.4.0 says what the AI does with Octopad's follow-up when the connection offers the `followup` tool. It adds no comment or mention only to tell someone of a change it explained, unless the user asks. It checks a follow-up situation's sources before acting on it, and corrects one by recording the true fact on the item it cites. It follows something only when the user asks to be kept informed of it. When to explain changes is the served kernel's rule (kernel 2.9.0, in the companion sudolab-co/octopad pull request), not the skill's.
 
@@ -32,13 +32,13 @@ Without the tool, nothing changes. Takes effect once production runs sudolab-co/
 
 Both distributions move to 17.4.0.
 
-## 17.3.0 - Unreleased
+## 17.3.0 - 2026-10-14
 
 Product documentation 6.1.0 keeps product specs lean. A spec now holds its purpose, its principles, the behavior users get today, the work still to come and one Verified section, in compact language where every line says who does what, when and where. History, delivery notes, release receipts and code inventories move to tasks, pull requests and history pages. Unreleased changes sit under Next with a state label, so a reader never mistakes them for live behavior. The Product Map becomes a plain index: one line per feature, linked to its spec. Before a need, rule, constraint or scenario leaves a spec, your AI records where it went: kept, moved, replaced or unresolved. A substantive rewrite gets a review by someone who did not write it.
 
 Both distributions move to 17.3.0.
 
-## 17.2.0 - Unreleased
+## 17.2.0 - 2026-10-14
 
 CRM 1.3.0 has the AI agree an Enrich run with the user before launching it. For contacts, it asks which values to buy, email, phone or both (email alone unless chosen), and confirms the most the run may spend: the contacts it names, or its record limit once it targets a segment, times the price of each value. It offers a dry run first, which spends nothing, and says how to buy phones for contacts that already have an email. The cost guidance now says that Scout and Enrich spend Octopad credits per candidate proposed and per value found on Octopad's FullEnrich access, and nothing on the organization's own FullEnrich key.
 
