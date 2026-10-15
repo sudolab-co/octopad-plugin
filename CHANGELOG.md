@@ -1,6 +1,6 @@
 # Changelog
 
-## 19.0.0 - Unreleased
+## 19.0.0 - 2026-10-15
 
 Tasks gain two statuses: `on_hold`, for work paused by choice, and `cancelled`, for work stopped without meeting its Done when. The planning skill 4.3.0 now cancels a task nobody will do, with a status line naming why and what replaces it, instead of archiving it; archiving only takes a task out of sight. The Notepad skill 3.2.0 also sets a reminder for an `on_hold` task waiting on a date or an event. This version needs the Octopad server release that adds these statuses.
 
