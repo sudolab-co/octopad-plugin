@@ -4,7 +4,7 @@ description: Use for a new or existing stream, a brief, or a delivery-mode choic
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-planning-and-work-design"` when you open this skill.
 
-Version: 4.3.0
+Version: 4.4.0
 
 # From a need to prepared work
 
@@ -28,7 +28,7 @@ Planning-only means the user's request or context limits the outcome to a plan, 
 
 ## Keep the same work when delivery changes
 
-Adopt the same stream and task identities, decisions, evidence and progress when moving from collaboration to agent delivery. Carry forward valid explicit brief confirmation; Octoplan checks its source and fills only missing preparation and authority. A stream name or existing graph proves neither confirmation nor a mandate. Never restart completed work or treat old evidence as current without checking its scope.
+Adopt the same stream and task identities, decisions, evidence and progress when moving from collaboration to agent delivery. Carry forward valid explicit brief confirmation; Octoplan checks its source and fills only missing preparation and authority. A stream name or existing graph proves neither confirmation nor a mandate. Never restart completed work: a done task stays settled unless evidence contradicts its completion.
 
 For an ongoing stream, agree a bounded delivery within it; finishing that mandate does not complete the ongoing stream. Separate a new time-bound initiative only when its actual scope calls for it under the rules below, never just to turn on agent delivery. On resume, check current state and ownership; an existing valid Octoplan follows its own continuation rules without a duplicate choice. Returning to direct collaboration requires reconciling active agents and pending effects through Octoplan recovery first, not leaving them running under a superseded mandate.
 
