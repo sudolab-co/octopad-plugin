@@ -1,5 +1,11 @@
 # Changelog
 
+## 19.1.0 - Unreleased
+
+`octopad-knowledge-evidence` 2.1.0 teaches your AI to keep Key Information true, not only to record it. When something it writes or reads changes an item, such as a later decision, merged work, the code or an ended effort, it fixes the item in the same turn with the evidence: a fact is updated, a question closes only on a complete answer, a risk is mitigated or marked occurred, a changed choice becomes a new decision that supersedes only what it wholly replaces, and a dropped choice is reversed. Age and similarity prompt a check, never by themselves a change or a removal. When a stream is completed or archived, its open questions and risks are settled. A new section gives the procedure for an audit or cleanup the user asks for: a complete list, batches by subject, evidence per item, a reviewed sample, the user's yes on each exact batch kept on a working page, version-checked writes and a readback. The skill's definition of what enters Key Information now matches the server's: what someone outside the current task will need; checks, approvals and blockers stay on the task. That definition takes effect fully once production runs kernel 2.12.0 (companion sudolab-co/octopad pull request #1347).
+
+Both distributions move to 19.1.0.
+
 ## 19.0.0 - 2026-10-15
 
 Tasks gain two statuses: `on_hold`, for work paused by choice, and `cancelled`, for work stopped without meeting its Done when. The planning skill 4.3.0 now cancels a task nobody will do, with a status line naming why and what replaces it, instead of archiving it; archiving only takes a task out of sight. The Notepad skill 3.2.0 also sets a reminder for an `on_hold` task waiting on a date or an event. This version needs the Octopad server release that adds these statuses.

@@ -1,15 +1,15 @@
 ---
 name: octopad-knowledge-evidence
-description: Where the workspace's durable knowledge is written, and how a claim about it is proved. Use when decisions, facts, risks, advisories or open questions need recording, when the user hands over a file or a document, when a page or a file is written, linked or tagged, when you need to know whether something is on record already, and to answer anything asked about the corpus.
+description: Where the workspace's durable knowledge is written, and how a claim about it is proved. Use when decisions, facts, risks, advisories or open questions need recording, updating or cleaning up, when the user hands over a file or a document, when a page or a file is written, linked or tagged, when you need to know whether something is on record already, and to answer anything asked about the corpus.
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-knowledge-evidence"` when you open this skill.
 
 # Where knowledge is written
 
-Version: 2.0.0
+Version: 2.1.0
 
 - Three branches hold durable workspace context — `knowledge`, `pages` and `files`. Retrieval reaches only the branch a thing went into, so the branch is chosen on purpose and never by habit.
-- One fact that still matters in 30 days and informs a choice, one choice with lasting effect and its reason, one point blocking work or needing an answer, one threat to time, quality or scope: each is an atomic item, written with `knowledge`. Routine status, delivery consent and current supervision do not become Key Information automatically.
+- What someone outside the current task or conversation will need is an atomic item, written with `knowledge`: a fact others will rely on, a choice that binds work beyond its task, a question no open task will settle, an uncertain harm. Checks, receipts, approvals, blockers and notes about your own tools stay on the task, or in chat when there is no task; a fixable gap is a task.
 - Reference that outlives the effort — how a system is built, what a meeting settled — is a page, written with `pages`. Research or analysis for one decision is never kept or offered as an ordinary page: its Decision's rationale cites the decisive sources.
 - Material later sessions need for bounded work goes on a working page of its real task or active stream, including an ongoing stream. Lasting findings move to their proper home (Key Information, a reference page, an open task they inform); propose a home for, or ask about, lasting knowledge that has none. Operational consent, supervision and receipts stay with their work and remain consultable after archiving.
 - When you hand the work over, finish moving lasting findings, then keep each working page that is, as a whole, reference that outlives the effort, and archive the rest. A bounded delivery in an ongoing stream archives only its own document IDs, leaving the stream and other work active. When the work reopens, take the pages it needs out of Archive.
@@ -18,6 +18,29 @@ Version: 2.0.0
 - Wire what belongs together: a page or a file onto the task it informs, a page or a file onto the Key Information item it supports, one task onto another with the reason the dependency exists.
 - Search the pages before you attach one, so what lands on the task is the best of them and not the first.
 - Skip the search-and-link step where it cannot pay: a placeholder, a user who has declined it, input too thin to match anything (ask once), or a batch, where one search covers the whole topic.
+
+# Keeping knowledge true
+
+- When what you write or read changes an item (a later decision, merged or shipped work, the code, an ended effort, a moved value), fix the item in that turn, in one update carrying the evidence and the status it should now have.
+- A fact is updated in place.
+- A question closes only on a complete answer: a partial one stays open, with what is settled in its text. One waiting on a person's answer or approval closes only with it.
+- A risk is mitigated when evidence shows the harm can no longer happen as written, and marked occurred when it happened.
+- A decision whose detail was wrong is edited in place. A changed choice is a new decision: restate in it every clause of the old one that still holds, then set `superseded_by` on each old one it wholly replaces; one that only shares the subject stays active. A choice dropped with nothing in its place is set `reversed`.
+- Age, similarity and finished work are reasons to check an item, never by themselves to change or remove it.
+- When a stream is completed or archived, settle its open questions and risks (`knowledge` `list` with `stream_filter`, per kind, then a `search` for unscoped ones about it); its decisions stay active unless replaced or dropped.
+- Delete only an item that never belonged (an approval, a tooling note, a copy of a page); one that was once true is updated, answered, mitigated, superseded or reversed.
+
+# Cleaning up the corpus
+
+When the user asks to audit or clean Key Information:
+
+- List every item of each kind in scope with `knowledge` `list`, through every page it returns, and count them.
+- Work in batches by subject or stream, so a decision is read beside the ones that may replace it.
+- Check each item against its evidence: later decisions, task and stream state, the code, the page that owns the subject. Note per item the action (keep, verify, update, answer, defer, mitigate, mark occurred, supersede by a named successor, reverse, delete, move to a task or a page), its evidence and why it went stale.
+- Before showing a large batch, have a fresh reviewer check a sample of its proposals; the usual errors are a related decision taken for a replacement and a rewrite that drops a clause still valid.
+- Show the user the exact batch, each item's current and new text, and apply it only on their yes to that batch. Keep that batch on the cleanup's working page, so any change can be undone.
+- Apply item by item with `expected_updated_at`; a conflict voids that item's change until it is read again and shown again. Then list again, check the counts and statuses, and name any item left unapplied.
+- Report how many items went stale for each cause.
 
 # Tagging what you create
 
