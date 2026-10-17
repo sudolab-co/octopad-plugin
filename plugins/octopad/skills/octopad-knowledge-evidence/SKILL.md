@@ -21,14 +21,16 @@ Version: 2.1.0
 
 # Keeping knowledge true
 
-- When what you write or read changes an item (a later decision, merged or shipped work, the code, an ended effort, a moved value), fix the item in that turn, in one update carrying the evidence and the status it should now have.
+- When what you write or read changes an item (a later decision, merged or shipped work, the code, an ended effort, a moved value), fix the item in that turn, in one update carrying the evidence and the status it should now have. Check each detail of the new text against its source, not only the one that moved, and keep every clause that still holds.
+- When the code that runs contradicts a fact or a decision's account of the code (a path, a name, how it works today), the item follows the code. A choice the code departs from or never built is not reversed for that: when its commit, its PR or the user shows the departure was meant, supersede it with the decision on record or a new one; otherwise ask the user which holds, and file a task, unless one exists, for a choice that still holds.
 - A fact is updated in place.
-- A question closes only on a complete answer: a partial one stays open, with what is settled in its text. One waiting on a person's answer or approval closes only with it.
+- A question closes only on a complete answer: a partial one stays open, with what is settled in its text. One waiting on a person's answer or approval closes only with it. A deferred question reopens when its event happens.
 - A risk is mitigated when evidence shows the harm can no longer happen as written, and marked occurred when it happened.
-- A decision whose detail was wrong is edited in place. A changed choice is a new decision: restate in it every clause of the old one that still holds, then set `superseded_by` on each old one it wholly replaces; one that only shares the subject stays active. A choice dropped with nothing in its place is set `reversed`.
+- A decision whose choice holds but whose detail is wrong or moved, or whose part a later decision replaced, is edited in place, naming what moved it. A changed choice is a new decision: restate in it every clause of the old one that still holds, then set `superseded_by` on each old one it wholly replaces; one that only shares the subject stays active.
+- A decision is set `reversed`, the reason in its text, when its choice was dropped with nothing in its place, when its own term has passed, when it only steered how an effort ran (its plan, order, method, test setup, dates or definition of success) and that effort ended with no open work relying on it, or when a decision of another workspace wholly replaces it (name it: `superseded_by` stays within one workspace). If a clause still binds, put it in a new decision that supersedes this one instead. A choice about what an effort delivered stays active.
 - Age, similarity and finished work are reasons to check an item, never by themselves to change or remove it.
-- When a stream is completed or archived, settle its open questions and risks (`knowledge` `list` with `stream_filter`, per kind, then a `search` for unscoped ones about it); its decisions stay active unless replaced or dropped.
-- Delete only an item that never belonged (an approval, a tooling note, a copy of a page); one that was once true is updated, answered, mitigated, superseded or reversed.
+- When a stream is completed or archived, settle its open questions and risks and reverse, as above, the decisions that only steered how it ran (`knowledge` `list` with `stream_filter`, per kind, then a `search` for unscoped ones about it). A stream archived to resume, as its tracker says, is left as it is.
+- Delete only an item that never belonged (an approval, a tooling note, a copy of a page or of another item in the same workspace); one that was once true is updated, answered, mitigated, superseded or reversed, and one only partly an approval keeps its lasting part by an edit. An item of the wrong kind (an accepted risk filed as a decision) is created as the right kind, with its tags and links, then deleted.
 
 # Cleaning up the corpus
 
@@ -36,8 +38,8 @@ When the user asks to audit or clean Key Information:
 
 - List every item of each kind in scope with `knowledge` `list`, through every page it returns, and count them.
 - Work in batches by subject or stream, so a decision is read beside the ones that may replace it.
-- Check each item against its evidence: later decisions, task and stream state, the code, the page that owns the subject. Note per item the action (keep, verify, update, answer, defer, mitigate, mark occurred, supersede by a named successor, reverse, delete, move to a task or a page), its evidence and why it went stale.
-- Before showing a large batch, have a fresh reviewer check a sample of its proposals; the usual errors are a related decision taken for a replacement and a rewrite that drops a clause still valid.
+- Check each item against its evidence: later decisions, task and stream state, the code that runs, the page that owns the subject. Note per item the action (keep, verify, update, answer, defer, mitigate, mark occurred, supersede by a named successor, reverse, delete, move to a task, a page or its right kind), its evidence and why it went stale.
+- Before showing a batch, have a fresh reviewer check every proposed change against its evidence, and a sample of the items kept whose subject the code or a later decision touched; the usual errors are a new text with a wrong or stale detail or a dropped clause, a new decision that repeats one on record, a related decision taken for a replacement or a real successor missed, and a reverse of a choice still applied or not built yet.
 - Show the user the exact batch, each item's current and new text, and apply it only on their yes to that batch. Keep that batch on the cleanup's working page, so any change can be undone.
 - Apply item by item with `expected_updated_at`; a conflict voids that item's change until it is read again and shown again. Then list again, check the counts and statuses, and name any item left unapplied.
 - Report how many items went stale for each cause.
