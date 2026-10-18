@@ -1,89 +1,82 @@
 ---
 name: manage-market-intelligence
 metadata:
-  version: "2.0.0"
-description: Build and maintain sourced knowledge of an activity's environment, including audience needs, other actors, alternatives, offers, practices and relevant changes. Use to capture, compare, refresh or audit these observations and their synthesis. Applies to commercial and noncommercial activities. Does not own internal activity identity, product specifications or strategic decisions.
+  version: "3.0.0"
+description: Produce market information an activity can act on, kept in Octopad as its market report and competitor pages, covering its market, customers and what they use today, competitors and their prices, changes, and what they imply. Use when asked about a market, competitors, customers' alternatives or prices, when a competitor, a review, a customer quote, a launch or a pricing move comes up, or to refresh the market report. Applies to commercial and noncommercial activities. Does not choose positioning, target, price or strategy.
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "manage-market-intelligence"` when you open this skill.
 
 # Manage market intelligence
 
-Maintain evidence about an activity's environment and explain its relevance and uncertainty. Supply evidence for decisions; do not choose audience, positioning, price or strategy. Read this complete skill before acting.
+Give the user market information they can act on: the market, customers, alternatives, prices and implications, with their limits. Compare, compute and conclude; a reading list is not a result. The user and the owners named below make the choices.
 
-## Scope and ownership
+## Start from what Octopad knows
 
-Establish the question, activity, project or solution, workspace, audience and time window from the request and retrieved context. Bind the workspace before discovery and after any workspace change. Pass it explicitly to every scoped list, search, get, prepare, folder lookup and write when the tool exposes that argument. If required scope cannot be supplied, do not dispatch. Retrieve existing material before asking; ask only when a distinction changes interpretation, destination or access, and continue independent work.
+Before searching outside, read the activity's context: the Activity Overview (what it does, for whom, its constraints), each relevant Product Overview (the offer, its audience, its market, its Marketing section), the relevant Market pages and, where the CRM is on, what customers have said. They set the question, the market's boundaries (country, segment, offer) and who counts as a competitor. Ask the user only what they leave open and what would change the research; otherwise state the scope you took. Distinguish users, buyers, beneficiaries and funders where they differ, and mark a commercial question that does not apply to the activity as such.
 
-Activity-context owns identities, relationships, intended value and organizational context. Reuse its mapping and route missing or conflicting context to that owner; do not rewrite activity identity, onboarding answers or the Activity Overview. An actor can have multiple activities, a project can serve an activity, and a solution can support it without being sold. Users, buyers, beneficiaries, volunteers and funders are distinct roles; establish each from evidence. Do not treat the host, connector, assistant or tool as the activity.
+## Work like an analyst
 
-Every claim must separate the observed subject from its applicability. Another actor's feature can matter without belonging to the user's solution or market. Comparison scope does not establish the provider's intended customer. Bind applicability to evidence or leave it unknown. Shared evidence needs an explicit applicability and permitted audience for each activity.
+1. **Frame.** State the question, the decision it serves, the geography, buyer, need and period. Treat what the user and the Overviews assume as hypotheses to test, with the competing explanations and the evidence that would tell them apart. Include substitutes and doing nothing, not only products resembling the offer.
+2. **Plan.** For a full market study, choose the kinds of sources for every block of the report. For a focused question or a single signal, investigate only the relevant context, claims and what depends on them; never grow it into a full study because no report exists yet.
+3. **Collect and triangulate** (see Research and its limits).
+4. **Quantify.** Put numbers on every answer the evidence allows, with inputs and assumptions shown; compare in tables.
+5. **Conclude.** Each hypothesis ends supported, contradicted or unresolved within the researched scope; each finding says what it implies. Deepen where evidence could change a conclusion; stop when more research is unlikely to change the answer.
 
-Follow an unambiguous current register to find evidence and synthesis owners; resolve an ownership conflict only for the affected destination. Keep one authoritative location per claim in each permitted context; views reference it. Split mixed claims. Use the smallest useful populated artifact: no dedicated register is required. File Market pages in the Market folder of their scope; a missing organization folder is created by an admin's AI, while a member's AI leaves the page unfiled and says so. Needs, actors, alternatives, offers, practices, changes and perceptions are optional lenses, not mandatory templates or commercial assumptions. When an activity gains a team, legal structure or commercial offer, preserve stable references and history, reassess applicability and audiences, and keep private client evidence in its permitted context.
+## The pages
 
-The Market Overview is the Market family's head page (`head_type: market_overview`), one per scope: the synthesis across its market pages. Its At a glance keys: `main_alternatives`, what the audience uses instead; `what_it_implies`, what that means for the activity, as evidence, never as an adopted choice. Each holds `missing`, `not applicable` or an answer the evidence supports, essential first.
+A market scope, organization or workspace, keeps three kinds of pages in its Market folder; within the report, separate findings by offer and market when buyers, alternatives or geography differ:
 
-## Mode
+- **Market Overview** (head page, `head_type: market_overview`), one per scope: the report.
+- **One page per main competitor**: an actor a customer could realistically choose instead of the activity's offer today.
+- **Other actors**: one page grouping the secondary actors, two or three lines each (who they are, what they offer, their price when known) and why they are not main. One that becomes main moves to its own page.
 
-| Request | Authorized work |
-|---|---|
-| Capture | Save qualified evidence; no dependent interpretation is required. |
-| Audit or dry run | Inspect and report gaps or proposals; do not persist edits or imply collection. |
-| Refresh | Incorporate evidence and recompute every affected in-scope synthesis. |
-| Synthesize | Use verified existing evidence without rewriting unchanged sources. |
+Market-wide customer voice and trends stay in the report; what customers say about one competitor goes on its page or entry. Collection notes, long lists and unread leads go in a working page of the task, whose keeping and archiving `octopad-knowledge-evidence` governs; assumptions and calculations stay beside the figures they support. A missing organization Market folder is created by an admin's AI; a member's AI leaves the page unfiled and says so.
 
-Use available research only within scope; no provider is required. “No research” means supplied and existing evidence only, with date limits and no claim of a fresh external scan. Report channels reached, failed or skipped. A zero-result channel finding requires a successful broad witness query that returns at least one result on that channel; otherwise coverage is unestablished. Empty results never establish absence in the world.
+## The report
 
-## Claim packet
+The Market Overview holds, in this order:
 
-Before drafting a saved record, prepare each claim with:
+1. **What to remember**: findings ranked by importance, each with what it implies for the activity, how sure it is and its limits. Then the status of each hypothesis, and the offer's stated target, promise and difference (its Product Overview's Marketing section) held against the evidence: supported, contradicted or unresolved, without choosing replacements.
+2. **Market analysis**, one heading per block in this order; fill each, or write "unknown" or "not applicable" and why. Use tables where they compare; never leave an empty one.
+   - **Size and change**: tell the customers' industry from this offer's market, businesses from sites, the whole market from the reachable segment. Estimate buyers times annual relevant spend, inputs sourced and assumptions explicit; cross-check against a separate estimate when one exists and explain the gap. Give ranges driven by the uncertain inputs. Estimate what is realistically winnable only with evidence on channel access, conversion, time and delivery capacity. Give the trend on comparable definitions and periods.
+   - **Demand and buying**: for each segment, needs, what they use and spend today, triggers, decision criteria, who holds the budget, how they buy; switching costs (integrations, training, contracts) and reasons to stay.
+   - **Competition and access**: alternatives grouped by the need they serve; the main ones compared with their channel and dated traction evidence; who controls access to buyers (distributors, advisers, existing suppliers).
+   - **Prices and economics**: pricing models and units; totals for justified customer cases with the same needs, units, volumes, tax basis and period, including setup, hardware, usage, migration and the tools kept. Partial substitutes and quotes not obtained stay out of the comparable totals. Listed prices, actual spending and willingness to pay are different things. Where it decides the answer, weigh the customer's gain against switching costs, and the offer's revenue against acquisition, channel, onboarding and service costs.
+   - **Customer voice**: praise, friction and switching experiences, who reported them, and the sample's limits.
+   - **Environment**: rules, technology and channels, only when they change a conclusion.
+3. **What remains to verify**: the material unknowns ranked, the cheapest useful check for each, and which answer would change a conclusion.
 
-- exact wording, subject and applicability;
-- author or accountable organization, publication date, original URL or exact internal provenance;
-- access mode and consultation history: supplied text, external consultation and internal reuse are separate; preserve every recorded consultation date separately from publication and the current operation's read date; missing dates remain unknown;
-- confidence and basis: established, directional, contested or unverified, with the reason; sample limits alone are not confidence, and an unjustified level leaves only an unverified lead;
-- source interest and limits, including promotional, sample and version limits and what remains unestablished;
-- permitted audience and any separate publication clearance.
+Each actor named links to its page or its entry in Other actors. Assumptions, calculations and decisive sources stay beside the findings they support.
 
-Save each claim of a raw source (a transcript, recording, survey export, review dump, email thread or screenshot of messages) as its packet, never the file. Missing attribution, date or provenance prevents acceptance as evidence. Keep a bare unsupported assertion as an attributed unverified lead and exclude it from synthesis support. Firsthand testimony supports the speaker's experience, not an unverified third-party document. Never invent missing data.
+Its At a glance holds two short answers, the essential first, at most 1,000 characters together: `main_alternatives`, what people use instead, telling observed use from identified candidates; `what_it_implies`, the main implication with its essential limit. Each is `missing` when unknown, `not applicable` when it does not apply. Every session of the scope reads them and the brief may cut them at a sentence end. With every update of the report, send the At a glance keys that change, or `at_a_glance: "unchanged"`.
 
-Quotation marks assert original wording only when supplied as an exact quotation or verified at source. Repeating a user's report verbatim does not turn it into an original quotation; a paraphrase stays a paraphrase. Supplied attributed material can be captured without fetching the original when its supplied access mode is saved immediately. One qualification may cover a supplied packet only when it is genuinely shared. Access mode and source independence are different facts.
+A main competitor's page holds its target, offer, business model, prices, channel, dated traction signals, recent moves, customer experience and sources, and its strengths and weaknesses against the activity's verified capabilities for the same need. Read the actor's own general description before inferring its target from a sector page. Tell announced, available and observed use apart; an unknown feature is not a weakness.
 
-Provenance and consultation history must survive the first save, later transfers and later syntheses. “No external consultation now” never erases an earlier consultation. A copy does not become a new authority. Preserve an authoritative internal source's exact returned ID and revision wherever its claim, classification or relationship is consumed.
+On a later run, open What to remember with what changed since the last one (the market moved, something newly found, a correction), then update the passages affected, keeping the report's order. "Nothing significant changed" is a valid result. A single piece of news (a launch, a price change, a review) goes to its actor's page or entry, and to every passage of the report it changes.
 
-A vendor or promotional source can establish its own offer, announcement or stated price. It does not establish independent user voice, adoption, outcomes, preference, retention or a market trend. Employee status alone does not prove an interest in an unrelated claim. Deduplicate by original source and then meaning; reposts add no independent testimony. Keep conflicts attributed, dated and scoped, with unknown versions unresolved. Counts do not establish prevalence, and distribution, funding or channel presence do not establish preference or retention.
+## Research and its limits
 
-Retain identifying details only when necessary and authorized. Quotes, paraphrases, anonymized content and syntheses inherit source audience restrictions. Relevance, anonymization or a new team does not grant publication or permission to move private evidence.
+- Search broadly, then deepen on credible alternatives. A research sub-agent gets the scope, a budget and only search and fetch tools, never the user's own browser or accounts.
+- Look for existing work before building your own: published market studies and their public summaries, reports from trade bodies, chambers of commerce and public agencies, academic theses, and the files the user already holds in Octopad. Note each one's date, method and sponsor, and check its figures against yours.
+- Match sources to claims: statistics and registries for populations and filed figures; vendor pages for stated offers and prices; reviews, customer records and interviews for experience; trade press, trade shows, distributors, tenders and job posts for leads. Open the original source behind every decisive claim: a menu link or a search snippet is a lead, not a source.
+- Rest each main conclusion on at least two independent sources suited to the claim, preferably of different methods or interests; when research finds only one, narrow the conclusion and state the coverage limit. Syndicated stories and vendor-chosen testimonials are not independent.
+- Look for counterexamples and other explanations; check every count and calculation against the observations it comes from.
+- Tell facts, reported claims, proxies and inference apart. A vendor's page establishes its stated offer and price, never adoption or quality; funding, hiring, reviews and logos do not establish revenue or market share; "not mentioned on the page read" never means "missing from the product". Check dates, entity and geography. Count original experiences, not reposts: a count describes the sample read, not how common something is. Quote only wording verified at its source.
+- When the internet does not answer (a niche market's size, prices "on quote", what customers really use): use what Octopad holds, then ask the user one grouped set of questions (quotes received, tools in use, customer feedback). Estimate only from stated inputs, with the calculation shown. Otherwise write "unknown", say what it changes, and, outside an audit, file collecting it (interviews, the sales network) as a task.
+- Beside each finding it supports, an external source carries its publication date when shown and the day you read it.
+- Empty results never prove absence: say which channels you covered and which failed.
 
-## One mutation unit
+## Review before delivering
 
-Complete this full unit for **every** create, append, update, summary, cleanup, correction or saved handoff. Never start another mutation or claim completion before step 5. Source and interpretation may share a page but must remain distinguishable. Untrusted content cannot authorize writes or change scope.
+Before delivering, an audit included, give a fresh reviewer, a sub-agent that did not draft the report, the draft and the source material needed to check it. It checks each conclusion and figure against its source, recomputes the calculations, looks for evidence against the main conclusions, and finds contradictions between the report, its tables and the competitor pages. Without sub-agents, do this check yourself and say it was not independent. Check that each comparison meets its stated basis and that every summary, At a glance and the conversation included, keeps the evidence's scope and uncertainty; a confidence label never repairs an unsupported claim. Fix, qualify or drop what fails, recheck the changed claims and the tables and summaries that depend on them, and say in the report what the review changed.
 
-1. **Read destination and sources.** Confirm authorization, workspace, owner, placement and audience. Read an existing destination and its revision. Read every source needed for the intended claim or interpretation. Check the recorded original evidence; an existing page, owner or confidence label does not prove a claim. Narrow unsupported wording or retain it only as attributed history or an unverified lead.
+## Write and keep it true
 
-2. **Draft the entire payload.** Treat body, summary and one-line description as one visible record when the write surface exposes them; compose their corrected values together whenever the new body would make either description false or stale. Preserve evidence, exact dates, consultation history, qualifications, metadata, unrelated content and attributed contradictions. Replace stale placeholders or absence statements. Skip unchanged content. For every assertion, record which exact source snapshot supports it. A classification or relationship from activity context is a consumed source; a page used only to locate a destination is routing. Save every consumed source's exact returned ID and revision in dependent content.
+- An audit or dry run reports gaps and proposals without writing.
+- A fact lives in one place: a competitor's detail on its page or entry, the report summarizing and linking it.
+- The offer's chosen target, positioning, promise and terms belong to product marketing, in its Product Overview's Marketing section, which links to the customer words kept here; the product's behavior and availability belong to product documentation; the activity's identity to activity context; individual customers to the CRM. Never rewrite them. When your evidence makes their text stale, that owner's skill makes the fix when the request covers it; otherwise tell the user.
+- Private client evidence stays in its permitted context; a quote, paraphrase or summary keeps its source's audience.
 
-3. **Freshness gate after the draft.** After the payload is complete, use one or more fresh GET calls covering every consumed source. These calls are distinct from discovery reads, drafting reads, source-write readbacks and destination CAS, and are required for unchanged sources and a shared source/destination record. Compare content, placement and revision with the snapshot used in the draft. If an input changes or an intervening mutation affects an input or destination, discard and recompose only the affected draft, then repeat this gate for all of its inputs. Do not mutate until every consumed source passes.
+## Present the report
 
-4. **Mutate once.** Inspect the actual tool payload. It must include the explicit workspace, authorized placement and all applicable claim qualifications. When the tool accepts summary or one-line description and the new body would make either false or stale, include their corrected values in this mutation. An existing-record edit uses the exact verified destination revision as its guard; a source revision is not that guard. If a required qualification, argument, guard or permission is missing, do not write accepted evidence: resolve it, keep it unverified or provide a proposal. A creation has no invented prior revision.
-
-5. **Read back immediately.** GET the saved record before any next mutation, dependent draft or completion claim. Verify body/summary/one-line consistency; qualifications; consultation history; preserved material; workspace and owner; folder when exposed; and the returned revision. For dependent content, compare each cited source ID/revision with the snapshot consumed. A historical source revision need not equal a later destination revision, and readability by ID alone does not prove placement. A write response is not verification. Any correction begins a new mutation unit at step 1.
-
-Source/descriptive work records reported evidence, applicability and limits without adding a conclusion. Complete each source write through step 5 before composing a dependent interpretation. An interpretation or changed conclusion must cite all verified inputs and keep useful inferences as bounded hypotheses with their observed basis. Verify derived counts, intervals and comparisons or retain the exact observations.
-
-On conflict, reread and reconcile once through the unit. If it persists, report that write unresolved. Never bypass an access denial or call a partial write complete. Preserve evidence of every unresolved or partial write. Renaming, moving or retiring material requires authorization and verified preservation of provenance and history; a later restoration does not excuse intermediate loss.
-
-## Finish the affected graph
-
-For a refresh, follow each changed claim through its source locations and consuming views. An old location must retain attributed history, point to the verified owner, or contain a recomputed interpretation. A new downstream view does not repair an older stale view.
-
-Before completion, every affected in-scope MI synthesis is verified current or explicitly unresolved for an independent reason allowed above. A page's nonexistence alone is not evidence of a missing owner or placement. When the current register establishes its name, dependency graph, inputs, workspace and authorized MI destination, create the smallest useful populated view and verify it through one mutation unit. Preserve unrelated sections and other owners.
-
-When your change alters what the Market Overview's At a glance block says, update it in the same turn. Other owners link to MI evidence rather than copy it, product marketing's customer words included, so each claim changes in one place.
-
-Prepare requested strategic handoffs with the choice, responsible role or known destination, evidence and limits, and next action. If no role is established, state the concrete next step to resolve ownership while completing independent evidence work; “outside scope” or “competent owner” alone is incomplete. Preparing is not sending. Use activity-context first for identity and organizational context; product-documentation for intended or verified solution behavior, specifications, release truth and Product Facts; the relevant decision owner, including product-marketing for commercial choices, for audience, positioning, pricing and strategy; and technical-writing for prose quality without changing evidence or ownership. MI owns environmental observations and evidence-based synthesis. Storage location does not turn external evidence into product truth, and external perceptions cannot overwrite product records. Do not invent a person when only a role is known. The host environment governs authorization and shared-knowledge mechanics.
-
-## Report verified outcomes
-
-After all required readbacks, name each changed page and outcome, grouped by page. Use an exact returned page URL when available; otherwise name the page without inventing a link. Distinguish same-named pages by permitted workspace or owner context without exposing restricted references.
-
-Scale the reply to the task: scope, research mode and date limits, sources and owners read, accepted/unverified/rejected/deduplicated claims, affected syntheses, verified outcomes, coverage or access gaps and decisions needed. Keep uncertainty visible. Use actual supplied or retrieved original URLs without claiming an unperformed consultation. Link to evidence instead of copying sensitive content into the reply. The reply never replaces saved source IDs/revisions or readback.
+End by presenting the report in the conversation, answering the user's question first. For a requested full study, present the whole report; on a later run, present what changed and what it implies. Close with your questions for the user and the links to the pages written. How you worked comes last, in a line.
