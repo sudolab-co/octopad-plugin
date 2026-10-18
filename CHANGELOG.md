@@ -1,5 +1,11 @@
 # Changelog
 
+## 19.4.0 - Unreleased
+
+`octopad-knowledge-evidence` 2.2.0 stops your AI from turning code into a decision nobody took. When the code differs from a decision, the code, its commit or its pull request shows what was built, not that the choice changed: the decision keeps its choice until a source records a new one, and otherwise your AI asks you which holds, as a question of its own, never folded into your yes to a cleanup batch. A path or a name in a decision still follows the code. A cleanup's proposed actions now include asking you. This version pairs with an Octopad server release in which the `knowledge` tool asks every decision to cite the source recording the choice and say who chose, when and why ("unknown" for what the source lacks), and tells your AI never to attribute a choice to whoever recorded or built it.
+
+Both distributions move to 19.4.0.
+
 ## 19.3.0 - Unreleased
 
 `manage-market-intelligence` 3.0.0 is rewritten to give users market information they can act on. Your AI starts from what Octopad already knows about the activity and its offers, then works like an analyst: it frames hypotheses, looks for existing studies and reports, plans its sources, rests each main conclusion on at least two independent sources, quantifies and concludes. It keeps three kinds of Market pages: the Market Overview as the market report (what to remember, including how the offer's stated positioning holds against the evidence; a market analysis in fixed blocks, from size and buying to prices and economics; what remains to verify), one page per main competitor, and one page for the other actors. When the internet does not answer, it uses what Octopad holds, asks you one grouped set of questions, estimates with its calculation shown or marks the point unknown. It estimates the market's size bottom-up, from counts of potential buyers and their annual spend, with assumptions and the calculation shown. Before writing, a fresh reviewer checks each conclusion and figure against its source. It ends by presenting the report in the conversation and, on later runs, what changed.
