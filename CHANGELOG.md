@@ -1,5 +1,11 @@
 # Changelog
 
+## 19.2.1 - Unreleased
+
+The planning skill 4.4.1 no longer sends an AI to a "Strategy block" to read stream descriptions: the early-access session brief has none. It reads each stream's description beside it in the session brief and, for a stream the brief does not list, the stream's framing through `build_context`.
+
+Both distributions move to 19.2.1.
+
 ## 19.2.0 - 2026-10-18
 
 The planning skill 4.4.0 no longer asks an AI to recheck finished work: a done task stays settled unless evidence contradicts its completion.

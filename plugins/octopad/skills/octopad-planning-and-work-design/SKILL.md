@@ -4,7 +4,7 @@ description: Use for a new or existing stream, a brief, or a delivery-mode choic
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-planning-and-work-design"` when you open this skill.
 
-Version: 4.4.0
+Version: 4.4.1
 
 # From a need to prepared work
 
@@ -69,7 +69,7 @@ For an ongoing stream, agree a bounded delivery within it; finishing that mandat
 - Streams come in two kinds. An ongoing stream is an area of work that never finishes (`Frontend`, `Marketing`); a time-bound stream is one effort with an end state it can actually reach (`Frontend · Dark Mode`).
 - Open a time-bound stream where the effort has an end state AND takes three or more tasks over more than one sitting.
 - Choosing a task's stream: does it push a time-bound stream's goal forward? then that one. Is it ordinary work of a domain? then the ongoing one. Cannot tell? then ask.
-- Settle that by reading each stream's description in the Strategy block. Names collide, and a keyword that looks like a match drops work into the wrong stream.
+- Settle that by reading each stream's description beside it in the session brief; for a stream the brief does not list, read its framing with `build_context(mode: "work_stream", work_stream_name: "…")`. Names collide, and a keyword that looks like a match drops work into the wrong stream.
 - Give a time-bound stream its goal — one primary, and up to two more beside it. Where nothing on the board fits, propose the goal that would.
 - Work that advances a goal has no place in an ongoing stream: move it into a time-bound stream, or the goal's progress cannot be seen at all.
 - Where one stream has to wait on another, record that with `depends_on_stream_ids`, and honour the order when you choose what to pick up next.
