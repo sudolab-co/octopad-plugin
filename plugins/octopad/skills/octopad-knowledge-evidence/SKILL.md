@@ -6,7 +6,7 @@ If the Octopad connection bundled with this plugin offers the `skill_opened` too
 
 # Where knowledge is written
 
-Version: 2.1.0
+Version: 2.2.0
 
 - Three branches hold durable workspace context — `knowledge`, `pages` and `files`. Retrieval reaches only the branch a thing went into, so the branch is chosen on purpose and never by habit.
 - What someone outside the current task or conversation will need is an atomic item, written with `knowledge`: a fact others will rely on, a choice that binds work beyond its task, a question no open task will settle, an uncertain harm. Checks, receipts, approvals, blockers and notes about your own tools stay on the task, or in chat when there is no task; a fixable gap is a task.
@@ -22,7 +22,7 @@ Version: 2.1.0
 # Keeping knowledge true
 
 - When what you write or read changes an item (a later decision, merged or shipped work, the code, an ended effort, a moved value), fix the item in that turn, in one update carrying the evidence and the status it should now have. Check each detail of the new text against its source, not only the one that moved, and keep every clause that still holds.
-- When the code that runs contradicts a fact or a decision's account of the code (a path, a name, how it works today), the item follows the code. A choice the code departs from or never built is not reversed for that: when its commit, its PR or the user shows the departure was meant, supersede it with the decision on record or a new one; otherwise ask the user which holds, and file a task, unless one exists, for a choice that still holds.
+- When the code that runs contradicts a fact, or a path or a name in a decision, the item follows the code. The code, its commit or PR and their author show what was built, not who chose it: on that ground alone a decision is neither superseded nor reversed, and keeps its choice until a source records the new choice and its chooser. Without one, ask the user which holds, for each decision on its own, never through a cleanup batch's yes, and file a task, unless one exists, for a choice they confirm still holds.
 - A fact is updated in place.
 - A question closes only on a complete answer: a partial one stays open, with what is settled in its text. One waiting on a person's answer or approval closes only with it. A deferred question reopens when its event happens.
 - A risk is mitigated when evidence shows the harm can no longer happen as written, and marked occurred when it happened.
@@ -38,8 +38,8 @@ When the user asks to audit or clean Key Information:
 
 - List every item of each kind in scope with `knowledge` `list`, through every page it returns, and count them.
 - Work in batches by subject or stream, so a decision is read beside the ones that may replace it.
-- Check each item against its evidence: later decisions, task and stream state, the code that runs, the page that owns the subject. Note per item the action (keep, verify, update, answer, defer, mitigate, mark occurred, supersede by a named successor, reverse, delete, move to a task, a page or its right kind), its evidence and why it went stale.
-- Before showing a batch, have a fresh reviewer check every proposed change against its evidence, and a sample of the items kept whose subject the code or a later decision touched; the usual errors are a new text with a wrong or stale detail or a dropped clause, a new decision that repeats one on record, a related decision taken for a replacement or a real successor missed, and a reverse of a choice still applied or not built yet.
+- Check each item against its evidence: later decisions, task and stream state, the code that runs, the page that owns the subject. Note per item the action (keep, verify, ask the user, update, answer, defer, mitigate, mark occurred, supersede by a named successor, reverse, delete, move to a task, a page or its right kind), its evidence and why it went stale.
+- Before showing a batch, have a fresh reviewer check every proposed change against its evidence, and a sample of the items kept whose subject the code or a later decision touched; the usual errors are a new text with a wrong or stale detail or a dropped clause, a new decision that repeats one on record, a related decision taken for a replacement or a real successor missed, a reverse of a choice still applied or not built yet, and a new decision, a supersede or a reverse resting on the code rather than on a source of the choice.
 - Show the user the exact batch, each item's current and new text, and apply it only on their yes to that batch. Keep that batch on the cleanup's working page, so any change can be undone.
 - Apply item by item with `expected_updated_at`; a conflict voids that item's change until it is read again and shown again. Then list again, check the counts and statuses, and name any item left unapplied.
 - Report how many items went stale for each cause.
