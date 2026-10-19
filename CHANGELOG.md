@@ -2,7 +2,7 @@
 
 ## 19.5.0 - Unreleased
 
-Six skills lose about 3,000 words of repeated or obsolete text, so your AI loads less on every use; each rule now has one home and the others point to it.
+Six skills lose about 3,000 words of repeated or obsolete text in all; each rule now has one home and the others point to it.
 
 - `octoplan` 7.5.0 drops the readers for plans saved by older Octoplan versions (Octoplan 18 briefs, routes saved before 5.1.0, the Opus 5 and Sonnet 5 readings, forced migrations, the legacy Codex pointer) and the two empty reference files `routing.md` and `codex-supervision.md`. A plan saved under an older version is read as unknown saved state and goes through recovery. Two task closes that advance no outcome now fall under recovery's stalled-progress trigger, which also owns cessation proof; `records.md` alone says a status-only update keeps a review and the mandate. The Codex internal supervisor Goal section is shorter, with the same rules.
 - `manage-product-documentation` 6.2.0 keeps each rule once: the Product Fact evidence stop in the skill, scope resolution in `product-scope-and-seams.md`, impact classification and idea parking in `lifecycle-playbooks.md`, and the Product Map's contents in `artifact-shapes.md`. Its main file is about 300 words shorter.

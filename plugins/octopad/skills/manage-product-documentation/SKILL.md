@@ -12,7 +12,7 @@ Keep a living account of the user's product vision and how it becomes real. Pres
 
 ## Resolve the product first
 
-Before selecting a document to change, establish the affected products; a workspace name, document or search result is not a product selection. In a workspace with several products, follow [Resolve product scope](references/product-scope-and-seams.md#resolve-product-scope) before writing.
+Before selecting a document to change, establish the affected products by [Resolve product scope](references/product-scope-and-seams.md#resolve-product-scope); a workspace name, document or search result is not a product selection.
 
 ## Work from product intent
 

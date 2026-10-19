@@ -1,6 +1,6 @@
 # Product scope and documentation seams
 
-Use this reference only when several products, a shared component, or another documentation owner is involved.
+Resolve product scope applies before any document is selected. Read the rest only when several products, a shared component, or another documentation owner is involved.
 
 ## Resolve product scope
 
