@@ -1,6 +1,6 @@
 # Method provenance and further reading
 
-These links were inherited from an earlier internal method on 2026-09-22. They were not fetched or freshly verified in this experiment. They are reading suggestions, not findings established by this file. Verify the source, context, date and exact conclusion before using it to substantiate a research or legal statement. The operational method in the skill is self-contained and makes no empirical conversion or compliance guarantee.
+These links are reading suggestions, not findings established by this file. Verify the source, context, date and exact conclusion before using it to substantiate a research or legal statement. The operational method in the skill is self-contained and makes no empirical conversion or compliance guarantee.
 
 ## Keep different kinds of authority separate
 
@@ -22,4 +22,4 @@ The scoped factual owner supplies offer-specific evidence. Competent decision au
 
 ## Practitioner background
 
-[April Dunford's Obviously Awesome](https://www.april-dunford.com/obviously-awesome) is a positioning-practice reference. The earlier internal method also used a private Fletch playbook for capture, creation and asset routing. That playbook is not distributed, quoted or required here. The public skill provides its own operational sequence; it does not claim to reproduce or certify either practitioner's method.
+[April Dunford's Obviously Awesome](https://www.april-dunford.com/obviously-awesome) is a positioning-practice reference. The skill provides its own operational sequence; it does not claim to reproduce or certify that method.

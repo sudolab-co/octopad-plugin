@@ -27,3 +27,7 @@ codex plugin add octopad@octopad-plugin
 To refresh it later: `codex plugin marketplace upgrade octopad-plugin`.
 
 Start a new conversation and ask to use Octopad. Sign in to Octopad in the browser when asked.
+
+## Maintaining the skills
+
+Each skill's only source is its folder under `plugins/octopad/skills/`; the Claude and Codex distributions install the same files. Change a shared rule once, and keep tool names and model routes in Octoplan's runtime profiles (`octoplan/references/claude-runtime.md`, `octoplan/references/codex-runtime.md`). When shared behavior changes, validate and review both installed paths. Never edit an installed cache or keep a second copy by hand.

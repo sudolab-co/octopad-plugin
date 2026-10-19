@@ -4,8 +4,7 @@ description: Use when writing, editing, or reviewing a technical work product in
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "technical-writing"` when you open this skill.
 
-Version: 2.0.1
-Candidate status: local and unreleased
+Version: 2.0.2
 
 # Technical writing
 

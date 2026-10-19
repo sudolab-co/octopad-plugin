@@ -4,7 +4,7 @@ description: Diagnose, draft or review positioning, audience choices, value prop
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "pmm-check"` when you open this skill.
 
-Version: 1.0.0-public-r1 (experimental public candidate; not installed or accepted)
+Version: 1.0.1
 
 # Diagnose and improve marketing
 

@@ -1,5 +1,11 @@
 # Changelog
 
+## 19.5.1 - Unreleased
+
+Lines meant for the Octopad team no longer load into your AI. `technical-writing` 2.0.2 and `pmm-check` 1.0.1 drop their "candidate" status lines, and `pmm-check`'s reading list drops its notes on an earlier internal method. `octoplan` 7.5.1 drops its maintainer section, now in this repository's README. In `octopad-knowledge-evidence` 2.2.1, "Building a complete set" again reads as one instruction: settle each doubtful item with one check aimed at it alone.
+
+Both distributions move to 19.5.1.
+
 ## 19.5.0 - Unreleased
 
 Six skills lose about 3,000 words of repeated or obsolete text in all; each rule now has one home and the others point to it.

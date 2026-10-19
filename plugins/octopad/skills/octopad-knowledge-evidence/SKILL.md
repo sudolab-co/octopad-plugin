@@ -6,7 +6,7 @@ If the Octopad connection bundled with this plugin offers the `skill_opened` too
 
 # Where knowledge is written
 
-Version: 2.2.0
+Version: 2.2.1
 
 - Three branches hold durable workspace context — `knowledge`, `pages` and `files`. Retrieval reaches only the branch a thing went into, so the branch is chosen on purpose and never by habit.
 - What someone outside the current task or conversation will need is an atomic item, written with `knowledge`: a fact others will rely on, a choice that binds work beyond its task, a question no open task will settle, an uncertain harm. Checks, receipts, approvals, blockers and notes about your own tools stay on the task, or in chat when there is no task; a fixable gap is a task.
@@ -57,8 +57,7 @@ When the user asks to audit or clean Key Information:
 # Proving a claim about the corpus
 
 - There is no one right way to read a corpus — all of it, its summaries, a search — so fit the method to what the claim has to hold up.
-- **Building a complete set.**
-  - Settle each doubtful item with one check aimed at that item alone: three doubtful items are three checks, neither a read of everything nor a shrug.
+- **Building a complete set:** settle each doubtful item with one check aimed at that item alone: three doubtful items are three checks, neither a read of everything nor a shrug.
 - **A claim about content** — whether a page still says X, whether Y appears at all — is settled by `search`ing the text and quoting the passages that match, never from the directory.
 - **A compound question** — every page about X that mentions Y — takes the directory for X, a `search` for Y inside that set, and a full read reserved for the one item the search leaves undecided.
 - **Quoting, rewriting or editing** — pull the whole page with `pages(action:"get")`, and only a page the steps above have already named; reading in full stands in neither for building the set nor for proving the claim.

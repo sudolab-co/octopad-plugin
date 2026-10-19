@@ -6,7 +6,7 @@ A worker, reviewer or planning helper without Octopad access in its brief calls 
 
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octoplan"` when you open this skill.
 
-Version: 7.5.0
+Version: 7.5.1
 
 # Octoplan
 
@@ -66,7 +66,3 @@ Mode and effect coverage are separate. An effect written into a task after the c
 ## Review floors
 
 Every Plan needs one fresh independent review before activation. Use at least two independent judgments with distinct lenses for eight or more tasks, or schema, permissions, money, privacy, destructive operations, publishing, or deployment. A count-only trigger may reduce to one for internal reversible work with deterministic proof; named risk triggers and stricter effective rules may not. Every material executable change and every published or client-facing deliverable gets a fresh independent review, with a second focused lens for a one-way-door surface. Low-risk non-material internal work may close on machine checks plus supervisor verification. When the target offers staging, changes land there before production, within the applicable access and authorization limits; unavailable access is a gate, not permission to skip staging. Disposition each finding as fixed, deferred with authority and rationale, or dismissed with evidence. A stable fix to a reviewed text gets one targeted recheck by the same reviewer of the changed clauses only, never a fresh floor; a repair whose blast radius is one reversible internal record may be rechecked by the supervisor. Two consecutive rounds that add process without changing what ships trigger F15, not a third round.
-
-## One source, native adaptations
-
-This entrypoint and its references are maintained in `plugins/octopad/skills/octoplan/` in [sudolab-co/octopad-plugin](https://github.com/sudolab-co/octopad-plugin). Both installable distributions contain the same source files. Change common guarantees once; keep tool names, model routes, and compatibility readers in the runtime profiles. Validate and review both installed paths when shared behavior changes. Never edit installed caches or hand-maintain a second common copy.
