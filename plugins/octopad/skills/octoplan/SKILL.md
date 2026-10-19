@@ -6,7 +6,7 @@ A worker, reviewer or planning helper without Octopad access in its brief calls 
 
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octoplan"` when you open this skill.
 
-Version: 7.4.0
+Version: 7.5.0
 
 # Octoplan
 
@@ -22,7 +22,7 @@ Use the applicable banner as the first line once the user enters Octoplan planni
 **Octoplan · Step 3 of 3 — Delivery**
 ```
 
-The banner is the first line of the message, before any incident narrative, explanation, or table. What the user reads is written in everyday words: name what will happen and who does it, and keep this skill's vocabulary out of it, along with any synonym doing the same job; say the thing itself instead: "your team's own rules already require this", "this cannot be undone", "this sends an email". Records written for other sessions (Decisions, tasks, receipts, prompts) keep the precise wording.
+The banner is the first line of the message, before any incident narrative, explanation, or table. What the user reads is written in everyday words: name what will happen and who does it, and keep this skill's vocabulary out of it, along with any synonym doing the same job; say the thing itself instead: "your team's own rules already require this", "this cannot be undone", "this sends an email". Ask about a consequence the user owns in words they can answer; technical uncertainty goes to diagnosis or review, and the user never certifies technical correctness. Records written for other sessions (Decisions, tasks, receipts, prompts) keep the precise wording.
 
 The user describes the need. Apply the common brief and preparation in [octopad-planning-and-work-design](../octopad-planning-and-work-design/SKILL.md), including for a direct Octoplan request. Reuse valid confirmed intent and the same graph. The planner qualifies the delivery path, records and reviews the smallest adequate Plan, then shows its summary and human interventions before agreeing autonomy and launching a fresh supervisor through the selected runtime. The supervisor owns delivery of the Brief's outcome, including adapting the approach and resolving incidents within the mandate. An executor produces its task's deliverable. Internal roles add no user-facing stage.
 
@@ -40,16 +40,14 @@ The user describes the need. Apply the common brief and preparation in [octopad-
 
 - **F1, control plane.** Read current Octopad and target state. Every durable record uses verified sources, revisions or hashes, and read time; re-derive moving numbers, link live state, and copy no secrets or unnecessary private text. Keep no shadow control plane.
 - **F2, adaptive topology.** Reuse the work that owns the outcome. Use the fewest streams, tasks, and edges that expose independent deliverables and real waits.
-- **F3, progressive complexity.** Load and report only coordination, routing, and recovery mechanics the work needs. Every actor keeps tool output small, and every delegated brief says so: search before reading, read the ranges and sections needed, print summaries and failures, reuse your own reads unless they may have changed, and fetch omitted evidence before relying on it. Smaller output never narrows what a check or review covers.
+- **F3, progressive complexity.** Load and report only coordination, routing, and recovery mechanics the work needs. Every actor keeps tool output small, and every delegated brief says so as the [worker prompt](references/supervision.md#worker-prompt) does. Smaller output never narrows what a check or review covers.
 - **F4, confirmed intent.** Every new or materially changed outcome receives a scaled Brief playback and explicit confirmation. Replay its persisted interpretation on resume without asking again when unchanged.
 - **F5, falsifiable plan.** Verify material premises, record what would kill the run, and challenge the complete artifact graph before activation.
 - **F6, state-bound review.** Reviews name the exact task and contract revisions inspected. Reconcile drift and refresh affected judgments; never carry PASS over a changed premise or overwrite an old receipt.
 - **F7, ready work moves.** Advance safe ready branches inside the mandate. A wait or failure blocks only work that needs it. A failed trial is evidence to diagnose, not proof that the entire mission must stop.
 - **F8, invariant safety.** Autonomy changes interruptions, never applicable rules, verification, review, persistence, or the evidence floor.
-- **F9, recoverable ownership.** One supervisor owns a given work boundary, recorded in the delivery journal under [records.md](references/records.md), or the valid legacy ownership record. Before retry or replacement, inspect the authoritative target. A successor proves its predecessor stopped before acting. Use `expected_updated_at` on guarded Octopad updates.
+- **F9, recoverable ownership.** One supervisor owns a given work boundary, recorded in the delivery journal under [records.md](references/records.md); retry and replacement follow [recovery.md](references/recovery.md). Use `expected_updated_at` on guarded Octopad updates.
 - **F10, integrated closure.** Close only from current integrated evidence: `built`, `reviewed`, `merged`, `applied`, `verified`, `released`, `accepted`, or the domain equivalent. Silence, timeouts, irrelevant green checks, and unrun checks are not PASS.
-- **F11, consequence language.** Ask about a consequence the user owns, in words they can answer. Technical uncertainty goes to diagnosis or review; the user does not certify technical correctness.
-- **F12, one program.** Brief, Plan, and Delivery keep the same banners and experience across environments.
 - **F13, protected effects.** Disclose any effect that bills money to any party or cannot be undone, even when no house rule names it. Its authorization must cover the actual effect and target.
 - **F14, environment intact.** Effective target rules, installed skills, hooks, permissions, privacy, and legal boundaries remain binding. Each actor loads guidance applicable to its work; Octoplan does not replace it or prescribe a fixed catalog. Computer Use and equivalent screen-driven GUI automation require explicit user acceptance of the disclosed targets and actions, including for verification or recovery; Full autonomy alone grants none. Apply the [planning preflight](references/planning.md) before relying on this route. Every delegated worker, reviewer and planning brief carries the accepted scope and its source, or `not authorized`, plus known access limits. User acceptance never overrides runtime restrictions or transfers system or app permissions to another actor.
 - **F15, rigor sized to the stakes.** Every verification, review, and recheck is read against the recorded stakes, in both directions: reversible internal work gets the floor and nothing more, irreversible or outward work gets the full floors. Verification that outgrows the decision it protects is a defect, the same as verification that falls short; every round spends the user's time and money against the same stakes the work does.

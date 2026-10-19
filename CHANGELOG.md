@@ -1,5 +1,18 @@
 # Changelog
 
+## 19.5.0 - Unreleased
+
+Six skills lose about 3,000 words of repeated or obsolete text, so your AI loads less on every use; each rule now has one home and the others point to it.
+
+- `octoplan` 7.5.0 drops the readers for plans saved by older Octoplan versions (Octoplan 18 briefs, routes saved before 5.1.0, the Opus 5 and Sonnet 5 readings, forced migrations, the legacy Codex pointer) and the two empty reference files `routing.md` and `codex-supervision.md`. A plan saved under an older version is read as unknown saved state and goes through recovery. Two task closes that advance no outcome now fall under recovery's stalled-progress trigger, which also owns cessation proof; `records.md` alone says a status-only update keeps a review and the mandate. The Codex internal supervisor Goal section is shorter, with the same rules.
+- `manage-product-documentation` 6.2.0 keeps each rule once: the Product Fact evidence stop in the skill, scope resolution in `product-scope-and-seams.md`, impact classification and idea parking in `lifecycle-playbooks.md`, and the Product Map's contents in `artifact-shapes.md`. Its main file is about 300 words shorter.
+- `octopad-notepad` 3.3.0 gives the briefing, a reminder's delivery and a follow-up question one shared claim rule in place of three. A claim still does not prove delivery, and an interrupted briefing now follows the same evidence path as the other two.
+- `manage-market-intelligence` 3.1.0 states the cost of an ordinary update: one read of the destination and its sources, one version-checked write, one verification.
+- `octopad-crm` 1.3.1 no longer repeats the distill and Enrich limits the `crm_runs` tool states, and keeps the judgment: rehearse, confirm the spend, leave what can wait to the nightly job.
+- `manage-activity-context` 7.0.1 shortens the exact-wording attribution rule and keeps each example once.
+
+Both distributions move to 19.5.0.
+
 ## 19.4.0 - Unreleased
 
 `octopad-knowledge-evidence` 2.2.0 stops your AI from turning code into a decision nobody took. When the code differs from a decision, the code, its commit or pull request and their author show what was built, not who chose it: the decision is neither superseded nor reversed on that ground and keeps its choice until a source records the new choice and who made it; otherwise your AI asks you which holds, for each decision on its own, never through your yes to a cleanup batch. A path or a name in a decision still follows the code. A cleanup's proposed actions now include asking you. This version pairs with an Octopad server release in which the `knowledge` tool asks every decision to cite where its choice was made or recorded and say who chose (a person, a group, or an AI under a cited mandate), when and why ("unknown" for what the source lacks), no longer counts how things work today as a decision, tells your AI never to attribute a choice to whoever recorded or implemented it, and to ask you before a decision whose chooser is unknown rules out what you ask.

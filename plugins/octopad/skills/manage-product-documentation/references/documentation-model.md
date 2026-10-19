@@ -8,21 +8,13 @@ Keep one Product Overview per offer: the head page whose At a glance block the O
 
 ## Product Map
 
-Keep one Product Map per product: the index of every feature. One line per named feature: its name linked to the spec that owns it (features sharing a spec reuse its link), a one-liner, and the audience when it is limited; a feature with no spec says `no spec` and links its documentation-debt work when one exists. Above the list: links to each Product Overview, the Architecture Map, the Ideas page, and the Engineering References in the maintained set. Nothing else: state, gaps, active work and verification live in the specs and Tasks, so the Map never drifts from them. A portfolio index may route to several product maps but never restates their product truth. If an existing index already performs the entry-point job, adopt or reshape it.
+Shape and contents: [artifact-shapes.md](artifact-shapes.md). A portfolio index may route to several product maps but never restates their product truth.
 
 ## Product Spec
 
 Keep one evolving Product Spec per significant product system. A system is significant when it owns a coherent user capability, durable behavior, or boundary that people need to reason about independently. Create or adopt it at `idea` once a discussion develops that boundary or behavior far enough to become real design work; a build decision is not required. Keep `idea`, `explored`, `accepted`, `implemented`, `merged`, `released`, and `retired` distinct.
 
 Use the shape in [artifact-shapes.md](artifact-shapes.md) and the writing rules in SKILL.md (Write for the reader). What a spec does not hold has a home: vision and offer in the Product Overview; a choice and its rejected alternatives in a Decision; precise shared invariants in a Behavioral Contract; a research trail, dated cases and reviews with lasting value in a supporting record; delivery on Tasks and pull requests; release chronology on the release record; superseded text on the history page; files, internal symbols and mechanical constants in code, while limits users meet stay in the spec. Update the existing spec as the system evolves. Split only when distinct system boundaries have emerged. Supersede or link duplicates after preserving unique facts and links; require explicit approval before destructive consolidation.
-
-## Parked ideas
-
-Keep an idea the user engaged with and left open as one `[idea <date>]` line in the Next section of the Product Spec it concerns. An idea the user turned down or dropped is discarded; never park it. Give the line the date it was parked, the idea, and one clause on the problem it addresses. Add no owner, priority, status, origin, or rationale: that weight is what stops the list from being written at all, and its absence is what stops the list from becoming a second backlog. Finite execution, owners, and status stay in work streams and Tasks.
-
-An idea that concerns no existing system yet goes on one Ideas page for this product documentation set. Create that page on the first such idea, never in advance, and link it from the Product Map so it stays findable; creating the page and its map link is part of parking, not a separate authority. Move a line to a system's Product Spec once that system exists. Parking begins once a Product Map exists; before then, keep ideas in the conversation and follow the setup playbooks.
-
-Keep the list self-emptying. When a passing idea becomes substantive design, move its line into the spec at `idea`; when the user accepts it, advance that same item to `accepted`. When the user rejects an idea, remove its line. Any useful reason for a rejected idea belongs in history. Moving or removing a parked line, or dropping an emptied section, is routine list maintenance, not the content deletion that needs approval. During maintenance and audit, propose removing lines whose problem has lapsed, in one batch; do not remove them silently. Never grow either list into a status report.
 
 ## Behavioral Contract
 
@@ -74,14 +66,14 @@ Use explicit unknowns instead of placeholder facts. Never invent a value to make
 
 ## Product Facts
 
-Create Product Facts only when the claim-specific evidence required by the skill's Stop before writing rules substantiates their exact wording, scope and state. Software's current capabilities or availability require verified release evidence even when the claim does not mention a release; non-software offer, service and physical-specification facts require the relevant authoritative evidence for their exact state. Approval or validation alone proves neither availability nor launch. Keep them attributable to one product; a shared component does not make its release state universal. Each Fact carries:
+Create Product Facts only under the evidence rule in SKILL.md (Stop before writing). Keep them attributable to one product; a shared component does not make its release state universal. Each Fact carries:
 
 - exact claimable wording;
-- dated evidence, verified state and product scope, meeting those claim-specific requirements;
+- dated evidence, verified state and product scope;
 - tier, region, platform, or other limits;
 - wording constraints;
 - owner;
 - re-review trigger;
 - status: `active`, `retired`, or `superseded`.
 
-Never put roadmap intent or `coming soon` in Product Facts. For software, evidence predating release does not substantiate claims of current capabilities or availability. On correction or rollback, revise or retire current truth and preserve the version history. Product marketing consumes these Facts and owns the claims and messages derived from them.
+Never put roadmap intent or `coming soon` in Product Facts. On correction or rollback, revise or retire current truth and preserve the version history. Product marketing consumes these Facts and owns the claims and messages derived from them.

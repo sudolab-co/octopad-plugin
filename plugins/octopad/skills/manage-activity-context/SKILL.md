@@ -1,7 +1,7 @@
 ---
 name: manage-activity-context
 metadata:
-  version: "7.0.0"
+  version: "7.0.1"
 description: Maintain durable context about why an activity or project exists, whom it benefits, how it creates value and the choices and constraints shaping it, in its Activity Overview. Use when that context is captured or changes, people or organizations join a project, or an organization's sessions still open on an untyped Company Overview. Adapts to solo exploration, collectives, associations, agencies, businesses and internal tools; no company or monetization required. Reuses existing onboarding documents.
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "manage-activity-context"` when you open this skill.
@@ -18,12 +18,7 @@ Read [adaptation](references/adaptation.md) before any context, ownership or sco
 
 1. Interpret the request: discussion and audit are read-only; capture, refresh or synchronization permits only the requested mutations. State material scope assumptions. If several unrelated ideas fit, ask one routing question before writing.
 
-   Before any write, distinguish these two branches:
-
-   - Approved exact wording: derive the complete resulting content from the current page and the chosen operation before writing, including separators and whitespace; compare it with the approved result without unapproved normalization. If the operation's effect is unclear, resolve it before writing. Exact-wording approval alone does not authorize an added attribution. If necessary attribution is not already authorized and no authorized, supported metadata can carry it, do not write yet; show the minimal attribution and ask permission to include it. Do not invent a metadata field.
-   - Authorized free drafting: include faithful, minimal provenance within the authorized scope and audience as part of the requested writing, without asking for another approval merely to include that provenance.
-
-   Later repair never authorizes an earlier out-of-scope write.
+   Before any write: under approved exact wording, the complete result of the write, computed from the current page and the operation, must match the approved result exactly, separators and whitespace included, and an attribution it lacks needs the user's permission for its minimal form unless authorized, existing metadata can carry it; under authorized free drafting, include faithful, minimal provenance within the authorized scope and audience without asking. A later repair never authorizes an earlier out-of-scope write.
 
 2. Read the Activity Overview of the affected scope, with its At a glance block, and relevant context owners, plus available onboarding facts, before deciding the change. A listing of page titles is not this read; reading the page does not authorize changing it. Search before declaring an owner absent. Inaccessible is not absent. Reuse sufficiently clear facts; ask only about a gap that changes the next action.
 3. Separate the actor, activity, project, built solution, beneficiaries and contribution to value. Distinguish funding from selling that solution. Identify only the relationships needed for this request; do not create a relationship registry.

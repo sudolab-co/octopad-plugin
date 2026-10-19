@@ -4,11 +4,11 @@ Read after authorization or resume. Octopad holds durable truth; the selected ru
 
 ## Enter or resume
 
-Start or refresh production Octopad. Read the bounded current task graph and comments, confirmed intent, contract and journal under [records.md](records.md), relevant receipts, effective rules and artifact state. Use the selected runtime's legacy records without rewriting valid state. Apply [recovery.md](recovery.md) before takeover. Native continuity objects belong to the runtime; they never replace Octopad authority.
+Start or refresh production Octopad. Read the bounded current task graph and comments, confirmed intent, contract and journal under [records.md](records.md), relevant receipts, effective rules and artifact state. Apply [recovery.md](recovery.md) before takeover. Native continuity objects belong to the runtime; they never replace Octopad authority.
 
-Continue only while the Brief, review coverage, review floor, scope, and effects match. Compare drift as in [planning.md](planning.md); status changes alone do not withdraw review or consent. For withdrawn authority, an undisclosed or ambiguous effect, or unsupported saved state, pause affected work and read [recovery.md](recovery.md).
+Continue only while the Brief, review coverage, review floor, scope, and effects match. Compare drift as in [planning.md](planning.md) and [records.md](records.md). For withdrawn authority, an undisclosed or ambiguous effect, or unsupported saved state, pause affected work and read [recovery.md](recovery.md).
 
-One supervisor acts on a given work boundary, as named in the journal or valid legacy ownership record. Check current ownership and authority before a spawn, effect, close or gate clearance. The runtime profile owns launch and replacement mechanics; the supervisor dispatches and validates task work. Receiving a message never expands a role's authority.
+One supervisor acts on a given work boundary, as named in the journal. Check current ownership and authority before a spawn, effect, close or gate clearance. The runtime profile owns launch and replacement mechanics; the supervisor dispatches and validates task work. Receiving a message never expands a role's authority.
 
 Every user-facing Delivery contact starts with `**Octoplan · Step 3 of 3 — Delivery**`, then `Position — task N of M · phase · countable outcome unit · decisive metric` for a sequence or `Position — completed/active/total executable · phase · countable outcome unit · decisive metric` for a graph. Quote observed behavior verbatim when behavior is the output. Apply [SKILL.md](../SKILL.md), persist evidence, and use the consequence handoff for every wait.
 
@@ -29,7 +29,7 @@ The supervisor owns delivery of the Brief's outcome, including incidents; the pl
 
 At resume, worker collection, task close, report, and attempt selection, compare observations with the kill question. An answer stops that run generation immediately; never score it as valid, hide it in an average or subset, or rename the failure a limit. Preserve its evidence, diagnose, and repair or replan within the mandate. Stopping an invalid generation does not stop the authorized recovery work. A new run keeps its own premise and evidence identity, and every real user limit still applies.
 
-Before task close, add one compact supervisor comment that references receipts and names checks, review or checkpoint outcome, material decisions, the countable outcome unit, and the assumption that makes it worthless. Two consecutive closes that advance no unit trigger replan. File or diff size is diagnostic, never a gate. Treat actors, messages, and effects as created only after a returned or authoritative result.
+Before task close, add one compact supervisor comment that references receipts and names checks, review or checkpoint outcome, material decisions, the countable outcome unit, and the assumption that makes it worthless; closes that advance no unit meet the stalled-progress trigger in [recovery.md](recovery.md). File or diff size is diagnostic, never a gate. Treat actors, messages, and effects as created only after a returned or authoritative result.
 
 Require exact user-facing strings and surfaces. Put them on an unstarted owner task without changing its specification; replan if that owner started.
 

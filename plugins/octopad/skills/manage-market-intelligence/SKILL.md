@@ -1,7 +1,7 @@
 ---
 name: manage-market-intelligence
 metadata:
-  version: "3.0.0"
+  version: "3.1.0"
 description: Produce market information an activity can act on, kept in Octopad as its market report and competitor pages, covering its market, customers and what they use today, competitors and their prices, changes, and what they imply. Use when asked about a market, competitors, customers' alternatives or prices, when a competitor, a review, a customer quote, a launch or a pricing move comes up, or to refresh the market report. Applies to commercial and noncommercial activities. Does not choose positioning, target, price or strategy.
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "manage-market-intelligence"` when you open this skill.
@@ -73,6 +73,7 @@ Before delivering, an audit included, give a fresh reviewer, a sub-agent that di
 ## Write and keep it true
 
 - An audit or dry run reports gaps and proposals without writing.
+- An ordinary update costs one read of the destination and its sources, one write, version-checked so it never overwrites newer content, and one verification.
 - A fact lives in one place: a competitor's detail on its page or entry, the report summarizing and linking it.
 - The offer's chosen target, positioning, promise and terms belong to product marketing, in its Product Overview's Marketing section, which links to the customer words kept here; the product's behavior and availability belong to product documentation; the activity's identity to activity context; individual customers to the CRM. Never rewrite them. When your evidence makes their text stale, that owner's skill makes the fix when the request covers it; otherwise tell the user.
 - Private client evidence stays in its permitted context; a quote, paraphrase or summary keeps its source's audience.

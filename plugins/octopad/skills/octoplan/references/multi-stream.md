@@ -12,7 +12,7 @@ Reuse a suitable goal when the streams share a destination; create no extra prog
 
 For one common outcome, reuse one contract and journal under [records.md](records.md). The contract explains only missing common proof, stream responsibilities and local success conditions, interfaces, safe parallelism, integration order and responsible actors. Name its maintainer. Link canonical IDs and applicable revisions instead of copying task specifications, progress, receipts, history or authority. Do not add a Delivery Map or per-stream contract merely to repeat this information; additional local records need a real distinct boundary.
 
-Owning tasks carry executable specifications and dependency edges; an interface's executable definition lives on its owning task or linked specification. Preserve version-bound review evidence when changing shared constraints. Valid legacy Decisions, contract pages, Delivery Maps and Blueprints keep their authority and useful explanation; do not create duplicates or force a rename. A newer explanatory view never overrides current consent or a reviewed contract.
+Owning tasks carry executable specifications and dependency edges; an interface's executable definition lives on its owning task or linked specification. Preserve version-bound review evidence when changing shared constraints. A newer explanatory view never overrides current consent or a reviewed contract.
 
 ## Define interfaces and integration early
 
@@ -26,7 +26,7 @@ Name an integration owner from the start. Use integration tasks, adding a separa
 
 The Plan shows one plain-language line per step across the streams and names independent branches. Review the complete graph, local success definitions, interfaces, integration proof and effect coverage. Receipts identify the task and contract revisions reviewed. Check shared schemas, migrations, generated artifacts, wording, repositories, services and publication targets for conflicting writers; separate branches alone do not make work independent.
 
-Default to one supervisor covering the common outcome. Use several only with disjoint write and decision boundaries, a concrete efficiency benefit, qualified native lifecycle support, and capacity left for workers and reviewers. A worker or reviewer is not another supervisor. Record exactly one active owner for each disjoint boundary in the canonical journal, or valid legacy ownership record; a common owner can be referenced by several streams. No permanent global supervisor is required.
+Default to one supervisor covering the common outcome. Use several only with disjoint write and decision boundaries, a concrete efficiency benefit, qualified native lifecycle support, and capacity left for workers and reviewers. A worker or reviewer is not another supervisor. Record exactly one active owner for each disjoint boundary in the canonical journal; a common owner can be referenced by several streams. No permanent global supervisor is required.
 
 The runtime profile determines dialogue and supervisor lifecycle. Each supervisor owns advancement inside its recorded boundary. Assign one existing actor as **cross-stream change coordinator** in the shared contract, with its current ownership in the journal. This responsibility adds no permanent agent and gives no right to write another owner's deliverable.
 

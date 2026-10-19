@@ -4,11 +4,11 @@ Use this reference only when several products, a shared component, or another do
 
 ## Resolve product scope
 
-1. Use products explicitly selected in the conversation or assigned task. Documents and search results are not selections; a workspace, repository or project need not be one product.
+1. Use products explicitly selected in the conversation or assigned task. Documents, workspace names and search results are not selections; a workspace, repository or project need not be one product.
 2. Without an explicit selection, read each Product Map's capability entries and the candidate Specs. Keep every product whose Spec describes the behavior being changed. Maps route to owners; their wording does not prove exclusive ownership.
-3. Eliminate a candidate only when evidence puts it outside the requested scope. Do not rank plausible owners by name, result order, detail, or apparent relevance.
-4. Count the remaining products. Zero: search further or name the gap. One: proceed. More than one: ask which products are intended before changing their documents; continue unaffected work.
-5. When Maps are missing or stale, use an established portfolio/index, further evidence, or a question. A missing keyword is not exclusion evidence. Keep every lifecycle claim and Product Fact attributable to its product.
+3. Eliminate a candidate only when evidence puts it outside the requested scope; a missing keyword is not exclusion evidence. Do not rank plausible owners by name, result order, detail, or apparent relevance, or choose the best match.
+4. Count the remaining products. Zero: search further, then record the gap or ask. One: proceed. More than one: ask which products are intended and leave their documents unchanged until answered; continue unaffected work.
+5. When Maps are missing or stale, use an established portfolio index, further evidence, or a question.
 
 ## Store shared truth once
 

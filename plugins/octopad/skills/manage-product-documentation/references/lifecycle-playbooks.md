@@ -10,7 +10,7 @@ Begin this setup after the user explicitly asks to establish product documentati
 
 1. Confirm the product, users, problem, and current evidence state from the conversation. Ask only about a material missing boundary or intent.
 2. Follow the workspace's existing folder and page-preparation guidance, then create the Product Map index from [artifact-shapes.md](artifact-shapes.md), one line per known feature. Do not invent milestones, architecture, integrations, or implementation choices.
-3. Keep passing ideas in the active discussion. Park an idea the user engaged with and left open as one line on the Ideas page, created on first use and linked from the map.
+3. From here on, park passing ideas under [Brainstorm and design maturity](#brainstorm-and-design-maturity).
 4. Once discussion develops a real system boundary, behavior, contract, or meaningful alternative, add its Map line and create its Product Spec with an `[idea]` entry holding confirmed material and open questions. Do not invent execution work. Advance it only when later evidence supports the next state.
 5. Reuse the user's work stream and Tasks or create only the finite execution work needed by the normal workflow. Link that work to the spec; do not copy its changing status into the page.
 6. Do not create an Architecture Map as if architecture exists. Before code exists, retain only confirmed technical constraints or Decisions. Create the map once code gives evidence of stable architecture, in Octopad or in the repository when the team wants it beside the code.
@@ -25,7 +25,7 @@ Use before creating structure for a product that already has code, docs, or Octo
 2. Search Octopad Pages, Tasks, work streams, and Decisions by product terms and likely synonyms. Read candidate bodies and links before judging duplicates.
 3. Inspect repository READMEs, docs indexes, architecture records, contribution rules, release policy, and current code structure. Treat stale or generated docs as time-bounded evidence, not automatic canon.
 4. Build a temporary adoption table: artifact, current authority, evidence revision, model destination, duplicate or conflict, and action.
-5. Designate or reshape one Product Map for this product documentation set. Treat an existing index as the first adoption candidate when it already owns the entry-point role. Adopt existing product or feature docs as evolving Product Specs when they already own coherent system boundaries.
+5. Designate or reshape one Product Map for this product documentation set. Adopt existing product or feature docs as evolving Product Specs when they already own coherent system boundaries.
 6. Preserve useful unique content and inbound links before consolidation. Use redirects, superseded markers, or links by default. Require explicit approval before deleting content or irreversibly overwriting history.
 7. Adopt one credible architecture overview wherever it already lives, and record that home. Otherwise create the smallest canonical Architecture Map from verified code and configuration, in Octopad or in the repository when the team wants it beside the code.
 8. Link existing streams, Tasks, Decisions, PRs, and docs. Do not recreate completed history or replace an Octoplan task graph with a documentation-owned plan.
@@ -33,16 +33,16 @@ Use before creating structure for a product that already has code, docs, or Octo
 
 ## Brainstorm and design maturity
 
-Classify impact continuously without making the conversation feel like a form:
+Classify impact continuously without making the conversation feel like a form, and make the smallest useful update for the class:
 
-- `no impact`: a rejected or abandoned idea, or work outside product documentation;
-- `existing-system change`: idea, explored, accepted, or later behavior inside a known system boundary;
-- `new system`: substantive design establishing a new coherent capability or responsibility, beginning at `idea`;
-- `technical-only`: implementation or operational work with no product behavior change, which can still affect architecture or an Engineering Reference.
+- `no impact`: a rejected or abandoned idea, or work outside product documentation. Create no documentation artifact beyond a parked idea line.
+- `existing-system change`: idea, explored, accepted, or later behavior inside a known system boundary. Update the evolving Product Spec with clearly labeled proposed or approved behavior and link the existing execution work.
+- `new system`: substantive design establishing a new coherent capability or responsibility, beginning at `idea`. Add its Product Map line and create its Product Spec with an `[idea]` entry, under SKILL.md's substantive-design rule.
+- `technical-only`: implementation or operational work with no product behavior change. Update architecture or a targeted Engineering Reference only when the change creates durable, non-derivable knowledge.
 
-During casual exploration, keep the classification local and park only an idea the user engaged with and left open. When the discussion becomes substantive design, create or adopt the owning Product Spec, write its `[idea]` entry in Next (direction, set-aside alternatives, open questions), add its Map line if new, then remove any duplicate parked line while preserving its unique content. Do not wait for a build decision. Acceptance, implementation, merge, and release advance that same record only on their own evidence. If the product or system boundary remains materially ambiguous after reading current context, ask one focused question and continue unaffected organization work.
+If the product or system boundary remains materially ambiguous after reading current context, ask one focused question and continue unaffected organization work.
 
-At the end of a brainstorm, park only the remaining passing ideas the user engaged with and left open that did not become owned design. Park an idea raised in passing during other work the same way. Park nothing the user turned down or dropped. Each line carries the date it was parked, the idea, and one clause on the problem it addresses; [documentation-model.md](documentation-model.md) states where the line lives and how it leaves the list.
+Parking: one `[idea <date parked>]` line per idea, carrying the idea and the problem it addresses, in the Next section of the Product Spec it concerns, or on the product documentation set's single Ideas page when it concerns no existing system yet; move the line to that system's spec once one exists. Creating that page on first use and linking it from the Product Map is part of parking, not a separate authority. Add no owner, priority, status, origin or rationale, and keep each line within the persisted-evidence rules. Never park an idea the user turned down or dropped. A line leaves the list when the idea is committed, where ordinary commitment handling takes over, or when the user rejects it; remove it rather than replacing it with a rejected or abandoned line, and put any useful rejection reason in history. Moving or removing a parked line, or dropping an emptied section, is routine list maintenance, not the content deletion that needs approval. Before a Product Map exists, keep ideas in the conversation and follow the setup playbooks.
 
 ## Implementation context retrieval
 
@@ -100,7 +100,7 @@ If repository policy explicitly proves that merge equals release, record that po
 For user docs, release notes, and Product Facts, plus handoffs to marketing:
 
 1. For pre-release user documentation or release notes, start from approved, implemented, or merged evidence, label the draft pre-release, and bind it to the exact source revision.
-2. For Product Facts, apply the skill's exact-claim and state evidence requirements: shipped or released behavior and software's current capabilities or availability require exact verified release evidence regardless of wording; non-software offer, service or physical-specification facts require the relevant authoritative evidence for their stated scope and state. Approval or validation alone proves neither availability nor launch. Route marketing claims and final marketing wording to product marketing with those Facts as inputs.
+2. For Product Facts, apply SKILL.md's Product Fact evidence rule (Stop before writing). Route marketing claims and final marketing wording to product marketing with those Facts as inputs.
 3. Verify every capability, limit, outcome, compatibility statement, and metric.
 4. Separate current behavior from future intent. Exclude internal implementation detail unless the audience needs it.
 5. Draft the smallest audience-appropriate change and retain source links in the working artifact when possible.

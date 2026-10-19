@@ -15,7 +15,7 @@ Overview: <link> · Architecture: <link> · Ideas: <link>
 - <System>: <one-liner>; no spec (<task link>)
 ```
 
-One line per named feature, reusing the spec link when several share a spec; audience in the one-liner when limited ("early access"). List the Engineering References of the maintained set on one header line. No state, gaps, active work or verification.
+One line per named feature, reusing the spec link when several share a spec; audience in the one-liner when limited ("early access"); a feature with no spec links its documentation-debt Task when one exists. The header links each Product Overview and lists the Engineering References of the maintained set on one line. No state, gaps, active work or verification.
 
 ## Product Spec
 
@@ -49,8 +49,6 @@ Omit empty sections. Writing rules per SKILL.md. Purpose states the user need an
 
 ## Ideas
 
-Create this page only when an idea concerns no existing system yet. Keep one per product documentation set and link it from the Product Map.
-
 ```markdown
 # Ideas
 
@@ -58,8 +56,6 @@ Ideas with no system yet. One line each.
 
 - [idea <date>] <idea>, <the problem it addresses>.
 ```
-
-Carry no owner, priority, status, or other Task field here. Move a line into a system's Product Spec once that system exists. Remove a line the user rejects; any useful rejection reason belongs in history, never in the Next section.
 
 ## Behavioral Contract
 

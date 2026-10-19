@@ -4,7 +4,7 @@ description: Keep one or more products' documentation true to the work as it hap
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "manage-product-documentation"` when you open this skill.
 
-Version: 6.1.0
+Version: 6.2.0
 
 # Manage Product Documentation
 
@@ -12,13 +12,7 @@ Keep a living account of the user's product vision and how it becomes real. Pres
 
 ## Resolve the product first
 
-Before selecting a document to change:
-
-1. Use an explicit product selection from the conversation or assigned task. A workspace name or search result is not a selection.
-2. Otherwise read the product Maps and candidate Specs to build the set of products whose Specs describe the behavior being changed. Keep **every** matching product. Remove one only when evidence puts it outside the requested scope; never rank plausible owners or choose the best match.
-3. Count the remaining products: **zero** — record the gap or ask; **one** — continue; **more than one** — ask which products are intended and leave their documents unchanged until answered.
-
-For multi-product work, read [product-scope-and-seams.md](references/product-scope-and-seams.md) before writing.
+Before selecting a document to change, establish the affected products; a workspace name, document or search result is not a product selection. In a workspace with several products, follow [Resolve product scope](references/product-scope-and-seams.md#resolve-product-scope) before writing.
 
 ## Work from product intent
 
@@ -41,7 +35,7 @@ A Product Spec serves the AI or person who must decide, build, change or judge i
 
 - Read [references/documentation-model.md](references/documentation-model.md) before creating, adopting, splitting, merging, or substantially restructuring product documentation.
 - Read [references/artifact-shapes.md](references/artifact-shapes.md) when creating or materially reshaping a Product Map, Product Spec, Behavioral Contract, Architecture Map, Ideas page, or documentation-debt Task.
-- Read [references/lifecycle-playbooks.md](references/lifecycle-playbooks.md) for setup, brainstorm classification, implementation context, PR or release sync, audits, and downstream drafts. When the request itself identifies an audit, classify it before inspecting maintained content and load the audit section before the first maintained-content read or audit conclusion. Load only the section needed for the current work. Do not apply the audit section to a non-audit request unless its facts make that section applicable.
+- Read [references/lifecycle-playbooks.md](references/lifecycle-playbooks.md) for setup, brainstorm classification and parking, implementation context, PR or release sync, audits, and downstream drafts. When the request itself identifies an audit, classify it before inspecting maintained content and load the audit section before the first maintained-content read or audit conclusion. Load only the section needed for the current work. Do not apply the audit section to a non-audit request unless its facts make that section applicable.
 - Read [references/product-scope-and-seams.md](references/product-scope-and-seams.md) when the workspace contains several products, a shared component changes, a Product Fact moves, or another documentation skill owns a downstream projection.
 
 ## Operate with evidence
@@ -84,23 +78,11 @@ Use documentation as working context under [Work from product intent](#work-from
 
 ## Capture exploration without waiting for a build decision
 
-During product discussion, silently classify the likely documentation impact as:
-
-- `no impact`
-- `existing-system change`
-- `new system`
-- `technical-only`
+During product discussion, silently classify the likely documentation impact as `no impact`, `existing-system change`, `new system` or `technical-only`, and make the smallest useful update for that class ([definitions and updates](references/lifecycle-playbooks.md#brainstorm-and-design-maturity)).
 
 A substantive design discussion is different from a passing thought. Once the discussion develops a real user problem, system boundary, behavior, contract, or meaningful alternative, in the same turn: create or adopt the owning Product Spec and add an `[idea]` entry to its Next section holding the direction, set-aside alternatives and open questions, not the discussion; a research trail or detailed design with lasting value may go to a supporting record linked from the entry, which must then be read before assessing, accepting or building the idea; add its Product Map line; then remove any duplicate parked entry while preserving its unique content in the spec. Do this even when nobody has decided to build. It records the thinking without claiming approval or delivery and without inventing an execution Task. When the user accepts a direction, implementation starts, or an active delivery workflow exists, update that same spec and let ordinary work tracking own execution.
 
-Park what exploration leaves behind. At the end of a brainstorm, and whenever an idea is raised in passing during other work, append each remaining passing idea the user engaged with and left open, without asking: one `[idea <date>]` line carrying the idea and the problem it addresses, in the Next section of the Product Spec it concerns, or on the single Ideas page when it concerns no existing system yet. Creating that page on first use and linking it from the Product Map is part of parking, not a separate authority. Add no owner, priority, or status, and keep each line within the persisted-evidence rules. Never park an idea the user turned down or dropped. A line leaves the list when the idea is committed, where ordinary commitment handling takes over, or when the user rejects it; remove it rather than replacing it with a rejected or abandoned line. Moving or removing a parked line is routine list maintenance, not the content deletion that needs approval. Before a Product Map exists, keep ideas in the conversation and follow the setup playbooks.
-
-As evidence advances, make the smallest useful update:
-
-- For a substantively discussed new system, add its Product Map line and create its Product Spec with an `[idea]` entry.
-- For an existing-system change, update the evolving Product Spec with clearly labeled proposed or approved behavior and link the existing execution work.
-- For technical-only work, update architecture or a targeted Engineering Reference only when the change creates durable, non-derivable knowledge.
-- For no impact, create no documentation artifact beyond any parked idea line and, on first use, the Ideas page that holds it.
+Park what exploration leaves behind: at the end of a brainstorm, and whenever an idea is raised in passing during other work, park each remaining passing idea the user engaged with and left open, without asking, under the [parking rule](references/lifecycle-playbooks.md#brainstorm-and-design-maturity).
 
 ## Preserve lifecycle and product scope
 
@@ -137,7 +119,7 @@ Administer templates, folders, links, classifications, drafts, parked ideas, rou
 - deletion, irreversible overwrite, or another destructive consolidation;
 - approval to publish externally.
 
-Do not automatically publish user docs, release notes, Product Facts, or marketing copy. Before release, user-documentation and release-note drafts may use approved, implemented, or merged evidence only when they remain clearly labeled pre-release and cite the exact source revision. Draft Product Facts and marketing claims only from evidence meeting the exact-claim and state requirements above; claims of shipped or released behavior, or of software's current capabilities or availability, still require verified release evidence regardless of wording. Preserve every applicable review and publication gate.
+Do not automatically publish user docs, release notes, Product Facts, or marketing copy. Before release, user-documentation and release-note drafts may use approved, implemented, or merged evidence only when they remain clearly labeled pre-release and cite the exact source revision. Draft Product Facts and marketing claims only from evidence meeting the Product Fact rule in [Stop before writing](#stop-before-writing). Preserve every applicable review and publication gate.
 
 ## State the automation boundary honestly
 

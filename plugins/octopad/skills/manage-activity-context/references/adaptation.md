@@ -28,8 +28,5 @@ A brief may contain purpose, relevant participants/relationships, contribution t
 - An artist experiments without commercial intent: no invented customers or revenue sections.
 - A volunteer community maintains shared software: document users and behavior without assuming a seller.
 - A university group builds research infrastructure: separate research claims, exploratory plans and operating software.
-- An agency delivers a client tool: agency strategy, client purpose and mission scope have different owners.
-- A bakery builds an ERP: bread and service create customer value; the ERP supports production and coordination. Its users are not necessarily software buyers.
-- An internal tool later becomes an external offer: add the new use and relevant commercial owners without erasing continuing internal use.
 
 For any new case, reconstruct purpose, contribution, ownership, audience and evidence. Do not expand a persona catalog as the main solution.
