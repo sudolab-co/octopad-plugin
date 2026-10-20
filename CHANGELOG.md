@@ -1,5 +1,11 @@
 # Changelog
 
+## 19.6.0 - Unreleased
+
+`octoplan` 7.6.0 lets a delivery in the Claude desktop app run with fewer interruptions. The planner opens the supervisor session itself, checks its model and effort, and stops receiving its turn-end notes. The supervisor hands each batch of tasks to a fresh batch lead, a subagent that runs the workers and reviewers and returns a short receipt per task; the supervisor still validates and closes every task. A plan defect goes back to the planner session when it is free and has room, otherwise to a planner subagent, never to both. In both Claude and Codex, a supervisor now hands off before its context passes 60% (or the lower limit you set) starts no new work after a compaction and instead reconciles and hands off. The app does not let a session started by another session open a new session on its own, so a successor session starts without your click only on a turn you began; otherwise your AI says delivery waits until you open it.
+
+Both distributions move to 19.6.0.
+
 ## 19.5.1 - Unreleased
 
 Lines meant for the Octopad team no longer load into your AI. `technical-writing` 2.0.2 and `pmm-check` 1.0.1 drop their "candidate" status lines, and `pmm-check`'s reading list drops its notes on an earlier internal method. `octoplan` 7.5.1 drops its maintainer section, now in this repository's README. In `octopad-knowledge-evidence` 2.2.1, "Building a complete set" again reads as one instruction: settle each doubtful item with one check aimed at it alone.
