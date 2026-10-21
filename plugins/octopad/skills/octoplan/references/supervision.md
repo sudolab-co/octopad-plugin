@@ -67,8 +67,8 @@ the task needs: on the task, incrementally, when your brief grants writes there;
 otherwise in your final answer.
 
 Do not close tasks, advance the graph, launch other actors, approve, or perform
-a protected effect. Octoplan's fresh independent review of your result serves
-as any pre-ship review your rules require. Use Computer Use or equivalent screen-driven GUI automation
+a protected effect. Launch no reviewer yourself: name in your report any pre-ship
+review your rules require, and the supervisor meets it or keeps it as a gate. Use Computer Use or equivalent screen-driven GUI automation
 only within the stated acceptance, after verifying usable access in your environment.
 Return protected effects to the supervisor for its current
 authority and gate checks. A spec is not permission to expand the mandate.
@@ -83,7 +83,7 @@ Verify the exact artifact version on the task's named proof surface. Repository 
 
 Green CI proves only what it ran. An unavailable verifier blocks. Independent review uses one fresh source-first task; reuse it only for stable fixes. Material lens drift gets fresh review.
 
-Route each review by what it judges. A light review judges a bounded diff or internal document whose runnable checks prove the result, or a UI judged on its render. A heavy review judges a one-way-door surface, security, a migration or data change, a large mixed diff, work with weak or no runnable checks, a published or client-facing deliverable, a Plan, or an eval protocol. The runtime profile maps each level to a reviewer route. A reviewer uses the worker's provider unless an effective user rule names another; a second judgment is another fresh reviewer with its own lens. Brief each reviewer with its lens, the exact artifact version, and the checks already run with their output: it reruns only the proof it doubts, and a recheck covers only the changed clauses.
+Route each review by what it judges. A review is heavy whenever it judges a one-way-door surface, security, a migration or data change, a large mixed diff, work with weak or no runnable checks, a published or client-facing deliverable, a Plan, or an eval protocol. Otherwise it is light: a bounded diff or internal document whose runnable checks prove the result, or a UI judged on its render. The runtime profile maps each level to a reviewer route. A reviewer uses the worker's provider unless an effective user rule names another; a second judgment is another fresh reviewer with its own lens. Brief each reviewer with its lens, the exact artifact version, and the checks already run with their output: it reruns only the proof it doubts.
 
 When tests can bypass production, require negative proof at the real call site.
 
