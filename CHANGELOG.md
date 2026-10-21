@@ -1,5 +1,12 @@
 # Changelog
 
+## 19.11.0 - Unreleased
+
+`manage-product-documentation` 6.4.0 has the AI read a behavior's spec before it judges it. Twice an AI analyzed a feature from what it already had, once the Notepad's usage and once a failed Octoplan run, and proposed changes without opening the feature's Product Spec.
+
+- Before judging, diagnosing or redesigning a behavior, the AI reads its owning Product Spec in full. Its shortcut for a narrow fix now applies only once the fix's cause is known. When no spec owns the behavior, the AI says so and leaves conclusions about intended behavior open.
+- The exception for agent instructions covers only the AI's own working instructions. A skill or AI behavior that a product ships to its users is product behavior, like any other feature.
+
 ## 19.10.0 - Unreleased
 
 `octoplan` 7.9.0 sizes review to what a task risks. A live Octoplan ran two reviewers from two providers on every code task, reviewed each unit and then its parent again, and reinstalled the project for each new agent. The skill's own floors asked for none of that; their wording allowed it.
