@@ -1,6 +1,6 @@
 # Changelog
 
-## 19.11.0 - Unreleased
+## 19.12.0 - Unreleased
 
 `octoplan` 7.10.0: an executor owns its task, its review and its fixes. A live Octoplan on 2026-10-21 spent 38 agents on two pull requests: between the supervisor and each worker sat a batch lead, each unit of a task had its own worker, and each fix and each recheck had another.
 
@@ -10,6 +10,13 @@
 - Small bounded Claude work with settled choices and runnable checks runs on Sonnet 5.5 high, Opus 5.5 medium on failed checks.
 - A plan repair that only re-cuts reviewed work or changes a route within its rubric is checked by the planner, without a fresh review, on Opus 5.5 high.
 - The skill states each rule once, in the file that owns it, and drops the manual task chains no runtime uses: 15,839 words before, 12,458 after.
+
+## 19.11.0 - Unreleased
+
+`manage-product-documentation` 6.4.0 has the AI read a behavior's spec before it judges it. Twice an AI analyzed a feature from what it already had, once the Notepad's usage and once a failed Octoplan run, and proposed changes without opening the feature's Product Spec.
+
+- Before judging, diagnosing or redesigning a behavior, the AI reads its owning Product Spec in full. Its shortcut for a narrow fix now applies only once the fix's cause is known. When no spec owns the behavior, the AI says so and leaves conclusions about intended behavior open.
+- The exception for agent instructions covers only the AI's own working instructions. A skill or AI behavior that a product ships to its users is product behavior, like any other feature.
 
 ## 19.10.0 - Unreleased
 
