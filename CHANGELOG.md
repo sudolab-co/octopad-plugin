@@ -1,5 +1,18 @@
 # Changelog
 
+## 19.6.0 - Unreleased
+
+`octoplan` 7.6.0 changes how a delivery runs in the Claude desktop app. The planner opens the supervisor session itself, checks its model and effort, and stops receiving its turn-end notes. The supervisor hands each batch of tasks to a fresh batch lead, a subagent that runs the workers and reviewers and returns a short receipt per task; the supervisor still validates and closes every task. Where the Octopad desktop is open, each batch lead shows on its tasks what its agents are doing, step by step; this needs the Octopad server's methodology 2.14.0, released with this version. A plan defect goes back to the planner session when it is free and has room, otherwise to a planner subagent, never to both. In both Claude and Codex, a supervisor now keeps its context under 70% (or the lower limit you set): 10 points before that limit it starts nothing new, finishes what is running and hands off, and after a compaction it starts no new work and instead reconciles and hands off. The app's instructions say a session started by another session cannot open a new session on its own, so a successor session starts without your click only on a turn you began; otherwise your AI says delivery waits until you open it, and that your next message to it is enough to start the successor while your instructions still cover it.
+
+The first live run showed avoidable overhead. These changes target it and keep every required check; the savings are not measured yet:
+
+- A batch lead stays in its own turn: it runs every check and Codex review in the foreground and gives a fix or a recheck to a fresh agent with the previous report, so it no longer wakes the supervisor mid-batch.
+- Workers keep each tool result short, send test and build output to a log file and report only totals and failures. They stay off Octopad unless their deliverable lives there: they return any spec or record change as exact text, and the supervisor or batch lead writes it. A worker no longer launches its own reviewer: it names any pre-ship review its rules require, and the supervisor meets it or keeps it as a gate.
+- Reviews follow what they judge: a bounded change proved by its checks gets a light review, and a one-way-door surface, security, a migration, weak checks, a published deliverable, a Plan or an eval protocol gets a heavy one. In Claude, light reviews run on Opus 5.5 at `high` and heavy ones at `xhigh`, whatever the worker's model. When a review fits both, it is heavy. A reviewer uses the worker's provider unless your own rules name another, and reruns only the proof it doubts.
+- In Claude, mechanical tasks, where every choice is settled and checks prove the result, run on Sonnet 5.5 at `high`, with one Opus 5.5 `medium` retry if the checks fail. Without a matching agent definition, the supervisor sets effort on the launch call where it accepts one.
+
+Both distributions move to 19.6.0.
+
 ## 19.5.1 - Unreleased
 
 Lines meant for the Octopad team no longer load into your AI. `technical-writing` 2.0.2 and `pmm-check` 1.0.1 drop their "candidate" status lines, and `pmm-check`'s reading list drops its notes on an earlier internal method. `octoplan` 7.5.1 drops its maintainer section, now in this repository's README. In `octopad-knowledge-evidence` 2.2.1, "Building a complete set" again reads as one instruction: settle each doubtful item with one check aimed at it alone.
