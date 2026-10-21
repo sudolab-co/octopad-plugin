@@ -1,5 +1,14 @@
 # Changelog
 
+## 20.0.0 - Unreleased
+
+Four skill lines now agree with the Octopad methodology's corrections, and three skill texts follow server changes. This version needs the Octopad server release in which `build_context` matches streams to a description of the work (`mode: "work_stream"` with `query`).
+
+- `octopad-knowledge-evidence` 2.3.0: in a workspace where the CRM is on, what one customer did or said goes to their CRM record, not to `knowledge`.
+- `octopad-planning-and-work-design` 5.0.0: a plan goes in as few `batch_tasks` calls as the tool's limits allow, every dependency in `depends_on_refs`, instead of always one call. Closing a goal files no post-mortem when the user explicitly accepts closing without one. A task's stream is chosen by describing the work to `build_context(mode: "work_stream", query: "…")` and reading the one-liner of each stream it returns, instead of reading stream descriptions in the session brief.
+- `octopad-session`: the AI may call `start_session` again when its context was compacted or cleared since it received the Octopad orientation, as the server's instructions ask.
+- `manage-product-documentation` 6.5.0: the Behavioral Contract and Architecture Map shapes drop their `Last verified:` line, which only a retired background check read.
+
 ## 19.12.0 - Unreleased
 
 `octoplan` 7.10.0: an executor owns its task, its review and its fixes. A live Octoplan on 2026-10-21 spent 38 agents on two pull requests: between the supervisor and each worker sat a batch lead, each unit of a task had its own worker, and each fix and each recheck had another.

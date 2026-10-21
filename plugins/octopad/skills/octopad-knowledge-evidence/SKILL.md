@@ -6,7 +6,7 @@ If the Octopad connection bundled with this plugin offers the `skill_opened` too
 
 # Where knowledge is written
 
-Version: 2.2.1
+Version: 2.3.0
 
 - Three branches hold durable workspace context — `knowledge`, `pages` and `files`. Retrieval reaches only the branch a thing went into, so the branch is chosen on purpose and never by habit.
 - What someone outside the current task or conversation will need is an atomic item, written with `knowledge`: a fact others will rely on, a choice that binds work beyond its task, a question no open task will settle, an uncertain harm. In a workspace where the CRM is on, what one customer did or said goes to their CRM record instead. Checks, receipts, approvals, blockers and notes about your own tools stay on the task, or in chat when there is no task; a fixable gap is a task.
