@@ -1,5 +1,9 @@
 # Changelog
 
+## 19.9.0 - Unreleased
+
+`octoplan` 7.8.0: a supervisor's messages to the user name tasks by title. An Octoplan supervisor reported to its user with bare task-ID prefixes, carried over from the ID-based records it keeps. Its journal and pointer blocks still keep exact IDs; whatever it tells the user names tasks by title. The Codex-only line on opaque IDs is folded into this shared rule.
+
 ## 19.8.0 - Unreleased
 
 `octoplan` 7.7.0 and `octopad-planning-and-work-design` 4.5.0 change how work is cut and handed to agents. An audit of six recent Octoplans found that the planner cut work by deliverable only: a task could carry a migration, server code, a screen and AI-facing text at once, and one worker built it whole, with most review findings landing on choices the plan had left open.

@@ -10,7 +10,7 @@ Continue only while the Brief, review coverage, review floor, scope, and effects
 
 One supervisor acts on a given work boundary, as named in the journal. Check current ownership and authority before a spawn, effect, close or gate clearance. The runtime profile owns launch and replacement mechanics; the supervisor dispatches and validates task work. Receiving a message never expands a role's authority.
 
-Every user-facing Delivery contact starts with `**Octoplan · Step 3 of 3 — Delivery**`, then `Position — task N of M · phase · countable outcome unit · decisive metric` for a sequence or `Position — completed/active/total executable · phase · countable outcome unit · decisive metric` for a graph. Quote observed behavior verbatim when behavior is the output. Apply [SKILL.md](../SKILL.md), persist evidence, and use the consequence handoff for every wait.
+Every user-facing Delivery contact starts with `**Octoplan · Step 3 of 3 — Delivery**`, then `Position — task N of M · phase · countable outcome unit · decisive metric` for a sequence or `Position — completed/active/total executable · phase · countable outcome unit · decisive metric` for a graph. Quote observed behavior verbatim when behavior is the output. Records and pointer blocks keep exact IDs; in prose to the user, name tasks by title. Apply [SKILL.md](../SKILL.md), persist evidence, and use the consequence handoff for every wait.
 
 ## Phase 4: advance the ready frontier
 
