@@ -1,5 +1,16 @@
 # Changelog
 
+## 19.8.0 - Unreleased
+
+`octoplan` 7.7.0 and `octopad-planning-and-work-design` 4.5.0 change how work is cut and handed to agents. An audit of six recent Octoplans found that the planner cut work by deliverable only: a task could carry a migration, server code, a screen and AI-facing text at once, and one worker built it whole, with most review findings landing on choices the plan had left open.
+
+- The planner cuts each deliverable into the smallest units that make sense in the logic of the work: one coherent change that can be built, checked and reviewed on its own, split at natural seams (in code: schema, then server, then client, then AI-facing text), never mid-change, an atomic change kept whole. A deliverable of several units is one task with one subtask per unit; in code, the units are commits of the task's pull request.
+- Each unit goes to its own fresh worker. Units that need one another run in order on the task's branch; independent ones may run in parallel. The task's whole diff is reviewed once its units are in. Fixes also go to a fresh worker, with the current diff and the findings.
+- A unit is dispatched only once the choices it shares with other work are settled: who writes each shared value and in what order, which unit produces each input it uses, and how it relates to open pull requests, active tasks and Decisions on the same files or behavior. What cannot be settled yet becomes its own design or probe unit first.
+- An evaluation runs on two or three real inputs, one with a known answer, before it is scaled. Two fix cycles on one unit that do not pass trigger a diagnosis and a different approach.
+- Plan review now checks unit size, unsettled shared choices and rehearsal evidence. A plan resumed under this version first sends any remaining task that breaks these rules back to the planner to be split, keeping finished work.
+- Workers may read a small file whole; only large files are read by range.
+
 ## 19.6.0 - Unreleased
 
 `octoplan` 7.6.0 changes how a delivery runs in the Claude desktop app. The planner opens the supervisor session itself, checks its model and effort, and stops receiving its turn-end notes. The supervisor hands each batch of tasks to a fresh batch lead, a subagent that runs the workers and reviewers and returns a short receipt per task; the supervisor still validates and closes every task. Where the Octopad desktop is open, each batch lead shows on its tasks what its agents are doing, step by step; this needs the Octopad server's methodology 2.14.0, released with this version. A plan defect goes back to the planner session when it is free and has room, otherwise to a planner subagent, never to both. In both Claude and Codex, a supervisor now keeps its context under 70% (or the lower limit you set): 10 points before that limit it starts nothing new, finishes what is running and hands off, and after a compaction it starts no new work and instead reconciles and hands off. The app's instructions say a session started by another session cannot open a new session on its own, so a successor session starts without your click only on a turn you began; otherwise your AI says delivery waits until you open it, and that your next message to it is enough to start the successor while your instructions still cover it.

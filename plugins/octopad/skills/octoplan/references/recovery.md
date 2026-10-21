@@ -22,11 +22,11 @@ Treat an actor as created only after its call returns or the authoritative nativ
 
 - **Transient:** retry once with the same operation key, only after proving the effect absent.
 - **Evidence gap:** refresh the authoritative source; never infer success.
-- **Execution defect:** return bounded fixes to the same healthy worker.
+- **Execution defect:** send bounded fixes to a fresh worker with the current diff and the findings.
 - **Plan defect:** ask a suitable planner to repair affected scope, review it, and resume with the owning supervisor.
 - **New consequence or house rule:** follow [SKILL.md](../SKILL.md); stop only work needing that decision.
 
-Two comparable cycles without accepted artifact, review, or integrated proof trigger diagnosis and a simpler or different defensible strategy before more dispatch; two consecutive task closes that advance no countable outcome unit trigger a replan. These internal triggers require no new user go and allow no endless trials; real attempt, spend and user limits stay binding across replans and actor or reviewer identities. Preserve the strongest evidence. A failed worker, proof route, reviewer verdict, or run generation is not by itself a human decision. Exhausted compliant routes become a precise blocker only after the supervisor tests the underlying limitation and completes independent work. Build no generic infrastructure for one-off proof. Activity, drafts, tokens, and irrelevant checks are not progress.
+Two comparable cycles without accepted artifact, review, or integrated proof, or two fix cycles on one unit that do not pass, trigger diagnosis and a simpler or different defensible strategy before more dispatch, counted per unit, not per worker; two consecutive task closes that advance no countable outcome unit trigger a replan. These internal triggers require no new user go and allow no endless trials; real attempt, spend and user limits stay binding across replans and actor or reviewer identities. Preserve the strongest evidence. A failed worker, proof route, reviewer verdict, or run generation is not by itself a human decision. Exhausted compliant routes become a precise blocker only after the supervisor tests the underlying limitation and completes independent work. Build no generic infrastructure for one-off proof. Activity, drafts, tokens, and irrelevant checks are not progress.
 
 ## Change supervisor safely
 
