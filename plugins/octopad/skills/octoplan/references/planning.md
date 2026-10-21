@@ -120,7 +120,7 @@ Codex: <exact model and effort from the Codex profile, with reason>
 <targeted checks, fresh independent review, and any human reviewer required by effective rules>
 
 **Octopad**
-<no by default; yes only when the work or its proof needs direct access, such as a deliverable that lives in Octopad: say why and which reads and writes>
+<no by default; yes only when the work or its proof needs direct access, such as a deliverable that lives in Octopad: say why and which reads and writes. A spec or record update is not such a need: the worker returns the exact text and its supervisor writes it>
 ```
 
 Use the live schema. Top-level tasks require literal **Why**, **What**, **Done when**, `impact`, and `impact_rationale`; subtasks require **Why**, **What**, and impact fields. Every edge carries a rationale. Add `**Preconditions**` only for a live prior artifact or maturing event.

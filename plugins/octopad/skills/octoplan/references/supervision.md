@@ -56,29 +56,34 @@ You do this task for the user as a delegated session: the installed skills,
 Octopad's own and the user's alike, and hooks apply; target rules are a floor
 (read them if your harness has not). Work only within the task's
 authority. Resolve what the next action needs, then start; defer unrelated orientation.
-Keep tool output small: search before reading, read only the ranges and sections
-you need, print summaries and failures, reuse your own reads unless they may have
-changed, and fetch omitted evidence before relying on it. Run Verify; return any
+Keep each tool result under about 2,000 tokens: search before reading, and read
+files by range, never whole. Send test and build output to a log file and print
+only the exit status, totals and failures, with the log path. Reuse your own reads
+unless they may have changed, and fetch omitted evidence before relying on it. Run Verify; return any
 long external wait in it, such as CI, to the supervisor, naming what to watch,
 instead of waiting on it yourself. Report artifact version, output, decisions, blockers,
-user-facing strings, and skills used — on the task, incrementally, when your
-brief grants writes there; otherwise in your final answer.
+user-facing strings, skills used, and the exact text of any spec or record change
+the task needs: on the task, incrementally, when your brief grants writes there;
+otherwise in your final answer.
 
 Do not close tasks, advance the graph, launch other actors, approve, or perform
-a protected effect. Use Computer Use or equivalent screen-driven GUI automation
+a protected effect. Octoplan's fresh independent review of your result serves
+as any pre-ship review your rules require. Use Computer Use or equivalent screen-driven GUI automation
 only within the stated acceptance, after verifying usable access in your environment.
 Return protected effects to the supervisor for its current
 authority and gate checks. A spec is not permission to expand the mandate.
 Return the handoff if needed; otherwise name artifact and verification result.
 ```
 
-A worker without Octopad writes nothing there: preserve its final answer verbatim on a working page of the task (or a comment when short) before adding your compact task receipt, send fixes through the available followup mechanism with the same authority, and use native actor state as liveness evidence. An errored or unverifiable worker suspends affected dispatch while [recovery.md](recovery.md) resolves it; do not silently finish under another identity.
+A worker without Octopad writes nothing there: write the spec and record changes it proposes, once checked against current state, and preserve its final answer verbatim on a working page of the task (or a comment when short) before adding your compact task receipt, send fixes through the available followup mechanism with the same authority, and use native actor state as liveness evidence. An errored or unverifiable worker suspends affected dispatch while [recovery.md](recovery.md) resolves it; do not silently finish under another identity.
 
 ## Proof and review
 
 Verify the exact artifact version on the task's named proof surface. Repository work checks the current local base, head, diff, and available tests before mutation or review. Refresh remote refs and hosted checks only before a remote effect, hosted proof, or handoff claiming remote state; unavailable remote proof blocks only those consumers. Content, research, and operations use their planning proof lenses; source or test checks never substitute for rendered UI, live API, raw trace, exact database, or source-corpus proof.
 
 Green CI proves only what it ran. An unavailable verifier blocks. Independent review uses one fresh source-first task; reuse it only for stable fixes. Material lens drift gets fresh review.
+
+Route each review by what it judges. A light review judges a bounded diff or internal document whose runnable checks prove the result, or a UI judged on its render. A heavy review judges a one-way-door surface, security, a migration or data change, a large mixed diff, work with weak or no runnable checks, a published or client-facing deliverable, a Plan, or an eval protocol. The runtime profile maps each level to a reviewer route. A reviewer uses the worker's provider unless an effective user rule names another; a second judgment is another fresh reviewer with its own lens. Brief each reviewer with its lens, the exact artifact version, and the checks already run with their output: it reruns only the proof it doubts, and a recheck covers only the changed clauses.
 
 When tests can bypass production, require negative proof at the real call site.
 
@@ -113,7 +118,7 @@ Any field may say “none”. A shared-infrastructure disclosure also names the 
 
 ## Phase 6: prove closure or hand off
 
-Keep the context under 60%, or a lower limit the user set: before starting work whose collection and reconciliation could cross it, hand off at that task boundary instead. Use the runtime's context reading where exposed; without one, judge from actual workload and record the limit as unmeasured, never a fabricated percentage. After a compaction, start no new work: reconcile and hand off; the successor rebuilds from Octopad. The planner's suggested seams guide this decision; there are no per-task token quotas. Persist in-flight state and follow [recovery.md](recovery.md) and the runtime's replacement or manual-continuation route.
+Keep the context under 70%, or a lower limit the user set. Once it reaches 10 points below that limit, dispatch nothing new: collect and reconcile what is in flight, then hand off under the limit. Use the runtime's context reading where exposed; without one, judge from actual workload and record the limit as unmeasured, never a fabricated percentage. After a compaction, start no new work: reconcile and hand off; the successor rebuilds from Octopad. The planner's suggested seams guide this decision; there are no per-task token quotas. Persist in-flight state and follow [recovery.md](recovery.md) and the runtime's replacement or manual-continuation route.
 
 Completion is evaluated against the supervisor’s recorded boundary. A bounded delivery in an ongoing stream closes its covered tasks and mandate, not the stream; unrelated work and its history remain in place. Local stream completion follows [multi-stream.md](multi-stream.md) and never claims the common outcome complete. Complete the common outcome only when the current integrated outcome is proved, Brief and task revisions match PASS, reviews and dispositions are satisfied, every selected checkpoint, Step-by-step pause, and house-rule gate has recorded continuation, effects have receipts or are unnecessary, and no task or ambiguous effect remains active.
 

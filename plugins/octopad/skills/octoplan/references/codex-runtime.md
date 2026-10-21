@@ -13,9 +13,9 @@ Select workers by the judgment remaining after preparation. Consider `gpt-6-luna
 | Worker: settled choices and reliable verification | `gpt-6-luna · effort xhigh, gpt-6.1-sol · effort high on failed checks` |
 | Worker: bounded judgment beyond that first candidate | `gpt-6.1-sol · effort high` |
 | Worker: several unresolved reasoning steps in a prepared task | `gpt-6-astra · effort medium` |
-| Reviewer: bounded verification with reliable checks | `gpt-6.1-sol · effort high` |
+| Reviewer: light review ([supervision.md](supervision.md)) | `gpt-6.1-sol · effort high` |
 | Worker or reviewer: difficult reasoning or hard-to-detect errors | `gpt-6-astra · effort high` |
-| Worker or reviewer: weak verification or high consequences | `gpt-6-astra · effort xhigh` |
+| Worker: weak verification or high consequences; reviewer: heavy review | `gpt-6-astra · effort xhigh` |
 
 These defaults do not override an explicit user choice of an available model and effort. Record that choice and reason; capability, independent-review and evidence requirements still apply.
 
