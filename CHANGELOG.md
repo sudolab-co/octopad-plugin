@@ -1,5 +1,16 @@
 # Changelog
 
+## 19.12.0 - Unreleased
+
+`octoplan` 7.10.0: an executor owns its task, its review and its fixes. A live Octoplan on 2026-10-21 spent 38 agents on two pull requests: between the supervisor and each worker sat a batch lead, each unit of a task had its own worker, and each fix and each recheck had another.
+
+- Claude supervisors launch executors directly; batch leads are gone.
+- One executor builds a task's units in order, as commits on its branch. A fresh executor takes over only after a failure or when its context runs out.
+- The executor has its work reviewed as its last step, by a fresh reviewer at the task's review route, and fixes blocking findings itself, test first. A targeted recheck by a fresh reviewer follows only a plan fix, a heavy review, or a fix that reaches beyond its findings; otherwise a test that fails before the fix and passes after proves it.
+- Small bounded Claude work with settled choices and runnable checks runs on Sonnet 5.5 high, Opus 5.5 medium on failed checks.
+- A plan repair that only re-cuts reviewed work or changes a route within its rubric is checked by the planner, without a fresh review, on Opus 5.5 high.
+- The skill states each rule once, in the file that owns it, and drops the manual task chains no runtime uses: 15,839 words before, 12,458 after.
+
 ## 19.11.0 - Unreleased
 
 `manage-product-documentation` 6.4.0 has the AI read a behavior's spec before it judges it. Twice an AI analyzed a feature from what it already had, once the Notepad's usage and once a failed Octoplan run, and proposed changes without opening the feature's Product Spec.

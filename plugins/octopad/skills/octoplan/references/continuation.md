@@ -1,17 +1,10 @@
 # Manual continuation
 
-Load this only when a human actually launches an executor or successor, or an existing manual Next instruction needs repair. Automatic delivery uses the selected runtime profile; supervised tasks need no Next lines, and supervised workers ignore existing ones.
+Supervised tasks need no Next lines, and supervised workers ignore existing ones.
 
 ## Pointers and settings
 
 A continuation is a pointer, never a payload. Persist facts, authority, pending effects and work state in Octopad before handing over. The receiving session reads current workspace/task context and canonical delivery records under [records.md](records.md); it does not infer authority or completion from the block. A block is not an active successor. Manual launch does not widen the mandate or require a duplicate go.
-
-Task pointer:
-
-```text
-<work stream> #N - <task title>
-Octopad · Organisation: <organisation> · Workspace: <workspace>
-```
 
 Supervisor pointer:
 
@@ -23,17 +16,6 @@ Journal: <page title> (<page ID>) · Boundary: <boundary> · Workspace: <owning 
 
 Use the stream's plain name without ` (octoplanned)`. Supervisor pointers identify the canonical journal so separate deliveries in one stream cannot be confused.
 
-An additional line may name an indispensable environment fact Octopad cannot hold, such as the branch the chain stacks on. Every block emitted to the user has one plain settings line immediately below its fence: exact saved model and effort, and `solo` or `parallel-safe`. A task block shows each runtime route saved in its freshly read Exec lines; a supervisor block shows the recorded supervisor route. Interpret each runtime's route with its own profile. Before any work, the receiver verifies readiness, ownership and authority, and proves cessation under [recovery.md](recovery.md); a block offered before a gate clears is expressly for later use and cannot waive that gate.
+An additional line may name an indispensable environment fact Octopad cannot hold. Every block emitted to the user has one plain settings line immediately below its fence: the recorded supervisor route, and `solo` or `parallel-safe`. Interpret each runtime's route with its own profile. Before any work, the receiver verifies readiness, ownership and authority, and proves cessation under [recovery.md](recovery.md); a block offered before a gate clears is expressly for later use and cannot waive that gate.
 
-## Next instructions for manual tasks
-
-Write or update Next only where manual execution is actually used. The instruction is plain text in the existing task description, not another task or state system. Fill actual titles, addresses and settings from current Octopad records. It must say to read the canonical contract and journal before starting and must match the dependency graph.
-
-- **Sequential:** after verification, check the named successor is open, unclaimed and ready. Emit its two-line task block and saved settings. If not ready, name the written wait instead.
-- **Human gate next:** name the action and its owner. Offer the next executable task's block and saved settings explicitly for use after that action is verified; the receiving session checks the gate again.
-- **Parallel fan-out:** only after each named independent sibling is ready, emit one task block and settings line per sibling, marked `parallel-safe`. Shared write surfaces or one sibling shaping another's contract rule this out.
-- **Inside a parallel group:** exactly one sibling carries the continuation and the others are terminal. That relay checks the whole group before offering the successor. If unfinished, name what remains and label its successor block for use only once the group is verified done. Terminal siblings name the relay and emit no block.
-- **Terminal human gate:** give a wrap-up and the remaining action with its owner; no executable successor is implied.
-- **End of chain:** wrap up without a continuation block.
-
-On replan, update only affected manual pointers. Never assign an executor another person's claimed task; record the conflict for reconciliation. A manually launched executor performs its task and required independent review within its recorded mandate, then follows its Next instruction. A manually launched supervisor owns sequencing after accepted takeover and uses the selected runtime's supported worker mechanisms; if those are unavailable, report the actual limit rather than silently acting as its own workers.
+A manually launched supervisor owns sequencing after accepted takeover and uses the selected runtime's supported worker mechanisms; if those are unavailable, report the actual limit rather than silently acting as its own workers.
