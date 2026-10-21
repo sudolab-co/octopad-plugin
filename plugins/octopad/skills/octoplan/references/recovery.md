@@ -2,7 +2,7 @@
 
 ## Reconcile effects before retrying
 
-Before an external non-idempotent effect that could duplicate or be hard to undo, add `OCTOPLAN_ACTION <stable-key>` to the owning task with the exact target, delivery-authorization source, intended effect, and pre-effect state. Use that key for one intent and at most one retry.
+Before an external non-idempotent effect that could duplicate or be hard to undo, add `OCTOPLAN_ACTION <stable-key>` to the owning task with the exact target, delivery-authorization source, intended effect, and pre-effect state. Use that key for one intent and at most one retry. Use native idempotency and `expected_updated_at` on guarded Octopad updates.
 
 After a timeout or incomplete response, assume neither success nor failure. Inspect the authoritative target. If the effect is present, record its receipt. Retry only when authoritative evidence proves it absent, using the same key. If presence remains unknown, leave the action unresolved and block only descendants that need it. Never replay a whole batch to repair one uncertain item. For an evidence gap, refresh the authoritative source; never infer success.
 
@@ -12,7 +12,7 @@ Shared-infrastructure timeouts, saturation, quota failure, or state contaminatio
 
 ## Reconcile actors before replacement
 
-Treat an actor as created only after its call returns or the authoritative native target confirms it. Before any retry or replacement, inspect that target. A successor must confirm that its predecessor stopped before acting; if that cannot be proved, pause only the affected branch. A release record, retirement comment or guarded page update is not cessation proof, and a supervisor cannot prove its own future cessation.
+Treat an actor as created only after its call returns or the authoritative native target confirms it. Treat actors, messages, and effects as created only after a returned or authoritative result. Before any retry or replacement, inspect that target. A successor must confirm that its predecessor stopped before acting; if that cannot be proved, pause only the affected branch. A release record, retirement comment or guarded page update is not cessation proof, and a supervisor cannot prove its own future cessation.
 
 ## Diagnose before repeating
 

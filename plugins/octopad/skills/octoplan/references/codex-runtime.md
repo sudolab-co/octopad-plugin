@@ -55,9 +55,9 @@ Do not add a coordinator chat or fall back to a reused reviewer while claiming i
 
 Use `collaboration.wait_agent` to collect workers and reviewers, `list_agents` to resolve uncertain state, `send_message` for running children and `followup_task` for resumable children. An ended child turn is not a completed deliverable. Before resuming it, check the latest user instruction, authority, ownership, receipt, gates and native state. Where an executor cannot spawn its reviewer, launch the reviewer yourself and give the findings to that executor with `followup_task`. Never resume a stopped, retiring or retired actor.
 
-End a turn with outstanding children only where native wake-up is demonstrated; otherwise wait in the active turn. Explain actual continuation limits at mode choice, including any handoff the user must start; user stop wins, and no agent or Goal guarantees work after its runtime ends. Scheduled follow-up needs its own explicit request.
+End a turn with outstanding children only where native wake-up is demonstrated; otherwise wait in the active turn. Explain actual continuation limits at mode choice, including any handoff the user must start; user stop wins, and no agent or Goal guarantees work after its runtime ends. Add no worker loop, hook or scheduler. Scheduled follow-up needs its own explicit request.
 
-At a real wait or finish, report the evidence under common supervision. An idle supervisor means its turn ended, not that the mandate is complete; on user resume, reconcile state and continue in the same chat when valid.
+At a real wait or finish, report the evidence under common supervision. Do not repeatedly wake an unchanged legitimate wait. An idle supervisor means its turn ended, not that the mandate is complete; on user resume, reconcile state and continue in the same chat when valid.
 
 ## Hand off without overlapping owners
 

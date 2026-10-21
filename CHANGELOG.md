@@ -9,7 +9,7 @@
 - The executor has its work reviewed as its last step, by a fresh reviewer at the task's review route, and fixes blocking findings itself, test first. A targeted recheck by a fresh reviewer follows only a plan fix, a heavy review, or a fix that reaches beyond its findings; otherwise a test that fails before the fix and passes after proves it.
 - Small bounded Claude work with settled choices and runnable checks runs on Sonnet 5.5 high, Opus 5.5 medium on failed checks.
 - A plan repair that only re-cuts reviewed work or changes a route within its rubric is checked by the planner, without a fresh review, on Opus 5.5 high.
-- The skill states each rule once, in the file that owns it, and drops the manual task chains no runtime uses: 15,839 words before, 12,327 after.
+- The skill states each rule once, in the file that owns it, and drops the manual task chains no runtime uses: 15,839 words before, 12,458 after.
 
 ## 19.10.0 - Unreleased
 

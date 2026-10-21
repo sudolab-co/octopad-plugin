@@ -25,7 +25,7 @@ Before parallel dispatch, including within one stream, prove the tasks' actual w
 
 Choose the simplest compliant way to meet the reviewed acceptance criteria within recorded authority. A better path changing task meaning, dependencies or proof, missing context, unsettled project choices, or an impossible check goes to a suitable planner through the runtime's supported route. That planner cannot dispatch workers, take supervisor ownership, or enlarge authority. Dependent work resumes with the same supervisor once the repair has the review planning's change rule requires. Do not replace missing preparation with a stronger worker; repair insufficient preparation before escalating effort.
 
-At resume, worker collection, task close, report, and attempt selection, compare observations with the kill question. An answer stops that run generation immediately; never score it as valid, hide it in an average or subset, or rename the failure a limit. Preserve its evidence, diagnose, and repair or replan within the mandate. A new run keeps its own premise and evidence identity, and every real user limit still applies.
+At resume, worker collection, task close, report, and attempt selection, compare observations with the kill question. An answer stops that run generation immediately; never score it as valid, hide it in an average or subset, or rename the failure a limit. Preserve its evidence, diagnose, and repair or replan within the mandate. A new run keeps its own premise and evidence identity, and every real user limit still applies. A rerun after a material premise change has a distinct task and premise; preserve old results and receipts.
 
 Before task close, add one compact supervisor comment that references receipts and names checks, review or checkpoint outcome, counts of reviewer runs and rounds, material decisions, the countable outcome unit, and the assumption that makes it worthless. File or diff size is diagnostic, never a gate.
 
@@ -33,7 +33,7 @@ While safe authorized work remains, take the next action or wait through the run
 
 ## Worker prompt
 
-Reread the task from Octopad, then send a bounded prompt without predecessor history, keeping the bracketed blocks matching its `**Octopad**` line (no line: no). Reconcile recent decisions and delivered inputs before dispatch; a changed specification receives its affected review. Include the relevant mandate source and bounds, not the entire Decision history. Preserve settled criteria without previous answers where independence requires it.
+Reread the task from Octopad, then send a bounded prompt without predecessor history, keeping the bracketed blocks matching its `**Octopad**` line (no line: no). Reviewers and planning helpers follow the same rule: without granted access, give them the exact revisions and primary evidence they judge. Reconcile recent decisions and delivered inputs before dispatch; a changed specification receives its affected review. Include the relevant mandate source and bounds, not the entire Decision history. Preserve settled criteria without previous answers where independence requires it.
 
 ```text
 Deliver one Octopad task: <task title>.
@@ -89,13 +89,13 @@ A worker without Octopad writes nothing there: write the spec and record changes
 
 Verify the exact artifact version on the task's named proof surface. Repository work checks the current local base, head and diff before mutation or review. Units run their targeted checks; integration checks run as soon as an interface between units exists; the affected services' full checks run on the final head merged with its current base before the pull request. Reuse a check result only while its inputs (code, dependencies, configuration, schema, base) are unchanged; when a change cannot be shown to leave them unchanged, rerun. Units of one task share its workspace and installed dependencies; reinstall only when dependencies or the runtime changed or the workspace is broken. Only concurrent writers get separate workspaces. Refresh remote refs and hosted checks only before a remote effect, hosted proof, or handoff claiming remote state; unavailable remote proof blocks only those consumers.
 
-Route each review by what it judges. A review is heavy whenever it judges a one-way-door surface, security, a migration or data change, a large mixed diff, work with weak or no runnable checks, a published or client-facing deliverable, a Plan, or an eval protocol. Otherwise it is light: a bounded diff or internal document whose runnable checks prove the result, or a UI judged on its render. The runtime profile maps each level to a reviewer route. Each judgment is one fresh reviewer on the worker's provider, unless an effective user rule names another; a second judgment is another fresh reviewer with its own lens, and another provider never adds one. Brief each reviewer with its lens, the exact artifact version, and the checks already run with their output: it reruns only the proof it doubts.
+Independent review is one fresh source-first reviewer per judgment, launched by the executor as its last step; where the executor cannot launch it, the supervisor does and returns the findings to that executor. Route each review by what it judges. A review is heavy whenever it judges a one-way-door surface, security, a migration or data change, a large mixed diff, work with weak or no runnable checks, a published or client-facing deliverable, a Plan, or an eval protocol. Otherwise it is light: a bounded diff or internal document whose runnable checks prove the result, or a UI judged on its render. The runtime profile maps each level to a reviewer route. Each judgment is one fresh reviewer on the worker's provider, unless an effective user rule names another; a second judgment is another fresh reviewer with its own lens, and another provider never adds one. Brief each reviewer with its lens, the exact artifact version, and the checks already run with their output: it reruns only the proof it doubts.
 
 Only the supervisor validates advancement and authority; other verdicts are evidence.
 
 A reviewer cannot enlarge `Done when`. A finding blocks only on an effective rule, reviewed requirement, uncleared gate, or correctness failure; otherwise record residual risk.
 
-Unplanned persistent CI, harness, service, dependency, or cross-repository artifact is scope expansion; reject it or replan when required.
+Unplanned persistent CI, harness, service, dependency, or cross-repository artifact is scope expansion; reject it or replan when required. Build no generic infrastructure for one-off proof.
 
 ## Phase 5: reconcile change and interruption
 
