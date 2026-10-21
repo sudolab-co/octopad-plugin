@@ -10,6 +10,7 @@
 - Units of one task share its workspace and installed dependencies. Integration checks run as soon as units connect, full checks run once on the final head merged with its base, and a check is rerun whenever its inputs may have changed.
 - Two failed fix cycles stop the current strategy: the supervisor diagnoses what failed and tries one materially different approach or records the blocker. Each task's closing note counts its reviewer runs and rounds.
 - Plan reviews keep their floors.
+- The plugin now ships the Claude Code lane agents that pin a model and an effort for each default route (`octopad:octoplan-sonnet-high`, `-opus-medium`, `-opus-high`, `-opus-xhigh`, `-opus-max`, `-fable-xhigh`). A supervisor dispatches the lane matching a task's saved route, so the route's effort holds even where the launch call cannot set one.
 
 ## 19.9.0 - Unreleased
 
