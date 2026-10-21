@@ -1,5 +1,17 @@
 # Changelog
 
+## 19.10.0 - Unreleased
+
+`octoplan` 7.9.0 sizes review to what a task risks. A live Octoplan ran two reviewers from two providers on every code task, reviewed each unit and then its parent again, and reinstalled the project for each new agent. The skill's own floors asked for none of that; their wording allowed it.
+
+- One fresh review per deliverable, on the task's integrated diff. It covers the task's units, the parent and the pull request at once. A unit gets its own review only when the plan names a risk later work must not build on unchecked.
+- A second, focused judgment only for a change that cannot be undone, or for an expertise the plan names that the first reviewer lacks. Reviews stay on the worker's provider: a task's Claude and Codex review routes are alternatives for whichever runtime runs it, never two reviewers.
+- A task's pull request stays one coherent change a single reviewer can judge well; a larger one is split into more tasks, not into more reviews.
+- Units of one task share its workspace and installed dependencies. Integration checks run as soon as units connect, full checks run once on the final head merged with its base, and a check is rerun whenever its inputs may have changed.
+- Two failed fix cycles stop the current strategy: the supervisor diagnoses what failed and tries one materially different approach or records the blocker. Each task's closing note counts its reviewer runs and rounds.
+- Plan reviews keep their floors.
+- The plugin now ships the Claude Code lane agents that pin a model and an effort for each default route (`octopad:octoplan-sonnet-high`, `-opus-medium`, `-opus-high`, `-opus-xhigh`, `-opus-max`, `-fable-xhigh`). A supervisor dispatches the lane matching a task's saved route, so the route's effort holds even where the launch call cannot set one.
+
 ## 19.9.0 - Unreleased
 
 `octoplan` 7.8.0: a supervisor's messages to the user name tasks by title. An Octoplan supervisor reported to its user with bare task-ID prefixes, carried over from the ID-based records it keeps. Its journal and pointer blocks still keep exact IDs; whatever it tells the user names tasks by title. The Codex-only line on opaque IDs is folded into this shared rule.
