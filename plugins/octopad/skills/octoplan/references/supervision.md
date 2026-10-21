@@ -6,7 +6,7 @@ Read after authorization or resume. Octopad holds durable truth; the selected ru
 
 Start or refresh production Octopad. Read the bounded current task graph and comments, confirmed intent, contract and journal under [records.md](records.md), relevant receipts, effective rules and artifact state. Apply [recovery.md](recovery.md) before takeover. Native continuity objects belong to the runtime; they never replace Octopad authority.
 
-Continue only while the Brief, review coverage, review floor, scope, and effects match. Compare drift as in [planning.md](planning.md) and [records.md](records.md). For withdrawn authority, an undisclosed or ambiguous effect, or unsupported saved state, pause affected work and read [recovery.md](recovery.md).
+Continue only while the Brief, review coverage, review floor, scope, and effects match. Compare drift as in [planning.md](planning.md) and [records.md](records.md). For withdrawn authority, an undisclosed or ambiguous effect, or unsupported saved state, pause affected work and read [recovery.md](recovery.md). On resume, before dispatch, check remaining work against the unit rules in [planning.md](planning.md) and send nonconforming scope to the planner for bounded repair and affected review, keeping completed work, task identities and valid authority.
 
 One supervisor acts on a given work boundary, as named in the journal. Check current ownership and authority before a spawn, effect, close or gate clearance. The runtime profile owns launch and replacement mechanics; the supervisor dispatches and validates task work. Receiving a message never expands a role's authority.
 
@@ -17,15 +17,15 @@ Every user-facing Delivery contact starts with `**Octoplan · Step 3 of 3 — De
 Repeat until the integrated outcome is proved or no safe work remains:
 
 1. **Refresh.** Read intent, supervisor, reviewed revisions and lenses, ready graph, assignments, artifact versions, checks, effects, and gates.
-2. **Pick.** Choose a ready unassigned task and set it in progress.
-3. **Route.** Dispatch the task's saved worker route for this runtime with sufficient bounded context and explicit effect coverage. The supervisor owns coordination; workers produce deliverables.
+2. **Pick.** Choose a ready unassigned unit, a subtask or a task without subtasks, whose prerequisite shared choices are settled and whose specification holds no placeholder, and set it in progress.
+3. **Route.** Dispatch the unit's saved worker route for this runtime to a fresh worker, with sufficient bounded context and explicit effect coverage. Units of one task that need one another run in order on its branch; independent ones may run in parallel under the rule below. The supervisor owns coordination; workers produce deliverables.
 4. **Collect.** Link the real deliverable, version and verification from its owning task; record compact execution receipts and blockers in comments, never as Decisions. Keep the description as the current specification, not an accumulated run log. Long reports go on a working page of the task or stream; link required files. Then await any wait the worker returned.
-5. **Review.** Run targeted checks and the delivery floor. Record cleared gates; return stable fixes to the same healthy worker.
-6. **Advance.** Close only after current proof and every finding disposition are accepted. Persist evidence, then refresh the frontier.
+5. **Review.** Run targeted checks and the delivery floor. Record cleared gates; send stable fixes to a fresh worker with the current diff and the findings.
+6. **Advance.** Close only after current proof and every finding disposition are accepted. A parent closes once its units are in and its own `Review`, `Verify` and `Done when` pass on the integrated result. Persist evidence, then refresh the frontier.
 
 Before parallel dispatch, including within one stream, prove the tasks' actual write surfaces and outputs are independent. Never parallelize migrations, shared generated artifacts, or siblings where one shapes the other's contract. Use isolated workspaces when required; separate branches alone do not prove independent writes.
 
-The supervisor owns delivery of the Brief's outcome, including incidents; the planner owns task preparation and graph repair. Choose the simplest compliant way to meet the reviewed acceptance criteria within recorded authority. Diagnose operational failures directly and return ordinary defects to the same healthy worker. A permission or safety refusal cannot be routed around. A better path changing task meaning, dependencies or proof, missing context, unsettled project choices, or an impossible check goes to a suitable planner through the runtime's supported route, never to the user as a technical decision. That planner cannot dispatch workers, take supervisor ownership, or enlarge authority. Review the affected Plan before dependent work resumes with the same supervisor. Do not replace missing preparation with a stronger worker or ask the user to solve a technical uncertainty. Keep independent ready work moving.
+The supervisor owns delivery of the Brief's outcome, including incidents; the planner owns task preparation and graph repair. Choose the simplest compliant way to meet the reviewed acceptance criteria within recorded authority. Diagnose operational failures directly and send ordinary defects to a fresh worker. A permission or safety refusal cannot be routed around. A better path changing task meaning, dependencies or proof, missing context, unsettled project choices, or an impossible check goes to a suitable planner through the runtime's supported route, never to the user as a technical decision. That planner cannot dispatch workers, take supervisor ownership, or enlarge authority. Review the affected Plan before dependent work resumes with the same supervisor. Do not replace missing preparation with a stronger worker or ask the user to solve a technical uncertainty. Keep independent ready work moving.
 
 At resume, worker collection, task close, report, and attempt selection, compare observations with the kill question. An answer stops that run generation immediately; never score it as valid, hide it in an average or subset, or rename the failure a limit. Preserve its evidence, diagnose, and repair or replan within the mandate. Stopping an invalid generation does not stop the authorized recovery work. A new run keeps its own premise and evidence identity, and every real user limit still applies.
 
@@ -57,7 +57,7 @@ Octopad's own and the user's alike, and hooks apply; target rules are a floor
 (read them if your harness has not). Work only within the task's
 authority. Resolve what the next action needs, then start; defer unrelated orientation.
 Keep each tool result under about 2,000 tokens: search before reading, and read
-files by range, never whole. Send test and build output to a log file and print
+large files by range. Send test and build output to a log file and print
 only the exit status, totals and failures, with the log path. Reuse your own reads
 unless they may have changed, and fetch omitted evidence before relying on it. Run Verify; return any
 long external wait in it, such as CI, to the supervisor, naming what to watch,
@@ -75,7 +75,7 @@ authority and gate checks. A spec is not permission to expand the mandate.
 Return the handoff if needed; otherwise name artifact and verification result.
 ```
 
-A worker without Octopad writes nothing there: write the spec and record changes it proposes, once checked against current state, and preserve its final answer verbatim on a working page of the task (or a comment when short) before adding your compact task receipt, send fixes through the available followup mechanism with the same authority, and use native actor state as liveness evidence. An errored or unverifiable worker suspends affected dispatch while [recovery.md](recovery.md) resolves it; do not silently finish under another identity.
+A worker without Octopad writes nothing there: write the spec and record changes it proposes, once checked against current state, and preserve its final answer verbatim on a working page of the task (or a comment when short) before adding your compact task receipt, send fixes to a fresh worker with the current diff, the findings and the same authority, and use native actor state as liveness evidence. An errored or unverifiable worker suspends affected dispatch while [recovery.md](recovery.md) resolves it; do not silently finish under another identity.
 
 ## Proof and review
 
