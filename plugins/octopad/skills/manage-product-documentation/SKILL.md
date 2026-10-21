@@ -1,10 +1,10 @@
 ---
 name: manage-product-documentation
-description: Keep one or more products' documentation true to the work as it happens. In a multi-product workspace, establish the affected product scope before choosing a page; the first matching document does not establish scope. Load it when product behavior is explored, assessed, decided, implemented, merged, released, rolled back, or retired; for product ideas, specs, contracts, architecture, user documentation, release notes, and Product Facts; and before claiming no product or documentation impact. It owns product truth and passes claim-safe facts to product marketing. A change confined to agent instructions, internal notes, or pure marketing does not need it; build tooling still needs an impact check when durable architecture or release behavior moves.
+description: Keep one or more products' documentation true to the work as it happens. In a multi-product workspace, establish the affected product scope before choosing a page; the first matching document does not establish scope. Load it when product behavior is explored, assessed, decided, implemented, merged, released, rolled back, or retired; for product ideas, specs, contracts, architecture, user documentation, release notes, and Product Facts; and before claiming no product or documentation impact. It owns product truth and passes claim-safe facts to product marketing. A change confined to the AI's own working instructions, internal notes, or pure marketing does not need it, but a skill or AI behavior a product ships is product behavior; build tooling still needs an impact check when durable architecture or release behavior moves.
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "manage-product-documentation"` when you open this skill.
 
-Version: 6.2.0
+Version: 6.4.0
 
 # Manage Product Documentation
 
@@ -16,7 +16,7 @@ Before selecting a document to change, establish the affected products by [Resol
 
 ## Work from product intent
 
-Before choosing how to serve a user need, establish the requested outcome and constraints from the request, the owning Product Spec read in full, and Decisions that change its scope. A narrow fix may use the spec's purpose, constraints and the clause it restores; name that clause before taking this shortcut. If the fix requires a product choice or its boundaries are unclear, read the whole owning spec. A summary or truncated result is not a full read: retrieve the missing text, or name the access limit and leave dependent conclusions unresolved. Read other specs or history when a dependency, contradiction or the request calls for them, not by default.
+Before judging, diagnosing or redesigning a behavior, and before choosing how to serve a user need, establish the requested outcome and constraints from the request, the owning Product Spec read in full, and Decisions that change its scope: the spec says what the behavior is meant to be. A narrow fix whose cause is already known may use the spec's purpose, constraints and the clause it restores; name that clause before taking this shortcut. If the fix requires a product choice or its boundaries are unclear, read the whole owning spec. When no spec owns the behavior, say so, keep establishing the facts, and leave conclusions about its intended behavior unresolved. A summary or truncated result is not a full read: retrieve the missing text, or name the access limit and leave dependent conclusions unresolved. Read other specs or history when a dependency, contradiction or the request calls for them, not by default.
 
 Check the result against that same intent before concluding or handing off. Account for the needs within the request: covered with evidence, still unmet, or outside the request with its scope as the reason. An accepted need the request does not cover stays visible without becoming an instruction to build it. Say which source-defined scenarios the request touches were checked and which were not. Never narrow the request afterwards to fit the result; complete the authorized work and name what remains. Use the existing task, PR or reply, not a new document or approval step.
 
