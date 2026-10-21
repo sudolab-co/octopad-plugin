@@ -50,7 +50,7 @@ verified access and remaining permission or runtime limits>.
 
 [Octopad: yes] Connect to production Octopad and read this task.
 [Octopad: no] Do not call Octopad, not even `skill_opened`. Your task, verbatim:
-<description without Exec, Review, and Octopad lines>.
+<description without its Exec and Octopad lines>.
 
 You do this task for the user as a delegated session: the installed skills,
 Octopad's own and the user's alike, and hooks apply; target rules are a floor
