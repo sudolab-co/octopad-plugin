@@ -17,15 +17,15 @@ Every user-facing Delivery contact starts with `**Octoplan · Step 3 of 3 — De
 Repeat until the integrated outcome is proved or no safe work remains:
 
 1. **Refresh.** Read intent, supervisor, reviewed revisions and lenses, ready graph, assignments, artifact versions, checks, effects, and gates.
-2. **Pick.** Choose a ready unassigned unit, a subtask or a task without subtasks, whose prerequisite shared choices are settled and whose specification holds no placeholder, and set it in progress.
-3. **Route.** Dispatch the unit's saved worker route for this runtime to a fresh worker, with sufficient bounded context and explicit effect coverage. Units of one task that need one another run in order on its branch; independent ones may run in parallel under the rule below. The supervisor owns coordination; workers produce deliverables.
+2. **Pick.** Choose a ready unassigned task whose prerequisite shared choices are settled and whose specification, units included, holds no placeholder, and set it in progress.
+3. **Route.** Dispatch the task's saved worker route for this runtime to one fresh executor, with sufficient bounded context and explicit effect coverage. It builds the task's units in order as commits on the task's branch, in one workspace, then runs the task's review and its fixes ([worker prompt](#worker-prompt)). A fresh executor takes over only after a failure or context exhaustion, from the committed state and the previous report. The supervisor owns coordination; executors produce deliverables.
 4. **Collect.** Link the real deliverable, version and verification from its owning task; record compact execution receipts and blockers in comments, never as Decisions. Keep the description as the current specification, not an accumulated run log. Long reports go on a working page of the task or stream; link required files. Then await any wait the worker returned.
-5. **Review.** Run the unit's targeted checks and any early review the Plan names for it; a task without units gets the delivery floor here. Record cleared gates; send fixes to a fresh worker with the current diff and the findings.
+5. **Review.** Validate the receipt: proof on the exact head, each review judgment the task's `Review` names with its verdict, and every finding's disposition. A missing, partial or non-independent review is not a pass: run it under Proof and review. Record cleared gates.
 6. **Advance.** Close only after current proof and every finding disposition are accepted. A parent closes once its units are in and its integrated `Review`, `Verify` and `Done when` pass on the integrated result. Persist evidence, then refresh the frontier.
 
 Before parallel dispatch, including within one stream, prove the tasks' actual write surfaces and outputs are independent. Never parallelize migrations, shared generated artifacts, or siblings where one shapes the other's contract. Use isolated workspaces when required; separate branches alone do not prove independent writes.
 
-The supervisor owns delivery of the Brief's outcome, including incidents; the planner owns task preparation and graph repair. Choose the simplest compliant way to meet the reviewed acceptance criteria within recorded authority. Diagnose operational failures directly and send ordinary defects to a fresh worker. A permission or safety refusal cannot be routed around. A better path changing task meaning, dependencies or proof, missing context, unsettled project choices, or an impossible check goes to a suitable planner through the runtime's supported route, never to the user as a technical decision. That planner cannot dispatch workers, take supervisor ownership, or enlarge authority. Review the affected Plan before dependent work resumes with the same supervisor. Do not replace missing preparation with a stronger worker or ask the user to solve a technical uncertainty. Keep independent ready work moving.
+The supervisor owns delivery of the Brief's outcome, including incidents; the planner owns task preparation and graph repair. Choose the simplest compliant way to meet the reviewed acceptance criteria within recorded authority. Diagnose operational failures directly; an ordinary defect stays with its executor, or goes to a fresh one once it has stopped. A permission or safety refusal cannot be routed around. A better path changing task meaning, dependencies or proof, missing context, unsettled project choices, or an impossible check goes to a suitable planner through the runtime's supported route, never to the user as a technical decision. That planner cannot dispatch workers, take supervisor ownership, or enlarge authority. Review the affected Plan before dependent work resumes with the same supervisor. Do not replace missing preparation with a stronger worker or ask the user to solve a technical uncertainty. Keep independent ready work moving.
 
 At resume, worker collection, task close, report, and attempt selection, compare observations with the kill question. An answer stops that run generation immediately; never score it as valid, hide it in an average or subset, or rename the failure a limit. Preserve its evidence, diagnose, and repair or replan within the mandate. Stopping an invalid generation does not stop the authorized recovery work. A new run keeps its own premise and evidence identity, and every real user limit still applies.
 
@@ -61,27 +61,38 @@ large files by range. Send test and build output to a log file and print
 only the exit status, totals and failures, with the log path. Reuse your own reads
 unless they may have changed, and fetch omitted evidence before relying on it. Run Verify; return any
 long external wait in it, such as CI, to the supervisor, naming what to watch,
-instead of waiting on it yourself. Report artifact version, output, decisions, blockers,
-user-facing strings, skills used, and the exact text of any spec or record change
+instead of waiting on it yourself. Report artifact version, output, review verdicts and finding dispositions,
+decisions, blockers, user-facing strings, skills used, and the exact text of any spec or record change
 the task needs: on the task, incrementally, when your brief grants writes there;
 otherwise in your final answer.
 
-Do not close tasks, advance the graph, launch other actors, approve, or perform
-a protected effect. Launch no reviewer yourself: name in your report any pre-ship
-review your rules require, and the supervisor meets it or keeps it as a gate. Use Computer Use or equivalent screen-driven GUI automation
+When Verify passes on your committed head, have the work reviewed: launch one
+fresh reviewer per judgment in the task's Review, at its route for this runtime,
+read-only and without Octopad, briefed with the task text, base and head, the
+checks you ran with their output, and the target rules as a floor. A finding
+blocks only on an effective rule, a reviewed requirement or a correctness
+failure; record the others. Fix each blocking finding yourself, test first: show
+the case failing, then passing. Only when the review was heavy or a fix reaches
+beyond its findings, have one fresh reviewer recheck the changes and what they
+affect, given the previous findings. After two fix cycles that do not pass, stop and report why.
+This is the task's delivery review: launch no other. Where you cannot launch an
+agent, return for review instead.
+
+Do not close tasks, advance the graph, launch actors other than your reviewers,
+approve, or perform a protected effect. Use Computer Use or equivalent screen-driven GUI automation
 only within the stated acceptance, after verifying usable access in your environment.
 Return protected effects to the supervisor for its current
 authority and gate checks. A spec is not permission to expand the mandate.
 Return the handoff if needed; otherwise name artifact and verification result.
 ```
 
-A worker without Octopad writes nothing there: write the spec and record changes it proposes, once checked against current state, and preserve its final answer verbatim on a working page of the task (or a comment when short) before adding your compact task receipt, send fixes to a fresh worker with the current diff, the findings and the same authority, and use native actor state as liveness evidence. An errored or unverifiable worker suspends affected dispatch while [recovery.md](recovery.md) resolves it; do not silently finish under another identity.
+A worker without Octopad writes nothing there: write the spec and record changes it proposes, once checked against current state, and preserve its final answer verbatim on a working page of the task (or a comment when short) before adding your compact task receipt, give a fix its executor could not finish to a fresh executor with the current diff, the findings and the same authority, and use native actor state as liveness evidence. An errored or unverifiable worker suspends affected dispatch while [recovery.md](recovery.md) resolves it; do not silently finish under another identity.
 
 ## Proof and review
 
 Verify the exact artifact version on the task's named proof surface. Repository work checks the current local base, head and diff before mutation or review. Units run their targeted checks; integration checks run as soon as an interface between units exists; the affected services' full checks run on the final head merged with its current base before the pull request. Reuse a check result only while its inputs (code, dependencies, configuration, schema, base) are unchanged; when a change cannot be shown to leave them unchanged, rerun. Units of one task share its workspace and installed dependencies; reinstall only when dependencies or the runtime changed or the workspace is broken. Only concurrent writers get separate workspaces. Refresh remote refs and hosted checks only before a remote effect, hosted proof, or handoff claiming remote state; unavailable remote proof blocks only those consumers. Content, research, and operations use their planning proof lenses; source or test checks never substitute for rendered UI, live API, raw trace, exact database, or source-corpus proof.
 
-Green CI proves only what it ran. An unavailable verifier blocks. Independent review uses one fresh source-first task; reuse it for its rechecks. Material lens drift gets fresh review.
+Green CI proves only what it ran. An unavailable verifier blocks. Independent review is one fresh source-first reviewer per judgment, launched by the executor as its last step; where the executor cannot launch it, the supervisor does and returns the findings to that executor. Material lens drift gets fresh review.
 
 Route each review by what it judges. A review is heavy whenever it judges a one-way-door surface, security, a migration or data change, a large mixed diff, work with weak or no runnable checks, a published or client-facing deliverable, a Plan, or an eval protocol. Otherwise it is light: a bounded diff or internal document whose runnable checks prove the result, or a UI judged on its render. The runtime profile maps each level to a reviewer route. Each judgment is one fresh reviewer on the worker's provider, unless an effective user rule names another; a second judgment is another fresh reviewer with its own lens, and another provider never adds one. Brief each reviewer with its lens, the exact artifact version, and the checks already run with their output: it reruns only the proof it doubts.
 

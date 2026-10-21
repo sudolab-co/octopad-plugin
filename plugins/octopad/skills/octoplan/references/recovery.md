@@ -22,7 +22,7 @@ Treat an actor as created only after its call returns or the authoritative nativ
 
 - **Transient:** retry once with the same operation key, only after proving the effect absent.
 - **Evidence gap:** refresh the authoritative source; never infer success.
-- **Execution defect:** send bounded fixes to a fresh worker with the current diff and the findings.
+- **Execution defect:** the executor fixes it in its own turn; once it has stopped, send bounded fixes to a fresh executor with the current diff and the findings.
 - **Plan defect:** ask a suitable planner to repair affected scope, review it, and resume with the owning supervisor.
 - **New consequence or house rule:** follow [SKILL.md](../SKILL.md); stop only work needing that decision.
 

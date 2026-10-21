@@ -1,5 +1,16 @@
 # Changelog
 
+## 19.11.0 - Unreleased
+
+`octoplan` 7.10.0: an executor owns its task, its review and its fixes. A live Octoplan on 2026-10-21 spent 38 agents on two pull requests: between the supervisor and each worker sat a batch lead, each unit of a task had its own worker, and each fix and each recheck had another.
+
+- Claude supervisors launch executors directly; batch leads are gone.
+- One executor builds a task's units in order, as commits on its branch. A fresh executor takes over only after a failure or when its context runs out.
+- The executor has its work reviewed as its last step, by a fresh reviewer at the task's review route, and fixes blocking findings itself, test first. A targeted recheck by a fresh reviewer follows only a plan fix, a heavy review, or a fix that reaches beyond its findings; otherwise a test that fails before the fix and passes after proves it.
+- Upkeep of a derived artifact every task would touch, such as an index, a map or line pins, runs once after the tasks, unless the user asks for it in each.
+- Small bounded Claude work with settled choices and runnable checks runs on Sonnet 5.5 high, Opus 5.5 medium on failed checks.
+- A plan repair that only re-cuts reviewed work or changes a route within its rubric is checked by the planner, without a fresh review, on Opus 5.5 high.
+
 ## 19.10.0 - Unreleased
 
 `octoplan` 7.9.0 sizes review to what a task risks. A live Octoplan ran two reviewers from two providers on every code task, reviewed each unit and then its parent again, and reinstalled the project for each new agent. The skill's own floors asked for none of that; their wording allowed it.
