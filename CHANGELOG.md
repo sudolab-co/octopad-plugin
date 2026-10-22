@@ -1,5 +1,9 @@
 # Changelog
 
+## 20.3.0 - Unreleased
+
+- `octopad-crm` 1.4.0: where the organization has Octopad's own sending, the AI changes the sending configuration with `crm_send_config` `set` when a workspace admin asks it to, going live included, instead of always refusing. The server already lets workspace admins make this change. For any other user, the AI still never changes it.
+
 ## 20.2.0 - Unreleased
 
 - `manage-product-documentation` 6.6.0: a spec edit the AI cannot make (no write access, a locked page, no Octopad connection) is named on the repository's documentation-impact mark with what blocked it, and the AI creates or reuses documentation-debt work, instead of skipping it in silence.
