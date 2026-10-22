@@ -68,9 +68,11 @@ read-only and without Octopad, briefed with the task text, base and head, the
 checks you ran with their output, and the target rules as a floor. A finding
 blocks only on an effective rule, a reviewed requirement, an uncleared gate or a
 correctness failure; record the others. Fix each blocking finding yourself, test first: show
-the case failing, then passing. Only when the review was heavy or a fix reaches
-beyond its findings, have one fresh reviewer recheck the changes and what they
-affect, given the previous findings. After two fix cycles that do not pass, stop and report why.
+the case failing, then passing. Only after fixing a blocking finding of a heavy
+review, or a fix that reaches beyond its findings, have one fresh reviewer at this
+runtime's light-review route recheck the changes and what they affect, given the
+previous findings: one recheck per fix cycle. After two fix cycles that do not pass,
+stop and report why.
 This is the task's delivery review: launch no other. Where you cannot launch an
 agent, return for review instead.
 

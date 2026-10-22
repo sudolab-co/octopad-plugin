@@ -21,7 +21,7 @@ Check actual support before recommending `/effort ultracode`, preserve explicit 
 
 On manual launches, exact model and effort are binding settings the user sets. On supervised launches, inspect existing lane definitions that pin model and effort together: this plugin ships one per default lane, named under its plugin prefix, such as `octopad:octoplan-opus-high`, and the environment may define others. Dispatch the lane matching the saved Claude route. Do not create or alter lane definitions as an incidental planning step. If no matching lane exists, pass the exact model and effort on the launch call where it accepts them. Where it can set only model, pass that exact model and make effort an explicit request in the worker prompt: `requested, not enforced: this launch call cannot set it — run at it if you can; if you cannot, say so in your status line`. With a matching lane use `pinned by your lane definition`. Explain the request-only limit once per run; never claim observed effort from a prompt. Positive route mismatch or unavailable model pauses the affected actor.
 
-Claude reviews run on Opus 5.5, whatever the worker's model: `high` for a light review, `xhigh` for a heavy one ([supervision.md](supervision.md)); a saved Claude review route stronger than its level is lowered only through a recorded Plan update. The supervisor supports at least the strongest saved Claude worker route, and that floor counts the second attempt of an `on failed checks` route. Common review and upstream-premise floors apply.
+Claude reviews run on Opus 5.5, whatever the worker's model: `high` for a light review, `xhigh` for a heavy one ([supervision.md](supervision.md)); a saved Claude review route stronger than its level is lowered only through a recorded Plan update. The supervisor runs at `Opus 5.5 · high`: executors and reviewers run in their own lanes, so a stronger worker or review route never raises the supervisor's effort. Common review and upstream-premise floors apply.
 
 ## Runtime facts
 
@@ -53,7 +53,7 @@ The supervisor keeps its context for coordination. For each task it picks under 
 
 ## Wait without spending context
 
-For the supervisor's internal wait on executors or checks, once no other safe ready work remains, end the turn on something the harness wakes the main session for: a background agent, or a background command that exits when its condition holds. For pull-request checks, that command exits when every check is terminal, success and failure alike. On waking, reconcile a failed command and the current PR head before acting on the result.
+For the supervisor's internal wait on executors or checks, once no other safe ready work remains, end the turn on something the harness wakes the main session for: a background agent, or a background command that exits when its condition holds. For pull-request checks, that command exits when every check is terminal, success and failure alike. On waking, reconcile a failed command and the current PR head before acting on the result. When every remaining wait is a person's, end the turn on a background command that exits when one of those waits changes state where it can be read, such as a pull request merging or a task changing status, then reconcile that change, including a task closed by someone else.
 
 ## Hand off at the limit
 
