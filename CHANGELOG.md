@@ -1,5 +1,14 @@
 # Changelog
 
+## 20.1.0 - Unreleased
+
+`octoplan` 7.11.0: corrections from the first live run of 7.10.0 (2026-10-21/22), where 11 agents delivered 3 tasks at 3 to 4 agents per task instead of 2.
+
+- A targeted recheck follows only the fix of a blocking finding from a heavy review, or a fix that reaches beyond its findings; minor fixes after a heavy review no longer trigger one. Each fix cycle gets at most one recheck, at the light-review route.
+- A Claude supervisor runs at Opus 5.5 high; a stronger worker or review route no longer raises its effort.
+- When every remaining wait is a person's, the Claude supervisor waits on a background command that exits when one of those waits changes state, such as a pull request merging, and reconciles it.
+- Restored two rules the 7.10.0 deduplication dropped: cut each deliverable into the smallest units that make sense, and name tasks by title, never by an ID prefix, in what the user reads.
+
 ## 20.0.0 - Unreleased
 
 Four skill lines now agree with the Octopad methodology's corrections, and three skill texts follow server changes. This version needs the Octopad server release in which `build_context` matches streams to a description of the work (`mode: "work_stream"` with `query`).
