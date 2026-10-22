@@ -4,7 +4,7 @@ description: Use for a new or existing stream, a brief, or a delivery-mode choic
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-planning-and-work-design"` when you open this skill.
 
-Version: 4.5.0
+Version: 5.0.0
 
 # From a need to prepared work
 
@@ -62,14 +62,14 @@ For an ongoing stream, agree a bounded delivery within it; finishing that mandat
 - Both the reason and the date sit in the goal's own description, each on a line of its own, never only on a stream linked to it:
   `Why now: two enterprise pilots stalled on this gap last quarter.`
   `Deadline 2026-11-30 — renewal date of the affected contract.`
-- Once every time-bound stream under a goal is complete, put closing it to the user: the close runs in one move, the tool walks through the post-mortem choices, and each close files a new post-mortem that supersedes the one before it.
+- Once every time-bound stream under a goal is complete, put closing it to the user: the close runs in one move, the tool walks through the post-mortem choices, and each close files a new post-mortem that supersedes the one before it, unless the user explicitly accepts closing without one.
 
 # Which stream work belongs to
 
 - Streams come in two kinds. An ongoing stream is an area of work that never finishes (`Frontend`, `Marketing`); a time-bound stream is one effort with an end state it can actually reach (`Frontend · Dark Mode`).
 - Open a time-bound stream where the effort has an end state AND takes three or more tasks over more than one sitting.
 - Choosing a task's stream: does it push a time-bound stream's goal forward? then that one. Is it ordinary work of a domain? then the ongoing one. Cannot tell? then ask.
-- Settle that by reading each stream's description beside it in the session brief; for a stream the brief does not list, read its framing with `build_context(mode: "work_stream", work_stream_name: "…")`. Names collide, and a keyword that looks like a match drops work into the wrong stream.
+- Settle that by describing the work to `build_context(mode: "work_stream", query: "…")` and reading the one-liner of each stream it returns. Names collide, and a keyword that looks like a match drops work into the wrong stream.
 - Give a time-bound stream its goal — one primary, and up to two more beside it. Where nothing on the board fits, propose the goal that would.
 - Work that advances a goal has no place in an ongoing stream: move it into a time-bound stream, or the goal's progress cannot be seen at all.
 - Where one stream has to wait on another, record that with `depends_on_stream_ids`, and honour the order when you choose what to pick up next.
@@ -86,9 +86,9 @@ For an ongoing stream, agree a bounded delivery within it; finishing that mandat
 User: *"Lay out the launch — research, then design, then build, then ship — across the next five weeks."*
 
 - Wrong: one `tasks(action:"create")` per task and `link_dependency` calls afterwards — seven round trips for a single plan, the exact pattern `batch_tasks` exists to collapse.
-- Right: the stream first, then ONE `batch_tasks` call holding the entire graph.
+- Right: the stream first, then the entire graph in as few `batch_tasks` calls as its limits allow.
   1. Open the time-bound stream "Launch Q2" with its `definition_of_success`, its goal, and a `target_date` of `2026-05-31`, which is the five-week horizon the user gave, set on the effort itself and never copied down onto its tasks.
-  2. ONE `batch_tasks` call for the whole set, the stream given once as the call's default and `depends_on_refs` carrying the order inside it, and never a second pass of `link_dependency` calls over edges the same batch already carried.
+  2. The whole set, the stream given once as each call's default and `depends_on_refs` carrying every edge (to an earlier call's task by its ID), never a second pass of `link_dependency` calls.
 - Why the nesting is right here: each of the four phases really does hold several deliverables. A flat effort — five fixes, each checked in its own Done when — stays top-level tasks joined by dependencies, with no umbrella, no phase parents and no check or deploy tasks.
 - Why no date sits on a task here: the user gave a rough span, not four deadlines. That span became the effort's outer horizon and stopped there, and what carries the order between the tasks is `depends_on_refs`.
 

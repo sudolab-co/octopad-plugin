@@ -6,10 +6,10 @@ If the Octopad connection bundled with this plugin offers the `skill_opened` too
 
 # Where knowledge is written
 
-Version: 2.2.1
+Version: 2.3.0
 
 - Three branches hold durable workspace context — `knowledge`, `pages` and `files`. Retrieval reaches only the branch a thing went into, so the branch is chosen on purpose and never by habit.
-- What someone outside the current task or conversation will need is an atomic item, written with `knowledge`: a fact others will rely on, a choice that binds work beyond its task, a question no open task will settle, an uncertain harm. Checks, receipts, approvals, blockers and notes about your own tools stay on the task, or in chat when there is no task; a fixable gap is a task.
+- What someone outside the current task or conversation will need is an atomic item, written with `knowledge`: a fact others will rely on, a choice that binds work beyond its task, a question no open task will settle, an uncertain harm. In a workspace where the CRM is on, what one customer did or said goes to their CRM record instead. Checks, receipts, approvals, blockers and notes about your own tools stay on the task, or in chat when there is no task; a fixable gap is a task.
 - Reference that outlives the effort — how a system is built, what a meeting settled — is a page, written with `pages`. Research or analysis for one decision is never kept or offered as an ordinary page: its Decision's rationale cites the decisive sources.
 - Material later sessions need for bounded work goes on a working page of its real task or active stream, including an ongoing stream. Lasting findings move to their proper home (Key Information, a reference page, an open task they inform); propose a home for, or ask about, lasting knowledge that has none. Operational consent, supervision and receipts stay with their work and remain consultable after archiving.
 - When you hand the work over, finish moving lasting findings, then keep each working page that is, as a whole, reference that outlives the effort, and archive the rest. A bounded delivery in an ongoing stream archives only its own document IDs, leaving the stream and other work active. When the work reopens, take the pages it needs out of Archive.

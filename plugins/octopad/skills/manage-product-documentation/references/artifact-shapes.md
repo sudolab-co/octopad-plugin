@@ -80,7 +80,6 @@ Ideas with no system yet. One line each.
 ## Enforcement and evidence
 - Tests, types, schemas, lint, or CI: <links>
 - Source revision or release: <exact value>
-- Last verified: <time>
 ```
 
 ## Architecture Map
@@ -105,7 +104,6 @@ Ideas with no system yet. One line each.
 
 ## Verification
 - Source revision: <exact value>
-- Last verified: <time>
 - Gaps: <explicit unknowns>
 ```
 
