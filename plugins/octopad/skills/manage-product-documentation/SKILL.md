@@ -4,7 +4,7 @@ description: Keep one or more products' documentation true to the work as it hap
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "manage-product-documentation"` when you open this skill.
 
-Version: 6.5.0
+Version: 6.6.0
 
 # Manage Product Documentation
 
@@ -95,7 +95,7 @@ Keep `idea`, `explored`, `accepted`, `implemented`, `merged`, `released`, and `r
 
 Attribute every lifecycle claim and Product Fact to its product. A shared component can have one canonical spec, but deployment, activation, rollback, availability, and claim scope advance separately for each consuming product. Evidence for one product never promotes another.
 
-During implementation and delivery, record progress, heads, tests and reviews on the Task or pull request. On the spec, change only a state label and its link, or the content when intent, behavior, constraints or verification change. A change needing no spec edit still names the spec in the repository's documentation-impact mark. Promote shipped truth only after release verification. If evidence is missing, mark the claim stale or unverified and create or reuse documentation-debt work instead of guessing.
+During implementation and delivery, record progress, heads, tests and reviews on the Task or pull request. On the spec, change only a state label and its link, or the content when intent, behavior, constraints or verification change. A change needing no spec edit still names the spec in the repository's documentation-impact mark; if a needed spec edit is blocked, name the spec and blocker there and create or reuse documentation-debt work. Promote shipped truth only after release verification. If evidence is missing, mark the claim stale or unverified and create or reuse documentation-debt work instead of guessing.
 
 When product work needs a Task, reuse suitable existing work and follow the active kernel and server contract for its shape, hierarchy, and dependencies.
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 20.2.0 - Unreleased
+
+- `manage-product-documentation` 6.6.0: a spec edit the AI cannot make (no write access, a locked page, no Octopad connection) is named on the repository's documentation-impact mark with what blocked it, and the AI creates or reuses documentation-debt work, instead of skipping it in silence.
+
 ## 20.1.0 - Unreleased
 
 `octoplan` 7.11.0: corrections from the first live run of 7.10.0 (2026-10-21/22), where 11 agents delivered 3 tasks at 3 to 4 agents per task instead of 2.
