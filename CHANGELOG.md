@@ -1,5 +1,9 @@
 # Changelog
 
+## 20.4.0 - Unreleased
+
+- `octopad-planning-and-work-design` 5.1.0: a stream whose work follows one logic marks its main parts by starting each top-level task's title with its phase (`P1 · <title>`, `P2 · <title>`), instead of giving each phase a parent task. Subtasks carry no prefix, and a phase is never a parent task. A phase parent held deliverables that are not parts finished and checked alone, against the methodology's rule for subtasks; a title prefix shows the user the stream's structure without that nesting.
+
 ## 20.3.0 - Unreleased
 
 - `octopad-crm` 1.4.0: where the organization has Octopad's own sending, the AI changes the sending configuration with `crm_send_config` `set` when a workspace admin asks it to, going live included, instead of always refusing. The server already lets workspace admins make this change. For any other user, the AI still never changes it.
