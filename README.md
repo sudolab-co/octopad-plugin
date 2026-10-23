@@ -28,6 +28,12 @@ To refresh it later: `codex plugin marketplace upgrade octopad-plugin`.
 
 Start a new conversation and ask to use Octopad. Sign in to Octopad in the browser when asked.
 
+## What runs on your machine
+
+In Claude Code, and in Cowork where plugin hooks run, a short shell script (`plugins/octopad/claude-session/claude-session.sh`) runs at each session start and when the Octopad connection opens. It keeps a SHA-256 digest of the session id, one small file per Claude Code process, in a private temp folder (`$TMPDIR/octopad-claude-<uid>/`), and sends that digest to Octopad so a resumed conversation is recognized. The session id itself never leaves your machine. claude.ai chat and Codex run neither.
+
 ## Maintaining the skills
 
 Each skill's only source is its folder under `plugins/octopad/skills/`; the Claude and Codex distributions install the same files. Change a shared rule once, and keep tool names and model routes in Octoplan's runtime profiles (`octoplan/references/claude-runtime.md`, `octoplan/references/codex-runtime.md`). When shared behavior changes, validate and review both installed paths. Never edit an installed cache or keep a second copy by hand.
+
+The session script's tests run with Node and no dependencies: `node --test 'tests/*.test.mjs'`. They live outside `plugins/octopad`, so they do not ship.
