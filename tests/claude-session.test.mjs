@@ -3,11 +3,11 @@
 //   node --test tests/
 // Each script runs as `/bin/sh <path> <mode>` in a cleared environment, under a fake
 // claude process (tests/owner.mjs). Every run must exit 0 with empty stderr.
-import { test } from 'node:test';
+import { after, test } from 'node:test';
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
 import { createHash, randomUUID } from 'node:crypto';
-import { chmodSync, existsSync, lstatSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, realpathSync, symlinkSync, utimesSync, writeFileSync } from 'node:fs';
+import { chmodSync, existsSync, lstatSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, realpathSync, rmSync, symlinkSync, utimesSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -24,8 +24,12 @@ const header = (sid) => `{"x-octopad-claude-session":"${digest(sid)}"}\n`;
 const payload = (sid, event = 'SessionStart', extra = {}) =>
   JSON.stringify({ session_id: sid, transcript_path: `/tmp/x/${sid}.jsonl`, cwd: '/tmp/x', hook_event_name: event, source: 'startup', ...extra });
 
+const sandboxes = [];
+after(() => { for (const tmp of sandboxes) rmSync(tmp, { recursive: true, force: true }); });
+
 function sandbox() {
   const tmp = realpathSync(mkdtempSync(join(tmpdir(), 'octopad-claude-test-')));
+  sandboxes.push(tmp);
   return { tmp, dir: join(tmp, `octopad-claude-${UID}`), env: (extra = {}) => ({ PATH: '/usr/bin:/bin', TMPDIR: tmp, ...extra }) };
 }
 

@@ -30,7 +30,7 @@ Start a new conversation and ask to use Octopad. Sign in to Octopad in the brows
 
 ## What runs on your machine
 
-In Claude Code, and in Cowork where plugin hooks run, a short shell script (`plugins/octopad/claude-session/claude-session.sh`) runs at each session start and when the Octopad connection opens. It keeps a SHA-256 digest of the session id, one small file per Claude Code process, in a private temp folder (`$TMPDIR/octopad-claude-<uid>/`), and sends that digest to Octopad so a resumed conversation is recognized. The session id itself never leaves your machine. claude.ai chat and Codex run neither. On Windows the script sends nothing; without Git Bash, Claude Code runs it in PowerShell and shows a warning about that at the start of each session.
+In Claude Code, and in Cowork where plugin hooks run, a short shell script (`plugins/octopad/claude-session/claude-session.sh`) runs at each session start and when the Octopad connection opens. It keeps a SHA-256 digest of the session id, one small file per Claude Code process, in a private temp folder (`$TMPDIR/octopad-claude-<uid>/`), and sends that digest to Octopad so a resumed conversation is recognized. The session id itself never leaves your machine. claude.ai chat and Codex run neither. On Windows the script sends nothing; without Git Bash, Claude Code runs the hook command in PowerShell, where it does nothing, and shows a warning about that at the start of each session.
 
 ## Maintaining the skills
 
