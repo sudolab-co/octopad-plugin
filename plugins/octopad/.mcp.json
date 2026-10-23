@@ -2,7 +2,8 @@
   "mcpServers": {
     "octopad": {
       "type": "http",
-      "url": "https://mcp.octopad.app/mcp"
+      "url": "https://mcp.octopad.app/mcp",
+      "headersHelper": "/bin/sh \"${CLAUDE_PLUGIN_ROOT}/claude-session/claude-session.sh\" header"
     }
   }
 }

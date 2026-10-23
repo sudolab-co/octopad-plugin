@@ -1,6 +1,6 @@
 {
   "name": "octopad",
-  "version": "20.5.0",
+  "version": "20.6.0",
   "description": "Connect Octopad and load its skills for work, knowledge, documentation, the CRM and Octoplan, under the methodology served by the server.",
   "author": {
     "name": "Sudolab"
@@ -15,5 +15,18 @@
     "planning",
     "crm"
   ],
-  "mcpServers": "./.mcp.json"
+  "mcpServers": "./.mcp.json",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/bin/sh \"${CLAUDE_PLUGIN_ROOT}/claude-session/claude-session.sh\" hook; exit 0",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
 }
