@@ -1,5 +1,9 @@
 # Changelog
 
+## 20.5.0 - Unreleased
+
+- `octoplan` 8.0.0: a worker keeps its final answer to what the supervisor must verify and close the task, and gives the command that reproduces longer evidence or a location that survives the workspace, because, for a worker without Octopad access, the supervisor otherwise preserves that text verbatim on the task page and pays it twice. A read-only lookup that a supervisor or planner delegates may run on `Haiku 5.5` at high effort when a runnable check of correctness and completeness exists before the route is chosen; it is not a saved task route and lowers no review floor. The Claude runtime notes now name the configurable concurrent subagent cap, the error not to retry, and the Claude Code version below which Haiku 5.5 is rejected.
+
 ## 20.4.0 - Unreleased
 
 - `octopad-planning-and-work-design` 5.1.0: a stream whose work follows one logic marks its main parts by starting each top-level task's title with its phase (`P1 · <title>`, `P2 · <title>`), instead of giving each phase a parent task. Subtasks carry no prefix, and a phase is never a parent task. A phase parent held deliverables that are not parts finished and checked alone, against the methodology's rule for subtasks; a title prefix shows the user the stream's structure without that nesting.

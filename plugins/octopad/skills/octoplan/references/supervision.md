@@ -61,7 +61,10 @@ long external wait in it, such as CI, to the supervisor, naming what to watch,
 instead of waiting on it yourself. Report artifact version, output, review verdicts and finding dispositions,
 decisions, blockers, user-facing strings, skills used, and the exact text of any spec or record change
 the task needs: on the task, incrementally, when your brief grants writes there;
-otherwise in your final answer.
+otherwise in your final answer. Keep that answer to what the supervisor must verify
+and close the task; for longer evidence, other than those exact texts, give the command
+that reproduces it, or a location that survives the workspace, instead of
+pasting it.
 
 When Verify passes on your committed head, have the work reviewed: launch one
 fresh reviewer per judgment in the task's Review, at its route for this runtime,
