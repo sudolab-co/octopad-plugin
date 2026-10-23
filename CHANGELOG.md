@@ -2,7 +2,7 @@
 
 ## 20.5.0 - Unreleased
 
-- `octoplan` 8.0.0: a worker keeps its final answer to what the supervisor must verify and close the task, and gives the command that reproduces longer evidence or a location that survives the workspace, because, for a worker without Octopad access, the supervisor otherwise preserves that text verbatim on the task page and pays it twice. A read-only lookup that a supervisor or planner delegates may run on `Haiku 5.5` at high effort when a runnable check of correctness and completeness exists before the route is chosen; it is not a saved task route and lowers no review floor. The Claude runtime notes now name the configurable concurrent subagent cap, the error not to retry, and the Claude Code version below which Haiku 5.5 is rejected.
+- `octoplan` 8.0.0: a worker keeps its final answer to what the supervisor must verify and close the task, and gives the command that reproduces longer evidence or a location that survives the workspace, because, for a worker without Octopad access, the supervisor otherwise preserves that text verbatim on a working page of the task and pays it twice. A read-only lookup that a supervisor or planner delegates may run on `Haiku 5.5` at high effort when a runnable check of correctness and completeness exists before the route is chosen; it is not a saved task route and lowers no review floor. The Claude runtime notes now name the configurable concurrent subagent cap, the error not to retry, and the Claude Code version below which Haiku 5.5 is rejected.
 
 ## 20.4.0 - Unreleased
 
