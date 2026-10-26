@@ -2,7 +2,7 @@
 
 ## 20.10.0 - Unreleased
 
-- `octoplan` 8.4.0: a quota or rate limit on one tool, model or account no longer counts as shared-infrastructure distress. The actor switches, without weakening the saved route, to another available route or to that tool's paid continuation within the user's recorded spend limits; it waits only when no route is left, and then holds only the work that needs it. Shared-service saturation and state contamination still stop the affected calls. On a live run, two supervisors stopped every database read, and some work that needed none, until one tool's five-hour quota reset, although that tool still ran on its credits and other work was ready.
+- `octoplan` 8.4.0: a quota or rate limit on one tool, model or account no longer counts as shared-infrastructure distress. The actor switches to another available route no weaker than the saved one, and records the switch, or to that tool's paid continuation within the user's recorded spend limits; it waits only when no route is left, and then holds only the work that needs it. Shared-service saturation and state contamination still stop the affected calls. On a live run, two supervisors stopped every database read, and some work that needed none, until one tool's five-hour quota reset, although that tool still ran on its credits and other work was ready.
 
 ## 20.9.0 - Unreleased
 

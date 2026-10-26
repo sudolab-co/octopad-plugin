@@ -10,7 +10,7 @@ After a timeout or incomplete response, assume neither success nor failure. Insp
 
 Shared-infrastructure timeouts, saturation, or state contamination stop affected calls before ordinary retries. Record the system, event count, duration, and data magnitude, and name them in the handoff; resume those calls only from a reviewed clean state. Continue safe diagnosis and independent work. No native continuation feature overrides this containment.
 
-A quota or rate limit on one tool, model or account is not distress: switch, without weakening the saved route, to another available route or to that tool's paid continuation within the user's recorded spend limits. Wait only when no route is left, and then hold only the work that needs it (F7).
+A quota or rate limit on one tool, model or account is not distress: switch to another available route no weaker than the saved one, recording the switch, or to that tool's paid continuation within the user's recorded spend limits (F13). Wait only when no route is left, and then hold only the work that needs it (F7).
 
 ## Reconcile actors before replacement
 
