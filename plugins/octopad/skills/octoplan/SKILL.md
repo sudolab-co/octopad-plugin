@@ -6,7 +6,7 @@ A worker, reviewer or planning helper without Octopad access in its brief calls 
 
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octoplan"` when you open this skill.
 
-Version: 8.3.0
+Version: 8.4.0
 
 # Octoplan
 
@@ -33,7 +33,7 @@ Load and report only coordination, routing, and recovery mechanics the work need
 - Select the profile from the actual host, not the model's name: [codex-runtime.md](references/codex-runtime.md) in Codex; [claude-runtime.md](references/claude-runtime.md) in Claude Code. Read only that profile when launching, resuming, or checking capabilities. When choosing routes, read both profiles' route sections: every task names a route for each runtime ([planning.md](references/planning.md)). Unknown hosts must establish capabilities before promising autonomous delivery.
 - Read [records.md](references/records.md) before reading or writing a delivery contract or journal.
 - Read [multi-stream.md](references/multi-stream.md) only for multiple streams.
-- Read [recovery.md](references/recovery.md) before duplicable or hard-to-undo effects, or for ambiguity, shared-infrastructure distress, actor failure, repeated non-progress, takeover, or replan.
+- Read [recovery.md](references/recovery.md) before duplicable or hard-to-undo effects, or for ambiguity, shared-infrastructure distress, a usage quota or rate limit, actor failure, repeated non-progress, takeover, or replan.
 - Read [continuation.md](references/continuation.md) only when the selected runtime requires a manual launch or handoff.
 
 ## Shared foundation

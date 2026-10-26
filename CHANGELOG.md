@@ -1,5 +1,9 @@
 # Changelog
 
+## 20.10.0 - Unreleased
+
+- `octoplan` 8.4.0: a usage quota or rate limit on one AI model or runtime account no longer counts as shared-infrastructure distress: the affected work runs on its saved route in the other runtime, or on paid continuation only where recorded authority covers the spend, and otherwise only that work waits. On a live run, two supervisors stopped every database read, and some work that needed none, until one tool's five-hour quota reset, although that tool still ran on its credits and other work was ready.
+
 ## 20.9.0 - Unreleased
 
 - `octoplan` 8.3.0: a launch brief or supervisor pointer names the language the user writes in, and the session it starts addresses the user in that language until they write in another. On a live run, a successor supervisor whose launch brief was written in English talked to a French-speaking user in English: nothing in its launch text named the user's language, and the Octopad brief names it only when the user's interface is in French or Spanish.
