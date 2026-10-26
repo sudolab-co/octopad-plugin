@@ -1,5 +1,9 @@
 # Changelog
 
+## 20.9.0 - Unreleased
+
+- `octoplan` 8.3.0: a launch brief or supervisor pointer names the language the user writes in, and the session it starts addresses the user in that language until they write in another. On a live run, a successor supervisor whose launch brief was written in English talked to a French-speaking user in English: nothing in its launch text named the user's language, and the Octopad brief names it only when the user's interface is in French or Spanish.
+
 ## 20.8.0 - Unreleased
 
 - `octoplan` 8.2.0: in Claude, a supervisor session, the first or a successor, starts in, or when opened by hand enters, its own worktree, and keeps any local file a successor needs where it survives that worktree, cited by absolute path. On a live run, a released supervisor proposed its successor in its own checkout to reach evidence files; the Claude desktop app refused to detach that session, so the released supervisor kept receiving the successor's turn notes.

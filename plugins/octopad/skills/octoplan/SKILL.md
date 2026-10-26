@@ -6,7 +6,7 @@ A worker, reviewer or planning helper without Octopad access in its brief calls 
 
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octoplan"` when you open this skill.
 
-Version: 8.2.0
+Version: 8.3.0
 
 # Octoplan
 
@@ -20,7 +20,7 @@ Use the applicable banner as the first line of each message that reports state o
 **Octoplan · Step 3 of 3 — Delivery**
 ```
 
-The banner is the first line of the message, before any incident narrative, explanation, or table. What the user reads is written in everyday words: name what will happen and who does it, and keep this skill's vocabulary out of it, along with any synonym doing the same job; say the thing itself instead. Ask about a consequence the user owns in words they can answer; technical uncertainty goes to diagnosis or review, and the user never certifies technical correctness. Name tasks by title, never by an ID or ID prefix. Records written for other sessions (Decisions, tasks, receipts, prompts, pointer blocks) keep the precise wording and exact IDs.
+The banner is the first line of the message, before any incident narrative, explanation, or table. What the user reads is written in everyday words: name what will happen and who does it, and keep this skill's vocabulary out of it, along with any synonym doing the same job; say the thing itself instead. Ask about a consequence the user owns in words they can answer; technical uncertainty goes to diagnosis or review, and the user never certifies technical correctness. Name tasks by title, never by an ID or ID prefix. Records written for other sessions (Decisions, tasks, receipts, prompts, pointer blocks) keep the precise wording and exact IDs. A launch brief or pointer names the language the user writes in; the session it starts addresses the user in it until they write in another.
 
 The user describes the need. Apply the common brief and preparation in [octopad-planning-and-work-design](../octopad-planning-and-work-design/SKILL.md), including for a direct Octoplan request. Reuse valid confirmed intent and the same graph. The planner qualifies the delivery path, records and reviews the smallest adequate Plan, then shows its summary and human interventions before agreeing autonomy and launching a fresh supervisor through the selected runtime. The supervisor owns delivery of the Brief's outcome, including adapting the approach and resolving incidents within the mandate. An executor produces its task's deliverable and has it reviewed. Internal roles add no user-facing stage.
 
