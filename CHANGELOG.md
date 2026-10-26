@@ -1,5 +1,9 @@
 # Changelog
 
+## 20.10.0 - Unreleased
+
+- `octoplan` 8.4.0: a quota or rate limit on one tool, model or account no longer counts as shared-infrastructure distress. The actor switches, without weakening the saved route, to another available route or to that tool's paid continuation within the user's recorded spend limits; it waits only when no route is left, and then holds only the work that needs it. Shared-service saturation and state contamination still stop the affected calls. On a live run, two supervisors stopped every database read, and some work that needed none, until one tool's five-hour quota reset, although that tool still ran on its credits and other work was ready.
+
 ## 20.9.0 - Unreleased
 
 - `octoplan` 8.3.0: a launch brief or supervisor pointer names the language the user writes in, and the session it starts addresses the user in that language until they write in another. On a live run, a successor supervisor whose launch brief was written in English talked to a French-speaking user in English: nothing in its launch text named the user's language, and the Octopad brief names it only when the user's interface is in French or Spanish.
