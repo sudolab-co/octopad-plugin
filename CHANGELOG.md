@@ -2,7 +2,7 @@
 
 ## 20.7.0 - Unreleased
 
-- `octoplan` 8.1.0: a planner or supervisor cancels, without asking the user, a task the Plan replaces, in whichever stream it sits, with a comment on what its replacement adopts; a task another person or supervisor has claimed stays a conflict to reconcile. On a live run, a supervisor, the planner, a plan reviewer and the delivery contract each held a replacement task's dispatch for the user's go to cancel the task it replaced, because that task sat in another stream, although no rule asked for that go.
+- `octoplan` 8.1.0: a planner or supervisor cancels, without asking the user, a task the Plan replaces, in whichever stream it sits, with a comment on what its replacement adopts; a task in progress for someone else, or inside another live supervisor's boundary, stays a conflict to reconcile. On a live run, a supervisor, the planner, a plan reviewer and the delivery contract each held a replacement task's dispatch for the user's go to cancel the task it replaced, because that task sat in another stream, although no rule asked for that go.
 
 ## 20.6.0 - Unreleased
 
