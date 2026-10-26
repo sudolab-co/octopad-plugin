@@ -12,6 +12,7 @@ Supervisor pointer:
 Octoplan <work stream>
 Octopad · Organisation: <organisation> · Workspace: <workspace>
 Journal: <page title> (<page ID>) · Boundary: <boundary> · Workspace: <owning workspace ID>
+User language: <the language the user writes in>
 ```
 
 Use the stream's plain name without ` (octoplanned)`. Supervisor pointers identify the canonical journal so separate deliveries in one stream cannot be confused.
