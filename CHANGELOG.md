@@ -2,7 +2,7 @@
 
 ## 20.8.0 - Unreleased
 
-- `octoplan` 8.2.0: in Claude, a supervisor session, the first or a successor, starts in its own worktree, never in its starter's checkout, and references durable state by absolute path. On a live run, a released supervisor proposed its successor in its own checkout to reach evidence files; the Claude desktop app refused to detach that session, so the released supervisor kept receiving the successor's turn notes.
+- `octoplan` 8.2.0: in Claude, a supervisor session, the first or a successor, starts in, or when opened by hand enters, its own worktree, and keeps any local file a successor needs where it survives that worktree, cited by absolute path. On a live run, a released supervisor proposed its successor in its own checkout to reach evidence files; the Claude desktop app refused to detach that session, so the released supervisor kept receiving the successor's turn notes.
 
 ## 20.7.0 - Unreleased
 
