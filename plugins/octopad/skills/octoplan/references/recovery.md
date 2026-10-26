@@ -8,9 +8,9 @@ After a timeout or incomplete response, assume neither success nor failure. Insp
 
 ## Stop for shared-infrastructure distress
 
-Shared-infrastructure timeouts, saturation, or state contamination stop affected calls before ordinary retries. Record the system, event count, duration, and data magnitude, and name them in the handoff; resume those calls only from a reviewed clean state. Continue safe diagnosis and independent work. No native continuation feature overrides this containment.
+Shared-infrastructure timeouts, saturation, quota exhaustion, or state contamination stop affected calls before ordinary retries. Record the system, event count, duration, and data magnitude, and name them in the handoff; resume those calls only from a reviewed clean state. Continue safe diagnosis and independent work. No native continuation feature overrides this containment.
 
-A quota or rate limit on one tool, model or account is not distress: switch to another available route no weaker than the saved one, recording the switch, or to that tool's paid continuation within the user's recorded spend limits (F13). Wait only when no route is left, and then hold only the work that needs it (F7).
+A usage quota or rate limit on one AI model or runtime account is not distress: run the affected work on its saved route in the other runtime where available, or on that runtime's paid continuation only where recorded authority covers the spend (F13); otherwise hold only that work until the limit resets or the user authorizes the spend (F7).
 
 ## Reconcile actors before replacement
 
