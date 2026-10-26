@@ -1,5 +1,9 @@
 # Changelog
 
+## 20.7.0 - Unreleased
+
+- `octoplan` 8.1.0: a planner or supervisor cancels, without asking the user, a task the Plan replaces, in whichever stream it sits, with a comment on what its replacement adopts; a task in progress for someone else, or inside another live supervisor's boundary, stays a conflict to reconcile. On a live run, a supervisor, the planner, a plan reviewer and the delivery contract each held a replacement task's dispatch for the user's go to cancel the task it replaced, because that task sat in another stream, although no rule asked for that go.
+
 ## 20.6.0 - Unreleased
 
 - Claude Code: the Octopad server recognizes a conversation that resumes in a new process, such as one the Claude desktop app reopens after a pause, and gives it a short reminder instead of the full brief again. A `SessionStart` hook records a SHA-256 digest of the session id for the Claude Code process that runs it, in a private temp folder (`$TMPDIR/octopad-claude-<uid>/`, one small file per process, removed after 7 days). A `headersHelper` on the Octopad connection sends that digest as the `x-octopad-claude-session` header. The raw session id never leaves the machine. A forked conversation, a nested Claude Code process and a new conversation have their own session id, so they never present another conversation's digest; subagents inside one process share its connection, as before. Any failure sends no header, and the connection works as before. The first session on a machine, or the first after 7 days without one, sends no header. When a recent record exists but none for this process (hooks turned off for a project, `claude mcp list`), the helper waits about 2 seconds before connecting without the header.
