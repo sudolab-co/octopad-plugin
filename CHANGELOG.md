@@ -2,7 +2,7 @@
 
 ## 20.11.0 - Unreleased
 
-- `octoplan` 8.5.0: in Claude, a supervisor that hands off on a turn the user began starts its successor instead of proposing it. Once the app reports that the user started a successor it could only propose, the released supervisor detaches it; it never relays its successor's turn-end reports. On a live run, a supervisor at its context limit proposed its successor on a turn the user began; once the user started that session, the released supervisor left it nested under itself, so the successor's turn-end reports kept reaching it.
+- `octoplan` 8.5.0: in Claude, a supervisor that hands off starts its successor without asking when its recorded mandate covers it, and proposes the session only when the app refuses the start, as it does on a turn the user did not begin. Once the app reports that the user started a successor it could only propose, the released supervisor detaches it; it never relays its successor's turn-end reports. On a live run, a supervisor at its context limit proposed its successor on a turn the user began; once the user started that session, the released supervisor left it nested under itself, so the successor's turn-end reports would reach it.
 
 ## 20.10.0 - Unreleased
 
