@@ -1,10 +1,10 @@
 # Changelog
 
-## 21.2.0 - Unreleased
+## 22.0.0 - Unreleased
 
 This version needs the Octopad server release in which `notifications` records Notepad reminders (`record_reminder`).
 
-- `octopad-notepad` 4.1.0: before a due reminder leaves the Notepad, the AI records it with `notifications` `record_reminder`, so it stays in the user's Needs you and Notifications until they handle it; the AI marks it handled only on their word. Each occasion of a reminder gets one receipt, whichever session records it: each occasion of a repeat reminder gets its own, and a second session or a retry gets the same receipt and no second notice. A one-off reminder leaves the Notepad, and a repeat one moves to its next occasion, only once a receipt confirms it; after an unclear answer the AI calls again with the same values, which finds a receipt that landed. Before, a reminder delivered in a conversation was lost when it ended: on 2026-10-27, three reminders whose pull request had merged never reached the Desktop heads-up.
+- `octopad-notepad` 5.0.0: before a due reminder leaves the Notepad, the AI records it with `notifications` `record_reminder`, so it stays in the user's Needs you and Notifications until they handle it; the AI marks it handled only on their word. Each occasion of a reminder gets one receipt, whichever session records it: each occasion of a repeat reminder gets its own, and a second session or a retry gets the same receipt and no second notice. A one-off reminder leaves the Notepad, and a repeat one moves to its next occasion, only once a receipt confirms it; after an unclear answer the AI calls again with the same values, which finds a receipt that landed. Before, a reminder delivered in a conversation was lost when it ended: on 2026-10-27, three reminders whose pull request had merged never reached the Desktop heads-up.
 
 ## 21.1.0 - Unreleased
 
