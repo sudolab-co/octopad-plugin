@@ -67,7 +67,7 @@ Follow repository review and merge controls. This skill grants no merge authorit
 
 ## Release sync
 
-Run one full pass per release, when changes actually reach users. This pass is the safety net that keeps shipped truth current: it must end with either updated docs or named debt, never a silent skip. Keep one durable record per release — a release page or runbook entry: step 9 writes it, and step 2 reads the previous one. On the first pass ever, no previous record exists; bound on the oldest evidence you can verify and say so.
+Run one full pass per release, when changes actually reach users. It must end with updated docs or named debt, never a silent skip. Keep one durable record per release — a release page or runbook entry: step 9 writes it, and step 2 reads the previous one. On the first pass ever, no previous record exists; bound on the oldest evidence you can verify and say so.
 
 1. Verify the repository's release policy, exact released revision, and included changes.
 2. Bound the release window. Read the boundary the previous release pass recorded: an exact revision, or failing that a date resolved to a revision. Collect every change between that boundary and this release's exact revision. Never bound on a moving branch head or a bare date; a date boundary silently drops same-day changes. When the boundary is imprecise, over-collect toward the older side and say so in the closing record — a duplicate is visible, a dropped change is not.

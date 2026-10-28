@@ -38,6 +38,7 @@ A Product Spec serves the AI or person who must decide, build, change or judge i
 | Verified | Evidence lines, under Operate with evidence. | Observation narratives; delivery history. |
 | Links | One line: Product Map, Architecture Map, Decisions, supporting records, contracts, related specs, history, code entry point. | Anything else. |
 
+- A spec of a text users' AIs read, such as a skill, holds its testable contract (guarantees with their conditions, exceptions, authority boundaries and failure cases) and links that text at its released revision for the mechanics, never restating it rule by rule.
 - Name only the tools and parameters users and their AIs call. No changelog page per spec: chronology lives on the release record or changelog, edits in page versions.
 - Delivery narration, history, and text its home already holds leave a spec without a list once that home is read. Before a need, rule, constraint, scenario, rationale or unresolved finding leaves a spec (not for label or link moves), list on the Task, pull request or reply, never on the spec, each one it carries as kept, moved (where), replaced or unresolved; write moved text to its destination and read it back first. A substantive rewrite also gets a reviewer who did not write it.
 
@@ -45,7 +46,7 @@ A Product Spec serves the AI or person who must decide, build, change or judge i
 
 - Read [references/documentation-model.md](references/documentation-model.md) before creating, adopting, splitting, merging, or substantially restructuring product documentation.
 - Read [references/artifact-shapes.md](references/artifact-shapes.md) when creating or materially reshaping a Product Map, Product Spec, Behavioral Contract, Architecture Map, Ideas page, or documentation-debt Task.
-- Read [references/lifecycle-playbooks.md](references/lifecycle-playbooks.md) for setup, brainstorm classification and parking, implementation context, PR or release sync, audits, and downstream drafts. When the request itself identifies an audit, classify it before inspecting maintained content and load the audit section before the first maintained-content read or audit conclusion. Load only the section needed for the current work. Do not apply the audit section to a non-audit request unless its facts make that section applicable.
+- Read [references/lifecycle-playbooks.md](references/lifecycle-playbooks.md) for setup, brainstorm classification and parking, implementation context, PR or release sync, audits, and downstream drafts. Load only the section the current work needs; for an audit, load its section before the first maintained-content read.
 - Read [references/product-scope-and-seams.md](references/product-scope-and-seams.md) when the workspace contains several products, a shared component changes, a Product Fact moves, or another documentation skill owns a downstream projection.
 
 ## Operate with evidence
