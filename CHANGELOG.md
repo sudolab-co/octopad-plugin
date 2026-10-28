@@ -2,9 +2,9 @@
 
 ## 21.0.0 - Unreleased
 
-This version needs the Octopad server release in which the Home Summary reads the Notepad's focus themes.
+This version needs the Octopad server release in which the Home Summary reads the Notepad's focus themes and accepts a theme with one reference.
 
-- `octopad-notepad` 4.0.0: the `compass` keeps the user's ordered focus themes in one `### Focus themes` entry, one line per theme: the theme in the user's words, its reason, 2 to 4 references to the goal, stream or key task it concerns, and what they are currently on. A change the user states applies at once; their actual work updates only `currently on:`; a lasting gap between their order and their work gets one line in the Home Summary, never a question; the AI asks only before a theme the user did not state enters, besides its existing question when they depart from their order. Asked what to work on, the AI weighs the themes in order. Before, the `compass` held only calls on which work comes before which, with no list, so no AI wrote the focus themes the Summary reads.
+- `octopad-notepad` 4.0.0: the `compass` keeps the user's ordered focus themes in one `### Focus themes` entry, at most 8, one line per theme: the theme, its reason, 1 to 4 references to the goal, stream or key task it concerns, and what they are currently on. A change the user states applies at once, and the AI never undoes it without a new fact. The AI keeps the themes true itself: when a fact about work the user does, owns or waits on changes what deserves their attention first, it moves the theme that fact fits, or adds one if none fits, and retires a theme once its purpose is met or dropped; otherwise it updates only `currently on:`. Each change gets one line in the conversation (what, the fact behind it, and that one word undoes it) and a dated `moved` note in `why:`. The AI no longer asks whether a departure from a `compass` call means the order was wrong. Asked what to work on, it weighs the themes in order. Before, the `compass` held only calls on which work comes before which, with no list, so no AI wrote the focus themes the Summary reads.
 
 ## 20.11.0 - Unreleased
 
