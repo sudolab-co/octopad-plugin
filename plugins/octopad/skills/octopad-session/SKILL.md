@@ -6,7 +6,7 @@ A sub-agent whose brief does not grant Octopad access calls no Octopad tool, `sk
 
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-session"` when you open this skill.
 
-Version: 20.11.0
+Version: 20.12.0
 
 # Start an Octopad plugin session
 

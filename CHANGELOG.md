@@ -1,5 +1,9 @@
 # Changelog
 
+## 20.12.0 - Unreleased
+
+- `manage-product-documentation` 6.7.0: each Product Spec section says what it holds and what never belongs in it, with that content's home: a choice between alternatives goes to a Decision, exploration and reviews worth keeping to a supporting record, delivery progress to the Task or pull request, history by version to the changelog or release record, implementation to code. A Next entry is updated in place rather than duplicated, a new state replaces its label, a version bump alone changes no spec, figures chosen while building stay in code unless users meet them as limits, and a spec keeps no changelog page of its own. On a live workspace, specs rewritten to the earlier standard regrew within two weeks, mostly with delivery history, rejected options and one Next entry per released version.
+
 ## 20.11.0 - Unreleased
 
 - `octoplan` 8.5.0: in Claude, a supervisor that hands off starts its successor without asking when its recorded mandate covers it, and proposes the session only when the app refuses the start, as it does on a turn the user did not begin. Once the app reports that the user started a successor it could only propose, the released supervisor detaches it; it never relays its successor's turn-end reports. On a live run, a supervisor at its context limit proposed its successor on a turn the user began; once the user started that session, the released supervisor left it nested under itself, so the successor's turn-end reports would reach it.

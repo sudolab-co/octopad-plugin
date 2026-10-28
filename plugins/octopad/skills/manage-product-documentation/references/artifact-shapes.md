@@ -37,7 +37,7 @@ Limits
 **[accepted <date>] <change>.** <links: Decision, Task or stream>.
 - <need → intended behavior; principles it adds; constraints; acceptance scenarios; open choices>.
 **[idea <date>] <direction>.** <supporting record link, read before assessing or building>.
-- <direction; set aside; open questions>.
+- <direction; open questions>.
 
 ## Verified
 - <scope>: <source and revision>, <date>; <method and limits>.
@@ -45,7 +45,7 @@ Limits
 Links: <Product Map> · <Architecture Map> · <related specs and contracts> · <history> · <code entry point>
 ```
 
-Omit empty sections. Writing rules per SKILL.md. Purpose states the user need and boundary, and says so when nothing is released yet. Principles and Behavior hold released truth only; every unreleased change lives in Next with its state label. A retired or rolled-back behavior leaves Behavior (its text stays on the history page); a released claim that can no longer be verified keeps its line, marked `[unverified]` with its debt link. When part of a change is released, fold that part into Principles and Behavior with its still-applicable constraints and scenarios; keep unmet parts in Next with their state; remove the entry once nothing in it is unmet. Split only at a real system boundary, never for length.
+Omit empty sections. What each section holds: SKILL.md, Write for the reader. A retired or rolled-back behavior leaves Behavior (its text stays on the history page); a released claim that can no longer be verified keeps its line, marked `[unverified]` with its debt link. When part of a change is released, fold that part into Principles and Behavior with its still-applicable constraints and scenarios; keep unmet parts in Next with their state; remove the entry once nothing in it is unmet. Split only at a real system boundary, never for length.
 
 ## Ideas
 
