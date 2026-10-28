@@ -13,8 +13,6 @@ Begin this setup after the user explicitly asks to establish product documentati
 5. Reuse the user's work stream and Tasks or create only the finite execution work needed by the normal workflow. Link that work to the spec; do not copy its changing status into the page.
 6. Do not create an Architecture Map as if architecture exists. Before code exists, retain only confirmed technical constraints or Decisions. Create the map once code gives evidence of stable architecture, in Octopad or in the repository when the team wants it beside the code.
 
-Example: a user mentions three collaboration features and discusses shared review in enough detail to establish its boundary. Create or adopt that system's spec at `idea`, leave implementation architecture unknown, and park only the other ideas the user engaged with and left open. Create execution work only after a separate commitment requires it.
-
 ## Existing-product setup
 
 Use before creating structure for a product that already has code, docs, or Octopad history.
@@ -73,7 +71,7 @@ Run one full pass per release, when changes actually reach users. It must end wi
 2. Bound the release window. Read the boundary the previous release pass recorded: an exact revision, or failing that a date resolved to a revision. Collect every change between that boundary and this release's exact revision. Never bound on a moving branch head or a bare date; a date boundary silently drops same-day changes. When the boundary is imprecise, over-collect toward the older side and say so in the closing record — a duplicate is visible, a dropped change is not.
 3. Consume each change's documentation-impact mark when the delivery workflow records one. A mark naming a maintained doc puts that doc on the update list with the change as evidence. Recheck an explicit `none` against the diff and its receipt. A missing or wrong owner is resolved by adopting or creating the smallest authorized owner when the evidence is sufficient; otherwise file documentation debt. A mark naming another family's doc is a handoff, not an edit order.
 4. Re-read each affected draft against released code and observed product behavior when available.
-5. Fold each released change into the affected spec's Principles and Behavior, only for the part and audience released, replacing the lines it supersedes and merging duplicates; keep its still-applicable constraints and scenarios; remove its Next entry once nothing in it is unmet; replace the Verified lines checked. Update relevant Architecture Map sections.
+5. Fold each released change into the affected spec's Principles and Behavior, only for the part and audience released, replacing the lines it supersedes and merging duplicates; keep the constraints and scenarios still binding, read on its Task and linked pages, never inferring release from the Task's status; remove its Next entry once nothing in it is unmet; replace the Verified lines checked. Update relevant Architecture Map sections.
 6. Keep unverified claims out of shipped truth. Track them as documentation debt.
 7. Resolve and open each existing product authority affected by the release, including the Product Map and any Product Facts whose dependencies moved. A Product Facts page is born only with the first substantiated public claim; its prior absence is normal. Create or adopt a missing ordinary owner when the released evidence and session authority support it, or record the exact gap. Only a document the product context explicitly marks as locked requires exact before/after approval before editing.
 8. Reconcile pre-release user documentation or release notes against verified released evidence before removing their label. Draft or revise Product Facts here. Hand marketing claims and final marketing wording to product marketing. Preserve every review and publication gate.
@@ -89,7 +87,7 @@ If repository policy explicitly proves that merge equals release, record that po
 4. For each page you will change, check intent and coverage under [Work from product intent](../SKILL.md#work-from-product-intent). Then compare claims with current code, release evidence, Decisions, and user-facing behavior. Mark unsupported claims stale or unverified instead of guessing.
 5. Consolidate duplicates only after preserving unique knowledge and history. Require explicit approval before deletion or irreversible overwrite.
 6. Review parked ideas and the Ideas page. Propose removing lines whose problem has lapsed, in one batch; do not remove them silently.
-7. Check each spec section against its line in SKILL.md's Write for the reader: content that belongs elsewhere, duplicates, unlabelled states, words that do not count. Prune under its preservation rule.
+7. Check each spec section against its line in SKILL.md's Write for the reader: lines failing the admission test, content that belongs elsewhere, duplicates, unlabelled states. Prune under its preservation rule.
 8. Create or reuse one bounded documentation-debt Task for related missing evidence, unresolved conflicts, or substantial rewrites. Do not create one task per broken link.
 9. Report repairs, remaining uncertainty, and the evidence needed to resolve it.
 
@@ -97,7 +95,7 @@ If repository policy explicitly proves that merge equals release, record that po
 
 For user docs, release notes, and Product Facts, plus handoffs to marketing:
 
-1. For pre-release user documentation or release notes, start from approved, implemented, or merged evidence, label the draft pre-release, and bind it to the exact source revision.
+1. Pre-release user documentation and release notes follow SKILL.md's pre-release rule.
 2. For Product Facts, apply SKILL.md's Product Fact evidence rule (Stop before writing). Route marketing claims and final marketing wording to product marketing with those Facts as inputs.
 3. Verify every capability, limit, outcome, compatibility statement, and metric.
 4. Separate current behavior from future intent. Exclude internal implementation detail unless the audience needs it.
