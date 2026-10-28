@@ -1,5 +1,11 @@
 # Changelog
 
+## 21.0.0 - Unreleased
+
+This version needs the Octopad server release in which the Home Summary reads the Notepad's focus themes.
+
+- `octopad-notepad` 4.0.0: the `compass` keeps the user's ordered focus themes in one `### Focus themes` entry, one line per theme: the theme in the user's words, its reason, 2 to 4 references to the goal, stream or key task it concerns, and what they are currently on. A change the user states applies at once; their actual work updates only `currently on:`; a lasting gap between their order and their work gets one line in the Home Summary, never a question; the AI asks only before a theme the user did not state enters, besides its existing question when they depart from their order. Asked what to work on, the AI weighs the themes in order. Before, the `compass` held only calls on which work comes before which, with no list, so no AI wrote the focus themes the Summary reads.
+
 ## 20.11.0 - Unreleased
 
 - `octoplan` 8.5.0: in Claude, a supervisor that hands off starts its successor without asking when its recorded mandate covers it, and proposes the session only when the app refuses the start, as it does on a turn the user did not begin. Once the app reports that the user started a successor it could only propose, the released supervisor detaches it; it never relays its successor's turn-end reports. On a live run, a supervisor at its context limit proposed its successor on a turn the user began; once the user started that session, the released supervisor left it nested under itself, so the successor's turn-end reports would reach it.

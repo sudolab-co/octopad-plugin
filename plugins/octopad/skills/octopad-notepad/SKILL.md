@@ -1,10 +1,10 @@
 ---
 name: octopad-notepad
-description: "Maintain the user's personal Notepad between AI sessions: interrupted threads, intentions, their calls on work order, reminders and missing context. Load when a Notepad reminder matches the subject or waits on an event, or orientation shows only an excerpt of the Notepad, at an opening with no precise ask, when the user asks to be reminded, what was in progress or what to work on, before writing, promoting or recovering an entry, and when wrapping up with next steps to preserve, including one that waits on an event such as a merge, a deploy or a reply. Never treat a shared legacy page as a private Notepad."
+description: "Maintain the user's personal Notepad between AI sessions: interrupted threads, intentions, their focus themes and calls on work order, reminders and missing context. Load when a Notepad reminder matches the subject or waits on an event, or orientation shows only an excerpt of the Notepad, at an opening with no precise ask, when the user asks to be reminded, what was in progress or what to work on, or says what they want to focus on, before writing, promoting or recovering an entry, and when wrapping up with next steps to preserve, including one that waits on an event such as a merge, a deploy or a reply. Never treat a shared legacy page as a private Notepad."
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-notepad"` when you open this skill.
 
-Version: 3.3.0
+Version: 4.0.0
 
 # Whose memory
 
@@ -36,6 +36,11 @@ by: <agent and model> | session <session id> | <YYYY-MM-DD>
 </premises>
 
 <compass>
+### Focus themes
+entry_id: <stable id>
+1. <theme in the user's words> | why: <their reason> | refs: goal:<uuid>, stream:<uuid>, task:<uuid> | currently on: <short line>
+by: <agent and model> | session <session id> | <YYYY-MM-DD>
+
 ### The user's call on work order
 entry_id: <stable id>
 order: <what comes before what>
@@ -68,7 +73,7 @@ followup: <YYYY-MM-DD> | session <session id> | <entry_id>
 
 - `open_loops`: a thread interrupted before its end, one entry per subject, updated across conversations. Its `next:` is the best known next step.
 - `premises`: what the user said they want, believe or judged, while it is neither engaged work nor durable knowledge. Its `exit:` names what settles it: named engaged work, confirmed knowledge or the user's explicit abandonment. Waiting does not turn it into a task.
-- `compass`: the user's own call on work order that no task, dependency or decision carries, with its reason. An order you can derive from the task tree belongs in your answer, not here. Without such a call the block stays empty.
+- `compass`: the user's direction that no task, dependency or decision carries, with its reason: their focus themes (see Focus themes) and their own calls on work order. An order you can derive from the task tree belongs in your answer, not here. Without either, the block stays empty.
 - `reminders`: a commitment to remind the user when a subject or condition comes back, or from a date: one the user asked for, or one you set for a next step that waits on an event.
 - `context_gaps`: context you lacked and where to find it.
 - `last_briefing`: today's briefing claim and follow-up claim. A missing line means no claim.
@@ -105,11 +110,21 @@ Only at an opening with no precise ask, or when the user asks to organize their 
 Never recite the Notepad or ask the user to tidy, rank or validate it.
 
 - At an opening with no precise ask, outside the briefing, offer the most relevant verified `next:` in one sentence, honoring any `compass` call.
-- Asked what to work on, combine the task tree and the relevant calls, and explain the recommendation; store no project list.
-- When the user departs from a `compass` call, ask at a natural moment whether the order was wrong (revise it) or today is an exception (it holds, unchanged; keep the exception only if a later resumption depends on it and nothing else records it).
+- Asked what to work on, combine the task tree with their focus themes in order and the other relevant calls, and explain the recommendation; store no project list: a theme holds a few references, not its work.
+- When the user departs from a `compass` call, their themes' order included, ask once, at a natural moment, whether the order was wrong (revise it) or today is an exception (it holds, unchanged; keep the exception only if a later resumption depends on it and nothing else records it).
 - When a request touches an entry, say so and build on it instead of starting over. Check its references first: a merged PR or finished task is not a next step to repeat, but intent it left unsettled stays.
 - When a `context_gaps` entry covers the request, fetch that context yourself before answering.
 - Asked where things stood, separate active entries from material recovered from history; history is not current intent.
+
+# Focus themes
+
+The `compass` holds at most one `### Focus themes` entry: what the user intends to focus on, in their order and their own words. A theme is not a stream: it may span streams and goals. Themes are the user's direction, not a queue: they never change shared priority, impact or goals, never authorize execution, and the task tree stays the plan.
+
+- **Format.** The Home Summary reads only the form the template shows, and flags any other line. One line per theme, numbered from 1 in the user's order, its four parts in that order with no other `|`; keep `currently on:` even when empty. `refs:` holds only 2 to 4 comma-separated references, each `goal:`, `stream:` or `task:` with the item's full id: the goal it serves, its stream, its key task, never a list of its work. Besides its theme lines, the entry holds only its `entry_id:`, `by:` and `updated_by:` lines. Keep the heading and the labels in English, whatever the user's language.
+- **Their word applies at once.** When the user adds, reorders, rewords or retires a theme, save it without asking them to confirm.
+- **Their work moves only `currently on:`.** Where they actually work updates that theme's `currently on:`, nothing else. Work under no theme is an interruption: it never becomes a theme or a new order by itself.
+- **A lasting gap gets one line, not a question.** When their work keeps departing from their order, never reorder or ask again: the Home Summary suggests the change in one line.
+- **Ask only when a new theme enters,** besides asking about a departure (see In conversation): a theme the user did not state, drawn from their work or a Summary suggestion, enters only once they say yes.
 
 # Reminders
 
