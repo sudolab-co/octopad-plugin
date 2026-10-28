@@ -1,7 +1,5 @@
 # Product documentation lifecycle playbooks
 
-Read only the playbook needed for the current work.
-
 ## Greenfield setup
 
 Use when there is no product documentation, repository, or established system model.
@@ -57,7 +55,7 @@ Do not load every Product Spec or the whole repository merely because the Produc
 ## Pull request and delivery sync
 
 1. Determine documentation impact: none, existing-system change, new system, or technical-only. Record it on the PR in the repository's normal way, naming affected documents or carrying the proven negative receipt. A `none` follows SKILL.md's no-impact protocol. `technical-only` does not imply `none` when durable architecture or an Engineering Reference changed.
-2. Link the existing Task or work stream to the PR through the repository's normal fields, and link the affected Product Spec back to that work.
+2. Link the existing Task or work stream to the PR through the repository's normal fields; the spec's Next entry links the Task.
 3. Record exact head and base revisions on the pull request or Task. Re-check after material drift.
 4. Change the spec only as SKILL.md's delivery rule allows.
 5. Verify coverage under [Work from product intent](../SKILL.md#work-from-product-intent), using code, tests and the actual diff rather than the PR description alone.

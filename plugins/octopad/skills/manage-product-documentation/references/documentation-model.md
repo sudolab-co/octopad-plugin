@@ -49,7 +49,7 @@ Create a targeted Engineering Reference only for important knowledge that is sta
 
 ## Relationships and provenance
 
-Use links instead of duplicated prose. Maintain useful edges when they exist:
+Maintain useful edges when they exist:
 
 - Product Map → Product Spec → active work stream or Tasks;
 - Product Spec → Decisions, Behavioral Contract, Architecture Map section, released user docs;
