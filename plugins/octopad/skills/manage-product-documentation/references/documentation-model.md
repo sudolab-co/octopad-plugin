@@ -12,9 +12,9 @@ Shape and contents: [artifact-shapes.md](artifact-shapes.md). A portfolio index 
 
 ## Product Spec
 
-Keep one evolving Product Spec per significant product system. A system is significant when it owns a coherent user capability, durable behavior, or boundary that people need to reason about independently. Create or adopt it at `idea` once a discussion develops that boundary or behavior far enough to become real design work; a build decision is not required.
+Keep one evolving Product Spec per significant product system: a coherent user capability, durable behavior or boundary that people need to reason about independently. Create or adopt it at `idea` once a discussion develops that boundary or behavior far enough to become real design work; a build decision is not required. Before adding a capability to an existing spec, check it belongs there: one its reader must understand on its own, with its own need, data or rules, gets its own spec, linked from the first; never for length alone.
 
-Use the shape in [artifact-shapes.md](artifact-shapes.md); what each section holds, and the home of everything else, is in SKILL.md (Write for the reader). Vision and offer live in the Product Overview; precise shared invariants in a Behavioral Contract; superseded text on the history page. Update the existing spec as the system evolves. Split only when distinct system boundaries have emerged.
+Use the shape in [artifact-shapes.md](artifact-shapes.md); what each section holds, and the home of everything else, is in SKILL.md (Write for the reader). Vision and offer live in the Product Overview; precise shared invariants in a Behavioral Contract; replaced text in page versions. Update the existing spec as the system evolves.
 
 ## Behavioral Contract
 

@@ -60,7 +60,7 @@ Do not load every Product Spec or the whole repository merely because the Produc
 4. Change the spec only as SKILL.md's delivery rule allows.
 5. Verify coverage under [Work from product intent](../SKILL.md#work-from-product-intent), using code, tests and the actual diff rather than the PR description alone.
 6. Draft pre-release user documentation or release notes when useful, under SKILL.md's pre-release rule; never as shipped wording, Product Facts or marketing claims.
-7. After merge, replace the change's label with `[merged PR #n]`; for a change merged in parts, give each part its own state. Do not label the behavior released.
+7. After merge, replace the change's label with `[merged PR #n]`; for a change merged in parts, give each part its own state.
 8. When evidence remains missing, mark the update stale or unverified and create or reuse documentation-debt work.
 
 Follow repository review and merge controls. This skill grants no merge authority and creates no separate approval system.
