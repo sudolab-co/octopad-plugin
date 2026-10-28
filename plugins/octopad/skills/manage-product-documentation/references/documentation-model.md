@@ -4,7 +4,7 @@ Use the smallest set of durable artifacts that makes the product understandable 
 
 ## Product Overview
 
-Keep one Product Overview per offer: the head page whose At a glance block the Organization Overview shows. It holds the offer's purpose, intended experience, design pillars, non-goals, and relationships above system specs, and a Marketing section that product marketing writes. Products sold together to one audience at one price share one. Keep it distinct from the Product Map, which only indexes.
+One per offer, as SKILL.md (Administer the documentation system) defines it; the head page whose At a glance block the Organization Overview shows. Keep it distinct from the Product Map, which only indexes.
 
 ## Product Map
 
@@ -12,9 +12,9 @@ Shape and contents: [artifact-shapes.md](artifact-shapes.md). A portfolio index 
 
 ## Product Spec
 
-Keep one evolving Product Spec per significant product system. A system is significant when it owns a coherent user capability, durable behavior, or boundary that people need to reason about independently. Create or adopt it at `idea` once a discussion develops that boundary or behavior far enough to become real design work; a build decision is not required. Keep `idea`, `explored`, `accepted`, `implemented`, `merged`, `released`, and `retired` distinct.
+Keep one evolving Product Spec per significant product system: a coherent user capability, durable behavior or boundary that people need to reason about independently. Create or adopt it at `idea` once a discussion develops that boundary or behavior far enough to become real design work; a build decision is not required. Before adding a capability to an existing spec, check it belongs there: one its reader must understand on its own, with its own need, data or rules, gets its own spec, linked from the first; never for length alone.
 
-Use the shape in [artifact-shapes.md](artifact-shapes.md) and the writing rules in SKILL.md (Write for the reader). What a spec does not hold has a home: vision and offer in the Product Overview; a choice and its rejected alternatives in a Decision; precise shared invariants in a Behavioral Contract; a research trail, dated cases and reviews with lasting value in a supporting record; delivery on Tasks and pull requests; release chronology on the release record; superseded text on the history page; files, internal symbols and mechanical constants in code, while limits users meet stay in the spec. Update the existing spec as the system evolves. Split only when distinct system boundaries have emerged. Supersede or link duplicates after preserving unique facts and links; require explicit approval before destructive consolidation.
+Use the shape in [artifact-shapes.md](artifact-shapes.md); what each section holds, and the home of everything else, is in SKILL.md (Write for the reader). Vision and offer live in the Product Overview; precise shared invariants in a Behavioral Contract; replaced text in page versions. Update the existing spec as the system evolves.
 
 ## Behavioral Contract
 
@@ -49,7 +49,7 @@ Create a targeted Engineering Reference only for important knowledge that is sta
 
 ## Relationships and provenance
 
-Use links instead of duplicated prose. Maintain useful edges when they exist:
+Maintain useful edges when they exist:
 
 - Product Map → Product Spec → active work stream or Tasks;
 - Product Spec → Decisions, Behavioral Contract, Architecture Map section, released user docs;
@@ -60,7 +60,6 @@ For each material claim, make it possible to answer:
 
 - What source supports it?
 - At which exact source revision or dated authoritative record was it observed, with which method and limits?
-- In a Product Spec: is it in Behavior or Principles (released, covered by a Verified line) or in Next with its state label?
 
 Use explicit unknowns instead of placeholder facts. Never invent a value to make a template look complete.
 

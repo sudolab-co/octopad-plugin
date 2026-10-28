@@ -1,6 +1,6 @@
 # Compact artifact shapes
 
-Use these as adaptable shapes, not forms that must be filled. Omit irrelevant sections. Preserve the product's existing vocabulary and page conventions.
+Use these as adaptable shapes, not forms that must be filled. Omit irrelevant sections. Preserve the product's existing vocabulary and page conventions, except a Product Spec's literal `Purpose:`, section headings and `**[state]` entry prefix, which readers parse.
 
 ## Product Map
 
@@ -22,30 +22,30 @@ One line per named feature, reusing the spec link when several share a spec; aud
 ```markdown
 # <System name>
 
-Purpose: <user, problem, outcome; 1-3 lines>. Out of scope: <system (link)>, ...
+Purpose: <who, their situation, outcome, signal; 1-3 lines>. Out of scope: <exclusion: reason>; <neighbouring owner (link)>.
 
 ## Principles
-- <released rule code cannot show>: <why>.
+- <released choice code cannot show>: <why>.
 
 ## Behavior
-- <released rule, one line; audience when limited>.
+- <released promise, one line; audience when limited>; except <known exception> (<task link>).
 - Scenario: <regression case worth guarding>, when not obvious from the rules.
 Limits
 - <limit or known defect users meet> (<task link>).
 
 ## Next
-**[accepted <date>] <change>.** <links: Decision, Task or stream>.
-- <need → intended behavior; principles it adds; constraints; acceptance scenarios; open choices>.
+**[accepted <date>] <change>.** <Task or stream, Decision>.
+- <promise or choice it adds, changes or retires>.
 **[idea <date>] <direction>.** <supporting record link, read before assessing or building>.
-- <direction; set aside; open questions>.
+- <direction; open questions>.
 
 ## Verified
-- <scope>: <source and revision>, <date>; <method and limits>.
+- <claims covered>: <source and revision>, <date>; <method and limits>.
 
-Links: <Product Map> · <Architecture Map> · <related specs and contracts> · <history> · <code entry point>
+Links: <Product Map> · <Architecture Map> · <related specs and contracts> · <design document> · <code entry point>
 ```
 
-Omit empty sections. Writing rules per SKILL.md. Purpose states the user need and boundary, and says so when nothing is released yet. Principles and Behavior hold released truth only; every unreleased change lives in Next with its state label. A retired or rolled-back behavior leaves Behavior (its text stays on the history page); a released claim that can no longer be verified keeps its line, marked `[unverified]` with its debt link. When part of a change is released, fold that part into Principles and Behavior with its still-applicable constraints and scenarios; keep unmet parts in Next with their state; remove the entry once nothing in it is unmet. Split only at a real system boundary, never for length.
+Omit empty sections. What each section holds: SKILL.md, Write for the reader. A retired or rolled-back behavior leaves Behavior (page versions keep its text); a released claim that can no longer be verified keeps its line, marked `[unverified]` with its debt link. When part of a change is released, fold that part into Principles and Behavior with the constraints and scenarios still binding, read on its Task and linked pages; keep unmet parts in Next with their state; remove the entry once nothing in it is unmet. Split specs only at a system boundary ([documentation-model.md](documentation-model.md)).
 
 ## Ideas
 
