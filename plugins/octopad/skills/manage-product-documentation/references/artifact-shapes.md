@@ -7,7 +7,7 @@ Use these as adaptable shapes, not forms that must be filled. Omit irrelevant se
 ```markdown
 # Product Map
 
-Index of every system and its spec. State, audience, limits and verification live in each spec.
+Index of every system and its spec.
 Overview: <link> · Architecture: <link> · Ideas: <link>
 
 ## <Area>
@@ -48,7 +48,7 @@ One line per named feature, reusing the spec link when several share a spec; aud
 <Product Map> · <Architecture Map> · <Decisions> · <related specs and contracts> · <design document> · <code entry point>
 ```
 
-Omit empty sections. What each section holds: SKILL.md, Write for the reader. A dropped promise or choice leaves with the Decision that drops it; page versions keep its text. Split specs only at a system boundary ([documentation-model.md](documentation-model.md)).
+Need and Outcome always; omit other empty sections. What each section holds: SKILL.md, Write for the reader. A dropped promise or choice leaves with the Decision that drops it; page versions keep its text. Split specs only at a system boundary ([documentation-model.md](documentation-model.md)).
 
 ## Ideas
 

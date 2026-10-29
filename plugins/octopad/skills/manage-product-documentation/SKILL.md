@@ -8,7 +8,7 @@ Version: 6.8.0
 
 # Manage Product Documentation
 
-Keep a living account of what the user wants each part of the product to achieve and why, attributed, even before code exists; code, tests, Tasks and release records hold what exists and when it shipped. Organize and link the documents so the user's AI can find and apply the right context without making the user administer the structure.
+Keep a living account of what the user wants each part of the product to achieve and why, attributed, even before code exists. Organize and link the documents so the user's AI can find and apply the right context without making the user administer the structure.
 
 ## Resolve the product first
 
@@ -26,8 +26,8 @@ Changing or regrouping the means does not retire a need: name where it is now se
 
 A Product Spec gives the AI or person who must decide, build, change or judge a system what code cannot: what the people it serves need, the result sought, where it is going, the choices already made and why, and what it must never do. It describes the intended product, built or not.
 
-- Keep a line only if a reader without it could build the wrong thing, undo a choice or break a promise. What the code does, how it does it, values and steps chosen while building (screens, wording, parameters, limits, budgets, ordering) and delivery history (pull requests, revisions, reviews, releases) never pass: code, tests, the design document, Tasks and release records hold them. A value stays only when it is the promise itself. Never invent a need or a reason to keep a line. Not "`create` requires `title`; at most 80 characters" but "each item says in one line what it is for; input is never cut silently". Not "at most 5 Product Overviews share 3,000 characters" but "identity comes before offers, so many offers cannot crowd out what the company is".
-- Write intent (Need, Outcome, Direction, Choices) in short full sentences, because a reason needs its "because"; Promises and Non-goals one bullet each. Mark what is undecided `[open]`; never guess it. No transitions, history or comments on sources. A fact lives once; elsewhere it is linked. Write in the page's language and the workspace's style.
+- Keep a line only if a reader without it could build the wrong thing, undo a choice or break a promise. What the code does, how it does it, values and steps chosen while building (screens, wording, parameters, limits, budgets, ordering) and delivery history (pull requests, revisions, reviews, releases) never pass: code, tests, the design document, Tasks and release records hold them. A value stays only when it is the promise itself. Never invent a need or a reason to keep a line. Not "`create` requires `title`; at most 80 characters" but "each item says in one line what it is for; input is never cut silently".
+- Write intent (Need, Outcome, Direction, Choices) in short full sentences, each choice with its reason; one bullet per promise or non-goal. Mark what is undecided `[open]`; never guess it. Need and Outcome are always present, `[open]` while unknown, so readers recognize a spec; omit other empty sections. No transitions, history or comments on sources. A fact lives once; elsewhere it is linked. Write in the page's language and the workspace's style.
 - Each section holds only its own content; everything else goes to its home, linked when still needed:
 
 | Section | Holds | Never holds, and its home |
@@ -43,7 +43,7 @@ A Product Spec gives the AI or person who must decide, build, change or judge a 
 
 - A spec of a text users' AIs read, such as a skill, holds its promises and links that text at its released revision for the mechanics, never restating it rule by rule.
 - No changelog or history page per spec unless the workspace's rule keeps one: chronology lives on the release record or changelog, replaced text in page versions.
-- Text the first rule rejects leaves without a list. Before a need, outcome, direction, choice, promise, non-goal or open question leaves a spec (not for a move between sections or a link change), list on the Task, pull request or reply, never on the spec, each one as kept, moved (where), replaced or unresolved; write moved text to its destination and read it back first. A substantive rewrite also gets a reviewer who did not write it, who checks both directions: nothing needed lost, nothing kept that the first rule rejects.
+- Delivery history, and text whose home (code, tests, Task, Decision) you have read and found holding it, leave without a list. Before anything else leaves a spec, a need, choice, promise, constraint, scenario, rationale or unresolved finding included (not for a move between sections or a link change), list on the Task, pull request or reply, never on the spec, each one as kept, moved (where), replaced or unresolved; write moved text to its destination and read it back first. A substantive rewrite also gets a reviewer who did not write it, who checks both directions: nothing needed lost, nothing kept that the first rule rejects.
 
 ## Load the needed guidance
 
@@ -61,7 +61,7 @@ Classify the work before writing; the documentation family reuses these four cla
 - **audit:** inspect a bounded maintained set, repair the unambiguous, and record gaps;
 - **synchronize:** propagate a changed source through this family's projections and hand other outputs to their owners.
 
-A Product Spec carries no verification section: it states intent, and code proves what exists. The Architecture Map and Product Facts keep one verification line per group of claims checked together, naming scope, source and exact revision, date, method and limits; a check replaces the lines it covers and no other. The Product Map indexes only and carries none.
+A Product Spec states intent and the Product Map indexes: neither carries a verification section. Every other page this skill owns keeps one, in the page or, for published user documentation, in its release record: one line per group of claims checked together, naming scope, source and exact revision, date, method and limits; a check replaces the lines it covers and no other.
 
 ## Stop before writing
 

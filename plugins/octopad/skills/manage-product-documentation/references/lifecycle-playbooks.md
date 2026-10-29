@@ -9,7 +9,7 @@ Begin this setup after the user explicitly asks to establish product documentati
 1. Confirm the product, users, problem, and current evidence state from the conversation. Ask only about a material missing boundary or intent.
 2. Follow the workspace's existing folder and page-preparation guidance, then create the Product Map index from [artifact-shapes.md](artifact-shapes.md), one line per known feature. Do not invent milestones, architecture, integrations, or implementation choices.
 3. From here on, park passing ideas under [Brainstorm and design maturity](#brainstorm-and-design-maturity).
-4. Once discussion develops a real system boundary, behavior, contract, or meaningful alternative, add its Map line and create its Product Spec with an `[idea]` entry holding confirmed material and open questions. Do not invent execution work. Advance it only when later evidence supports the next state.
+4. Once discussion develops a real system boundary, behavior, contract, or meaningful alternative, follow SKILL.md's substantive-design rule. Do not invent execution work.
 5. Reuse the user's work stream and Tasks or create only the finite execution work needed by the normal workflow. Link that work to the spec; do not copy its changing status into the page.
 6. Do not create an Architecture Map as if architecture exists. Before code exists, retain only confirmed technical constraints or Decisions. Create the map once code gives evidence of stable architecture, in Octopad or in the repository when the team wants it beside the code.
 
@@ -32,7 +32,7 @@ Use before creating structure for a product that already has code, docs, or Octo
 Classify impact continuously without making the conversation feel like a form, and make the smallest useful update for the class:
 
 - `no impact`: a rejected or abandoned idea, or work outside product documentation. Create no documentation artifact beyond a parked idea line.
-- `existing-system change`: idea, explored, accepted, or later behavior inside a known system boundary. Update the evolving Product Spec with clearly labeled proposed or approved behavior and link the existing execution work.
+- `existing-system change`: idea, explored, accepted, or later behavior inside a known system boundary. Update the evolving Product Spec, an unaccepted idea in Open questions and accepted intent in its section, and link the existing execution work.
 - `new system`: substantive design establishing a new coherent capability or responsibility, beginning at `idea`. Add its Product Map line and create its Product Spec with an `[idea]` entry, under SKILL.md's substantive-design rule.
 - `technical-only`: implementation or operational work with no product behavior change. Update architecture or a targeted Engineering Reference only when the change creates durable, non-derivable knowledge.
 
@@ -81,9 +81,9 @@ If repository policy explicitly proves that merge equals release, record that po
 ## Maintenance and audit
 
 1. Verify the Product Map points to one current spec per significant system and, when architecture exists, one canonical Architecture Map.
-2. Check links, ownership metadata, lifecycle labels, source revisions, and last-verification times.
+2. Check links, ownership metadata, and, where a page carries them, lifecycle labels, source revisions and last-verification times.
 3. Repair safe metadata and broken links directly when the correct target is unambiguous.
-4. For each page you will change, check intent and coverage under [Work from product intent](../SKILL.md#work-from-product-intent). Then compare claims with current code, release evidence, Decisions, and user-facing behavior. Mark unsupported claims stale or unverified instead of guessing.
+4. For each page you will change, check intent and coverage under [Work from product intent](../SKILL.md#work-from-product-intent). Check a spec against the requests and Decisions it rests on, never against code: an accepted promise not yet built stays, its gap a Task. Compare other pages' claims with current code, release evidence, Decisions and user-facing behavior; mark unsupported claims stale or unverified instead of guessing.
 5. Consolidate duplicates only after preserving unique knowledge and history. Require explicit approval before deletion or irreversible overwrite.
 6. Review parked ideas and the Ideas page. Propose removing lines whose problem has lapsed, in one batch; do not remove them silently.
 7. Check each spec section against its line in SKILL.md's Write for the reader: lines its first rule rejects, content that belongs elsewhere, duplicates, undecided points not marked `[open]`. Prune under its preservation rule.
