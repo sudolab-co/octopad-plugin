@@ -1,5 +1,9 @@
 # Changelog
 
+## 22.1.0 - Unreleased
+
+- `octopad-notepad` 5.1.0: the AI no longer writes a reminder for a wait Octopad already reports. A next step, or a task set `blocked` or `on_hold`, that waits on a date or an event gets a reminder unless Octopad tells the user of every event the wait needs: it tells a task's assignee and creator when the last dependency they can see closes, unless the task is `on_hold`, and when its linked pull request merges. A date, a deploy, a switch, an outside reply or the merge of a pull request no task links still gets one, and so does a wait Octopad reports only in part, such as a merge followed by a deploy. Before, every blocked task got a reminder: on a live workspace on 2026-10-28, all six reminders in one Notepad repeated a task's dependency, blocked reason, review or status.
+
 ## 22.0.0 - Unreleased
 
 This version needs the Octopad server release in which `notifications` records Notepad reminders (`record_reminder`).
