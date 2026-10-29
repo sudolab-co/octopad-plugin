@@ -1,6 +1,6 @@
 # Compact artifact shapes
 
-Use these as adaptable shapes, not forms that must be filled. Omit irrelevant sections. Preserve the product's existing vocabulary and page conventions, except a Product Spec's literal `Purpose:`, section headings and `**[state]` entry prefix, which readers parse.
+Use these as adaptable shapes, not forms that must be filled. Omit irrelevant sections. Preserve the product's existing vocabulary and page conventions, except a Product Spec's section headings, which readers parse.
 
 ## Product Map
 
@@ -22,30 +22,33 @@ One line per named feature, reusing the spec link when several share a spec; aud
 ```markdown
 # <System name>
 
-Purpose: <who, their situation, outcome, signal; 1-3 lines>. Out of scope: <exclusion: reason>; <neighbouring owner (link)>.
+## Need
+- When <situation>, I want <motivation>, so <outcome>.
 
-## Principles
-- <released choice code cannot show>: <why>.
+## Outcome
+<The result sought.> Signal: <what shows it is reached>.
 
-## Behavior
-- <released promise, one line; audience when limited>; except <known exception> (<task link>).
-- Scenario: <regression case worth guarding>, when not obvious from the rules.
-Limits
-- <limit or known defect users meet> (<task link>).
+## Direction
+<Where it is going, in a sentence or two> (<Task or stream link>).
 
-## Next
-**[accepted <date>] <change>.** <Task or stream, Decision>.
-- <promise or choice it adds, changes or retires>.
-**[idea <date>] <direction>.** <supporting record link, read before assessing or building>.
-- <direction; open questions>.
+## Choices
+- <Choice>, because <reason> (<Decision link when one exists>).
 
-## Verified
-- <claims covered>: <source and revision>, <date>; <method and limits>.
+## Promises
+- <Always or never, for whom; condition when limited>.
 
-Links: <Product Map> · <Architecture Map> · <related specs and contracts> · <design document> · <code entry point>
+## Non-goals
+- <What it deliberately does not do>: <reason>; <neighbouring owner (link)>.
+
+## Open questions
+- [open] <undecided point>.
+- [idea <date>] <direction>; read <supporting record> before assessing or building it.
+
+## Links
+<Product Map> · <Architecture Map> · <Decisions> · <related specs and contracts> · <design document> · <code entry point>
 ```
 
-Omit empty sections. What each section holds: SKILL.md, Write for the reader. A retired or rolled-back behavior leaves Behavior (page versions keep its text); a released claim that can no longer be verified keeps its line, marked `[unverified]` with its debt link. When part of a change is released, fold that part into Principles and Behavior with the constraints and scenarios still binding, read on its Task and linked pages; keep unmet parts in Next with their state; remove the entry once nothing in it is unmet. Split specs only at a system boundary ([documentation-model.md](documentation-model.md)).
+Omit empty sections. What each section holds: SKILL.md, Write for the reader. A dropped promise or choice leaves with the Decision that drops it; page versions keep its text. Split specs only at a system boundary ([documentation-model.md](documentation-model.md)).
 
 ## Ideas
 

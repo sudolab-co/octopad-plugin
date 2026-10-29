@@ -1,5 +1,11 @@
 # Changelog
 
+## 23.0.0 - Unreleased
+
+This version needs the Octopad server release whose `build_context` shows a Product Spec in the intent shape.
+
+- `manage-product-documentation` 6.8.0: a Product Spec describes the intended product, not what the code does. Its sections become Need (job stories), Outcome and its signal, Direction, Choices with their reason, Promises, Non-goals, Open questions and Links. A line stays only if a reader without it could build the wrong thing, undo a choice or break a promise; what the code does, values chosen while building and delivery history leave for code, tests, Tasks and release records. Specs lose their Verified section and their implementation, merge and release labels. Before, a spec's Behavior section restated the code and Verified carried revisions and pull requests: on 2026-10-29, a spec rewritten under 6.7.0 still kept 36,000 characters, most of them readable in the code.
+
 ## 22.1.0 - Unreleased
 
 - `octopad-notepad` 5.1.0: the AI no longer writes a reminder for a wait Octopad already reports. A next step, or a task set `blocked` or `on_hold`, that waits on a date or an event gets a reminder unless Octopad tells the user of every event the wait needs: it tells a task's assignee and creator when the last dependency they can see closes, unless the task is `on_hold`, and when its linked pull request merges. A date, a deploy, a switch, an outside reply or the merge of a pull request no task links still gets one, and so does a wait Octopad reports only in part, such as a merge followed by a deploy, or one whose event a later session cannot check, which used to stay a loop line. Before, every blocked task got a reminder: on a live workspace on 2026-10-28, all six reminders in one Notepad repeated a task's dependency, blocked reason, review or status.

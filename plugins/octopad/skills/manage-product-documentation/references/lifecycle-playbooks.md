@@ -38,7 +38,7 @@ Classify impact continuously without making the conversation feel like a form, a
 
 If the product or system boundary remains materially ambiguous after reading current context, ask one focused question and continue unaffected organization work.
 
-Parking: one `[idea <date parked>]` line per idea, carrying the idea and the problem it addresses, in the Next section of the Product Spec it concerns, or on the product documentation set's single Ideas page when it concerns no existing system yet; move the line to that system's spec once one exists. Creating that page on first use and linking it from the Product Map is part of parking, not a separate authority. Add no owner, priority, status, origin or rationale, and keep each line within the persisted-evidence rules. Never park an idea the user turned down or dropped. A line leaves the list when the idea is committed, where ordinary commitment handling takes over, or when the user rejects it; remove it rather than replacing it with a rejected or abandoned line, and put any useful rejection reason in history. Moving or removing a parked line, or dropping an emptied section, is routine list maintenance, not the content deletion that needs approval. Before a Product Map exists, keep ideas in the conversation and follow the setup playbooks.
+Parking: one `[idea <date parked>]` line per idea, carrying the idea and the problem it addresses, in the Open questions of the Product Spec it concerns, or on the product documentation set's single Ideas page when it concerns no existing system yet; move the line to that system's spec once one exists. Creating that page on first use and linking it from the Product Map is part of parking, not a separate authority. Add no owner, priority, status, origin or rationale, and keep each line within the persisted-evidence rules. Never park an idea the user turned down or dropped. A line leaves the list when the idea is committed, where ordinary commitment handling takes over, or when the user rejects it; remove it rather than replacing it with a rejected or abandoned line, and put any useful rejection reason in history. Moving or removing a parked line, or dropping an emptied section, is routine list maintenance, not the content deletion that needs approval. Before a Product Map exists, keep ideas in the conversation and follow the setup playbooks.
 
 ## Implementation context retrieval
 
@@ -53,13 +53,12 @@ Do not load every Product Spec or the whole repository merely because the Produc
 ## Pull request and delivery sync
 
 1. Determine documentation impact: none, existing-system change, new system, or technical-only. Record it on the PR in the repository's normal way, naming affected documents or carrying the proven negative receipt. A `none` follows SKILL.md's no-impact protocol. `technical-only` does not imply `none` when durable architecture or an Engineering Reference changed.
-2. Link the existing Task or work stream to the PR through the repository's normal fields; the spec's Next entry links that Task or stream.
+2. Link the existing Task or work stream to the PR through the repository's normal fields; the spec's Direction links that Task or stream when it serves an accepted direction.
 3. Record exact head and base revisions on the pull request or Task. Re-check after material drift.
 4. Change the spec only as SKILL.md's delivery rule allows.
 5. Verify coverage under [Work from product intent](../SKILL.md#work-from-product-intent), using code, tests and the actual diff rather than the PR description alone.
 6. Draft pre-release user documentation or release notes when useful, under SKILL.md's pre-release rule; never as shipped wording, Product Facts or marketing claims.
-7. After merge, replace the change's label with `[merged PR #n]`; for a change merged in parts, give each part its own state.
-8. When evidence remains missing, mark the update stale or unverified and create or reuse documentation-debt work.
+7. When evidence remains missing, mark the update stale or unverified and create or reuse documentation-debt work.
 
 Follow repository review and merge controls. This skill grants no merge authority and creates no separate approval system.
 
@@ -71,7 +70,7 @@ Run one full pass per release, when changes actually reach users. It must end wi
 2. Bound the release window. Read the boundary the previous release pass recorded: an exact revision, or failing that a date resolved to a revision. Collect every change between that boundary and this release's exact revision. Never bound on a moving branch head or a bare date; a date boundary silently drops same-day changes. When the boundary is imprecise, over-collect toward the older side and say so in the closing record — a duplicate is visible, a dropped change is not.
 3. Consume each change's documentation-impact mark when the delivery workflow records one. A mark naming a maintained doc puts that doc on the update list with the change as evidence. Recheck an explicit `none` against the diff and its receipt. A missing or wrong owner is resolved by adopting or creating the smallest authorized owner when the evidence is sufficient; otherwise file documentation debt. A mark naming another family's doc is a handoff, not an edit order.
 4. Re-read each affected draft against released code and observed product behavior when available.
-5. Fold each released change into the affected spec's Principles and Behavior, only for the part and audience released, replacing the lines it supersedes and merging duplicates; keep the constraints and scenarios still binding, read on its Task and linked pages, never inferring release from the Task's status; remove its Next entry once nothing in it is unmet; replace the Verified lines checked. Update relevant Architecture Map sections.
+5. Edit a spec only where the release settled a direction or changed a need, choice, promise or non-goal: fold what it settled into Choices or Promises and remove the Direction line once nothing in it is still ahead. Update relevant Architecture Map sections.
 6. Keep unverified claims out of shipped truth. Track them as documentation debt.
 7. Resolve and open each existing product authority affected by the release, including the Product Map and any Product Facts whose dependencies moved. A Product Facts page is born only with the first substantiated public claim; its prior absence is normal. Create or adopt a missing ordinary owner when the released evidence and session authority support it, or record the exact gap. Only a document the product context explicitly marks as locked requires exact before/after approval before editing.
 8. Reconcile pre-release user documentation or release notes against verified released evidence before removing their label. Draft or revise Product Facts here. Hand marketing claims and final marketing wording to product marketing. Preserve every review and publication gate.
@@ -87,7 +86,7 @@ If repository policy explicitly proves that merge equals release, record that po
 4. For each page you will change, check intent and coverage under [Work from product intent](../SKILL.md#work-from-product-intent). Then compare claims with current code, release evidence, Decisions, and user-facing behavior. Mark unsupported claims stale or unverified instead of guessing.
 5. Consolidate duplicates only after preserving unique knowledge and history. Require explicit approval before deletion or irreversible overwrite.
 6. Review parked ideas and the Ideas page. Propose removing lines whose problem has lapsed, in one batch; do not remove them silently.
-7. Check each spec section against its line in SKILL.md's Write for the reader: lines failing the admission test, content that belongs elsewhere, duplicates, unlabelled states. Prune under its preservation rule.
+7. Check each spec section against its line in SKILL.md's Write for the reader: lines its first rule rejects, content that belongs elsewhere, duplicates, undecided points not marked `[open]`. Prune under its preservation rule.
 8. Create or reuse one bounded documentation-debt Task for related missing evidence, unresolved conflicts, or substantial rewrites. Do not create one task per broken link.
 9. Report repairs, remaining uncertainty, and the evidence needed to resolve it.
 
