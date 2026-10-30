@@ -12,7 +12,7 @@ Answer: what are we trying to accomplish, for whom, through what activity, and u
 
 Own durable activity context and the Activity Overview. Product behavior belongs to `manage-product-documentation`; customer/market positioning and commercial messaging to `manage-product-marketing`; external market evidence to `manage-market-intelligence`. Software needs product documentation whether sold, donated, experimental or used internally. Goals, streams and tasks retain execution state. Do not create commercial documentation merely because something is software.
 
-Ask for or record a fact only if the next action could plausibly go wrong without it. Read [adaptation](references/adaptation.md) before deciding where context belongs whenever who acts, who benefits, who funds or who owns is unclear, the activity is not a business selling an offer, or the change would create a page or touch more than one scope. For changes of participants, purpose, organization or use, read [evolution](references/evolution.md). Both are decision aids, not forms to fill.
+Never ask for a fact just to complete a profile: ask only if the next action could plausibly go wrong without it. Read [adaptation](references/adaptation.md) before deciding where context belongs whenever who acts, who benefits, who funds or who owns is unclear, the activity is not a business selling an offer, or the change would create a page or touch more than one scope. For changes of participants, purpose, organization or use, read [evolution](references/evolution.md). Both are decision aids, not forms to fill.
 
 # Establish the minimum context
 

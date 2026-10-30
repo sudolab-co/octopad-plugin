@@ -80,9 +80,11 @@ If repository policy explicitly proves that merge equals release, record that po
 
 ## Maintenance and audit
 
+An audit alone changes no page: steps 3 to 7 then list what they would change, applied only once the request asks for repairs. Step 8 still files the debt, as the methodology files any gap found.
+
 1. Verify the Product Map points to one current spec per significant system and, when architecture exists, one canonical Architecture Map.
 2. Check links, ownership metadata, and, where a page carries them, lifecycle labels, source revisions and last-verification times.
-3. When the request asks for repairs, fix safe metadata and broken links whose correct target is unambiguous; an audit alone lists them.
+3. Repair safe metadata and broken links directly when the correct target is unambiguous.
 4. For each page you will change, check intent and coverage under [Work from product intent](../SKILL.md#work-from-product-intent). Check a spec against the requests and Decisions it rests on, never against code: an accepted promise not yet built stays, its gap a Task. Compare other pages' claims with current code, release evidence, Decisions and user-facing behavior; mark unsupported claims stale or unverified instead of guessing.
 5. Consolidate duplicates only after preserving unique knowledge and history. Require explicit approval before deletion or irreversible overwrite.
 6. Review parked ideas and the Ideas page. Propose removing lines whose problem has lapsed, in one batch; do not remove them silently.

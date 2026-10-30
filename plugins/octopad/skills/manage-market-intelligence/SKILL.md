@@ -34,7 +34,7 @@ Market-wide customer voice and trends stay in the report; what customers say abo
 
 ## The report
 
-Before you create, restructure or audit a Market Overview, read [its structure](references/market-report.md): what to remember, the market analysis blocks in their order, and what remains to verify.
+Before you create, refresh, restructure or audit a Market Overview, or change a figure or comparison in it, read [its structure](references/market-report.md): what to remember, the market analysis blocks in their order, and what remains to verify.
 
 Its At a glance holds two short answers, the essential first, at most 1,000 characters together: `main_alternatives`, what people use instead, telling observed use from identified candidates; `what_it_implies`, the main implication with its essential limit. Each is `missing` when unknown, `not applicable` when it does not apply. Every session of the scope reads them and the brief may cut them at a sentence end. With every update of the report, send the At a glance keys that change, or `at_a_glance: "unchanged"`.
 
