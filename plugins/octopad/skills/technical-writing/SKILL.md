@@ -1,10 +1,10 @@
 ---
 name: technical-writing
-description: Use when writing, editing, or reviewing a technical work product in English or French. Covers README, technical or user documentation, PR descriptions, release notes, changelogs, in-app help, error messages, and API docs. Removes AI-flavored prose and applies the Google developer documentation style. Not for chat with the user, emails, social posts, or in-voice drafts, and not for blog or marketing content, which belongs to its own content skill.
+description: "Use when writing, editing or reviewing a technical work product in English or French: README, technical or user documentation, PR descriptions, release notes, changelogs, in-app help, error messages, API docs. Removes AI-flavored prose in the Google developer style. Not for chat, emails, social posts, blogs, or marketing copy (pmm-check)."
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "technical-writing"` when you open this skill.
 
-Version: 2.0.2
+Version: 2.1.0
 
 # Technical writing
 

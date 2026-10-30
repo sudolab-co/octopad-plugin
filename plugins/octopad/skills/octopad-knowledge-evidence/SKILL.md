@@ -1,12 +1,12 @@
 ---
 name: octopad-knowledge-evidence
-description: Where the workspace's durable knowledge is written, and how a claim about it is proved. Use when decisions, facts, risks, advisories or open questions need recording, updating or cleaning up, when the user hands over a file or a document, when a page or a file is written, linked or tagged, when you need to know whether something is on record already, and to answer anything asked about the corpus.
+description: "Use before recording, updating or cleaning up a decision, fact, risk, advisory or open question, before writing, linking or tagging a page or file, when the user shares a file or document, and before saying whether something is on record or answering a question about the corpus. Spec content belongs to manage-product-documentation, customer facts to octopad-crm."
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-knowledge-evidence"` when you open this skill.
 
-# Where knowledge is written
+Version: 2.4.0
 
-Version: 2.3.0
+# Where knowledge is written
 
 - Three branches hold durable workspace context — `knowledge`, `pages` and `files`. Retrieval reaches only the branch a thing went into, so the branch is chosen on purpose and never by habit.
 - What someone outside the current task or conversation will need is an atomic item, written with `knowledge`: a fact others will rely on, a choice that binds work beyond its task, a question no open task will settle, an uncertain harm. In a workspace where the CRM is on, what one customer did or said goes to their CRM record instead. Checks, receipts, approvals, blockers and notes about your own tools stay on the task, or in chat when there is no task; a fixable gap is a task.

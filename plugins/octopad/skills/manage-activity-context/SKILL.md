@@ -1,8 +1,8 @@
 ---
 name: manage-activity-context
 metadata:
-  version: "7.0.1"
-description: Maintain durable context about why an activity or project exists, whom it benefits, how it creates value and the choices and constraints shaping it, in its Activity Overview. Use when that context is captured or changes, people or organizations join a project, or an organization's sessions still open on an untyped Company Overview. Adapts to solo exploration, collectives, associations, agencies, businesses and internal tools; no company or monetization required. Reuses existing onboarding documents.
+  version: "7.1.0"
+description: "Use when the user explains or revises why an activity or project exists, whom it serves, its relationships, strategy or constraints, when people or organizations join it, or when its Activity Overview, or an untyped Company Overview, no longer matches. Not for market evidence (manage-market-intelligence) or an offer's marketing (manage-product-marketing)."
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "manage-activity-context"` when you open this skill.
 

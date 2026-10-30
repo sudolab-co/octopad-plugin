@@ -1,10 +1,10 @@
 ---
 name: pmm-check
-description: Diagnose, draft or review positioning, audience choices, value propositions and marketing copy for products, services or noncommercial activities. Use for homepage, landing page, campaign, social, comparison, offer or sensitive-use claims. Supplies methods and recommendations; does not accept marketing choices, maintain their records or authorize publication.
+description: "Use to diagnose, draft or review positioning, an audience choice, a value proposition or marketing copy: homepage, landing page, campaign, social post, comparison, offer or sensitive claim. Gives methods and recommendations; manage-product-marketing records the accepted choices. Not for technical or user documentation (technical-writing)."
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "pmm-check"` when you open this skill.
 
-Version: 1.0.1
+Version: 1.1.0
 
 # Diagnose and improve marketing
 

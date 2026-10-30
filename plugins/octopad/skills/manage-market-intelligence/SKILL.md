@@ -1,8 +1,8 @@
 ---
 name: manage-market-intelligence
 metadata:
-  version: "3.1.0"
-description: Produce market information an activity can act on, kept in Octopad as its market report and competitor pages, covering its market, customers and what they use today, competitors and their prices, changes, and what they imply. Use when asked about a market, competitors, customers' alternatives or prices, when a competitor, a review, a customer quote, a launch or a pricing move comes up, or to refresh the market report. Applies to commercial and noncommercial activities. Does not choose positioning, target, price or strategy.
+  version: "3.2.0"
+description: "Use when a competitor, an alternative customers use, a review, a launch, a pricing move or a public mention comes up, when asked what rivals or the market say, or to set up, audit or refresh the market report. Not for one customer's record (octopad-crm) or for choosing positioning, target or price (manage-product-marketing)."
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "manage-market-intelligence"` when you open this skill.
 

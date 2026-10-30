@@ -1,10 +1,10 @@
 ---
 name: octopad-planning-and-work-design
-description: Use for a new or existing stream, a brief, or a delivery-mode choice, even when the user never names Octoplan. How work is shaped and how a whole effort is laid out — the number of tasks a request really is, what each one must settle before anyone could run it, nesting, the scales, dates and repeating work, together with goals, streams, order and dependencies, and what an effort owes when it ends or changes shape. Use it when an ask arrives with its own boundaries still open, when several tasks are laid out together as a roadmap, a plan or a launch, when the user wants work already on the board cleared away, re-homed or put right, and when a stream or a goal has moved on from what its tracker still says.
+description: "Use while a request's task count, prerequisites, nesting, scores, dates or repetition are undecided or wrong, and before laying out several tasks as a roadmap, plan or launch, creating or changing a stream or goal, or taking a task out of its stream by archive, deletion or move. Delivery by agents: octoplan."
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-planning-and-work-design"` when you open this skill.
 
-Version: 5.1.0
+Version: 5.2.0
 
 # From a need to prepared work
 
@@ -59,6 +59,7 @@ For an ongoing stream, agree a bounded delivery within it; finishing that mandat
 - A goal names one destination the whole team shares, put as the place to reach ("Reach 50 active accounts") and never as an activity to perform; targets split per person do not move a team whose work is interlocked.
 - Say in the goal's `description` how it will be judged: one to three signals, one of them primary, chosen so they can be read while the work runs and not only on the closing day. Where the route is known that is an outcome target — a measure with the threshold it has to reach.
 - Where the work is new and the route is not known yet, take a learning signal — "document 3 methods that work" — in its place: a number fixed before anyone has walked the ground aims the team at the wrong thing.
+- Give a goal a `deadline` only when the date is real, and say in one line why it is the goal today.
 - Both the reason and the date sit in the goal's own description, each on a line of its own, never only on a stream linked to it:
   `Why now: two enterprise pilots stalled on this gap last quarter.`
   `Deadline 2026-11-30 — renewal date of the affected contract.`
@@ -70,8 +71,10 @@ For an ongoing stream, agree a bounded delivery within it; finishing that mandat
 - Open a time-bound stream where the effort has an end state AND takes three or more tasks over more than one sitting.
 - Choosing a task's stream: does it push a time-bound stream's goal forward? then that one. Is it ordinary work of a domain? then the ongoing one. Cannot tell? then ask.
 - Settle that by describing the work to `build_context(mode: "work_stream", query: "…")` and reading the one-liner of each stream it returns. Names collide, and a keyword that looks like a match drops work into the wrong stream.
-- Give a time-bound stream its goal — one primary, and up to two more beside it. Where nothing on the board fits, propose the goal that would.
+- Give an effort toward an outcome the home it needs: reuse a goal and a stream that fit, and open a new stream only where the rule above calls for one.
+- Give a time-bound stream its goal — one primary, and up to two more beside it. Where nothing on the board fits, propose the goal that would: the outcome and why.
 - Work that advances a goal has no place in an ongoing stream: move it into a time-bound stream, or the goal's progress cannot be seen at all.
+- Give a stream a `target_date` only when a real signal sets it: a timeframe or deadline from the user, the linked goal's own deadline, a dated stream it depends on. With none, ask whether to set one and offer a grounded date when the goal or a dependency provides one; a time-bound stream may start without one.
 - Where one stream has to wait on another, record that with `depends_on_stream_ids`, and honour the order when you choose what to pick up next.
 - Asked for work that repeats, create and route the repeating task itself. Standing up an ongoing stream is half the job — a stream is where the work sits, never the work itself.
 
@@ -97,3 +100,4 @@ User: *"Lay out the launch — research, then design, then build, then ship — 
 - A task nobody is going to do (dropped, overtaken, or folded into another effort) is `cancelled`, its `status_line` naming why and what replaces it. Archiving only takes a task out of sight; it never stands in for `done` or `cancelled`.
 - Only a time-bound stream has a lifecycle, and it runs active, then completed, then archived. Completed keeps it in context and in search until its goal is reached; archived takes it out of context, so archiving ahead of the goal removes what the goal is still working from.
 - **Trackers are system-managed, with two exceptions you append yourself.** Tracker pages live in the system Trackers / Archive folders and render read-only. The system owns the Progress Report and Activity Log — never hand-write those two sections. You append exactly two things: the `## Closing Report` before completing a stream, and the structural-change note below.
+- **Structural-change note.** When a stream is archived, renamed, merged or split, or tasks move out of it, append a dated line to every tracker page the change touches, saying what changed and why.
