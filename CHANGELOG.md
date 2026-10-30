@@ -4,7 +4,7 @@
 
 Ship this version before the Octopad server release with kernel methodology 2.23.0, which leaves to these modules the rules listed below.
 
-- Every module's description now names the moment it opens, in the words the methodology's router uses for it, and the sibling that owns the neighbouring case. Before, the eleven descriptions ran to 996 words, several carried rules rather than moments, and three named a sibling; they now run to 592.
+- Every module's description now names the moment it opens, in the words the methodology's router uses for it, and the sibling that owns the neighbouring case. Before, the eleven descriptions ran to 996 words, several carried rules rather than moments, and three named a sibling; they now run to 596.
 - `octopad-planning-and-work-design` 5.2.0: takes over from the methodology how an effort finds its home (reuse a goal and a stream that fit, propose a missing one with its outcome and why), a goal's real deadline and why-now line, a stream's `target_date` only from a real signal, and the dated line on every tracker a stream change touches, which the skill named without holding.
 - `octopad-notepad` 5.2.0: takes over from the methodology that a session opening or a what-next question alone needs no Notepad entry.
 - `octopad-knowledge-evidence` 2.4.0, `manage-activity-context` 7.1.0, `manage-market-intelligence` 3.2.0, `manage-product-documentation` 6.9.0, `manage-product-marketing` 2.1.0, `octopad-crm` 1.5.0, `octoplan` 8.6.0, `pmm-check` 1.1.0, `technical-writing` 2.1.0: description only.
