@@ -4,13 +4,13 @@ description: "Use to diagnose, draft or review positioning, an audience choice, 
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "pmm-check"` when you open this skill.
 
-Version: 1.1.0
+Version: 1.1.1
 
 # Diagnose and improve marketing
 
-PMM supplies diagnosis, method, proposals and review. The marketing owner maintains choices, messages and evidence pointers; the competent decision-maker accepts or rejects choices. A PMM recommendation or review pass does neither. Work directly with the user's scoped materials when no PM skill is installed.
+PMM supplies diagnosis, method, proposals and review. The marketing owner maintains choices, messages and evidence pointers; the competent decision-maker accepts or rejects choices. A PMM recommendation or review pass does neither.
 
-The method below is self-contained practitioner guidance. It needs no private playbook, numbered section, named company, vendor or external research access. Read [evidence-basis.md](references/evidence-basis.md) only when assessing method provenance or planning additional research. Those links do not establish facts about an offer.
+The method below is self-contained. Read [evidence-basis.md](references/evidence-basis.md) only when assessing its provenance or planning more research; its links establish no fact about an offer.
 
 ## Establish scope, truth and authority
 
@@ -79,6 +79,11 @@ If evidence is missing, omit the assertion or use a placeholder such as `[availa
 ## Deliver a bounded result
 
 For a review, give findings worst first. A Blocker is a false or unverifiable claim or an unauthorized locked change; High means misleading emphasis or a missing material qualifier; Medium means a clarity or usefulness improvement. Name the affected passage, reason, exact source or missing proof and the relevant boundary. Give a bounded fix for each Blocker and High, except a locked passage, which receives its reopen/proof need only. Fix the named sentences; larger restructuring is a separate recommendation. Sensitive intended use remains explicitly pending specialist review regardless of these editorial severities.
+
+For example, a locked homepage tagline reads "Halves your onboarding time" and no source measures onboarding time:
+
+- Finding: **Blocker**, homepage tagline. An outcome claim with no source, in a locked passage: `requires explicit reopen`. Proof needed: onboarding time measured before and after, with its scope.
+- Delivered copy: the tagline is withheld and `[outcome: valid scoped evidence missing]` stands in its place. No alternative slogan is offered, and the source keeps the tagline until its owner reopens it.
 
 For a draft, state unresolved blockers first. Dependent claims appear only as placeholders or omissions. Provide usable independent copy in the requested format. For strategy, provide options, reasons, recommendation and uncertainty rather than declaring acceptance.
 

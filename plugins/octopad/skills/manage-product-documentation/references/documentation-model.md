@@ -2,13 +2,15 @@
 
 Use the smallest set of durable artifacts that makes the product understandable and safe to change. Adopt clear existing vocabulary instead of renaming established systems merely to fit this model.
 
+Keep durable knowledge in Pages, or in the repository docs that already hold it. Keep finite execution, owners, and current status in existing work streams and Tasks. Reuse an existing Octoplan-created stream or task graph when present; do not require Octoplan and do not create a parallel planning system.
+
 ## Product Overview
 
-One per offer, as SKILL.md (Administer the documentation system) defines it; the head page whose At a glance block the Organization Overview shows. Keep it distinct from the Product Map, which only indexes.
+One per offer, a head page (`head_type: product_overview`; at most 10 live per organization and per workspace) for purpose, experience, design pillars, non-goals and relationships above system specs, with a Marketing section that `manage-product-marketing` writes; the Organization Overview shows its At a glance block. Products sold together to one audience at one price share one; a product gets its own only when its audience or its price differs. Its At a glance key `offer_and_availability` is yours, held to the evidence a Product Fact needs; `audience_and_need`, `promise` and `conditions` are product marketing's. Keep it distinct from the Product Map, which only indexes.
 
 ## Product Map
 
-Shape and contents: [artifact-shapes.md](artifact-shapes.md). A portfolio index may route to several product maps but never restates their product truth.
+Keep exactly one per product: the index of every system, nothing else. Adopt an existing index when it already serves as the entry point. Shape and contents: [artifact-shapes.md](artifact-shapes.md). A portfolio index may route to several product maps but never restates their product truth.
 
 ## Product Spec
 
@@ -45,7 +47,7 @@ Do not manually inventory every file, symbol, import, endpoint, or dependency. D
 
 ## Engineering References
 
-Create a targeted Engineering Reference only for important knowledge that is stable and not cheaply derivable, such as a non-obvious operational constraint, durable integration convention, or difficult data-model rationale. Link it from the Architecture Map and affected Product Specs. Prefer a Decision for a choice and its rationale; prefer code for mechanics.
+Create a targeted Engineering Reference only for important knowledge that is stable and not cheaply derivable, such as a non-obvious operational constraint, durable integration convention, or difficult data-model rationale. Link it from the Architecture Map and affected Product Specs. Prefer a Decision for a choice and its rationale; prefer code for mechanics. Never create one per Product Spec by default.
 
 ## Relationships and provenance
 

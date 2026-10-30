@@ -14,7 +14,7 @@ A usage quota or rate limit on one AI model or runtime account is not distress: 
 
 ## Reconcile actors before replacement
 
-Treat an actor as created only after its call returns or the authoritative native target confirms it. Treat actors, messages, and effects as created only after a returned or authoritative result. Before any retry or replacement, inspect that target. A successor must confirm that its predecessor stopped before acting; if that cannot be proved, pause only the affected branch. A release record, retirement comment or guarded page update is not cessation proof, and a supervisor cannot prove its own future cessation.
+Treat an actor, a message or an effect as created only after its call returns or an authoritative result, such as the native target, confirms it. Before any retry or replacement, inspect that target. A successor must confirm that its predecessor stopped before acting; if that cannot be proved, pause only the affected branch. A release record, retirement comment or guarded page update is not cessation proof, and a supervisor cannot prove its own future cessation.
 
 ## Diagnose before repeating
 

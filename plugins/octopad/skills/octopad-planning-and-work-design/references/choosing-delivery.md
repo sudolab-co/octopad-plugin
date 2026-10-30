@@ -1,0 +1,17 @@
+# Choosing how to deliver
+
+## Prepare enough to choose how to deliver
+
+Identify the deliverables, settled choices, real dependencies, usable proof, required inputs, accesses and human interventions. Work within the requested scope: outline only what matters now, leave later details for when their inputs exist. Keep this preparation on the owning stream and tasks, linking sources and existing confirmations. Record only lasting choices as Decisions; Octoplan puts missing shared delivery fields on working documents. Keep no second brief or progress list.
+
+Evaluate the bounded work agents could actually finish and verify between human interventions, using the current tools and access. Compare that useful work with the cost of dispatch, handoffs and review. Use judgment, not a task count, duration threshold or autonomy score. A few required review or production gates do not rule out useful agent work between them; keep every gate and its owner. If the next meaningful steps depend on repeated user choices, continue direct collaboration and reconsider when those choices settle. Do not pitch orchestration on every turn.
+
+When useful agent delivery is plausible, open [Octoplan](../../octoplan/SKILL.md) to qualify the actual runtime route and review the smallest adequate Plan. Before the autonomy choice, show its summary of what agents can finish without the user and every known intervention, including access, proof and continuation limits. The user need not know the name Octoplan. Opening that skill or accepting a brief grants no delivery authority. If the benefit or capability is unproved, continue authorized preparation or collaboration and name the concrete gap; do not promise unattended delivery through it.
+
+Planning-only means the user's request or context limits the outcome to a plan, such as "only the plan" or "we will decide whether to execute later". A missing mandate, or "create the stream/Octoplan" within a delivery discussion, does not establish that limit. For useful agent delivery without a mandate, ask once for autonomy and covered effects after the reviewed Plan summary; keep an unanswered choice pending without treating silence as consent. For an actual planning-only request, do not solicit delivery unless the user changes that scope. Respect an explicit pause or postponement.
+
+## Keep the same work when delivery changes
+
+Adopt the same stream and task identities, decisions, evidence and progress when moving from collaboration to agent delivery. Carry forward valid explicit brief confirmation; Octoplan checks its source and fills only missing preparation and authority. A stream name or existing graph proves neither confirmation nor a mandate. Never restart completed work: a done task stays settled unless evidence contradicts its completion.
+
+For an ongoing stream, agree a bounded delivery within it; finishing that mandate does not complete the ongoing stream. Separate a new time-bound initiative only when its actual scope calls for it under the rules below, never just to turn on agent delivery. On resume, check current state and ownership; an existing valid Octoplan follows its own continuation rules without a duplicate choice. Returning to direct collaboration requires reconciling active agents and pending effects through Octoplan recovery first, not leaving them running under a superseded mandate.
