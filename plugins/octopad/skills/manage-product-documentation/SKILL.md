@@ -4,7 +4,7 @@ description: "Use before judging or changing what a product does, when its behav
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "manage-product-documentation"` when you open this skill.
 
-Version: 6.9.0
+Version: 6.10.0
 
 # Manage Product Documentation
 
@@ -58,7 +58,7 @@ Classify the work before writing; the documentation family reuses these four cla
 
 - **create:** establish the missing owner after proving none exists;
 - **refresh:** replace stale current truth in the existing owner while preserving history;
-- **audit:** inspect a bounded maintained set, repair the unambiguous, and record gaps;
+- **audit:** inspect a bounded maintained set and report its gaps; it repairs nothing, safe metadata and links included, unless the request also asks for repairs;
 - **synchronize:** propagate a changed source through this family's projections and hand other outputs to their owners.
 
 A Product Spec states intent and the Product Map indexes: neither carries a verification section. Every other page this skill owns keeps one, in the page or, for published user documentation, in its release record: one line per group of claims checked together, naming scope, source and exact revision, date, method and limits; a check replaces the lines it covers and no other.
@@ -77,16 +77,7 @@ A Product Spec states intent and the Product Map indexes: neither carries a veri
 
 ## Administer the documentation system
 
-Use this asymmetric structure:
-
-- Keep one **Product Overview** per offer, a head page (`head_type: product_overview`; at most 10 live per organization and per workspace) for purpose, experience, design pillars, non-goals and relationships above system specs, with a Marketing section that `manage-product-marketing` writes. Products sold together to one audience at one price share one; a product gets its own only when its audience or its price differs. Its At a glance key `offer_and_availability` is yours, held to the evidence a Product Fact needs; `audience_and_need`, `promise` and `conditions` are product marketing's.
-- Keep exactly one **Product Map** per product: the index of every system, nothing else (shape in [artifact-shapes.md](references/artifact-shapes.md)). Adopt an existing index when it already serves as the entry point.
-- Keep one evolving **Product Spec** for each significant product system.
-- Add a **Behavioral Contract** only when risk, ambiguity, or cross-boundary precision warrants one.
-- Keep one short canonical **Architecture Map** in Octopad. Put it in a connected repository instead when the team wants architecture to change in the same review as the code; then keep the Octopad entry as its link, ownership, status, related systems, and verification metadata. Either way, name the one canonical home and do not maintain both.
-- Add targeted **Engineering References** only for stable, important knowledge that cannot be cheaply derived from code. Never create one per Product Spec by default.
-
-Keep durable knowledge in Pages, or in the repository docs that already hold it. Keep finite execution, owners, and current status in existing work streams and Tasks. Reuse an existing Octoplan-created stream or task graph when present; do not require Octoplan and do not create a parallel planning system.
+Keep one **Product Overview** per offer, one **Product Map** per product and one evolving **Product Spec** per significant system; the Overview's At a glance key `offer_and_availability` is yours, held to the evidence a Product Fact needs. What each artifact holds, and when a Behavioral Contract, an Architecture Map or an Engineering Reference is warranted, is in [documentation-model.md](references/documentation-model.md).
 
 When a context load makes no product choice, load the smallest slice needed; for implementation, follow [Implementation context retrieval](references/lifecycle-playbooks.md#implementation-context-retrieval).
 
@@ -125,7 +116,7 @@ Product Facts are the operational seam: this skill produces and verifies them pe
 
 ## Keep human authority narrow and meaningful
 
-Administer templates, folders, links, classifications, drafts, parked ideas, routine sync, and safe metadata or link repair without asking. Ask the user only for:
+Administer templates, folders, links, classifications, drafts, parked ideas, routine sync, and safe metadata or link repair without asking, except in an audit alone, which only reports. Ask the user only for:
 
 - material ambiguity in product intent or a significant system boundary;
 - an unresolved conflict over which source is authoritative;

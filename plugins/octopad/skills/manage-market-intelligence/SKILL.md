@@ -1,7 +1,7 @@
 ---
 name: manage-market-intelligence
 metadata:
-  version: "3.2.0"
+  version: "3.3.0"
 description: "Use when a competitor, an alternative customers use, a review, a launch, a pricing move or a public mention comes up, when asked what rivals or the market say, or to set up, audit or refresh the market report. Not for one customer's record (octopad-crm) or for choosing positioning, target or price (manage-product-marketing)."
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "manage-market-intelligence"` when you open this skill.
@@ -34,19 +34,7 @@ Market-wide customer voice and trends stay in the report; what customers say abo
 
 ## The report
 
-The Market Overview holds, in this order:
-
-1. **What to remember**: findings ranked by importance, each with what it implies for the activity, how sure it is and its limits. Then the status of each hypothesis, and the offer's stated target, promise and difference (its Product Overview's Marketing section) held against the evidence: supported, contradicted or unresolved, without choosing replacements.
-2. **Market analysis**, one heading per block in this order; fill each, or write "unknown" or "not applicable" and why. Use tables where they compare; never leave an empty one.
-   - **Size and change**: tell the customers' industry from this offer's market, businesses from sites, the whole market from the reachable segment. Estimate buyers times annual relevant spend, inputs sourced and assumptions explicit; cross-check against a separate estimate when one exists and explain the gap. Give ranges driven by the uncertain inputs. Estimate what is realistically winnable only with evidence on channel access, conversion, time and delivery capacity. Give the trend on comparable definitions and periods.
-   - **Demand and buying**: for each segment, needs, what they use and spend today, triggers, decision criteria, who holds the budget, how they buy; switching costs (integrations, training, contracts) and reasons to stay.
-   - **Competition and access**: alternatives grouped by the need they serve; the main ones compared with their channel and dated traction evidence; who controls access to buyers (distributors, advisers, existing suppliers).
-   - **Prices and economics**: pricing models and units; totals for justified customer cases with the same needs, units, volumes, tax basis and period, including setup, hardware, usage, migration and the tools kept. Partial substitutes and quotes not obtained stay out of the comparable totals. Listed prices, actual spending and willingness to pay are different things. Where it decides the answer, weigh the customer's gain against switching costs, and the offer's revenue against acquisition, channel, onboarding and service costs.
-   - **Customer voice**: praise, friction and switching experiences, who reported them, and the sample's limits.
-   - **Environment**: rules, technology and channels, only when they change a conclusion.
-3. **What remains to verify**: the material unknowns ranked, the cheapest useful check for each, and which answer would change a conclusion.
-
-Each actor named links to its page or its entry in Other actors. Assumptions, calculations and decisive sources stay beside the findings they support.
+Before you create, refresh, restructure or audit a Market Overview, or change a figure or comparison in it, read [its structure](references/market-report.md): what to remember, the market analysis blocks in their order, and what remains to verify.
 
 Its At a glance holds two short answers, the essential first, at most 1,000 characters together: `main_alternatives`, what people use instead, telling observed use from identified candidates; `what_it_implies`, the main implication with its essential limit. Each is `missing` when unknown, `not applicable` when it does not apply. Every session of the scope reads them and the brief may cut them at a sentence end. With every update of the report, send the At a glance keys that change, or `at_a_glance: "unchanged"`.
 
@@ -68,7 +56,9 @@ On a later run, open What to remember with what changed since the last one (the 
 
 ## Review before delivering
 
-Before delivering, an audit included, give a fresh reviewer, a sub-agent that did not draft the report, the draft and the source material needed to check it. It checks each conclusion and figure against its source, recomputes the calculations, looks for evidence against the main conclusions, and finds contradictions between the report, its tables and the competitor pages. Without sub-agents, do this check yourself and say it was not independent. Check that each comparison meets its stated basis and that every summary, At a glance and the conversation included, keeps the evidence's scope and uncertainty; a confidence label never repairs an unsupported claim. Fix, qualify or drop what fails, recheck the changed claims and the tables and summaries that depend on them, and say in the report what the review changed.
+Before delivering a report, an audit, or a new or changed conclusion, comparison or computed figure, give a fresh reviewer, a sub-agent that did not draft it, the draft and the source material needed to check it: interpretation is where unsupported claims slip in. It checks each conclusion and figure against its source, recomputes the calculations, looks for evidence against the main conclusions, and finds contradictions between the report, its tables and the competitor pages. Without sub-agents, do this check yourself and say it was not independent. Check that each comparison meets its stated basis and that every summary, At a glance and the conversation included, keeps the evidence's scope and uncertainty; a confidence label never repairs an unsupported claim. Fix, qualify or drop what fails, recheck the changed claims and the tables and summaries that depend on them, and say in the report what the review changed.
+
+A capture that only records one sourced fact where it belongs, such as a competitor's new list price quoted from its pricing page onto its page, needs no reviewer: check the fact against its source and read the page back.
 
 ## Write and keep it true
 

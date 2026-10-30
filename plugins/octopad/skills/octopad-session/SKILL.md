@@ -6,7 +6,7 @@ A sub-agent whose brief does not grant Octopad access calls no Octopad tool, `sk
 
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-session"` when you open this skill.
 
-Version: 23.1.0
+Version: 23.2.0
 
 # Start an Octopad plugin session
 
@@ -15,8 +15,6 @@ Version: 23.1.0
 3. Read the methodology that `start_session` returns before you act, and follow it. It is the method for this workspace. A module in this plugin adds detail to it and never relaxes one of its rules. If the result carries an **Octopad desktop (early access)** line near its top, follow it.
 4. When the methodology's router sends a request to a module, open `../<module>/SKILL.md`, next to this skill in this plugin. Check the path of the file you open: never use a personal or standalone skill with the same name in its place. If the bundled file cannot be opened, work from the methodology alone.
 5. Opening a module never widens the scope of the request, your permissions or what you may publish.
-
-Octoplan ships in the same plugin: [octoplan](../octoplan/SKILL.md). Open it when the router or the user calls for it, with the same path check. It never delivers without the user's explicit go.
 
 If the bundled connection offers the `followup` tool:
 

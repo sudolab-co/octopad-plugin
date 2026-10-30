@@ -4,12 +4,12 @@ description: "Use before recording, updating or cleaning up a decision, fact, ri
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-knowledge-evidence"` when you open this skill.
 
-Version: 2.4.0
+Version: 2.5.0
 
 # Where knowledge is written
 
 - Three branches hold durable workspace context — `knowledge`, `pages` and `files`. Retrieval reaches only the branch a thing went into, so the branch is chosen on purpose and never by habit.
-- What someone outside the current task or conversation will need is an atomic item, written with `knowledge`: a fact others will rely on, a choice that binds work beyond its task, a question no open task will settle, an uncertain harm. In a workspace where the CRM is on, what one customer did or said goes to their CRM record instead. Checks, receipts, approvals, blockers and notes about your own tools stay on the task, or in chat when there is no task; a fixable gap is a task.
+- What someone outside the current task or conversation will need is an atomic item, written with `knowledge`: a fact others will rely on, a choice that binds work beyond its task, a question no open task will settle, an uncertain harm. Checks, receipts, approvals, blockers and notes about your own tools stay on the task, or in chat when there is no task; a fixable gap is a task.
 - Reference that outlives the effort — how a system is built, what a meeting settled — is a page, written with `pages`. Research or analysis for one decision is never kept or offered as an ordinary page: its Decision's rationale cites the decisive sources.
 - Material later sessions need for bounded work goes on a working page of its real task or active stream, including an ongoing stream. Lasting findings move to their proper home (Key Information, a reference page, an open task they inform); propose a home for, or ask about, lasting knowledge that has none. Operational consent, supervision and receipts stay with their work and remain consultable after archiving.
 - When you hand the work over, finish moving lasting findings, then keep each working page that is, as a whole, reference that outlives the effort, and archive the rest. A bounded delivery in an ongoing stream archives only its own document IDs, leaving the stream and other work active. When the work reopens, take the pages it needs out of Archive.
@@ -34,15 +34,7 @@ Version: 2.4.0
 
 # Cleaning up the corpus
 
-When the user asks to audit or clean Key Information:
-
-- List every item of each kind in scope with `knowledge` `list`, through every page it returns, and count them.
-- Work in batches by subject or stream, so a decision is read beside the ones that may replace it.
-- Check each item against its evidence: later decisions, task and stream state, the code that runs, the page that owns the subject. Note per item the action (keep, verify, ask the user, update, answer, defer, mitigate, mark occurred, supersede by a named successor, reverse, delete, move to a task, a page or its right kind), its evidence and why it went stale.
-- Before showing a batch, have a fresh reviewer check every proposed change against its evidence, and a sample of the items kept whose subject the code or a later decision touched; the usual errors are a new text with a wrong or stale detail or a dropped clause, a new decision that repeats one on record, a related decision taken for a replacement or a real successor missed, a reverse of a choice still applied or not built yet, and a new decision, a supersede or a reverse resting on the code rather than on a source of the choice.
-- Show the user the exact batch, each item's current and new text, and apply it only on their yes to that batch. Keep that batch on the cleanup's working page, so any change can be undone.
-- Apply item by item with `expected_updated_at`; a conflict voids that item's change until it is read again and shown again. Then list again, check the counts and statuses, and name any item left unapplied.
-- Report how many items went stale for each cause.
+When the user asks to audit or clean Key Information, read [Cleaning up the corpus](references/corpus-cleanup.md) before you list the first item: it holds the whole procedure, from the count to the batch the user approves.
 
 # Tagging what you create
 
@@ -59,11 +51,11 @@ When the user asks to audit or clean Key Information:
 - There is no one right way to read a corpus — all of it, its summaries, a search — so fit the method to what the claim has to hold up.
 - **Building a complete set:** settle each doubtful item with one check aimed at that item alone: three doubtful items are three checks, neither a read of everything nor a shrug.
 - **A claim about content** — whether a page still says X, whether Y appears at all — is settled by `search`ing the text and quoting the passages that match, never from the directory.
-- **A compound question** — every page about X that mentions Y — takes the directory for X, a `search` for Y inside that set, and a full read reserved for the one item the search leaves undecided.
+- **A compound question,** such as every page about X that mentions Y, takes the directory for X, then a `search` for Y: a hit inside that set proves its page, while a page of the set the search did not return stays doubtful until one check aimed at it settles it, or the answer says it covers only what was checked.
 - **Quoting, rewriting or editing** — pull the whole page with `pages(action:"get")`, and only a page the steps above have already named; reading in full stands in neither for building the set nor for proving the claim.
-- **Nothing found is not proof that nothing exists.** Widen the terms and try again, then rerun `search` with `include_archived`, or open the candidates you did identify; only a search that has really been run over the text itself can rule anything out.
+- **Nothing found is not proof that nothing exists.** Widen the terms and try again, then rerun `search` with `include_archived`, or open the candidates you did identify. A search proves what it finds, never that nothing else matches: its results are ranked and capped, sometimes below the limit you asked for. Claim none or every only from a complete inventory of the scope with each item it leaves doubtful checked; otherwise say what the answer covers.
 - Low confidence means the claim is not yet proven: sharpen the query, or open the one weak hit and settle it. It is not a licence to work through the pages one by one.
-- Reuse what `build_context` returned without redundant retrieval, except when a consumed source must be revalidated after composition under its owner's freshness contract, or changed evidence makes that snapshot uncertain. Recheck the relevant internal identity, content and revision before the dependent write; this does not authorize a new external investigation or wider scope.
+- Reuse what `build_context` returned instead of fetching it again. Read a source again only when its owning skill requires it fresh before a write (a spec's revision before you edit the spec, for instance) or when something learned since makes the snapshot doubtful; then recheck that item's identity, content and revision before the write that depends on it. This never widens the scope or opens a new outside investigation.
 
 # When two sources disagree
 

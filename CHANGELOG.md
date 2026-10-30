@@ -1,5 +1,20 @@
 # Changelog
 
+## 23.2.0 - Unreleased
+
+Ship this version with 23.1.0 and kernel methodology 2.24.0. Each module keeps in its main file what every opening needs; a procedure only some cases use moves to a reference file the module names, with the moment to read it. An audit of the modules against Anthropic's skill-creator found the rest of the changes below.
+
+- `octopad-crm` 1.5.1: octobot runs, outreach sending, the distill and imports move to four references, so a lookup or a note on a customer no longer loads them: 2,904 words before, 1,523 now. The outreach privacy gate no longer lists the facts it withholds, which were one sync adapter's field names: the tool descriptions name them, and the rule against picking prospects through a contact list stays.
+- `manage-product-documentation` 6.10.0: an audit reports gaps and repairs nothing, safe metadata and links included, unless the request asks for repairs; before, it repaired the unambiguous while the other documentation modules kept an audit read-only. A rejected or abandoned idea gets no parked line, as the parking rule already said. The artifacts' definitions live once, in the documentation model.
+- `octopad-planning-and-work-design` 5.3.0: a preparation task exists only for a real prerequisite; an order the user wants without one stays their call on work order, kept in their Notepad. Before, the AI added a preparation task to hold any chosen order. Choosing between agent delivery and direct collaboration moves to a reference, read when agents could usefully deliver or the delivery mode changes. Lines the methodology already states are cut, and the launch example gives the day it was asked.
+- `octopad-knowledge-evidence` 2.5.0: a search proves what it finds, never that nothing else matches; a claim of none or every needs a complete inventory of the scope with each doubtful item checked, and a page of a set the search did not return stays doubtful until one check settles it. Before, a directory read plus a search could be taken as a complete answer. Corpus cleanup moves to a reference.
+- `manage-product-marketing` 2.2.0: what one customer said goes to their CRM record where the CRM is on; Market pages keep the words that speak for the market. Before, the module sent every customer's words to Market pages.
+- `manage-market-intelligence` 3.3.0: a capture of one sourced fact gets a source check and a readback; a report, an audit or a new conclusion, comparison or computed figure keeps the fresh reviewer. Before, every delivery needed one. The Market Overview's structure moves to a reference.
+- `manage-activity-context` 7.2.0: the adaptation reference is read when who acts, benefits, funds or owns is unclear, the activity sells nothing, or the change creates a page or crosses scopes, instead of at every decision. The exact-wording rule reads as two cases with an example. The Company Overview cut-over steps move to a reference.
+- `pmm-check` 1.1.1: a worked example of a finding on a locked, unsupported claim.
+- `octoplan` 8.6.1: the review floors read as one line per case, with no rule changed.
+- `octopad-notepad` 5.2.1 and `octopad-session` 23.2.0: lines the methodology or the `notepad` tool already state are cut.
+
 ## 23.1.0 - Unreleased
 
 Ship this version before the Octopad server release with kernel methodology 2.24.0, which leaves to these modules the rules listed below.

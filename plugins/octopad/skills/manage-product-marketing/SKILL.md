@@ -4,7 +4,7 @@ description: "Use when a target customer is chosen or narrowed, an offer, promis
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "manage-product-marketing"` when you open this skill.
 
-Version: 2.1.0
+Version: 2.2.0
 
 # Maintain each offer's marketing
 
@@ -24,7 +24,7 @@ The Marketing section answers these questions as material arrives, not as mandat
 
 Three keys of the Product Overview's At a glance block are yours: `audience_and_need`, `promise` and `conditions`, the terms. Each holds `missing`, `not applicable` or an answer, essential first; a provisional answer says so. Terms state a model and a status, and a number only with its essential conditions. Proof, tone and channels stay on the page.
 
-Customer words stay on Market pages as short expressions with source and date, and the Marketing section links to them; a count ("4 of 6 interviewed customers") needs that many distinct sources.
+What one customer said goes to their CRM record where the CRM is on. Words that speak for the market, such as a phrase several customers use or an objection that recurs, stay on Market pages as short expressions with source and date, and the Marketing section links to them; a count ("4 of 6 interviewed customers") needs that many distinct sources.
 
 ## Separate capture from choice
 

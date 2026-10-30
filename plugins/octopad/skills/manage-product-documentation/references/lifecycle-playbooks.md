@@ -31,7 +31,7 @@ Use before creating structure for a product that already has code, docs, or Octo
 
 Classify impact continuously without making the conversation feel like a form, and make the smallest useful update for the class:
 
-- `no impact`: a rejected or abandoned idea, or work outside product documentation. Create no documentation artifact beyond a parked idea line.
+- `no impact`: a rejected or abandoned idea, or work outside product documentation. Create no documentation artifact, not even a parked idea line.
 - `existing-system change`: idea, explored, accepted, or later behavior inside a known system boundary. Update the evolving Product Spec, an unaccepted idea in Open questions and accepted intent in its section, and link the existing execution work.
 - `new system`: substantive design establishing a new coherent capability or responsibility, beginning at `idea`. Add its Product Map line and create its Product Spec with an `[idea]` entry, under SKILL.md's substantive-design rule.
 - `technical-only`: implementation or operational work with no product behavior change. Update architecture or a targeted Engineering Reference only when the change creates durable, non-derivable knowledge.
@@ -79,6 +79,8 @@ Run one full pass per release, when changes actually reach users. It must end wi
 If repository policy explicitly proves that merge equals release, record that policy as evidence. Otherwise keep merge and release separate.
 
 ## Maintenance and audit
+
+An audit alone changes no page: steps 3 to 7 then list what they would change, applied only once the request asks for repairs. Step 8 still files the debt, as the methodology files any gap found.
 
 1. Verify the Product Map points to one current spec per significant system and, when architecture exists, one canonical Architecture Map.
 2. Check links, ownership metadata, and, where a page carries them, lifecycle labels, source revisions and last-verification times.

@@ -4,7 +4,7 @@ description: "Use where orientation shows the user's personal Notepad: when a re
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-notepad"` when you open this skill.
 
-Version: 5.2.0
+Version: 5.2.1
 
 # Whose memory
 
@@ -87,7 +87,7 @@ Dates use the user's known time zone; if none is known, use UTC and say so. Dail
 # When to read
 
 - Sub-agents and task workers skip this routine and hand unrecorded context to their parent. An explicit Notepad request still applies to them.
-- In a main session, before answering, even a precise request, compare the Notepad's reminders with the subject; at the opening, also check whether the event a reminder waits on has happened (see Reminders). The session brief carries the Notepad; if it shows only an excerpt, read the whole document with `notepad(action: "get")` first.
+- The methodology says when a main session checks the reminders; Reminders below says how. The session brief carries the Notepad; if it shows only an excerpt, read the whole document with `notepad(action: "get")` first.
 - Read it again when the user opens a genuinely new subject or returns after a break, to see other sessions' changes; not at every message on the same subject.
 - A session opening or a what-next question alone does not require a Notepad entry.
 - If it cannot be read, say reminders could not be checked; never claim there are none, and continue independent work.
@@ -178,7 +178,7 @@ The save must atomically keep the previous document in private history and repla
 
 - Engaged work belongs in a Task, confirmed durable information in Knowledge, and a working rule the user confirms in Knowledge. A private note is not permission to disclose it: promote only when the user's request already authorizes that audience and content, otherwise ask. Read the destination back and check it holds the entry's substance before retiring the entry; a link to an incomplete destination is not enough.
 - Remove an entry from the active document only with verified evidence or the user's explicit decision; the save's reason names the entry, the outcome and any destination. A partly settled thread keeps its remainder and a verified next step.
-- Each save archives the previous text. History retains the newest snapshots within 10 MB and 1,000 versions, always keeping at least 20, and each save prunes beyond that. Use `list_history` or `search_history`, then `get_history`. If history is unavailable, keep the entry rather than remove it.
+- Each save archives the previous text, kept as long as the `notepad` tool states. Use `list_history` or `search_history`, then `get_history`. If history is unavailable, keep the entry rather than remove it.
 - Only the owner can purge their history, with the `notepad_purge` tool, which deletes it for good: only at the user's request, after confirming with them.
 - To recover context, read the relevant version, check what is still true, and add only the useful part through the same conditional save. Never restore a whole old document over newer work to recover one entry.
 

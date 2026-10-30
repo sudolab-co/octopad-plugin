@@ -1,7 +1,7 @@
 ---
 name: manage-activity-context
 metadata:
-  version: "7.1.0"
+  version: "7.2.0"
 description: "Use when the user explains or revises why an activity or project exists, whom it serves, its relationships, strategy or constraints, when people or organizations join it, or when its Activity Overview, or an untyped Company Overview, no longer matches. Not for market evidence (manage-market-intelligence) or an offer's marketing (manage-product-marketing)."
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "manage-activity-context"` when you open this skill.
@@ -12,13 +12,13 @@ Answer: what are we trying to accomplish, for whom, through what activity, and u
 
 Own durable activity context and the Activity Overview. Product behavior belongs to `manage-product-documentation`; customer/market positioning and commercial messaging to `manage-product-marketing`; external market evidence to `manage-market-intelligence`. Software needs product documentation whether sold, donated, experimental or used internally. Goals, streams and tasks retain execution state. Do not create commercial documentation merely because something is software.
 
-Read [adaptation](references/adaptation.md) before any context, ownership or scope decision. For changes of participants, purpose, organization or use, also read [evolution](references/evolution.md). Reading this entrypoint does not replace reading these resources. They are decision aids, not forms to fill.
+Never ask for a fact just to complete a profile: ask only if the next action could plausibly go wrong without it. Read [adaptation](references/adaptation.md) before deciding where context belongs whenever who acts, who benefits, who funds or who owns is unclear, the activity is not a business selling an offer, or the change would create a page or touch more than one scope. For changes of participants, purpose, organization or use, read [evolution](references/evolution.md). Both are decision aids, not forms to fill.
 
 # Establish the minimum context
 
 1. Interpret the request: discussion and audit are read-only; capture, refresh or synchronization permits only the requested mutations. State material scope assumptions. If several unrelated ideas fit, ask one routing question before writing.
 
-   Before any write: under approved exact wording, the complete result of the write, computed from the current page and the operation, must match the approved result exactly, separators and whitespace included, and an attribution it lacks needs the user's permission for its minimal form unless authorized, existing metadata can carry it; under authorized free drafting, include faithful, minimal provenance within the authorized scope and audience without asking. A later repair never authorizes an earlier out-of-scope write.
+   Before any write, know which case you are in. When the user approved exact wording, the page after your write must read exactly as approved, separators and whitespace included: compute the result from the current page and your operation, and compare. Add no attribution the approval lacks: put it in existing metadata you may already write, or ask the user to approve its minimal form. If the user approved "Independent bakeries in Lyon" as `for_whom`, write exactly that, not "Independent bakeries in Lyon (per the founder, March)". When the user let you draft, add faithful, minimal provenance within the scope and audience they authorized, without asking. A later repair never authorizes an earlier out-of-scope write.
 
 2. Read the Activity Overview of the affected scope, with its At a glance block, and relevant context owners, plus available onboarding facts, before deciding the change. A listing of page titles is not this read; reading the page does not authorize changing it. Search before declaring an owner absent. Inaccessible is not absent. Reuse sufficiently clear facts; ask only about a gap that changes the next action.
 3. Separate the actor, activity, project, built solution, beneficiaries and contribution to value. Distinguish funding from selling that solution. Identify only the relationships needed for this request; do not create a relationship registry.
@@ -43,9 +43,7 @@ Each holds `missing`, `not applicable` or an answer the page supports, essential
 
 An organization whose sessions still open on an untyped Company Overview switches to the composed Overview when that page becomes its Activity Overview. Offer the cut-over when you work on the organization's context. Only an organization admin's AI can carry it out, since retyping an organization page is admin-only; a member's AI says so and creates no organization Activity Overview beside it.
 
-1. Create the Product Overview of each offer the page describes, and the Market Overview when market content exists, with their At a glance blocks, through their skills. Their target, price and difference come only from what the page states; anything you infer stays proposed.
-2. Type the old page itself as the Activity Overview, with its At a glance block in the same call.
-3. With the user's agreement, move its offer, audience and money sections into the Marketing section of the Product Overview they describe.
+Before carrying it out, read [the cut-over steps](references/company-overview-cut-over.md).
 
 # Scope, access and durable change
 
