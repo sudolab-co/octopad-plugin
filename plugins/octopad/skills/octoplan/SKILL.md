@@ -1,12 +1,12 @@
 ---
 name: octoplan
-description: Use when prepared work may benefit from delivery by agents, even without the name Octoplan, or when the user invokes, plans, resumes or supervises an Octoplan. Qualify the route before offering delivery; opening this skill never authorizes execution. Generic stream preparation belongs to octopad-planning-and-work-design.
+description: "Use when prepared work could benefit from delivery by agents, when the user wants agents to carry a stream to its outcome, before proposing how agents should organize or deliver it, and when the user names, resumes or supervises an Octoplan. Opening it authorizes no delivery. Stream preparation itself: octopad-planning-and-work-design."
 ---
 A worker, reviewer or planning helper without Octopad access in its brief calls no Octopad tool, `skill_opened` included: it works from the evidence given and returns missing sources and proposed record changes to its delegating session.
 
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octoplan"` when you open this skill.
 
-Version: 8.5.0
+Version: 8.6.0
 
 # Octoplan
 

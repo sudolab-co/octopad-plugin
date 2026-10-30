@@ -1,10 +1,10 @@
 ---
 name: manage-product-marketing
-description: Keep, in the Marketing section of each offer's Product Overview, whom the offer addresses and their need, what it promises, on which terms, and what its audience says and resists. Use when a target is chosen or narrowed, an offer is described, customer copy is written or reviewed, a price is set, a launch is prepared, or an objection or a channel's result comes up. For software, services, physical products, associations and projects with no sale. Not for activity context, market evidence, product behavior or publication.
+description: "Use when a target customer is chosen or narrowed, an offer, promise, price or tier is set, a launch is prepared, customer-facing copy is written or reviewed, or an objection or a channel's result comes up; it keeps those choices in the Product Overview's Marketing section. Drafting method: pmm-check. Not for product behavior or market evidence."
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "manage-product-marketing"` when you open this skill.
 
-Version: 2.0.0
+Version: 2.1.0
 
 # Maintain each offer's marketing
 

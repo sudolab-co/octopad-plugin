@@ -1,10 +1,10 @@
 ---
 name: octopad-crm
-description: "How a workspace's CRM is read, written and kept true: customer contacts, companies and deals, their cards, briefs, entries and signals, who owns a value, what a connected AI may do for its member, the background agents (octobots) and their daily budget, approved outreach drafts sent with the user's own mail tool, the distill that writes contact cards, and how another system's records come in. Use in a workspace where the CRM is on, or when the user wants it on, whenever a customer's record is looked up, written, searched or linked to work, something that happened with a customer is recorded, an octobot run is launched or followed, drafts, proposals or quarantined identities wait for a decision, an approved draft is sent or a reply comes back, the distill's settings are read or changed, or records are imported or synced. Not for tracking competitors or market-wide customer voice."
+description: "Use where the workspace CRM is on, or the user wants it on, before looking up, writing or linking a customer's contact, company or deal, recording what a customer did or said, running or following an octobot, deciding on drafts, proposals or quarantined identities, sending an approved draft, reading or changing the distill, or importing or syncing records. Not for competitors or market-wide voice (manage-market-intelligence)."
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-crm"` when you open this skill.
 
-Version: 1.4.0
+Version: 1.5.0
 
 # Before anything
 

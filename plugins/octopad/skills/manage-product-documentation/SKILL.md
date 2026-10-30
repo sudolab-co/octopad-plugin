@@ -1,10 +1,10 @@
 ---
 name: manage-product-documentation
-description: Keep one or more products' documentation true to the work as it happens. In a multi-product workspace, establish the affected product scope before choosing a page; the first matching document does not establish scope. Load it when product behavior is explored, assessed, decided, implemented, merged, released, rolled back, or retired; for product ideas, specs, contracts, architecture, user documentation, release notes, and Product Facts; and before claiming no product or documentation impact. It owns product truth and passes claim-safe facts to product marketing. A change confined to the AI's own working instructions, internal notes, or pure marketing does not need it, but a skill or AI behavior a product ships is product behavior; build tooling still needs an impact check when durable architecture or release behavior moves.
+description: "Use before judging or changing what a product does, when its behavior is explored, decided, shipped, rolled back or retired, when asked what it does today or whether a spec matches the code, before writing up a PR or release, and before claiming no documentation impact. A shipped skill is product behavior. Not for internal notes or marketing copy (manage-product-marketing)."
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "manage-product-documentation"` when you open this skill.
 
-Version: 6.8.0
+Version: 6.9.0
 
 # Manage Product Documentation
 
