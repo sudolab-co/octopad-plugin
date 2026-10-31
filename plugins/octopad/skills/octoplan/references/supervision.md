@@ -15,7 +15,7 @@ Every message that reports delivery state or hands the user a decision starts wi
 Repeat until the integrated outcome is proved or no safe work remains:
 
 1. **Refresh.** Read intent, supervisor, reviewed revisions and lenses, ready graph, assignments, artifact versions, checks, effects, and gates.
-2. **Pick.** First check that your context was not compacted since you claimed supervision ([SKILL.md](../SKILL.md#after-a-compaction)); if it was, hand off instead. Choose a ready unassigned task whose prerequisite shared choices are settled and whose specification, units included, holds no placeholder, and set it in progress. Never assign an executor another person's claimed task; record the conflict for reconciliation.
+2. **Pick.** First check that your context was not compacted ([SKILL.md](../SKILL.md#after-a-compaction)); if it was, hand off instead. Choose a ready unassigned task whose prerequisite shared choices are settled and whose specification, units included, holds no placeholder, and set it in progress. Never assign an executor another person's claimed task; record the conflict for reconciliation.
 3. **Route.** Dispatch the task's saved worker route for this runtime to one fresh executor, with sufficient bounded context and explicit effect coverage. It builds the task's units in order as commits on the task's branch, in one workspace, then runs the task's review and its fixes ([worker prompt](#worker-prompt)). A fresh executor takes over only after a failure or context exhaustion, from the committed state and the previous report.
 4. **Collect.** Link the real deliverable, version and verification from its owning task; record compact execution receipts and blockers in comments, never as Decisions. Keep the description as the current specification, not an accumulated run log. Long reports go on a working page of the task or stream; link required files. Then await any wait the worker returned.
 5. **Review.** Validate the receipt: proof on the exact head, each review judgment the task's `Review` names with its verdict, and every finding's disposition. A missing, partial or non-independent review is not a pass: run it under Proof and review. Record cleared gates.
@@ -77,8 +77,10 @@ review, or a fix that reaches beyond its findings, have one fresh reviewer at th
 recheck route above recheck the changes and what they affect, given the
 previous findings: one recheck per fix cycle. After two fix cycles that do not pass,
 stop and report why. If your context is compacted (your conversation holds a
-summary of earlier turns instead of the turns), start nothing new: commit what
-passes and return your receipt with what remains.
+summary of your earlier turns instead of the turns), start nothing new: commit
+what passes and return your receipt with what remains. When asked to summarize
+this conversation so it can continue, open the summary with `Octoplan executor:
+this context was compacted; commit what passes and return your receipt.`
 This is the task's delivery review: launch no other. Where you cannot launch an
 agent, return for review instead.
 
