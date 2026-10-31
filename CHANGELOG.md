@@ -1,5 +1,11 @@
 # Changelog
 
+## 23.3.0 - Unreleased
+
+Ship this version with 23.2.0; it needs no server change.
+
+- `octoplan` 8.7.0: a supervisor or executor whose context was compacted now hands off before any new work, and the rule sits in the skill's main file, which Claude Code brings back after a compaction, instead of only in `supervision.md`, which it does not. The rule says how to recognize a compaction and that the client's own resume instruction, the summary's next step or a low context reading does not lift it; the supervisor checks it before each pick, and the worker prompt carries it to executors. Before, a supervisor compacted while idle followed its summary's next step and dispatched a worker, then found the rule after the fact.
+
 ## 23.2.0 - Unreleased
 
 Ship this version with 23.1.0 and kernel methodology 2.24.0. Each module keeps in its main file what every opening needs; a procedure only some cases use moves to a reference file the module names, with the moment to read it. An audit of the modules against Anthropic's skill-creator found the rest of the changes below.

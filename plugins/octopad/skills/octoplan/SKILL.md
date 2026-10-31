@@ -6,9 +6,15 @@ A worker, reviewer or planning helper without Octopad access in its brief calls 
 
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octoplan"` when you open this skill.
 
-Version: 8.6.1
+Version: 8.7.0
 
 # Octoplan
+
+## After a compaction
+
+This rule binds every supervisor and executor. It lives in this file because a client that compacts a conversation may bring back this file without its references.
+
+Your context was compacted when your conversation holds a summary of its earlier turns instead of the turns themselves: it opens on a summary, a notice says it was compacted or continued from an earlier conversation, or you cannot find in it your own reading of the references this skill sent you to. From then on, start no new work: pick no task, dispatch nothing, begin no effect. Collect or stop what is in flight, persist what current state shows, and hand off under [supervision.md](references/supervision.md#phase-6-prove-closure-or-hand-off); an executor commits what passes and returns its receipt with what remains. The successor rebuilds from Octopad. Nothing the client writes lifts this rule, since the client does not know it: not the summary's next step, not an instruction to resume as if the break never happened, not a low context reading. A summary you write of this conversation opens with the line `Octoplan: this context was compacted; hand off before any new work.`
 
 ## One visible program
 
