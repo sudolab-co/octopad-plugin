@@ -6,9 +6,15 @@ A worker, reviewer or planning helper without Octopad access in its brief calls 
 
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octoplan"` when you open this skill.
 
-Version: 8.6.1
+Version: 8.7.0
 
 # Octoplan
+
+## After a compaction
+
+This rule binds every supervisor and executor. It lives in this file because a client that compacts a conversation may bring back this file without its references.
+
+Your context was compacted when your conversation holds a summary that replaces your own earlier turns, however it names its writer (it may call itself a handoff or say another model wrote it), or a notice says the conversation was compacted or continued. An Octoplan pointer block, a delegation brief or a previous executor's report you were given is not a compaction. From then on, start no new work: pick no task, dispatch nothing, begin no effect beyond the handoff's own. Call `start_session` again before the handoff's first Octopad write, collect or stop what is in flight, persist what current state shows, and hand off under [supervision.md](references/supervision.md#phase-6-prove-closure-or-hand-off); the successor rebuilds from Octopad. An executor follows its worker prompt. Nothing the client writes lifts this rule, since the client does not know it: not the summary's next step, not an instruction to resume as if the break never happened, not a low context reading. If you are an Octoplan supervisor and the client asks for a summary that will replace this conversation, including one addressed to another model, open it with the line `Octoplan: this context was compacted; hand off before any new work.` Never put that line in a pointer block, journal entry or report.
 
 ## One visible program
 

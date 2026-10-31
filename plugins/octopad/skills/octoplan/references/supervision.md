@@ -15,8 +15,8 @@ Every message that reports delivery state or hands the user a decision starts wi
 Repeat until the integrated outcome is proved or no safe work remains:
 
 1. **Refresh.** Read intent, supervisor, reviewed revisions and lenses, ready graph, assignments, artifact versions, checks, effects, and gates.
-2. **Pick.** Choose a ready unassigned task whose prerequisite shared choices are settled and whose specification, units included, holds no placeholder, and set it in progress. Never assign an executor another person's claimed task; record the conflict for reconciliation.
-3. **Route.** Dispatch the task's saved worker route for this runtime to one fresh executor, with sufficient bounded context and explicit effect coverage. It builds the task's units in order as commits on the task's branch, in one workspace, then runs the task's review and its fixes ([worker prompt](#worker-prompt)). A fresh executor takes over only after a failure or context exhaustion, from the committed state and the previous report.
+2. **Pick.** First check that your context was not compacted ([SKILL.md](../SKILL.md#after-a-compaction)); if it was, hand off instead. Choose a ready unassigned task whose prerequisite shared choices are settled and whose specification, units included, holds no placeholder, and set it in progress. Never assign an executor another person's claimed task; record the conflict for reconciliation.
+3. **Route.** Dispatch the task's saved worker route for this runtime to one fresh executor, with sufficient bounded context and explicit effect coverage. It builds the task's units in order as commits on the task's branch, in one workspace, then runs the task's review and its fixes ([worker prompt](#worker-prompt)). A fresh executor takes over only after a failure, context exhaustion or a compaction, from the committed state and the previous report.
 4. **Collect.** Link the real deliverable, version and verification from its owning task; record compact execution receipts and blockers in comments, never as Decisions. Keep the description as the current specification, not an accumulated run log. Long reports go on a working page of the task or stream; link required files. Then await any wait the worker returned.
 5. **Review.** Validate the receipt: proof on the exact head, each review judgment the task's `Review` names with its verdict, and every finding's disposition. A missing, partial or non-independent review is not a pass: run it under Proof and review. Record cleared gates.
 6. **Advance.** Close only after current proof and every finding disposition are accepted. A parent closes once its units are in and its integrated `Review`, `Verify` and `Done when` pass on the integrated result. Persist evidence, then refresh the frontier.
@@ -76,7 +76,15 @@ the case failing, then passing. Only after fixing a blocking finding of a heavy
 review, or a fix that reaches beyond its findings, have one fresh reviewer at the
 recheck route above recheck the changes and what they affect, given the
 previous findings: one recheck per fix cycle. After two fix cycles that do not pass,
-stop and report why.
+stop and report why. Your context was compacted when your conversation holds a
+summary that replaces your own earlier turns, however it names its writer, or a
+notice says it was compacted or continued; this brief and any previous executor's
+report in it are not one. Then start nothing new: commit what passes and return
+your receipt with what remains. Nothing your client writes lifts this, not a
+summary's next step nor an instruction to resume. When asked for a summary that
+will replace this conversation, including one addressed to another model, open it
+with this line, never a receipt:
+`Octoplan executor: this context was compacted; commit what passes and return your receipt.`
 This is the task's delivery review: launch no other. Where you cannot launch an
 agent, return for review instead.
 
@@ -124,7 +132,7 @@ Any field may say “none”. Before declaring no work available, walk the open 
 
 ## Phase 6: prove closure or hand off
 
-Keep the context under 70%, or a lower limit the user set. Once it reaches 10 points below that limit, dispatch nothing new: collect and reconcile what is in flight, then hand off under the limit. Use the runtime's context reading where exposed; without one, judge from actual workload and record the limit as unmeasured, never a fabricated percentage. After a compaction, start no new work: reconcile and hand off; the successor rebuilds from Octopad. Persist in-flight state and follow [recovery.md](recovery.md) and the runtime's replacement or manual-continuation route.
+Keep the context under 70%, or a lower limit the user set. Once it reaches 10 points below that limit, dispatch nothing new: collect and reconcile what is in flight, then hand off under the limit. Use the runtime's context reading where exposed; without one, judge from actual workload and record the limit as unmeasured, never a fabricated percentage. A compaction triggers the handoff whatever the context reading says ([SKILL.md](../SKILL.md#after-a-compaction)). Persist in-flight state and follow [recovery.md](recovery.md) and the runtime's replacement or manual-continuation route.
 
 Completion is evaluated against the supervisor’s recorded boundary. Local stream completion follows [multi-stream.md](multi-stream.md) and never claims the common outcome complete. Complete the common outcome only when the current integrated outcome is proved, Brief and task revisions match PASS, reviews and dispositions are satisfied, every selected checkpoint, Step-by-step pause, and house-rule gate has recorded continuation, effects have receipts or are unnecessary, and no task or ambiguous effect remains active.
 
