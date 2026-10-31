@@ -1,5 +1,11 @@
 # Changelog
 
+## 23.4.0 - Unreleased
+
+Ship this version with 23.3.0; it needs no server change.
+
+- `octoplan` 8.8.0: the progress line under the Delivery banner reads in everyday words, such as "Progress — 2 of 51 tasks done, 1 in progress, 48 waiting · waiting for your review of the two pilots", counted from current task status. Before, it read "Position — 2/0/51 tasks · phase · countable outcome unit · decisive metric", which users could not decode and which went stale when counted from memory; the outcome unit and kill question stay in the records and the consequence handoff.
+
 ## 23.3.0 - Unreleased
 
 Ship this version with 23.2.0; it needs no server change.
