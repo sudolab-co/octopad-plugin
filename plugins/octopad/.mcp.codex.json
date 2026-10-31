@@ -6,6 +6,9 @@
       "tools": {
         "start_session": {
           "output_token_limit": 15000
+        },
+        "build_context": {
+          "output_token_limit": 25000
         }
       }
     }

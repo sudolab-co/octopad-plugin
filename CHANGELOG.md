@@ -1,5 +1,11 @@
 # Changelog
 
+## 23.5.0 - Unreleased
+
+Ship this version with 23.4.0; it needs no server change.
+
+- Codex gives `build_context` a 25,000-token MCP output budget, matching its 100,000-character early-access result; before, Codex kept 10,000 tokens and dropped the middle of a larger briefing. In Codex Code Mode, `octopad-session` 23.5.0 asks for a 25,000-token emission budget and a separate cell for each `start_session` and `build_context` read, keeping the saved-result recovery if output is truncated.
+
 ## 23.4.0 - Unreleased
 
 Ship this version with 23.3.0; it needs no server change.
