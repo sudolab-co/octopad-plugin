@@ -79,8 +79,8 @@ previous findings: one recheck per fix cycle. After two fix cycles that do not p
 stop and report why. If your context is compacted (your conversation holds a
 summary of your earlier turns instead of the turns), start nothing new: commit
 what passes and return your receipt with what remains. When asked to summarize
-this conversation so it can continue, open the summary with `Octoplan executor:
-this context was compacted; commit what passes and return your receipt.`
+this conversation so it can continue, open the summary with this line, never a receipt:
+`Octoplan executor: this context was compacted; commit what passes and return your receipt.`
 This is the task's delivery review: launch no other. Where you cannot launch an
 agent, return for review instead.
 
