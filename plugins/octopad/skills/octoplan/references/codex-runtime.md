@@ -61,6 +61,8 @@ At a real wait or finish, report the evidence under common supervision. Do not r
 
 ## Hand off without overlapping owners
 
+How Codex words its compaction summary, and whether it brings this skill's main file back afterwards, is unmeasured. Where it does not, the compaction rule reaches a compacted supervisor only through the line its summary opens with.
+
 At a natural boundary, or after a compaction ([SKILL.md](../SKILL.md#after-a-compaction)), persist in-flight facts, reconcile children and uncertain effects, and record pending retirement under [recovery](recovery.md). Use automatic replacement only when an authorized native mechanism can prove the predecessor stopped before successor dispatch. Without that mechanism, provide the manual successor pointer and end; the receiver proves cessation under [recovery](recovery.md) and claims ownership before work. Preserve valid authority and pending user decisions; never wake the retired owner.
 
 After launch, replacement or a status request, name the scope, accessible chat, observed state, latest receipt and next action or wait.
