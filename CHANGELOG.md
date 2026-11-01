@@ -1,5 +1,11 @@
 # Changelog
 
+## 23.10.0 - Unreleased
+
+Ship after 23.9.0, coordinated with the companion Summary instruction update. The earlier 23.6.0 reservation did not ship.
+
+- `octopad-notepad` 5.3.0: a readable, known-format owner Notepad with no focus themes gets up to eight themes inferred from actual work, explicitly marked as AI proposals, conditionally saved and used at once with a one-word undo. Unreadable, unknown-format or malformed theme entries are not treated as empty. A Summary writer re-reads its snapshot after saving themes.
+- Theme priority or new-theme doubt gets a proposal and one question; other doubt gets a fact check first. Each theme keeps the person's reason first and at most one dated AI change reason, replaced on the next change. Undo preserves newer and unrelated edits; themes still change neither shared priorities nor execution authority.
 ## 23.9.0 - Unreleased
 
 Ship after 23.8.0; this change adds no server capability.

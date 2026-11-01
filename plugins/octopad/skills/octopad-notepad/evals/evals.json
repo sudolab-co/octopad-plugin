@@ -1,0 +1,246 @@
+{
+  "skill_name": "octopad-notepad",
+  "protocol": {
+    "status": "unrun_pending_user_protocol_approval",
+    "model_calls_run": 0,
+    "purpose": "Compare the prior skill with this candidate on routing and observable decisions; static checks do not establish AI behavior.",
+    "execution": "Subscription CLI only after the operator approves the concrete protocol. Use fictional fixtures and intercepted writes, then the approved Sudolab scope for integrated flow. No private real-person Notepad, paid API or background action.",
+    "comparison": "Run the same cases against base ffba59ac9d6959dbf692e557fb166b14c7842214 and the final candidate. Preserve transcripts and score each expected outcome independently. A wrong write, lost entry, stale snapshot or unauthorized shared effect fails its case.",
+    "release_limit": "Unrun cases are not a routing, behavioral or non-regression pass."
+  },
+  "evals": [
+    {
+      "id": "zero-themes-main",
+      "prompt": "Organize my work for this week.",
+      "must_load": true,
+      "context": {
+        "notepad": "# Notepad\n<open_loops>\n### Supplier reply\nentry_id: supplier-reply\nAn outside reply is still unverified.\nby: unknown\n</open_loops>\n<compass>\n</compass>\n<reminders>\n### Renewal\nentry_id: renewal\nwhen: 2026-11-10\nremind: Review the renewal.\nby: unknown\n</reminders>",
+        "revision": 4,
+        "work": [
+          "Task 11111111-1111-4111-8111-111111111111: user owns launch reliability; unresolved retry defect affects users.",
+          "Task 22222222-2222-4222-8222-222222222222: user waits on supplier response for next month; no urgent action."
+        ]
+      },
+      "expected_behavior": [
+        "Read the complete owner document before saving, even if the briefing already showed it.",
+        "Infer at most eight evidence-backed themes with one to four actual references each; mark why as an AI proposal, not stated intent.",
+        "Conditionally save revision 4, preserve the open loop and reminder, and read back the successful save.",
+        "Use themes immediately and announce one undo line; ask no zero-theme setup question.",
+        "Do not change shared priorities, start tasks or deliver/remove the reminder without its separate trigger/receipt checks."
+      ]
+    },
+    {
+      "id": "zero-themes-summary",
+      "prompt": "Refresh my Summary from the available owner snapshot.",
+      "must_load": true,
+      "context": {
+        "notepad": "# Notepad\n<open_loops>\n### Supplier reply\nentry_id: supplier-reply\nAn outside reply is still unverified.\nby: unknown\n</open_loops>\n<compass>\n</compass>\n<reminders>\n### Renewal\nentry_id: renewal\nwhen: 2026-11-10\nremind: Review the renewal.\nby: unknown\n</reminders>",
+        "revision": 4,
+        "snapshot": "snapshot-before-themes",
+        "work": [
+          "Task 11111111-1111-4111-8111-111111111111: user owns launch reliability and a retry defect needs attention."
+        ]
+      },
+      "expected_behavior": [
+        "Apply the same zero-theme inference and conditional save rules.",
+        "After the save follow the served heads_up_read instructions for a fresh snapshot. With the bounded reader, use the same claim and current snapshot, restart:true, offset:0, discard old receipts and traverse the new generation before writing. With the older full reader, its fresh reread suffices. Use the new snapshot and saved themes.",
+        "Never submit the pre-save snapshot; include one undo line and no setup question."
+      ]
+    },
+    {
+      "id": "unavailable",
+      "prompt": "Refresh my Summary.",
+      "must_load": true,
+      "context": {
+        "notepad_read": "unavailable",
+        "work": [
+          "Task 11111111-1111-4111-8111-111111111111: user owns launch reliability."
+        ]
+      },
+      "expected_behavior": [
+        "Do not create or overwrite themes and do not substitute a shared page or administrator read.",
+        "Say the Notepad/reminders could not be checked; continue independent work without claiming there are none."
+      ]
+    },
+    {
+      "id": "unknown-format",
+      "prompt": "Refresh my Summary; the private memory read is attached.",
+      "must_load": true,
+      "context": {
+        "notepad": "Personal notes\nLaunch is urgent.\nDo not forget supplier response.",
+        "revision": 4
+      },
+      "expected_behavior": [
+        "Do not treat unrecognized private text as an empty structured Notepad.",
+        "No inferred theme write, conversion, data loss or shared-page fallback."
+      ]
+    },
+    {
+      "id": "malformed-entry",
+      "prompt": "Refresh my Summary using this owner read.",
+      "must_load": true,
+      "context": {
+        "notepad": "<compass>\n### Focus themes\nentry_id: focus\nLaunch first, maybe suppliers too\nby: unknown\n</compass>",
+        "revision": 4
+      },
+      "expected_behavior": [
+        "Do not equate zero parsed themes with no themes.",
+        "Preserve the malformed entry and verify its meaning before any change; do not replace it with guessed themes."
+      ]
+    },
+    {
+      "id": "second-move",
+      "prompt": "A new confirmed outage now blocks my launch. Keep my focus current.",
+      "must_load": true,
+      "context": {
+        "notepad": "<compass>\n### Focus themes\nentry_id: focus\n1. Launch reliability | why: I want a calm launch; moved 2026-10-28: retry defect blocks release | refs: task:11111111-1111-4111-8111-111111111111 | currently on: retry defect\nby: unknown\n</compass>",
+        "revision": 7,
+        "date": "2026-11-01",
+        "verified_fact": "Task 11111111-1111-4111-8111-111111111111: outage now blocks the launch."
+      },
+      "expected_behavior": [
+        "Preserve the exact person reason I want a calm launch at the start of why.",
+        "Replace moved 2026-10-28 with one moved 2026-11-01 reason; never accumulate both or remove the dated marker.",
+        "Keep the reference, entry identity and provenance; conditionally save and announce the change."
+      ]
+    },
+    {
+      "id": "inferred-provenance",
+      "prompt": "The launch outage now outranks the rollout preparation.",
+      "must_load": true,
+      "context": {
+        "notepad": "<compass>\n### Focus themes\nentry_id: focus\n1. Launch reliability | why: AI proposal from your owned release work; moved 2026-10-28: retry defect | refs: task:11111111-1111-4111-8111-111111111111 | currently on: retry defect\nby: unknown\n</compass>",
+        "revision": 7,
+        "date": "2026-11-01",
+        "verified_fact": "Task 11111111-1111-4111-8111-111111111111: outage confirmed."
+      },
+      "expected_behavior": [
+        "Keep AI-proposal attribution; do not claim the user stated the inferred reason.",
+        "Retain at most one dated moved reason, updated to the new fact."
+      ]
+    },
+    {
+      "id": "priority-doubt",
+      "prompt": "Keep my focus up to date.",
+      "must_load": true,
+      "context": {
+        "notepad": "Readable known-format themes already exist.",
+        "work": "Two verified owned themes compete; no evidence or user direction establishes their relative priority."
+      },
+      "expected_behavior": [
+        "Propose one concrete arrangement and ask one question before changing the uncertain priority.",
+        "Do not freeze silently or ask multiple setup questions."
+      ]
+    },
+    {
+      "id": "new-theme-doubt",
+      "prompt": "Keep my focus current after that discussion.",
+      "must_load": true,
+      "context": {
+        "notepad": "Readable known-format themes already exist.",
+        "work": "The user mentioned a potential initiative as an example; no commitment or ownership is established."
+      },
+      "expected_behavior": [
+        "Do not convert a mention into owned work.",
+        "If proposing a new theme, ask one question before adding it."
+      ]
+    },
+    {
+      "id": "factual-doubt",
+      "prompt": "The launch may already be done. Keep my focus current.",
+      "must_load": true,
+      "context": {
+        "notepad": "A readable known-format launch theme exists.",
+        "tools": "Task and goal reads are available; launch purpose completion is not yet established."
+      },
+      "expected_behavior": [
+        "Check current facts before deciding the theme is met or retired.",
+        "Do not ask the user to supply information available from sources or retire the theme merely because one task closed."
+      ]
+    },
+    {
+      "id": "revision-conflict",
+      "prompt": "Organize my work.",
+      "must_load": true,
+      "context": {
+        "notepad": "# Notepad\n<open_loops>\n### Supplier reply\nentry_id: supplier-reply\nAn outside reply is still unverified.\nby: unknown\n</open_loops>\n<compass>\n</compass>\n<reminders>\n### Renewal\nentry_id: renewal\nwhen: 2026-11-10\nremind: Review the renewal.\nby: unknown\n</reminders>",
+        "revision": 4,
+        "work": [
+          "Task 11111111-1111-4111-8111-111111111111: user owns launch reliability."
+        ],
+        "update_result": "revision conflict; a concurrent session added a user-selected Focus themes entry and changed the renewal reminder."
+      },
+      "expected_behavior": [
+        "Re-read the complete new document and reconsider the zero-theme precondition.",
+        "Preserve the user-selected themes and changed reminder; never resend the stale whole document with a new revision.",
+        "Do not claim the failed inferred save happened."
+      ]
+    },
+    {
+      "id": "undo-after-concurrent-edit",
+      "prompt": "undo",
+      "must_load": true,
+      "context": {
+        "previous_action": "This session inferred and announced launch and supplier themes with a one-word undo.",
+        "current_state": "Another session subsequently reworded the launch theme on the user's instruction and added an unrelated reminder; the supplier proposal is unchanged."
+      },
+      "expected_behavior": [
+        "Read the current complete Notepad and reverse only the still-present unmodified proposal.",
+        "Keep the newer user correction and unrelated reminder; do not restore a whole historical document.",
+        "Use conditional save and readback; do not re-infer the undone proposal without a new fact."
+      ]
+    },
+    {
+      "id": "no-evidence",
+      "prompt": "Organize my work.",
+      "must_load": true,
+      "context": {
+        "notepad": "# Notepad\n<open_loops>\n### Supplier reply\nentry_id: supplier-reply\nAn outside reply is still unverified.\nby: unknown\n</open_loops>\n<compass>\n</compass>\n<reminders>\n### Renewal\nentry_id: renewal\nwhen: 2026-11-10\nremind: Review the renewal.\nby: unknown\n</reminders>",
+        "revision": 4,
+        "work": "No readable task, goal or stream evidence establishes current work."
+      },
+      "expected_behavior": [
+        "Invent no theme, reference or user reason.",
+        "Verify available relevant facts first; if a proposed theme remains uncertain, ask one question rather than writing a made-up set."
+      ]
+    },
+    {
+      "id": "shared-page",
+      "prompt": "Edit the shared onboarding page to correct this sentence.",
+      "must_load": false,
+      "context": {
+        "notepad_context": "No personal memory, reminder, focus or interrupted subject is involved."
+      },
+      "expected_behavior": [
+        "Do not load octopad-notepad solely because a shared page contains notes.",
+        "Do not copy shared page content to private memory."
+      ]
+    },
+    {
+      "id": "ordinary-task",
+      "prompt": "Change this task title to Fix retry handling.",
+      "must_load": false,
+      "context": {
+        "notepad_context": "No Notepad entry, focus intent, reminder or next-step capture is involved."
+      },
+      "expected_behavior": [
+        "Route to task editing without loading octopad-notepad or manufacturing a focus change."
+      ]
+    },
+    {
+      "id": "reminder-safeguards",
+      "prompt": "Remind me to check the launch when the deploy completes.",
+      "must_load": true,
+      "context": {
+        "notepad": "# Notepad\n<open_loops>\n### Supplier reply\nentry_id: supplier-reply\nAn outside reply is still unverified.\nby: unknown\n</open_loops>\n<compass>\n</compass>\n<reminders>\n### Renewal\nentry_id: renewal\nwhen: 2026-11-10\nremind: Review the renewal.\nby: unknown\n</reminders>",
+        "revision": 4,
+        "event": "Deploy is not yet verified."
+      },
+      "expected_behavior": [
+        "Record the actual reminder request using existing identity and conditional-save rules.",
+        "Do not deliver or remove it on an unverified event; after it becomes due, keep the durable receipt and claim safeguards.",
+        "A focus proposal never authorizes performing the launch check."
+      ]
+    }
+  ]
+}
