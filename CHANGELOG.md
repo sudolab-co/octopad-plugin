@@ -1,5 +1,11 @@
 # Changelog
 
+## 23.9.0 - Unreleased
+
+Draft after 23.7.0; 23.8.0 is reserved by the separate Codex routing change. Reconcile that stack before publication. This change adds no server capability.
+
+- `octoplan` 8.11.0 makes autonomous problem resolution explicit in the shared Claude and Codex guidance. Executors repair task defects; bounded planning help repairs plan defects using the working principles while the same supervisor retains delivery ownership. Real nonblocking defects receive a disposition and required work gets an owning task. Native profiles keep their planner-launch mechanics. Existing review requirements, real attempt and spend limits, protected effects and human gates remain.
+
 ## 23.7.0 - Unreleased
 
 Ship after the preceding plugin changes; this repair adds no server capability. Version 23.6.0 is reserved by the separate Pad focus change.

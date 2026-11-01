@@ -47,7 +47,7 @@ After the reviewed Plan is visible and launch authority holds:
 4. The receiving chat reads durable state, verifies predecessor cessation if applicable, and claims current supervision in the canonical journal before dispatch. It reports its identity, ownership, effective route, first action or actual wait, and any capability gap.
 5. The planner uses `wait_threads` or the exposed equivalent to verify that startup receipt and observed state, then gives the user the native chat link and ends its planning role. Creation alone is not delivery startup. If startup fails, reconcile the existing chat and effects before retrying; report the precise blocker or manual fallback.
 
-The supervisor talks to the user in its own chat. Cross-chat messaging follows the tool's explicit human-authorization rule. Do not depend on automatic replies to the planner. For a Plan defect, use a bounded planner subagent, or an existing planner only when the runtime and messaging authority permit it; the supervisor retains delivery ownership.
+The supervisor talks to the user in its own chat. Cross-chat messaging follows the tool's explicit human-authorization rule. Do not depend on automatic replies to the planner. For common [problem resolution](supervision.md#resolve-problems-within-the-mandate), use a bounded planner subagent, or an existing planner only when the runtime and messaging authority permit it.
 
 Do not add a coordinator chat or fall back to a reused reviewer while claiming independence.
 

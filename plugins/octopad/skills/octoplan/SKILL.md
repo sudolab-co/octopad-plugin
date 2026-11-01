@@ -6,7 +6,7 @@ A worker, reviewer or planning helper without Octopad access in its brief calls 
 
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octoplan"` when you open this skill.
 
-Version: 8.9.0
+Version: 8.11.0
 
 # Octoplan
 
@@ -61,6 +61,18 @@ Load and report only coordination, routing, and recovery mechanics the work need
 - **F15, rigor sized to the stakes.** Every verification, review, and recheck is read against the recorded stakes, in both directions: reversible internal work gets the floor and nothing more, irreversible or outward work gets the full floors. Verification that outgrows the decision it protects is a defect, the same as verification that falls short. Two consecutive rounds that add process without changing what ships trigger F15, not a third round.
 - **F16, no unmeasured technical claims.** Every path, command, version, count, or behavior written into a record was read or measured in this session; what cannot be measured now is written as unknown, never as fact.
 
+## Working judgment
+
+Every role applies these principles within the mandate. Delegated briefs link this text when readable, otherwise copy it:
+
+- **Holistic:** understand the need, causes, dependencies and consequences.
+- **Effective:** solve the cause at its owning layer, with observable success.
+- **Simple:** reuse the fewest sufficient mechanisms.
+- **Clean:** remove obsolete material in scope after checking its purpose and consumers.
+- **Non-regressive:** preserve needed behavior and safeguards; a material loss needs the user's agreement.
+- **Efficient:** weigh execution, review, rework, maintenance and human attention over the solution's useful life.
+- **Verified and adaptable:** challenge the approach, check its actual effect, revise it on contrary evidence and state what remains unproved.
+
 ## Autonomy and authority
 
 Reuse an earlier applicable explicit choice, showing the reviewed Plan and asking only for a missing consequence decision or runtime-required launch choice.
@@ -77,7 +89,7 @@ Mode and effect coverage are separate. An effect written into a task after the c
 - **A deliverable:** every material executable change and every published or client-facing deliverable gets one fresh independent review of the whole deliverable, run by its executor as its last step: for a task with units, its integrated diff, which covers its units, the parent and its pull request at once; where the executor cannot launch it, the supervisor does and returns the findings to that executor. A second focused judgment is added only for a one-way-door surface or for an expertise the Plan names that the first lens lacks. Low-risk non-material internal work may close on machine checks plus supervisor verification.
 - **A unit** is reviewed on its own only when the Plan names a risk later work must not build on unchecked.
 - **Staging:** when the target offers staging, changes land there before production, within the applicable access and authorization limits; unavailable access is a gate, not permission to skip staging.
-- **Findings:** disposition each finding as fixed, deferred with authority and rationale, or dismissed with evidence.
+- **Findings:** resolve real defects within the mandate, including nonblocking ones; nonblocking is not false. Disposition each finding as fixed, deferred with authority and rationale, or dismissed with evidence. Required work outside the task gets an owning task under planning's [change rule](references/planning.md#changes), created or reused by an actor with record authority; record mandate coverage before dispatch. An optional improvement is a proposal, never an automatic scope increase.
 - **A Plan fix:** a stable fix to a Plan gets one targeted recheck of the changes and the conclusions they affect, by the same reviewer where the runtime can resume it.
 - **A deliverable fix** is proved by a test that fails before it and passes after; only when it fixes a blocking finding of a heavy review, or reaches beyond its findings, does it also get one targeted recheck per fix cycle, by a fresh reviewer at the light-review route given the previous findings.
 - **Any recheck:** a recheck is never a fresh floor, and a replacement reviewer adds no judgment; a repair whose blast radius is one reversible internal record may be rechecked by the supervisor.
