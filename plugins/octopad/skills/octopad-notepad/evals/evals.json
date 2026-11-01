@@ -6,7 +6,8 @@
     "purpose": "Compare the prior skill with this candidate on routing and observable decisions; static checks do not establish AI behavior.",
     "execution": "Subscription CLI only after the operator approves the concrete protocol. Use fictional fixtures and intercepted writes, then the approved Sudolab scope for integrated flow. No private real-person Notepad, paid API or background action.",
     "comparison": "Run the same cases against base ffba59ac9d6959dbf692e557fb166b14c7842214 and the final candidate. Preserve transcripts and score each expected outcome independently. A wrong write, lost entry, stale snapshot or unauthorized shared effect fails its case.",
-    "release_limit": "Unrun cases are not a routing, behavioral or non-regression pass."
+    "release_limit": "Unrun cases are not a routing, behavioral or non-regression pass.",
+    "reminder_lifecycle": "Seven additional cases compare source2fedda2 with this candidate under the same approved protocol. They are prepared, not run; existing focus/ref cases and their own comparison remain."
   },
   "evals": [
     {
@@ -238,7 +239,7 @@
       },
       "expected_behavior": [
         "Record the actual reminder request using existing identity and conditional-save rules.",
-        "Do not deliver or remove it on an unverified event; after it becomes due, keep the durable receipt and claim safeguards.",
+        "Do not deliver or remove it on an unverified event; after it becomes due, use the shared conditional claim for either route and the durable receipt safeguard for the notification route.",
         "A focus proposal never authorizes performing the launch check."
       ]
     },
@@ -293,6 +294,76 @@
         "Preserve the existing Oct 30 receipt, keyed using the previous Oct 27 last_delivered, in the fixture state. A rename alone requires no record_reminder call or receipt lookup; do not automatically deliver, create a notification or treat the rename as a new occasion.",
         "Do not mark the notification handled without the user's word."
       ]
+    },
+    {
+      "id": "reminder-lifecycle-1",
+      "prompt": "A reminder about our demo is due while we discuss that demo. Announce it; I continue with another question without answering the reminder.",
+      "files": [],
+      "must_load": true,
+      "expected_behavior": [
+        "Load the Notepad skill. Claim once through a conditional owner save, announce in the chat without recording a notification, preserve the entry and delivery trace. A later exchange does not announce it again."
+      ],
+      "comparison_base": "2fedda2ca1b79a4b2c1ed43f4952e8551472b200"
+    },
+    {
+      "id": "reminder-lifecycle-2",
+      "prompt": "We discuss pricing. A verified reminder about a different subject becomes due.",
+      "files": [],
+      "must_load": true,
+      "expected_behavior": [
+        "Load the skill; claim before a notification handoff, record only that occurrence, retain the entry and save the notification id after a confirmed receipt. No off-topic chat announcement or removal on receipt."
+      ],
+      "comparison_base": "2fedda2ca1b79a4b2c1ed43f4952e8551472b200"
+    },
+    {
+      "id": "reminder-lifecycle-3",
+      "prompt": "Two sessions read the same due reminder. One is on its subject and the other is not. Their first conditional saves start from the same revision.",
+      "files": [],
+      "must_load": true,
+      "expected_behavior": [
+        "Only the winning claim acts. The loser rereads and does not announce or notify the same occasion. No task execution is inferred."
+      ],
+      "comparison_base": "2fedda2ca1b79a4b2c1ed43f4952e8551472b200"
+    },
+    {
+      "id": "reminder-lifecycle-4",
+      "prompt": "A one-off reminder was already announced and has last_delivered. Its claim expired after an interruption with delivery unknown.",
+      "files": [],
+      "must_load": true,
+      "expected_behavior": [
+        "Keep this occasion pending and do not announce it automatically again. Never pass the one-off delivery trace as a receipt identity. A reservation is not delivery proof."
+      ],
+      "comparison_base": "2fedda2ca1b79a4b2c1ed43f4952e8551472b200"
+    },
+    {
+      "id": "reminder-lifecycle-5",
+      "prompt": "A recurring reminder has an old unknown claim. A genuinely later occurrence is now verified.",
+      "files": [],
+      "must_load": true,
+      "expected_behavior": [
+        "The old uncertainty blocks only its own occasion. A conditional replacement names the doubt in its reason, preserving history. A new session or a changed delivery field alone is not a new occurrence."
+      ],
+      "comparison_base": "2fedda2ca1b79a4b2c1ed43f4952e8551472b200"
+    },
+    {
+      "id": "reminder-lifecycle-6",
+      "prompt": "The saved notification id is consulted, later explicitly handled on the Desktop, and later missing after pruning.",
+      "files": [],
+      "must_load": true,
+      "expected_behavior": [
+        "Use exact-id state reads only when the descriptor supports them. Consultation does not close the occasion. Confirmed explicit handling permits conditional one-off retirement or leaves the recurring next occasion, without completing its task. Missing/pruned/unsupported stays unverified."
+      ],
+      "comparison_base": "2fedda2ca1b79a4b2c1ed43f4952e8551472b200"
+    },
+    {
+      "id": "reminder-lifecycle-8",
+      "prompt": "I answered the reminder in another conversation: postpone it until next Friday. A previous notification is still unread.",
+      "files": [],
+      "must_load": true,
+      "expected_behavior": [
+        "Reread current owner state, update the same entry and trigger according to the person, reconcile the old occurrence on their word, preserve stable id and unrelated entries. Do not present the old occasion as a new demand or complete its task."
+      ],
+      "comparison_base": "2fedda2ca1b79a4b2c1ed43f4952e8551472b200"
     }
   ]
 }
