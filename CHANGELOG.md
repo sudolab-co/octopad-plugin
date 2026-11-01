@@ -1,5 +1,12 @@
 # Changelog
 
+## 23.6.0 - Unreleased
+
+Ship after 23.5.0, coordinated with the companion Summary instruction update.
+
+- `octopad-notepad` 5.3.0: a readable, known-format owner Notepad with no focus themes gets up to eight themes inferred from actual work, explicitly marked as AI proposals, conditionally saved and used at once with a one-word undo. Unreadable, unknown-format or malformed theme entries are not treated as empty. A Summary writer re-reads its snapshot after saving themes.
+- Theme priority or new-theme doubt gets a proposal and one question; other doubt gets a fact check first. Each theme keeps the person's reason first and at most one dated AI change reason, replaced on the next change. Undo preserves newer and unrelated edits; themes still change neither shared priorities nor execution authority.
+
 ## 23.5.0 - Unreleased
 
 Ship this version with 23.4.0; it needs no server change.
@@ -16,7 +23,7 @@ Ship this version with 23.3.0; it needs no server change.
 
 Ship this version with 23.2.0; it needs no server change.
 
-- `octoplan` 8.7.0: a supervisor or executor whose context was compacted now hands off before any new work, and the rule sits in the skill's main file, which Claude Code brings back after a compaction, instead of only in `supervision.md`, which it does not. The rule says how to recognize a compaction, that the client's own resume instruction, the summary's next step or a low context reading does not lift it, and that a summary written for the same session to continue opens with a line naming the rule; the supervisor checks it before each pick and calls `start_session` again before the handoff's first Octopad write, and the worker prompt gives executors the same rule and their own summary line. Before, a supervisor compacted while idle followed its summary's next step and dispatched a worker, then found the rule after the fact.
+- `octoplan` 8.7.0: a supervisor or executor whose context was compacted now hands off before any new work, and the rule sits in the skill's main file, which Claude Code brings back after a compaction, instead of only in `supervision.md`, which it does not. The rule says how to recognize a compaction, that the client's own resume instruction, the summary's next step or a low context reading does not lift it, and that a summary written for the same session to continue opens with a line naming the rule; the supervisor checks it before each pick and calls `start_session` again before the handoff's first Octopad write, and the worker prompt gives executors the same rule and their own summary line. A compaction is recognized by what the summary does, however it names its writer, so a Codex handoff summary counts; how Codex words its summary and whether it brings the main file back are unmeasured. A brief or a previous executor's report is not a compaction, so a replacement executor does not hand off in turn. A supervisor compacted on a turn the app will not let it start a session from proposes its successor, and the Plan summary warns that delivery may then wait for the user. Before, a supervisor compacted while idle followed its summary's next step and dispatched a worker, then found the rule after the fact.
 
 ## 23.2.0 - Unreleased
 
