@@ -1,5 +1,11 @@
 # Changelog
 
+## 23.8.0 - Unreleased
+
+Ship after 23.7.0; this routing change adds no server capability.
+
+- `octoplan` 8.10.0 prioritizes cost over elapsed time for new Codex Plans. Sol 6.1 replaces Astra as the default planner, takes prepared design and audit work at `xhigh`, and handles particularly difficult work, weak verification, high consequences and heavy reviews at `max`. Astra is reserved for justified difficult scientific or spatial/3D problems, or a diagnosed reasoning failure after Sol `max`, unless the user explicitly selects it. Luna's prepared-work route, review requirements, human gates, existing saved routes and the Claude profile stay unchanged. The defaults are provisional routing policy, not measured cost or capability rankings.
+
 ## 23.7.0 - Unreleased
 
 Ship after the preceding plugin changes; this repair adds no server capability. Version 23.6.0 is reserved by the separate Pad focus change.
