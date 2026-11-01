@@ -23,13 +23,23 @@ Repeat until the integrated outcome is proved or no safe work remains:
 
 Before parallel dispatch, including within one stream, prove the tasks' actual write surfaces and outputs are independent. Never parallelize migrations, shared generated artifacts, or siblings where one shapes the other's contract. Use isolated workspaces when required; separate branches alone do not prove independent writes.
 
-Choose the simplest compliant way to meet the reviewed acceptance criteria within recorded authority. A better path changing task meaning, dependencies or proof, missing context, unsettled project choices, or an impossible check goes to a suitable planner through the runtime's supported route. That planner cannot dispatch workers, take supervisor ownership, or enlarge authority. Dependent work resumes with the same supervisor once the repair has the review planning's change rule requires. Do not replace missing preparation with a stronger worker; repair insufficient preparation before escalating effort.
+Apply [problem resolution](#resolve-problems-within-the-mandate) when delivery cannot or should not follow the reviewed Plan.
 
 At resume, worker collection, task close, report, and attempt selection, compare observations with the kill question. An answer stops that run generation immediately; never score it as valid, hide it in an average or subset, or rename the failure a limit. Preserve its evidence, diagnose, and repair or replan within the mandate. A new run keeps its own premise and evidence identity, and every real user limit still applies. A rerun after a material premise change has a distinct task and premise; preserve old results and receipts.
 
 Before task close, add one compact supervisor comment that references receipts and names checks, review or checkpoint outcome, counts of reviewer runs and rounds, material decisions, the countable outcome unit, and the assumption that makes it worthless. File or diff size is diagnostic, never a gate.
 
 While safe authorized work remains, take the next action or wait through the runtime's native actor mechanism. A session whose child actor must be collected ends its turn only where the runtime wakes it when that child finishes; otherwise it waits in the foreground, because a report that says "in progress" and then stops is a stall. Answer status questions and corrections in commentary, then resume. A final response ends a turn; it is not a continuation mechanism.
+
+## Resolve problems within the mandate
+
+Diagnose implementation, preparation, proof or environment before treating a technical problem as a user decision. Execution defects follow [recovery](recovery.md#diagnose-before-repeating) and saved failed-check continuations; missing preparation is not repaired by a stronger worker.
+
+For changed task meaning, dependencies or proof, missing context, unsettled shared choices or an impossible check, record the defect on its owning task and use one planner at a time through the runtime's supported route. Use its profile's planner or plan-repair route with bounded context: affected task and source revisions, intended result, failure, attempts and evidence, mandate, gates, remaining limits and [working judgment](../SKILL.md#working-judgment), under the brief rules below.
+
+The planner returns a sourced diagnosis and the simplest compliant repair, its affected tasks, dependencies and proof, or the precise unresolved obstacle and what would resolve it. It cannot dispatch workers, take supervisor ownership or enlarge authority. The same supervisor verifies the recorded repair and resumes dependent work after planning's [change rule](planning.md#changes) is satisfied; independent covered work continues.
+
+Recovery's non-progress triggers and real limits apply; another actor or replan resets none. Without a compliant path within those bounds, or when a solution needs an uncovered effect or a person-reserved action, use the consequence handoff with evidence, alternatives ruled out and the specific human input or action needed. Hold only dependent work.
 
 ## Worker prompt
 
@@ -41,6 +51,7 @@ Octopad: <organization> / <workspace> / <work stream>.
 Use <this runtime's saved model and effort> and the recorded observation rule.
 Review: <each judgment: light or heavy, with its route>; recheck: <this runtime's light-review route>.
 Recorded mandate: <source, exact allowed scope, effects and targets>.
+Working judgment: <readable source link, otherwise the principles verbatim>.
 Uncleared checkpoints and effective-rule gates: <relevant waits, or none>.
 Computer Use: <accepted targets and actions with source, or not authorized;
 verified access and remaining permission or runtime limits>.
@@ -68,10 +79,11 @@ pasting it.
 
 When Verify passes on your committed head, have the work reviewed: launch one
 fresh reviewer per judgment in the task's Review, at its route for this runtime,
-read-only and without Octopad, briefed with the task text, base and head, the
+read-only and without Octopad, briefed with working judgment, the task text, base and head, the
 checks you ran with their output, and the target rules as a floor. A finding
 blocks only on an effective rule, a reviewed requirement, an uncleared gate or a
-correctness failure; record the others. Fix each blocking finding yourself, test first: show
+correctness failure. Fix real defects within this task yourself, including nonblocking ones,
+and return defects outside it with evidence for the supervisor to disposition under Findings. Test first: show
 the case failing, then passing. Only after fixing a blocking finding of a heavy
 review, or a fix that reaches beyond its findings, have one fresh reviewer at the
 recheck route above recheck the changes and what they affect, given the
@@ -112,7 +124,7 @@ Independent review is one fresh source-first reviewer per judgment, launched by 
 
 Only the supervisor validates advancement and authority; other verdicts are evidence.
 
-A reviewer cannot enlarge `Done when`. A finding blocks only on an effective rule, reviewed requirement, uncleared gate, or correctness failure; otherwise record residual risk.
+A reviewer cannot enlarge `Done when`. A finding blocks only on an effective rule, reviewed requirement, uncleared gate, or correctness failure; disposition all findings under [Findings](../SKILL.md#review-floors).
 
 Unplanned persistent CI, harness, service, dependency, or cross-repository artifact is scope expansion; reject it or replan when required. Build no generic infrastructure for one-off proof.
 
