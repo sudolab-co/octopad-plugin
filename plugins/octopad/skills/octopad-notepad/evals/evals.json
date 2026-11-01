@@ -241,6 +241,58 @@
         "Do not deliver or remove it on an unverified event; after it becomes due, keep the durable receipt and claim safeguards.",
         "A focus proposal never authorizes performing the launch check."
       ]
+    },
+    {
+      "id": "reminder-known-work-scope",
+      "prompt": "Remind me to check retry handling when the deployment verification completes.",
+      "must_load": true,
+      "context": {
+        "notepad": "# Notepad\n<compass>\n### Focus themes\nentry_id: launch-focus\n1. Keep launch stable | why: I chose reliability as a priority | refs: task:11111111-1111-4111-8111-111111111111, stream:22222222-2222-4222-8222-222222222222, goal:33333333-3333-4333-8333-333333333333 | currently on: retry handling\nby: unknown\n</compass>\n<reminders>\n</reminders>",
+        "revision": 12,
+        "verified_work": [
+          "Task 11111111-1111-4111-8111-111111111111 is the retry-handling task.",
+          "A current source explicitly links that task to stream 22222222-2222-4222-8222-222222222222.",
+          "A separate current source explicitly links that stream to goal 33333333-3333-4333-8333-333333333333.",
+          "Deployment verification has not completed."
+        ]
+      },
+      "expected_behavior": [
+        "Save the requested reminder with one refs: line containing the full task, stream and goal UUIDs, comma-separated, without duplicates or other text.",
+        "Use the stream and goal only because their relationships to this task are independently verified; do not infer either from the task UUID.",
+        "Keep the reminder scoped to the matching focus theme through those references, preserve other entries and use the conditional save/readback rules.",
+        "Do not deliver the reminder before deployment verification completes."
+      ]
+    },
+    {
+      "id": "reminder-unknown-unclassified",
+      "prompt": "Remind me tomorrow to revisit the launch.",
+      "must_load": true,
+      "context": {
+        "notepad": "# Notepad\n<compass>\n### Focus themes\nentry_id: launch-focus\n1. Launch | why: I want to review launch decisions | refs: task:44444444-4444-4444-8444-444444444444 | currently on: open questions\nby: unknown\n</compass>\n<reminders>\n</reminders>",
+        "revision": 13,
+        "available_work": "A task is titled Launch, but no current evidence links it to this reminder or establishes a relationship to the focus theme. No other source establishes a matching task, stream or goal."
+      },
+      "expected_behavior": [
+        "Record the requested reminder without a refs: line because no relevant work reference is verified.",
+        "Leave it reachable in All/Unclassified; do not infer a scope from the shared word Launch, the theme title, a display position or nearby references.",
+        "Preserve identity, receipt, recurrence and conditional-save rules that apply to the new entry."
+      ]
+    },
+    {
+      "id": "reminder-recurrence-theme-rename-same-receipt",
+      "prompt": "Rename my Launch focus theme to Release safety.",
+      "must_load": true,
+      "context": {
+        "notepad": "# Notepad\n<compass>\n### Focus themes\nentry_id: launch-focus\n1. Launch | why: I want reliable releases | refs: task:11111111-1111-4111-8111-111111111111, stream:22222222-2222-4222-8222-222222222222 | currently on: retry handling\nby: unknown\n</compass>\n<reminders>\n### Retry health\nentry_id: recurring-retry-health\nwhen: the next completed production deployment\nremind: Review retry health.\nrefs: task:11111111-1111-4111-8111-111111111111, stream:22222222-2222-4222-8222-222222222222\nrepeat: each completed production deployment\nlast_delivered: 2026-10-30 | 09:15 UTC | session prior-fixture\nby: unknown\n</reminders>",
+        "revision": 14,
+        "trigger_and_receipt": "The Oct 30 deployment at 09:15 UTC is the last completed deployment and was already delivered. Its existing receipt for entry recurring-retry-health was recorded with when: the next completed production deployment and the PREVIOUS last_delivered: 2026-10-27 | 09:15 UTC | session earlier-fixture (the prior completed deployment). Its occurrence key is 21847a625e12efe27a71068ab8fdb27604a75231da37cb0a1682566b792bc71e. After that delivery, the Notepad was saved with the current Oct 30 last_delivered shown above; that current value is not the input of the Oct 30 receipt. No later deployment occurred. The rename is the same focus entry and the work relationships are unchanged."
+      },
+      "expected_behavior": [
+        "Rename the focus theme while preserving its entry_id and verified refs; do not create a new reminder because the theme name changed.",
+        "Keep the recurring reminder's entry_id, refs, trigger, repeat and last_delivered unchanged.",
+        "Preserve the existing Oct 30 receipt, keyed using the previous Oct 27 last_delivered, in the fixture state. A rename alone requires no record_reminder call or receipt lookup; do not automatically deliver, create a notification or treat the rename as a new occasion.",
+        "Do not mark the notification handled without the user's word."
+      ]
     }
   ]
 }

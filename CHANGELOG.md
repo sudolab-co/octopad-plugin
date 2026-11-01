@@ -1,5 +1,9 @@
 # Changelog
 
+## 23.11.0 - Unreleased
+
+- The Notepad skill records verified task, stream, and goal references on reminders so the Pad can scope them correctly.
+
 ## 23.10.0 - Unreleased
 
 Ship after 23.9.0, coordinated with the companion Summary instruction update. The earlier 23.6.0 reservation did not ship.
