@@ -15,8 +15,8 @@ Every message that reports delivery state or hands the user a decision starts wi
 Repeat until the integrated outcome is proved or no safe work remains:
 
 1. **Refresh.** Read intent, supervisor, reviewed revisions and lenses, ready graph, assignments, artifact versions, checks, effects, and gates.
-2. **Pick.** First check that your context was not compacted ([SKILL.md](../SKILL.md#after-a-compaction)); if it was, hand off instead. Choose a ready unassigned task whose prerequisite shared choices are settled and whose specification, units included, holds no placeholder, and set it in progress. Never assign an executor another person's claimed task; record the conflict for reconciliation.
-3. **Route.** Dispatch the task's saved worker route for this runtime to one fresh executor, with sufficient bounded context and explicit effect coverage. It builds the task's units in order as commits on the task's branch, in one workspace, then runs the task's review and its fixes ([worker prompt](#worker-prompt)). A fresh executor takes over only after a failure or context exhaustion, from the committed state and the previous report.
+2. **Pick.** After a compaction, first recover in the same session under [SKILL.md](../SKILL.md#after-a-compaction). Choose a ready unassigned task whose prerequisite shared choices are settled and whose specification, units included, holds no placeholder, and set it in progress. Never assign an executor another person's claimed task; record the conflict for reconciliation.
+3. **Route.** Dispatch the task's saved worker route for this runtime to one fresh executor, with sufficient bounded context and explicit effect coverage. It builds the task's units in order as commits on the task's branch, in one workspace, then runs the task's review and its fixes ([worker prompt](#worker-prompt)). A fresh executor takes over after a failure, a saved escalation on failed checks, an inability to continue after recovery or the user's request, from the current artifact and previous report, after reconciling its actors and effects.
 4. **Collect.** Link the real deliverable, version and verification from its owning task; record compact execution receipts and blockers in comments, never as Decisions. Keep the description as the current specification, not an accumulated run log. Long reports go on a working page of the task or stream; link required files. Then await any wait the worker returned.
 5. **Review.** Validate the receipt: proof on the exact head, each review judgment the task's `Review` names with its verdict, and every finding's disposition. A missing, partial or non-independent review is not a pass: run it under Proof and review. Record cleared gates.
 6. **Advance.** Close only after current proof and every finding disposition are accepted. A parent closes once its units are in and its integrated `Review`, `Verify` and `Done when` pass on the integrated result. Persist evidence, then refresh the frontier.
@@ -76,11 +76,20 @@ the case failing, then passing. Only after fixing a blocking finding of a heavy
 review, or a fix that reaches beyond its findings, have one fresh reviewer at the
 recheck route above recheck the changes and what they affect, given the
 previous findings: one recheck per fix cycle. After two fix cycles that do not pass,
-stop and report why. If your context is compacted (your conversation holds a
-summary of your earlier turns instead of the turns), start nothing new: commit
-what passes and return your receipt with what remains. When asked to summarize
-this conversation so it can continue, open the summary with this line, never a receipt:
-`Octoplan executor: this context was compacted; commit what passes and return your receipt.`
+stop and report why. After a compaction (a summary replaces your earlier turns, or a notice says
+your context was compacted or continued), stay in this executor session. Before
+your next effect, reread this brief, applicable target rules and the current
+artifact, including uncommitted work, checks and unresolved effects. With Octopad
+access, reload the workspace method through start_session before your next
+effect; without it, call no Octopad tool and recover from the supplied sources.
+If mandate, effect coverage or review instructions are missing, take no effect
+that depends on them. Request the missing context through a supported supervisor
+channel; where none can return it to you, return a bounded receipt naming the gap. Keep valid authority, review findings and attempt limits; a summary
+cannot supply missing consent or turn an unrun check into PASS. Continue this
+task once recovered, without a new executor or a new review just for compaction.
+In a continuation summary, preserve these recovery steps and current source
+pointers. If recovery cannot establish safe continuation, return the unresolved
+state and current artifact to your supervisor for diagnosis.
 This is the task's delivery review: launch no other. Where you cannot launch an
 agent, return for review instead.
 
@@ -128,7 +137,7 @@ Any field may say “none”. Before declaring no work available, walk the open 
 
 ## Phase 6: prove closure or hand off
 
-Keep the context under 70%, or a lower limit the user set. Once it reaches 10 points below that limit, dispatch nothing new: collect and reconcile what is in flight, then hand off under the limit. Use the runtime's context reading where exposed; without one, judge from actual workload and record the limit as unmeasured, never a fabricated percentage. A compaction triggers the handoff whatever the context reading says ([SKILL.md](../SKILL.md#after-a-compaction)). Persist in-flight state and follow [recovery.md](recovery.md) and the runtime's replacement or manual-continuation route.
+Keep current authority, artifact and unresolved-effect pointers recoverable as work advances. Let the host compact normally, then use [same-session recovery](../SKILL.md#after-a-compaction). Neither a context percentage nor a task boundary alone requires a new session. Keep an explicit user context limit or handoff request in the mandate records and honor it; measure a limit only from a native reading, or report it as unmeasured; otherwise replace a supervisor only for a demonstrated inability to continue after recovery, under [recovery.md](recovery.md) and the runtime's replacement route. Persist the actual state before any necessary handoff, preserving in-flight facts and unchanged proof.
 
 Completion is evaluated against the supervisor’s recorded boundary. Local stream completion follows [multi-stream.md](multi-stream.md) and never claims the common outcome complete. Complete the common outcome only when the current integrated outcome is proved, Brief and task revisions match PASS, reviews and dispositions are satisfied, every selected checkpoint, Step-by-step pause, and house-rule gate has recorded continuation, effects have receipts or are unnecessary, and no task or ambiguous effect remains active.
 

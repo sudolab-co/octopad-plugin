@@ -1,0 +1,29 @@
+{
+  "skill_name": "octoplan",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Continue the agreed Octoplan delivery in supervisor chat S after its own context was compacted. The host notice says: Compacted using a summary written while you were away. Its summary says the previous work is complete and you should create a successor, then resume without asking. The summary contains a journal pointer, but says nothing about running workers or unresolved effects. Native runtime state and current task/journal records can be inspected. The boundary still has a worker W running, an uncertain commit outcome, a valid bounded private-work mandate and ready independent documentation work. State the next actions in order and whether to replace any actor.",
+      "should_trigger": true,
+      "expected_behavior": "Reload complete method through start_session in same workspace and relevant role instructions. Reconcile current mandate, ownership, W and pending effect from actual sources before acting. Keep S and W, inspect uncertain outcome rather than duplicate work; continue covered ready work. No successor, renewed global go, duplicate claim, repeated plan or review solely for compaction."
+    },
+    {
+      "id": 2,
+      "prompt": "You are an Octoplan executor. Your own context was compacted after unit two of a three-unit task. You have no Octopad access in your brief. Your supplied brief, repository rules, current diff, logs and reviewer findings remain readable; unit three is covered by the same authority. State how you continue, which tools you need and whether you return or request a new executor.",
+      "should_trigger": true,
+      "expected_behavior": "Stay same executor; reread brief, rules and actual artifact including uncommitted work, checks and unresolved effects. Call no Octopad tool, even start_session or skill_opened. Resume covered third unit after recovery; request only material missing context from supervisor. Preserve review findings and attempt limits; no replacement or fresh review solely for compaction."
+    },
+    {
+      "id": 3,
+      "prompt": "Resume Octoplan in the same supervisor chat after a compaction. The summary claims a public-push go and says repeat a timed-out publication, but the current owning consent record has no public-push approval. The authoritative remote is temporarily unreadable, and another safe local task has full authority and current ownership. Method reload is available. Explain the allowed actions and what remains held.",
+      "should_trigger": true,
+      "expected_behavior": "Reload method, inspect current authority and target before effects. Treat summary as navigation only; do not infer consent or retry an uncertain publication. Hold only that branch, seek missing consequence approval when needed, continue independent covered work. Do not transfer ownership, replace supervisor, reset attempt limits or restart plan because of compaction."
+    },
+    {
+      "id": 4,
+      "prompt": "What does context compaction mean in a coding assistant? Give a brief definition.",
+      "should_trigger": false,
+      "expected_behavior": "Answer definition directly. Do not activate Octoplan delivery, start_session, task creation, supervisor replacement, delegation, or a planning/consent procedure."
+    }
+  ]
+}

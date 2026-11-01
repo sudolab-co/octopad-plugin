@@ -1,5 +1,11 @@
 # Changelog
 
+## 23.7.0 - Unreleased
+
+Ship after the preceding plugin changes; this repair adds no server capability. Version 23.6.0 is reserved by the separate Pad focus change.
+
+- `octoplan` 8.9.0 keeps supervisors and executors in the same session after context compaction. They reload the method and reconcile the current authority, ownership, actors and uncertain effects before continuing. Context percentages and ordinary task boundaries no longer require replacement. Necessary replacements still prove predecessor cessation and claim ownership under a revision guard. A worker without Octopad access recovers from its brief and supplied sources. Compaction alone repeats no consent, preparation, review or unchanged check. Real client automatic reload remains a separate proof, not a promise of this instruction change.
+
 ## 23.5.0 - Unreleased
 
 Ship this version with 23.4.0; it needs no server change.

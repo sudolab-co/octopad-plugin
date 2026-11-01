@@ -61,7 +61,9 @@ At a real wait or finish, report the evidence under common supervision. Do not r
 
 ## Hand off without overlapping owners
 
-At a natural boundary, or after a compaction ([SKILL.md](../SKILL.md#after-a-compaction)), persist in-flight facts, reconcile children and uncertain effects, and record pending retirement under [recovery](recovery.md). Use automatic replacement only when an authorized native mechanism can prove the predecessor stopped before successor dispatch. Without that mechanism, provide the manual successor pointer and end; the receiver proves cessation under [recovery](recovery.md) and claims ownership before work. Preserve valid authority and pending user decisions; never wake the retired owner.
+Compaction continues the same chat. Reload the method and recover under [SKILL.md](../SKILL.md#after-a-compaction), then keep that chat's ownership and workers where still active, and refresh any native Goal it owns with `get_goal`. The server cannot observe a client's compaction: do not claim automatic method reinjection without a measured client path. This skill and `octopad-session` carry the reload instruction; do not depend on a special first line surviving a summary.
+
+When replacement is actually needed under [recovery](recovery.md), persist in-flight facts, reconcile children and uncertain effects, and record pending retirement. Use automatic replacement only when an authorized native mechanism can prove the predecessor stopped before successor dispatch. Without that mechanism, provide the manual successor pointer and end; the receiver proves cessation under [recovery](recovery.md) and claims ownership before work. Preserve valid authority and pending user decisions; never wake the retired owner.
 
 After launch, replacement or a status request, name the scope, accessible chat, observed state, latest receipt and next action or wait.
 
