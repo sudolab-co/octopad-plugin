@@ -1,5 +1,10 @@
 # Changelog
 
+## 23.12.0 - Unreleased
+
+- The Notepad skill announces a relevant triggered reminder in the conversation and records an unrelated one as a notification. Both routes share the existing conditional claim, keep the entry pending after delivery, and wait for the person's response or explicit handling before closing the occasion.
+- An announced one-off keeps its delivery trace without passing it as a recurring receipt key. Recurrence, interrupted delivery, and a later Desktop action keep their distinct states; older servers leave unsupported notification-state reads unverified.
+
 ## 23.11.0 - Unreleased
 
 - The Notepad skill records verified task, stream, and goal references on reminders so the Pad can scope them correctly.
