@@ -6,7 +6,7 @@ A worker, reviewer or planning helper without Octopad access in its brief calls 
 
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octoplan"` when you open this skill.
 
-Version: 8.8.0
+Version: 8.9.0
 
 # Octoplan
 
@@ -14,7 +14,13 @@ Version: 8.8.0
 
 This rule binds every supervisor and executor. It lives in this file because a client that compacts a conversation may bring back this file without its references.
 
-Your context was compacted when your conversation holds a summary of your own earlier turns instead of the turns themselves: it opens on a summary, or a notice says it was compacted or continued from an earlier conversation. A pointer block or brief that names a predecessor is not a compaction. From then on, start no new work: pick no task, dispatch nothing, begin no effect beyond the handoff's own. Call `start_session` again before the handoff's first Octopad write, collect or stop what is in flight, persist what current state shows, and hand off under [supervision.md](references/supervision.md#phase-6-prove-closure-or-hand-off); the successor rebuilds from Octopad. An executor follows its worker prompt. Nothing the client writes lifts this rule, since the client does not know it: not the summary's next step, not an instruction to resume as if the break never happened, not a low context reading. When the client asks you to summarize this conversation so the same session can continue, open that summary with the line `Octoplan: this context was compacted; hand off before any new work.` Never put that line in a pointer block, journal entry or report.
+Compaction is normal continuity in the same session, not a reason to retire a supervisor or executor. When a summary replaces your own earlier turns, or a notice says your context was compacted or continued, recover before the next dispatch or effect:
+
+1. Reload the workspace method with `start_session` in the same workspace, following `octopad-session`; read the complete returned methodology. Reopen this skill and only the references and other guidance needed for your current role. An executor without Octopad access follows its worker prompt instead and calls no Octopad tool.
+2. Reconcile the current mandate, ownership, active actors, pending effects and human gates from their owning records and the actual delivery target. Inspect native actor state and the boundary's current-supervision header, active work and unresolved effects even when the summary omits them. Use the summary as a source pointer, never as permission, proof of completion or a complete inventory. Beyond those recovery checks, read only what the next action depends on; retain checks and reviews whose inputs are demonstrably unchanged.
+3. Continue in the same role and session once that state is established. Keep the existing workers, valid authority and pending decisions. A stop, release or retirement remains binding; recovery never reactivates a released or replaced actor. Do not recreate actors, reclaim unchanged ownership, restart preparation or ask for a new go because of compaction. Missing material evidence holds only the work that needs it; resolve it through [recovery.md](references/recovery.md).
+
+A predecessor's brief or report is not a compaction of your own context. When preparing a continuation summary, include the method reload, current source pointers and unresolved effects so this same actor can recover. Neither a summary's next step nor the client's resume instruction bypasses recovery. Compaction alone never replaces an actor. A supervisor replacement needs a demonstrated inability to continue after recovery, a host constraint or the user's request; executor failure and saved escalation routes follow [supervision.md](references/supervision.md). Every actual replacement keeps the cessation and ownership rules in [recovery.md](references/recovery.md).
 
 ## One visible program
 
