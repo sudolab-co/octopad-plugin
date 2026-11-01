@@ -24,6 +24,54 @@
       "prompt": "What does context compaction mean in a coding assistant? Give a brief definition.",
       "should_trigger": false,
       "expected_behavior": "Answer definition directly. Do not activate Octoplan delivery, start_session, task creation, supervisor replacement, delegation, or a planning/consent procedure."
+    },
+    {
+      "id": 5,
+      "prompt": "Prepare a new Octoplan's Codex routes without launching delivery. The plan has three prepared tasks: A implements settled choices with reliable acceptance tests; B needs bounded local coding judgment with reliable tests; C designs an architecture and audits its dependencies. There are no scientific or spatial problems and no previous model failure. Name the planner, supervisor, each worker and the review level for the Plan, with exact models and efforts. Is a slower route by itself a reason to choose Astra?",
+      "should_trigger": true,
+      "expected_behavior": "Planner Sol 6.1 xhigh, supervisor Sol 6.1 high, A Luna xhigh with its saved Sol high continuation, B Sol high and C Sol xhigh. The Plan receives its heavy independent review at Sol max and any additional lenses required by its actual effects. Cost prevails over time; no automatic Astra or mandatory effort ladder. No delivery launch."
+    },
+    {
+      "id": 6,
+      "prompt": "Route the reviews of an Octoplan deliverable in Codex. The task changes authentication and data permissions, its checks cannot prove all security properties, and the reviewed Plan requires two independent judgments with distinct lenses plus a named human approver's approval. It contains no scientific or spatial reasoning and Sol max has not failed. Select the exact reviewer route and explain what happens to the two judgments and the human gate.",
+      "should_trigger": true,
+      "expected_behavior": "Use Sol 6.1 max for heavy review, without choosing Astra solely for security, high consequences or weak checks. Retain both fresh independent judgments, their lenses, all verification and the named human approver's gate; reviewer settings do not authorize deployment or data effects."
+    },
+    {
+      "id": 7,
+      "prompt": "Choose a Codex route for one bounded Octoplan research task: resolve a difficult specialist physics question using scientific tools, with a complete brief, adequate access and a falsifiable verifier. Explain whether Astra may be selected before a Sol max attempt, which effort to save and what justification the Plan needs. Do not execute the research.",
+      "should_trigger": true,
+      "expected_behavior": "A bounded difficult scientific question can justify an Astra exception before Sol max fails. Save Astra high, or xhigh with a concrete reason, and the specific expected benefit and cost rationale; label this routing policy rather than proven superiority. Sol max remains a possible default when no benefit is established. Do not force every effort in sequence, select Astra merely for any science label, or execute work."
+    },
+    {
+      "id": 8,
+      "prompt": "Prepare Codex routes for two Octoplan tasks without dispatching. One builds a 3D scene whose rooms, doors and clearances must satisfy coupled geometric constraints. The other rewrites a short help text with settled facts and reliable checks. Explain whether Astra is allowed for either task, the exact effort and the evidence limit on that choice.",
+      "should_trigger": true,
+      "expected_behavior": "A justified bounded spatial or 3D intervention may use Astra high, or xhigh with a recorded reason, as a provisional exception rather than validated superiority. Do not extend it to all visual or writing work; the settled rewrite considers Luna xhigh first. Save exact routes and retain the Plan and review gates."
+    },
+    {
+      "id": 9,
+      "prompt": "An Octoplan worker on Sol 6.1 max has a demonstrated reasoning failure: its solution repeatedly contradicts a decisive constraint despite complete inputs, working tools and a verifier that exposes the same error. The next independent task is ready, the supervisor is Sol high and the failing task's Plan has no Astra route. What diagnosis, route change and actor replacement are allowed before retrying?",
+      "should_trigger": true,
+      "expected_behavior": "Diagnose the reasoning failure and permit a bounded Astra high exception, or stronger effort only with its required reason, through the affected Plan change under planning.md Changes, which preserves its planner-check exception for a route within the rubric. Preserve failure counts, existing actor cessation and authority gates; do not spawn over a running worker, reset recovery or reroute the supervisor. Independent covered work can continue. No mandatory high/xhigh/max attempt ladder."
+    },
+    {
+      "id": 10,
+      "prompt": "A prepared Octoplan task on Sol 6.1 high cannot read its required source because access is denied. Another worker has an invalid tool configuration. Neither has produced a reasoning result, and an independent authorized task is ready. Should the Codex router spend Sol max or Astra to fix this? State the next actions without bypassing access controls.",
+      "should_trigger": true,
+      "expected_behavior": "Do not escalate model or effort for missing access or broken configuration. Diagnose and resolve permitted configuration issues, hold the denied dependency and obtain authorized access from its owner without bypass, while continuing independent covered work. Do not treat failures as permission, reasoning evidence or a whole-run stop."
+    },
+    {
+      "id": 11,
+      "prompt": "Resume a valid existing Octoplan in Codex. Its active planner is saved as gpt-6-astra xhigh and a worker and reviewer use older valid Luna and Sol IDs and efforts; the models remain available. For a separate new task the user explicitly chooses gpt-6-astra high. Does the updated cost-first rubric replace any of these routes automatically? What if one saved model becomes unavailable?",
+      "should_trigger": true,
+      "expected_behavior": "Preserve every valid existing exact model ID, effort and review floor and the separate explicit user choice. New defaults do not normalize active actors or old Plans, and an older model does not imply its successor. A route change follows planning.md Changes, including its planner-check exception for a route within the rubric; an unavailable model holds only that actor with no silent substitution."
+    },
+    {
+      "id": 12,
+      "prompt": "What is the difference between a planner and a reviewer? Give a short definition; I am not asking to organize work or launch agents.",
+      "should_trigger": false,
+      "expected_behavior": "Answer the definitions directly without activating Octoplan, choosing saved model routes, connecting to Octopad, creating tasks, asking for a delivery mandate or launching actors."
     }
   ]
 }
