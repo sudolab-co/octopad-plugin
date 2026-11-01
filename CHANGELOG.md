@@ -2,9 +2,15 @@
 
 ## 23.9.0 - Unreleased
 
-Draft after 23.7.0; 23.8.0 is reserved by the separate Codex routing change. Reconcile that stack before publication. This change adds no server capability.
+Ship after 23.8.0; this change adds no server capability.
 
 - `octoplan` 8.11.0 makes autonomous problem resolution explicit in the shared Claude and Codex guidance. Executors repair task defects; bounded planning help repairs plan defects using the working principles while the same supervisor retains delivery ownership. Real nonblocking defects receive a disposition and required work gets an owning task. Native profiles keep their planner-launch mechanics. Existing review requirements, real attempt and spend limits, protected effects and human gates remain.
+
+## 23.8.0 - Unreleased
+
+Ship after 23.7.0; this routing change adds no server capability.
+
+- `octoplan` 8.10.0 prioritizes cost over elapsed time for new Codex Plans. Sol 6.1 replaces Astra as the default planner, takes prepared design and audit work at `xhigh`, and handles particularly difficult work, weak verification, high consequences and heavy reviews at `max`. Astra is reserved for justified difficult scientific or spatial/3D problems, or a diagnosed reasoning failure after Sol `max`, unless the user explicitly selects it. Luna's prepared-work route, review requirements, human gates, existing saved routes and the Claude profile stay unchanged. The defaults are provisional routing policy, not measured cost or capability rankings.
 
 ## 23.7.0 - Unreleased
 
