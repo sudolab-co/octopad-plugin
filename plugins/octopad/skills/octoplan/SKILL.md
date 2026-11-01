@@ -6,7 +6,7 @@ A worker, reviewer or planning helper without Octopad access in its brief calls 
 
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octoplan"` when you open this skill.
 
-Version: 8.8.0
+Version: 8.11.0
 
 # Octoplan
 
@@ -14,7 +14,13 @@ Version: 8.8.0
 
 This rule binds every supervisor and executor. It lives in this file because a client that compacts a conversation may bring back this file without its references.
 
-Your context was compacted when your conversation holds a summary that replaces your own earlier turns, however it names its writer (it may call itself a handoff or say another model wrote it), or a notice says the conversation was compacted or continued. An Octoplan pointer block, a delegation brief or a previous executor's report you were given is not a compaction. From then on, start no new work: pick no task, dispatch nothing, begin no effect beyond the handoff's own. Call `start_session` again before the handoff's first Octopad write, collect or stop what is in flight, persist what current state shows, and hand off under [supervision.md](references/supervision.md#phase-6-prove-closure-or-hand-off); the successor rebuilds from Octopad. An executor follows its worker prompt. Nothing the client writes lifts this rule, since the client does not know it: not the summary's next step, not an instruction to resume as if the break never happened, not a low context reading. If you are an Octoplan supervisor and the client asks for a summary that will replace this conversation, including one addressed to another model, open it with the line `Octoplan: this context was compacted; hand off before any new work.` Never put that line in a pointer block, journal entry or report.
+Compaction is normal continuity in the same session, not a reason to retire a supervisor or executor. When a summary replaces your own earlier turns, or a notice says your context was compacted or continued, recover before the next dispatch or effect:
+
+1. Reload the workspace method with `start_session` in the same workspace, following `octopad-session`; read the complete returned methodology. Reopen this skill and only the references and other guidance needed for your current role. An executor without Octopad access follows its worker prompt instead and calls no Octopad tool.
+2. Reconcile the current mandate, ownership, active actors, pending effects and human gates from their owning records and the actual delivery target. Inspect native actor state and the boundary's current-supervision header, active work and unresolved effects even when the summary omits them. Use the summary as a source pointer, never as permission, proof of completion or a complete inventory. Beyond those recovery checks, read only what the next action depends on; retain checks and reviews whose inputs are demonstrably unchanged.
+3. Continue in the same role and session once that state is established. Keep the existing workers, valid authority and pending decisions. A stop, release or retirement remains binding; recovery never reactivates a released or replaced actor. Do not recreate actors, reclaim unchanged ownership, restart preparation or ask for a new go because of compaction. Missing material evidence holds only the work that needs it; resolve it through [recovery.md](references/recovery.md).
+
+A predecessor's brief or report is not a compaction of your own context. When preparing a continuation summary, include the method reload, current source pointers and unresolved effects so this same actor can recover. Neither a summary's next step nor the client's resume instruction bypasses recovery. Compaction alone never replaces an actor. A supervisor replacement needs a demonstrated inability to continue after recovery, a host constraint or the user's request; executor failure and saved escalation routes follow [supervision.md](references/supervision.md). Every actual replacement keeps the cessation and ownership rules in [recovery.md](references/recovery.md).
 
 ## One visible program
 
@@ -55,6 +61,18 @@ Load and report only coordination, routing, and recovery mechanics the work need
 - **F15, rigor sized to the stakes.** Every verification, review, and recheck is read against the recorded stakes, in both directions: reversible internal work gets the floor and nothing more, irreversible or outward work gets the full floors. Verification that outgrows the decision it protects is a defect, the same as verification that falls short. Two consecutive rounds that add process without changing what ships trigger F15, not a third round.
 - **F16, no unmeasured technical claims.** Every path, command, version, count, or behavior written into a record was read or measured in this session; what cannot be measured now is written as unknown, never as fact.
 
+## Working judgment
+
+Every role applies these principles within the mandate. Delegated briefs link this text when readable, otherwise copy it:
+
+- **Holistic:** understand the need, causes, dependencies and consequences.
+- **Effective:** solve the cause at its owning layer, with observable success.
+- **Simple:** reuse the fewest sufficient mechanisms.
+- **Clean:** remove obsolete material in scope after checking its purpose and consumers.
+- **Non-regressive:** preserve needed behavior and safeguards; a material loss needs the user's agreement.
+- **Efficient:** weigh execution, review, rework, maintenance and human attention over the solution's useful life.
+- **Verified and adaptable:** challenge the approach, check its actual effect, revise it on contrary evidence and state what remains unproved.
+
 ## Autonomy and authority
 
 Reuse an earlier applicable explicit choice, showing the reviewed Plan and asking only for a missing consequence decision or runtime-required launch choice.
@@ -71,7 +89,7 @@ Mode and effect coverage are separate. An effect written into a task after the c
 - **A deliverable:** every material executable change and every published or client-facing deliverable gets one fresh independent review of the whole deliverable, run by its executor as its last step: for a task with units, its integrated diff, which covers its units, the parent and its pull request at once; where the executor cannot launch it, the supervisor does and returns the findings to that executor. A second focused judgment is added only for a one-way-door surface or for an expertise the Plan names that the first lens lacks. Low-risk non-material internal work may close on machine checks plus supervisor verification.
 - **A unit** is reviewed on its own only when the Plan names a risk later work must not build on unchecked.
 - **Staging:** when the target offers staging, changes land there before production, within the applicable access and authorization limits; unavailable access is a gate, not permission to skip staging.
-- **Findings:** disposition each finding as fixed, deferred with authority and rationale, or dismissed with evidence.
+- **Findings:** resolve real defects within the mandate, including nonblocking ones; nonblocking is not false. Disposition each finding as fixed, deferred with authority and rationale, or dismissed with evidence. Required work outside the task gets an owning task under planning's [change rule](references/planning.md#changes), created or reused by an actor with record authority; record mandate coverage before dispatch. An optional improvement is a proposal, never an automatic scope increase.
 - **A Plan fix:** a stable fix to a Plan gets one targeted recheck of the changes and the conclusions they affect, by the same reviewer where the runtime can resume it.
 - **A deliverable fix** is proved by a test that fails before it and passes after; only when it fixes a blocking finding of a heavy review, or reaches beyond its findings, does it also get one targeted recheck per fix cycle, by a fresh reviewer at the light-review route given the previous findings.
 - **Any recheck:** a recheck is never a fresh floor, and a replacement reviewer adds no judgment; a repair whose blast radius is one reversible internal record may be rechecked by the supervisor.
