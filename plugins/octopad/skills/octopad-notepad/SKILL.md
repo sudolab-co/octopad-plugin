@@ -4,7 +4,7 @@ description: "Use where orientation shows the user's personal Notepad: when a re
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-notepad"` when you open this skill.
 
-Version: 5.3.0
+Version: 5.4.0
 
 # Whose memory
 
@@ -54,6 +54,7 @@ by: <agent and model> | session <session id> | <YYYY-MM-DD>
 entry_id: <stable id>
 when: <subject, condition or date>
 remind: <the message to deliver>
+refs: task:<uuid>, stream:<uuid>, goal:<uuid>
 by: <agent and model> | session <session id> | <YYYY-MM-DD>
 </reminders>
 
@@ -78,7 +79,7 @@ followup: <YYYY-MM-DD> | session <session id> | <entry_id>
 - `context_gaps`: context you lacked and where to find it.
 - `last_briefing`: today's briefing claim and follow-up claim. A missing line means no claim.
 
-Optional keys, only when their rule applies: `repeat:`, `last_delivered:`, `claimed_by:` and `claim_until:` on reminders; `review_on:` and `last_prompted_on:` on premises.
+Optional keys, only when their rule applies: `refs:`, `repeat:`, `last_delivered:`, `claimed_by:` and `claim_until:` on reminders; `review_on:` and `last_prompted_on:` on premises.
 
 Give each entry a stable `entry_id:`; preserve it across edits and moves, and assign one when you first maintain an entry without it. Keep the original `by:` line; record a later intervention on an `updated_by:` line in the same form, never replacing the origin. A session id is your runtime's actual identifier, never an invented label; write `unavailable` if the runtime exposes none, and then sign each claim with a random token you keep for this conversation, so no two sessions share a claim. Mark an unknown origin `by: unknown` without deleting the entry.
 
@@ -134,7 +135,7 @@ The `compass` holds at most one `### Focus themes` entry: what the user intends 
 
 - **Set one yourself when a next step waits on an event.** In a main session, when you leave the user a next step, or set a task `blocked` or `on_hold`, that can only move after a date or an event, write a reminder unasked and say so in one line, unless Octopad tells the user of every event the wait needs. It tells a task's assignee and creator when the last dependency they can see is done, unless the task is `on_hold`, and when its linked pull request merges; never of a date, a deploy, a switch, an outside reply or an unlinked merge. The event may be someone else's act, such as a teammate's merge; the reminder is for the user's step that follows it, while work the user hands to another person is a task assigned to them. `when:` names the event so a later session can check it ("acme/app#42 merged"); `remind:` says what it frees: the check to run, or the task to resume or to close on its own evidence. Name that task, not its dependents: read those when the reminder fires. Set one only when the event frees something the user must do; otherwise keep the step in the loop's `next:`. One reminder per event: add to an existing one rather than writing a second.
 - **Check events at every opening.** At a main session's opening, before answering, check each reminder that waits on an event with the tools you have (a pull request's state, a deploy, a task's status). Once the event has happened, record, claim and deliver the reminder as below at that opening, even on another subject, in one line, with what it frees as of now: after a merge, the tasks it unblocked, read from the task tree. A reminder whose event has happened is delivered first, never swept or resolved as a stale pointer. Not yet happened: say nothing. Cannot check: keep it, and say so only when its subject comes up.
-- **Capture.** `when:` holds the subject, condition or date, with the user's own logic when they combine them; `remind:` holds the message. Add `repeat:` only when asked: it then fires once per relevant occasion, not per message. Promise nothing outside an active conversation; a scheduled alert belongs to an automation tool.
+- **Capture.** `when:` holds the subject, condition or date, with the user's own logic when they combine them; `remind:` holds the message. When the reminder concerns known work, add one `refs:` line with only its relevant, verified `task:<uuid>`, `stream:<uuid>` or `goal:<uuid>` references, using full ids separated by commas, without duplicates or other text. Include a related stream or goal only when that relationship is established: scope matching does not infer it from a task reference. Omit the line when no reference is known; keep the reminder unclassified rather than guessing from a title, theme name or position. Add `repeat:` only when asked: it then fires once per relevant occasion, not per message. Promise nothing outside an active conversation; a scheduled alert belongs to an automation tool.
 - **Match a subject by meaning and scope,** not words alone: "the demo shoot" can match "demo video". A mere mention or example does not match; a doubtful match does not fire. Reminders are exempt from the follow-up delays and quota.
 - **Record** a due reminder (its date came, its event happened or its subject matched) that the Notepad you just read still holds, not delivered for this occasion. Call `notifications` `record_reminder` with its `entry_id`, its `when:` line and a `repeat:` one's `last_delivered:` line if it has one, both exactly as written, and `line`: what it asks of them now, at most 200 characters. The same occasion always gets the same receipt, so recording needs no claim. A receipt, new or "Already recorded", keeps it in their Needs you and Notifications until they handle it: mark that notification handled only on their word. On an unclear answer or none, leave the entry as it is and call once more with the same values: that looks the occasion up, so a receipt that landed comes back and none is written twice.
 - **Claim** (see Claims). Re-read the entry and check it is neither cancelled nor delivered for this occasion. Claim it with `claimed_by: session <session id>` and `claim_until:` (current UTC time plus 10 minutes).
