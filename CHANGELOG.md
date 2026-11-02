@@ -1,5 +1,12 @@
 # Changelog
 
+## 23.14.0 - Unreleased
+
+Ship once production serves kernel 2.28.0, which makes a test its own task when it proves several deliverables or needs its own protocol, budget or someone's go.
+
+- `octopad-planning-and-work-design` 5.4.0: such a test gets one task per system it tests, depending on each deliverable it covers, which never waits for it. All that system's cases, what each proves and its run budget live in that task alone; its levels, such as a protocol to approve and then its runs, are its subtasks; acceptance stays its approver's yes. Work the methodology makes its own task, such as a deploy another member runs, no longer reads as staying in a Done when.
+- Laying out a stream gives each clause of its Definition of Success the task that proves it, so no test is found only when the last task closes. The launch example no longer rules out a test or deploy task the methodology calls for.
+
 ## 23.13.0 - Unreleased
 
 - The Notepad skill saves the user's stated focus direction at once, even while the AI proposes changes of its own; only an uncertain AI addition or move waits for one question.
