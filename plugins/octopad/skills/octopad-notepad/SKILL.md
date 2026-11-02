@@ -1,10 +1,10 @@
 ---
 name: octopad-notepad
-description: "Use where orientation shows the user's personal Notepad: when a reminder matches the subject or its event happened, when only an excerpt is shown or a readable Notepad has no focus themes, at an opening with no precise ask, when the user asks to be reminded, what was in progress, what to work on or names a focus, and before writing to it, next steps included. Not for shared pages."
+description: "Use where orientation shows the user's personal Notepad: when a reminder matches the subject or its event happened, when your work changes a task, stream or goal an entry names, when only an excerpt is shown or a readable Notepad has no focus themes, at an opening with no precise ask, when the user asks to be reminded, what was in progress, what to work on or names a focus, and before writing to it, next steps included. Not for shared pages."
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-notepad"` when you open this skill.
 
-Version: 5.5.0
+Version: 5.6.0
 
 # Whose memory
 
@@ -127,7 +127,7 @@ The `compass` holds at most one `### Focus themes` entry: what the user intends 
 - **Keep the themes true yourself.** When a fact about work they do, own or wait on changes what deserves their attention first (it blocks a theme, a defect hurts users, a High task or a deadline nears, they keep working on it), move the theme it fits, or add one if none fits. Retire a theme once its purpose is met or dropped, not when its current tasks close. Otherwise update only `currently on:`.
 - **Keep one current reason for your change.** Keep the person's reason first in `why:`, then at most one `moved <YYYY-MM-DD>: <fact>` for your latest change. Replace the previous dated AI reason, never append another; preserve the person's reason and any AI-proposal attribution, rather than presenting your inference as their intent. Keep the dated marker so the Summary can report the change once, including its first Summary.
 - **Say what you changed and why.** One line in the conversation names the change, its basis and a one-word undo, for example: "I organized your focus around your current work; say undo to reverse it." On that word, reverse only your still-present change through the same conditional save rules, preserving later edits and unrelated entries; never restore a whole old document. Their undo is a correction: do not reapply the proposal without a new fact.
-- **Resolve doubt at its source.** If a theme's priority or a new theme is uncertain, propose the arrangement and ask one question before changing it. For any other doubt, verify the facts first.
+- **Resolve doubt at its source.** Save the user's stated direction at once, even while you propose changes of your own. If your proposed addition or move is uncertain, leave that change unsaved, preserve the existing themes, propose the change and ask one question. For any other doubt, verify the facts first.
 
 # Reminders
 
@@ -167,6 +167,8 @@ Make each word count: a heading, one or two sentences, then the entry's keys; up
 The task tree remains the plan; the Notepad adds missing continuity, not a second backlog. Never remove useful context to meet an entry count; a growing Notepad usually means work waits to be promoted.
 
 # Maintain
+
+In a main session, when your work changes a task, stream or goal an entry names, repair its stale references in the same turn, without asking. Preserve unique context and reminder commitments; apply Claims and Reminders before changing or removing a reminder.
 
 Before each write, resolve the verified stale pointers and duplicates you meet on the subject, whoever wrote them; systematic cleanup belongs to the briefing. You may condense any entry if every intention, limit, unique next step and follow-up date survives. Merge duplicates only after preserving each one's unique context and origin. Age is a reason to check, never proof of expiry; an entry whose meaning is uncertain stays.
 

@@ -1,5 +1,10 @@
 # Changelog
 
+## 23.13.0 - Unreleased
+
+- The Notepad skill saves the user's stated focus direction at once, even while the AI proposes changes of its own; only an uncertain AI addition or move waits for one question.
+- When an AI's work changes a task, stream or goal a Notepad entry names, it repairs that entry's references in the same turn without asking, keeping the entry's own context and reminder commitments. The skill now opens at that moment.
+
 ## 23.12.0 - Unreleased
 
 - The Notepad skill announces a relevant triggered reminder in the conversation and records an unrelated one as a notification. Both routes share the existing conditional claim, keep the entry pending after delivery, and wait for the person's response or explicit handling before closing the occasion.

@@ -7,7 +7,8 @@
     "execution": "Subscription CLI only after the operator approves the concrete protocol. Use fictional fixtures and intercepted writes, then the approved Sudolab scope for integrated flow. No private real-person Notepad, paid API or background action.",
     "comparison": "Run the same cases against base ffba59ac9d6959dbf692e557fb166b14c7842214 and the final candidate. Preserve transcripts and score each expected outcome independently. A wrong write, lost entry, stale snapshot or unauthorized shared effect fails its case.",
     "release_limit": "Unrun cases are not a routing, behavioral or non-regression pass.",
-    "reminder_lifecycle": "Seven additional cases compare source2fedda2 with this candidate under the same approved protocol. They are prepared, not run; existing focus/ref cases and their own comparison remain."
+    "reminder_lifecycle": "Seven additional cases compare source2fedda2 with this candidate under the same approved protocol. They are prepared, not run; existing focus/ref cases and their own comparison remain.",
+    "save_first": "Four cases (save-first-1 to 4) compare 5b601365cbd4fbdfa62068ce32c54bbffbfe7757 with this candidate, each against its own comparison_base. A single-turn replay on 2026-11-02 (Sonnet 5.5 medium, skill text inline, fictional fixtures) ran cases 1 to 3 and the reminder case under a restrictive session brief once per version: both versions saved the order, repointed the reminder and saved nothing for the hypothetical; the new version kept the AI's own addition out of the save explicitly. The replay gives the skill text inline, so it does not test whether a long session opens the skill; that routing gap, the observed failure, stays unproven until real use."
   },
   "evals": [
     {
@@ -364,6 +365,50 @@
         "Reread current owner state, update the same entry and trigger according to the person, reconcile the old occurrence on their word, preserve stable id and unrelated entries. Do not present the old occasion as a new demand or complete its task."
       ],
       "comparison_base": "2fedda2ca1b79a4b2c1ed43f4952e8551472b200"
+    },
+    {
+      "id": "save-first-1",
+      "prompt": "My order from now on: first make the information pipeline reliable, then lock the Desktop UX, then polish its UI, then the native apps, then the store plugins. Makes sense?",
+      "files": [],
+      "must_load": true,
+      "expected_behavior": [
+        "Saves the user's stated order in the same turn through one conditional notepad update, keeping verified refs, and says so in one line with a one-word undo. Leaves the unanswered AI proposal unsaved and asks about it in one question. Never waits for a validation of the user's order."
+      ],
+      "comparison_base": "5b601365cbd4fbdfa62068ce32c54bbffbfe7757",
+      "context": "Owner Notepad (revision 12, known format) holds a Focus themes entry: 1. Finish the Pad (refs stream:1111...) 2. Desktop with the AI stage (stream:2222...) 3. Native apps (stream:3333...) 4. Store plugins (stream:4444...), all refs verified. Earlier in this conversation the AI proposed adding a theme \"Ship V3 to everyone\" before the store plugins; the user has not answered that proposal."
+    },
+    {
+      "id": "save-first-2",
+      "prompt": "Split each code task whose Done when includes a staging check: keep the code part, create the check as its own task depending on it. I approve the split.",
+      "files": [],
+      "must_load": true,
+      "expected_behavior": [
+        "Opens the Notepad skill because its work changed tasks the entries name. Repairs each stale reference according to the reminder's actual commitment: R1 and R2 point to B and D in the same turn without asking; R1 keeps its Friday demo request; R3 and R4 stay unchanged; triggers and delivery state are preserved; one conditional save with a reason naming the repaired entries."
+      ],
+      "comparison_base": "5b601365cbd4fbdfa62068ce32c54bbffbfe7757",
+      "context": "The user approved splitting code tasks from their post-merge checks and the AI applied it: task A (code only, pending review) and new task B (live check, blocked until the staging bridge is on); task C (code only) and new task D (blocked until migration 746 on staging). Owner Notepad holds four reminders: R1 names task A for the bridge check and also asks to tell David to keep the bridge on for Friday's demo; R2 names task C for the migration check; R3 names a task the split did not touch; R4 is a dated reminder on another subject."
+    },
+    {
+      "id": "save-first-3",
+      "prompt": "What if I put the native apps before the Desktop polish? Just thinking out loud.",
+      "files": [],
+      "must_load": true,
+      "expected_behavior": [
+        "Treats the hypothetical as discussion, not stated direction: changes no theme and does not save."
+      ],
+      "comparison_base": "5b601365cbd4fbdfa62068ce32c54bbffbfe7757",
+      "context": "Owner Notepad (revision 12, known format) holds a Focus themes entry: 1. Finish the Pad (refs stream:1111...) 2. Desktop with the AI stage (stream:2222...) 3. Native apps (stream:3333...) 4. Store plugins (stream:4444...), all refs verified. No reminder is due and no other condition requires a write."
+    },
+    {
+      "id": "save-first-4",
+      "prompt": "I closed the code task for the bridge check and opened its check task. Tidy whatever needs it.",
+      "files": [],
+      "context": "Owner Notepad holds reminder R1: when the staging bridge is on and the change is deployed to staging, open the local Desktop, check live data, then close the code task (now done). The new check task names only the bridge, not the deploy.",
+      "must_load": true,
+      "expected_behavior": [
+        "Repoints R1 to the check task and keeps its deploy condition, which the new task does not hold; does not remove R1 or deliver it, since its event has not been verified."
+      ],
+      "comparison_base": "5b601365cbd4fbdfa62068ce32c54bbffbfe7757"
     }
   ]
 }
