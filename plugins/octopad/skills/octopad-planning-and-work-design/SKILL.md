@@ -4,7 +4,7 @@ description: "Use while a request's task count, prerequisites, nesting, scores, 
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-planning-and-work-design"` when you open this skill.
 
-Version: 5.3.0
+Version: 5.4.0
 
 # From a need to prepared work
 
@@ -26,7 +26,8 @@ When agents could usefully deliver the prepared work, when the user asks for age
 - Count the deliverables before you count tasks: a deliverable is something that could be shipped, reviewed or closed on its own, and the number of those is the number of top-level tasks — no more and no fewer.
 - Cut each deliverable into the smallest units that make sense in the logic of its work: parts each finished and checked on its own, split at natural seams, never mid-change, an atomic change kept whole. Those units become its subtasks; a deliverable of one unit has none.
 - Never open a top-level task whose only job is to hold the others beneath it. An umbrella restates the stream and delivers nothing of its own.
-- Checking a deliverable, getting it accepted and delivering it are not parts of it: they stay in its Done when, as the methodology says. Deliverables made one after another stay flat all the same: top-level tasks joined by dependencies.
+- Checking a deliverable, getting it accepted and delivering it are not parts of it: they stay in its Done when, as the methodology says, except work it makes its own task. Deliverables made one after another stay flat all the same: top-level tasks joined by dependencies.
+- A test that is its own task gets one task per system it tests, such as a signup flow or a reminder service: all that system's cases sit in its What, each with what it proves, beside its run budget, and never also in a deliverable's Done when. It depends on each deliverable it covers, which never waits for it. Its levels, such as a protocol to approve and then its runs, are its subtasks, never one per case. Accepting the result stays its approver's yes, never a task.
 - A subtask may not fall due after the task above it.
 - Join two deliverables only where one truly cannot start until the other lands; an edge added for tidiness serialises work that could have run side by side.
 - Order is what dependencies carry, and priority says how much a thing matters within an order already settled. Reaching for priority to make something happen sooner is the sign that a real dependency, or the user's call on order, is missing.
@@ -69,6 +70,7 @@ When agents could usefully deliver the prepared work, when the user asks for age
 # Laying out a plan
 
 - A page that mirrors the task tree makes a second copy of the plan: it is then read in two places and goes stale as the work lands. Pages carry reference material that outlasts the effort, not a plan the tasks already hold.
+- When you lay out a stream, give each clause of its `definition_of_success` the task that proves it: a deliverable's Done when, or a test task where the methodology makes one. A clause nothing proves is otherwise found only when the last task closes.
 - The default shape of an effort is flat — the stream, its top-level tasks, and the dependencies between them. When a stream's whole work follows one logic, mark its main parts for the user: start the title of each top-level task with its phase, `P1 · <title>`, `P2 · <title>`. Subtasks carry no prefix, and a phase is never a parent task.
 - When a graph write — a create, a dependency, a change of page links — comes back naming sibling tasks that share the pages you linked, read their order and their gates again before moving on. What changed the plan changed its neighbours, not only the edge you came to add.
 
@@ -80,7 +82,7 @@ User, on 2026-04-26: *"Lay out the launch: research, then design, then build, th
 - Right: the stream first, then the entire graph in as few `batch_tasks` calls as its limits allow.
   1. Open the time-bound stream "Launch Q2" with its `definition_of_success`, its goal, and a `target_date` of `2026-05-31`, five weeks from the day the user asked, which is the horizon they gave, set on the effort itself and never copied down onto its tasks.
   2. The whole set, the stream given once as each call's default and `depends_on_refs` carrying every edge (to an earlier call's task by its ID), never a second pass of `link_dependency` calls.
-- Why the titles carry phases here: the launch follows one logic, research then design then build then ship, so each top-level task starts with its phase, `P1 · ` to `P4 · `, and no parent holds them. Five independent fixes, each checked in its own Done when, follow no such logic: they get no phases, no umbrella and no check or deploy tasks.
+- Why the titles carry phases here: the launch follows one logic, research then design then build then ship, so each top-level task starts with its phase, `P1 · ` to `P4 · `, and no parent holds them. Five independent fixes, each checked in its own Done when, follow no such logic: they get no phases and no umbrella, and a test or deploy task only where the methodology calls for one.
 - Why no date sits on a task here: the user gave a rough span, not four deadlines. That span became the effort's outer horizon and stopped there, and what carries the order between the tasks is `depends_on_refs`.
 
 # When an effort ends or changes shape

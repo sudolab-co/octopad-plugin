@@ -1,0 +1,29 @@
+{
+  "skill_name": "octopad-planning-and-work-design",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Lay out the stream for our new onboarding assistant: three code changes (the welcome flow, the AI's first-session prompt, the progress checklist), each shipped in its own PR. Once all three are on staging we want to check how the AI actually behaves across them with about eight test sessions, and I want to see the session plan before any of them runs. Then I'll try it myself before we call it done.",
+      "should_trigger": true,
+      "expected_behavior": "Creates three top-level code tasks and one test task for the onboarding system that depends on all three; the code tasks never depend on it. The test task's What lists its cases, what each proves and a run budget of about eight sessions; its subtasks are its levels (the session plan to approve, then the runs), never one subtask per case, and no case is repeated in a code task's Done when. The user's own try is the approver's yes on the test task, not a separate acceptance task. Each Definition of Success clause names the task that proves it."
+    },
+    {
+      "id": 2,
+      "prompt": "For the Q3 launch stream we ship a new pricing page and a new newsletter signup flow. Each one gets tested with five real customers after it is published. Set up the tasks.",
+      "should_trigger": true,
+      "expected_behavior": "Two deliverable tasks and two separate test tasks, one per system (pricing page, signup flow), since each customer test needs its own protocol and budget; each depends only on the deliverable it tests and holds its cases and its five-customer budget. Not one shared test task, not one task per customer or per case, and no umbrella task."
+    },
+    {
+      "id": 3,
+      "prompt": "Here are five unrelated bugs from support (date picker off by one, CSV export encoding, avatar upload limit, typo in the invite email, slow search on archived tasks). Each fix has its unit tests in its own PR. Put them on the board in the maintenance stream.",
+      "should_trigger": true,
+      "expected_behavior": "Five flat top-level tasks, no phases, no umbrella, and no test task for a check the PR's own tests cover; a test or deploy task appears only where the methodology calls for one (for example a post-merge test the user names, or a deploy another member runs)."
+    },
+    {
+      "id": 4,
+      "prompt": "Where does the Pad stream stand today? Just give me the short version.",
+      "should_trigger": false,
+      "expected_behavior": "Does not open the planning skill: a status question is answered from context."
+    }
+  ]
+}
