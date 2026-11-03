@@ -1,5 +1,11 @@
 # Changelog
 
+## 23.15.0 - Unreleased
+
+Ship once production serves the companion server change, whose Pad read parses the new part.
+
+- `octopad-notepad` 5.7.0: a focus theme may end with an optional `| deadline: <the user's words>` part, precise ("2026-09-18") or vague ("before the third week of September"). Only the user dates a theme: the AI never sets, infers or borrows a deadline from a task, stream or goal, and changes or removes one only on their word. A theme without a deadline stays valid.
+
 ## 23.14.0 - Unreleased
 
 Ship once production serves kernel 2.28.0, which makes a test its own task when it proves several deliverables or needs its own protocol, budget or someone's go.
