@@ -1,5 +1,11 @@
 # Changelog
 
+## 23.16.0 - Unreleased
+
+The plugin now installs in Cursor from this repository, with the same skills and Octoplan as Claude Code and Codex. It replaces the separate `sudolab-co/octopad-cursor-plugin` repository, which shipped only the Octopad connection at 0.1.0. Cursor reads `.cursor-plugin/marketplace.json` at the repository root and `plugins/octopad/.cursor-plugin/plugin.json`, connects through `plugins/octopad/mcp.json` (the server address alone) and leaves out the Claude-only Octoplan lane agents in `plugins/octopad/agents/`. Cursor has no Octoplan runtime profile: Octoplan treats it as an unknown host, which must establish its capabilities before promising autonomous delivery. A new test keeps the three manifests and `octopad-session`'s `Version:` on one version.
+
+All three distributions move to 23.16.0.
+
 ## 23.15.0 - Unreleased
 
 Ship once production serves the companion server change, whose Pad read parses the new part.

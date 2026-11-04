@@ -1,0 +1,17 @@
+{
+  "name": "octopad-plugin",
+  "owner": {
+    "name": "Sudolab"
+  },
+  "metadata": {
+    "description": "The Octopad plugin: the Octopad connection, its skills and Octoplan."
+  },
+  "plugins": [
+    {
+      "name": "octopad",
+      "source": "./plugins/octopad",
+      "description": "The Octopad connection, its skills and Octoplan.",
+      "category": "productivity"
+    }
+  ]
+}
