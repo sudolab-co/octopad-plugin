@@ -1,0 +1,24 @@
+{
+  "name": "octopad",
+  "displayName": "Octopad",
+  "version": "23.16.0",
+  "description": "Connect Octopad and load its skills for work, knowledge, documentation, the CRM and Octoplan, under the methodology served by the server.",
+  "author": {
+    "name": "Sudolab"
+  },
+  "homepage": "https://octopad.ai",
+  "repository": "https://github.com/sudolab-co/octopad-plugin",
+  "license": "MIT",
+  "logo": "assets/cursor-logo.png",
+  "keywords": [
+    "octopad",
+    "knowledge",
+    "documentation",
+    "planning",
+    "crm"
+  ],
+  "category": "productivity",
+  "skills": "./skills/",
+  "agents": [],
+  "mcpServers": "./mcp.json"
+}
