@@ -42,9 +42,23 @@ test('each marketplace points at plugins/octopad', () => {
 });
 
 test('the Cursor manifest references files that exist', () => {
-  const { logo, skills, mcpServers } = manifests.cursor;
-  for (const path of [logo, skills, mcpServers]) {
+  const { logo, skills, agents, mcpServers } = manifests.cursor;
+  for (const path of [logo, skills, agents, mcpServers]) {
     assert.ok(existsSync(join(PLUGIN, path)), `missing ${path}`);
+  }
+});
+
+test('the Cursor lane agents match the Claude lane agents', () => {
+  const field = (text, name) => text.match(new RegExp(`^${name}: (.+?)\r?$`, 'm'))?.[1];
+  const lanes = (dir) => readdirSync(join(PLUGIN, dir)).filter((file) => file.endsWith('.md')).sort();
+  assert.deepEqual(lanes('cursor-agents'), lanes('agents'));
+  for (const file of lanes('agents')) {
+    const claude = readFileSync(join(PLUGIN, 'agents', file), 'utf8');
+    const cursor = readFileSync(join(PLUGIN, 'cursor-agents', file), 'utf8');
+    for (const name of ['name', 'description']) {
+      assert.equal(field(cursor, name), field(claude, name), `${file} ${name}`);
+    }
+    assert.match(field(cursor, 'model') ?? '', /^claude-[a-z0-9-]+\[effort=[a-z]+\]$/, `${file} model`);
   }
 });
 

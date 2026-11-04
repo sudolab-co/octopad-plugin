@@ -1,7 +1,7 @@
 {
   "name": "octopad",
   "displayName": "Octopad",
-  "version": "23.16.0",
+  "version": "23.17.0",
   "description": "Connect Octopad and load its skills for work, knowledge, documentation, the CRM and Octoplan, under the methodology served by the server.",
   "author": {
     "name": "Sudolab"
@@ -18,6 +18,6 @@
     "crm"
   ],
   "skills": "./skills/",
-  "agents": [],
+  "agents": "./cursor-agents/",
   "mcpServers": "./mcp.json"
 }
