@@ -1,10 +1,10 @@
 ---
 name: octopad-planning-and-work-design
-description: "Use while a request's task count, prerequisites, nesting, scores, dates or repetition are undecided or wrong, and before laying out several tasks as a roadmap, plan or launch, creating or changing a stream or goal, or taking a task out of its stream by archive, deletion or move. Delivery by agents: octoplan."
+description: "Use while a request's task count, prerequisites, nesting, scores, dates or repetition are undecided or wrong, and before laying out several tasks as a roadmap, plan or launch, creating or changing a stream or goal, or taking a task out of its stream by archive, deletion or move, and before designing or running a costly test. Delivery by agents: octoplan."
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-planning-and-work-design"` when you open this skill.
 
-Version: 5.4.0
+Version: 5.5.0
 
 # From a need to prepared work
 
@@ -91,3 +91,13 @@ User, on 2026-04-26: *"Lay out the launch: research, then design, then build, th
 - Only a time-bound stream has a lifecycle, and it runs active, then completed, then archived. Completed keeps it in context and in search until its goal is reached; archived takes it out of context, so archiving ahead of the goal removes what the goal is still working from.
 - **Trackers are system-managed, with two exceptions you append yourself.** Tracker pages live in the system Trackers / Archive folders and render read-only. The system owns the Progress Report and Activity Log — never hand-write those two sections. You append exactly two things: the `## Closing Report` before completing a stream, and the structural-change note below.
 - **Structural-change note.** When a stream is archived, renamed, merged or split, or tasks move out of it, append a dated line to every tracker page the change touches, saying what changed and why.
+
+## Design a costly test
+
+A test is costly when, over all its runs, it launches AI sessions, takes a person's time or costs money. Before its first run, confirm that the revision it needs is deployed, write these in its task and show them to the person:
+
+- **Decision:** the observable result and its threshold, and what you do on pass, on fail and on an inconclusive result. If no result would change what you do, run nothing.
+- **Method and ceiling:** the cheapest method able to establish that result, and why each cheaper one cannot; the smallest series that could change the decision: a large expected effect needs few runs, and distinct real cases come before repeats of one. Then a numeric ceiling on runs, retries and grading included, with a stop rule set before the first result. At the ceiling, stop and report: only the person extends it. Keep the model the question is about; every other agent uses the smallest that does its job.
+- **Proof:** a known failing case the test must catch and a sound case it must pass, then every attempt, aborted ones included, reconciled with its traces, and what it changed, restored and checked.
+
+One AI run shows that something can happen, never how often.

@@ -24,6 +24,12 @@
       "prompt": "Where does the Pad stream stand today? Just give me the short version.",
       "should_trigger": false,
       "expected_behavior": "Does not open the planning skill: a status question is answered from context."
+    },
+    {
+      "id": 5,
+      "prompt": "We should compare our two prompts properly. Set up a bench of runs on them so we know which one is better.",
+      "should_trigger": true,
+      "expected_behavior": "Opens the planning skill and, before the first run, writes the decision, the cheapest sufficient method, a numeric ceiling with its stop rule, and a failing and a sound case in the task, then shows them to the person."
     }
   ]
 }

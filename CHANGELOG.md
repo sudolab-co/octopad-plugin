@@ -1,5 +1,12 @@
 # Changelog
 
+## 24.0.0 - Unreleased
+
+- `octopad-planning-and-work-design` 5.5.0: `Design a costly test` makes a test that launches AI sessions, takes a person's time or costs money state its decision, its cheapest method, a numeric ceiling and its proof before the first run.
+- `octoplan` 9.0.0: `Working judgment` points to the methodology's Working principles and briefs copy them verbatim. Needs a server that serves that section (kernel 2.34.0).
+
+All three distributions move to 24.0.0.
+
 ## 23.18.0 - Unreleased
 
 - `octopad-session`: a request for a tab on the user's work now leads to the Pad when the `desktop` tool offers `pad_read`, even if the user never names it. The AI reuses what the conversation says, asks what it leaves open in at most three questions, together, only those whose answer changes the page, proposes the tab with `pad_propose`, names what Octopad cannot show, saves on acceptance and applies later corrections to the same tab.

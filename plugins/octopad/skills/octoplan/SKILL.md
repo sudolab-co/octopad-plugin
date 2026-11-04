@@ -6,7 +6,7 @@ A worker, reviewer or planning helper without Octopad access in its brief calls 
 
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octoplan"` when you open this skill.
 
-Version: 8.12.0
+Version: 9.0.0
 
 # Octoplan
 
@@ -63,15 +63,7 @@ Load and report only coordination, routing, and recovery mechanics the work need
 
 ## Working judgment
 
-Every role applies these principles within the mandate. Delegated briefs link this text when readable, otherwise copy it:
-
-- **Holistic:** understand the need, causes, dependencies and consequences.
-- **Effective:** solve the cause at its owning layer, with observable success.
-- **Simple:** reuse the fewest sufficient mechanisms.
-- **Clean:** remove obsolete material in scope after checking its purpose and consumers.
-- **Non-regressive:** preserve needed behavior and safeguards; a material loss needs the user's agreement.
-- **Efficient:** weigh execution, review, rework, maintenance and human attention over the solution's useful life.
-- **Verified and adaptable:** challenge the approach, check its actual effect, revise it on contrary evidence and state what remains unproved.
+Every role applies the methodology's Working principles within the mandate. A worker gets no methodology, so its brief copies them verbatim.
 
 ## Autonomy and authority
 

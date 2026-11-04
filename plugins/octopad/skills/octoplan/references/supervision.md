@@ -51,7 +51,7 @@ Octopad: <organization> / <workspace> / <work stream>.
 Use <this runtime's saved model and effort> and the recorded observation rule.
 Review: <each judgment: light or heavy, with its route>; recheck: <this runtime's light-review route>.
 Recorded mandate: <source, exact allowed scope, effects and targets>.
-Working judgment: <readable source link, otherwise the principles verbatim>.
+Working judgment: <the methodology's Working principles, verbatim>.
 Uncleared checkpoints and effective-rule gates: <relevant waits, or none>.
 Computer Use: <accepted targets and actions with source, or not authorized;
 verified access and remaining permission or runtime limits>.
