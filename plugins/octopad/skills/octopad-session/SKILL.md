@@ -6,7 +6,7 @@ A sub-agent whose brief does not grant Octopad access calls no Octopad tool, `sk
 
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-session"` when you open this skill.
 
-Version: 23.17.0
+Version: 23.18.0
 
 # Start an Octopad plugin session
 
@@ -21,3 +21,5 @@ If the bundled connection offers the `followup` tool:
 - Add no comment or mention only to tell someone of a change you explained with it, unless the user asks.
 - A follow-up situation is assembled from explanations AIs already gave and current facts: check its sources before you act on it. To correct one, record the true fact on the item it cites; the explanation of that change replaces it.
 - Follow something only when the user asks to be kept informed of it.
+
+If the bundled connection offers the `desktop` tool, a request for a tab is a request for a Pad tab, even if the Pad goes unnamed. Call `pad_read` first and follow its `proposal` capability: reuse what the conversation says, ask at most three questions, together, only those whose answer changes the page, then `pad_propose`, naming what Octopad cannot show. Save on acceptance. A later correction in plain words changes the same tab.
