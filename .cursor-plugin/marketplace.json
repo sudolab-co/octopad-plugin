@@ -10,8 +10,7 @@
     {
       "name": "octopad",
       "source": "./plugins/octopad",
-      "description": "The Octopad connection, its skills and Octoplan.",
-      "category": "productivity"
+      "description": "The Octopad connection, its skills and Octoplan."
     }
   ]
 }

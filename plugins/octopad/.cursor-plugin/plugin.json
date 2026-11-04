@@ -17,6 +17,7 @@
     "planning",
     "crm"
   ],
+  "category": "productivity",
   "skills": "./skills/",
   "agents": [],
   "mcpServers": "./mcp.json"
