@@ -1,5 +1,14 @@
 # Changelog
 
+## 23.17.0 - Unreleased
+
+Ship with 23.16.0, which first installs the plugin in Cursor.
+
+- `octoplan` 8.12.0: Cursor gets its own runtime profile, `references/cursor-runtime.md`, so Octoplan no longer treats it as an unknown host. Cursor runs each task's saved Claude route, written as a Cursor model ID with an effort parameter (`Opus 5.5 · high` is `claude-opus-5-5[effort=high]`); Plans gain no Cursor route. The supervisor is a new Agent chat the user opens from a pointer block, since no Cursor tool starts one; it runs each task through one executor subagent, which runs its reviewers in the foreground. Cursor swaps in another model without failing when a plan or admin rules one out, so a definition is a declaration and the subagent's task card is the evidence. The profile comes from Cursor's documentation and Cursor's own plugins (`github.com/cursor/plugins`), not from a run: they show plugin agent files pinning `model` with bracket effort, `xhigh` accepted for Grok, and the Task tool taking a plugin agent's bare name, a model slug and `resume`. Effort on Fable, the Task slug for a Claude model, and whether a background subagent wakes an idle chat stay unknown; executors run in the foreground until a run shows that wake-up.
+- The Cursor manifest now loads six Octoplan lane agents from `plugins/octopad/cursor-agents/`, with the Claude lanes' names and descriptions and a Cursor `model:` line pinning model and effort. A test keeps the two sets in step and checks that the Cursor manifest's agent path exists.
+
+All three distributions move to 23.17.0.
+
 ## 23.16.0 - Unreleased
 
 The plugin now installs in Cursor from this repository, with the same skills and Octoplan as Claude Code and Codex. It replaces the separate `sudolab-co/octopad-cursor-plugin` repository, which shipped only the Octopad connection at 0.1.0. Cursor reads `.cursor-plugin/marketplace.json` at the repository root and `plugins/octopad/.cursor-plugin/plugin.json`, connects through `plugins/octopad/mcp.json` (the server address alone) and leaves out the Claude-only Octoplan lane agents in `plugins/octopad/agents/`. Cursor has no Octoplan runtime profile: Octoplan treats it as an unknown host, which must establish its capabilities before promising autonomous delivery. A new test keeps the three manifests and `octopad-session`'s `Version:` on one version.
