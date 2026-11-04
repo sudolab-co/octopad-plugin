@@ -2,9 +2,7 @@
 
 ## 23.18.0 - Unreleased
 
-Ship once production serves the companion server change, whose `pad_read` carries the same steps.
-
-- `octopad-session`: a request for a tab now leads to the Pad, even if the user never names it. The AI reuses what the conversation says, asks what it leaves open in at most three questions, together, only those whose answer changes the page, proposes the tab with `pad_propose`, names what Octopad cannot show, saves on acceptance and applies later corrections to the same tab.
+- `octopad-session`: a request for a tab on the user's work now leads to the Pad when the `desktop` tool offers `pad_read`, even if the user never names it. The AI reuses what the conversation says, asks what it leaves open in at most three questions, together, only those whose answer changes the page, proposes the tab with `pad_propose`, names what Octopad cannot show, saves on acceptance and applies later corrections to the same tab.
 
 All three distributions move to 23.18.0.
 
