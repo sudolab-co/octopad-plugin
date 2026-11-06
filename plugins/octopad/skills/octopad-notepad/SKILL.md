@@ -4,7 +4,7 @@ description: "Use where orientation shows the user's personal Notepad: when a re
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-notepad"` when you open this skill.
 
-Version: 5.6.0
+Version: 5.7.0
 
 # Whose memory
 
@@ -39,6 +39,7 @@ by: <agent and model> | session <session id> | <YYYY-MM-DD>
 ### Focus themes
 entry_id: <stable id>
 1. <theme in the user's words> | why: <their reason> | refs: goal:<uuid>, stream:<uuid>, task:<uuid> | currently on: <short line>
+2. <theme the user dated> | why: <their reason> | refs: task:<uuid> | currently on: <short line> | deadline: <their words>
 by: <agent and model> | session <session id> | <YYYY-MM-DD>
 
 ### The user's call on work order
@@ -121,9 +122,10 @@ Never recite the Notepad or ask the user to tidy, rank or validate it.
 
 The `compass` holds at most one `### Focus themes` entry: what the user intends to focus on, in order, in their own words where they gave them. A theme is not a stream: it may span streams and goals. Themes are the user's direction, not a queue: they never change shared priority, impact or goals, never authorize execution, and the task tree stays the plan.
 
-- **Format.** The Home Summary reads only the form the template shows, and flags any other line. At most 8 themes, one line each, numbered from 1 in order, its four parts in that order with no other `|`; keep `currently on:` even when empty. `refs:` holds only 1 to 4 comma-separated references, each `goal:`, `stream:` or `task:` with the item's full id: the goal it serves, its stream, its key task, never a list of its work. Besides its theme lines, the entry holds only its `entry_id:`, `by:` and `updated_by:` lines. Keep the heading and the labels in English, whatever the user's language.
+- **Format.** The Home Summary reads only the form the template shows, and flags any other line. At most 8 themes, one line each, numbered from 1 in order. A theme has four parts in that order, then a fifth, `| deadline: <their words>`, only when the user dated it; no other `|`. Keep `currently on:` even when empty. `refs:` holds only 1 to 4 comma-separated references, each `goal:`, `stream:` or `task:` with the item's full id: the goal it serves, its stream, its key task, never a list of its work. Besides its theme lines, the entry holds only its `entry_id:`, `by:` and `updated_by:` lines. Keep the heading and the labels in English, whatever the user's language.
 - **Start from their work when there are no themes.** When you read the full owner Notepad in a known format and it has no Focus themes entry or an empty one, infer up to 8 themes from the actual work they do, own or wait on and the facts making it pressing. Use the format above and verified references; invent neither work nor intent. Each inferred `why:` explicitly says it is an AI proposal from their work, not their stated reason. Save under Save without losing another session's work below, then use the saved themes at once and announce them under Say what you changed and why. Do not ask a setup question when the evidence supports the arrangement. An unreadable or unknown-format Notepad, or an existing malformed theme entry, is not an empty one: never infer or overwrite themes on that basis. If the evidence leaves the arrangement uncertain, use the doubt rule below. After a theme save, a Summary writer follows the served `heads_up_read` instructions to obtain a fresh snapshot, including an explicit restart when required. Finish the new read and write only from its snapshot and any receipts it supplies, never the pre-save ones.
 - **Their word applies at once.** Save what they add, reorder, reword or retire, without asking. Never undo their correction without a new fact.
+- **Only the user dates a theme.** Write a deadline as they said it, precise ("2026-09-18") or vague ("before the third week of September"). Never set, infer or borrow one from a task, stream or goal; change or remove it only on their word.
 - **Keep the themes true yourself.** When a fact about work they do, own or wait on changes what deserves their attention first (it blocks a theme, a defect hurts users, a High task or a deadline nears, they keep working on it), move the theme it fits, or add one if none fits. Retire a theme once its purpose is met or dropped, not when its current tasks close. Otherwise update only `currently on:`.
 - **Keep one current reason for your change.** Keep the person's reason first in `why:`, then at most one `moved <YYYY-MM-DD>: <fact>` for your latest change. Replace the previous dated AI reason, never append another; preserve the person's reason and any AI-proposal attribution, rather than presenting your inference as their intent. Keep the dated marker so the Summary can report the change once, including its first Summary.
 - **Say what you changed and why.** One line in the conversation names the change, its basis and a one-word undo, for example: "I organized your focus around your current work; say undo to reverse it." On that word, reverse only your still-present change through the same conditional save rules, preserving later edits and unrelated entries; never restore a whole old document. Their undo is a correction: do not reapply the proposal without a new fact.
