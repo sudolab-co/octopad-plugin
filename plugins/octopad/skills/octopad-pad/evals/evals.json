@@ -1,0 +1,827 @@
+{
+  "skill_name": "octopad-pad",
+  "protocol": {
+    "status": "unrun_pending_user_protocol_approval",
+    "model_calls_run": 0,
+    "purpose": "Compare plugin 24.0.0 (no octopad-pad) with 25.0.0 on routing and on the observable Pad writes; static checks do not establish AI behavior.",
+    "execution": "claude plugin eval on the Claude Code subscription, after the operator approves the protocol. Every Octopad tool is a mock answering fictional fixtures: nothing reaches an Octopad organization.",
+    "comparison": "The behaviour and correction cases run on both versions; the trigger cases on 25.0.0 only, since 24.0.0 holds no octopad-pad. Defeat proof: the correction cases on 25.0.0 with the section \"Route a correction\" removed must fail at least one of them.",
+    "release_limit": "Unrun cases are not a routing, behavioral or non-regression pass."
+  },
+  "evals": [
+    {
+      "id": "due-update",
+      "prompt": "Good morning. Let us get going in Octopad, workspace Example.",
+      "must_load": true,
+      "kind": "behaviour",
+      "versions": [
+        "24.0.0",
+        "25.0.0"
+      ],
+      "context": "Smart Brief and Brand watch due; Marketing ideas not due. The Smart Brief has news in Atlas launch and Billing, none in Hiring, a validation placed in Atlas launch and an answer request Outside focus; Brand watch has nothing new. One owned goal waits for a status line.",
+      "expected_behavior": [
+        "The run opens octopad-pad and records it with skill_opened.",
+        "pad context is called exactly once.",
+        "The context call names no tab.",
+        "The Smart Brief is saved once, with its own through as given.",
+        "Brand watch is saved once, with its own through.",
+        "Brand watch, where nothing changed, is saved with through alone.",
+        "Marketing ideas, which is not due, is never saved.",
+        "No save writes Outside focus or its vendor request.",
+        "The quiet Hiring theme gets no section.",
+        "No saved text repeats a task title.",
+        "The Smart Brief marks the migration unblocked, with its task in refs.",
+        "Objects go in refs, never as inline ref: links.",
+        "Goal upkeep starts only after a Pad save.",
+        "The owned goal to refresh gets set_status with base_revision 3.",
+        "In the pad save call for tab smart_brief, content.lead has at most two sentences. The first says what changed since Nov 8 (such as the migration being unblocked or EU payment retries being fixed). The second says what to do first, putting the pricing review due Nov 10, which others wait on, or the now-ready migration first. FAIL if there is no lead, if it has more than two sentences, or if it does not say what to do first."
+      ],
+      "graders": [
+        {
+          "name": "opens-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 1
+        },
+        {
+          "name": "one-context-call",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "\"action\":\\s*\"context\"",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "context-names-no-tab",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"context\")(?=[\\s\\S]*\"tab\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "smart-brief-saved-with-its-through",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_brief\")(?=[\\s\\S]*\"through\":\\s*\"2026-11-09T08:00:00\\.123456Z\")",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "quiet-tab-saved-with-its-through",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"55555555-5555-4555-8555-555555555551\")(?=[\\s\\S]*\"through\":\\s*\"2026-11-09T08:00:00\\.123457Z\")",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "quiet-tab-saved-with-through-alone",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"55555555-5555-4555-8555-555555555551\")(?=[\\s\\S]*\"(content|text)\":)",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "undue-tab-untouched",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"55555555-5555-4555-8555-555555555552\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "outside-focus-never-written",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*([Oo]utside [Ff]ocus|33333333-3333-4333-8333-333333333335|[Vv]endor))",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "quiet-theme-gets-no-section",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"title\":\\s*\"Hiring\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "object-names-not-copied",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*([Qq]uartz [Mm]igration|[Pp]ricing [Pp]age [Cc]opy|[Bb]illing [Rr]etry [Ff]ix))",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "unblocked-sentence-carries-its-task",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_brief\")(?=[\\s\\S]*\"mark\":\\s*\"unblocked\")(?=[\\s\\S]*33333333-3333-4333-8333-333333333331)",
+          "min": 1
+        },
+        {
+          "name": "no-inline-object-links",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*ref:(task|stream|goal|page):)",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "goal-upkeep-after-the-saves",
+          "type": "tool_order",
+          "before": {
+            "tool": "mcp__plugin_octopad_octopad__pad",
+            "input_match": "\"action\":\\s*\"save\""
+          },
+          "after": {
+            "tool": "mcp__plugin_octopad_octopad__goals",
+            "input_match": "\"action\":\\s*\"list\""
+          }
+        },
+        {
+          "name": "owned-goal-line-refreshed",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__goals",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"set_status\")(?=[\\s\\S]*\"base_revision\":\\s*3)",
+          "min": 1
+        },
+        {
+          "name": "lead-says-what-changed-then-what-first",
+          "type": "llm",
+          "focus": "mock_calls"
+        }
+      ]
+    },
+    {
+      "id": "failed-source",
+      "prompt": "Good morning. Let us get going in Octopad, workspace Example.",
+      "must_load": true,
+      "kind": "behaviour",
+      "versions": [
+        "24.0.0",
+        "25.0.0"
+      ],
+      "context": "Smart Brief due; Brand watch not checked: its stream could not be read and its through is none.",
+      "expected_behavior": [
+        "The run opens octopad-pad and records it with skill_opened.",
+        "pad context is called exactly once.",
+        "The Smart Brief is saved with its own through.",
+        "Brand watch, whose source failed, is still saved.",
+        "Brand watch is saved without through.",
+        "The pad save for tab 55555555-5555-4555-8555-555555555551 has content saying its source, the brand refresh stream, could not be read. FAIL if it says or implies that nothing changed, or if there is no such save."
+      ],
+      "graders": [
+        {
+          "name": "opens-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 1
+        },
+        {
+          "name": "one-context-call",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "\"action\":\\s*\"context\"",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "smart-brief-saved-with-its-through",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_brief\")(?=[\\s\\S]*\"through\":\\s*\"2026-11-09T08:00:00\\.123456Z\")",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "failed-tab-saved",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"55555555-5555-4555-8555-555555555551\")",
+          "min": 1
+        },
+        {
+          "name": "failed-tab-saved-without-through",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"55555555-5555-4555-8555-555555555551\")(?=[\\s\\S]*\"through\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "failed-tab-says-what-was-not-read",
+          "type": "llm",
+          "focus": "mock_calls"
+        }
+      ]
+    },
+    {
+      "id": "stale-save",
+      "prompt": "Good morning. Let us get going in Octopad, workspace Example.",
+      "must_load": true,
+      "kind": "behaviour",
+      "versions": [
+        "24.0.0",
+        "25.0.0"
+      ],
+      "context": "Smart Brief due at revision 7; another session saved revision 8 just after this context; every save answers STALE.",
+      "expected_behavior": [
+        "The run opens octopad-pad and records it with skill_opened.",
+        "pad context is called exactly once.",
+        "No save targets revision 8, which another session wrote after this context.",
+        "The final reply says the Smart Brief was already updated by another session and was left as it is. FAIL if it claims this session saved its own Smart Brief update."
+      ],
+      "graders": [
+        {
+          "name": "opens-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 1
+        },
+        {
+          "name": "one-context-call",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "\"action\":\\s*\"context\"",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "newer-brief-never-overwritten",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"expected_revision\":\\s*8)",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "says-another-session-updated-it",
+          "type": "llm",
+          "focus": "last_message"
+        }
+      ]
+    },
+    {
+      "id": "create-named",
+      "prompt": "Make me a Pad tab that follows the Brand refresh stream over the last 14 days, led by a short written reading.",
+      "must_load": true,
+      "kind": "behaviour",
+      "versions": [
+        "24.0.0",
+        "25.0.0"
+      ],
+      "context": "No Pad due. The request names its stream and period.",
+      "expected_behavior": [
+        "The run opens octopad-pad and records it with skill_opened.",
+        "context reads the unsaved definition: the Brand refresh stream over 14 days.",
+        "show proposes the tab with a reason.",
+        "Nothing is saved before the person says yes.",
+        "The reply asks the person to confirm before the tab is saved, and asks no question about which sources or which period to use. FAIL otherwise."
+      ],
+      "graders": [
+        {
+          "name": "opens-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 1
+        },
+        {
+          "name": "reads-the-unsaved-definition",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"context\")(?=[\\s\\S]*22222222-2222-4222-8222-222222222222)(?=[\\s\\S]*\"rolling_days\":\\s*14)",
+          "min": 1
+        },
+        {
+          "name": "proposes-with-a-reason",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"show\")(?=[\\s\\S]*\"reason\")",
+          "min": 1
+        },
+        {
+          "name": "saves-nothing-before-a-yes",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "\"action\":\\s*\"save\"",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "asks-for-a-yes-only",
+          "type": "llm",
+          "focus": "last_message"
+        }
+      ]
+    },
+    {
+      "id": "create-vague",
+      "prompt": "I want a tab for my sales work.",
+      "must_load": true,
+      "kind": "behaviour",
+      "versions": [
+        "24.0.0",
+        "25.0.0"
+      ],
+      "context": "No Pad due. Nothing in the workspace is about sales.",
+      "expected_behavior": [
+        "The run opens octopad-pad and records it with skill_opened.",
+        "No tab is shown yet.",
+        "No tab is saved yet.",
+        "The reply asks one to three questions in one message, each about what the tab should help decide or watch, which sources it follows, which period, or whether a written reading leads it. FAIL if it asks more than three, asks about anything else, or proposes or saves a tab."
+      ],
+      "graders": [
+        {
+          "name": "opens-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 1
+        },
+        {
+          "name": "proposes-nothing-yet",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "\"action\":\\s*\"show\"",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "saves-nothing-yet",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "\"action\":\\s*\"save\"",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "asks-at-most-three-questions-together",
+          "type": "llm",
+          "focus": "last_message"
+        }
+      ]
+    },
+    {
+      "id": "correction-tab",
+      "prompt": "On my Smart Brief, show me less about hiring.",
+      "must_load": true,
+      "kind": "correction",
+      "versions": [
+        "24.0.0",
+        "25.0.0"
+      ],
+      "context": "No Pad due. Hiring is a focus theme and a Smart Brief section.",
+      "expected_behavior": [
+        "The run opens octopad-pad and records it with skill_opened.",
+        "The Smart Brief saves a guidance about hiring.",
+        "The Notepad is not changed.",
+        "context is read for the Smart Brief alone, to rewrite it."
+      ],
+      "graders": [
+        {
+          "name": "opens-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 1
+        },
+        {
+          "name": "preference-saved-on-the-smart-brief",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_brief\")(?=[\\s\\S]*\"guidance\")(?=[\\s\\S]*[Hh]iring)",
+          "min": 1
+        },
+        {
+          "name": "focus-themes-untouched",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__notepad",
+          "input_match": "\"action\":\\s*\"update\"",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "smart-brief-reread",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"context\")(?=[\\s\\S]*\"tab\":\\s*\"smart_brief\")",
+          "min": 1
+        }
+      ]
+    },
+    {
+      "id": "correction-focus",
+      "prompt": "Billing matters more now. My Smart Brief should show that.",
+      "must_load": true,
+      "kind": "correction",
+      "versions": [
+        "24.0.0",
+        "25.0.0"
+      ],
+      "context": "No Pad due. Billing is the third focus theme.",
+      "expected_behavior": [
+        "The run opens octopad-pad and records it with skill_opened.",
+        "The Notepad update moves Billing up the focus themes.",
+        "No Pad guidance is written for it.",
+        "context is read for the Smart Brief alone, to rewrite it."
+      ],
+      "graders": [
+        {
+          "name": "opens-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 1
+        },
+        {
+          "name": "focus-theme-moved-up",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__notepad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"update\")(?=[\\s\\S]*[12]\\.\\s*Billing)",
+          "min": 1
+        },
+        {
+          "name": "no-guidance-for-a-focus",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "\"guidance\"",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "smart-brief-reread",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"context\")(?=[\\s\\S]*\"tab\":\\s*\"smart_brief\")",
+          "min": 1
+        }
+      ]
+    },
+    {
+      "id": "update-in-french",
+      "prompt": "Bonjour ! Mets à jour mon Pad dans l'espace Example, s'il te plaît.",
+      "must_load": true,
+      "kind": "trigger",
+      "versions": [
+        "25.0.0"
+      ],
+      "context": "As due-update, the brief language fr.",
+      "expected_behavior": [
+        "The run opens octopad-pad and records it with skill_opened.",
+        "The pad save for tab smart_brief has its lead and sentences in French. FAIL otherwise."
+      ],
+      "graders": [
+        {
+          "name": "opens-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 1
+        },
+        {
+          "name": "written-in-the-brief-language",
+          "type": "llm",
+          "focus": "mock_calls"
+        }
+      ]
+    },
+    {
+      "id": "tab-named",
+      "prompt": "Add a tab to my Pad that follows the Atlas launch stream.",
+      "must_load": true,
+      "kind": "trigger",
+      "versions": [
+        "25.0.0"
+      ],
+      "context": "Must load octopad-pad.",
+      "expected_behavior": [
+        "The run opens octopad-pad and records it with skill_opened."
+      ],
+      "graders": [
+        {
+          "name": "opens-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 1
+        }
+      ]
+    },
+    {
+      "id": "tab-unnamed",
+      "prompt": "I would like a page I can come back to every morning, showing what the Brand refresh stream did and what waits on me there.",
+      "must_load": true,
+      "kind": "trigger",
+      "versions": [
+        "25.0.0"
+      ],
+      "context": "Must load octopad-pad.",
+      "expected_behavior": [
+        "The run opens octopad-pad and records it with skill_opened."
+      ],
+      "graders": [
+        {
+          "name": "opens-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 1
+        }
+      ]
+    },
+    {
+      "id": "external-source",
+      "prompt": "Add our #atlas-launch Slack channel to what my Smart Brief reads.",
+      "must_load": true,
+      "kind": "trigger",
+      "versions": [
+        "25.0.0"
+      ],
+      "context": "Must load octopad-pad.",
+      "expected_behavior": [
+        "The run opens octopad-pad and records it with skill_opened."
+      ],
+      "graders": [
+        {
+          "name": "opens-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 1
+        }
+      ]
+    },
+    {
+      "id": "reminder",
+      "prompt": "Remind me to call the supplier when we next talk about the renewal.",
+      "must_load": false,
+      "kind": "trigger",
+      "versions": [
+        "25.0.0"
+      ],
+      "context": "Must not load octopad-pad.",
+      "expected_behavior": [
+        "skill_opened is never called for octopad-pad.",
+        "The Skill tool never loads octopad-pad.",
+        "No Read opens a file of octopad-pad."
+      ],
+      "graders": [
+        {
+          "name": "does-not-open-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "no-skill-tool-for-octopad-pad",
+          "type": "tool_used",
+          "tool": "Skill",
+          "input_match": "octopad-pad",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "no-read-of-octopad-pad",
+          "type": "tool_used",
+          "tool": "Read",
+          "input_match": "octopad-pad",
+          "min": 0,
+          "max": 0
+        }
+      ]
+    },
+    {
+      "id": "desktop-board",
+      "prompt": "Show me the Atlas launch stream as a board on the desktop right now.",
+      "must_load": false,
+      "kind": "trigger",
+      "versions": [
+        "25.0.0"
+      ],
+      "context": "Must not load octopad-pad.",
+      "expected_behavior": [
+        "skill_opened is never called for octopad-pad.",
+        "The Skill tool never loads octopad-pad.",
+        "No Read opens a file of octopad-pad."
+      ],
+      "graders": [
+        {
+          "name": "does-not-open-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "no-skill-tool-for-octopad-pad",
+          "type": "tool_used",
+          "tool": "Skill",
+          "input_match": "octopad-pad",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "no-read-of-octopad-pad",
+          "type": "tool_used",
+          "tool": "Read",
+          "input_match": "octopad-pad",
+          "min": 0,
+          "max": 0
+        }
+      ]
+    },
+    {
+      "id": "knowledge-page",
+      "prompt": "Write a Knowledge page summarizing our pricing decision for the team.",
+      "must_load": false,
+      "kind": "trigger",
+      "versions": [
+        "25.0.0"
+      ],
+      "context": "Must not load octopad-pad.",
+      "expected_behavior": [
+        "skill_opened is never called for octopad-pad.",
+        "The Skill tool never loads octopad-pad.",
+        "No Read opens a file of octopad-pad."
+      ],
+      "graders": [
+        {
+          "name": "does-not-open-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "no-skill-tool-for-octopad-pad",
+          "type": "tool_used",
+          "tool": "Skill",
+          "input_match": "octopad-pad",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "no-read-of-octopad-pad",
+          "type": "tool_used",
+          "tool": "Read",
+          "input_match": "octopad-pad",
+          "min": 0,
+          "max": 0
+        }
+      ]
+    },
+    {
+      "id": "roadmap",
+      "prompt": "Lay out a roadmap for the Atlas launch with tasks and dates.",
+      "must_load": false,
+      "kind": "trigger",
+      "versions": [
+        "25.0.0"
+      ],
+      "context": "Must not load octopad-pad.",
+      "expected_behavior": [
+        "skill_opened is never called for octopad-pad.",
+        "The Skill tool never loads octopad-pad.",
+        "No Read opens a file of octopad-pad."
+      ],
+      "graders": [
+        {
+          "name": "does-not-open-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "no-skill-tool-for-octopad-pad",
+          "type": "tool_used",
+          "tool": "Skill",
+          "input_match": "octopad-pad",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "no-read-of-octopad-pad",
+          "type": "tool_used",
+          "tool": "Read",
+          "input_match": "octopad-pad",
+          "min": 0,
+          "max": 0
+        }
+      ]
+    },
+    {
+      "id": "focus-alone",
+      "prompt": "From now on I want to focus on billing first.",
+      "must_load": false,
+      "kind": "trigger",
+      "versions": [
+        "25.0.0"
+      ],
+      "context": "Must not load octopad-pad.",
+      "expected_behavior": [
+        "skill_opened is never called for octopad-pad.",
+        "The Skill tool never loads octopad-pad.",
+        "No Read opens a file of octopad-pad."
+      ],
+      "graders": [
+        {
+          "name": "does-not-open-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "no-skill-tool-for-octopad-pad",
+          "type": "tool_used",
+          "tool": "Skill",
+          "input_match": "octopad-pad",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "no-read-of-octopad-pad",
+          "type": "tool_used",
+          "tool": "Read",
+          "input_match": "octopad-pad",
+          "min": 0,
+          "max": 0
+        }
+      ]
+    },
+    {
+      "id": "sub-agent",
+      "prompt": "You are a worker sub-agent launched by a supervisor. Your brief grants no Octopad access: do not call Octopad, not even skill_opened. Task: draft, as text only, the definition of a Pad tab for the Atlas launch and return it.",
+      "must_load": false,
+      "kind": "trigger",
+      "versions": [
+        "25.0.0"
+      ],
+      "context": "Must not load octopad-pad.",
+      "expected_behavior": [
+        "skill_opened is never called for octopad-pad.",
+        "The Skill tool never loads octopad-pad.",
+        "No Read opens a file of octopad-pad.",
+        "The sub-agent calls no pad action.",
+        "The sub-agent starts no Octopad session."
+      ],
+      "graders": [
+        {
+          "name": "does-not-open-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "no-skill-tool-for-octopad-pad",
+          "type": "tool_used",
+          "tool": "Skill",
+          "input_match": "octopad-pad",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "no-read-of-octopad-pad",
+          "type": "tool_used",
+          "tool": "Read",
+          "input_match": "octopad-pad",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "no-pad-call",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": ".",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "no-session",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__start_session",
+          "input_match": ".",
+          "min": 0,
+          "max": 0
+        }
+      ]
+    }
+  ]
+}

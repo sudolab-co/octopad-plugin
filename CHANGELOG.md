@@ -1,5 +1,14 @@
 # Changelog
 
+## 25.0.0 - Unreleased
+
+- `octopad-pad` 1.0.0, new: how your AI updates the Pad, writes a tab and creates one through the `pad` tool. An update reads one brief for every due tab and saves each tab alone with its `through`; a tab whose source could not be read is saved without it. The AI writes meaning only: the Smart Brief's lead says what changed since the last Pad, then what to do first; one section per focus theme with news; a one-line TL;DR; marked sentences that carry the objects they speak of, never their names, since the Pad shows each object on its own row. It never writes Outside focus. New tabs are proposed with `show` and saved on your yes; external sources are proposed once and never again after a no. "Show me less of X here" changes the tab; "X matters more now" changes your focus themes.
+- `octopad-session` 25.0.0: a due Pad, a request for a tab or a correction of one opens `octopad-pad` when the connection offers the `pad` tool.
+- `octopad-notepad` 6.0.0: with the Pad, the Smart Brief is the daily briefing, and the Notepad sweep runs after its saves. After a theme save during an update, the AI reads `pad` `context` again.
+- `octopad-planning-and-work-design` 5.6.0: `Goal upkeep` refreshes the status lines of the goals you own after a Pad update, with `goals` `list` and `get`, never blocking the update.
+
+Needs the Octopad server that serves the `pad` tool and its due line (migrations 787 and 788). All three distributions move to 25.0.0.
+
 ## 24.0.0 - Unreleased
 
 - `octopad-planning-and-work-design` 5.5.0: `Design a costly test` makes a test that launches AI sessions, takes a person's time or costs money state its decision, its cheapest method, a numeric ceiling and its proof before the first run.
