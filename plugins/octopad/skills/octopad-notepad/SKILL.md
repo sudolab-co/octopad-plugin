@@ -103,7 +103,7 @@ The briefing, a reminder's delivery and a follow-up question each reach the user
 
 Where the `pad` tool is offered, the Smart Brief is the daily briefing: when the Pad is due, `octopad-pad` writes it, saying where things stopped and where to start, and no other automatic briefing follows. Once its tabs are saved, run the sweep (step 2); it never delays or blocks a save. An explicit request to organize their work still gets steps 3 and 4.
 
-Otherwise, only at an opening with no precise ask, or when the user asks to organize their work, and only if `last_briefing` holds no claim for today:
+Where the `pad` tool is not offered, only at an opening with no precise ask, or when the user asks to organize their work, and only if `last_briefing` holds no claim for today:
 
 1. Claim it (see Claims): set `date:` to today and your session, keeping the other fields. The claim blocks only an automatic briefing: an explicit request from the user is always answered.
 2. Sweep: remove verified-closed references; check entries unchanged for seven days and remove only those whose resolution or promotion is established.

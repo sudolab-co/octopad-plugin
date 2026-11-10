@@ -4,7 +4,7 @@ description: "Use while a request's task count, prerequisites, nesting, scores, 
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-planning-and-work-design"` when you open this skill.
 
-Version: 5.6.0
+Version: 6.0.0
 
 # From a need to prepared work
 

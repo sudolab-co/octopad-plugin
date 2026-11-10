@@ -1,7 +1,7 @@
 {
   "skill_name": "octopad-pad",
   "protocol": {
-    "status": "run 2026-11-10 on 24.0.0 and 25.0.0 (80 agent runs); a rerun of 15 runs on the fixed skill is approved, not run yet",
+    "status": "run 2026-11-10 on 24.0.0 and 25.0.0 (80 agent runs), then reruns of 15 and 6 runs on the fixed skill; a check of the review fixes is prepared, not run",
     "purpose": "Compare plugin 24.0.0 (no octopad-pad) with 25.0.0 on routing and on the observable Pad writes; static checks do not establish AI behavior.",
     "execution": "claude plugin eval on the Claude Code subscription, after the operator approves the protocol. Every Octopad tool is a mock answering fictional fixtures: nothing reaches an Octopad organization.",
     "comparison": "The behaviour and correction cases run on both versions; the trigger cases on 25.0.0 only, since 24.0.0 holds no octopad-pad. Defeat proof: the correction cases on 25.0.0 with the section \"Route a correction\" removed must fail at least one of them.",
@@ -20,11 +20,12 @@
       "context": "Smart Brief and Brand watch due; Marketing ideas not due. The Smart Brief has news in Atlas launch and Billing, none in Hiring, a validation placed in Atlas launch and an answer request Outside focus; Brand watch has nothing new. One owned goal waits for a status line.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
+        "Every save of an existing tab carries expected_revision.",
         "pad context is called exactly once.",
         "The context call names no tab.",
         "The Smart Brief is saved once, with its own through as given.",
         "Brand watch is saved once, with its own through.",
-        "Brand watch, where nothing changed, is saved with through alone.",
+        "Brand watch, where nothing changed, is saved without content.",
         "Marketing ideas, which is not due, is never saved.",
         "No save writes Outside focus or its vendor request.",
         "The quiet Hiring theme gets no section.",
@@ -42,6 +43,14 @@
           "tool": "mcp__plugin_octopad_octopad__skill_opened",
           "input_match": "\"skill\":\\s*\"octopad-pad\"",
           "min": 1
+        },
+        {
+          "name": "every-save-carries-its-revision",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\")(?![\\s\\S]*\"expected_revision\")",
+          "min": 0,
+          "max": 0
         },
         {
           "name": "one-context-call",
@@ -76,7 +85,7 @@
           "max": 1
         },
         {
-          "name": "quiet-tab-saved-with-through-alone",
+          "name": "quiet-tab-saved-without-content",
           "type": "tool_used",
           "tool": "mcp__plugin_octopad_octopad__pad",
           "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"55555555-5555-4555-8555-555555555551\")(?=[\\s\\S]*\"(content|text)\":)",
@@ -168,6 +177,7 @@
       "context": "Smart Brief due; Brand watch not checked: its stream could not be read and its through is none.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
+        "Every save of an existing tab carries expected_revision.",
         "pad context is called exactly once.",
         "The Smart Brief is saved with its own through.",
         "Brand watch, whose source failed, is still saved.",
@@ -181,6 +191,14 @@
           "tool": "mcp__plugin_octopad_octopad__skill_opened",
           "input_match": "\"skill\":\\s*\"octopad-pad\"",
           "min": 1
+        },
+        {
+          "name": "every-save-carries-its-revision",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\")(?![\\s\\S]*\"expected_revision\")",
+          "min": 0,
+          "max": 0
         },
         {
           "name": "one-context-call",
@@ -229,9 +247,10 @@
         "24.0.0",
         "25.0.0"
       ],
-      "context": "Smart Brief due at revision 7; another session saved revision 8 just after this context; every save answers STALE.",
+      "context": "Smart Brief due at revision 7; another session saved revision 8, read through after this context; a save at 7 answers STALE, at 8 it would overwrite.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
+        "Every save of an existing tab carries expected_revision.",
         "pad context is called exactly once.",
         "No save targets revision 8, which another session wrote after this context.",
         "The final reply says the Smart Brief was already updated by another session and was left as it is. FAIL if it claims this session saved its own Smart Brief update."
@@ -243,6 +262,14 @@
           "tool": "mcp__plugin_octopad_octopad__skill_opened",
           "input_match": "\"skill\":\\s*\"octopad-pad\"",
           "min": 1
+        },
+        {
+          "name": "every-save-carries-its-revision",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\")(?![\\s\\S]*\"expected_revision\")",
+          "min": 0,
+          "max": 0
         },
         {
           "name": "one-context-call",
@@ -380,6 +407,7 @@
       "context": "No Pad due. Hiring is a focus theme and a Smart Brief section.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
+        "Every save of an existing tab carries expected_revision.",
         "The Smart Brief saves a guidance about hiring.",
         "The Notepad is not changed.",
         "context is read for the Smart Brief alone, to rewrite it."
@@ -391,6 +419,14 @@
           "tool": "mcp__plugin_octopad_octopad__skill_opened",
           "input_match": "\"skill\":\\s*\"octopad-pad\"",
           "min": 1
+        },
+        {
+          "name": "every-save-carries-its-revision",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\")(?![\\s\\S]*\"expected_revision\")",
+          "min": 0,
+          "max": 0
         },
         {
           "name": "preference-saved-on-the-smart-brief",
@@ -428,6 +464,7 @@
       "context": "No Pad due. Billing is the third focus theme.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
+        "Every save of an existing tab carries expected_revision.",
         "The Notepad update moves Billing up the focus themes.",
         "No Pad guidance is written for it.",
         "context is read for the Smart Brief alone, to rewrite it."
@@ -439,6 +476,14 @@
           "tool": "mcp__plugin_octopad_octopad__skill_opened",
           "input_match": "\"skill\":\\s*\"octopad-pad\"",
           "min": 1
+        },
+        {
+          "name": "every-save-carries-its-revision",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\")(?![\\s\\S]*\"expected_revision\")",
+          "min": 0,
+          "max": 0
         },
         {
           "name": "focus-theme-moved-up",
@@ -475,6 +520,7 @@
       "context": "No Pad due. The Smart Brief sections follow the focus themes; Billing is the third.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
+        "Every save of an existing tab carries expected_revision.",
         "The Notepad update makes Billing the first focus theme, which orders the Smart Brief.",
         "No Pad guidance is written for it."
       ],
@@ -485,6 +531,14 @@
           "tool": "mcp__plugin_octopad_octopad__skill_opened",
           "input_match": "\"skill\":\\s*\"octopad-pad\"",
           "min": 1
+        },
+        {
+          "name": "every-save-carries-its-revision",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\")(?![\\s\\S]*\"expected_revision\")",
+          "min": 0,
+          "max": 0
         },
         {
           "name": "billing-first-in-focus",
@@ -514,6 +568,7 @@
       "context": "As due-update, the brief language fr.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
+        "Every save of an existing tab carries expected_revision.",
         "The pad save for tab smart_brief has its lead and sentences in French. FAIL otherwise."
       ],
       "graders": [
@@ -523,6 +578,14 @@
           "tool": "mcp__plugin_octopad_octopad__skill_opened",
           "input_match": "\"skill\":\\s*\"octopad-pad\"",
           "min": 1
+        },
+        {
+          "name": "every-save-carries-its-revision",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\")(?![\\s\\S]*\"expected_revision\")",
+          "min": 0,
+          "max": 0
         },
         {
           "name": "written-in-the-brief-language",
@@ -583,9 +646,10 @@
       "versions": [
         "25.0.0"
       ],
-      "context": "Must load octopad-pad.",
+      "context": "Must load octopad-pad. The Smart Brief already reads one Gmail scope.",
       "expected_behavior": [
-        "The run opens octopad-pad and records it with skill_opened."
+        "The run opens octopad-pad and records it with skill_opened.",
+        "A save of external_scopes keeps the Gmail scope the Smart Brief already reads."
       ],
       "graders": [
         {
@@ -594,6 +658,14 @@
           "tool": "mcp__plugin_octopad_octopad__skill_opened",
           "input_match": "\"skill\":\\s*\"octopad-pad\"",
           "min": 1
+        },
+        {
+          "name": "keeps-the-current-scopes",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"external_scopes\")(?![\\s\\S]*30000000-0000-4000-8000-000000000001)",
+          "min": 0,
+          "max": 0
         }
       ]
     },
