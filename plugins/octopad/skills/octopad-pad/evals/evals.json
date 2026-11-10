@@ -1,7 +1,7 @@
 {
   "skill_name": "octopad-pad",
   "protocol": {
-    "status": "run 2026-11-10 on 24.0.0 and 25.0.0 (80 agent runs), then reruns of 15 and 6 runs on the fixed skill; a check of the review fixes (12 runs) is prepared, not run",
+    "status": "run 2026-11-10 on 24.0.0 and 25.0.0 (80 agent runs), then reruns of 15 and 6 runs on the fixed skill; a check of the review fixes (12 runs) is prepared, its first attempt stopped on a stub defect",
     "purpose": "Compare plugin 24.0.0 (no octopad-pad) with 25.0.0 on routing and on the observable Pad writes; static checks do not establish AI behavior.",
     "execution": "claude plugin eval on the Claude Code subscription, after the operator approves the protocol. Every Octopad tool is a mock answering fictional fixtures: nothing reaches an Octopad organization.",
     "comparison": "The behaviour and correction cases run on both versions; the trigger cases on 25.0.0 only, since 24.0.0 holds no octopad-pad. Defeat proof: the correction cases on 25.0.0 with the section \"Route a correction\" removed must fail at least one of them.",
@@ -247,7 +247,7 @@
         "24.0.0",
         "25.0.0"
       ],
-      "context": "Smart Brief due at revision 7; another session saved revision 8, read through after this context; a save at any revision but 8 answers STALE; at 8 it lands (an overwrite) at revision 9.",
+      "context": "Smart Brief due at revision 7; another session saved revision 8, read through after this context. Every save answers STALE: the stub cannot key on revision, so a save at 8, which the store would take, is caught by the grader newer-brief-never-overwritten.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
