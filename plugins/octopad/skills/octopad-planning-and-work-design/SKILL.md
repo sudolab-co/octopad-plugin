@@ -1,10 +1,10 @@
 ---
 name: octopad-planning-and-work-design
-description: "Use while a request's task count, prerequisites, nesting, scores, dates or repetition are undecided or wrong, and before laying out several tasks as a roadmap, plan or launch, creating or changing a stream or goal, or taking a task out of its stream by archive, deletion or move, and before designing or running a costly test. Delivery by agents: octoplan."
+description: "Use while a request's task count, prerequisites, nesting, scores, dates or repetition are undecided or wrong, and before laying out several tasks as a roadmap, plan or launch, creating or changing a stream or goal, or taking a task out of its stream by archive, deletion or move, and before proposing or running a test that launches AI sessions, takes a person's time or costs money. Delivery by agents: octoplan."
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-planning-and-work-design"` when you open this skill.
 
-Version: 5.5.0
+Version: 5.6.0
 
 # From a need to prepared work
 
@@ -94,10 +94,10 @@ User, on 2026-04-26: *"Lay out the launch: research, then design, then build, th
 
 ## Design a costly test
 
-A test is costly when, over all its runs, it launches AI sessions, takes a person's time or costs money. Before its first run, confirm that the revision it needs is deployed, write these in its task and show them to the person:
+A test is costly when, over all its runs, it launches AI sessions, takes a person's time or costs money. First weigh it against acting without it, by what a mistake would do before you could correct it, not by whether its text can be edited: who acts on it, what it sends, writes or ships, and to how many. When acting and correcting cost less than the test, do it within its usual approvals and watch real use: propose no test. Otherwise the test must cost less than the harm it prevents, and the method the person suggests is one option, not the brief. If the test is still worth it, before you propose it, write these in its task and show them to the person, asking for the go in that message unless they already approved these exact fields; when one changes, show them again, since a go given to anything else is no go. Before its first run, confirm that the revision it needs is deployed.
 
 - **Decision:** the observable result and its threshold, and what you do on pass, on fail and on an inconclusive result. If no result would change what you do, run nothing.
-- **Method and ceiling:** the cheapest method able to establish that result, and why each cheaper one cannot; the smallest series that could change the decision: a large expected effect needs few runs, and distinct real cases come before repeats of one. Then a numeric ceiling on runs, retries and grading included, with a stop rule set before the first result. At the ceiling, stop and report: only the person extends it. Keep the model the question is about; every other agent uses the smallest that does its job.
+- **Method and ceiling:** the cheapest method able to establish that result, and why each cheaper one cannot; the smallest series that could change the decision: a large expected effect needs few runs, and distinct real cases come before repeats of one. Then a numeric ceiling on runs, retries and grading included, and for AI runs on the tokens they may use, counting the context each run reloads and their output, with a stop rule set before the first result; say so when nothing can stop the runs at that token ceiling. At the ceiling, stop and report: only the person extends it. Keep the model the question is about; every other agent uses the smallest that does its job.
 - **Proof:** a known failing case the test must catch and a sound case it must pass, then every attempt, aborted ones included, reconciled with its traces, and what it changed, restored and checked.
 
 One AI run shows that something can happen, never how often.
