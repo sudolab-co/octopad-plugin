@@ -35,15 +35,22 @@ Keep architecture intentionally asymmetric: one short map, not one engineering d
 
 Keep the map in Octopad by default, beside the Product Map it serves, where the workspace's own search reaches it. A repository file is the alternative, for a team that wants architecture to change in the same review as the code; choose a docs location consistent with that repository, treat that file as canonical, and keep the Octopad entry as its link, ownership, status, related systems, and verification metadata. Name one canonical home and do not maintain both. Adopt an existing map where it already lives rather than moving it. Create the map only once code gives evidence of stable architecture; otherwise leave it uncreated and record the gap.
 
-Include only stable orientation:
+Its reader is an AI or a person about to change something that crosses systems: the map shows how the systems connect end to end, so they see what else the change touches before they start. Include only stable orientation:
 
-- major runtime or deployable components;
+- major runtime or deployable components and the boundaries between them;
+- how the systems connect: the main end-to-end flows, one line each, from the action that starts a flow through each component it crosses;
 - data stores and external services;
-- important boundaries and directional relationships;
 - where to find current code and enforceable contracts;
 - how release state is determined.
 
-Do not manually inventory every file, symbol, import, endpoint, or dependency. Derive those from current code when needed.
+Keep a line only if a reader without it could break a connection, a boundary or the release path. Everything else goes to its home, linked when still needed:
+
+- one system's mechanics, rules and options: its Product Spec, or an Engineering Reference when the knowledge is stable and not derivable from code;
+- delivery history (pull requests, releases, commits, migration applies, run ids): the pull request and the release record;
+- counts, sizes and other measurements: the test or script that measures them;
+- inventories of files, symbols, imports, endpoints, jobs or dependencies: current code, derived when needed.
+
+Keep the map short enough to read whole before a change, about 20,000 characters at most; when a system's detail would push past that, move it to its home. Before durable content leaves the map, list it under SKILL.md's preservation rule, as for a spec.
 
 ## Engineering References
 

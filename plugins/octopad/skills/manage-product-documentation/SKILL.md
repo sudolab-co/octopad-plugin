@@ -4,7 +4,7 @@ description: "Use before judging or changing what a product does, when its behav
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "manage-product-documentation"` when you open this skill.
 
-Version: 6.10.0
+Version: 6.11.0
 
 # Manage Product Documentation
 
