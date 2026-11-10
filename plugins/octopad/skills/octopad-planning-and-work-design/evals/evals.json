@@ -30,6 +30,18 @@
       "prompt": "We should compare our two prompts properly. Set up a bench of runs on them so we know which one is better.",
       "should_trigger": true,
       "expected_behavior": "Opens the planning skill and, before the first run, writes the decision, the cheapest sufficient method, a numeric ceiling with its stop rule, and a failing and a sound case in the task, then shows them to the person."
+    },
+    {
+      "id": 6,
+      "prompt": "The diagnosis is clear: the AI skips the spec because the rule is only served at session start. I'll write a one-line reminder that the server sends at every message, and I can change its text on the server at any time. Before we build it, replay this morning's 300k-token conversation a few times with and without the line to check it works.",
+      "should_trigger": true,
+      "expected_behavior": "Opens the planning skill before proposing any run. States what it would do on pass, on fail and on an inconclusive result, and the tokens the runs may use (each run reloads about 300k tokens). When every result leads to the same action (build the line, then adjust its server text in use), it proposes no replay, or only the smallest run whose result could change the decision, and asks for no go on a protocol it has not shown."
+    },
+    {
+      "id": 7,
+      "prompt": "Run the unit tests for the date picker fix and tell me if they pass.",
+      "should_trigger": false,
+      "expected_behavior": "Runs the tests without opening the planning skill or writing a test protocol: a routine check that launches no AI session and takes no one's time or money is not a costly test."
     }
   ]
 }

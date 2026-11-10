@@ -1,5 +1,11 @@
 # Changelog
 
+## 25.1.0 - Unreleased
+
+- `octopad-planning-and-work-design` 5.6.0: an AI sizes a test that launches AI sessions before it proposes it, not only before the first run. The skill's description names that moment in observable words, the go is asked in the message that shows the decision and the ceiling unless the person already approved them, the ceiling covers the tokens AI runs may use, and a changed protocol is shown again. In a diagnosis, an AI had proposed and launched a six-run replay whose every result led to the same action, without ever opening this guide.
+
+All three distributions move to 25.1.0.
+
 ## 25.0.0 - Unreleased
 
 - A new hook reminds the AI, at each user message, of the rules that apply at a later moment of the work: open the module a new activity needs, read the owning Product Spec before judging product behavior, test a consequential proposal's strongest objection, say what was verified, record durable knowledge, continue authorized work. In long sessions these rules, served once at the start, stopped firing although their text was still in context. The hook calls the Octopad tool `turn_reminder`, whose text the server owns: it is empty until the conversation has received the methodology, so other conversations get nothing. Claude Code declares the hook in `.claude-plugin/plugin.json`; Codex reads it from `hooks.codex.json`, and asks the user to trust it once (`/hooks`, or Settings > Hooks in the desktop app). Cursor, claude.ai and ChatGPT run no such hook. Needs a server that serves `turn_reminder`.
