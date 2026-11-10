@@ -31,7 +31,7 @@
         "The quiet Hiring theme gets no section.",
         "No saved text repeats a task title.",
         "The Smart Brief marks the migration unblocked, with its task in refs.",
-        "Objects go in refs, never as inline ref: links.",
+        "A section names its objects in refs, never as inline ref: links (the lead may link its words).",
         "Goal upkeep starts only after a Pad save.",
         "The owned goal to refresh gets set_status with base_revision 3.",
         "In the pad save call for tab smart_brief, content.lead has at most two sentences. The first says what changed since Nov 8 (such as the migration being unblocked or EU payment retries being fixed). The second says what to do first, putting the pricing review due Nov 10, which others wait on, or the now-ready migration first. FAIL if there is no lead, if it has more than two sentences, or if it does not say what to do first."
@@ -132,10 +132,10 @@
           "min": 1
         },
         {
-          "name": "no-inline-object-links",
+          "name": "no-inline-object-links-in-sections",
           "type": "tool_used",
           "tool": "mcp__plugin_octopad_octopad__pad",
-          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*ref:(task|stream|goal|page):)",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"(text|tldr)\":\\s*\"[^\"]*ref:(task|stream|goal|page):)",
           "min": 0,
           "max": 0
         },
