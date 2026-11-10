@@ -1,8 +1,8 @@
 ---
 name: octopad-pad
-description: "Use where the connection offers the `pad` tool: when `start_session` names a Pad due or not checked, when the user asks to update their Pad or Smart Brief, asks for a tab on their work even without naming the Pad, or wants a tab or the Smart Brief to show something else, and before adding an external source to a tab. Not for a reminder, a focus change alone (octopad-notepad), a shared page or a one-off desktop view."
+description: "After `octopad-session`, where the connection offers the `pad` tool: when `start_session` names a Pad due or not checked, when the user asks to update their Pad or Smart Brief, asks for a tab on their work even without naming the Pad, or wants a tab or the Smart Brief to show something else, and before adding an external source to a tab. Not for a reminder, a focus change alone (octopad-notepad), a shared page or a one-off desktop view."
 ---
-If no Octopad session is open yet, open `../octopad-session/SKILL.md` first: it starts one with the plugin's version. This skill's `Version:` is never the `plugin_version`.
+Open `../octopad-session/SKILL.md` first unless this conversation already called `start_session`: it starts the session with the plugin's version, never this skill's `Version:`.
 
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-pad"` when you open this skill.
 
