@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "mcp_tool",
+            "server": "octopad",
+            "tool": "turn_reminder",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
