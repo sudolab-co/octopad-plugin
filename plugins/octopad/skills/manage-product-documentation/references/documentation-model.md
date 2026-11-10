@@ -35,6 +35,8 @@ Keep architecture intentionally asymmetric: one short map, not one engineering d
 
 Keep the map in Octopad by default, beside the Product Map it serves, where the workspace's own search reaches it. A repository file is the alternative, for a team that wants architecture to change in the same review as the code; choose a docs location consistent with that repository, treat that file as canonical, and keep the Octopad entry as its link, ownership, status, related systems, and verification metadata. Name one canonical home and do not maintain both. Adopt an existing map where it already lives rather than moving it. Create the map only once code gives evidence of stable architecture; otherwise leave it uncreated and record the gap.
 
+Give the map's Octopad page, or the Octopad entry of a repository map, the page subtype "Architecture Map", and no other page. Octopad then serves its "How the systems connect" section in a code-work task briefing, asks for a check when a task with a linked pull request is delivered, and warns when an edit leaves it past its size line; keep that heading word for word, since Octopad finds the section by it. When Octopad names two marked pages, keep the mark on the canonical one.
+
 Its reader is an AI or a person about to change something that crosses systems: the map shows how the systems connect end to end, so they see what else the change touches before they start. Include only stable orientation:
 
 - major runtime or deployable components and the boundaries between them;
