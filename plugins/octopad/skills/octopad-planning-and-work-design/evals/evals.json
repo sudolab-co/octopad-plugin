@@ -35,13 +35,19 @@
       "id": 6,
       "prompt": "The diagnosis is clear: the AI skips the spec because the rule is only served at session start. I'll write a one-line reminder that the server sends at every message, and I can change its text on the server at any time. Before we build it, replay this morning's 300k-token conversation a few times with and without the line to check it works.",
       "should_trigger": true,
-      "expected_behavior": "Opens the planning skill before proposing any run. States what it would do on pass, on fail and on an inconclusive result, and the tokens the runs may use (each run reloads about 300k tokens). When every result leads to the same action (build the line, then adjust its server text in use), it proposes no replay, or only the smallest run whose result could change the decision, and asks for no go on a protocol it has not shown."
+      "expected_behavior": "Opens the planning skill before proposing any run. Sees that the line is a server text that can be changed at any time, so a wrong line costs less than any replay: it recommends building the line and checking real use, and proposes no replay. It asks for no go on a protocol it has not shown."
     },
     {
       "id": 7,
       "prompt": "Run the unit tests for the date picker fix and tell me if they pass.",
       "should_trigger": false,
       "expected_behavior": "Runs the tests without opening the planning skill or writing a test protocol: a routine check that launches no AI session and takes no one's time or money is not a costly test."
+    },
+    {
+      "id": 8,
+      "prompt": "Tomorrow our outreach AI sends 5,000 emails to prospects, and sent emails can't be recalled. Last week it invented a customer name in a few drafts; we changed its prompt. Before the send, check it no longer does that.",
+      "should_trigger": true,
+      "expected_behavior": "Opens the planning skill. The send cannot be undone and a wrong email costs more than a test, so it proposes a small test on real sample contacts: what it does on pass, fail and inconclusive, a ceiling on runs and tokens, a stop rule, and asks the go in the message that shows them. It runs nothing before that go."
     }
   ]
 }
