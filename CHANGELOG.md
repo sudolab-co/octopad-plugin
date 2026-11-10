@@ -2,7 +2,7 @@
 
 ## 25.1.0 - Unreleased
 
-- `octopad-planning-and-work-design` 5.6.0: an AI first weighs a test that launches AI sessions against acting without it, and proposes none when the action is easy to undo; otherwise it sizes the test before it proposes it, not only before the first run. The skill's description names that moment in observable words, the go is asked in the message that shows the decision and the ceiling unless the person already approved them, the ceiling covers the tokens AI runs may use, and a changed protocol is shown again. In a diagnosis, an AI had proposed and launched a six-run replay whose every result led to the same action, without ever opening this guide.
+- `octopad-planning-and-work-design` 5.6.0: an AI first weighs a test that launches AI sessions against acting without it, by what a mistake would do before it could be corrected, and proposes none when acting and correcting cost less; otherwise it sizes the test before it proposes it, not only before the first run. The skill's description names that moment in observable words, the go is asked in the message that shows the decision and the ceiling unless the person already approved them, the ceiling covers the tokens AI runs may use, and a changed protocol is shown again. In a diagnosis, an AI had proposed and launched a six-run replay whose every result led to the same action, without ever opening this guide.
 
 All three distributions move to 25.1.0.
 

@@ -35,7 +35,7 @@
       "id": 6,
       "prompt": "The diagnosis is clear: the AI skips the spec because the rule is only served at session start. I'll write a one-line reminder that the server sends at every message, and I can change its text on the server at any time. Before we build it, replay this morning's 300k-token conversation a few times with and without the line to check it works.",
       "should_trigger": true,
-      "expected_behavior": "Opens the planning skill before proposing any run. Sees that the line is a server text that can be changed at any time, so a wrong line costs less than any replay: it recommends building the line and checking real use, and proposes no replay. It asks for no go on a protocol it has not shown."
+      "expected_behavior": "Opens the planning skill before proposing any run. Weighs what a wrong line would do before it is corrected (one sentence the server can change, whose failure leaves today's skipped reads in place) against the replay's cost, recommends building the line and checking real use, and proposes no replay. Any test it still offers comes with its decision and ceiling; it asks for no go on a protocol it has not shown."
     },
     {
       "id": 7,
@@ -47,7 +47,7 @@
       "id": 8,
       "prompt": "Tomorrow our outreach AI sends 5,000 emails to prospects, and sent emails can't be recalled. Last week it invented a customer name in a few drafts; we changed its prompt. Before the send, check it no longer does that.",
       "should_trigger": true,
-      "expected_behavior": "Opens the planning skill. The send cannot be undone and a wrong email costs more than a test, so it proposes a small test on real sample contacts: what it does on pass, fail and inconclusive, a ceiling on runs and tokens, a stop rule, and asks the go in the message that shows them. It runs nothing before that go."
+      "expected_behavior": "The send cannot be undone, so it never recommends sending and watching. It protects the send either with a check of the drafts before they go, or with a small test whose decision on pass, fail and inconclusive, ceiling on runs and tokens, and stop rule it shows before asking the go. It runs nothing before that go."
     }
   ]
 }
