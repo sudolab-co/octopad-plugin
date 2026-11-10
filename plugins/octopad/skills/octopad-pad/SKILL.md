@@ -18,13 +18,13 @@ When `start_session` names tabs under **Pad due today** or **Pad not checked**, 
 2. `pad` `get` each due tab whose content you do not hold at its listed `revision`.
 3. Write each tab from the objects of its sections, what changed in them and the attention placed in it (Write a tab).
 4. Save each tab alone: `save` with `tab`, `expected_revision` (its `revision`), `content` and its `through` as given. When nothing changed for it, `through` alone. A tab whose `through` reads none (a source could not be read) is saved without `through`, its text saying what could not be read. One tab's failure stops no other.
+5. After the last save: goal upkeep (`octopad-planning-and-work-design`, Goal upkeep: `goals` `list` with `to_refresh`, then `get` each goal), then the Notepad sweep (`octopad-notepad`, Briefing step 2). Neither delays or blocks a save.
 
-Write only the tabs it names, and never Outside focus: the Pad shows what waits outside every tab.
+Write only the tabs `start_session` names, and never Outside focus: the Pad shows what waits outside every tab.
 
 - A refused save names what to fix: fix that and save the tab again.
 - A tab due for theme discovery: `octopad-notepad` proposes and saves focus themes; then `context` again, since the themes are the Smart Brief's sections, and write from the new brief only.
 - `STALE` or `THROUGH_EARLIER`: another session saved first. `get` the tab: if its `written_at` is later than your `through`, leave it; otherwise `context` with that `tab` and write it again.
-- After the saves: the Notepad sweep (`octopad-notepad`, Briefing), then goal upkeep (`octopad-planning-and-work-design`). Neither delays or blocks a save.
 
 # Write a tab
 
@@ -34,8 +34,8 @@ The Pad shows each object on its own row with its live name and state, and what 
 - **Smart Brief lead:** at most two sentences. First what changed since the last Pad, opening on its `since` day ("Since Nov 2: …"); on a first write, where things stand; if nothing changed, say so. Then what to do first: work overdue, due today or awaited by others, then the first ready action, ready before blocked by prerequisites and Octoplan order, then by stream score, honoring the person's calls on work order in their Notepad. A prerequisite someone else holds is something to arrange with them, not a go.
 - **Sections.** In the Smart Brief, one per focus theme with news, in the brief's order, with the `key` and `title` its Sections list gives; a quiet theme gets none, the Pad names it. In another tab, its one untitled section. When a theme's `why:` carries a `moved <date>: <fact>` the last Pad has not reported, say it once in that theme's section.
 - **TL;DR:** one line: where it stands, then the next action.
-- **Sentences:** short and complete, each a fact and what it means for the person. Put each object it speaks of in `refs`, by the id the brief or a read gave; never write an object's name, state or figure in the sentence, since its row shows them live and a copy ages. A count names its tasks in `refs`, or drops the number.
-- **Marks:** `needs_you` when the person must act; `unblocked` when work just became ready; `risk`; `correction` when evidence disproves something an earlier Pad said, the sentence saying which statement changed and why, its evidence in `refs`. Never mark work that merely finished, or a claim you have not checked.
+- **Sentences:** short and complete, each a fact and what it means for the person. Put each object it speaks of in `refs`, by the id the brief or a read gave; never write an object's name, state or figures (counts, progress) in the sentence, since its row shows them live and a copy ages; a count names its tasks in `refs`, or drops the number. Write a date as a date, never "today" or "tomorrow": the Pad is read later.
+- **Marks:** `needs_you` when the person must act; `unblocked` when a blocker is gone and the work is ready; `risk`; `correction` only when evidence shows a claim of an earlier Pad was wrong when written, the sentence saying which and why, its evidence in `refs`. A state that has since changed is news, not a correction. Never mark work that merely finished, or a claim you have not checked.
 - **Suggestion:** one line at most, only to group tasks that look obsolete for the person to close.
 - **Live blocks and charts** in a section only when they show what text cannot; a chart only when it answers a question the person asked, its `question` in their words. A tab over one stream needs no text unless they ask: its report is the summary.
 - **Coverage.** Quiet is no proof that all is well: say what you read and what stayed out of reach, keep dates, tell facts from proposals and unknowns, and never fill a gap with assumed data.
