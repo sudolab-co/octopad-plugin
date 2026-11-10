@@ -1,8 +1,7 @@
 {
   "skill_name": "octopad-pad",
   "protocol": {
-    "status": "unrun_pending_user_protocol_approval",
-    "model_calls_run": 0,
+    "status": "run 2026-11-10 on 24.0.0 and 25.0.0 (80 agent runs); a rerun of 15 runs on the fixed skill is approved, not run yet",
     "purpose": "Compare plugin 24.0.0 (no octopad-pad) with 25.0.0 on routing and on the observable Pad writes; static checks do not establish AI behavior.",
     "execution": "claude plugin eval on the Claude Code subscription, after the operator approves the protocol. Every Octopad tool is a mock answering fictional fixtures: nothing reaches an Octopad organization.",
     "comparison": "The behaviour and correction cases run on both versions; the trigger cases on 25.0.0 only, since 24.0.0 holds no octopad-pad. Defeat proof: the correction cases on 25.0.0 with the section \"Route a correction\" removed must fail at least one of them.",
@@ -336,7 +335,7 @@
         "The run opens octopad-pad and records it with skill_opened.",
         "No tab is shown yet.",
         "No tab is saved yet.",
-        "The reply asks one to three questions in one message, each about what the tab should help decide or watch, which sources it follows, which period, or whether a written reading leads it. FAIL if it asks more than three, asks about anything else, or proposes or saves a tab."
+        "The reply asks one to three questions in one message, each about what the tab should help decide or watch, which sources it follows, which period, or whether a written reading leads it. Count the numbered or separate questions: one that joins two of these subjects counts once. FAIL if it asks more than three, asks about anything else, or proposes or saves a tab."
       ],
       "graders": [
         {
@@ -462,6 +461,45 @@
           "tool": "mcp__plugin_octopad_octopad__pad",
           "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"context\")(?=[\\s\\S]*\"tab\":\\s*\"smart_brief\")",
           "min": 1
+        }
+      ]
+    },
+    {
+      "id": "correction-order",
+      "prompt": "Put Billing first in my Smart Brief.",
+      "must_load": true,
+      "kind": "correction",
+      "versions": [
+        "25.0.0"
+      ],
+      "context": "No Pad due. The Smart Brief sections follow the focus themes; Billing is the third.",
+      "expected_behavior": [
+        "The run opens octopad-pad and records it with skill_opened.",
+        "The Notepad update makes Billing the first focus theme, which orders the Smart Brief.",
+        "No Pad guidance is written for it."
+      ],
+      "graders": [
+        {
+          "name": "opens-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 1
+        },
+        {
+          "name": "billing-first-in-focus",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__notepad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"update\")(?=[\\s\\S]*1\\.\\s*Billing)",
+          "min": 1
+        },
+        {
+          "name": "no-guidance-for-an-order",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "\"guidance\"",
+          "min": 0,
+          "max": 0
         }
       ]
     },

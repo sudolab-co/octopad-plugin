@@ -2,6 +2,8 @@
 name: octopad-pad
 description: "Use where the connection offers the `pad` tool: when `start_session` names a Pad due or not checked, when the user asks to update their Pad or Smart Brief, asks for a tab on their work even without naming the Pad, or wants a tab or the Smart Brief to show something else, and before adding an external source to a tab. Not for a reminder, a focus change alone (octopad-notepad), a shared page or a one-off desktop view."
 ---
+If no Octopad session is open yet, open `../octopad-session/SKILL.md` first: it starts one with the plugin's version. This skill's `Version:` is never the `plugin_version`.
+
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-pad"` when you open this skill.
 
 Version: 1.0.0
@@ -17,14 +19,14 @@ When `start_session` names tabs under **Pad due today** or **Pad not checked**, 
 1. One `pad` `context` with no `tab`: it serves every due tab.
 2. `pad` `get` each due tab whose content you do not hold at its listed `revision`.
 3. Write each tab from the objects of its sections, what changed in them and the attention placed in it (Write a tab).
-4. Save each tab alone: `save` with `tab`, `expected_revision` (its `revision`), `content` and its `through` as given. When nothing changed for it, `through` alone. A tab whose `through` reads none (a source could not be read) is saved without `through`, its text saying what could not be read. One tab's failure stops no other.
+4. Save each tab alone: `save` with `tab`, `expected_revision` (the `revision` the brief lists), `content` and its `through` as given. When nothing changed for it, `through` alone. A tab whose `through` reads none (a source could not be read) is saved without `through`, its text saying what could not be read. One tab's failure stops no other.
 5. After the last save: goal upkeep (`octopad-planning-and-work-design`, Goal upkeep: `goals` `list` with `to_refresh`, then `get` each goal), then the Notepad sweep (`octopad-notepad`, Briefing step 2). Neither delays or blocks a save.
 
 Write only the tabs `start_session` names, and never Outside focus: the Pad shows what waits outside every tab.
 
 - A refused save names what to fix: fix that and save the tab again.
 - A tab due for theme discovery: `octopad-notepad` proposes and saves focus themes; then `context` again, since the themes are the Smart Brief's sections, and write from the new brief only.
-- `STALE` or `THROUGH_EARLIER`: another session saved first. `get` the tab: if its `written_at` is later than your `through`, leave it; otherwise `context` with that `tab` and write it again.
+- `STALE`, `THROUGH_EARLIER`, or a `get` showing a newer `revision` than the brief's: another session saved first. If the tab's `written_at` (from `get`) is later than your `through`, leave it; otherwise `context` with that `tab` and write it again.
 
 # Write a tab
 
