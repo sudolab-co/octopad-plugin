@@ -91,10 +91,13 @@ Ideas with no system yet. One line each.
 # Architecture Map
 
 ## Components and boundaries
-<Major runtime or deployable components only.>
+<Major runtime or deployable components, and the boundaries that shape most changes.>
+
+## How the systems connect
+1. <Flow>: <the action that starts it> → <component> → <component> → <its effect>.
 
 ## Data and external services
-<Stable stores, flows, and external dependencies.>
+<Stable stores, copies that must change together, and external dependencies.>
 
 ## Canonical code and enforcement
 <Repository locations and executable contracts, without a file inventory.>
@@ -106,9 +109,11 @@ Ideas with no system yet. One line each.
 <Links to Product Specs and targeted Engineering References.>
 
 ## Verification
-- Source revision: <exact value>
+- <Date>, <claims checked>, against <exact revision>: <method>; <limits>.
 - Gaps: <explicit unknowns>
 ```
+
+What each section keeps, and the home of everything else: [documentation-model.md](documentation-model.md).
 
 ## Documentation-debt Task
 
