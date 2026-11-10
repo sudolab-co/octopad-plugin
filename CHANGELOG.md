@@ -1,5 +1,12 @@
 # Changelog
 
+## 25.0.0 - Unreleased
+
+- A new hook reminds the AI, at each user message, of the rules that apply at a later moment of the work: open the module a new activity needs, read the owning Product Spec before judging product behavior, test a consequential proposal's strongest objection, say what was verified, record durable knowledge, continue authorized work. In long sessions these rules, served once at the start, stopped firing although their text was still in context. The hook calls the Octopad tool `turn_reminder`, whose text the server owns: it is empty until the conversation has received the methodology, so other conversations get nothing. Claude Code declares the hook in `.claude-plugin/plugin.json`; Codex reads it from `hooks.codex.json`, and asks the user to trust it once (`/hooks`, or Settings > Hooks in the desktop app). Cursor, claude.ai and ChatGPT run no such hook. Needs a server that serves `turn_reminder`.
+- The plugin that carries the Pad module, which the server had reserved as 25.0.0, becomes 26.0.0: the server treats 26.0.0 and later as carrying it.
+
+All three distributions move to 25.0.0.
+
 ## 24.0.0 - Unreleased
 
 - `octopad-planning-and-work-design` 5.5.0: `Design a costly test` makes a test that launches AI sessions, takes a person's time or costs money state its decision, its cheapest method, a numeric ceiling and its proof before the first run.
