@@ -569,7 +569,9 @@
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
-        "The pad save for tab smart_brief has its lead and sentences in French. FAIL otherwise."
+        "The pad save for tab smart_brief has its lead and sentences in French. FAIL otherwise.",
+        "No saved text repeats a task title, in French or in English.",
+        "A section names its objects in refs, never as inline ref: links (the lead may link its words)."
       ],
       "graders": [
         {
@@ -591,6 +593,22 @@
           "name": "written-in-the-brief-language",
           "type": "llm",
           "focus": "mock_calls"
+        },
+        {
+          "name": "object-names-not-copied",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*([Qq]uartz|[Pp]ricing [Pp]age [Cc]opy|[Cc]opie de la page (de |des )?tarif|[Bb]illing [Rr]etry [Ff]ix|[Cc]orrectif (des |de la )?relance))",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "no-inline-object-links-in-sections",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"(text|tldr)\":\\s*\"[^\"]*ref:(task|stream|goal|page):)",
+          "min": 0,
+          "max": 0
         }
       ]
     },
