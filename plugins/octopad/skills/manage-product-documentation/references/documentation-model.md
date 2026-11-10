@@ -45,12 +45,14 @@ Its reader is an AI or a person about to change something that crosses systems: 
 
 Keep a line only if a reader without it could break a connection, a boundary or the release path. Everything else goes to its home, linked when still needed:
 
-- one system's mechanics, rules and options: its Product Spec, or an Engineering Reference when the knowledge is stable and not derivable from code;
+- one system's intent, choices and promises: its Product Spec;
+- one system's mechanics: code and tests, or an Engineering Reference when the knowledge is stable and not derivable from code;
 - delivery history (pull requests, releases, commits, migration applies, run ids): the pull request and the release record;
 - counts, sizes and other measurements: the test or script that measures them;
-- inventories of files, symbols, imports, endpoints, jobs or dependencies: current code, derived when needed.
+- inventories of files, symbols, imports, endpoints, jobs or dependencies: current code, derived when needed;
+- open questions about one system: a Task or a recorded question, not the map's Verification.
 
-Keep the map short enough to read whole before a change, about 20,000 characters at most; when a system's detail would push past that, move it to its home. Before durable content leaves the map, list it under SKILL.md's preservation rule, as for a spec.
+The map describes the code on the default branch, the base every change starts from; when released state differs in a way a reader needs, say so in one line. Update it when a change lands that alters a component, a connection, a data store or external service, a code home or the release model, and check it at each release sync. Keep it short enough to read whole before a change, at most 20,000 characters of page text; when a system's detail would push past that, move it to its home. Before durable content leaves the map, list it under SKILL.md's preservation rule, as for a spec.
 
 ## Engineering References
 
