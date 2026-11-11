@@ -34,7 +34,7 @@ Classify impact continuously without making the conversation feel like a form, a
 - `no impact`: a rejected or abandoned idea, or work outside product documentation. Create no documentation artifact, not even a parked idea line.
 - `existing-system change`: idea, explored, accepted, or later behavior inside a known system boundary. Update the evolving Product Spec, an unaccepted idea in Open questions and accepted intent in its section, and link the existing execution work.
 - `new system`: substantive design establishing a new coherent capability or responsibility, beginning at `idea`. Add its Product Map line and create its Product Spec with an `[idea]` entry, under SKILL.md's substantive-design rule.
-- `technical-only`: implementation or operational work with no product behavior change. Update architecture or a targeted Engineering Reference only when the change creates durable, non-derivable knowledge.
+- `technical-only`: implementation or operational work with no product behavior change. Update the Architecture Map only under its rule in [documentation-model.md](documentation-model.md), and a targeted Engineering Reference only when the change creates durable, non-derivable knowledge.
 
 If the product or system boundary remains materially ambiguous after reading current context, ask one focused question and continue unaffected organization work.
 
@@ -43,7 +43,7 @@ Parking: one `[idea <date parked>]` line per idea, carrying the idea and the pro
 ## Implementation context retrieval
 
 1. Establish the affected system, intended outcome and reading scope under [Work from product intent](../SKILL.md#work-from-product-intent).
-2. Add the applicable Behavioral Contract clauses, Architecture Map slice and active Task to that product context.
+2. Add the applicable Behavioral Contract clauses and active Task to that product context. When the change touches more than one system, or a connection, data store or external service, read the Architecture Map's components and connections before you choose an approach.
 3. Inspect current code for files, symbols, imports, dependencies, tests, schemas, and runtime configuration. Prefer current derivation over stored inventories.
 4. Carry forward exact source and documentation revisions.
 5. Put new enforceable behavior in executable checks where feasible. Update prose only for durable knowledge or user behavior.
@@ -55,7 +55,7 @@ Do not load every Product Spec or the whole repository merely because the Produc
 1. Determine documentation impact: none, existing-system change, new system, or technical-only. Record it on the PR in the repository's normal way, naming affected documents or carrying the proven negative receipt. A `none` follows SKILL.md's no-impact protocol. `technical-only` does not imply `none` when durable architecture or an Engineering Reference changed.
 2. Link the existing Task or work stream to the PR through the repository's normal fields; the spec's Direction links that Task or stream when it serves an accepted direction.
 3. Record exact head and base revisions on the pull request or Task. Re-check after material drift.
-4. Change the spec only as SKILL.md's delivery rule allows.
+4. Change the spec only as SKILL.md's delivery rule allows, and the Architecture Map only under its rule in [documentation-model.md](documentation-model.md).
 5. Verify coverage under [Work from product intent](../SKILL.md#work-from-product-intent), using code, tests and the actual diff rather than the PR description alone.
 6. Draft pre-release user documentation or release notes when useful, under SKILL.md's pre-release rule; never as shipped wording, Product Facts or marketing claims.
 7. When evidence remains missing, mark the update stale or unverified and create or reuse documentation-debt work.
@@ -70,7 +70,7 @@ Run one full pass per release, when changes actually reach users. It must end wi
 2. Bound the release window. Read the boundary the previous release pass recorded: an exact revision, or failing that a date resolved to a revision. Collect every change between that boundary and this release's exact revision. Never bound on a moving branch head or a bare date; a date boundary silently drops same-day changes. When the boundary is imprecise, over-collect toward the older side and say so in the closing record — a duplicate is visible, a dropped change is not.
 3. Consume each change's documentation-impact mark when the delivery workflow records one. A mark naming a maintained doc puts that doc on the update list with the change as evidence. Recheck an explicit `none` against the diff and its receipt. A missing or wrong owner is resolved by adopting or creating the smallest authorized owner when the evidence is sufficient; otherwise file documentation debt. A mark naming another family's doc is a handoff, not an edit order.
 4. Re-read each affected draft against released code and observed product behavior when available.
-5. Edit a spec only where the release settled a direction or changed a need, choice, promise or non-goal: fold what it settled into Choices or Promises and remove the Direction line once nothing in it is still ahead. Update relevant Architecture Map sections.
+5. Edit a spec only where the release settled a direction or changed a need, choice, promise or non-goal: fold what it settled into Choices or Promises and remove the Direction line once nothing in it is still ahead. Check the Architecture Map against the released changes under its rule in [documentation-model.md](documentation-model.md), and edit it only where a component, a connection, a data store or external service, a code home or the release model changed; the release's history stays on its record (step 9).
 6. Keep unverified claims out of shipped truth. Track them as documentation debt.
 7. Resolve and open each existing product authority affected by the release, including the Product Map and any Product Facts whose dependencies moved. A Product Facts page is born only with the first substantiated public claim; its prior absence is normal. Create or adopt a missing ordinary owner when the released evidence and session authority support it, or record the exact gap. Only a document the product context explicitly marks as locked requires exact before/after approval before editing.
 8. Reconcile pre-release user documentation or release notes against verified released evidence before removing their label. Draft or revise Product Facts here. Hand marketing claims and final marketing wording to product marketing. Preserve every review and publication gate.
@@ -88,7 +88,7 @@ An audit alone changes no page: steps 3 to 7 then list what they would change, a
 4. For each page you will change, check intent and coverage under [Work from product intent](../SKILL.md#work-from-product-intent). Check a spec against the requests and Decisions it rests on, never against code: an accepted promise not yet built stays, its gap a Task. Compare other pages' claims with current code, release evidence, Decisions and user-facing behavior; mark unsupported claims stale or unverified instead of guessing.
 5. Consolidate duplicates only after preserving unique knowledge and history. Require explicit approval before deletion or irreversible overwrite.
 6. Review parked ideas and the Ideas page. Propose removing lines whose problem has lapsed, in one batch; do not remove them silently.
-7. Check each spec section against its line in SKILL.md's Write for the reader: lines its first rule rejects, content that belongs elsewhere, duplicates, undecided points not marked `[open]`. Prune under its preservation rule.
+7. Check each spec section against its line in SKILL.md's Write for the reader: lines its first rule rejects, content that belongs elsewhere, duplicates, undecided points not marked `[open]`. Prune under its preservation rule. Check the Architecture Map against its rule in [documentation-model.md](documentation-model.md) the same way: lines that belong elsewhere, and its length.
 8. Create or reuse one bounded documentation-debt Task for related missing evidence, unresolved conflicts, or substantial rewrites. Do not create one task per broken link.
 9. Report repairs, remaining uncertainty, and the evidence needed to resolve it.
 

@@ -1,10 +1,10 @@
 {
   "skill_name": "octopad-pad",
   "protocol": {
-    "status": "run 2026-11-10 on 24.0.0 and 25.0.0 (80 agent runs), then reruns of 15 and 6 runs on the fixed skill; a check of the review fixes (12 runs) is prepared, its first attempt stopped on a stub defect",
-    "purpose": "Compare plugin 24.0.0 (no octopad-pad) with 25.0.0 on routing and on the observable Pad writes; static checks do not establish AI behavior.",
+    "status": "run 2026-11-10 on 24.0.0 and on this change, then numbered 25.0.0 and now 26.0.0 (80 agent runs), then reruns of 15 and 6 runs on the fixed skill; a check of the review fixes (12 runs) is prepared, its first attempt stopped on a stub defect",
+    "purpose": "Compare plugin 24.0.0 (no octopad-pad) with 26.0.0 on routing and on the observable Pad writes; static checks do not establish AI behavior.",
     "execution": "claude plugin eval on the Claude Code subscription, after the operator approves the protocol. Every Octopad tool is a mock answering fictional fixtures: nothing reaches an Octopad organization.",
-    "comparison": "The behaviour and correction cases run on both versions; the trigger cases on 25.0.0 only, since 24.0.0 holds no octopad-pad. Defeat proof: the correction cases on 25.0.0 with the section \"Route a correction\" removed must fail at least one of them.",
+    "comparison": "The behaviour and correction cases run on both versions; the trigger cases on 26.0.0 only, since 24.0.0 holds no octopad-pad. Defeat proof: the correction cases on 26.0.0 with the section \"Route a correction\" removed must fail at least one of them.",
     "release_limit": "Unrun cases are not a routing, behavioral or non-regression pass."
   },
   "evals": [
@@ -15,7 +15,7 @@
       "kind": "behaviour",
       "versions": [
         "24.0.0",
-        "25.0.0"
+        "26.0.0"
       ],
       "context": "Smart Brief and Brand watch due; Marketing ideas not due. The Smart Brief has news in Atlas launch and Billing, none in Hiring, a validation placed in Atlas launch and an answer request Outside focus; Brand watch has nothing new. One owned goal waits for a status line.",
       "expected_behavior": [
@@ -172,7 +172,7 @@
       "kind": "behaviour",
       "versions": [
         "24.0.0",
-        "25.0.0"
+        "26.0.0"
       ],
       "context": "Smart Brief due; Brand watch not checked: its stream could not be read and its through is none.",
       "expected_behavior": [
@@ -245,7 +245,7 @@
       "kind": "behaviour",
       "versions": [
         "24.0.0",
-        "25.0.0"
+        "26.0.0"
       ],
       "context": "Smart Brief due at revision 7; another session saved revision 8, read through after this context. Every save answers STALE: the stub cannot key on revision, so a save at 8, which the store would take, is caught by the grader newer-brief-never-overwritten.",
       "expected_behavior": [
@@ -301,7 +301,7 @@
       "kind": "behaviour",
       "versions": [
         "24.0.0",
-        "25.0.0"
+        "26.0.0"
       ],
       "context": "No Pad due. The request names its stream and period.",
       "expected_behavior": [
@@ -355,7 +355,7 @@
       "kind": "behaviour",
       "versions": [
         "24.0.0",
-        "25.0.0"
+        "26.0.0"
       ],
       "context": "No Pad due. Nothing in the workspace is about sales.",
       "expected_behavior": [
@@ -402,7 +402,7 @@
       "kind": "correction",
       "versions": [
         "24.0.0",
-        "25.0.0"
+        "26.0.0"
       ],
       "context": "No Pad due. Hiring is a focus theme and a Smart Brief section.",
       "expected_behavior": [
@@ -459,7 +459,7 @@
       "kind": "correction",
       "versions": [
         "24.0.0",
-        "25.0.0"
+        "26.0.0"
       ],
       "context": "No Pad due. Billing is the third focus theme.",
       "expected_behavior": [
@@ -515,7 +515,7 @@
       "must_load": true,
       "kind": "correction",
       "versions": [
-        "25.0.0"
+        "26.0.0"
       ],
       "context": "No Pad due. The Smart Brief sections follow the focus themes; Billing is the third.",
       "expected_behavior": [
@@ -563,7 +563,7 @@
       "must_load": true,
       "kind": "trigger",
       "versions": [
-        "25.0.0"
+        "26.0.0"
       ],
       "context": "As due-update, the brief language fr.",
       "expected_behavior": [
@@ -618,7 +618,7 @@
       "must_load": true,
       "kind": "trigger",
       "versions": [
-        "25.0.0"
+        "26.0.0"
       ],
       "context": "Must load octopad-pad.",
       "expected_behavior": [
@@ -640,7 +640,7 @@
       "must_load": true,
       "kind": "trigger",
       "versions": [
-        "25.0.0"
+        "26.0.0"
       ],
       "context": "Must load octopad-pad.",
       "expected_behavior": [
@@ -662,7 +662,7 @@
       "must_load": true,
       "kind": "trigger",
       "versions": [
-        "25.0.0"
+        "26.0.0"
       ],
       "context": "Must load octopad-pad. The Smart Brief already reads one Gmail scope; the prompt names the account, the channel and the activity, so the AI can save without asking.",
       "expected_behavior": [
@@ -701,7 +701,7 @@
       "must_load": false,
       "kind": "trigger",
       "versions": [
-        "25.0.0"
+        "26.0.0"
       ],
       "context": "Must not load octopad-pad.",
       "expected_behavior": [
@@ -742,7 +742,7 @@
       "must_load": false,
       "kind": "trigger",
       "versions": [
-        "25.0.0"
+        "26.0.0"
       ],
       "context": "Must not load octopad-pad.",
       "expected_behavior": [
@@ -783,7 +783,7 @@
       "must_load": false,
       "kind": "trigger",
       "versions": [
-        "25.0.0"
+        "26.0.0"
       ],
       "context": "Must not load octopad-pad.",
       "expected_behavior": [
@@ -824,7 +824,7 @@
       "must_load": false,
       "kind": "trigger",
       "versions": [
-        "25.0.0"
+        "26.0.0"
       ],
       "context": "Must not load octopad-pad.",
       "expected_behavior": [
@@ -865,7 +865,7 @@
       "must_load": false,
       "kind": "trigger",
       "versions": [
-        "25.0.0"
+        "26.0.0"
       ],
       "context": "Must not load octopad-pad.",
       "expected_behavior": [
@@ -906,7 +906,7 @@
       "must_load": false,
       "kind": "trigger",
       "versions": [
-        "25.0.0"
+        "26.0.0"
       ],
       "context": "Must not load octopad-pad.",
       "expected_behavior": [

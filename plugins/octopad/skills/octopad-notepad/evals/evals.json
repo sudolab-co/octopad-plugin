@@ -9,7 +9,7 @@
     "release_limit": "Unrun cases are not a routing, behavioral or non-regression pass.",
     "reminder_lifecycle": "Seven additional cases compare source2fedda2 with this candidate under the same approved protocol. They are prepared, not run; existing focus/ref cases and their own comparison remain.",
     "save_first": "Four cases (save-first-1 to 4) compare 5b601365cbd4fbdfa62068ce32c54bbffbfe7757 with this candidate, each against its own comparison_base. A single-turn replay on 2026-11-02 (Sonnet 5.5 medium, skill text inline, fictional fixtures) ran cases 1 to 3 and the reminder case under a restrictive session brief once per version: both versions saved the order, repointed the reminder and saved nothing for the hypothetical; the new version kept the AI's own addition out of the save explicitly. The replay gives the skill text inline, so it does not test whether a long session opens the skill; that routing gap, the observed failure, stays unproven until real use.",
-    "pad_update": "Plugin 25.0.0 replaces case zero-themes-summary with zero-themes-pad: after a theme save the AI reads pad context again instead of restarting the old Pad reader. Prepared, not run."
+    "pad_update": "Plugin 26.0.0 replaces case zero-themes-summary with zero-themes-pad: after a theme save the AI reads pad context again instead of restarting the old Pad reader. Prepared, not run."
   },
   "evals": [
     {

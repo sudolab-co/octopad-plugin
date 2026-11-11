@@ -41,6 +41,17 @@ test('each marketplace points at plugins/octopad', () => {
   for (const source of sources) assert.equal(source, './plugins/octopad');
 });
 
+test('the reminder hook calls turn_reminder on the plugin\'s own server, in Claude Code and Codex', () => {
+  const server = Object.keys(json(join(PLUGIN, '.mcp.json')).mcpServers)[0];
+  const handlers = (hooks) => (hooks.UserPromptSubmit ?? []).flatMap((entry) => entry.hooks);
+  const claude = handlers(manifests.claude.hooks);
+  assert.deepEqual(claude, [{ type: 'mcp_tool', server: `plugin:${manifests.claude.name}:${server}`, tool: 'turn_reminder', timeout: 10 }]);
+  assert.equal(manifests.codex.hooks, './hooks.codex.json');
+  assert.ok(!existsSync(join(PLUGIN, 'hooks', 'hooks.json')), 'Claude Code would also load hooks/hooks.json');
+  const codex = handlers(json(join(PLUGIN, 'hooks.codex.json')).hooks);
+  assert.deepEqual(codex, [{ type: 'mcp_tool', server, tool: 'turn_reminder', timeout: 10 }]);
+});
+
 test('the Cursor manifest references files that exist', () => {
   const { logo, skills, agents, mcpServers } = manifests.cursor;
   for (const path of [logo, skills, agents, mcpServers]) {

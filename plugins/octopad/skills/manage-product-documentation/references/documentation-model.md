@@ -31,19 +31,30 @@ State inputs, outputs, invariants, failure behavior, compatibility, and evidence
 
 ## Architecture Map
 
-Keep architecture intentionally asymmetric: one short map, not one engineering document per Product Spec.
+Keep architecture intentionally asymmetric: one short map per product, not one engineering document per Product Spec.
 
 Keep the map in Octopad by default, beside the Product Map it serves, where the workspace's own search reaches it. A repository file is the alternative, for a team that wants architecture to change in the same review as the code; choose a docs location consistent with that repository, treat that file as canonical, and keep the Octopad entry as its link, ownership, status, related systems, and verification metadata. Name one canonical home and do not maintain both. Adopt an existing map where it already lives rather than moving it. Create the map only once code gives evidence of stable architecture; otherwise leave it uncreated and record the gap.
 
-Include only stable orientation:
+Give the map's Octopad page, or the Octopad entry of a repository map, the page subtype "Architecture Map", and no other page; each product keeps its own. Link it, with the URL Octopad returns for it, from its Product Map and from the Links of each of that product's specs: when a workspace holds several maps, Octopad serves a task the one its linked pages point to. Octopad serves the map's "How the systems connect" section in a code-work task briefing, asks for a check when a task with a linked pull request is delivered, and warns when an edit leaves it past its size line; keep that heading word for word, since Octopad finds the section by it. When two marked pages describe one product, keep the mark on the canonical one.
 
-- major runtime or deployable components;
+Its reader is an AI or a person about to change something that crosses systems: the map shows how the systems connect end to end, so they see what else the change touches before they start. Include only stable orientation:
+
+- major runtime or deployable components and the boundaries between them;
+- how the systems connect: the main end-to-end flows, one line each, from the action that starts a flow through each component it crosses;
 - data stores and external services;
-- important boundaries and directional relationships;
 - where to find current code and enforceable contracts;
 - how release state is determined.
 
-Do not manually inventory every file, symbol, import, endpoint, or dependency. Derive those from current code when needed.
+Keep a line only if a reader without it could break a connection, a boundary or the release path. Everything else goes to its home, linked when still needed:
+
+- one system's intent, choices and promises: its Product Spec;
+- one system's mechanics: code and tests, or an Engineering Reference when the knowledge is stable and not derivable from code;
+- delivery history (pull requests, releases, commits, migration applies, run ids): the pull request and the release record;
+- counts, sizes and other measurements: the test or script that measures them;
+- inventories of files, symbols, imports, endpoints, jobs or dependencies: current code, derived when needed;
+- open questions about one system: a Task or a recorded question, not the map's Verification.
+
+The map describes the code on the default branch, the base every change starts from; when released state differs in a way a reader needs, say so in one line. Update it when a change lands that alters a component, a connection, a data store or external service, a code home or the release model, and check it at each release sync. Keep it short enough to read whole before a change, at most 20,000 characters of page text; when a system's detail would push past that, move it to its home. Before durable content leaves the map, list it under SKILL.md's preservation rule, as for a spec.
 
 ## Engineering References
 

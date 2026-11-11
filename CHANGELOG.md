@@ -1,13 +1,32 @@
 # Changelog
 
-## 25.0.0 - Unreleased
+## 26.0.0 - Unreleased
 
 - `octopad-pad` 1.0.0, new: how your AI updates the Pad, writes a tab and creates one through the `pad` tool. An update reads one brief for every due tab and saves each tab alone with its `through`; a tab whose source could not be read is saved without it. The AI writes meaning only: the Smart Brief's lead says what changed since the last Pad, then what to do first; one section per focus theme with news; a one-line TL;DR; marked sentences that carry the objects they speak of, never their names, since the Pad shows each object on its own row. It never writes Outside focus. New tabs are proposed with `show` and saved on your yes; external sources are proposed once and never again after a no. "Show me less of X here" changes the tab; "X matters more now" changes your focus themes.
-- `octopad-session` 25.0.0: a due Pad, a request for a tab or a correction of one opens `octopad-pad` when the connection offers the `pad` tool.
+- `octopad-session` 26.0.0: a due Pad, a request for a tab or a correction of one opens `octopad-pad` when the connection offers the `pad` tool.
 - `octopad-notepad` 6.0.0: with the Pad, the Smart Brief is the daily briefing, and the Notepad sweep runs after its saves. After a theme save during an update, the AI reads `pad` `context` again.
 - `octopad-planning-and-work-design` 6.0.0: `Goal upkeep` refreshes the status lines of the goals you own after a Pad update, with `goals` `list` and `get`, never blocking the update. It needs a server that serves `goals` `list` `to_refresh`.
 
-Needs the Octopad server that serves the `pad` tool and its due line (migrations 787 and 788). All three distributions move to 25.0.0.
+Needs the Octopad server that serves the `pad` tool and its due line (migrations 787 and 788). All three distributions move to 26.0.0.
+
+## 25.2.0 - Unreleased
+
+- `manage-product-documentation` 6.11.0: the Architecture Map shows how the systems connect end to end, for a reader about to change something that crosses them. Its shape gains a "How the systems connect" section. A line stays only if a reader without it could break a connection, a boundary or the release path; one system's intent goes to its Product Spec, its mechanics to code or an Engineering Reference, delivery history to the pull request and the release record, measurements to the test that takes them, open questions to a Task. The map describes the default branch, stays readable in one go at most 20,000 characters, and durable content leaves it under the same preservation list as a spec. A delivered change or a release pass edits the map only when a component, a connection, a store or service, a code home or the release model changed; an audit checks the map against its rule and its length. Before a change that touches more than one system, the AI reads the map's components and connections. The AI marks the map with the page subtype "Architecture Map", so an Octopad server that supports it serves the map's connections in code-work briefings, asks for a check when a task with a pull request is delivered, and warns past the size line; an older server ignores the mark. Each product keeps its own marked map, linked from its Product Map and from its specs, so in a workspace with several products a task gets the map of the product it changes. One team's map had grown from 18,000 to 63,000 characters in six weeks of release passes, mostly delivery history, while describing no end-to-end flow.
+
+All three distributions move to 25.2.0.
+
+## 25.1.0 - Unreleased
+
+- `octopad-planning-and-work-design` 5.6.0: an AI first weighs a test that launches AI sessions against acting without it, by what a mistake would do before it could be corrected, and proposes none when acting and correcting cost less; otherwise it sizes the test before it proposes it, not only before the first run. The skill's description names that moment in observable words, the go is asked in the message that shows the decision and the ceiling unless the person already approved them, the ceiling covers the tokens AI runs may use, and a changed protocol is shown again. In a diagnosis, an AI had proposed and launched a six-run replay whose every result led to the same action, without ever opening this guide.
+
+All three distributions move to 25.1.0.
+
+## 25.0.0 - Unreleased
+
+- A new hook reminds the AI, at each user message, of the rules that apply at a later moment of the work: open the module a new activity needs, read the owning Product Spec before judging product behavior, test a consequential proposal's strongest objection, say what was verified, record durable knowledge, continue authorized work. In long sessions these rules, served once at the start, stopped firing although their text was still in context. The hook calls the Octopad tool `turn_reminder`, whose text the server owns: it is empty until the conversation has received the methodology, so other conversations get nothing. Claude Code declares the hook in `.claude-plugin/plugin.json`; Codex reads it from `hooks.codex.json`, and asks the user to trust it once (`/hooks`, or Settings > Hooks in the desktop app). Cursor, claude.ai and ChatGPT run no such hook. Needs a server that serves `turn_reminder`.
+- The plugin that carries the Pad module, which the server had reserved as 25.0.0, becomes 26.0.0: the server treats 26.0.0 and later as carrying it.
+
+All three distributions move to 25.0.0.
 
 ## 24.0.0 - Unreleased
 
