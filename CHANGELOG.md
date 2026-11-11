@@ -1,5 +1,11 @@
 # Changelog
 
+## 27.0.0 - Unreleased
+
+- `octopad-pad` 2.0.0: the Smart Brief reads as a decision brief. Before writing, the AI weighs together everything that calls you (asks, dates that arrive, whom each blocks, what got unblocked, your focus themes in order, your goals) and decides what comes first and why. The lead, at most three short sentences, says what matters today and why, then what to start with; a change enters only to explain that priority, and it never opens on a date. Sections follow the day's subjects, a focus theme among them when it is one, never a kind of item, and a quiet subject gets none. The AI cites each waiting item it speaks of; whatever it does not cite, the Pad shows in a closing block, so it never lists for completeness and its sections hide nothing. It proposes a change of focus themes when your work contradicts them, asks at most one question about a stale theme, and suggests adding another person's work to a theme when it can affect yours. It places a live block or chart on its own when it shows what text cannot. After the update's last save, it tells you the lead in the conversation and says the detail is on your Pad. The rule that it never writes what waits outside every tab goes: that attention now belongs to the Smart Brief.
+
+Needs the Octopad server that places every waiting item in the Smart Brief and accepts sections on any subject (migration 800). All three distributions move to 27.0.0.
+
 ## 26.0.0 - Unreleased
 
 - `octopad-pad` 1.0.0, new: how your AI updates the Pad, writes a tab and creates one through the `pad` tool. An update reads one brief for every due tab and saves each tab alone with its `through`; a tab whose source could not be read is saved without it. The AI writes meaning only: the Smart Brief's lead says what changed since the last Pad, then what to do first; one section per focus theme with news; a one-line TL;DR; marked sentences that carry the objects they speak of, never their names, since the Pad shows each object on its own row. It never writes Outside focus. New tabs are proposed with `show` and saved on your yes; external sources are proposed once and never again after a no. "Show me less of X here" changes the tab; "X matters more now" changes your focus themes.

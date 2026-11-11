@@ -1,10 +1,10 @@
 {
   "skill_name": "octopad-pad",
   "protocol": {
-    "status": "run 2026-11-10 on 24.0.0 and on this change, then numbered 25.0.0 and now 26.0.0 (80 agent runs), then reruns of 15 and 6 runs on the fixed skill; a check of the review fixes (12 runs) is prepared, its first attempt stopped on a stub defect",
-    "purpose": "Compare plugin 24.0.0 (no octopad-pad) with 26.0.0 on routing and on the observable Pad writes; static checks do not establish AI behavior.",
+    "status": "27.0.0 cases written 2026-11-11 and not run: the operator decided that this change makes no model call. Earlier: run 2026-11-10 on 24.0.0 and 26.0.0 (80 agent runs), then reruns of 15 and 6 runs on the fixed 26.0.0 skill.",
+    "purpose": "Compare plugin 26.0.0 (Smart Brief by focus theme, lead on what changed) with 27.0.0 (decision brief by subject, lead said in the conversation) on routing and on the observable Pad writes; static checks do not establish AI behavior.",
     "execution": "claude plugin eval on the Claude Code subscription, after the operator approves the protocol. Every Octopad tool is a mock answering fictional fixtures: nothing reaches an Octopad organization.",
-    "comparison": "The behaviour and correction cases run on both versions; the trigger cases on 26.0.0 only, since 24.0.0 holds no octopad-pad. Defeat proof: the correction cases on 26.0.0 with the section \"Route a correction\" removed must fail at least one of them.",
+    "comparison": "The behaviour and correction cases run on both versions; the trigger cases on 27.0.0 only. Defeat proofs: lead-said-in-the-conversation must fail on 26.0.0; the correction cases on 27.0.0 with the section \"Route a correction\" removed must fail at least one of them.",
     "release_limit": "Unrun cases are not a routing, behavioral or non-regression pass."
   },
   "evals": [
@@ -14,10 +14,10 @@
       "must_load": true,
       "kind": "behaviour",
       "versions": [
-        "24.0.0",
-        "26.0.0"
+        "26.0.0",
+        "27.0.0"
       ],
-      "context": "Smart Brief and Brand watch due; Marketing ideas not due. The Smart Brief has news in Atlas launch and Billing, none in Hiring, a validation placed in Atlas launch and an answer request Outside focus; Brand watch has nothing new. One owned goal waits for a status line.",
+      "context": "Smart Brief and Brand watch due; Marketing ideas not due. The Smart Brief has news in Atlas launch and Billing, none in Hiring, a validation placed in Atlas launch and an answer request (the vendor request) outside every focus theme; Brand watch has nothing new. One owned goal waits for a status line.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
@@ -27,14 +27,16 @@
         "Brand watch is saved once, with its own through.",
         "Brand watch, where nothing changed, is saved without content.",
         "Marketing ideas, which is not due, is never saved.",
-        "No save writes Outside focus or its vendor request.",
+        "No save creates or writes a tab named Outside focus; the vendor request is either cited by a Smart Brief sentence or left to the closing block.",
         "The quiet Hiring theme gets no section.",
         "No sentence repeats a task title; the lead may.",
         "The Smart Brief marks the migration unblocked, with its task in refs.",
         "A section names its objects in refs, never as inline ref: links (the lead may link its words).",
         "Goal upkeep starts only after a Pad save.",
         "The owned goal to refresh gets set_status with base_revision 3.",
-        "In the pad save call for tab smart_brief, content.lead has at most two sentences. The first says what changed since Nov 8 (such as the migration being unblocked or EU payment retries being fixed). The second says what to do first, putting the pricing review due Nov 10, which others wait on, or the now-ready migration first. FAIL if there is no lead, if it has more than two sentences, or if it does not say what to do first."
+        "No Smart Brief section is titled by a kind of item (Needs you, Asks, Unblocked, Dates, Deadlines, Waiting on you).",
+        "In the pad save call for tab smart_brief, content.lead has at most three sentences. It says what matters today and why, then what to start with, such as the pricing review due Nov 10 that others wait on, or the now-ready migration. A change appears only as the reason for that priority. FAIL if there is no lead, if it has more than three sentences, if it opens on a date or on 'Since', or if it does not say what to start with.",
+        "After the last pad save, the final reply tells the person the Smart Brief's lead in one to three lines and says the detail is on their Pad. FAIL if the reply does not give the lead."
       ],
       "graders": [
         {
@@ -104,7 +106,7 @@
           "name": "outside-focus-never-written",
           "type": "tool_used",
           "tool": "mcp__plugin_octopad_octopad__pad",
-          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*([Oo]utside [Ff]ocus|33333333-3333-4333-8333-333333333335|[Vv]endor))",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"title\":\\s*\"Outside focus\")",
           "min": 0,
           "max": 0
         },
@@ -159,9 +161,22 @@
           "min": 1
         },
         {
-          "name": "lead-says-what-changed-then-what-first",
+          "name": "no-section-by-kind",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_brief\")(?=[\\s\\S]*\"title\":\\s*\"(Needs you|Asks|Unblocked|Dates|Deadlines|Waiting on you)\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "lead-says-what-matters-and-where-to-start",
           "type": "llm",
           "focus": "mock_calls"
+        },
+        {
+          "name": "lead-said-in-the-conversation",
+          "type": "llm",
+          "focus": "last_message"
         }
       ]
     },
@@ -171,8 +186,8 @@
       "must_load": true,
       "kind": "behaviour",
       "versions": [
-        "24.0.0",
-        "26.0.0"
+        "26.0.0",
+        "27.0.0"
       ],
       "context": "Smart Brief due; Brand watch not checked: its stream could not be read and its through is none.",
       "expected_behavior": [
@@ -244,8 +259,8 @@
       "must_load": true,
       "kind": "behaviour",
       "versions": [
-        "24.0.0",
-        "26.0.0"
+        "26.0.0",
+        "27.0.0"
       ],
       "context": "Smart Brief due at revision 7; another session saved revision 8, read through after this context. Every save answers STALE: the stub cannot key on revision, so a save at 8, which the store would take, is caught by the grader newer-brief-never-overwritten.",
       "expected_behavior": [
@@ -300,8 +315,8 @@
       "must_load": true,
       "kind": "behaviour",
       "versions": [
-        "24.0.0",
-        "26.0.0"
+        "26.0.0",
+        "27.0.0"
       ],
       "context": "No Pad due. The request names its stream and period.",
       "expected_behavior": [
@@ -354,8 +369,8 @@
       "must_load": true,
       "kind": "behaviour",
       "versions": [
-        "24.0.0",
-        "26.0.0"
+        "26.0.0",
+        "27.0.0"
       ],
       "context": "No Pad due. Nothing in the workspace is about sales.",
       "expected_behavior": [
@@ -396,13 +411,60 @@
       ]
     },
     {
+      "id": "stale-theme",
+      "prompt": "Good morning. Let us get going in Octopad, workspace Example.",
+      "must_load": true,
+      "kind": "behaviour",
+      "versions": [
+        "26.0.0",
+        "27.0.0"
+      ],
+      "context": "Smart Brief due. Focus themes: 1. Atlas launch, 2. Hiring, 3. Billing. Hiring has had no task, ask or change for 30 days; most of the person's recent work is on the Billing migration, and a validation waits in Billing.",
+      "expected_behavior": [
+        "The run opens octopad-pad and records it with skill_opened.",
+        "Every save of an existing tab carries expected_revision.",
+        "The Smart Brief's lead, or the final reply, proposes changing the focus themes (Hiring looks stale, Billing holds the work), with the reason, and asks at most one question about it. FAIL if neither proposes it or if more than one question is asked about the themes.",
+        "No Notepad update reorders or removes a focus theme before the person answers."
+      ],
+      "graders": [
+        {
+          "name": "opens-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 1
+        },
+        {
+          "name": "every-save-carries-its-revision",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\")(?![\\s\\S]*\"expected_revision\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "theme-change-proposed",
+          "type": "llm",
+          "focus": "mock_calls"
+        },
+        {
+          "name": "themes-unchanged-before-answer",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__notepad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"update\")(?=[\\s\\S]*Focus themes)",
+          "min": 0,
+          "max": 0
+        }
+      ]
+    },
+    {
       "id": "correction-tab",
       "prompt": "On my Smart Brief, show me less about hiring.",
       "must_load": true,
       "kind": "correction",
       "versions": [
-        "24.0.0",
-        "26.0.0"
+        "26.0.0",
+        "27.0.0"
       ],
       "context": "No Pad due. Hiring is a focus theme and a Smart Brief section.",
       "expected_behavior": [
@@ -458,8 +520,8 @@
       "must_load": true,
       "kind": "correction",
       "versions": [
-        "24.0.0",
-        "26.0.0"
+        "26.0.0",
+        "27.0.0"
       ],
       "context": "No Pad due. Billing is the third focus theme.",
       "expected_behavior": [
@@ -515,13 +577,14 @@
       "must_load": true,
       "kind": "correction",
       "versions": [
-        "26.0.0"
+        "26.0.0",
+        "27.0.0"
       ],
-      "context": "No Pad due. The Smart Brief sections follow the focus themes; Billing is the third.",
+      "context": "No Pad due. The focus themes, in their order, weigh in what the Smart Brief puts first; Billing is the third.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
-        "The Notepad update makes Billing the first focus theme, which orders the Smart Brief.",
+        "The Notepad update makes Billing the first focus theme, which the Smart Brief then weighs first.",
         "No Pad guidance is written for it."
       ],
       "graders": [
@@ -563,7 +626,7 @@
       "must_load": true,
       "kind": "trigger",
       "versions": [
-        "26.0.0"
+        "27.0.0"
       ],
       "context": "As due-update, the brief language fr.",
       "expected_behavior": [
@@ -618,7 +681,7 @@
       "must_load": true,
       "kind": "trigger",
       "versions": [
-        "26.0.0"
+        "27.0.0"
       ],
       "context": "Must load octopad-pad.",
       "expected_behavior": [
@@ -640,7 +703,7 @@
       "must_load": true,
       "kind": "trigger",
       "versions": [
-        "26.0.0"
+        "27.0.0"
       ],
       "context": "Must load octopad-pad.",
       "expected_behavior": [
@@ -662,7 +725,7 @@
       "must_load": true,
       "kind": "trigger",
       "versions": [
-        "26.0.0"
+        "27.0.0"
       ],
       "context": "Must load octopad-pad. The Smart Brief already reads one Gmail scope; the prompt names the account, the channel and the activity, so the AI can save without asking.",
       "expected_behavior": [
@@ -701,7 +764,7 @@
       "must_load": false,
       "kind": "trigger",
       "versions": [
-        "26.0.0"
+        "27.0.0"
       ],
       "context": "Must not load octopad-pad.",
       "expected_behavior": [
@@ -742,7 +805,7 @@
       "must_load": false,
       "kind": "trigger",
       "versions": [
-        "26.0.0"
+        "27.0.0"
       ],
       "context": "Must not load octopad-pad.",
       "expected_behavior": [
@@ -783,7 +846,7 @@
       "must_load": false,
       "kind": "trigger",
       "versions": [
-        "26.0.0"
+        "27.0.0"
       ],
       "context": "Must not load octopad-pad.",
       "expected_behavior": [
@@ -824,7 +887,7 @@
       "must_load": false,
       "kind": "trigger",
       "versions": [
-        "26.0.0"
+        "27.0.0"
       ],
       "context": "Must not load octopad-pad.",
       "expected_behavior": [
@@ -865,7 +928,7 @@
       "must_load": false,
       "kind": "trigger",
       "versions": [
-        "26.0.0"
+        "27.0.0"
       ],
       "context": "Must not load octopad-pad.",
       "expected_behavior": [
@@ -906,7 +969,7 @@
       "must_load": false,
       "kind": "trigger",
       "versions": [
-        "26.0.0"
+        "27.0.0"
       ],
       "context": "Must not load octopad-pad.",
       "expected_behavior": [
