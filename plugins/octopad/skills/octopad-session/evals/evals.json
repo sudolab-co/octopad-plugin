@@ -91,7 +91,7 @@
         "runtime": "Codex Code Mode (functions.exec)"
       },
       "expected_behavior": [
-        "Call start_session once with max_output_tokens: 25000 and output_budget_tokens: 25000, saving the result with store and emitting its full text.",
+        "Set max_output_tokens: 25000 on the functions.exec cell. Within it, call start_session once with output_budget_tokens: 25000 and the required session arguments, save the result with store, and emit its complete text.",
         "Do not call start_session a second time to recover a cut result."
       ]
     },
