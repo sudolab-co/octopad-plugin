@@ -1,5 +1,13 @@
 # Changelog
 
+## 28.0.0 - Unreleased
+
+- `octopad-notepad` 7.0.0: the methodology decides when a reminder exists. A next step that waits on a date or on a member's work no longer gets a reminder: anything to do is a task, dated when known, and an event Octopad reports is a dependency. "Remind me" of something to do creates that task and says so in one line.
+- `octopad-session` 28.0.0: when another person's work can affect the user's own, the AI proposes adding it to one of their focus themes, with its reason, and saves it on their yes. Following through `followup` still needs the user's ask. In Codex Code Mode, the AI also passes `output_budget_tokens: 25000` to `start_session`, so a cut result needs no second call.
+- New eval cases for both skills, prepared and not run.
+
+Needs the Octopad server whose kernel carries the narrower reminder rule (methodology 2.41.0). All three distributions move to 28.0.0.
+
 ## 27.0.0 - Unreleased
 
 - `octopad-pad` 2.0.0: the Smart Brief reads as a decision brief. Before writing, the AI weighs together everything that calls you (asks, dates that arrive, whom each blocks, what got unblocked, your focus themes in order, your goals) and decides what comes first and why. The lead, at most three short sentences, says what matters today and why, then what to start with; a change enters only to explain that priority, and it never opens on a date. Sections follow the day's subjects, a focus theme among them when it is one, never a kind of item, and a quiet subject gets none. The AI cites each waiting item it speaks of; whatever it does not cite, the Pad shows in a closing block, so it never lists for completeness and its sections hide nothing. When your work contradicts your focus themes, the lead says so with the change made or proposed; it asks at most one question about a stale theme, and suggests adding another person's work to a theme when it can affect yours. In the Smart Brief, it places a live block or chart on its own when it shows what text cannot. It cites a waiting item by its task; one with no task stays in the closing block. After the update's last save, it tells you the lead in the conversation and says the detail is on your Pad. The rule that it never writes what waits outside every tab goes: that attention now belongs to the Smart Brief.

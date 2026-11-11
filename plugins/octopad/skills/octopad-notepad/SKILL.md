@@ -4,7 +4,7 @@ description: "Use where orientation shows the user's personal Notepad: when a re
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-notepad"` when you open this skill.
 
-Version: 6.0.0
+Version: 7.0.0
 
 # Whose memory
 
@@ -76,7 +76,7 @@ followup: <YYYY-MM-DD> | session <session id> | <entry_id>
 - `open_loops`: a thread interrupted before its end, one entry per subject, updated across conversations. Its `next:` is the best known next step.
 - `premises`: what the user said they want, believe or judged, while it is neither engaged work nor durable knowledge. Its `exit:` names what settles it: named engaged work, confirmed knowledge or the user's explicit abandonment. Waiting does not turn it into a task.
 - `compass`: the user's direction that no task, dependency or decision carries, with its reason: their focus themes (see Focus themes) and their own calls on work order. An order you can derive from the task tree belongs in your answer, not here. For missing focus themes, apply Focus themes below.
-- `reminders`: a commitment to remind the user when a subject or condition comes back, or from a date: one the user asked for, or one you set for a next step that waits on an event.
+- `reminders`: a commitment to remind the user when a subject or condition comes back, or from a date, only where the methodology allows one.
 - `context_gaps`: context you lacked and where to find it.
 - `last_briefing`: today's briefing claim and follow-up claim. A missing line means no claim.
 
@@ -135,9 +135,9 @@ The `compass` holds at most one `### Focus themes` entry: what the user intends 
 
 # Reminders
 
-"Remind me of X when we talk about Y" creates a reminder, not a task to execute. Record the actual request, never a hypothetical example. Clarify only an ambiguity that changes the trigger; otherwise keep the user's words and scope.
+"Remind me of X when we talk about Y" asks to bring X back, never to do X now. Write a reminder only where the methodology allows one; otherwise create the task it calls for, dated when the user gave a date, and say so in one line. Record the actual request, never a hypothetical example. Clarify only an ambiguity that changes the trigger; otherwise keep the user's words and scope.
 
-- **Set one yourself when a next step waits on an event.** In a main session, when you leave the user a next step, or set a task `blocked` or `on_hold`, that can only move after a date or an event, write a reminder unasked and say so in one line, unless Octopad tells the user of every event the wait needs. It tells a task's assignee and creator when the last dependency they can see is done, unless the task is `on_hold`, and when its linked pull request merges; never of a date, a deploy, a switch, an outside reply or an unlinked merge. The event may be someone else's act, such as a teammate's merge; the reminder is for the user's step that follows it, while work the user hands to another person is a task assigned to them. `when:` names the event so a later session can check it ("acme/app#42 merged"); `remind:` says what it frees: the check to run, or the task to resume or to close on its own evidence. Name that task, not its dependents: read those when the reminder fires. Set one only when the event frees something the user must do; otherwise keep the step in the loop's `next:`. One reminder per event: add to an existing one rather than writing a second.
+- **Set one yourself only where the methodology says, and say so in one line.** The outside event may be someone else's act, such as a supplier's reply; the reminder is for the user's step that follows it, while work the user hands to another person is a task assigned to them. `when:` names the event so a later session can check it ("the supplier answered the quote"); `remind:` says what it frees: the check to run, or the task to resume or to close on its own evidence. Name that task, not its dependents: read those when the reminder fires. Set one only when the event frees something the user must do; otherwise keep the step in the loop's `next:`. One reminder per event: add to an existing one rather than writing a second.
 - **Check events at every opening.** At a main session's opening, check each reminder waiting on an event with the tools you have. When verified due, use the routes below: a related reminder belongs in the current discussion; an unrelated reminder becomes a notification without interrupting the discussion. Say nothing for an event not yet happened. Keep an unverifiable reminder; mention the missing check only when its subject matters. A triggered reminder is never swept away as a stale pointer. Read the linked task's current state before saying what the event frees.
 - **Capture.** `when:` holds the subject, condition or date, with the user's own logic when they combine them; `remind:` holds the message. When the reminder concerns known work, add one `refs:` line with only its relevant, verified `task:<uuid>`, `stream:<uuid>` or `goal:<uuid>` references, using full ids separated by commas, without duplicates or other text. Include a related stream or goal only when that relationship is established: scope matching does not infer it from a task reference. Omit the line when no reference is known; keep the reminder unclassified rather than guessing from a title, theme name or position. Add `repeat:` only when asked: it then fires once per relevant occasion, not per message. Promise nothing outside an active conversation; a scheduled alert belongs to an automation tool.
 - **Match a subject by meaning and scope,** not words alone: "the demo shoot" can match "demo video". A mere mention or example does not match; a doubtful match does not fire. Reminders are exempt from the follow-up delays and quota.
@@ -164,7 +164,7 @@ Before writing, ask yourself what would be lost without this note. Check the sou
 Before adding, read the whole document and prefer updating the subject's existing entry. Two moments require checking what must survive:
 
 - Work or context with no trace elsewhere: work in an external tool, a verdict without a task, an intention with no follow-up, a call on order, a reminder the user asked for. Preserve its substance before leaving the thread.
-- Wrapping up with next steps left: in the subject's loop, preserve the order and reason of what remains when no task or knowledge carries them, one short line per step with its reference, and `next:` on the first. If the durable records suffice to resume, add nothing. A step that waits on a date or an event gets its reminder (see Reminders) in place of a loop line, unless Octopad tells the user of every event it needs.
+- Wrapping up with next steps left: in the subject's loop, preserve the order and reason of what remains when no task or knowledge carries them, one short line per step with its reference, and `next:` on the first. If the durable records suffice to resume, add nothing. A step the methodology makes a task or a reminder becomes one (see Reminders) in place of a loop line.
 
 Make each word count: a heading, one or two sentences, then the entry's keys; up to three bullets for a composite direction. Never cut an intention, limit or proof to fit. Leave out what Octopad already holds (status, priority, owner, dependency, fact, decision), project status, test or delivery history, cleanup commentary and archive links. Keep a reference only when it retrieves unique context; a local file path alone is not retrievable from another session.
 
