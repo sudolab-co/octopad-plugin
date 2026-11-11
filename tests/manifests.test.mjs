@@ -52,6 +52,16 @@ test('the reminder hook calls turn_reminder on the plugin\'s own server, in Clau
   assert.deepEqual(codex, [{ type: 'mcp_tool', server, tool: 'turn_reminder', timeout: 10 }]);
 });
 
+test('the desktop pane hook runs after the Claude app Browser pane loads a page, in Claude Code only', () => {
+  const entries = manifests.claude.hooks.PostToolUse ?? [];
+  assert.deepEqual(entries, [{
+    matcher: 'mcp__Claude_Browser__navigate|mcp__Claude_Browser__preview_start',
+    hooks: [{ type: 'command', command: '/bin/sh "${CLAUDE_PLUGIN_ROOT}/desktop-pane/desktop-pane.sh"; exit 0', timeout: 10 }],
+  }]);
+  assert.ok(existsSync(join(PLUGIN, 'desktop-pane', 'desktop-pane.sh')));
+  assert.equal(json(join(PLUGIN, 'hooks.codex.json')).hooks.PostToolUse, undefined);
+});
+
 test('the Cursor manifest references files that exist', () => {
   const { logo, skills, agents, mcpServers } = manifests.cursor;
   for (const path of [logo, skills, agents, mcpServers]) {

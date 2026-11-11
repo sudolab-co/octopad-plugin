@@ -1,5 +1,11 @@
 # Changelog
 
+## 28.1.0 - Unreleased
+
+- Claude Code, in the Claude desktop app: right after the AI loads the Octopad desktop in the app's Browser pane, a hook reminds it that loading does not put the pane on screen, to show it with the app's own command, to check it is displayed, and to say so only then. When you are away from the session, it tells you the desktop will show when you return. Codex and Cursor are unchanged.
+
+Needs no server change. All three distributions move to 28.1.0.
+
 ## 28.0.0 - Unreleased
 
 - `octopad-notepad` 7.0.0: the methodology decides when a reminder exists. A next step that waits on a date or on a member's work no longer gets a reminder: anything to do is a task, dated when known, and an event Octopad reports is a dependency. "Remind me" of something to do creates that task and says so in one line.
