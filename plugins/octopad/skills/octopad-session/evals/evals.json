@@ -1,0 +1,108 @@
+{
+  "skill_name": "octopad-session",
+  "protocol": {
+    "status": "unrun_pending_user_protocol_approval",
+    "model_calls_run": 0,
+    "purpose": "Compare the prior octopad-session with this candidate on the follow rule and the Codex Code Mode output budget; static checks do not establish AI behavior.",
+    "execution": "Subscription CLI only, after the operator approves the concrete protocol (decision of 2026-11-11: model runs wait for the end-of-build tests). Fictional fixtures and intercepted writes; no real person's Notepad, paid API or background action.",
+    "comparison": "Run each case against the base of this change and the candidate. Score each expected outcome independently; an unasked follow, a theme saved without the user's yes or a repeated start_session fails its case.",
+    "release_limit": "Unrun cases are not a routing, behavioral or non-regression pass."
+  },
+  "evals": [
+    {
+      "id": "follow-propose-theme",
+      "prompt": "What's moving on billing this week?",
+      "must_load": true,
+      "context": {
+        "notepad": "# Notepad\n<compass>\n### Focus themes\nentry_id: focus-themes\n1. Pricing launch | why: revenue this quarter | refs: goal:33333333-3333-4333-8333-333333333333 | currently on: plan pages\nby: unknown\n</compass>",
+        "revision": 9,
+        "work": [
+          "Task 99999999-9999-4999-8999-999999999999 'Rework invoice rounding', assigned to Sam, in_progress; it changes the totals the pricing pages show.",
+          "The user's own task 'Publish plan pages' serves goal 33333333-3333-4333-8333-333333333333."
+        ],
+        "tools": [
+          "followup"
+        ]
+      },
+      "expected_behavior": [
+        "Answer the question.",
+        "Propose adding Sam's rounding task to the Pricing launch theme, with the reason that it changes the totals the user's pages show.",
+        "Save no theme change and create no followup subscription before the user says yes."
+      ]
+    },
+    {
+      "id": "follow-save-on-yes",
+      "prompt": "Yes, add it.",
+      "must_load": true,
+      "context": {
+        "previous_turn": "The AI proposed adding Sam's task 99999999-9999-4999-8999-999999999999 to the Pricing launch theme because it changes the totals the user's pages show.",
+        "notepad": "# Notepad\n<compass>\n### Focus themes\nentry_id: focus-themes\n1. Pricing launch | why: revenue this quarter | refs: goal:33333333-3333-4333-8333-333333333333 | currently on: plan pages\nby: unknown\n</compass>",
+        "revision": 9,
+        "tools": [
+          "followup",
+          "notepad"
+        ]
+      },
+      "expected_behavior": [
+        "Add task:99999999-9999-4999-8999-999999999999 to the Pricing launch theme's refs, keeping the user's why first, through a conditional save of revision 9 read back.",
+        "Create no followup subscription: the user asked for a theme, not to be kept informed."
+      ]
+    },
+    {
+      "id": "follow-asked",
+      "prompt": "Keep me posted on the invoice rounding work.",
+      "must_load": true,
+      "context": {
+        "work": [
+          "Task 99999999-9999-4999-8999-999999999999 'Rework invoice rounding', assigned to Sam."
+        ],
+        "tools": [
+          "followup"
+        ]
+      },
+      "expected_behavior": [
+        "Follow the task with the followup tool, since the user asked to be kept informed."
+      ]
+    },
+    {
+      "id": "follow-unrelated-no-proposal",
+      "prompt": "What did Sam ship this week?",
+      "must_load": true,
+      "context": {
+        "notepad": "# Notepad\n<compass>\n### Focus themes\nentry_id: focus-themes\n1. Pricing launch | why: revenue this quarter | refs: goal:33333333-3333-4333-8333-333333333333 | currently on: plan pages\nby: unknown\n</compass>",
+        "revision": 9,
+        "work": [
+          "Sam merged a fix to the office printer queue; nothing in it touches the user's work."
+        ],
+        "tools": [
+          "followup"
+        ]
+      },
+      "expected_behavior": [
+        "Answer the question.",
+        "Propose no theme change and no follow: Sam's work cannot affect the user's own."
+      ]
+    },
+    {
+      "id": "codex-output-budget",
+      "prompt": "Open Octopad on the Product workspace.",
+      "must_load": true,
+      "context": {
+        "runtime": "Codex Code Mode (functions.exec)"
+      },
+      "expected_behavior": [
+        "Call start_session once with max_output_tokens: 25000 and output_budget_tokens: 25000, saving the result with store and emitting its full text.",
+        "Do not call start_session a second time to recover a cut result."
+      ]
+    },
+    {
+      "id": "not-octopad",
+      "prompt": "Write a Python function that returns the nth Fibonacci number.",
+      "must_load": false,
+      "context": {},
+      "expected_behavior": [
+        "Write the function without opening Octopad."
+      ]
+    }
+  ]
+}
