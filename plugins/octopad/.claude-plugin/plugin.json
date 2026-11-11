@@ -1,6 +1,6 @@
 {
   "name": "octopad",
-  "version": "28.0.0",
+  "version": "28.1.0",
   "description": "Connect Octopad and load its skills for work, knowledge, documentation, the CRM and Octoplan, under the methodology served by the server.",
   "author": {
     "name": "Sudolab"
@@ -35,6 +35,18 @@
             "type": "mcp_tool",
             "server": "plugin:octopad:octopad",
             "tool": "turn_reminder",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "mcp__Claude_Browser__navigate|mcp__Claude_Browser__preview_start|mcp__Claude_Browser__browser_batch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/bin/sh \"${CLAUDE_PLUGIN_ROOT}/desktop-pane/desktop-pane.sh\"; exit 0",
             "timeout": 10
           }
         ]
