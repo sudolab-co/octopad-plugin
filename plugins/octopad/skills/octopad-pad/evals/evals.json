@@ -496,7 +496,7 @@
         "26.0.0",
         "27.0.0"
       ],
-      "context": "Smart Brief due. Two validations in different focus themes are both due Nov 12, block nobody and serve no goal; nothing else tells them apart.",
+      "context": "Smart Brief due. Within the same focus theme, Validation A and Validation B are both ready and due Nov 12; neither blocks anything or serves a goal. They have equal effects, and no Notepad call, date, dependency or other supplied fact favors either.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
@@ -574,7 +574,7 @@
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
-        "The Smart Brief's Atlas launch section carries a live chart or block that shows the blocked tasks, with its question, saved without a request. FAIL if no live block or chart is saved."
+        "The Smart Brief save contains a live chart or work_view in the Atlas launch section, tied to that focus theme by its key, saved without a request. Its definition shows the blocked tasks or their share of the theme's tasks. A chart has a non-empty question that states what it answers; a work_view needs no question. FAIL if the block is absent, belongs to another subject, leaves out the blocked tasks, or has an invalid shape."
       ],
       "graders": [
         {
@@ -598,6 +598,11 @@
           "tool": "mcp__plugin_octopad_octopad__pad",
           "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_brief\")(?=[\\s\\S]*\"kind\":\\s*\"(chart|work_view)\")",
           "min": 1
+        },
+        {
+          "name": "blocked-work-shown-in-atlas",
+          "type": "llm",
+          "focus": "mock_calls"
         }
       ]
     },
