@@ -8,7 +8,8 @@
     "comparison": "Run the same cases against base ffba59ac9d6959dbf692e557fb166b14c7842214 and the final candidate. Preserve transcripts and score each expected outcome independently. A wrong write, lost entry, stale snapshot or unauthorized shared effect fails its case.",
     "release_limit": "Unrun cases are not a routing, behavioral or non-regression pass.",
     "reminder_lifecycle": "Seven additional cases compare source2fedda2 with this candidate under the same approved protocol. They are prepared, not run; existing focus/ref cases and their own comparison remain.",
-    "save_first": "Four cases (save-first-1 to 4) compare 5b601365cbd4fbdfa62068ce32c54bbffbfe7757 with this candidate, each against its own comparison_base. A single-turn replay on 2026-11-02 (Sonnet 5.5 medium, skill text inline, fictional fixtures) ran cases 1 to 3 and the reminder case under a restrictive session brief once per version: both versions saved the order, repointed the reminder and saved nothing for the hypothetical; the new version kept the AI's own addition out of the save explicitly. The replay gives the skill text inline, so it does not test whether a long session opens the skill; that routing gap, the observed failure, stays unproven until real use."
+    "save_first": "Four cases (save-first-1 to 4) compare 5b601365cbd4fbdfa62068ce32c54bbffbfe7757 with this candidate, each against its own comparison_base. A single-turn replay on 2026-11-02 (Sonnet 5.5 medium, skill text inline, fictional fixtures) ran cases 1 to 3 and the reminder case under a restrictive session brief once per version: both versions saved the order, repointed the reminder and saved nothing for the hypothetical; the new version kept the AI's own addition out of the save explicitly. The replay gives the skill text inline, so it does not test whether a long session opens the skill; that routing gap, the observed failure, stays unproven until real use.",
+    "pad_update": "Plugin 26.0.0 replaces case zero-themes-summary with zero-themes-pad: after a theme save the AI reads pad context again instead of restarting the old Pad reader. Prepared, not run."
   },
   "evals": [
     {
@@ -32,21 +33,21 @@
       ]
     },
     {
-      "id": "zero-themes-summary",
-      "prompt": "Refresh my Summary from the available owner snapshot.",
+      "id": "zero-themes-pad",
+      "prompt": "Update my Pad.",
       "must_load": true,
       "context": {
         "notepad": "# Notepad\n<open_loops>\n### Supplier reply\nentry_id: supplier-reply\nAn outside reply is still unverified.\nby: unknown\n</open_loops>\n<compass>\n</compass>\n<reminders>\n### Renewal\nentry_id: renewal\nwhen: 2026-11-10\nremind: Review the renewal.\nby: unknown\n</reminders>",
         "revision": 4,
-        "snapshot": "snapshot-before-themes",
+        "pad_due": "start_session names smart_brief under Pad due today; its pad context says due: no focus theme in the Notepad: theme discovery",
         "work": [
           "Task 11111111-1111-4111-8111-111111111111: user owns launch reliability and a retry defect needs attention."
         ]
       },
       "expected_behavior": [
         "Apply the same zero-theme inference and conditional save rules.",
-        "After the save follow the served heads_up_read instructions for a fresh snapshot. With the bounded reader, use the same claim and current snapshot, restart:true, offset:0, discard old receipts and traverse the new generation before writing. With the older full reader, its fresh reread suffices. Use the new snapshot and saved themes.",
-        "Never submit the pre-save snapshot; include one undo line and no setup question."
+        "After the save, read pad context again and write the Smart Brief only from that new brief, its sections being the saved themes.",
+        "Never save from the brief read before the theme save; include one undo line and no setup question."
       ]
     },
     {
