@@ -5,7 +5,7 @@
     "model_calls_run": 0,
     "purpose": "Compare the prior octopad-session with this candidate on the follow rule and the Codex Code Mode output budget; static checks do not establish AI behavior.",
     "execution": "Subscription CLI only, after the operator approves the concrete protocol (decision of 2026-11-11: model runs wait for the end-of-build tests). Fictional fixtures and intercepted writes; no real person's Notepad, paid API or background action.",
-    "comparison": "Run each case against the base of this change and the candidate. Score each expected outcome independently; an unasked follow, a theme saved without the user's yes or a repeated start_session fails its case.",
+    "comparison": "Run each case against c345199b0119bed95b964a85047335d89f06a860 (plugin 27.0.0) and the candidate (plugin 28.0.0). Score each expected outcome independently; an unasked follow, a theme saved without the user's yes or a repeated start_session fails its case.",
     "release_limit": "Unrun cases are not a routing, behavioral or non-regression pass."
   },
   "evals": [

@@ -4,7 +4,7 @@ description: "Use where orientation shows the user's personal Notepad: when a re
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-notepad"` when you open this skill.
 
-Version: 6.0.0
+Version: 7.0.0
 
 # Whose memory
 
