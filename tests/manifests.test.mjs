@@ -55,7 +55,7 @@ test('the reminder hook calls turn_reminder on the plugin\'s own server, in Clau
 test('the desktop pane hook runs after the Claude app Browser pane loads a page, in Claude Code only', () => {
   const entries = manifests.claude.hooks.PostToolUse ?? [];
   assert.deepEqual(entries, [{
-    matcher: 'mcp__Claude_Browser__navigate|mcp__Claude_Browser__preview_start',
+    matcher: 'mcp__Claude_Browser__navigate|mcp__Claude_Browser__preview_start|mcp__Claude_Browser__browser_batch',
     hooks: [{ type: 'command', command: '/bin/sh "${CLAUDE_PLUGIN_ROOT}/desktop-pane/desktop-pane.sh"; exit 0', timeout: 10 }],
   }]);
   assert.ok(existsSync(join(PLUGIN, 'desktop-pane', 'desktop-pane.sh')));

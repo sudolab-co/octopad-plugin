@@ -2,7 +2,7 @@
 
 ## 28.1.0 - Unreleased
 
-- Claude Code, in the Claude desktop app: right after the AI loads the Octopad desktop in the app's Browser pane, a hook reminds it that loading does not put the pane on screen, to show it with the app's own command, to check it is displayed, and to say so only then. When you are away from the session, it tells you the desktop will show when you return. Codex and Cursor are unchanged.
+- Claude Code, in the Claude desktop app: right after the AI loads the Octopad desktop in the app's Browser pane, directly or in a batch of browser actions, a hook reminds it that loading does not put the pane on screen: it brings the desktop's tab to the front, shows the pane with the app's own command, checks the pane is displayed with that tab in front, and only then says the desktop is shown. When you are away from the session, it says the desktop is not shown and shows it at your next message. Codex and Cursor are unchanged.
 
 Needs no server change. All three distributions move to 28.1.0.
 

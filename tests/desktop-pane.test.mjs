@@ -31,7 +31,9 @@ function reminds(stdout) {
   const text = parsed.hookSpecificOutput.additionalContext;
   assert.match(text, /mcp__ccd_view__show_pane with pane "preview"/);
   assert.match(text, /mcp__Claude_Browser__tabs_context/);
-  assert.match(text, /in no window/);
+  assert.match(text, /tabs_select with the desktop tab's tabId/);
+  assert.match(text, /in no window, the desktop is not shown: say so/);
+  assert.doesNotMatch(text, /will show when they return/);
 }
 
 test('reminds after loading a desktop page or its sign-in link', () => {
@@ -42,6 +44,11 @@ test('reminds after loading a desktop page or its sign-in link', () => {
     `http://localhost:3000/org/${ORG}/desktop`,
   ]) reminds(run(navigate(url)));
   reminds(run(navigate(`https://octopad.app/org/${ORG}/desktop`, 'mcp__Claude_Browser__preview_start')));
+  // browser_batch nests navigate's input under actions[].input.
+  reminds(run(JSON.stringify({
+    tool_name: 'mcp__Claude_Browser__browser_batch',
+    tool_input: { actions: [{ name: 'navigate', input: { url: `https://staging.octopad.app/auth/desktop?org=${ORG}#x` } }, { name: 'read_page', input: {} }] },
+  })));
 });
 
 test('says nothing for any other address or input', () => {
@@ -53,6 +60,7 @@ test('says nothing for any other address or input', () => {
     navigate(`https://notoctopad.app/org/${ORG}/desktop`),
     navigate(`https://octopad-app/org/${ORG}/desktop`),
     navigate(`https://octopad.app/org/${ORG}/desktop-notes`),
+    JSON.stringify({ tool_name: 'mcp__Claude_Browser__browser_batch', tool_input: { actions: [{ name: 'navigate', input: { url: 'https://github.com/x' } }] } }),
     JSON.stringify({ tool_name: 'mcp__Claude_Browser__navigate', tool_input: {} }),
     'not json',
     '',
