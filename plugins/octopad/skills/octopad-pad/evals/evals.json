@@ -4,8 +4,8 @@
     "status": "27.0.0 cases written 2026-11-11 and not run: the operator decided that this change makes no model call. Earlier: run 2026-11-10 on 24.0.0 and 26.0.0 (80 agent runs), then reruns of 15 and 6 runs on the fixed 26.0.0 skill.",
     "purpose": "Compare plugin 26.0.0 (Smart Brief by focus theme, lead on what changed) with 27.0.0 (decision brief by subject, lead said in the conversation) on routing and on the observable Pad writes; static checks do not establish AI behavior.",
     "execution": "claude plugin eval on the Claude Code subscription, after the operator approves the protocol. Every Octopad tool is a mock answering fictional fixtures: nothing reaches an Octopad organization.",
-    "comparison": "The behaviour and correction cases run on both versions; the trigger cases on 27.0.0 only. Defeat proofs: lead-said-in-the-conversation must fail on 26.0.0; the correction cases on 27.0.0 with the section \"Route a correction\" removed must fail at least one of them.",
-    "release_limit": "Unrun cases are not a routing, behavioral or non-regression pass."
+    "comparison": "The behaviour and correction cases run on both versions; the trigger cases on 27.0.0 only. Both versions get the same server lines, including the one a Smart Brief save returns, so lead-said-in-the-conversation compares them and is not a defeat proof. Defeat proofs: lead-says-what-matters-and-where-to-start must reject a 26.0.0 lead that opens on what changed since a date; the correction cases on 27.0.0 with the section \"Route a correction\" removed must fail at least one of them.",
+    "release_limit": "Unrun cases are not a routing, behavioral or non-regression pass. Before a run, the mocks must serve each case's context: a fixed date and time zone, the revisions and through values, the full Notepad with its focus themes, the goal at base_revision 3, the external scopes, and the server's real context and save lines, the same for both versions. stale-theme, outside-first, undecided-order, peer-work, unasked-chart and start-date-only have no fixtures yet."
   },
   "evals": [
     {
@@ -34,9 +34,9 @@
         "A section names its objects in refs, never as inline ref: links (the lead may link its words).",
         "Goal upkeep starts only after a Pad save.",
         "The owned goal to refresh gets set_status with base_revision 3.",
-        "No Smart Brief section is titled by a kind of item (Needs you, Asks, Unblocked, Dates, Deadlines, Waiting on you).",
+        "Grade each saved Smart Brief section's title and contents in the brief's language: FAIL any section organized by a kind of item (asks, needs you, dates, deadlines, unblocked, waiting on you), including translated or reworded headings.",
         "In the pad save call for tab smart_brief, content.lead has at most three sentences. It says what matters today and why, then what to start with, such as the pricing review due Nov 10 that others wait on, or the now-ready migration. A change appears only as the reason for that priority. FAIL if there is no lead, if it has more than three sentences, if it opens on a date or on 'Since', or if it does not say what to start with.",
-        "After the last pad save, the final reply tells the person the Smart Brief's lead in one to three lines and says the detail is on their Pad. FAIL if the reply does not give the lead."
+        "When Smart Brief content was saved, grade the ordered saves and assistant messages together: after the last save and before goal upkeep, an assistant message gives that saved lead once, in the brief's language, in one to three lines, and says the detail is on the person's Pad. It need not be the final reply. FAIL if no message gives the lead."
       ],
       "graders": [
         {
@@ -162,11 +162,8 @@
         },
         {
           "name": "no-section-by-kind",
-          "type": "tool_used",
-          "tool": "mcp__plugin_octopad_octopad__pad",
-          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_brief\")(?=[\\s\\S]*\"title\":\\s*\"(Needs you|Asks|Unblocked|Dates|Deadlines|Waiting on you)\")",
-          "min": 0,
-          "max": 0
+          "type": "llm",
+          "focus": "mock_calls"
         },
         {
           "name": "lead-says-what-matters-and-where-to-start",
@@ -175,8 +172,7 @@
         },
         {
           "name": "lead-said-in-the-conversation",
-          "type": "llm",
-          "focus": "last_message"
+          "type": "llm"
         }
       ]
     },
@@ -423,8 +419,8 @@
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
-        "The Smart Brief's lead, or the final reply, proposes changing the focus themes (Hiring looks stale, Billing holds the work), with the reason, and asks at most one question about it. FAIL if neither proposes it or if more than one question is asked about the themes.",
-        "No Notepad update reorders or removes a focus theme before the person answers."
+        "The saved Smart Brief lead says that the work contradicts the themes (Hiring looks stale, Billing holds the work), with the reason: the change octopad-notepad made, or the one it leaves to the person's yes. FAIL if the lead does not say it.",
+        "Grade the conversation: at most one question is asked about the focus themes."
       ],
       "graders": [
         {
@@ -443,17 +439,203 @@
           "max": 0
         },
         {
-          "name": "theme-change-proposed",
+          "name": "theme-change-in-the-lead",
           "type": "llm",
           "focus": "mock_calls"
         },
         {
-          "name": "themes-unchanged-before-answer",
+          "name": "one-theme-question-at-most",
+          "type": "llm"
+        }
+      ]
+    },
+    {
+      "id": "outside-first",
+      "prompt": "Good morning. Let us get going in Octopad, workspace Example.",
+      "must_load": true,
+      "kind": "behaviour",
+      "versions": [
+        "26.0.0",
+        "27.0.0"
+      ],
+      "context": "Smart Brief due. An answer request outside every focus theme (the supplier contract) blocks the task that serves the person's first goal; an overdue task to polish the footer icons blocks nobody.",
+      "expected_behavior": [
+        "The run opens octopad-pad and records it with skill_opened.",
+        "Every save of an existing tab carries expected_revision.",
+        "The Smart Brief puts the supplier answer first, says why (it blocks the first goal) and cites its task in refs. FAIL if the footer task comes first or the supplier answer is left uncited."
+      ],
+      "graders": [
+        {
+          "name": "opens-octopad-pad",
           "type": "tool_used",
-          "tool": "mcp__plugin_octopad_octopad__notepad",
-          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"update\")(?=[\\s\\S]*Focus themes)",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 1
+        },
+        {
+          "name": "every-save-carries-its-revision",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\")(?![\\s\\S]*\"expected_revision\")",
           "min": 0,
           "max": 0
+        },
+        {
+          "name": "outside-ask-first",
+          "type": "llm",
+          "focus": "mock_calls"
+        }
+      ]
+    },
+    {
+      "id": "undecided-order",
+      "prompt": "Good morning. Let us get going in Octopad, workspace Example.",
+      "must_load": true,
+      "kind": "behaviour",
+      "versions": [
+        "26.0.0",
+        "27.0.0"
+      ],
+      "context": "Smart Brief due. Two validations in different focus themes are both due Nov 12, block nobody and serve no goal; nothing else tells them apart.",
+      "expected_behavior": [
+        "The run opens octopad-pad and records it with skill_opened.",
+        "Every save of an existing tab carries expected_revision.",
+        "Grade the conversation: after the saves, one line says which validation was put first and lets the person overturn it. FAIL if no such line or if it invents a reason that the facts do not give."
+      ],
+      "graders": [
+        {
+          "name": "opens-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 1
+        },
+        {
+          "name": "every-save-carries-its-revision",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\")(?![\\s\\S]*\"expected_revision\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "undecided-choice-said",
+          "type": "llm"
+        }
+      ]
+    },
+    {
+      "id": "peer-work",
+      "prompt": "Good morning. Let us get going in Octopad, workspace Example.",
+      "must_load": true,
+      "kind": "behaviour",
+      "versions": [
+        "26.0.0",
+        "27.0.0"
+      ],
+      "context": "Smart Brief due. A teammate's task in another workspace changes the API the person's Billing theme depends on; no theme names it.",
+      "expected_behavior": [
+        "The run opens octopad-pad and records it with skill_opened.",
+        "Every save of an existing tab carries expected_revision.",
+        "The Smart Brief or the conversation proposes adding the teammate's task to the Billing theme, with the reason. FAIL if it is not proposed."
+      ],
+      "graders": [
+        {
+          "name": "opens-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 1
+        },
+        {
+          "name": "every-save-carries-its-revision",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\")(?![\\s\\S]*\"expected_revision\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "peer-work-proposed",
+          "type": "llm"
+        }
+      ]
+    },
+    {
+      "id": "unasked-chart",
+      "prompt": "Good morning. Let us get going in Octopad, workspace Example.",
+      "must_load": true,
+      "kind": "behaviour",
+      "versions": [
+        "26.0.0",
+        "27.0.0"
+      ],
+      "context": "Smart Brief due. In the Atlas launch theme, nine of fourteen tasks are blocked, which explains why the launch date slips; nobody asked for a chart.",
+      "expected_behavior": [
+        "The run opens octopad-pad and records it with skill_opened.",
+        "Every save of an existing tab carries expected_revision.",
+        "The Smart Brief's Atlas launch section carries a live chart or block that shows the blocked tasks, with its question, saved without a request. FAIL if no live block or chart is saved."
+      ],
+      "graders": [
+        {
+          "name": "opens-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 1
+        },
+        {
+          "name": "every-save-carries-its-revision",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\")(?![\\s\\S]*\"expected_revision\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "chart-saved",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_brief\")(?=[\\s\\S]*\"kind\":\\s*\"(chart|work_view)\")",
+          "min": 1
+        }
+      ]
+    },
+    {
+      "id": "start-date-only",
+      "prompt": "Good morning. Let us get going in Octopad, workspace Example.",
+      "must_load": true,
+      "kind": "behaviour",
+      "versions": [
+        "26.0.0",
+        "27.0.0"
+      ],
+      "context": "Smart Brief due. A task the person holds starts Nov 12 and has no due date; nothing waits on it.",
+      "expected_behavior": [
+        "The run opens octopad-pad and records it with skill_opened.",
+        "Every save of an existing tab carries expected_revision.",
+        "The Smart Brief may mention the start, but never gives it a deadline nor makes it the first thing to do on its date alone. FAIL if a deadline is invented or it leads only because it starts."
+      ],
+      "graders": [
+        {
+          "name": "opens-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 1
+        },
+        {
+          "name": "every-save-carries-its-revision",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\")(?![\\s\\S]*\"expected_revision\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "start-is-no-deadline",
+          "type": "llm",
+          "focus": "mock_calls"
         }
       ]
     },
@@ -634,7 +816,8 @@
         "Every save of an existing tab carries expected_revision.",
         "The pad save for tab smart_brief has its lead and sentences in French. FAIL otherwise.",
         "No sentence repeats a task title, in French or in English; the lead may.",
-        "A section names its objects in refs, never as inline ref: links (the lead may link its words)."
+        "A section names its objects in refs, never as inline ref: links (the lead may link its words).",
+        "When Smart Brief content was saved, grade the ordered saves and assistant messages together: after the last save and before goal upkeep, an assistant message gives that saved lead once, in the brief's language, in one to three lines, and says the detail is on the person's Pad. It need not be the final reply. FAIL if no message gives the lead. Here the lead is said in French."
       ],
       "graders": [
         {
@@ -672,6 +855,10 @@
           "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"(text|tldr)\":\\s*\"[^\"]*ref:(task|stream|goal|page):)",
           "min": 0,
           "max": 0
+        },
+        {
+          "name": "lead-said-in-the-conversation",
+          "type": "llm"
         }
       ]
     },
