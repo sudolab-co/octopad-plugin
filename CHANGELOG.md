@@ -1,5 +1,10 @@
 # Changelog
 
+## 29.1.0 - Unreleased
+
+- `octoplan` 9.1.0: a new Claude worker route starts from the rubric's first row that fits, as Codex already starts from its first worker route. A route above `Sonnet 5.5 · high` gives as its reason the judgment left after preparation that rules out each cheaper row; the planner's reread and the plan review check each route against its runtime profile. Saved routes and the user's explicit choices are kept.
+- `octoplan` 9.1.0: units that apply one design to sibling surfaces get the rules they all need settled once in the contract. Before dispatching a task that a review finding or returned defect can recur in, the supervisor repairs the contract when it leaves the cause unsettled, or else adds the existing requirement and the failing case to the brief; running executors get it too.
+
 ## 29.0.0 - Unreleased
 
 - The feature is now the Smart Report. `octopad-pad` 3.0.0: the AI calls what it builds for a person a Smart Report, never a tab or a brief, offers to build one, and addresses the reserved first one as `smart_report` (it was `smart_brief`). `octopad-session` 29.0.0 and `octopad-notepad` 7.0.1 use the same words.

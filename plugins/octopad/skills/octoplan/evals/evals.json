@@ -108,6 +108,42 @@
       "prompt": "Compare the words holistic and efficient in two sentences.",
       "should_trigger": false,
       "expected_behavior": "Answer directly without activating Octoplan, creating tasks, delegating or imposing a delivery workflow."
+    },
+    {
+      "id": 19,
+      "prompt": "I'm planning an Octoplan in Claude Code. One task recodes the Settings app to seven boards I already accepted, on the fixture bench, with capture checks at 1440 and 1024 px and the existing Settings tests. What Claude Exec route do I save for it?",
+      "should_trigger": true,
+      "expected_behavior": "Starts from the rubric's first fitting row: Sonnet 5.5 high with Opus 5.5 medium on failed checks, or Opus 5.5 medium with high on failed checks if real local judgment remains. A higher route is saved only with the named judgment left after preparation that rules out each cheaper row; the size of the change or of its proof alone does not raise it."
+    },
+    {
+      "id": 20,
+      "prompt": "I supervise an Octoplan. The CRM recode came back: its review passed, but at 1024 px the Contacts table lost two columns the old window showed, and I sent it back. The contract says nothing about tables that do not fit the narrow width. The Work views recode applies the same boards and starts next; the Knowledge recode, which also has a table, is running now. What do I do before dispatching Work views?",
+      "should_trigger": true,
+      "expected_behavior": "Checks the contract first: it leaves the narrow-width table rule unsettled, so the cause is an unsettled shared choice. Repairs the contract through problem resolution, with every affected task in one repair, adds the rule to the brief of every open task it reaches, Work views included, before dispatch, and sends it to the running Knowledge executor. Does not let Work views rediscover it."
+    },
+    {
+      "id": 21,
+      "prompt": "I supervise an Octoplan. The contract already says every table keeps all its columns and scrolls inside its plate at 1024 px. The CRM recode came back hiding two columns with display: none, and I sent it back. Work views starts next. Do I send this to a planner first?",
+      "should_trigger": true,
+      "expected_behavior": "Treats it as an execution defect, not an unsettled shared choice: no planner repair, since the contract already holds the rule. Adds the existing requirement and the CRM failing case to the Work views brief before dispatch and to any running executor whose task has a table."
+    },
+    {
+      "id": 22,
+      "prompt": "Rereading my Octoplan before review: the user told me to run the Pad task on Opus 5.5 high whatever the rubric says, and an older task already carries a saved Opus 5.5 high route from a previous Plan. Neither Exec gives a judgment that rules out Sonnet. Do I lower them?",
+      "should_trigger": true,
+      "expected_behavior": "Keeps both: the user's explicit choice is recorded with its reason, and the saved route is a floor. The first-row rule and its reason apply to new route choices; any change to a saved route goes through planning's Changes."
+    },
+    {
+      "id": 23,
+      "prompt": "Planning an Octoplan in Claude Code. One task fixes a reminder the Pad shows and counts twice; the cause is not known yet and the fix likely needs tracing a reminder id from a SQL function through the server to the UI. Its checks are the Pad tests and a capture. Which Claude Exec route do I save?",
+      "should_trigger": true,
+      "expected_behavior": "Saves a route above Sonnet, typically Opus 5.5 high, with a reason that names the remaining judgment: an unknown cause across SQL, server and UI that the checks cannot fully prove. Does not push it to Sonnet only because the first row is the default."
+    },
+    {
+      "id": 24,
+      "prompt": "I review an Octoplan plan. A task recodes the Knowledge app to boards the user accepted, with capture checks at 1440 and 1024 px and the app's tests. Its Exec reads 'Claude: Opus 5.5 high, cross-file coordination.' Does route fit pass?",
+      "should_trigger": true,
+      "expected_behavior": "Fails route fit: 'cross-file coordination' names no judgment left after preparation that rules out Sonnet 5.5 high or Opus 5.5 medium when choices are settled and checks prove the result. Asks the planner to name that judgment or lower the route."
     }
   ]
 }

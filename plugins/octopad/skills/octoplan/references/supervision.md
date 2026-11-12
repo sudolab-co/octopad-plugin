@@ -23,6 +23,8 @@ Repeat until the integrated outcome is proved or no safe work remains:
 
 Before parallel dispatch, including within one stream, prove the tasks' actual write surfaces and outputs are independent. Never parallelize migrations, shared generated artifacts, or siblings where one shapes the other's contract. Use isolated workspaces when required; separate branches alone do not prove independent writes.
 
+When a review finding or a returned defect can recur in other open tasks, name those tasks before the next dispatch of any of them. If the contract leaves its cause unsettled, such as a missing shared rule or check, repair it under [problem resolution](#resolve-problems-within-the-mandate), all affected tasks in one repair. Otherwise add the existing requirement and the failing case to each affected brief. Either way, send it to each running executor whose task it reaches.
+
 Apply [problem resolution](#resolve-problems-within-the-mandate) when delivery cannot or should not follow the reviewed Plan.
 
 At resume, worker collection, task close, report, and attempt selection, compare observations with the kill question. An answer stops that run generation immediately; never score it as valid, hide it in an average or subset, or rename the failure a limit. Preserve its evidence, diagnose, and repair or replan within the mandate. A new run keeps its own premise and evidence identity, and every real user limit still applies. A rerun after a material premise change has a distinct task and premise; preserve old results and receipts.
@@ -132,7 +134,7 @@ Unplanned persistent CI, harness, service, dependency, or cross-repository artif
 
 Before any protected effect, reread the current task revision, authorization, Plan contract, target, exact head or artifact fingerprint, and effective rules; they must permit exactly this effect now. A mismatch blocks the effect and triggers replan, and a comment cannot waive it. At a checkpoint or gate, record the subject, owner, and user's continuation.
 
-A material change sweeps every open task, started or not, not only the tasks the change touched: a check added to the contract is applied to every task it will be run against, a retired Decision has its residue removed from every spec and artifact it produced, and a user-mandate change rewrites every spec that now contradicts it. A prose Decision never overrides a spec line for the session that reads only the spec. Record the sweep's result even when it is "nothing".
+A material change sweeps every open task, started or not, not only the tasks the change touched: a check added to the contract is applied to every task it will be run against, a rule added to the contract reaches the brief of every open task it applies to, a retired Decision has its residue removed from every spec and artifact it produced, and a user-mandate change rewrites every spec that now contradicts it. A prose Decision never overrides a spec line for the session that reads only the spec. Record the sweep's result even when it is "nothing".
 
 ### Consequence handoff
 
