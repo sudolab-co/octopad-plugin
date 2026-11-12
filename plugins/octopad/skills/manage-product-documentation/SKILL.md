@@ -4,7 +4,7 @@ description: "Use before judging or changing what a product does, when its behav
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "manage-product-documentation"` when you open this skill.
 
-Version: 6.11.0
+Version: 6.12.0
 
 # Manage Product Documentation
 
@@ -13,6 +13,8 @@ Keep a living account of what the user wants each part of the product to achieve
 ## Resolve the product first
 
 Before selecting a document to change, establish the affected products by [Resolve product scope](references/product-scope-and-seams.md#resolve-product-scope); a workspace name, document or search result is not a product selection.
+
+Choose the owning system by the need it serves, not its delivery mechanism (an AI instruction, a hook, a tool). A capability its reader must understand independently, with its own need, data or rules, gets its own spec, linked from affected specs; never split for length alone. Recheck ownership as the design changes and before building.
 
 ## Work from product intent
 
