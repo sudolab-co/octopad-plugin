@@ -2,9 +2,9 @@
   "skill_name": "octopad-pad",
   "protocol": {
     "status": "27.0.0 cases written 2026-11-11 and not run: the operator decided that this change makes no model call. Earlier: run 2026-11-10 on 24.0.0 and 26.0.0 (80 agent runs), then reruns of 15 and 6 runs on the fixed 26.0.0 skill.",
-    "purpose": "Compare plugin 26.0.0 (Smart Brief by focus theme, lead on what changed) with 27.0.0 (decision brief by subject, lead said in the conversation) on routing and on the observable Pad writes; static checks do not establish AI behavior.",
+    "purpose": "Compare plugin 26.0.0 (Smart Report by focus theme, lead on what changed) with 27.0.0 (decision brief by subject, lead said in the conversation) on routing and on the observable Pad writes; static checks do not establish AI behavior.",
     "execution": "claude plugin eval on the Claude Code subscription, after the operator approves the protocol. Every Octopad tool is a mock answering fictional fixtures: nothing reaches an Octopad organization.",
-    "comparison": "The behaviour and correction cases run on both versions; the trigger cases on 27.0.0 only. Both versions get the same server lines, including the one a Smart Brief save returns, so lead-said-in-the-conversation compares them and is not a defeat proof. Defeat proofs: lead-says-what-matters-and-where-to-start must reject a 26.0.0 lead that opens on what changed since a date; the correction cases on 27.0.0 with the section \"Route a correction\" removed must fail at least one of them.",
+    "comparison": "The behaviour and correction cases run on both versions; the trigger cases on 27.0.0 only. Both versions get the same server lines, including the one a Smart Report save returns, so lead-said-in-the-conversation compares them and is not a defeat proof. Defeat proofs: lead-says-what-matters-and-where-to-start must reject a 26.0.0 lead that opens on what changed since a date; the correction cases on 27.0.0 with the section \"Route a correction\" removed must fail at least one of them.",
     "release_limit": "Unrun cases are not a routing, behavioral or non-regression pass. Before a run, the mocks must serve each case's context: a fixed date and time zone, the revisions and through values, the full Notepad with its focus themes, the goal at base_revision 3, the external scopes, and the server's real context and save lines, the same for both versions. stale-theme, outside-first, undecided-order, peer-work, unasked-chart and start-date-only have no fixtures yet."
   },
   "evals": [
@@ -17,26 +17,26 @@
         "26.0.0",
         "27.0.0"
       ],
-      "context": "Smart Brief and Brand watch due; Marketing ideas not due. The Smart Brief has news in Atlas launch and Billing, none in Hiring, a validation placed in Atlas launch and an answer request (the vendor request) outside every focus theme; Brand watch has nothing new. One owned goal waits for a status line.",
+      "context": "Smart Report and Brand watch due; Marketing ideas not due. The first Smart Report has news in Atlas launch and Billing, none in Hiring, a validation placed in Atlas launch and an answer request (the vendor request) outside every focus theme; Brand watch has nothing new. One owned goal waits for a status line.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
         "pad context is called exactly once.",
         "The context call names no tab.",
-        "The Smart Brief is saved once, with its own through as given.",
+        "The first Smart Report is saved once, with its own through as given.",
         "Brand watch is saved once, with its own through.",
         "Brand watch, where nothing changed, is saved without content.",
         "Marketing ideas, which is not due, is never saved.",
-        "No save creates or writes a tab named Outside focus; the vendor request is either cited by a Smart Brief sentence or left to the closing block.",
+        "No save creates or writes a tab named Outside focus; the vendor request is either cited by a Smart Report sentence or left to the closing block.",
         "The quiet Hiring theme gets no section.",
         "No sentence repeats a task title; the lead may.",
-        "The Smart Brief marks the migration unblocked, with its task in refs.",
+        "The first Smart Report marks the migration unblocked, with its task in refs.",
         "A section names its objects in refs, never as inline ref: links (the lead may link its words).",
         "Goal upkeep starts only after a Pad save.",
         "The owned goal to refresh gets set_status with base_revision 3.",
-        "Grade each saved Smart Brief section's title and contents in the brief's language: FAIL any section organized by a kind of item (asks, needs you, dates, deadlines, unblocked, waiting on you), including translated or reworded headings.",
-        "In the pad save call for tab smart_brief, content.lead has at most three sentences. It says what matters today and why, then what to start with, such as the pricing review due Nov 10 that others wait on, or the now-ready migration. A change appears only as the reason for that priority. FAIL if there is no lead, if it has more than three sentences, if it opens on a date or on 'Since', or if it does not say what to start with.",
-        "When Smart Brief content was saved, grade the ordered saves and assistant messages together: after the last save and before goal upkeep, an assistant message gives that saved lead once, in the brief's language, in one to three lines, and says the detail is on the person's Pad. It need not be the final reply. FAIL if no message gives the lead."
+        "Grade each saved Smart Report section's title and contents in the brief's language: FAIL any section organized by a kind of item (asks, needs you, dates, deadlines, unblocked, waiting on you), including translated or reworded headings.",
+        "In the pad save call for tab smart_report, content.lead has at most three sentences. It says what matters today and why, then what to start with, such as the pricing review due Nov 10 that others wait on, or the now-ready migration. A change appears only as the reason for that priority. FAIL if there is no lead, if it has more than three sentences, if it opens on a date or on 'Since', or if it does not say what to start with.",
+        "When Smart Report content was saved, grade the ordered saves and assistant messages together: after the last save and before goal upkeep, an assistant message gives that saved lead once, in the brief's language, in one to three lines, and says the detail is on the person's Pad. It need not be the final reply. FAIL if no message gives the lead."
       ],
       "graders": [
         {
@@ -74,7 +74,7 @@
           "name": "smart-brief-saved-with-its-through",
           "type": "tool_used",
           "tool": "mcp__plugin_octopad_octopad__pad",
-          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_brief\")(?=[\\s\\S]*\"through\":\\s*\"2026-11-09T08:00:00\\.123456Z\")",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_report\")(?=[\\s\\S]*\"through\":\\s*\"2026-11-09T08:00:00\\.123456Z\")",
           "min": 1,
           "max": 1
         },
@@ -130,7 +130,7 @@
           "name": "unblocked-sentence-carries-its-task",
           "type": "tool_used",
           "tool": "mcp__plugin_octopad_octopad__pad",
-          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_brief\")(?=[\\s\\S]*\"mark\":\\s*\"unblocked\")(?=[\\s\\S]*33333333-3333-4333-8333-333333333331)",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_report\")(?=[\\s\\S]*\"mark\":\\s*\"unblocked\")(?=[\\s\\S]*33333333-3333-4333-8333-333333333331)",
           "min": 1
         },
         {
@@ -185,12 +185,12 @@
         "26.0.0",
         "27.0.0"
       ],
-      "context": "Smart Brief due; Brand watch not checked: its stream could not be read and its through is none.",
+      "context": "Smart Report due; Brand watch not checked: its stream could not be read and its through is none.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
         "pad context is called exactly once.",
-        "The Smart Brief is saved with its own through.",
+        "The first Smart Report is saved with its own through.",
         "Brand watch, whose source failed, is still saved.",
         "Brand watch is saved without through.",
         "The pad save for tab 55555555-5555-4555-8555-555555555551 has content saying its source, the brand refresh stream, could not be read. FAIL if it says or implies that nothing changed, or if there is no such save."
@@ -223,7 +223,7 @@
           "name": "smart-brief-saved-with-its-through",
           "type": "tool_used",
           "tool": "mcp__plugin_octopad_octopad__pad",
-          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_brief\")(?=[\\s\\S]*\"through\":\\s*\"2026-11-09T08:00:00\\.123456Z\")",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_report\")(?=[\\s\\S]*\"through\":\\s*\"2026-11-09T08:00:00\\.123456Z\")",
           "min": 1,
           "max": 1
         },
@@ -258,13 +258,13 @@
         "26.0.0",
         "27.0.0"
       ],
-      "context": "Smart Brief due at revision 7; another session saved revision 8, read through after this context. Every save answers STALE: the stub cannot key on revision, so a save at 8, which the store would take, is caught by the grader newer-brief-never-overwritten.",
+      "context": "Smart Report due at revision 7; another session saved revision 8, read through after this context. Every save answers STALE: the stub cannot key on revision, so a save at 8, which the store would take, is caught by the grader newer-brief-never-overwritten.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
         "pad context is called exactly once.",
         "No save targets revision 8, which another session wrote after this context.",
-        "The final reply says the Smart Brief was already updated by another session and was left as it is. FAIL if it claims this session saved its own Smart Brief update."
+        "The final reply says the first Smart Report was already updated by another session and was left as it is. FAIL if it claims this session saved its own Smart Report update."
       ],
       "graders": [
         {
@@ -415,11 +415,11 @@
         "26.0.0",
         "27.0.0"
       ],
-      "context": "Smart Brief due. Focus themes: 1. Atlas launch, 2. Hiring, 3. Billing. Hiring has had no task, ask or change for 30 days; most of the person's recent work is on the Billing migration, and a validation waits in Billing.",
+      "context": "Smart Report due. Focus themes: 1. Atlas launch, 2. Hiring, 3. Billing. Hiring has had no task, ask or change for 30 days; most of the person's recent work is on the Billing migration, and a validation waits in Billing.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
-        "The saved Smart Brief lead says that the work contradicts the themes (Hiring looks stale, Billing holds the work), with the reason: the change octopad-notepad made, or the one it leaves to the person's yes. FAIL if the lead does not say it.",
+        "The saved Smart Report lead says that the work contradicts the themes (Hiring looks stale, Billing holds the work), with the reason: the change octopad-notepad made, or the one it leaves to the person's yes. FAIL if the lead does not say it.",
         "Grade the conversation: at most one question is asked about the focus themes."
       ],
       "graders": [
@@ -458,11 +458,11 @@
         "26.0.0",
         "27.0.0"
       ],
-      "context": "Smart Brief due. An answer request outside every focus theme (the supplier contract) blocks the task that serves the person's first goal; an overdue task to polish the footer icons blocks nobody.",
+      "context": "Smart Report due. An answer request outside every focus theme (the supplier contract) blocks the task that serves the person's first goal; an overdue task to polish the footer icons blocks nobody.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
-        "The Smart Brief puts the supplier answer first, says why (it blocks the first goal) and cites its task in refs. FAIL if the footer task comes first or the supplier answer is left uncited."
+        "The first Smart Report puts the supplier answer first, says why (it blocks the first goal) and cites its task in refs. FAIL if the footer task comes first or the supplier answer is left uncited."
       ],
       "graders": [
         {
@@ -496,7 +496,7 @@
         "26.0.0",
         "27.0.0"
       ],
-      "context": "Smart Brief due. Within the same focus theme, Validation A and Validation B are both ready and due Nov 12; neither blocks anything or serves a goal. They have equal effects, and no Notepad call, date, dependency or other supplied fact favors either.",
+      "context": "Smart Report due. Within the same focus theme, Validation A and Validation B are both ready and due Nov 12; neither blocks anything or serves a goal. They have equal effects, and no Notepad call, date, dependency or other supplied fact favors either.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
@@ -533,11 +533,11 @@
         "26.0.0",
         "27.0.0"
       ],
-      "context": "Smart Brief due. A teammate's task in another workspace changes the API the person's Billing theme depends on; no theme names it.",
+      "context": "Smart Report due. A teammate's task in another workspace changes the API the person's Billing theme depends on; no theme names it.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
-        "The Smart Brief or the conversation proposes adding the teammate's task to the Billing theme, with the reason. FAIL if it is not proposed."
+        "The first Smart Report or the conversation proposes adding the teammate's task to the Billing theme, with the reason. FAIL if it is not proposed."
       ],
       "graders": [
         {
@@ -570,11 +570,11 @@
         "26.0.0",
         "27.0.0"
       ],
-      "context": "Smart Brief due. In the Atlas launch theme, nine of fourteen tasks are blocked, which explains why the launch date slips; nobody asked for a chart.",
+      "context": "Smart Report due. In the Atlas launch theme, nine of fourteen tasks are blocked, which explains why the launch date slips; nobody asked for a chart.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
-        "The Smart Brief save contains a live chart or work_view in the Atlas launch section, tied to that focus theme by its key, saved without a request. Its definition shows the blocked tasks or their share of the theme's tasks. A chart has a non-empty question that states what it answers; a work_view needs no question. FAIL if the block is absent, belongs to another subject, leaves out the blocked tasks, or has an invalid shape."
+        "The first Smart Report save contains a live chart or work_view in the Atlas launch section, tied to that focus theme by its key, saved without a request. Its definition shows the blocked tasks or their share of the theme's tasks. A chart has a non-empty question that states what it answers; a work_view needs no question. FAIL if the block is absent, belongs to another subject, leaves out the blocked tasks, or has an invalid shape."
       ],
       "graders": [
         {
@@ -596,7 +596,7 @@
           "name": "chart-saved",
           "type": "tool_used",
           "tool": "mcp__plugin_octopad_octopad__pad",
-          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_brief\")(?=[\\s\\S]*\"kind\":\\s*\"(chart|work_view)\")",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_report\")(?=[\\s\\S]*\"kind\":\\s*\"(chart|work_view)\")",
           "min": 1
         },
         {
@@ -615,11 +615,11 @@
         "26.0.0",
         "27.0.0"
       ],
-      "context": "Smart Brief due. A task the person holds starts Nov 12 and has no due date; nothing waits on it.",
+      "context": "Smart Report due. A task the person holds starts Nov 12 and has no due date; nothing waits on it.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
-        "The Smart Brief may mention the start, but never gives it a deadline nor makes it the first thing to do on its date alone. FAIL if a deadline is invented or it leads only because it starts."
+        "The first Smart Report may mention the start, but never gives it a deadline nor makes it the first thing to do on its date alone. FAIL if a deadline is invented or it leads only because it starts."
       ],
       "graders": [
         {
@@ -646,20 +646,20 @@
     },
     {
       "id": "correction-tab",
-      "prompt": "On my Smart Brief, show me less about hiring.",
+      "prompt": "On my Smart Report, show me less about hiring.",
       "must_load": true,
       "kind": "correction",
       "versions": [
         "26.0.0",
         "27.0.0"
       ],
-      "context": "No Pad due. Hiring is a focus theme and a Smart Brief section.",
+      "context": "No Pad due. Hiring is a focus theme and a Smart Report section.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
-        "The Smart Brief saves a guidance about hiring.",
+        "The first Smart Report saves a guidance about hiring.",
         "The Notepad is not changed.",
-        "context is read for the Smart Brief alone, to rewrite it."
+        "context is read for the first Smart Report alone, to rewrite it."
       ],
       "graders": [
         {
@@ -681,7 +681,7 @@
           "name": "preference-saved-on-the-smart-brief",
           "type": "tool_used",
           "tool": "mcp__plugin_octopad_octopad__pad",
-          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_brief\")(?=[\\s\\S]*\"guidance\")(?=[\\s\\S]*[Hh]iring)",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_report\")(?=[\\s\\S]*\"guidance\")(?=[\\s\\S]*[Hh]iring)",
           "min": 1
         },
         {
@@ -696,14 +696,14 @@
           "name": "smart-brief-reread",
           "type": "tool_used",
           "tool": "mcp__plugin_octopad_octopad__pad",
-          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"context\")(?=[\\s\\S]*\"tab\":\\s*\"smart_brief\")",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"context\")(?=[\\s\\S]*\"tab\":\\s*\"smart_report\")",
           "min": 1
         }
       ]
     },
     {
       "id": "correction-focus",
-      "prompt": "Billing matters more now. My Smart Brief should show that.",
+      "prompt": "Billing matters more now. My Smart Report should show that.",
       "must_load": true,
       "kind": "correction",
       "versions": [
@@ -716,7 +716,7 @@
         "Every save of an existing tab carries expected_revision.",
         "The Notepad update moves Billing up the focus themes.",
         "No Pad guidance is written for it.",
-        "context is read for the Smart Brief alone, to rewrite it."
+        "context is read for the first Smart Report alone, to rewrite it."
       ],
       "graders": [
         {
@@ -753,25 +753,25 @@
           "name": "smart-brief-reread",
           "type": "tool_used",
           "tool": "mcp__plugin_octopad_octopad__pad",
-          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"context\")(?=[\\s\\S]*\"tab\":\\s*\"smart_brief\")",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"context\")(?=[\\s\\S]*\"tab\":\\s*\"smart_report\")",
           "min": 1
         }
       ]
     },
     {
       "id": "correction-order",
-      "prompt": "Put Billing first in my Smart Brief.",
+      "prompt": "Put Billing first in my Smart Report.",
       "must_load": true,
       "kind": "correction",
       "versions": [
         "26.0.0",
         "27.0.0"
       ],
-      "context": "No Pad due. The focus themes, in their order, weigh in what the Smart Brief puts first; Billing is the third.",
+      "context": "No Pad due. The focus themes, in their order, weigh in what the first Smart Report puts first; Billing is the third.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
-        "The Notepad update makes Billing the first focus theme, which the Smart Brief then weighs first.",
+        "The Notepad update makes Billing the first focus theme, which the first Smart Report then weighs first.",
         "No Pad guidance is written for it."
       ],
       "graders": [
@@ -819,10 +819,10 @@
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
-        "The pad save for tab smart_brief has its lead and sentences in French. FAIL otherwise.",
+        "The pad save for tab smart_report has its lead and sentences in French. FAIL otherwise.",
         "No sentence repeats a task title, in French or in English; the lead may.",
         "A section names its objects in refs, never as inline ref: links (the lead may link its words).",
-        "When Smart Brief content was saved, grade the ordered saves and assistant messages together: after the last save and before goal upkeep, an assistant message gives that saved lead once, in the brief's language, in one to three lines, and says the detail is on the person's Pad. It need not be the final reply. FAIL if no message gives the lead. Here the lead is said in French."
+        "When Smart Report content was saved, grade the ordered saves and assistant messages together: after the last save and before goal upkeep, an assistant message gives that saved lead once, in the brief's language, in one to three lines, and says the detail is on the person's Pad. It need not be the final reply. FAIL if no message gives the lead. Here the lead is said in French."
       ],
       "graders": [
         {
@@ -913,17 +913,17 @@
     },
     {
       "id": "external-source",
-      "prompt": "Add our Slack channel #atlas-launch (channel C0ATLAS1, workspace example-workspace) to what my Smart Brief reads, only for the Atlas launch.",
+      "prompt": "Add our Slack channel #atlas-launch (channel C0ATLAS1, workspace example-workspace) to what my Smart Report reads, only for the Atlas launch.",
       "must_load": true,
       "kind": "trigger",
       "versions": [
         "27.0.0"
       ],
-      "context": "Must load octopad-pad. The Smart Brief already reads one Gmail scope; the prompt names the account, the channel and the activity, so the AI can save without asking.",
+      "context": "Must load octopad-pad. The first Smart Report already reads one Gmail scope; the prompt names the account, the channel and the activity, so the AI can save without asking.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
-        "The Smart Brief saves external_scopes with the new Slack channel.",
-        "A save of external_scopes keeps the Gmail scope the Smart Brief already reads."
+        "The first Smart Report saves external_scopes with the new Slack channel.",
+        "A save of external_scopes keeps the Gmail scope the first Smart Report already reads."
       ],
       "graders": [
         {

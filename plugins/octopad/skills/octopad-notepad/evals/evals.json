@@ -40,14 +40,14 @@
       "context": {
         "notepad": "# Notepad\n<open_loops>\n### Supplier reply\nentry_id: supplier-reply\nAn outside reply is still unverified.\nby: unknown\n</open_loops>\n<compass>\n</compass>\n<reminders>\n### Renewal\nentry_id: renewal\nwhen: 2026-11-10\nremind: Review the renewal.\nby: unknown\n</reminders>",
         "revision": 4,
-        "pad_due": "start_session names smart_brief under Pad due today; its pad context says due: no focus theme in the Notepad: theme discovery",
+        "pad_due": "start_session names smart_report under Pad due today; its pad context says due: no focus theme in the Notepad: theme discovery",
         "work": [
           "Task 11111111-1111-4111-8111-111111111111: user owns launch reliability and a retry defect needs attention."
         ]
       },
       "expected_behavior": [
         "Apply the same zero-theme inference and conditional save rules.",
-        "After the save, read pad context again and write the Smart Brief only from that new brief, its sections being the saved themes.",
+        "After the save, read pad context again and write the first Smart Report only from that new brief, its sections being the saved themes.",
         "Never save from the brief read before the theme save; include one undo line and no setup question."
       ]
     },

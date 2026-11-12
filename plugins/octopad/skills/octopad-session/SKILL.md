@@ -6,7 +6,7 @@ A sub-agent whose brief does not grant Octopad access calls no Octopad tool, `sk
 
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-session"` when you open this skill.
 
-Version: 28.1.0
+Version: 29.0.0
 
 # Start an Octopad plugin session
 
@@ -22,4 +22,4 @@ If the bundled connection offers the `followup` tool:
 - A follow-up situation is assembled from explanations AIs already gave and current facts: check its sources before you act on it. To correct one, record the true fact on the item it cites; the explanation of that change replaces it.
 - Follow something only when the user asks to be kept informed of it. When another person's work can affect the user's own, propose adding it to one of their focus themes, with your reason; save it on their yes (`../octopad-notepad/SKILL.md`).
 
-When the bundled connection offers the `pad` tool, open `../octopad-pad/SKILL.md` when `start_session` names a Pad due or not checked, when the user asks for a tab on their work, even without naming the Pad, and when they want a tab or the Smart Brief to show something else.
+When the bundled connection offers the `pad` tool, open `../octopad-pad/SKILL.md` when `start_session` names a Pad due or not checked, when the user asks for a Smart Report on their work, even without naming the Pad, and when they want a Smart Report to show something else.

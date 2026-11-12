@@ -1,5 +1,11 @@
 # Changelog
 
+## 29.0.0 - Unreleased
+
+- The feature is now the Smart Report. `octopad-pad` 3.0.0: the AI calls what it builds for a person a Smart Report, never a tab or a brief, offers to build one, and addresses the reserved first one as `smart_report` (it was `smart_brief`). `octopad-session` 29.0.0 and `octopad-notepad` 7.0.1 use the same words.
+
+Needs the server change that renames the `pad` tool's reserved id to `smart_report` and the methodology 2.43.1; the plugin and the server release together. All three distributions move to 29.0.0.
+
 ## 28.1.0 - Unreleased
 
 - Claude Code, in the Claude desktop app: right after the AI loads the Octopad desktop in the app's Browser pane, directly or in a batch of browser actions, a hook reminds it that loading does not put the pane on screen: it brings the desktop's tab to the front, shows the pane with the app's own command, checks the pane is displayed with that tab in front, and only then says the desktop is shown. When you are away from the session, it says the desktop is not shown and shows it at your next message. Codex and Cursor are unchanged.
