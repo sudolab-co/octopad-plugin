@@ -1,5 +1,9 @@
 # Changelog
 
+## 29.1.0 - Unreleased
+
+- `octopad-pad` 3.1.0: a Smart Report sentence that calls the person (`needs_you` or `unblocked`) says, as an instruction, what they do and cites what they act on, because the Pad now hands each such line over as a prompt to paste into an AI session. Needs no server change beyond 29.0.0's.
+
 ## 29.0.0 - Unreleased
 
 - The feature is now the Smart Report. `octopad-pad` 3.0.0: the AI calls what it builds for a person a Smart Report, never a tab or a brief, offers to build one, and addresses the reserved first one as `smart_report` (it was `smart_brief`). `octopad-session` 29.0.0 and `octopad-notepad` 7.0.1 use the same words.
