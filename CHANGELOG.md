@@ -1,5 +1,9 @@
 # Changelog
 
+## 29.2.0 - Unreleased
+
+- `manage-product-documentation` 6.12.0: the AI chooses which system owns a capability by the need it serves, not by the mechanism that delivers it (an AI instruction, a hook, a tool). A capability its reader must understand on its own, with its own need, data or rules, gets its own spec; the AI checks ownership again as the design changes and before building. The test moves from the documentation model reference into the skill's first section, read on every opening.
+
 ## 29.1.0 - Unreleased
 
 - `octoplan` 9.1.0: a new Claude worker route starts from the rubric's first row that fits, as Codex already starts from its first worker route. A route above `Sonnet 5.5 · high` gives as its reason the judgment left after preparation that rules out each cheaper row; the planner's reread and the plan review check each route against its runtime profile. Saved routes and the user's explicit choices are kept.
