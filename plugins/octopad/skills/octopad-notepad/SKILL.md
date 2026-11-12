@@ -4,7 +4,7 @@ description: "Use where orientation shows the user's personal Notepad: when a re
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-notepad"` when you open this skill.
 
-Version: 7.0.0
+Version: 7.0.1
 
 # Whose memory
 
@@ -101,7 +101,7 @@ The briefing, a reminder's delivery and a follow-up question each reach the user
 
 # Briefing
 
-Where the `pad` tool is offered, the Smart Brief is the daily briefing: when the Pad is due, `octopad-pad` writes it, saying where things stopped and where to start, and no other automatic briefing follows. Once its tabs are saved, run the sweep (step 2); it never delays or blocks a save. An explicit request to organize their work still gets steps 3 and 4.
+Where the `pad` tool is offered, the first Smart Report is the daily briefing: when the Pad is due, `octopad-pad` writes it, saying where things stopped and where to start, and no other automatic briefing follows. Once its tabs are saved, run the sweep (step 2); it never delays or blocks a save. An explicit request to organize their work still gets steps 3 and 4.
 
 Where the `pad` tool is not offered, only at an opening with no precise ask, or when the user asks to organize their work, and only if `last_briefing` holds no claim for today:
 
