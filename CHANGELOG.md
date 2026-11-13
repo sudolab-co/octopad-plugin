@@ -1,5 +1,15 @@
 # Changelog
 
+## 29.4.0 - Unreleased
+
+- `octoplan` 9.2.0: a code task's `Verify` covers the checks its host runs on the pull request, run locally where that costs less than a failed pull-request round and otherwise read from the host, so a local pass is not taken for the pull request's gate. A check the target's rules ignore, or one already failing on the base, is named as excluded.
+- `octoplan` 9.2.0: what a task's `How` or `Verify` needs that sits on one machine only is attached to its task before review or committed by a planned unit, or the Plan names the machine it stays on. After a clean close the supervisor removes what the run created on the machine: what only served the run outright, and worktrees, local branches and evidence folders once what the records cite from them survives elsewhere; never a deliverable or a file the user keeps.
+- `octoplan` 9.2.0: when full suites or builds are heavy enough to saturate one machine, executors that run in parallel there run their targeted checks and the supervisor runs the full checks one head at a time. A failure the work causes goes to a fresh executor on the same route before any `on failed checks` continuation.
+- `octoplan` 9.2.0, in Claude Code: a shipped lane that runs a newer version of its route's family is no mismatch; the supervisor records that version once and checks Fable's conditions against it. An isolated agent's worktree is removed when the agent ends without changing it, so results it does not commit go to a path outside it.
+- `octoplan` 9.2.0: the worker prompt names the organization with its ID and no longer says "production" Octopad.
+
+Needs no server change. All three distributions move to 29.4.0.
+
 ## 29.3.0 - Unreleased
 
 - `octopad-pad` 3.1.0: a Smart Report sentence that calls the person (`needs_you` or `unblocked`) says, as an instruction, what they do and cites what they act on, because the Pad now hands each such line over as a prompt to paste into an AI session. Needs no server change beyond 29.0.0's.
