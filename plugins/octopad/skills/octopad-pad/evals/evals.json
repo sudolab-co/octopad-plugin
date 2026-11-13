@@ -17,7 +17,7 @@
         "26.0.0",
         "27.0.0"
       ],
-      "context": "Smart Report and Brand watch due; Marketing ideas not due. The first Smart Report has news in Atlas launch and Billing, none in Hiring, a validation placed in Atlas launch and an answer request (the vendor request) outside every focus theme; Brand watch has nothing new. One owned goal waits for a status line.",
+      "context": "Smart Report and Brand watch due; Marketing ideas not due. The first Smart Report has news in Atlas launch and Billing, none in Hiring, a validation placed in Atlas launch and an answer request (the vendor request) outside every priority; Brand watch has nothing new. One owned goal waits for a status line.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
@@ -28,7 +28,7 @@
         "Brand watch, where nothing changed, is saved without content.",
         "Marketing ideas, which is not due, is never saved.",
         "No save creates or writes a tab named Outside focus; the vendor request is either cited by a Smart Report sentence or left to the closing block.",
-        "The quiet Hiring theme gets no section.",
+        "The quiet Hiring priority gets no section.",
         "No sentence repeats a task title; the lead may.",
         "The first Smart Report marks the migration unblocked, with its task in refs.",
         "A section names its objects in refs, never as inline ref: links (the lead may link its words).",
@@ -415,12 +415,12 @@
         "26.0.0",
         "27.0.0"
       ],
-      "context": "Smart Report due. Focus themes: 1. Atlas launch, 2. Hiring, 3. Billing. Hiring has had no task, ask or change for 30 days; most of the person's recent work is on the Billing migration, and a validation waits in Billing.",
+      "context": "Smart Report due. Priorities: 1. Atlas launch, 2. Hiring, 3. Billing. Hiring has had no task, ask or change for 30 days; most of the person's recent work is on the Billing migration, and a validation waits in Billing.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
-        "The saved Smart Report lead says that the work contradicts the themes (Hiring looks stale, Billing holds the work), with the reason: the change octopad-notepad made, or the one it leaves to the person's yes. FAIL if the lead does not say it.",
-        "Grade the conversation: at most one question is asked about the focus themes."
+        "The saved Smart Report lead says that the work contradicts the priorities (Hiring looks stale, Billing holds the work), with the reason: the change octopad-notepad made, or the one it leaves to the person's yes. FAIL if the lead does not say it.",
+        "Grade the conversation: at most one question is asked about the priorities."
       ],
       "graders": [
         {
@@ -458,7 +458,7 @@
         "26.0.0",
         "27.0.0"
       ],
-      "context": "Smart Report due. An answer request outside every focus theme (the supplier contract) blocks the task that serves the person's first goal; an overdue task to polish the footer icons blocks nobody.",
+      "context": "Smart Report due. An answer request outside every priority (the supplier contract) blocks the task that serves the person's first goal; an overdue task to polish the footer icons blocks nobody.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
@@ -496,7 +496,7 @@
         "26.0.0",
         "27.0.0"
       ],
-      "context": "Smart Report due. Within the same focus theme, Validation A and Validation B are both ready and due Nov 12; neither blocks anything or serves a goal. They have equal effects, and no Notepad call, date, dependency or other supplied fact favors either.",
+      "context": "Smart Report due. Within the same priority, Validation A and Validation B are both ready and due Nov 12; neither blocks anything or serves a goal. They have equal effects, and no Notepad call, date, dependency or other supplied fact favors either.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
@@ -533,11 +533,11 @@
         "26.0.0",
         "27.0.0"
       ],
-      "context": "Smart Report due. A teammate's task in another workspace changes the API the person's Billing theme depends on; no theme names it.",
+      "context": "Smart Report due. A teammate's task in another workspace changes the API the person's Billing priority depends on; no priority names it.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
-        "The first Smart Report or the conversation proposes adding the teammate's task to the Billing theme, with the reason. FAIL if it is not proposed."
+        "The first Smart Report or the conversation proposes adding the teammate's task to the Billing priority, with the reason. FAIL if it is not proposed."
       ],
       "graders": [
         {
@@ -570,11 +570,11 @@
         "26.0.0",
         "27.0.0"
       ],
-      "context": "Smart Report due. In the Atlas launch theme, nine of fourteen tasks are blocked, which explains why the launch date slips; nobody asked for a chart.",
+      "context": "Smart Report due. In the Atlas launch priority, nine of fourteen tasks are blocked, which explains why the launch date slips; nobody asked for a chart.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
-        "The first Smart Report save contains a live chart or work_view in the Atlas launch section, tied to that focus theme by its key, saved without a request. Its definition shows the blocked tasks or their share of the theme's tasks. A chart has a non-empty question that states what it answers; a work_view needs no question. FAIL if the block is absent, belongs to another subject, leaves out the blocked tasks, or has an invalid shape."
+        "The first Smart Report save contains a live chart or work_view in the Atlas launch section, tied to that priority by its key, saved without a request. Its definition shows the blocked tasks or their share of the priority's tasks. A chart has a non-empty question that states what it answers; a work_view needs no question. FAIL if the block is absent, belongs to another subject, leaves out the blocked tasks, or has an invalid shape."
       ],
       "graders": [
         {
@@ -653,7 +653,7 @@
         "29.0.0",
         "29.1.0"
       ],
-      "context": "Smart Report and Brand watch due; Marketing ideas not due. The first Smart Report has news in Atlas launch and Billing, none in Hiring, a validation placed in Atlas launch and an answer request (the vendor request) outside every focus theme; Brand watch has nothing new. One owned goal waits for a status line.",
+      "context": "Smart Report and Brand watch due; Marketing ideas not due. The first Smart Report has news in Atlas launch and Billing, none in Hiring, a validation placed in Atlas launch and an answer request (the vendor request) outside every priority; Brand watch has nothing new. One owned goal waits for a status line.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "In the pad save call for tab smart_report, every sentence marked needs_you or unblocked says, as an instruction to the person, what they do (for example approve the pricing review, answer the vendor request, start the migration). FAIL a marked sentence that only reports an event or a state, such as 'The pricing review is waiting' or 'The migration is unblocked'.",
@@ -678,7 +678,7 @@
         "26.0.0",
         "27.0.0"
       ],
-      "context": "No Pad due. Hiring is a focus theme and a Smart Report section.",
+      "context": "No Pad due. Hiring is a priority and a Smart Report section.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
@@ -735,11 +735,11 @@
         "26.0.0",
         "27.0.0"
       ],
-      "context": "No Pad due. Billing is the third focus theme.",
+      "context": "No Pad due. Billing is the third priority.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
-        "The Notepad update moves Billing up the focus themes.",
+        "The Notepad update moves Billing up the priorities.",
         "No Pad guidance is written for it.",
         "context is read for the first Smart Report alone, to rewrite it."
       ],
@@ -792,11 +792,11 @@
         "26.0.0",
         "27.0.0"
       ],
-      "context": "No Pad due. The focus themes, in their order, weigh in what the first Smart Report puts first; Billing is the third.",
+      "context": "No Pad due. The priorities, in their order, weigh in what the first Smart Report puts first; Billing is the third.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
-        "The Notepad update makes Billing the first focus theme, which the first Smart Report then weighs first.",
+        "The Notepad update makes Billing the first priority, which the first Smart Report then weighs first.",
         "No Pad guidance is written for it."
       ],
       "graders": [

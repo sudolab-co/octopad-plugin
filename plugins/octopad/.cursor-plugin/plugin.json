@@ -1,7 +1,7 @@
 {
   "name": "octopad",
   "displayName": "Octopad",
-  "version": "29.4.0",
+  "version": "30.0.0",
   "description": "Connect Octopad and load its skills for work, knowledge, documentation, the CRM and Octoplan, under the methodology served by the server.",
   "author": {
     "name": "Sudolab"
