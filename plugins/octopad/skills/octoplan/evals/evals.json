@@ -173,7 +173,7 @@
       "id": 29,
       "prompt": "Supervising an Octoplan with four code executors in parallel on my laptop, each in its own worktree. Each task's integrated Verify ends with the full test suite and a production build. Nothing in the repository's rules says how many can run at once. How do I brief them?",
       "should_trigger": true,
-      "expected_behavior": "Does not let four full suites or builds run at once on one machine with no rule or measured load showing it can. Executors run their targeted checks and return their committed head; the supervisor runs the full checks on each head in turn before its pull request; each brief, reviewers' included, says so; a failure there returns to the task as an execution defect."
+      "expected_behavior": "Does not let four full suites or builds run at once on one machine with no rule or measured load showing it can. Executors run their targeted checks and return their committed head; the supervisor runs the full checks on each head in turn before its pull request; each brief, reviewers' included, says so; a failure the work causes returns to the task as an execution defect, and an infrastructure failure follows recovery."
     }
   ]
 }
