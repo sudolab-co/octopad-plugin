@@ -21,7 +21,7 @@ Repeat until the integrated outcome is proved or no safe work remains:
 5. **Review.** Validate the receipt: proof on the exact head, each review judgment the task's `Review` names with its verdict, and every finding's disposition. A missing, partial or non-independent review is not a pass: run it under Proof and review. Record cleared gates.
 6. **Advance.** Close only after current proof and every finding disposition are accepted. A parent closes once its units are in and its integrated `Review`, `Verify` and `Done when` pass on the integrated result. Persist evidence, then refresh the frontier.
 
-Before parallel dispatch, including within one stream, prove the tasks' actual write surfaces and outputs are independent. Never parallelize migrations, shared generated artifacts, or siblings where one shapes the other's contract. Use isolated workspaces when required; separate branches alone do not prove independent writes.
+Before parallel dispatch, including within one stream, prove the tasks' actual write surfaces and outputs are independent. Never parallelize migrations, shared generated artifacts, or siblings where one shapes the other's contract. Use isolated workspaces when required; separate branches alone do not prove independent writes. Executors that run in parallel on one machine share its processors, memory and ports. Unless the target's rules or a measurement show that machine carries several at once, run one full suite or build at a time: executors run their targeted checks and return their committed head, the supervisor runs the full checks on each head in turn before its pull request, and each brief says so.
 
 When a review finding or a returned defect can recur in other open tasks, name those tasks before the next dispatch of any of them. If the contract leaves its cause unsettled, such as a missing shared rule or check, repair it under [problem resolution](#resolve-problems-within-the-mandate), all affected tasks in one repair. Otherwise add the existing requirement and the failing case to each affected brief. Either way, send it to each running executor whose task it reaches.
 
@@ -58,7 +58,7 @@ Uncleared checkpoints and effective-rule gates: <relevant waits, or none>.
 Computer Use: <accepted targets and actions with source, or not authorized;
 verified access and remaining permission or runtime limits>.
 
-[Octopad: yes] Connect to production Octopad and read this task.
+[Octopad: yes] Connect to Octopad, in the workspace named above, and read this task.
 [Octopad: no] Do not call Octopad, not even `skill_opened`. Your task, verbatim:
 <description without its Exec and Octopad lines>.
 
@@ -155,4 +155,4 @@ Keep current authority, artifact and unresolved-effect pointers recoverable as w
 
 Completion is evaluated against the supervisor’s recorded boundary. Local stream completion follows [multi-stream.md](multi-stream.md) and never claims the common outcome complete. Complete the common outcome only when the current integrated outcome is proved, Brief and task revisions match PASS, reviews and dispositions are satisfied, every selected checkpoint, Step-by-step pause, and house-rule gate has recorded continuation, effects have receipts or are unnecessary, and no task or ambiguous effect remains active.
 
-Task state, supervisor ownership, session closure, native continuity state if used, and the final handoff must agree before a clean close; reconcile or disclose tracker drift without making it a gate. Close only real outcome tasks, release ownership, hand over this boundary's working documents under [records.md](records.md), and report integrated proof through the selected runtime. Disclose failed closure calls; they block a clean-closure claim.
+Task state, supervisor ownership, session closure, native continuity state if used, and the final handoff must agree before a clean close; reconcile or disclose tracker drift without making it a gate. Close only real outcome tasks, release ownership, hand over this boundary's working documents under [records.md](records.md), and report integrated proof through the selected runtime. Disclose failed closure calls; they block a clean-closure claim. Then, within the target's rules, remove what the run left on the machine once its content is committed, recorded or attached: worktrees and local branches that hold no unmerged work, locks, local copies and evidence folders. Name what you kept and why.
