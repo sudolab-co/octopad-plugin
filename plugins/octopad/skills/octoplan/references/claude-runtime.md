@@ -7,11 +7,13 @@ When planning in Claude, check exact models, efforts and agent definitions befor
 | Remaining task judgment | Declared route |
 |---|---|
 | Mechanical or small bounded execution: every choice settled in the task, little local judgment, runnable acceptance checks that prove the result | `Sonnet 5.5 · high, Opus 5.5 · medium on failed checks` |
-| Bounded execution with settled choices, real local judgment and runnable acceptance checks that prove the result; hard document, open-design and audit work take their own rows | `Opus 5.5 · medium, high on failed checks` |
+| Bounded execution with settled choices, real local judgment and runnable acceptance checks that prove the result | `Opus 5.5 · medium, high on failed checks` |
 | Bounded code, configuration or command-line work with unresolved judgment or weak checks, including cross-file coordination and consequential changes | `Opus 5.5 · high` |
 | Hard bounded document or knowledge work, including cross-document coordination; a mixed task takes this row when its document part is the hard one | `Opus 5.5 · xhigh` |
 | Open design or uncertain long-horizon approach | `Fable 5.1 · xhigh`, subject to the conditions below; otherwise `Opus 5.5 · xhigh` |
 | Broad read-only audit or exhaustive verification | `Opus 5.5 · xhigh`; separate `/effort ultracode` only on explicit opt-in |
+
+Start from the first row that fits the task as prepared; hard document, open-design and audit work take their own rows. A new worker route above `Sonnet 5.5 · high` gives as its reason the judgment left after preparation that rules out each cheaper row, such as a choice the task leaves to the worker or a result its checks cannot prove. Within a row's kind of work, the size of the change or of its proof alone raises no route. Saved routes and the user's explicit choices stay as [planning](planning.md) keeps them.
 
 The default lane set is `Sonnet 5.5 · high`, `Opus 5.5 · medium`, `Opus 5.5 · high`, `Opus 5.5 · xhigh`, `Opus 5.5 · max`, `Fable 5.1 · xhigh`. `low` is not recommended. Code, configuration and command-line delivery stops at `high`. Among workers, `xhigh` goes to the hard document, open-design and broad-audit rows above, where more checking finds more; any other worker gets it only with a recorded reason, such as `high` having proved insufficient on that task. Plan composition and a repair that changes outcome, effects, shared choices or proof use the open-design row; a repair that only re-cuts or re-routes reviewed work uses `Opus 5.5 · high`. `max` needs a recorded reason: `xhigh` proved insufficient, or explicitly unconstrained work justifies it. Give `xhigh` and `max` routes a large output budget, and never raise effort only because the model changed.
 

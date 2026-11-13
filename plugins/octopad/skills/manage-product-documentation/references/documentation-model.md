@@ -14,7 +14,7 @@ Keep exactly one per product: the index of every system, nothing else. Adopt an 
 
 ## Product Spec
 
-Keep one evolving Product Spec per significant product system: a coherent user capability, durable behavior or boundary that people need to reason about independently. Create or adopt it at `idea` once a discussion develops that boundary or behavior far enough to become real design work; a build decision is not required. Before adding a capability to an existing spec, check it belongs there: one its reader must understand on its own, with its own need, data or rules, gets its own spec, linked from the first; never for length alone.
+Keep one evolving Product Spec per significant product system: a coherent user capability, durable behavior or boundary that people need to reason about independently. Create or adopt it at `idea` once a discussion develops that boundary or behavior far enough to become real design work; a build decision is not required. Which system owns a capability: [Resolve the product first](../SKILL.md#resolve-the-product-first).
 
 Use the shape in [artifact-shapes.md](artifact-shapes.md); what each section holds, and the home of everything else, is in SKILL.md (Write for the reader). Vision and offer live in the Product Overview; precise shared invariants in a Behavioral Contract; replaced text in page versions. Update the existing spec as the system evolves.
 
