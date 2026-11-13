@@ -563,7 +563,7 @@
       },
       "expected_behavior": [
         "In one conditional save of revision 9, write a single ### Priorities entry keeping entry_id focus-themes, the two names, their order and references, and add Hiring as priority 3 with its stream reference.",
-        "Fold the work-order call into the why of the priority it concerns (reliability before pricing, because a broken launch costs more than late pricing) and remove the separate entry.",
+        "Fold the work-order call into the why of the priority it concerns (reliability before pricing, because a broken launch costs more than late pricing, until the retry defect is fixed) and remove the separate entry.",
         "Drop both currently on parts and the moved note; keep the user's reasons.",
         "Say in one chat line that the entry was rewritten in the new form and that hiring was added."
       ]

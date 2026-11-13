@@ -4,7 +4,7 @@ description: "Use while a request's task count, prerequisites, nesting, scores, 
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-planning-and-work-design"` when you open this skill.
 
-Version: 6.0.0
+Version: 6.1.0
 
 # From a need to prepared work
 
@@ -31,7 +31,7 @@ When agents could usefully deliver the prepared work, when the user asks for age
 - A subtask may not fall due after the task above it.
 - Join two deliverables only where one truly cannot start until the other lands; an edge added for tidiness serialises work that could have run side by side.
 - Order is what dependencies carry, and priority says how much a thing matters within an order already settled. Reaching for priority to make something happen sooner is the sign that a real dependency, or the user's call on order, is missing.
-- Add a preparation task only for a real prerequisite, something the others cannot start without, such as a shared contract they must all follow; two unrelated fixes stay independent, whatever order they are done in. When the user wants an order no prerequisite imposes, keep it as their call on work order, with its reason, in their Notepad where they have one: never invent a prerequisite for it, and never lower a sibling's priority to push it down.
+- Add a preparation task only for a real prerequisite, something the others cannot start without, such as a shared contract they must all follow; two unrelated fixes stay independent, whatever order they are done in. When the user wants an order no prerequisite imposes, keep it in the order of their priorities, with its reason in the `why:` of the priority it concerns, in their Notepad where they have one: never invent a prerequisite for it, and never lower a sibling's priority to push it down.
 - Between two subtasks a dependency is optional and stands in for nothing at the level above: wire one only where that subtask genuinely blocks that other one, which is rare.
 
 # The scales

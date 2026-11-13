@@ -3,6 +3,7 @@
 ## 30.0.0 - Unreleased
 
 - A person's focus themes are now their priorities, and a priority holds their intent only. `octopad-notepad` 8.0.0: the compass's entry is `### Priorities`; each line is a short stable name, then a `why:` of one or two sentences saying what they want and why, with the logic between priorities when they give it, then its refs and their deadline. The AI never writes progress, the current task, quotes or dated change notes there: `currently on:`, the dated `moved` reason and the separate "user's call on work order" entry are gone, and the list order is the work order. The AI states its own change and reason in one chat line instead. When it saves a Notepad still in the older form, it rewrites that entry into the new one in the same save, keeping names, order, ids, refs, deadlines and the person's reasons.
+- `octopad-planning-and-work-design` 6.1.0: an order the user wants and no prerequisite imposes goes into the order of their priorities, with its reason in the priority it concerns, no longer into a separate Notepad entry.
 - `octopad-pad` 4.0.0 and `octopad-session` 30.0.0 use the word priorities and weigh the priorities in their order; the Smart Report no longer reports a dated `moved` note.
 
 Needs the server change that reads a `### Priorities` entry and lines without `currently on:`: a production server without it does not read the new entry, so the plugin and the server release together. All three distributions move to 30.0.0.
