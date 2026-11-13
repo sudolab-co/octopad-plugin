@@ -1,5 +1,12 @@
 # Changelog
 
+## 33.1.0 - Unreleased
+
+- `manage-product-documentation` 7.1.0: a Product Spec gets a Known limits section for what work has established about how the system really behaves or fails, that a later design, change or judgment must take into account. When a test, a measurement, an incident, a diagnosis, an analysis or an audit of a system establishes such a limit, the AI writes it there in the same turn without asking, after checking it is not already recorded; a task comment alone no longer stands for it. A design or fix that a known limit bears on says how it takes it into account. The skill also opens when a test, a measurement, an incident or an analysis shows how a system really behaves or fails.
+- `octopad-knowledge-evidence` 3.1.0: such a limit goes straight to the spec's Known limits, not to the working page that holds an analysis's other findings.
+
+Needs the server change that serves a spec's Known limits in task briefings and reminds the AI, after a task comment, to record such a limit in the spec. Without it the skill still works; briefings simply leave the section out.
+
 ## 33.0.0 - 2026-11-17
 
 - Each Octopad rule now lives where its moment is seen: the server's methodology and connection instructions, a tool or parameter text, a line the server adds to a result, a refusal, a Claude Code hook, or the one skill that owns it. Every skill drops what moved out and keeps what its moment needs, and each description follows the methodology router's situations. `manage-activity-context` 8.0.0, `manage-market-intelligence` 4.0.0, `manage-product-documentation` 7.0.0, `manage-product-marketing` 3.0.0, `octopad-crm` 2.0.0, `octopad-knowledge-evidence` 3.0.0, `octopad-notepad` 10.0.0, `octopad-pad` 6.0.0, `octopad-planning-and-work-design` 7.0.0, `octopad-session` 33.0.0, `octoplan` 10.0.0, `pmm-check` 2.0.0 and `technical-writing` 3.0.0.

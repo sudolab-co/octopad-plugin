@@ -49,6 +49,9 @@ One line per named feature, reusing the spec link when several share a spec; aud
 ## Non-goals
 - <What it deliberately does not do>: <reason>; <neighbouring owner (link)>.
 
+## Known limits
+- <What is established and what it imposes> (<source>, <date>; <Engineering Reference link when detail is needed>).
+
 ## Open questions
 - [open] <undecided point>.
 - [idea <date>] <direction>; read <supporting record> before assessing or building it.

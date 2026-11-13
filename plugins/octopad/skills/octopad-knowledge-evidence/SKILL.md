@@ -2,7 +2,7 @@
 name: octopad-knowledge-evidence
 description: "Use when a conversation surfaces something someone outside it will need: a decision, a key fact, a risk, an advisory, an open question or a customer's words. Also use it when new evidence changes a recorded item, when the user shares a file or document, when a page or file is written, linked or tagged, before saying whether something is on record or answering a question about the corpus, and when the corpus is cleaned up. Chooses where each item goes and how a claim about the corpus is proved. Not for spec content (manage-product-documentation) or one customer's facts (octopad-crm)."
 ---
-Version: 3.0.0
+Version: 3.1.0
 
 # Where knowledge is written
 
@@ -12,7 +12,7 @@ Three branches hold durable workspace context: `knowledge`, `pages` and `files`.
 - Write with `knowledge`, as one atomic item, what someone outside the current task or conversation will need: a fact others will rely on, a choice that binds work beyond its task, a question no open task will settle, an uncertain harm.
 - Keep checks, receipts, approvals, blockers and notes about your own tools on the task, or in chat when there is no task. A fixable gap is a task.
 - Write with `pages` the reference that outlives the effort, such as how a system is built or what a meeting settled. Research or analysis for one decision is never kept or offered as an ordinary page: its Decision's rationale cites the decisive sources.
-- Put material later sessions need for bounded work on a working page of its real task or active stream, an ongoing stream included. An analysis's findings go there without asking, even when the user asked you to change nothing: the page changes nothing they asked you to leave alone. Move lasting findings to their proper home: Key Information, a reference page, or an open task they inform. For lasting knowledge with no home, propose one or ask.
+- Put material later sessions need for bounded work on a working page of its real task or active stream, an ongoing stream included. An analysis's findings go there without asking, even when the user asked you to change nothing: the page changes nothing they asked you to leave alone. Move lasting findings to their proper home: Key Information, a reference page, or an open task they inform. A limit of a product system that whoever designs or judges it must take into account goes straight to Known limits in that system's Product Spec, as `manage-product-documentation` says, not to the working page. For lasting knowledge with no home, propose one or ask.
 - Keep operational consent, supervision and receipts with their work, where they stay readable after archiving.
 - When you hand the work over, finish moving lasting findings first. Then keep each working page that is, as a whole, reference that outlives the effort, and archive the rest.
 - A bounded delivery in an ongoing stream archives only its own documents, leaving the stream and other work active. When the work reopens, take the pages it needs out of Archive.

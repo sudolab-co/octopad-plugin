@@ -47,7 +47,7 @@ Its reader is an AI or a person about to change something that crosses systems: 
 
 Keep a line only if a reader without it could break a connection, a boundary or the release path. Everything else goes to its home, linked when still needed:
 
-- one system's intent, choices and promises: its Product Spec;
+- one system's intent, choices, promises and known limits: its Product Spec;
 - one system's mechanics: code and tests, or an Engineering Reference when the knowledge is stable and not derivable from code;
 - delivery history (pull requests, releases, commits, migration applies, run ids): the pull request and the release record;
 - counts, sizes and other measurements: the test or script that measures them;
@@ -58,7 +58,7 @@ The map describes the code on the default branch, the base every change starts f
 
 ## Engineering References
 
-Create a targeted Engineering Reference only for important knowledge that is stable and not cheaply derivable, such as a non-obvious operational constraint, durable integration convention, or difficult data-model rationale. Link it from the Architecture Map and affected Product Specs. Prefer a Decision for a choice and its rationale; prefer code for mechanics. Never create one per Product Spec by default.
+Create a targeted Engineering Reference only for important knowledge that is stable and not cheaply derivable, such as a non-obvious operational constraint, durable integration convention, or difficult data-model rationale. Link it from the Architecture Map and affected Product Specs; one that details a known limit is linked from that limit's line. Prefer a Decision for a choice and its rationale; prefer code for mechanics. Never create one per Product Spec by default.
 
 ## Relationships and provenance
 
