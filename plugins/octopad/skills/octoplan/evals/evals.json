@@ -149,31 +149,31 @@
       "id": 25,
       "prompt": "I supervise an Octoplan in Claude Code. The next task is a design proposal: a worker draws boards and saves captures as evidence, commits nothing, and I planned to launch it with worktree isolation like my code executors. Anything to change before dispatch?",
       "should_trigger": true,
-      "expected_behavior": "Says an isolated agent's worktree is removed when it ends with no change Git reports, so results it did not commit can go with it. Runs this worker in the supervisor's worktree, or names in its brief a path outside its own worktree for its results. Code executors keep isolation and commit before they return."
+      "expected_behavior": "Says an isolated agent's worktree is removed when the agent ends without having changed it, so results it did not commit can go with it. Names in the worker's brief a path outside its own worktree for its results. Code executors keep isolation and commit before they return."
     },
     {
       "id": 26,
       "prompt": "Planning an Octoplan task that changes a web frontend and ships through a pull request. The repository's instructions give a local full check of typecheck, lint and build. Its hosted pipeline also runs the whole unit-test suite and a translation-parity test on each pull request. What goes in the task's Verify?",
       "should_trigger": true,
-      "expected_behavior": "Reads what the host runs on the pull request and covers each check in Verify, run locally where it can be: the unit-test suite and the parity test join typecheck, lint and build. Names any check only the host can run. Does not present a local pass as the pull request's gate."
+      "expected_behavior": "Reads what the host runs on the pull request and covers each check in Verify: the unit-test suite and the parity test join typecheck, lint and build, run locally where that costs less than a failed pull-request round, otherwise read as a hosted result the supervisor waits on. Does not present a local pass as the pull request's gate."
     },
     {
       "id": 27,
       "prompt": "I am preparing an Octoplan in my session. Several tasks' Verify call a capture script and compare against reference images, all in a folder on my laptop outside the repository; the task text cites that folder's absolute path. The plan is otherwise ready for review. Is anything missing?",
       "should_trigger": true,
-      "expected_behavior": "Flags that these tasks depend on files on one machine. Before review, commits the script to the target or attaches the script and images to their owning tasks, so another machine, runtime or reviewer can run them; if they must stay local, names that machine among the Plan's continuation limits. Does not send the plan to review with bare local paths."
+      "expected_behavior": "Flags that these tasks depend on files on one machine. Before review, attaches the script and images to their owning tasks, or plans a unit that commits the script where the target's rules allow, so another machine, runtime or reviewer can run them; the supervisor places attached inputs where a worker without Octopad can read them. If they must stay local, names that machine among the Plan's continuation limits. Does not write to the target before review or send the plan to review with bare local paths."
     },
     {
       "id": 28,
       "prompt": "Supervising an Octoplan in Claude Code. A task's saved Claude route is Fable 5.1 · xhigh, its conditions were accepted at planning, and I dispatched the plugin's Fable lane. The executor reports that it runs claude-fable-5-2. Do I pause it for a route mismatch?",
       "should_trigger": true,
-      "expected_behavior": "No pause for the version: the shipped lane pins the Fable family, so a newer version of the saved family at the saved effort is the saved route. Records the version that ran once, on the first receipt it affects, and checks Fable's conditions, such as its data-retention terms, against that version; pauses only if one fails. A different family or effort would be a mismatch."
+      "expected_behavior": "No pause for the version: in Claude Code the shipped lane pins the Fable family, and a newer version of the saved family at the saved effort is the saved route. Records the version that ran once, on the first receipt it affects, and checks Fable's conditions, such as its data-retention terms, against that version; if one fails, that actor pauses and its route changes through planning. An older version, another family or another effort would be a mismatch."
     },
     {
       "id": 29,
       "prompt": "Supervising an Octoplan with four code executors in parallel on my laptop, each in its own worktree. Each task's integrated Verify ends with the full test suite and a production build. Nothing in the repository's rules says how many can run at once. How do I brief them?",
       "should_trigger": true,
-      "expected_behavior": "Does not let four full suites or builds run at once on one machine with no rule or measurement showing it carries them. Executors run their targeted checks and return their committed head; the supervisor runs the full checks on each head in turn before its pull request; each brief says so."
+      "expected_behavior": "Does not let four full suites or builds run at once on one machine with no rule or measured load showing it can. Executors run their targeted checks and return their committed head; the supervisor runs the full checks on each head in turn before its pull request; each brief, reviewers' included, says so; a failure there returns to the task as an execution defect."
     }
   ]
 }

@@ -2,11 +2,11 @@
 
 ## 29.4.0 - Unreleased
 
-- `octoplan` 9.2.0: a code task's `Verify` covers the checks its host runs on the pull request, run locally where they can be, and names those only the host can run, so a local pass is not taken for the pull request's gate.
-- `octoplan` 9.2.0: what a task's `How` or `Verify` needs is committed or attached to its task before review, so another machine, runtime or reviewer can run it, or the Plan names the machine it stays on. At closure the supervisor removes what the run left on the machine, within the target's rules.
-- `octoplan` 9.2.0: executors that run in parallel on one machine run their targeted checks, and the supervisor runs full suites and builds one at a time, unless the target's rules or a measurement show the machine carries several.
-- `octoplan` 9.2.0, in Claude Code: a lane runs the version its model family resolves to, which is the saved route and no mismatch; an isolated agent's worktree is removed when the agent ends without changing it, so results it does not commit go outside it.
-- `octoplan` 9.2.0: the worker prompt connects a worker to Octopad in the workspace its brief names, no longer to "production" Octopad.
+- `octoplan` 9.2.0: a code task's `Verify` covers the checks its host runs on the pull request, run locally where that costs less than a failed pull-request round and otherwise read from the host, so a local pass is not taken for the pull request's gate.
+- `octoplan` 9.2.0: what a task's `How` or `Verify` needs is never on one machine only: it is attached to its task before review or committed by a planned unit, or the Plan names the machine it stays on. After a clean close the supervisor removes what the run created on the machine once its content survives elsewhere, never a deliverable or a file the user keeps.
+- `octoplan` 9.2.0: executors that run in parallel on one machine run their targeted checks, and the supervisor runs full suites and builds one at a time, unless the target's rules or a measured load show the machine can run several.
+- `octoplan` 9.2.0, in Claude Code: a shipped lane that runs a newer version of its route's family is no mismatch; the supervisor records that version once and checks Fable's conditions against it. An isolated agent's worktree is removed when the agent ends without changing it, so results it does not commit go to a path outside it.
+- `octoplan` 9.2.0: the worker prompt names the organization with its ID and no longer says "production" Octopad.
 
 Needs no server change. All three distributions move to 29.4.0.
 
