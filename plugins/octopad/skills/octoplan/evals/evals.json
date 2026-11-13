@@ -155,7 +155,7 @@
       "id": 26,
       "prompt": "Planning an Octoplan task that changes a web frontend and ships through a pull request. The repository's instructions give a local full check of typecheck, lint and build. Its hosted pipeline also runs the whole unit-test suite and a translation-parity test on each pull request. What goes in the task's Verify?",
       "should_trigger": true,
-      "expected_behavior": "Reads what the host runs on the pull request and covers each check in Verify: the unit-test suite and the parity test join typecheck, lint and build, run locally where that costs less than a failed pull-request round, otherwise read as a hosted result the supervisor waits on. A check the target's rules ignore, or one already failing on the base, is named as excluded instead. Does not present a local pass as the pull request's gate."
+      "expected_behavior": "Reads what the host runs on the pull request and covers each check in Verify: the unit-test suite and the parity test join typecheck, lint and build, run locally where that costs less than a failed pull-request round, otherwise read as a hosted result the supervisor waits on. Where there is one, a check the target's rules ignore, or one already failing on the base, is named as excluded instead. Does not present a local pass as the pull request's gate."
     },
     {
       "id": 27,
@@ -173,7 +173,7 @@
       "id": 29,
       "prompt": "Supervising an Octoplan with four code executors in parallel on my laptop, each in its own worktree. Each task's integrated Verify ends with the full test suite and a production build. Nothing in the repository's rules says how many can run at once. How do I brief them?",
       "should_trigger": true,
-      "expected_behavior": "Treats four full suites and builds at once as heavy enough to saturate one laptop, with no rule or load already measured there showing it can run them. Executors run their targeted checks and return their committed head; the supervisor runs the full checks on each head in turn before its pull request; each brief, reviewers' included, says so. A failure the work causes goes with its output to a fresh executor on the first part of the task's route, the `on failed checks` part only if that fix fails; an infrastructure failure follows recovery. Lists processes by name only when checking for a running suite."
+      "expected_behavior": "Treats four full suites and builds at once as heavy enough to saturate one laptop, with no rule or load already measured there showing it can run them. Executors run their targeted checks and return their committed head; the supervisor runs the full checks on each head in turn before its pull request; each brief, reviewers' included, says so. A failure the work causes goes with its output to a fresh executor on the first part of the task's route, the `on failed checks` part only if that fix fails; an infrastructure failure follows recovery. Matches processes by pattern and prints only IDs and names when checking for a running suite."
     }
   ]
 }
