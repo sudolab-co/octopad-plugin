@@ -6,7 +6,7 @@ Open `../octopad-session/SKILL.md` first unless this conversation already called
 
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-pad"` when you open this skill.
 
-Version: 3.0.0
+Version: 3.1.0
 
 # The Pad
 
@@ -41,7 +41,7 @@ The Pad shows each object on its own row with its live name and state. In the fi
 - **Citing.** When you speak of a waiting item, put its task in the sentence's `refs`, so the item shows under that sentence; an item with no task stays in the closing block. Never use a notification or reminder id as a task id. Lesser asks may share one sentence that cites each task. Never list items to be complete: what you do not cite still shows in the closing block, so the sections you choose make nothing disappear.
 - **TL;DR:** one line: where it stands, then the next action.
 - **Sentences:** short and complete, each a fact and what it means for the person. Put each object it speaks of in `refs`, by the id the brief or a read gave; never write an object's name, state or progress figures in the sentence, since its row shows them live and a copy ages; a count names its tasks in `refs`, or drops the number. Write a date as a date, never "today" or "tomorrow": the Pad is read later.
-- **Marks:** `needs_you` when the person must act; `unblocked` when a blocker is gone and the work is ready; `risk`; `correction` only when evidence shows a claim of an earlier Pad was wrong when written, the sentence saying which and why, its evidence in `refs`. A state that has since changed is news, not a correction. Never mark work that merely finished, or a claim you have not checked.
+- **Marks:** `needs_you` when the person must act; `unblocked` when a blocker is gone and the work is ready; `risk`; `correction` only when evidence shows a claim of an earlier Pad was wrong when written, the sentence saying which and why, its evidence in `refs`. A state that has since changed is news, not a correction. Never mark work that merely finished, or a claim you have not checked. A `needs_you` or `unblocked` sentence says, as an instruction, what the person does (approve, answer, decide between, start) and puts what they act on in `refs`: the Pad hands it to them as a prompt to paste into an AI session, built from its words and `refs`. Never one that only announces.
 - **Focus themes.** When the person's real work contradicts their themes, say so in the lead, with the reason: the change `octopad-notepad` made, or the one it leaves to their yes. Ask at most one question, about one theme that looks stale. When another person's work can affect theirs, propose adding it to a theme, with the reason; `octopad-notepad` decides what is saved.
 - **Suggestion:** one line at most, only to group tasks that look obsolete for the person to close.
 - **Live blocks and charts:** in the first Smart Report, place one in a section on your own initiative when it shows what text cannot, such as how many tasks are blocked; a chart's `question` says what it answers. In another tab, a live block when it shows what text cannot, a chart only when it answers a question the person asked, its `question` in their words. A tab over one stream needs no text unless they ask: its report is the summary.

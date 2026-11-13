@@ -1,5 +1,9 @@
 # Changelog
 
+## 29.3.0 - Unreleased
+
+- `octopad-pad` 3.1.0: a Smart Report sentence that calls the person (`needs_you` or `unblocked`) says, as an instruction, what they do and cites what they act on, because the Pad now hands each such line over as a prompt to paste into an AI session. Needs no server change beyond 29.0.0's.
+
 ## 29.2.0 - Unreleased
 
 - `manage-product-documentation` 6.12.0: the AI chooses which system owns a capability by the need it serves, not by the mechanism that delivers it (an AI instruction, a hook, a tool). A capability its reader must understand on its own, with its own need, data or rules, gets its own spec; the AI checks ownership again as the design changes and before building. The test moves from the documentation model reference into the skill's first section, read on every opening.

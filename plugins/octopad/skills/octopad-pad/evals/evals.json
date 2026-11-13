@@ -1,7 +1,7 @@
 {
   "skill_name": "octopad-pad",
   "protocol": {
-    "status": "27.0.0 cases written 2026-11-11 and not run: the operator decided that this change makes no model call. Earlier: run 2026-11-10 on 24.0.0 and 26.0.0 (80 agent runs), then reruns of 15 and 6 runs on the fixed 26.0.0 skill.",
+    "status": "29.1.0 case line-says-what-to-do written 2026-11-12 and not run: an eval's model calls wait for the operator's yes on its protocol. 27.0.0 cases written 2026-11-11 and not run: the operator decided that this change makes no model call. Earlier: run 2026-11-10 on 24.0.0 and 26.0.0 (80 agent runs), then reruns of 15 and 6 runs on the fixed 26.0.0 skill.",
     "purpose": "Compare plugin 26.0.0 (Smart Report by focus theme, lead on what changed) with 27.0.0 (decision brief by subject, lead said in the conversation) on routing and on the observable Pad writes; static checks do not establish AI behavior.",
     "execution": "claude plugin eval on the Claude Code subscription, after the operator approves the protocol. Every Octopad tool is a mock answering fictional fixtures: nothing reaches an Octopad organization.",
     "comparison": "The behaviour and correction cases run on both versions; the trigger cases on 27.0.0 only. Both versions get the same server lines, including the one a Smart Report save returns, so lead-said-in-the-conversation compares them and is not a defeat proof. Defeat proofs: lead-says-what-matters-and-where-to-start must reject a 26.0.0 lead that opens on what changed since a date; the correction cases on 27.0.0 with the section \"Route a correction\" removed must fail at least one of them.",
@@ -641,6 +641,31 @@
           "name": "start-is-no-deadline",
           "type": "llm",
           "focus": "mock_calls"
+        }
+      ]
+    },
+    {
+      "id": "line-says-what-to-do",
+      "prompt": "Good morning. Let us get going in Octopad, workspace Example.",
+      "must_load": true,
+      "kind": "behaviour",
+      "versions": [
+        "29.0.0",
+        "29.1.0"
+      ],
+      "context": "Smart Report and Brand watch due; Marketing ideas not due. The first Smart Report has news in Atlas launch and Billing, none in Hiring, a validation placed in Atlas launch and an answer request (the vendor request) outside every focus theme; Brand watch has nothing new. One owned goal waits for a status line.",
+      "expected_behavior": [
+        "The run opens octopad-pad and records it with skill_opened.",
+        "In the pad save call for tab smart_report, every sentence marked needs_you or unblocked says, as an instruction to the person, what they do (for example approve the pricing review, answer the vendor request, start the migration). FAIL a marked sentence that only reports an event or a state, such as 'The pricing review is waiting' or 'The migration is unblocked'.",
+        "Each such sentence carries in refs the task the person acts on, so a prompt built from its words and refs names it."
+      ],
+      "graders": [
+        {
+          "name": "opens-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 1
         }
       ]
     },
