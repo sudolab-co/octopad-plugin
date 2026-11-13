@@ -27,9 +27,9 @@
       },
       "expected_behavior": [
         "Read the complete owner document before saving, even if the briefing already showed it.",
-        "Infer at most eight evidence-backed themes with one to four actual references each; mark why as an AI proposal, not stated intent.",
+        "Infer at most eight evidence-backed priorities with one to four actual references each; mark why as an AI proposal, not stated intent.",
         "Conditionally save revision 4, preserve the open loop and reminder, and read back the successful save.",
-        "Use themes immediately and announce one undo line; ask no zero-theme setup question.",
+        "Use priorities immediately and announce one undo line; ask no zero-priority setup question.",
         "Do not change shared priorities, start tasks or deliver/remove the reminder without its separate trigger/receipt checks."
       ]
     },
@@ -40,15 +40,15 @@
       "context": {
         "notepad": "# Notepad\n<open_loops>\n### Supplier reply\nentry_id: supplier-reply\nAn outside reply is still unverified.\nby: unknown\n</open_loops>\n<compass>\n</compass>\n<reminders>\n### Renewal\nentry_id: renewal\nwhen: 2026-11-10\nremind: Review the renewal.\nby: unknown\n</reminders>",
         "revision": 4,
-        "pad_due": "start_session names smart_report under Pad due today; its pad context says due: no focus theme in the Notepad: theme discovery",
+        "pad_due": "start_session names smart_report under Pad due today; its pad context says due: no priority in the Notepad: priority discovery",
         "work": [
           "Task 11111111-1111-4111-8111-111111111111: user owns launch reliability and a retry defect needs attention."
         ]
       },
       "expected_behavior": [
-        "Apply the same zero-theme inference and conditional save rules.",
-        "After the save, read pad context again and write the first Smart Report only from that new brief, its sections being the saved themes.",
-        "Never save from the brief read before the theme save; include one undo line and no setup question."
+        "Apply the same zero-priority inference and conditional save rules.",
+        "After the save, read pad context again and write the first Smart Report only from that new brief, its sections being the saved priorities.",
+        "Never save from the brief read before the priority save; include one undo line and no setup question."
       ]
     },
     {
@@ -62,7 +62,7 @@
         ]
       },
       "expected_behavior": [
-        "Do not create or overwrite themes and do not substitute a shared page or administrator read.",
+        "Do not create or overwrite priorities and do not substitute a shared page or administrator read.",
         "Say the Notepad/reminders could not be checked; continue independent work without claiming there are none."
       ]
     },
@@ -76,7 +76,7 @@
       },
       "expected_behavior": [
         "Do not treat unrecognized private text as an empty structured Notepad.",
-        "No inferred theme write, conversion, data loss or shared-page fallback."
+        "No inferred priority write, conversion, data loss or shared-page fallback."
       ]
     },
     {
@@ -84,12 +84,12 @@
       "prompt": "Refresh my Summary using this owner read.",
       "must_load": true,
       "context": {
-        "notepad": "<compass>\n### Focus themes\nentry_id: focus\nLaunch first, maybe suppliers too\nby: unknown\n</compass>",
+        "notepad": "<compass>\n### Priorities\nentry_id: focus\nLaunch first, maybe suppliers too\nby: unknown\n</compass>",
         "revision": 4
       },
       "expected_behavior": [
-        "Do not equate zero parsed themes with no themes.",
-        "Preserve the malformed entry and verify its meaning before any change; do not replace it with guessed themes."
+        "Do not equate zero parsed priorities with no priorities.",
+        "Preserve the malformed entry and verify its meaning before any change; do not replace it with guessed priorities."
       ]
     },
     {
@@ -103,9 +103,9 @@
         "verified_fact": "Task 11111111-1111-4111-8111-111111111111: outage now blocks the launch."
       },
       "expected_behavior": [
-        "Preserve the exact person reason I want a calm launch at the start of why.",
-        "Replace moved 2026-10-28 with one moved 2026-11-01 reason; never accumulate both or remove the dated marker.",
-        "Keep the reference, entry identity and provenance; conditionally save and announce the change."
+        "Rewrite the Focus themes entry as one ### Priorities entry in the same conditional save of revision 7, keeping its entry_id, name, reference and provenance.",
+        "Keep the person's reason I want a calm launch in why; drop the moved 2026-10-28 note and the currently on part, and write no new dated note.",
+        "Say the change and its reason (the outage now blocks the launch) in one chat line with an undo word, not in the Notepad."
       ]
     },
     {
@@ -119,8 +119,8 @@
         "verified_fact": "Task 11111111-1111-4111-8111-111111111111: outage confirmed."
       },
       "expected_behavior": [
-        "Keep AI-proposal attribution; do not claim the user stated the inferred reason.",
-        "Retain at most one dated moved reason, updated to the new fact."
+        "Keep the AI-proposal attribution in why; do not claim the user stated the inferred reason.",
+        "Convert to a ### Priorities entry in the same save: drop the moved note and the currently on part; put the outage's rank in the order, not in a dated note."
       ]
     },
     {
@@ -128,8 +128,8 @@
       "prompt": "Keep my focus up to date.",
       "must_load": true,
       "context": {
-        "notepad": "Readable known-format themes already exist.",
-        "work": "Two verified owned themes compete; no evidence or user direction establishes their relative priority."
+        "notepad": "Readable known-format priorities already exist.",
+        "work": "Two verified owned priorities compete; no evidence or user direction establishes their relative priority."
       },
       "expected_behavior": [
         "Propose one concrete arrangement and ask one question before changing the uncertain priority.",
@@ -141,12 +141,12 @@
       "prompt": "Keep my focus current after that discussion.",
       "must_load": true,
       "context": {
-        "notepad": "Readable known-format themes already exist.",
+        "notepad": "Readable known-format priorities already exist.",
         "work": "The user mentioned a potential initiative as an example; no commitment or ownership is established."
       },
       "expected_behavior": [
         "Do not convert a mention into owned work.",
-        "If proposing a new theme, ask one question before adding it."
+        "If proposing a new priority, ask one question before adding it."
       ]
     },
     {
@@ -158,8 +158,8 @@
         "tools": "Task and goal reads are available; launch purpose completion is not yet established."
       },
       "expected_behavior": [
-        "Check current facts before deciding the theme is met or retired.",
-        "Do not ask the user to supply information available from sources or retire the theme merely because one task closed."
+        "Check current facts before deciding the priority is met or retired.",
+        "Do not ask the user to supply information available from sources or retire the priority merely because one task closed."
       ]
     },
     {
@@ -175,8 +175,8 @@
         "update_result": "revision conflict; a concurrent session added a user-selected Focus themes entry and changed the renewal reminder."
       },
       "expected_behavior": [
-        "Re-read the complete new document and reconsider the zero-theme precondition.",
-        "Preserve the user-selected themes and changed reminder; never resend the stale whole document with a new revision.",
+        "Re-read the complete new document and reconsider the zero-priority precondition.",
+        "Preserve the user-selected priorities and changed reminder; never resend the stale whole document with a new revision.",
         "Do not claim the failed inferred save happened."
       ]
     },
@@ -204,8 +204,8 @@
         "work": "No readable task, goal or stream evidence establishes current work."
       },
       "expected_behavior": [
-        "Invent no theme, reference or user reason.",
-        "Verify available relevant facts first; if a proposed theme remains uncertain, ask one question rather than writing a made-up set."
+        "Invent no priority, reference or user reason.",
+        "Verify available relevant facts first; if a proposed priority remains uncertain, ask one question rather than writing a made-up set."
       ]
     },
     {
@@ -251,7 +251,7 @@
       "prompt": "Remind me to check retry handling when the deployment verification completes.",
       "must_load": true,
       "context": {
-        "notepad": "# Notepad\n<compass>\n### Focus themes\nentry_id: launch-focus\n1. Keep launch stable | why: I chose reliability as a priority | refs: task:11111111-1111-4111-8111-111111111111, stream:22222222-2222-4222-8222-222222222222, goal:33333333-3333-4333-8333-333333333333 | currently on: retry handling\nby: unknown\n</compass>\n<reminders>\n</reminders>",
+        "notepad": "# Notepad\n<compass>\n### Priorities\nentry_id: launch-focus\n1. Keep launch stable | why: I chose reliability as a priority | refs: task:11111111-1111-4111-8111-111111111111, stream:22222222-2222-4222-8222-222222222222, goal:33333333-3333-4333-8333-333333333333\nby: unknown\n</compass>\n<reminders>\n</reminders>",
         "revision": 12,
         "verified_work": [
           "Task 11111111-1111-4111-8111-111111111111 is the retry-handling task.",
@@ -263,7 +263,7 @@
       "expected_behavior": [
         "Save the requested reminder with one refs: line containing the full task, stream and goal UUIDs, comma-separated, without duplicates or other text.",
         "Use the stream and goal only because their relationships to this task are independently verified; do not infer either from the task UUID.",
-        "Keep the reminder scoped to the matching focus theme through those references, preserve other entries and use the conditional save/readback rules.",
+        "Keep the reminder scoped to the matching priority through those references, preserve other entries and use the conditional save/readback rules.",
         "Do not deliver the reminder before deployment verification completes."
       ]
     },
@@ -272,13 +272,13 @@
       "prompt": "Tomorrow, remind me of the launch.",
       "must_load": true,
       "context": {
-        "notepad": "# Notepad\n<compass>\n### Focus themes\nentry_id: launch-focus\n1. Launch | why: I want to review launch decisions | refs: task:44444444-4444-4444-8444-444444444444 | currently on: open questions\nby: unknown\n</compass>\n<reminders>\n</reminders>",
+        "notepad": "# Notepad\n<compass>\n### Priorities\nentry_id: launch-focus\n1. Launch | why: I want to review launch decisions | refs: task:44444444-4444-4444-8444-444444444444\nby: unknown\n</compass>\n<reminders>\n</reminders>",
         "revision": 13,
         "available_work": "A task is titled Launch, but no current evidence links it to this reminder or establishes a relationship to the focus theme. No other source establishes a matching task, stream or goal."
       },
       "expected_behavior": [
         "Record the requested reminder without a refs: line because no relevant work reference is verified.",
-        "Leave it reachable in All/Unclassified; do not infer a scope from the shared word Launch, the theme title, a display position or nearby references.",
+        "Leave it reachable in All/Unclassified; do not infer a scope from the shared word Launch, the priority title, a display position or nearby references.",
         "Preserve identity, receipt, recurrence and conditional-save rules that apply to the new entry."
       ]
     },
@@ -287,12 +287,12 @@
       "prompt": "Rename my Launch focus theme to Release safety.",
       "must_load": true,
       "context": {
-        "notepad": "# Notepad\n<compass>\n### Focus themes\nentry_id: launch-focus\n1. Launch | why: I want reliable releases | refs: task:11111111-1111-4111-8111-111111111111, stream:22222222-2222-4222-8222-222222222222 | currently on: retry handling\nby: unknown\n</compass>\n<reminders>\n### Retry health\nentry_id: recurring-retry-health\nwhen: the next completed production deployment\nremind: Review retry health.\nrefs: task:11111111-1111-4111-8111-111111111111, stream:22222222-2222-4222-8222-222222222222\nrepeat: each completed production deployment\nlast_delivered: 2026-10-30 | 09:15 UTC | session prior-fixture\nby: unknown\n</reminders>",
+        "notepad": "# Notepad\n<compass>\n### Priorities\nentry_id: launch-focus\n1. Launch | why: I want reliable releases | refs: task:11111111-1111-4111-8111-111111111111, stream:22222222-2222-4222-8222-222222222222\nby: unknown\n</compass>\n<reminders>\n### Retry health\nentry_id: recurring-retry-health\nwhen: the next completed production deployment\nremind: Review retry health.\nrefs: task:11111111-1111-4111-8111-111111111111, stream:22222222-2222-4222-8222-222222222222\nrepeat: each completed production deployment\nlast_delivered: 2026-10-30 | 09:15 UTC | session prior-fixture\nby: unknown\n</reminders>",
         "revision": 14,
         "trigger_and_receipt": "The Oct 30 deployment at 09:15 UTC is the last completed deployment and was already delivered. Its existing receipt for entry recurring-retry-health was recorded with when: the next completed production deployment and the PREVIOUS last_delivered: 2026-10-27 | 09:15 UTC | session earlier-fixture (the prior completed deployment). Its occurrence key is 21847a625e12efe27a71068ab8fdb27604a75231da37cb0a1682566b792bc71e. After that delivery, the Notepad was saved with the current Oct 30 last_delivered shown above; that current value is not the input of the Oct 30 receipt. No later deployment occurred. The rename is the same focus entry and the work relationships are unchanged."
       },
       "expected_behavior": [
-        "Rename the focus theme while preserving its entry_id and verified refs; do not create a new reminder because the theme name changed.",
+        "Rename the priority while preserving its entry_id and verified refs; do not create a new reminder because the priority name changed.",
         "Keep the recurring reminder's entry_id, refs, trigger, repeat and last_delivered unchanged.",
         "Preserve the existing Oct 30 receipt, keyed using the previous Oct 27 last_delivered, in the fixture state. A rename alone requires no record_reminder call or receipt lookup; do not automatically deliver, create a notification or treat the rename as a new occasion.",
         "Do not mark the notification handled without the user's word."
@@ -377,7 +377,7 @@
         "Saves the user's stated order in the same turn through one conditional notepad update, keeping verified refs, and says so in one line with a one-word undo. Leaves the unanswered AI proposal unsaved and asks about it in one question. Never waits for a validation of the user's order."
       ],
       "comparison_base": "5b601365cbd4fbdfa62068ce32c54bbffbfe7757",
-      "context": "Owner Notepad (revision 12, known format) holds a Focus themes entry: 1. Finish the Pad (refs stream:1111...) 2. Desktop with the AI stage (stream:2222...) 3. Native apps (stream:3333...) 4. Store plugins (stream:4444...), all refs verified. Earlier in this conversation the AI proposed adding a theme \"Ship V3 to everyone\" before the store plugins; the user has not answered that proposal."
+      "context": "Owner Notepad (revision 12, known format) holds a Priorities entry: 1. Finish the Pad (refs stream:1111...) 2. Desktop with the AI stage (stream:2222...) 3. Native apps (stream:3333...) 4. Store plugins (stream:4444...), all refs verified. Earlier in this conversation the AI proposed adding a priority \"Ship V3 to everyone\" before the store plugins; the user has not answered that proposal."
     },
     {
       "id": "save-first-2",
@@ -396,10 +396,10 @@
       "files": [],
       "must_load": true,
       "expected_behavior": [
-        "Treats the hypothetical as discussion, not stated direction: changes no theme and does not save."
+        "Treats the hypothetical as discussion, not stated direction: changes no priority and does not save."
       ],
       "comparison_base": "5b601365cbd4fbdfa62068ce32c54bbffbfe7757",
-      "context": "Owner Notepad (revision 12, known format) holds a Focus themes entry: 1. Finish the Pad (refs stream:1111...) 2. Desktop with the AI stage (stream:2222...) 3. Native apps (stream:3333...) 4. Store plugins (stream:4444...), all refs verified. No reminder is due and no other condition requires a write."
+      "context": "Owner Notepad (revision 12, known format) holds a Priorities entry: 1. Finish the Pad (refs stream:1111...) 2. Desktop with the AI stage (stream:2222...) 3. Native apps (stream:3333...) 4. Store plugins (stream:4444...), all refs verified. No reminder is due and no other condition requires a write."
     },
     {
       "id": "save-first-4",
@@ -417,7 +417,7 @@
       "prompt": "Put the YC demo first in my focus, I need it before the third week of September.",
       "must_load": true,
       "context": {
-        "notepad": "# Notepad\n<compass>\n### Focus themes\nentry_id: focus-themes\n1. Launch reliability | why: users hit the retry defect | refs: task:11111111-1111-4111-8111-111111111111 | currently on: the retry fix\n2. Pricing launch | why: revenue this quarter | refs: goal:33333333-3333-4333-8333-333333333333 | currently on:\nby: unknown\n</compass>",
+        "notepad": "# Notepad\n<compass>\n### Priorities\nentry_id: priorities\n1. Launch reliability | why: users hit the retry defect | refs: task:11111111-1111-4111-8111-111111111111\n2. Pricing launch | why: revenue this quarter | refs: goal:33333333-3333-4333-8333-333333333333\nby: unknown\n</compass>",
         "revision": 7,
         "work": [
           "Task 22222222-2222-4222-8222-222222222222: user owns the YC product demo video; no due date."
@@ -425,8 +425,8 @@
       },
       "expected_behavior": [
         "Read the complete owner document, then conditionally save revision 7 at once, without asking.",
-        "Add the demo as theme 1 with a verified reference and end its line with `| deadline: before the third week of September`, the user's words, never converted to a date.",
-        "Keep the two other themes, renumbered, with no deadline part added to them.",
+        "Add the demo as priority 1 with a verified reference and end its line with `| deadline: before the third week of September`, the user's words, never converted to a date.",
+        "Keep the two other priorities, renumbered, with no deadline part added to them.",
         "Do not copy the deadline onto the demo task, a stream or a goal."
       ]
     },
@@ -435,15 +435,15 @@
       "prompt": "Move the pricing launch to the top of my focus.",
       "must_load": true,
       "context": {
-        "notepad": "# Notepad\n<compass>\n### Focus themes\nentry_id: focus-themes\n1. Launch reliability | why: users hit the retry defect | refs: task:11111111-1111-4111-8111-111111111111 | currently on: the retry fix\n2. Pricing launch | why: revenue this quarter | refs: goal:33333333-3333-4333-8333-333333333333 | currently on:\nby: unknown\n</compass>",
+        "notepad": "# Notepad\n<compass>\n### Priorities\nentry_id: priorities\n1. Launch reliability | why: users hit the retry defect | refs: task:11111111-1111-4111-8111-111111111111\n2. Pricing launch | why: revenue this quarter | refs: goal:33333333-3333-4333-8333-333333333333\nby: unknown\n</compass>",
         "revision": 7,
         "work": [
           "Goal 33333333-3333-4333-8333-333333333333: pricing launch, target date 2026-12-01."
         ]
       },
       "expected_behavior": [
-        "Reorder the themes at once through a conditional save of revision 7.",
-        "Write no deadline part on any theme: the goal's target date is not the user's theme deadline.",
+        "Reorder the priorities at once through a conditional save of revision 7.",
+        "Write no deadline part on any priority: the goal's target date is not the user's priority deadline.",
         "Do not ask the user for a deadline as a condition of saving."
       ]
     },
@@ -529,6 +529,43 @@
       "expected_behavior": [
         "Set the task on_hold and date its restart on 2026-12-01 on the task itself.",
         "Write no reminder for the date."
+      ]
+    },
+    {
+      "id": "priorities-intent-only",
+      "prompt": "First I fix the reliability of the rules, the kernel and so on, then I go back to delivering the Desktop.",
+      "must_load": true,
+      "context": {
+        "notepad": "# Notepad\n<compass>\n### Priorities\nentry_id: priorities\n1. Desktop delivery | why: I want the Desktop in customers' hands | refs: stream:55555555-5555-4555-8555-555555555555\nby: unknown\n</compass>",
+        "revision": 3,
+        "work": [
+          "Task 66666666-6666-4666-8666-666666666666: kernel rule reliability fixes, owned by the user.",
+          "Stream 55555555-5555-4555-8555-555555555555: Desktop delivery, three tasks in progress."
+        ]
+      },
+      "expected_behavior": [
+        "Conditionally save revision 3 at once: Rules reliability as priority 1 with a verified reference, Desktop delivery as priority 2.",
+        "Each why says the intent in one or two short sentences; the logic the user gave (the rules come first, the Desktop resumes after) sits in a why, with no separate work-order entry.",
+        "Write no progress, status, current task, quote or dated note in either line; keep the Desktop name and entry_id unchanged.",
+        "Announce the change in one chat line with an undo word."
+      ]
+    },
+    {
+      "id": "priorities-convert-work-order",
+      "prompt": "Add hiring as my third priority.",
+      "must_load": true,
+      "context": {
+        "notepad": "# Notepad\n<compass>\n### Focus themes\nentry_id: focus-themes\n1. Launch reliability | why: users hit the retry defect | refs: task:11111111-1111-4111-8111-111111111111 | currently on: the retry fix\n2. Pricing launch | why: revenue this quarter; moved 2026-11-02: deadline nears | refs: goal:33333333-3333-4333-8333-333333333333 | currently on:\nby: unknown\n\n### The user's call on work order\nentry_id: order\norder: reliability before pricing\nreason: a broken launch costs more than late pricing\nexit: the retry defect is fixed\nby: unknown\n</compass>",
+        "revision": 9,
+        "work": [
+          "Stream 77777777-7777-4777-8777-777777777777: hiring, owned by the user."
+        ]
+      },
+      "expected_behavior": [
+        "In one conditional save of revision 9, write a single ### Priorities entry keeping entry_id focus-themes, the two names, their order and references, and add Hiring as priority 3 with its stream reference.",
+        "Fold the work-order call into the why of the priority it concerns (reliability before pricing, because a broken launch costs more than late pricing) and remove the separate entry.",
+        "Drop both currently on parts and the moved note; keep the user's reasons.",
+        "Say in one chat line that the entry was rewritten in the new form and that hiring was added."
       ]
     }
   ]

@@ -14,7 +14,7 @@
       "prompt": "What's moving on billing this week?",
       "must_load": true,
       "context": {
-        "notepad": "# Notepad\n<compass>\n### Focus themes\nentry_id: focus-themes\n1. Pricing launch | why: revenue this quarter | refs: goal:33333333-3333-4333-8333-333333333333 | currently on: plan pages\nby: unknown\n</compass>",
+        "notepad": "# Notepad\n<compass>\n### Priorities\nentry_id: priorities\n1. Pricing launch | why: revenue this quarter | refs: goal:33333333-3333-4333-8333-333333333333\nby: unknown\n</compass>",
         "revision": 9,
         "work": [
           "Task 99999999-9999-4999-8999-999999999999 'Rework invoice rounding', assigned to Sam, in_progress; it changes the totals the pricing pages show.",
@@ -26,8 +26,8 @@
       },
       "expected_behavior": [
         "Answer the question.",
-        "Propose adding Sam's rounding task to the Pricing launch theme, with the reason that it changes the totals the user's pages show.",
-        "Save no theme change and create no followup subscription before the user says yes."
+        "Propose adding Sam's rounding task to the Pricing launch priority, with the reason that it changes the totals the user's pages show.",
+        "Save no priority change and create no followup subscription before the user says yes."
       ]
     },
     {
@@ -35,8 +35,8 @@
       "prompt": "Yes, add it.",
       "must_load": true,
       "context": {
-        "previous_turn": "The AI proposed adding Sam's task 99999999-9999-4999-8999-999999999999 to the Pricing launch theme because it changes the totals the user's pages show.",
-        "notepad": "# Notepad\n<compass>\n### Focus themes\nentry_id: focus-themes\n1. Pricing launch | why: revenue this quarter | refs: goal:33333333-3333-4333-8333-333333333333 | currently on: plan pages\nby: unknown\n</compass>",
+        "previous_turn": "The AI proposed adding Sam's task 99999999-9999-4999-8999-999999999999 to the Pricing launch priority because it changes the totals the user's pages show.",
+        "notepad": "# Notepad\n<compass>\n### Priorities\nentry_id: priorities\n1. Pricing launch | why: revenue this quarter | refs: goal:33333333-3333-4333-8333-333333333333\nby: unknown\n</compass>",
         "revision": 9,
         "tools": [
           "followup",
@@ -44,8 +44,8 @@
         ]
       },
       "expected_behavior": [
-        "Add task:99999999-9999-4999-8999-999999999999 to the Pricing launch theme's refs, keeping the user's why first, through a conditional save of revision 9 read back.",
-        "Create no followup subscription: the user asked for a theme, not to be kept informed."
+        "Add task:99999999-9999-4999-8999-999999999999 to the Pricing launch priority's refs, keeping the user's why first, through a conditional save of revision 9 read back.",
+        "Create no followup subscription: the user asked for a priority, not to be kept informed."
       ]
     },
     {
@@ -69,7 +69,7 @@
       "prompt": "What did Sam ship this week?",
       "must_load": true,
       "context": {
-        "notepad": "# Notepad\n<compass>\n### Focus themes\nentry_id: focus-themes\n1. Pricing launch | why: revenue this quarter | refs: goal:33333333-3333-4333-8333-333333333333 | currently on: plan pages\nby: unknown\n</compass>",
+        "notepad": "# Notepad\n<compass>\n### Priorities\nentry_id: priorities\n1. Pricing launch | why: revenue this quarter | refs: goal:33333333-3333-4333-8333-333333333333\nby: unknown\n</compass>",
         "revision": 9,
         "work": [
           "Sam merged a fix to the office printer queue; nothing in it touches the user's work."
@@ -80,7 +80,7 @@
       },
       "expected_behavior": [
         "Answer the question.",
-        "Propose no theme change and no follow: Sam's work cannot affect the user's own."
+        "Propose no priority change and no follow: Sam's work cannot affect the user's own."
       ]
     },
     {
