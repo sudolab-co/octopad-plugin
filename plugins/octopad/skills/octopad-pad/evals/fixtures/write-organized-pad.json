@@ -556,7 +556,8 @@
    "bill2": "theme:b5f51d4c",
    "portal": "theme:4ec2b79b",
    "beta": "theme:22929c73",
-   "beta2": "theme:12baf3ca"
+   "beta2": "theme:12baf3ca",
+   "press": "theme:919e5e2c"
   },
   "tasks": {
    "40000000-0000-4000-8000-000000000006": {
@@ -624,8 +625,23 @@
     {
      "when": "save names a tab with an expected_revision other than its listed revision",
      "answer": {
-      "status": "conflict",
-      "error": "STALE"
+      "status": "stale",
+      "error": "STALE",
+      "text_revision": "<its stored revision>"
+     }
+    },
+    {
+     "when": "save without tab whose blocks hold a text block and that sends no content",
+     "answer": {
+      "status": "invalid",
+      "error": "TEXT_REQUIRED"
+     }
+    },
+    {
+     "when": "save without tab with neither blocks nor content",
+     "answer": {
+      "status": "invalid",
+      "error": "TAB_EMPTY"
      }
     },
     {

@@ -41,38 +41,41 @@ Illustrative shapes, not defaults: take ids and choices from the person's reques
 
 ## A priority tab
 
-Created without content, then written from the next `context`:
+Read it before it exists, with `context` on its unsaved definition:
 
 ```json
-{ "action": "save", "title": "Atlas launch", "selection": { "scope": "all", "priorities": ["theme:3f9a1c27"] },
-  "blocks": [ { "kind": "text" } ], "position": 1 }
+{ "action": "context", "title": "Atlas launch", "selection": { "scope": "all", "priorities": ["theme:3f9a1c27", "theme:5b81e0d4"] },
+  "blocks": [ { "kind": "text" } ] }
 ```
 
-Its content:
+Then create it in one save: the same definition, its `position`, the `through` that read gave and its first `content`. A later save sends `tab`, `expected_revision`, `through` and `content`.
 
 ```json
-{
-  "about": "The release of the Atlas app to every customer.",
-  "note": "I merged here your priorities Atlas launch and Launch video: they deliver the same launch.",
-  "lead": "The app passed its build review and waits for the store. The launch video is in editing alongside. What waits on you: the pricing answer.",
-  "card": "The release waits only on your pricing answer; the rest runs without you.",
-  "phases": [
-    { "label": "Build the app", "refs": [ { "kind": "task", "id": "44444444-4444-4444-8444-444444444441" } ] },
-    { "label": "Store review", "refs": [ { "kind": "task", "id": "44444444-4444-4444-8444-444444444442" } ] },
-    { "label": "Press kit", "refs": [] }
-  ],
-  "sections": [
-    { "key": "status", "sentences": [ { "mark": "risk", "text": "The store rejected the build on 2026-11-15 for a missing privacy label: the release slips until the label is added and the build resent.", "refs": [ { "kind": "task", "id": "44444444-4444-4444-8444-444444444443" } ] } ] },
-    { "key": "today", "sentences": [
-      { "mark": "needs_you", "text": "Answer the pricing question so the store listing can go out.", "refs": [ { "kind": "task", "id": "44444444-4444-4444-8444-444444444444" } ],
-        "detail": "Waiting since 2026-11-12; the listing needs the price.", "prompt": "Open the task \"Set the Atlas price\" and walk me through the two options so I can answer." },
-      { "mark": "unblocked", "text": "Start the store screenshots and the release notes.", "refs": [ { "kind": "task", "id": "44444444-4444-4444-8444-444444444445" }, { "kind": "task", "id": "44444444-4444-4444-8444-444444444446" } ],
-        "detail": "Both are ready since the build passed review.", "prompt": "Start \"Make the store screenshots\" and \"Write the release notes\" and show me each draft." },
-      { "text": "The launch email can wait until the price is set.", "refs": [ { "kind": "task", "id": "44444444-4444-4444-8444-444444444447" } ] }
-    ] },
-    { "key": "keep", "sentences": [ { "text": "Support asks for two days' notice before the release." } ] }
-  ],
-  "streams": [ { "ref": { "kind": "stream", "id": "22222222-2222-4222-8222-222222222222" }, "text": "Built and in store review; only the price holds it." } ]
+{ "action": "save", "title": "Atlas launch", "selection": { "scope": "all", "priorities": ["theme:3f9a1c27", "theme:5b81e0d4"] },
+  "blocks": [ { "kind": "text" } ], "position": 1, "through": "2026-11-16T07:29:20.412927Z",
+  "content": {
+    "about": "The release of the Atlas app to every customer.",
+    "note": "I merged here your priorities Atlas launch and Launch video: they deliver the same launch.",
+    "lead": "The app passed its build review and waits for the store. The launch video is in editing alongside. What waits on you: the pricing answer.",
+    "card": "The release waits only on your pricing answer; the rest runs without you.",
+    "phases": [
+      { "label": "Build the app", "refs": [ { "kind": "task", "id": "44444444-4444-4444-8444-444444444441" } ] },
+      { "label": "Store review", "refs": [ { "kind": "task", "id": "44444444-4444-4444-8444-444444444442" } ] },
+      { "label": "Press kit", "refs": [] }
+    ],
+    "sections": [
+      { "key": "status", "sentences": [ { "mark": "risk", "text": "The store rejected the build on 2026-11-15 for a missing privacy label: the release slips until the label is added and the build resent.", "refs": [ { "kind": "task", "id": "44444444-4444-4444-8444-444444444443" } ] } ] },
+      { "key": "today", "sentences": [
+        { "mark": "needs_you", "text": "Answer the pricing question so the store listing can go out.", "refs": [ { "kind": "task", "id": "44444444-4444-4444-8444-444444444444" } ],
+          "detail": "Waiting since 2026-11-12; the listing needs the price.", "prompt": "Open the task \"Set the Atlas price\" and walk me through the two options so I can answer." },
+        { "mark": "unblocked", "text": "Start the store screenshots and the release notes.", "refs": [ { "kind": "task", "id": "44444444-4444-4444-8444-444444444445" }, { "kind": "task", "id": "44444444-4444-4444-8444-444444444446" } ],
+          "detail": "Both are ready since the build passed review.", "prompt": "Start \"Make the store screenshots\" and \"Write the release notes\" and show me each draft." },
+        { "text": "The launch email can wait until the price is set.", "refs": [ { "kind": "task", "id": "44444444-4444-4444-8444-444444444447" } ] }
+      ] },
+      { "key": "keep", "sentences": [ { "text": "Support asks for two days' notice before the release." } ] }
+    ],
+    "streams": [ { "ref": { "kind": "stream", "id": "22222222-2222-4222-8222-222222222222" }, "text": "Built and in store review; only the price holds it." } ]
+  }
 }
 ```
 

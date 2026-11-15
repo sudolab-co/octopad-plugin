@@ -18,7 +18,7 @@ When `start_session` names tabs under **Pad due today** or **Pad not checked**, 
 
 1. One `pad` `context` with no `tab`: it serves every due tab.
 2. One `pad` `get` with no `tab`: every tab with the priorities it serves, and the priorities the person refused. Then `get` each due tab whose content you do not hold at its listed `revision`.
-3. Organize the Pad (below). When you created, merged, re-keyed or retired a tab, `context` again with no `tab` and write from that brief only.
+3. Organize the Pad (below). When you created, merged, re-keyed or retired a tab, `context` again with no `tab` and write the tabs it serves from that brief only.
 4. Write each tab the last `context` served from the objects of its sections, what changed in them and the attention placed in it (Write a Smart Report).
 5. Save each tab alone: `save` with `tab`, `expected_revision` (the `revision` the brief lists), `content` and its `through` as given. When nothing changed for it, the same save without `content`. A tab whose `through` reads none (a source could not be read) is saved without `through`, its text saying what could not be read. One tab's failure stops no other.
 6. Tell the person (below).
@@ -33,15 +33,15 @@ What `context` serves as attention in Today's brief outside every priority belon
 
 # Organize the Pad
 
-Keep one priority tab for each priority in the person's Notepad where something waits on them or moved: you create, merge, re-key and retire these without asking. Organize only when Today's brief is in the brief: its sections list each priority no tab serves, with its key and what it follows. A tab serves a priority through that key in its `selection.priorities`, which `get` lists. Match a tab to a priority by the priority's name and by its references, which the tab's `streams` and `phases` cite.
+Keep one priority tab for each priority in the person's Notepad where something waits on them or moved: you create, merge, re-key and retire these without asking. Organize only when Today's brief is in the brief: its sections list each priority no tab serves, with its key and what it follows. A tab serves a priority through that key in its `selection.priorities`, which `get` lists.
 
-- **Create** a tab for a priority with no tab once anything it follows moved or waits on the person; a quiet priority gets none. Save it without `tab` and without content: the priority's name as its `title`, `selection` {priorities: [its key]}, `blocks` [{kind: "text"}], and the `position` right after Today's brief and the priority tabs of earlier priorities. Shapes: [tab shapes](references/tab-shapes.md).
+- **Create** a tab for a priority with no tab once anything it follows moved or waits on the person; a quiet priority gets none. Its definition: the priority's name as its `title`, `selection` {priorities: [its key]}, `blocks` [{kind: "text"}]. `context` with that unsaved definition, write the tab from what it serves (A priority tab), then `save` without `tab`: the definition, the `position` right after Today's brief and the priority tabs of earlier priorities, the `content` and the `through` that read gave. A new tab is saved with its content or not at all. Shapes: [tab shapes](references/tab-shapes.md).
 - **Merge** priorities that deliver the same outcome into one tab: name each key in its `selection.priorities`, `remove` any other tab one of them had, and say why in its `note`.
 - **Add a stream** that serves the priority but none of its references names: add it to the tab's `selection.streams` and say so in its `note`.
-- **Retire** a tab once no priority in the Notepad has its name or shares its references: `remove` it. A priority with no tab that shares a tab's references is that tab's priority, renamed: it keeps the tab, saved with its new key in place of the old one. While the Notepad cannot be read, which `context` says, retire and re-key nothing.
+- **Re-key or retire** a priority tab that serves no priority left in the Notepad. A priority in the Notepad that Today's brief's sections do not list has a tab: the one with its name, a tab's `title` being its priority's name unless the person renamed the tab. For a tab that serves none, `get` it: a priority those sections list with the same streams as the tab's `streams` lines is its priority, renamed, and keeps the tab, saved with the new key in place of the old one and, unless the person renamed the tab, the new name as its `title`. Otherwise `remove` the tab. Sharing a goal, or only some streams, with a tab does not make a priority its own. While the Notepad cannot be read, which `context` says, retire and re-key nothing.
 - **Never recreate** a tab the person refused: `get` lists each refused key with its references. A renamed priority with the same references stays refused: save the refusal again under its new key (Route a correction).
 - **Another subject** they did not ask for, such as a stream they follow outside their priorities, gets a tab only on their yes: propose it as Create a Smart Report says.
-- **Their own tabs** stay theirs: never move, rename, rewrite or remove a tab that serves no priority, and keep the name and place they gave any tab.
+- **Their own tabs** stay theirs: never move, rename, rewrite or remove a tab whose `selection.priorities` is empty, and keep the name and place they gave any tab.
 
 # Write a Smart Report
 
