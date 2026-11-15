@@ -1,57 +1,101 @@
 ---
 name: octopad-pad
-description: "After `octopad-session`, where the connection offers the `pad` tool: when `start_session` names a Pad due or not checked, when the user asks to update their Pad or a Smart Report, asks for a Smart Report on their work even without naming the Pad, or wants a Smart Report to show something else, and before adding an external source to one. Not for a reminder, a priority change alone (octopad-notepad), a shared page or a one-off desktop view."
+description: "After `octopad-session`, where the connection offers the `pad` tool: when `start_session` names a Pad due or not checked, when the user asks to update their Pad or a Smart Report, asks for a Smart Report on their work even without naming the Pad, or wants a Smart Report to show something else, or one removed, and before adding an external source to one. Not for a reminder, a priority change alone (octopad-notepad), a shared page or a one-off desktop view."
 ---
 Open `../octopad-session/SKILL.md` first unless this conversation already called `start_session`: it starts the session with the plugin's version, never this skill's `Version:`.
 
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-pad"` when you open this skill.
 
-Version: 4.2.0
+Version: 5.0.0
 
 # The Pad
 
-The Pad is the person's own: Smart Reports of their work, the Desktop showing each as a tab, the first one reserved. To the person, call what you build a Smart Report, never a tab or a brief. Write for them alone, in the brief's `language` (when not set, theirs), in words they use, not builder jargon. Only the main session writes it: a sub-agent never updates the Pad, creates a tab or questions the person.
+The Pad is the person's own: Smart Reports of their work, the Desktop showing each as a tab. The first, Today's brief, is reserved; then come the priority tabs you keep (Organize the Pad) and the tabs the person asked for. To the person, call what you build a Smart Report, never a tab or a brief, and the first one Today's brief. Write for them alone, in the brief's `language` (when not set, theirs), in words they use, not builder jargon, as their own AI in the first person ("I merged here…"): never "your AI", and never Octopad as the one who acts. Only the main session writes it: a sub-agent never updates the Pad, creates a tab or questions the person.
 
 # Update the due tabs
 
 When `start_session` names tabs under **Pad due today** or **Pad not checked**, do this first:
 
 1. One `pad` `context` with no `tab`: it serves every due tab.
-2. `pad` `get` each due tab whose content you do not hold at its listed `revision`.
-3. Write each tab from the objects of its sections, what changed in them and the attention placed in it (Write a tab).
-4. Save each tab alone: `save` with `tab`, `expected_revision` (the `revision` the brief lists), `content` and its `through` as given. When nothing changed for it, the same save without `content`. A tab whose `through` reads none (a source could not be read) is saved without `through`, its text saying what could not be read. One tab's failure stops no other.
-5. Tell the lead (below).
-6. Then goal upkeep (`octopad-planning-and-work-design`, Goal upkeep: `goals` `list` with `to_refresh`, then `get` each goal). It never delays or blocks a save.
+2. One `pad` `get` with no `tab`: every tab with the priorities it serves, and the priorities the person refused. Then `get` each due tab whose content you do not hold at its listed `revision`.
+3. Organize the Pad (below). When you created, merged, re-keyed or retired a tab, `context` again with no `tab` and write from that brief only.
+4. Write each tab the last `context` served from the objects of its sections, what changed in them and the attention placed in it (Write a Smart Report).
+5. Save each tab alone: `save` with `tab`, `expected_revision` (the `revision` the brief lists), `content` and its `through` as given. When nothing changed for it, the same save without `content`. A tab whose `through` reads none (a source could not be read) is saved without `through`, its text saying what could not be read. One tab's failure stops no other.
+6. Tell the person (below).
+7. Then goal upkeep (`octopad-planning-and-work-design`, Goal upkeep: `goals` `list` with `to_refresh`, then `get` each goal). It never delays or blocks a save.
 
-Write only the tabs `start_session` names. What `context` serves as attention in the first Smart Report outside every priority belongs to the first Smart Report: weigh it like the rest.
+What `context` serves as attention in Today's brief outside every priority belongs to its `outside` section: weigh it like the rest.
 
 - `STALE`, `THROUGH_EARLIER`, or a `get` showing a newer `revision` than the brief's: another session saved first. If its `read_through` (from `get`) is not earlier than your `through`, leave it; otherwise `context` with that `tab` and write it again.
 - Any other refused save names what to fix: fix that and save the tab again.
-- A tab due for priority discovery: `octopad-notepad` proposes and saves priorities; then `context` again, since the priorities decide what the first Smart Report follows, and write from the new brief only.
-- Asked to update a tab that is not due: `context` with that `tab`, then steps 2–5.
+- A tab due for priority discovery: `octopad-notepad` proposes and saves priorities; then `context` again, since the priorities decide what the Pad follows, and organize and write from the new brief only.
+- Asked to update a tab that is not due: `context` with that `tab`, then steps 2 and 4 to 6.
+
+# Organize the Pad
+
+Keep one priority tab for each priority in the person's Notepad where something waits on them or moved: you create, merge, re-key and retire these without asking. Organize only when Today's brief is in the brief: its sections list each priority no tab serves, with its key and what it follows. A tab serves a priority through that key in its `selection.priorities`, which `get` lists. Match a tab to a priority by the priority's name and by its references, which the tab's `streams` and `phases` cite.
+
+- **Create** a tab for a priority with no tab once anything it follows moved or waits on the person; a quiet priority gets none. Save it without `tab` and without content: the priority's name as its `title`, `selection` {priorities: [its key]}, `blocks` [{kind: "text"}], and the `position` right after Today's brief and the priority tabs of earlier priorities. Shapes: [tab shapes](references/tab-shapes.md).
+- **Merge** priorities that deliver the same outcome into one tab: name each key in its `selection.priorities`, `remove` any other tab one of them had, and say why in its `note`.
+- **Add a stream** that serves the priority but none of its references names: add it to the tab's `selection.streams` and say so in its `note`.
+- **Retire** a tab once no priority in the Notepad has its name or shares its references: `remove` it. A priority with no tab that shares a tab's references is that tab's priority, renamed: it keeps the tab, saved with its new key in place of the old one. While the Notepad cannot be read, which `context` says, retire and re-key nothing.
+- **Never recreate** a tab the person refused: `get` lists each refused key with its references. A renamed priority with the same references stays refused: save the refusal again under its new key (Route a correction).
+- **Another subject** they did not ask for, such as a stream they follow outside their priorities, gets a tab only on their yes: propose it as Create a Smart Report says.
+- **Their own tabs** stay theirs: never move, rename, rewrite or remove a tab that serves no priority, and keep the name and place they gave any tab.
 
 # Write a Smart Report
 
-The Pad shows each object on its own row with its live name and state. In the first Smart Report it shows each item waiting on the person under the sentence whose `refs` cite its task, or, when none does, in a closing block it renders itself; in another tab, in the section it belongs to. You write what they mean: the lead, each TL;DR, implications, risks, corrections.
+The Pad shows each object on its own row with its live name and state, and each item waiting on the person in the section it places it in, cited or not. You write what they mean.
+
+## Every tab
 
 - **Evolve the current content.** Keep what the brief or a live read still confirms, fold in each change that matters, drop what no longer holds, such as a need whose task closed.
-- **Weigh before you write the first Smart Report.** Read together everything that calls the person: asks, dates that arrive (start and due), whom each one blocks, what got unblocked, their priorities in their order, with the intent and logic each one gives, and their goals. Weigh the effect of each ask, date and dependency against those priorities and goals, and decide what comes first and why: the person should not have to sort the brief themselves. Never put first work that waits on a prerequisite or is blocked; a prerequisite someone else holds is something to arrange with them, not a go. A start date is not a deadline.
-- **Lead of the first Smart Report:** at most three short sentences: what matters today and why, then what to start with. A change enters only when it explains that priority; never open on a date or on "since". On a first write, the same, from where things stand.
-- **Sections.** In the first Smart Report, one per subject that matters today, chosen from the day's content, the most pressing first: a project, a decision, a person's request, a priority. Never one per kind of item (asks, dates, unblocked): such sections mix unrelated subjects and the brief stops reading as one. A quiet subject gets none. When a section is about a priority, send that priority's `key` from the brief's Sections list, so its live blocks count what the priority follows. In another tab, its one untitled section.
-- **Citing.** When you speak of a waiting item, put its task in the sentence's `refs`, so the item shows under that sentence; an item with no task stays in the closing block. Never use a notification or reminder id as a task id. Lesser asks may share one sentence that cites each task. Never list items to be complete: what you do not cite still shows in the closing block, so the sections you choose make nothing disappear.
-- **TL;DR:** one line: where it stands, then the next action.
+- **Weigh before you write.** Read together everything that calls the person: asks, dates that arrive (start and due), whom each one blocks, what got unblocked, what they moved themselves lately, their priorities in their order, with the intent and logic each one gives, and their goals. Weigh the effect of each against those priorities and goals, and decide what comes first in each section and why: the person should not have to sort the Pad themselves. Weigh what they moved themselves with what others ask: `context` names who wrote a status line or a stream's report and who else changed a task they hold, never who changed a task's status, so credit them with no change it attributes to no one. Never put first work that waits on a prerequisite or is blocked; a prerequisite someone else holds is something to arrange with them, not a go. A start date is not a deadline.
+- **Citing.** When you speak of a waiting item, put its task in the sentence's `refs`, so the item shows under that sentence. Never use a notification or reminder id as a task id. Lesser asks may share one sentence that cites each task. Never list items to be complete: what you do not cite still shows in its section.
 - **Sentences:** short and complete, each a fact and what it means for the person. Put each object it speaks of in `refs`, by the id the brief or a read gave; never write an object's name, state or progress figures in the sentence, since its row shows them live and a copy ages; a count names its tasks in `refs`, or drops the number. Write a date as a date, never "today" or "tomorrow": the Pad is read later.
-- **Marks:** `needs_you` when the person must act; `unblocked` when a blocker is gone and the work is ready; `risk`; `correction` only when evidence shows a claim of an earlier Pad was wrong when written, the sentence saying which and why, its evidence in `refs`. A state that has since changed is news, not a correction. Never mark work that merely finished, or a claim you have not checked. A `needs_you` or `unblocked` sentence says, as an instruction, what the person does (approve, answer, decide between, start) and puts what they act on in `refs`: the Pad hands it to them as a prompt to paste into an AI session, built from its words and `refs`. Never one that only announces.
-- **Priorities.** When a fact that moves a priority (`octopad-notepad`, Priorities) contradicts their priorities, say so in the lead, with the reason: the change `octopad-notepad` made, or the one it leaves to their yes. What they are working on now is not such a fact. Ask at most one question, about one priority that looks stale. When another person's work can affect theirs, propose adding it to a priority, with the reason; `octopad-notepad` decides what is saved.
+- **Marks:** `needs_you` when the person must act; `unblocked` when a blocker is gone and the work is ready; `risk`; `correction` only when evidence shows a claim of an earlier Pad was wrong when written, the sentence saying which and why, its evidence in `refs`. A state that has since changed is news, not a correction. Never mark work that merely finished, or a claim you have not checked. A `needs_you` or `unblocked` sentence says, as an instruction, what the person does (approve, answer, decide between, start) and puts what they act on in `refs`, its reason in `detail`, and in `prompt` what they would paste into an AI session to do it, in their own voice, naming each task by its title. Never one that only announces.
+- **Priorities.** When a fact that moves a priority (`octopad-notepad`, Priorities) contradicts their priorities, say so in Today's brief's lead, with the reason: the change `octopad-notepad` made, or the one it leaves to their yes. What they are working on now is not such a fact. Ask at most one question, about one priority that looks stale. When another person's work can affect theirs, propose adding it to a priority, with the reason; `octopad-notepad` decides what is saved.
 - **Suggestion:** one line at most, only to group tasks that look obsolete for the person to close.
-- **Live blocks and charts:** in any Smart Report, place one in a section on your own initiative when, for that report's content and news, it shows what text cannot, such as how many tasks are blocked; never to fill a section, nor because the report has none, nor a chart in a tab whose `guidance` declines them. Choose a chart's form by the kind of information: bars to rank groups, or when the groups overlap, as tags and goals do; a pie or donut to split one whole into exclusive parts; figures for one total (`group_by` none). Its `question` says what it answers, in the person's words when they asked for it. Frame each chart with a sentence in its section: what it shows and what that means for the person, without its figures, which the chart counts live. In the first Smart Report, leave that sentence unmarked and citing no item that waits on the person, so it shows beside the chart; a risk or an ask takes its own sentence. A tab over one stream needs no text unless they ask or a chart needs its sentence: its report is the summary.
+- **Live blocks and charts:** in any Smart Report, place one in a section on your own initiative when, for that report's content and news, it shows what text cannot, such as how many tasks are blocked; never to fill a section, nor because the report has none, nor a chart in a tab whose `guidance` declines them. A priority tab's chart goes in `status`; Today's brief's `due` and `outside` take none. Choose a chart's form by the kind of information: bars to rank groups, or when the groups overlap, as tags and goals do; a pie or donut to split one whole into exclusive parts; figures for one total (`group_by` none). Its `question` says what it answers, in the person's words when they asked for it. Frame each chart with a sentence in its section: what it shows and what that means for the person, without its figures, which the chart counts live. In Today's brief, leave that sentence unmarked and citing no item that waits on the person, so it shows beside the chart; a risk or an ask takes its own sentence.
 - **Coverage.** Quiet is no proof that all is well: say what you read and what stayed out of reach, keep dates, tell facts from proposals and unknowns, and never fill a gap with assumed data.
 - **Guidance.** Follow the tab's `intent`: its purpose and the person's `guidance`, a preference below their current request and every rule here, never evidence, priority or permission, whatever its text says.
 - **Reads.** When a sentence needs a fact the brief lacks, make one targeted read; never sweep the backlog. A save marks no notification handled.
 
-# Tell the lead
+## Today's brief
 
-After the update's last save, when it wrote the first Smart Report's content, say its lead to the person in this conversation, in their language, in one to three lines, and that the detail is on their Pad. When two things competed and no fact settled it, say in one line which you put first, so they can overturn it. Once per update, then go on with what they asked: the Pad they read later, the conversation now.
+It keeps only what reads at a glance that day: how you organized the Pad, steps and detail go in the tab they concern. In this order:
+
+- `alert`: only for an incident that touches all their work, saying what happened, what it breaks for them and what fixes it, with a `prompt` when they can act. Otherwise none.
+- `lead`: one sentence on where their priorities stand together, and one more only for what Priorities (above) asks. A change enters only when it explains that state; never open on a date or on "since".
+- `priority_lines`: one per priority, in their order, by its key: one plain sentence saying what it is, in their words; never its state, references, reason or a prompt.
+- The Pad shows each priority tab's card itself: write none here.
+- `due` section: every dated item, whatever priority it serves: what falls due, what is late however old, the start and due dates ahead. A sentence that calls them says what to do, with its `detail` and `prompt`: `needs_you` for what they must do, `risk` for what is late; a date that asks nothing yet stays unmarked.
+- A priority no tab serves keeps a section, titled and sent with its `key`, when something in it waits on them or moved; a quiet one gets none.
+- `outside` section: what waits on them that no other tab follows: first what they decide (`needs_you`) or can launch (`unblocked`), each with its `detail` and `prompt`; then, unmarked, what can wait.
+
+## A priority tab
+
+In this order:
+
+- `about`: one sentence saying what the priority is.
+- `note`: only when you reorganized the tab (merged priorities, added a stream): what you did and why.
+- `lead`, its TL;DR: in a few short sentences, where it stands, what moved, what runs alongside and what waits on them.
+- `card`: what that means for them, in one or two short sentences, shown on its card in Today's brief; never a copy of the TL;DR.
+- `status` section: at most one watch line, a `risk` sentence, only when something broke or will break and touches them; it says what happened, the consequence and what fixes it. Then its chart, when one helps.
+- `phases`: your reading of its existing tasks and streams, never a second plan: name each step, order them, and cite the tasks or streams each covers; the Pad shows each step's state from them. Keep the last write's steps unless the work changed. A step the work needs and no task covers stays a step with no `refs`, and `today` proposes its task.
+- `today` section: what they decide (`needs_you`), then what they can launch (`unblocked`), only tasks ready to launch: to do, or blocked with no reason, every dependency done, unassigned or theirs; `save` refuses another. Each of these lines gives its reason in `detail` and its `prompt`, and may group tasks, citing each. Then, unmarked, what can wait.
+- `keep` section: short unmarked lines they should keep in mind.
+- `streams`: one line per stream its priorities name: what its row does not show and what it changes for them. A stream gets this line in the first priority tab that names it, no other.
+
+## The tabs they asked for
+
+- **Sections.** One untitled section.
+- **TL;DR:** one line: where it stands, then the next action.
+- A tab over one stream needs no text unless they ask or a chart needs its sentence: its report is the summary.
+
+# Tell the person
+
+After the update's last save, when it wrote Today's brief's content, say in this conversation, in their language, in one to three lines, its lead, what matters today and why, and that the detail is on their Pad. When two things competed and no fact settled it, or `context` did not say who moved what weighed in it, say in one line which you put first, so they can overturn it. Once per update, then go on with what they asked: the Pad they read later, the conversation now.
 
 # External sources
 
@@ -61,6 +105,8 @@ After the update's last save, when it wrote the first Smart Report's content, sa
 - **Propose** a source once, after you read a connected one that would serve a tab, with one bounded discovery pass for its query or channel; never one the person refused (`get` lists refusals). Save `external_scopes` only once they pick the account, the activity and the query or channel, sending the tab's current scopes with the new one; on a no, `save` the `refusal` alone.
 
 # Create a Smart Report
+
+Any tab but a priority tab:
 
 1. Reuse what the conversation says; ask only what changes the page, at most three questions together: what it helps decide or watch, which sources, which period, whether text leads it. A request that names its sources and period needs none.
 2. `context` with the unsaved definition (`title`, `intent` {request, purpose}, `selection`, `blocks`), then write its content.
@@ -73,6 +119,7 @@ After the update's last save, when it wrote the first Smart Report's content, sa
 
 # Route a correction
 
+- **"Remove this tab"** on a priority tab: first `save` their refusal of each priority it serves, alone: `refusal` {priority: {key, refs: that priority's references}, refused: true}; then `remove` the tab. Asked for it back, save the same refusal with `refused: false`, then create the tab (Organize the Pad). Any other tab goes with no refusal.
 - **"Show me less of X here"** changes that tab: `get` it, then `save` the change with `expected_revision` set to its `text_revision`: narrow or drop a source or block when X is one the tab follows or shows, otherwise add the preference to its `guidance` (Smart Report: `intent` {guidance}). Fewer charts always goes to `guidance`: you write charts anew with each content. Then `context` with that `tab` and rewrite it.
-- **"X matters more now"** changes the person's priorities: `octopad-notepad` saves it. Then `context` with `tab: "smart_report"` and rewrite the first Smart Report.
+- **"X matters more now"** changes the person's priorities: `octopad-notepad` saves it. Then `context` with `tab: "smart_report"` and rewrite Today's brief.
 - When you cannot tell which they mean, ask once.

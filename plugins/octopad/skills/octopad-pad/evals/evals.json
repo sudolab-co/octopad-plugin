@@ -1,11 +1,11 @@
 {
   "skill_name": "octopad-pad",
   "protocol": {
-    "status": "31.1.0 cases chart-in-another-tab, chart-form-by-information and no-chart-without-value written 2026-11-15 and not run, unasked-chart extended to 31.0.0 and 31.1.0 with the framing sentence: an eval's model calls wait for the operator's yes on its protocol. 29.1.0 case line-says-what-to-do written 2026-11-12 and not run: an eval's model calls wait for the operator's yes on its protocol. 27.0.0 cases written 2026-11-11 and not run: the operator decided that this change makes no model call. Earlier: run 2026-11-10 on 24.0.0 and 26.0.0 (80 agent runs), then reruns of 15 and 6 runs on the fixed 26.0.0 skill.",
+    "status": "32.0.0 cases organize-first-run, write-organized-pad, general-alert, notepad-unreadable, priority-left-renamed, remove-priority-tab and moved-recently written 2026-11-16 with their fixtures and not run, and 32.0.0 added to the creation, correction and trigger cases: an eval's model calls wait for the operator's yes on its protocol. 31.1.0 cases chart-in-another-tab, chart-form-by-information and no-chart-without-value written 2026-11-15 and not run, unasked-chart extended to 31.0.0 and 31.1.0 with the framing sentence: an eval's model calls wait for the operator's yes on its protocol. 29.1.0 case line-says-what-to-do written 2026-11-12 and not run: an eval's model calls wait for the operator's yes on its protocol. 27.0.0 cases written 2026-11-11 and not run: the operator decided that this change makes no model call. Earlier: run 2026-11-10 on 24.0.0 and 26.0.0 (80 agent runs), then reruns of 15 and 6 runs on the fixed 26.0.0 skill.",
     "purpose": "Compare plugin 26.0.0 (Smart Report by focus theme, lead on what changed) with 27.0.0 (decision brief by subject, lead said in the conversation) on routing and on the observable Pad writes; static checks do not establish AI behavior.",
     "execution": "claude plugin eval on the Claude Code subscription, after the operator approves the protocol. Every Octopad tool is a mock answering fictional fixtures: nothing reaches an Octopad organization.",
-    "comparison": "The behaviour and correction cases run on both versions; the trigger cases on 27.0.0 only. Both versions get the same server lines, including the one a Smart Report save returns, so lead-said-in-the-conversation compares them and is not a defeat proof. Defeat proofs: lead-says-what-matters-and-where-to-start must reject a 26.0.0 lead that opens on what changed since a date; the correction cases on 27.0.0 with the section \"Route a correction\" removed must fail at least one of them. The 31.1.0 chart cases run on 31.0.0 and 31.1.0: chart-in-another-tab and chart-form-by-information must fail on 31.0.0, where a tab other than the first takes a chart only on request; no-chart-without-value must pass on both.",
-    "release_limit": "Unrun cases are not a routing, behavioral or non-regression pass. Before a run, the mocks must serve each case's context: a fixed date and time zone, the revisions and through values, the full Notepad with its focus themes, the goal at base_revision 3, the external scopes, and the server's real context and save lines, the same for both versions. stale-theme, outside-first, undecided-order, peer-work, unasked-chart, start-date-only, chart-in-another-tab, chart-form-by-information and no-chart-without-value have no fixtures yet."
+    "comparison": "The behaviour and correction cases run on both versions; the trigger cases on 27.0.0 only. Both versions get the same server lines, including the one a Smart Report save returns, so lead-said-in-the-conversation compares them and is not a defeat proof. Defeat proofs: lead-says-what-matters-and-where-to-start must reject a 26.0.0 lead that opens on what changed since a date; the correction cases on 27.0.0 with the section \"Route a correction\" removed must fail at least one of them. The 31.1.0 chart cases run on 31.0.0 and 31.1.0: chart-in-another-tab and chart-form-by-information must fail on 31.0.0, where a tab other than the first takes a chart only on request; no-chart-without-value must pass on both. The 32.0.0 cases run on 31.1.0 and 32.0.0. Defeat proofs: organize-first-run and priority-left-renamed must fail on 31.1.0, which creates no tab without a yes, and remove-priority-tab must fail there, since 31.1.0 records no refusal; write-organized-pad must fail on 31.1.0, which writes none of the organized fields. The creation, correction and trigger cases run on 32.0.0 as a non-regression check.",
+    "release_limit": "Unrun cases are not a routing, behavioral or non-regression pass. Before a run, the mocks must serve each case's context: a fixed date and time zone, the revisions and through values, the full Notepad with its focus themes, the goal at base_revision 3, the external scopes, and the server's real context and save lines, the same for both versions. stale-theme, outside-first, undecided-order, peer-work, unasked-chart, start-date-only, chart-in-another-tab, chart-form-by-information and no-chart-without-value have no fixtures yet. Each 32.0.0 case has a fixture in evals/fixtures, rendered by the server's own code: the start_session Pad part, the Notepad, pad get, each context in call order, the ready tasks and the save rules; the mocks serve them and refuse a save as the server would. The second context of organize-first-run and priority-left-renamed assumes the expected organization; a run that organizes otherwise is graded on its calls, not on what it writes next."
   },
   "evals": [
     {
@@ -312,7 +312,8 @@
       "kind": "behaviour",
       "versions": [
         "26.0.0",
-        "27.0.0"
+        "27.0.0",
+        "32.0.0"
       ],
       "context": "No Pad due. The request names its stream and period.",
       "expected_behavior": [
@@ -366,7 +367,8 @@
       "kind": "behaviour",
       "versions": [
         "26.0.0",
-        "27.0.0"
+        "27.0.0",
+        "32.0.0"
       ],
       "context": "No Pad due. Nothing in the workspace is about sales.",
       "expected_behavior": [
@@ -817,7 +819,8 @@
       "kind": "correction",
       "versions": [
         "26.0.0",
-        "27.0.0"
+        "27.0.0",
+        "32.0.0"
       ],
       "context": "No Pad due. Hiring is a priority and a Smart Report section.",
       "expected_behavior": [
@@ -874,7 +877,8 @@
       "kind": "correction",
       "versions": [
         "26.0.0",
-        "27.0.0"
+        "27.0.0",
+        "32.0.0"
       ],
       "context": "No Pad due. Billing is the third priority.",
       "expected_behavior": [
@@ -931,7 +935,8 @@
       "kind": "correction",
       "versions": [
         "26.0.0",
-        "27.0.0"
+        "27.0.0",
+        "32.0.0"
       ],
       "context": "No Pad due. The priorities, in their order, weigh in what the first Smart Report puts first; Billing is the third.",
       "expected_behavior": [
@@ -1039,7 +1044,8 @@
       "must_load": true,
       "kind": "trigger",
       "versions": [
-        "27.0.0"
+        "27.0.0",
+        "32.0.0"
       ],
       "context": "Must load octopad-pad.",
       "expected_behavior": [
@@ -1061,7 +1067,8 @@
       "must_load": true,
       "kind": "trigger",
       "versions": [
-        "27.0.0"
+        "27.0.0",
+        "32.0.0"
       ],
       "context": "Must load octopad-pad.",
       "expected_behavior": [
@@ -1083,7 +1090,8 @@
       "must_load": true,
       "kind": "trigger",
       "versions": [
-        "27.0.0"
+        "27.0.0",
+        "32.0.0"
       ],
       "context": "Must load octopad-pad. The first Smart Report already reads one Gmail scope; the prompt names the account, the channel and the activity, so the AI can save without asking.",
       "expected_behavior": [
@@ -1122,7 +1130,8 @@
       "must_load": false,
       "kind": "trigger",
       "versions": [
-        "27.0.0"
+        "27.0.0",
+        "32.0.0"
       ],
       "context": "Must not load octopad-pad.",
       "expected_behavior": [
@@ -1163,7 +1172,8 @@
       "must_load": false,
       "kind": "trigger",
       "versions": [
-        "27.0.0"
+        "27.0.0",
+        "32.0.0"
       ],
       "context": "Must not load octopad-pad.",
       "expected_behavior": [
@@ -1204,7 +1214,8 @@
       "must_load": false,
       "kind": "trigger",
       "versions": [
-        "27.0.0"
+        "27.0.0",
+        "32.0.0"
       ],
       "context": "Must not load octopad-pad.",
       "expected_behavior": [
@@ -1245,7 +1256,8 @@
       "must_load": false,
       "kind": "trigger",
       "versions": [
-        "27.0.0"
+        "27.0.0",
+        "32.0.0"
       ],
       "context": "Must not load octopad-pad.",
       "expected_behavior": [
@@ -1286,7 +1298,8 @@
       "must_load": false,
       "kind": "trigger",
       "versions": [
-        "27.0.0"
+        "27.0.0",
+        "32.0.0"
       ],
       "context": "Must not load octopad-pad.",
       "expected_behavior": [
@@ -1327,7 +1340,8 @@
       "must_load": false,
       "kind": "trigger",
       "versions": [
-        "27.0.0"
+        "27.0.0",
+        "32.0.0"
       ],
       "context": "Must not load octopad-pad.",
       "expected_behavior": [
@@ -1377,6 +1391,666 @@
           "input_match": ".",
           "min": 0,
           "max": 0
+        }
+      ]
+    },
+    {
+      "id": "organize-first-run",
+      "prompt": "Good morning. Let us get going in Octopad, workspace Example.",
+      "must_load": true,
+      "kind": "behaviour",
+      "versions": [
+        "31.1.0",
+        "32.0.0"
+      ],
+      "context": "Fixture evals/fixtures/organize-first-run.json. Today's brief due; four priorities and no priority tab yet. Atlas launch and Atlas launch site name the same goal and ship together; Billing migration waits on a task of the Payments API stream, which no priority names; Design hiring is quiet; Brand watch is the person's own tab; Support backlog work waits outside every priority.",
+      "expected_behavior": [
+        "The run opens octopad-pad and records it with skill_opened.",
+        "Every save of an existing tab carries expected_revision.",
+        "Without asking the person first, one pad save without tab creates a tab whose selection.priorities holds both theme:f1c82c7c (Atlas launch) and theme:ae96ffdf (Atlas launch site). FAIL if they get a tab each, or if the run waits for a yes before creating it.",
+        "One pad save without tab creates a tab whose selection.priorities holds theme:bca91fcd (Billing migration).",
+        "No selection names theme:cf797bbc (Design hiring): nothing in it moved or waits.",
+        "The Billing migration tab's selection adds stream 20000000-0000-4000-8000-000000000004 (Payments API), and that tab's content has a note saying why. FAIL if the stream is added with no note in that tab, or if the note goes in Today's brief.",
+        "No call names Brand watch (b0000000-0000-4000-8000-000000000007), the person's own tab.",
+        "No save creates a tab that serves no priority; a tab on Support backlog, if proposed, only goes through show.",
+        "After creating the tabs, the run calls pad context again with no tab and saves each new tab with content and the through that second context gave (2026-11-16T07:29:31.412938Z for c0000000-0000-4000-8000-000000000001, 2026-11-16T07:29:32.412939Z for c0000000-0000-4000-8000-000000000002).",
+        "Today's brief is saved with the second context's through (2026-11-16T07:29:30.412937Z), with no note and no card; its priority_lines name the four priority keys once each, in the Notepad's order.",
+        "Each creation save places its tab right after Today's brief (position 1 or 2), ahead of Brand watch."
+      ],
+      "graders": [
+        {
+          "name": "opens-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 1
+        },
+        {
+          "name": "every-save-carries-its-revision",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\")(?![\\s\\S]*\"expected_revision\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "atlas-and-site-merged",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?![\\s\\S]*\"tab\":)(?![\\s\\S]*\"refusal\")(?=[\\s\\S]*theme:f1c82c7c)(?=[\\s\\S]*theme:ae96ffdf)",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "billing-tab-created",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?![\\s\\S]*\"tab\":)(?![\\s\\S]*\"refusal\")(?=[\\s\\S]*\"priorities\":\\s*\\[[^\\]]*theme:bca91fcd)",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "quiet-priority-gets-no-tab",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"priorities\":\\s*\\[[^\\]]*theme:cf797bbc)",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "payments-stream-added",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"selection\":\\s*\\{[^}]*\"streams\":\\s*\\[[^\\]]*20000000-0000-4000-8000-000000000004)",
+          "min": 1
+        },
+        {
+          "name": "added-stream-has-its-note",
+          "type": "llm",
+          "focus": "mock_calls"
+        },
+        {
+          "name": "own-tab-untouched",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*b0000000-0000-4000-8000-000000000007)(?=[\\s\\S]*\"action\":\\s*\"(save|remove)\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "no-unasked-other-tab",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?![\\s\\S]*\"tab\":)(?![\\s\\S]*\"refusal\")(?![\\s\\S]*\"priorities\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "context-read-again",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"context\")(?![\\s\\S]*\"tab\")",
+          "min": 2
+        },
+        {
+          "name": "atlas-written-from-second-context",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"c0000000-0000-4000-8000-000000000001\")(?=[\\s\\S]*\"content\")(?=[\\s\\S]*\"through\":\\s*\"2026-11-16T07:29:31\\.412938Z\")",
+          "min": 1
+        },
+        {
+          "name": "billing-written-from-second-context",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"c0000000-0000-4000-8000-000000000002\")(?=[\\s\\S]*\"content\")(?=[\\s\\S]*\"through\":\\s*\"2026-11-16T07:29:32\\.412939Z\")",
+          "min": 1
+        },
+        {
+          "name": "brief-written-from-second-context",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_report\")(?=[\\s\\S]*\"through\":\\s*\"2026-11-16T07:29:30\\.412937Z\")",
+          "min": 1
+        },
+        {
+          "name": "no-note-or-card-in-the-brief",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_report\")(?=[\\s\\S]*\"(note|card)\":)",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "priority-lines-and-positions",
+          "type": "llm",
+          "focus": "mock_calls"
+        }
+      ]
+    },
+    {
+      "id": "write-organized-pad",
+      "prompt": "Good morning. Let us get going in Octopad, workspace Example.",
+      "must_load": true,
+      "kind": "behaviour",
+      "versions": [
+        "31.1.0",
+        "32.0.0"
+      ],
+      "context": "Fixture evals/fixtures/write-organized-pad.json. Today's brief, Atlas launch (Atlas launch and Atlas launch site) and Billing migration (with the Payments API stream) are due; Brand watch is not. The provider sandbox outage breaks Billing's tests before the person's cutover rehearsal; the site's footer review slipped a day; the goal's status line asks for a press kit no task covers; the launch email waits on the store review.",
+      "expected_behavior": [
+        "The run opens octopad-pad and records it with skill_opened.",
+        "Every save of an existing tab carries expected_revision.",
+        "pad context is called exactly once, and no tab is created, re-keyed or removed: the Pad needs no reorganizing.",
+        "Today's brief's lead is one sentence on where the four priorities stand together. FAIL if it has more than one sentence, lists asks, or opens on a date or on \"Since\".",
+        "Today's brief's priority_lines hold exactly one line per priority, keys theme:f1c82c7c, theme:bca91fcd, theme:ae96ffdf, theme:cf797bbc in that order, each one plain sentence saying what the priority is. FAIL if a line gives its state, progress, a reference, a reason or a prompt.",
+        "Today's brief has no alert: no incident touches all the work.",
+        "Today's brief's due section cites every dated item: 40000000-0000-4000-8000-000000000051 (due 2026-11-16), 40000000-0000-4000-8000-000000000052 and 40000000-0000-4000-8000-000000000053 (late), 40000000-0000-4000-8000-000000000054 (starts 2026-11-18) and 40000000-0000-4000-8000-000000000013 (due 2026-11-19); each sentence that calls the person has a detail and a prompt. FAIL if a dated item is missing or such a sentence lacks either.",
+        "Today's brief's outside section has the partner's data request (40000000-0000-4000-8000-000000000041) as needs_you with a detail and a prompt, then the support macro review (40000000-0000-4000-8000-000000000042) unmarked.",
+        "Today's brief has no note and no card and cites none of the tasks the Atlas launch tab handles in its today section (40000000-0000-4000-8000-000000000003, 40000000-0000-4000-8000-000000000007, 40000000-0000-4000-8000-000000000004, 40000000-0000-4000-8000-000000000005).",
+        "The Atlas launch tab (b0000000-0000-4000-8000-000000000001) is saved with about, lead, card and phases; its card says what the state means for the person and is not a copy of its lead.",
+        "The Atlas launch tab's status section holds no risk sentence: the footer review slip touches no one's work.",
+        "The Billing migration tab's (b0000000-0000-4000-8000-000000000002) status section holds exactly one risk sentence: the provider sandbox is down (what happened), the end-to-end tests and the cutover rehearsal due 2026-11-19 are at risk (consequence), and the provider's fix expected 2026-11-18 (what fixes it), citing 40000000-0000-4000-8000-000000000014 or 40000000-0000-4000-8000-000000000013.",
+        "The Atlas launch tab's phases keep the last write's labels in order: Build the app, Store review, Launch site, Press kit; Press kit cites nothing. FAIL if a label is renamed, a step reordered or dropped, or Press kit cites a task.",
+        "The Atlas launch tab's today section proposes a task for the press kit, which the goal's status line says no one owns: a needs_you line whose prompt asks to create it.",
+        "The Atlas launch tab's today section has needs_you lines for the listing approval (40000000-0000-4000-8000-000000000003) and the price answer (40000000-0000-4000-8000-000000000007), and unblocked lines only for ready tasks (40000000-0000-4000-8000-000000000004, 40000000-0000-4000-8000-000000000005), each line with a detail and a prompt. FAIL if a saved unblocked sentence cites the launch email (40000000-0000-4000-8000-000000000006), which waits on the store review.",
+        "Each priority tab's streams give one line per stream its priorities name (Atlas launch: 20000000-0000-4000-8000-000000000001 and 20000000-0000-4000-8000-000000000002; Billing migration: 20000000-0000-4000-8000-000000000003), with no task names or figures.",
+        "No saved text says \"your AI\" or makes Octopad the one who acts; any first person is the person's own AI; no saved text says today, tomorrow or yesterday where a date belongs.",
+        "Brand watch (b0000000-0000-4000-8000-000000000007), not due, gets no save.",
+        "After the last save, one assistant message gives Today's brief's lead, what matters today and why, and says the detail is on the Pad, in one to three lines, before goal upkeep."
+      ],
+      "graders": [
+        {
+          "name": "opens-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 1
+        },
+        {
+          "name": "every-save-carries-its-revision",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\")(?![\\s\\S]*\"expected_revision\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "one-context-call",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"context\")",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "no-tab-created",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?![\\s\\S]*\"tab\":)(?![\\s\\S]*\"refusal\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "no-tab-removed",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"remove\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "no-selection-change",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"selection\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "priority-lines-in-order",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_report\")(?=[\\s\\S]*\"priority_lines\"[\\s\\S]*theme:f1c82c7c[\\s\\S]*theme:bca91fcd[\\s\\S]*theme:ae96ffdf[\\s\\S]*theme:cf797bbc)",
+          "min": 1
+        },
+        {
+          "name": "no-alert",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_report\")(?=[\\s\\S]*\"alert\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "every-dated-item-cited",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_report\")(?=[\\s\\S]*40000000-0000-4000-8000-000000000051)(?=[\\s\\S]*40000000-0000-4000-8000-000000000052)(?=[\\s\\S]*40000000-0000-4000-8000-000000000053)(?=[\\s\\S]*40000000-0000-4000-8000-000000000054)(?=[\\s\\S]*40000000-0000-4000-8000-000000000013)",
+          "min": 1
+        },
+        {
+          "name": "brief-keeps-out-tab-lines",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_report\")(?=[\\s\\S]*40000000-0000-4000-8000-00000000000[3457])",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "no-note-or-card-in-the-brief",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_report\")(?=[\\s\\S]*\"(note|card)\":)",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "atlas-tab-fields",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"b0000000-0000-4000-8000-000000000001\")(?=[\\s\\S]*\"about\")(?=[\\s\\S]*\"lead\")(?=[\\s\\S]*\"card\")(?=[\\s\\S]*\"phases\")",
+          "min": 1
+        },
+        {
+          "name": "atlas-phases-stable",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"b0000000-0000-4000-8000-000000000001\")(?=[\\s\\S]*\"Build the app\"[\\s\\S]*\"Store review\"[\\s\\S]*\"Launch site\"[\\s\\S]*\"Press kit\")",
+          "min": 1
+        },
+        {
+          "name": "brand-watch-untouched",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*b0000000-0000-4000-8000-000000000007)(?=[\\s\\S]*\"action\":\\s*\"(save|remove)\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "no-your-ai",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\\b[Yy]our AI\\b)",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "organized-content",
+          "type": "llm",
+          "focus": "mock_calls"
+        },
+        {
+          "name": "watch-lines",
+          "type": "llm",
+          "focus": "mock_calls"
+        },
+        {
+          "name": "launch-only-ready-tasks",
+          "type": "llm",
+          "focus": "mock_calls"
+        },
+        {
+          "name": "lead-told-in-conversation",
+          "type": "llm"
+        }
+      ]
+    },
+    {
+      "id": "general-alert",
+      "prompt": "Good morning. Let us get going in Octopad, workspace Example.",
+      "must_load": true,
+      "kind": "behaviour",
+      "versions": [
+        "31.1.0",
+        "32.0.0"
+      ],
+      "context": "Fixture evals/fixtures/general-alert.json. As write-organized-pad, plus: the code host connection was revoked on 2026-11-15, so no pull request of any stream merges until the organization's only admin, the person, reconnects it; both priority tabs' streams report it.",
+      "expected_behavior": [
+        "The run opens octopad-pad and records it with skill_opened.",
+        "Every save of an existing tab carries expected_revision.",
+        "Today's brief is saved with an alert that says the code host connection was revoked on 2026-11-15, that no pull request merges in any of the person's work, and that reconnecting it in Settings, which only they as admin can do, fixes it, with a prompt. FAIL if there is no alert, if it concerns one priority only, or if it lacks the fix.",
+        "No priority tab is saved with alert or priority_lines."
+      ],
+      "graders": [
+        {
+          "name": "opens-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 1
+        },
+        {
+          "name": "every-save-carries-its-revision",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\")(?![\\s\\S]*\"expected_revision\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "brief-alert",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_report\")(?=[\\s\\S]*\"alert\":\\s*\\{)",
+          "min": 1
+        },
+        {
+          "name": "no-alert-in-a-priority-tab",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"b0000000)(?=[\\s\\S]*\"(alert|priority_lines)\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "alert-says-what-consequence-fix",
+          "type": "llm",
+          "focus": "mock_calls"
+        }
+      ]
+    },
+    {
+      "id": "notepad-unreadable",
+      "prompt": "Good morning. Let us get going in Octopad, workspace Example.",
+      "must_load": true,
+      "kind": "behaviour",
+      "versions": [
+        "31.1.0",
+        "32.0.0"
+      ],
+      "context": "Fixture evals/fixtures/notepad-unreadable.json. The Notepad cannot be read; Today's brief is due with no through; the priority tabs Atlas launch and Billing migration exist.",
+      "expected_behavior": [
+        "The run opens octopad-pad and records it with skill_opened.",
+        "No tab is removed.",
+        "No save changes a selection or creates a tab.",
+        "The Notepad is not written.",
+        "Today's brief is saved without through, and its text says the priorities could not be read. FAIL if it states the priorities as if read."
+      ],
+      "graders": [
+        {
+          "name": "opens-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 1
+        },
+        {
+          "name": "no-remove",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"remove\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "no-selection-change",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"selection\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "no-tab-created",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?![\\s\\S]*\"tab\":)(?![\\s\\S]*\"refusal\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "notepad-untouched",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__notepad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"(update|restore)\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "brief-saved-without-through",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_report\")(?![\\s\\S]*\"through\")(?=[\\s\\S]*\"content\")",
+          "min": 1
+        },
+        {
+          "name": "says-the-notepad-was-unreadable",
+          "type": "llm",
+          "focus": "mock_calls"
+        }
+      ]
+    },
+    {
+      "id": "priority-left-renamed",
+      "prompt": "Good morning. Let us get going in Octopad, workspace Example.",
+      "must_load": true,
+      "kind": "behaviour",
+      "versions": [
+        "31.1.0",
+        "32.0.0"
+      ],
+      "context": "Fixture evals/fixtures/priority-left-renamed.json. Billing migration was renamed Payment provider switch (same references); Partner portal left the Notepad; Mobile beta program is the renamed Mobile beta, whose tab the person refused on 2026-11-10 (same stream), and a question waits in it. Today's brief and Atlas launch are due.",
+      "expected_behavior": [
+        "The run opens octopad-pad and records it with skill_opened.",
+        "Every save of an existing tab carries expected_revision.",
+        "The Billing migration tab (b0000000-0000-4000-8000-000000000002) is kept and re-keyed: a save on it whose selection.priorities holds theme:b5f51d4c. FAIL if that tab is removed or a new tab is created for theme:b5f51d4c.",
+        "The Partner portal tab (b0000000-0000-4000-8000-000000000005), whose priority left the Notepad, is removed with its expected_revision, and no refusal names theme:4ec2b79b.",
+        "No tab is created for theme:12baf3ca (Mobile beta program), the refused Mobile beta renamed with the same stream.",
+        "A save with refusal alone records the person's refusal under the new key: priority key theme:12baf3ca, refs naming stream 20000000-0000-4000-8000-000000000008, refused true.",
+        "After re-keying and retiring, the run calls pad context again with no tab and saves the Billing migration tab with content and the through that second context gave (2026-11-16T07:29:56.412963Z).",
+        "Today's brief keeps a section sent with key theme:12baf3ca and a title for the question waiting there (40000000-0000-4000-8000-000000000061), since no tab serves that priority.",
+        "Brand watch (b0000000-0000-4000-8000-000000000007) gets no call."
+      ],
+      "graders": [
+        {
+          "name": "opens-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 1
+        },
+        {
+          "name": "every-save-carries-its-revision",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\")(?![\\s\\S]*\"expected_revision\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "billing-re-keyed",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"b0000000-0000-4000-8000-000000000002\")(?=[\\s\\S]*\"priorities\":\\s*\\[[^\\]]*theme:b5f51d4c)",
+          "min": 1
+        },
+        {
+          "name": "billing-kept",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"remove\")(?=[\\s\\S]*b0000000-0000-4000-8000-000000000002)",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "no-new-tab-for-the-renamed-billing",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?![\\s\\S]*\"tab\":)(?![\\s\\S]*\"refusal\")(?=[\\s\\S]*theme:b5f51d4c)",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "portal-retired",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"remove\")(?=[\\s\\S]*b0000000-0000-4000-8000-000000000005)(?=[\\s\\S]*\"expected_revision\")",
+          "min": 1
+        },
+        {
+          "name": "no-refusal-on-retire",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"refusal\")(?=[\\s\\S]*theme:4ec2b79b)",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "refused-priority-not-recreated",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?![\\s\\S]*\"tab\":)(?![\\s\\S]*\"refusal\")(?=[\\s\\S]*theme:12baf3ca)",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "refusal-follows-the-rename",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"refusal\")(?=[\\s\\S]*theme:12baf3ca)(?=[\\s\\S]*20000000-0000-4000-8000-000000000008)(?=[\\s\\S]*\"refused\":\\s*true)",
+          "min": 1
+        },
+        {
+          "name": "context-read-again",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"context\")(?![\\s\\S]*\"tab\")",
+          "min": 2
+        },
+        {
+          "name": "billing-written-from-second-context",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"b0000000-0000-4000-8000-000000000002\")(?=[\\s\\S]*\"content\")(?=[\\s\\S]*\"through\":\\s*\"2026-11-16T07:29:56\\.412963Z\")",
+          "min": 1
+        },
+        {
+          "name": "untabbed-priority-keeps-its-section",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_report\")(?=[\\s\\S]*\"key\":\\s*\"theme:12baf3ca\")",
+          "min": 1
+        },
+        {
+          "name": "own-tab-untouched",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*b0000000-0000-4000-8000-000000000007)(?=[\\s\\S]*\"action\":\\s*\"(save|remove)\")",
+          "min": 0,
+          "max": 0
+        }
+      ]
+    },
+    {
+      "id": "remove-priority-tab",
+      "prompt": "Please take the Billing migration tab off my Pad. I do not need it there.",
+      "must_load": true,
+      "kind": "correction",
+      "versions": [
+        "31.1.0",
+        "32.0.0"
+      ],
+      "context": "Fixture evals/fixtures/remove-priority-tab.json. No Pad due. The Billing migration tab serves the Billing migration priority (refs: its stream and the refund task).",
+      "expected_behavior": [
+        "The run opens octopad-pad and records it with skill_opened.",
+        "A save with refusal alone records the refusal: priority key theme:bca91fcd, refs naming stream 20000000-0000-4000-8000-000000000003 and task 40000000-0000-4000-8000-000000000021, refused true.",
+        "The tab b0000000-0000-4000-8000-000000000002 is removed with expected_revision 3, after the refusal is saved. FAIL if it is removed first or with no refusal.",
+        "No other tab is removed.",
+        "The Notepad is not changed: the priority stays."
+      ],
+      "graders": [
+        {
+          "name": "opens-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 1
+        },
+        {
+          "name": "refusal-recorded",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"refusal\")(?=[\\s\\S]*theme:bca91fcd)(?=[\\s\\S]*20000000-0000-4000-8000-000000000003)(?=[\\s\\S]*40000000-0000-4000-8000-000000000021)(?=[\\s\\S]*\"refused\":\\s*true)(?![\\s\\S]*\"tab\":)",
+          "min": 1
+        },
+        {
+          "name": "tab-removed",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"remove\")(?=[\\s\\S]*b0000000-0000-4000-8000-000000000002)(?=[\\s\\S]*\"expected_revision\":\\s*3\\b)",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "nothing-else-removed",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"remove\")(?![\\s\\S]*b0000000-0000-4000-8000-000000000002)",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "notepad-untouched",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__notepad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"(update|restore)\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "refusal-before-remove",
+          "type": "llm",
+          "focus": "mock_calls"
+        }
+      ]
+    },
+    {
+      "id": "moved-recently",
+      "prompt": "Good morning. Let us get going in Octopad, workspace Example.",
+      "must_load": true,
+      "kind": "behaviour",
+      "versions": [
+        "31.1.0",
+        "32.0.0"
+      ],
+      "context": "Fixture evals/fixtures/moved-recently.json. The person moved three Billing tasks and wrote Billing's report on 2026-11-14 and 2026-11-15; in Atlas launch an ask from 2026-11-13 still waits, and the store review task moved to in progress with no status line.",
+      "expected_behavior": [
+        "The run opens octopad-pad and records it with skill_opened.",
+        "Every save of an existing tab carries expected_revision.",
+        "After the last save, the message that tells the person what matters today gives weight to the Billing work they moved themselves on 2026-11-14 and 2026-11-15, beside Tom's older price question. FAIL if it names only that question as what matters, or never mentions their Billing momentum.",
+        "No saved text or message credits the person with the store review task (40000000-0000-4000-8000-000000000002) moving to in progress, which nothing attributes. FAIL if one does.",
+        "The Billing migration tab's lead says what moved in Billing."
+      ],
+      "graders": [
+        {
+          "name": "opens-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 1
+        },
+        {
+          "name": "every-save-carries-its-revision",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\")(?![\\s\\S]*\"expected_revision\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "momentum-weighed",
+          "type": "llm"
+        },
+        {
+          "name": "no-unattributed-credit",
+          "type": "llm",
+          "focus": "mock_calls"
+        },
+        {
+          "name": "billing-lead-says-what-moved",
+          "type": "llm",
+          "focus": "mock_calls"
         }
       ]
     }

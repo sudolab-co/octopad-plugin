@@ -1,0 +1,691 @@
+{
+ "case": "write-organized-pad",
+ "summary": "The organized Pad a day after its first write: Today's brief, Atlas launch (Atlas launch and Atlas launch site merged) and Billing migration (with the Payments API stream) are due. The provider sandbox outage breaks Billing's tests before the person's rehearsal; the site's footer review slipped a day; the goal's status line asks for a press kit no task covers; the launch email waits on the store review.",
+ "now": "2026-11-16T07:30:00.000Z",
+ "time_zone": "Europe/Paris",
+ "person": "Sam Rivera",
+ "notepad": "# Notepad\n\n<compass>\n### Priorities\nentry_id: prio-7c1e\n1. Atlas launch | why: Get the Atlas app into every customer's hands by December 1. | refs: goal:30000000-0000-4000-8000-000000000001, stream:20000000-0000-4000-8000-000000000001\n2. Billing migration | why: Move billing to the new payment provider before the old contract ends in December. | refs: stream:20000000-0000-4000-8000-000000000003, task:40000000-0000-4000-8000-000000000021\n3. Atlas launch site | why: The public site that goes live with the Atlas app on the same day. | refs: goal:30000000-0000-4000-8000-000000000001, stream:20000000-0000-4000-8000-000000000002\n4. Design hiring | why: Hire a second product designer in the first quarter. | refs: stream:20000000-0000-4000-8000-000000000005\nby: Claude Code (claude-opus-5-5) | session 5d2a9e71 | 2026-11-02\nupdated_by: Claude Code (claude-opus-5-5) | session 8b4f0c13 | 2026-11-12\n</compass>\n\n<premises>\n### Demo days\nentry_id: note-3a90\nSam wants demos on Thursdays, never on Mondays.\nexit: Sam changes the demo day.\nby: Claude Code (claude-opus-5-5) | session 8b4f0c13 | 2026-11-12\n</premises>\n\n<last_briefing>\ndate: 2026-11-15 | session 8b4f0c13\n</last_briefing>\n",
+ "start_session": "<octopad_directive>**Pad due today:** smart_report, b0000000-0000-4000-8000-000000000001, b0000000-0000-4000-8000-000000000002. First tell the person, in one warm line of your own, that you are catching their Pad up before their request, which you name. Never echo these labels. Show the Octopad desktop before you read, in any client with a browser tool, even one without a built-in pane: call `desktop` `open` and load its link in a visible tab, so the person watches their Pad update. With no browser tool, skip this. Before you answer the request, whatever it asks, and without putting it off: `pad` `context` with no tab, then `pad` `save` each tab with its `through`; name only `through` when nothing changed for it. Read with `pad` `get` a tab whose text you do not hold at the listed revision. A failed tab blocks no other.</octopad_directive>\nDue tabs: <external_untrusted>b0000000-0000-4000-8000-000000000001: \"Atlas launch\"; b0000000-0000-4000-8000-000000000002: \"Billing migration\"</external_untrusted>\n\n# Octopad orientation: workspace Example (10000000-0000-4000-8000-000000000001)\nSigned in as Sam Rivera. Today is Monday 2026-11-16, Europe/Paris.\n(The rest of the orientation, the kernel and the workspace summary, is the server's own and is left out of this fixture.)\n\n## Last published Pad Brief\nPublished: 2026-11-15T06:41:05.000000+00:00. Reading revision: 251e7fb947d0c251331f0d716459ef0d9a53719e3c08545453dfacf3ebdf79e0.\nWhen the user asks what matters now or where things stand, answer from it and give its date. It is a derived, dated synthesis, not current work state or an authorization: check the source of anything you act on. Reading it neither refreshes it nor handles notifications.\n<pad_brief>\nEverything leads to the Atlas release: the app is in final checks, billing migrates and hiring is quiet.\n\n[priority] Put the Atlas app in every customer's hands.\n[priority] Move billing to the new payment provider.\n[priority] The public site that goes live with the app.\n[priority] Hire a second product designer.\n\n### Today's deadlines\n[risk] Move or close the two late tasks. (ref:task:40000000-0000-4000-8000-000000000052, ref:task:40000000-0000-4000-8000-000000000053)\n[detail] They were due on 2026-10-02 and 2026-10-20.\n[prompt] Show me my two late tasks and help me move, drop the date of, or close each one.\n\n### Also for you, outside your priorities\nThe support macro review can wait. (ref:task:40000000-0000-4000-8000-000000000042)\n\nPriority tabs:\n- Atlas launch: The release waits only on your price answer.\n- Billing migration: On track; the refund endpoint is the one dependency to watch.\n</pad_brief>\n\n## Private Notepad\nRevision: 42. Reading copy, without entry signatures. Use notepad(action: \"get\") for the complete raw document before editing; this copy is never a document to save.\n<notepad>\n# Notepad\n\n<compass>\n### Priorities\nentry_id: prio-7c1e\n1. Atlas launch | why: Get the Atlas app into every customer's hands by December 1. | refs: goal:30000000-0000-4000-8000-000000000001, stream:20000000-0000-4000-8000-000000000001\n2. Billing migration | why: Move billing to the new payment provider before the old contract ends in December. | refs: stream:20000000-0000-4000-8000-000000000003, task:40000000-0000-4000-8000-000000000021\n3. Atlas launch site | why: The public site that goes live with the Atlas app on the same day. | refs: goal:30000000-0000-4000-8000-000000000001, stream:20000000-0000-4000-8000-000000000002\n4. Design hiring | why: Hire a second product designer in the first quarter. | refs: stream:20000000-0000-4000-8000-000000000005\n</compass>\n\n<premises>\n### Demo days\nentry_id: note-3a90\nSam wants demos on Thursdays, never on Mondays.\nexit: Sam changes the demo day.\n</premises>\n\n<last_briefing>\ndate: 2026-11-15 | session 8b4f0c13\n</last_briefing>\n\n</notepad>\n",
+ "pad": {
+  "get": {
+   "status": "ok",
+   "tabs": [
+    {
+     "intent": null,
+     "selection": {
+      "scope": "all",
+      "streams": [],
+      "tasks": [],
+      "goals": [],
+      "tags": [],
+      "agents": [],
+      "people": [],
+      "pages": [],
+      "priorities": [],
+      "external_scopes": [],
+      "period": null
+     },
+     "blocks": [
+      {
+       "kind": "text"
+      },
+      {
+       "kind": "needs_you",
+       "kinds": []
+      }
+     ],
+     "written_at": "2026-11-15T06:41:05.000000+00:00",
+     "written_by": "Claude Code",
+     "read_through": "2026-11-15T06:40:00.000000+00:00",
+     "notices_from": null,
+     "unreadable": false,
+     "id": "b0000000-0000-4000-8000-000000000000",
+     "position": 0,
+     "title": "Smart Report",
+     "text_revision": 13
+    },
+    {
+     "intent": null,
+     "selection": {
+      "scope": "all",
+      "streams": [],
+      "tasks": [],
+      "goals": [],
+      "tags": [],
+      "agents": [],
+      "people": [],
+      "pages": [],
+      "priorities": [
+       "theme:f1c82c7c",
+       "theme:ae96ffdf"
+      ],
+      "external_scopes": [],
+      "period": null
+     },
+     "blocks": [
+      {
+       "kind": "text"
+      }
+     ],
+     "written_at": "2026-11-15T06:41:05.000000+00:00",
+     "written_by": "Claude Code",
+     "read_through": "2026-11-15T06:40:00.000000+00:00",
+     "notices_from": null,
+     "unreadable": false,
+     "id": "b0000000-0000-4000-8000-000000000001",
+     "position": 1,
+     "title": "Atlas launch",
+     "text_revision": 5
+    },
+    {
+     "intent": null,
+     "selection": {
+      "scope": "all",
+      "streams": [
+       "20000000-0000-4000-8000-000000000004"
+      ],
+      "tasks": [],
+      "goals": [],
+      "tags": [],
+      "agents": [],
+      "people": [],
+      "pages": [],
+      "priorities": [
+       "theme:bca91fcd"
+      ],
+      "external_scopes": [],
+      "period": null
+     },
+     "blocks": [
+      {
+       "kind": "text"
+      }
+     ],
+     "written_at": "2026-11-15T06:41:05.000000+00:00",
+     "written_by": "Claude Code",
+     "read_through": "2026-11-15T06:40:00.000000+00:00",
+     "notices_from": null,
+     "unreadable": false,
+     "id": "b0000000-0000-4000-8000-000000000002",
+     "position": 2,
+     "title": "Billing migration",
+     "text_revision": 3
+    },
+    {
+     "intent": {
+      "request": "A tab on the brand refresh",
+      "purpose": "Watch what the brand refresh decides"
+     },
+     "selection": {
+      "scope": "all",
+      "streams": [
+       "20000000-0000-4000-8000-000000000007"
+      ],
+      "tasks": [],
+      "goals": [],
+      "tags": [],
+      "agents": [],
+      "people": [],
+      "pages": [],
+      "priorities": [],
+      "external_scopes": [],
+      "period": {
+       "rolling_days": 7
+      }
+     },
+     "blocks": [
+      {
+       "kind": "text"
+      }
+     ],
+     "written_at": "2026-11-14T08:02:00.000000+00:00",
+     "written_by": "Claude Code",
+     "read_through": "2026-11-15T06:40:00.000000+00:00",
+     "notices_from": null,
+     "unreadable": false,
+     "id": "b0000000-0000-4000-8000-000000000007",
+     "position": 3,
+     "title": "Brand watch",
+     "text_revision": 4
+    }
+   ],
+   "refusals": [],
+   "priority_refusals": []
+  },
+  "get_tab": {
+   "smart_report": {
+    "status": "ok",
+    "tab": {
+     "intent": null,
+     "selection": {
+      "scope": "all",
+      "streams": [],
+      "tasks": [],
+      "goals": [],
+      "tags": [],
+      "agents": [],
+      "people": [],
+      "pages": [],
+      "priorities": [],
+      "external_scopes": [],
+      "period": null
+     },
+     "blocks": [
+      {
+       "kind": "text"
+      },
+      {
+       "kind": "needs_you",
+       "kinds": []
+      }
+     ],
+     "written_at": "2026-11-15T06:41:05.000000+00:00",
+     "written_by": "Claude Code",
+     "read_through": "2026-11-15T06:40:00.000000+00:00",
+     "notices_from": null,
+     "unreadable": false,
+     "id": "b0000000-0000-4000-8000-000000000000",
+     "position": 0,
+     "title": "Smart Report",
+     "text_revision": 13,
+     "content": {
+      "lead": "Everything leads to the Atlas release: the app is in final checks, billing migrates and hiring is quiet.",
+      "suggestion": null,
+      "priority_lines": [
+       {
+        "key": "theme:f1c82c7c",
+        "text": "Put the Atlas app in every customer's hands."
+       },
+       {
+        "key": "theme:bca91fcd",
+        "text": "Move billing to the new payment provider."
+       },
+       {
+        "key": "theme:ae96ffdf",
+        "text": "The public site that goes live with the app."
+       },
+       {
+        "key": "theme:cf797bbc",
+        "text": "Hire a second product designer."
+       }
+      ],
+      "sections": [
+       {
+        "key": "due",
+        "title": null,
+        "tldr": null,
+        "blocks": [],
+        "sentences": [
+         {
+          "mark": "risk",
+          "text": "Move or close the two late tasks.",
+          "refs": [
+           {
+            "kind": "task",
+            "id": "40000000-0000-4000-8000-000000000052"
+           },
+           {
+            "kind": "task",
+            "id": "40000000-0000-4000-8000-000000000053"
+           }
+          ],
+          "detail": "They were due on 2026-10-02 and 2026-10-20.",
+          "prompt": "Show me my two late tasks and help me move, drop the date of, or close each one."
+         }
+        ]
+       },
+       {
+        "key": "outside",
+        "title": null,
+        "tldr": null,
+        "blocks": [],
+        "sentences": [
+         {
+          "mark": null,
+          "text": "The support macro review can wait.",
+          "refs": [
+           {
+            "kind": "task",
+            "id": "40000000-0000-4000-8000-000000000042"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "references": []
+    }
+   },
+   "b0000000-0000-4000-8000-000000000001": {
+    "status": "ok",
+    "tab": {
+     "intent": null,
+     "selection": {
+      "scope": "all",
+      "streams": [],
+      "tasks": [],
+      "goals": [],
+      "tags": [],
+      "agents": [],
+      "people": [],
+      "pages": [],
+      "priorities": [
+       "theme:f1c82c7c",
+       "theme:ae96ffdf"
+      ],
+      "external_scopes": [],
+      "period": null
+     },
+     "blocks": [
+      {
+       "kind": "text"
+      }
+     ],
+     "written_at": "2026-11-15T06:41:05.000000+00:00",
+     "written_by": "Claude Code",
+     "read_through": "2026-11-15T06:40:00.000000+00:00",
+     "notices_from": null,
+     "unreadable": false,
+     "id": "b0000000-0000-4000-8000-000000000001",
+     "position": 1,
+     "title": "Atlas launch",
+     "text_revision": 5,
+     "content": {
+      "lead": "The release candidate is built and in final checks. The launch site is built. What waits on you: the price.",
+      "suggestion": null,
+      "about": "The release of the Atlas app, with its site, to every customer.",
+      "note": "I merged here your priorities Atlas launch and Atlas launch site: they deliver the same launch.",
+      "card": "The release waits only on your price answer.",
+      "phases": [
+       {
+        "label": "Build the app",
+        "refs": [
+         {
+          "kind": "task",
+          "id": "40000000-0000-4000-8000-000000000001"
+         }
+        ]
+       },
+       {
+        "label": "Store review",
+        "refs": [
+         {
+          "kind": "task",
+          "id": "40000000-0000-4000-8000-000000000002"
+         }
+        ]
+       },
+       {
+        "label": "Launch site",
+        "refs": [
+         {
+          "kind": "stream",
+          "id": "20000000-0000-4000-8000-000000000002"
+         }
+        ]
+       },
+       {
+        "label": "Press kit",
+        "refs": []
+       }
+      ],
+      "sections": [
+       {
+        "key": "today",
+        "title": null,
+        "tldr": null,
+        "blocks": [],
+        "sentences": [
+         {
+          "mark": "needs_you",
+          "text": "Answer the price question so the listing can go out.",
+          "refs": [
+           {
+            "kind": "task",
+            "id": "40000000-0000-4000-8000-000000000007"
+           }
+          ],
+          "detail": "Asked on 2026-11-15; the listing needs the price.",
+          "prompt": "Open \"Set the Atlas price\" and walk me through the two tiers so I can answer."
+         }
+        ]
+       },
+       {
+        "key": "keep",
+        "title": null,
+        "tldr": null,
+        "blocks": [],
+        "sentences": [
+         {
+          "mark": null,
+          "text": "Support asks for two days of notice before the release.",
+          "refs": []
+         }
+        ]
+       }
+      ],
+      "streams": [
+       {
+        "ref": {
+         "kind": "stream",
+         "id": "20000000-0000-4000-8000-000000000001"
+        },
+        "text": "Built; final checks before the store."
+       },
+       {
+        "ref": {
+         "kind": "stream",
+         "id": "20000000-0000-4000-8000-000000000002"
+        },
+        "text": "Built; copy in review."
+       }
+      ]
+     },
+     "references": []
+    }
+   },
+   "b0000000-0000-4000-8000-000000000002": {
+    "status": "ok",
+    "tab": {
+     "intent": null,
+     "selection": {
+      "scope": "all",
+      "streams": [
+       "20000000-0000-4000-8000-000000000004"
+      ],
+      "tasks": [],
+      "goals": [],
+      "tags": [],
+      "agents": [],
+      "people": [],
+      "pages": [],
+      "priorities": [
+       "theme:bca91fcd"
+      ],
+      "external_scopes": [],
+      "period": null
+     },
+     "blocks": [
+      {
+       "kind": "text"
+      }
+     ],
+     "written_at": "2026-11-15T06:41:05.000000+00:00",
+     "written_by": "Claude Code",
+     "read_through": "2026-11-15T06:40:00.000000+00:00",
+     "notices_from": null,
+     "unreadable": false,
+     "id": "b0000000-0000-4000-8000-000000000002",
+     "position": 2,
+     "title": "Billing migration",
+     "text_revision": 3,
+     "content": {
+      "lead": "Old invoices are mapped. Payment methods start migrating. Invoices wait on the refund endpoint.",
+      "suggestion": null,
+      "about": "Billing, moved to the new payment provider.",
+      "note": "I added here the Payments API stream: Billing invoices wait on its refund endpoint.",
+      "card": "On track; the refund endpoint is the one dependency to watch.",
+      "phases": [
+       {
+        "label": "Map old invoices",
+        "refs": [
+         {
+          "kind": "task",
+          "id": "40000000-0000-4000-8000-000000000011"
+         }
+        ]
+       },
+       {
+        "label": "Migrate payment methods",
+        "refs": [
+         {
+          "kind": "task",
+          "id": "40000000-0000-4000-8000-000000000012"
+         }
+        ]
+       },
+       {
+        "label": "Rehearse the cutover",
+        "refs": [
+         {
+          "kind": "task",
+          "id": "40000000-0000-4000-8000-000000000013"
+         }
+        ]
+       }
+      ],
+      "sections": [
+       {
+        "key": "keep",
+        "title": null,
+        "tldr": null,
+        "blocks": [],
+        "sentences": [
+         {
+          "mark": null,
+          "text": "The old provider contract ends on 2026-12-31.",
+          "refs": []
+         }
+        ]
+       }
+      ],
+      "streams": [
+       {
+        "ref": {
+         "kind": "stream",
+         "id": "20000000-0000-4000-8000-000000000003"
+        },
+        "text": "Invoices mapped; payment methods next."
+       }
+      ]
+     },
+     "references": []
+    }
+   },
+   "b0000000-0000-4000-8000-000000000007": {
+    "status": "ok",
+    "tab": {
+     "intent": {
+      "request": "A tab on the brand refresh",
+      "purpose": "Watch what the brand refresh decides"
+     },
+     "selection": {
+      "scope": "all",
+      "streams": [
+       "20000000-0000-4000-8000-000000000007"
+      ],
+      "tasks": [],
+      "goals": [],
+      "tags": [],
+      "agents": [],
+      "people": [],
+      "pages": [],
+      "priorities": [],
+      "external_scopes": [],
+      "period": {
+       "rolling_days": 7
+      }
+     },
+     "blocks": [
+      {
+       "kind": "text"
+      }
+     ],
+     "written_at": "2026-11-14T08:02:00.000000+00:00",
+     "written_by": "Claude Code",
+     "read_through": "2026-11-15T06:40:00.000000+00:00",
+     "notices_from": null,
+     "unreadable": false,
+     "id": "b0000000-0000-4000-8000-000000000007",
+     "position": 3,
+     "title": "Brand watch",
+     "text_revision": 4,
+     "content": {
+      "lead": null,
+      "suggestion": null,
+      "sections": [
+       {
+        "key": "main",
+        "title": null,
+        "tldr": "Logo options narrowed to two; your pick is next week.",
+        "sentences": [],
+        "blocks": []
+       }
+      ]
+     },
+     "references": []
+    }
+   }
+  },
+  "context": [
+   "<octopad_directive>Before you write a tab, open the skill `octopad-pad` and follow it.</octopad_directive>\nPad brief: 3 tabs\nlanguage: en\n\n## Tabs\n### Tab smart_report\n<external_untrusted>title: Smart Report\nrevision: 13\nsince: 2026-11-15T06:40:12.000000Z\nthrough: 2026-11-16T07:29:40.412947Z\ndue: changes since its last read</external_untrusted>\n### Tab b0000000-0000-4000-8000-000000000001\n<external_untrusted>title: Atlas launch\nrevision: 5\nsince: 2026-11-15T06:41:05.000000Z\nthrough: 2026-11-16T07:29:41.412948Z\ndue: changes since its last read</external_untrusted>\n### Tab b0000000-0000-4000-8000-000000000002\n<external_untrusted>title: Billing migration\nrevision: 3\nsince: 2026-11-15T06:41:05.000000Z\nthrough: 2026-11-16T07:29:42.412949Z\ndue: changes since its last read</external_untrusted>\n\n## Followed, each once, with only what changed\n### Goal 30000000-0000-4000-8000-000000000001 · changes since 2026-11-15T06:41:05.000000Z\n<external_untrusted>Atlas in every customer's hands by December 1 · active · deadline 2026-12-01\nThe Atlas launch\nstatus line 2026-11-15 by Priya Shah: Store review started; a press kit is still needed before launch and no one owns it yet.</external_untrusted>\n### Stream 20000000-0000-4000-8000-000000000001 · changes since 2026-11-15T06:41:05.000000Z\n<external_untrusted>Atlas launch · active\nShip the Atlas mobile app to every customer\nreport 2026-11-15 by Tom Becker\n+ [a3] Needs you: Store listing copy waits for approval.\n~ [a2] Situation: In store review since 2026-11-14. (was: Release candidate in final checks.)</external_untrusted>\n### Stream 20000000-0000-4000-8000-000000000002 · changes since 2026-11-15T06:41:05.000000Z\n<external_untrusted>Atlas launch site · active\nThe public site for the Atlas launch\nreport 2026-11-15 by Lena Ortiz\n~ [s2] Left to do: Footer copy review moved from 2026-11-14 to 2026-11-15. (was: Footer copy review on 2026-11-14.)</external_untrusted>\n### Stream 20000000-0000-4000-8000-000000000003 · changes since 2026-11-15T06:41:05.000000Z\n<external_untrusted>Billing migration · active\nMove billing to the new payment provider\nreport 2026-11-15 by Sam Rivera\n+ [b3] Watch out: Provider sandbox down since 2026-11-15: end-to-end tests cannot run; the provider expects a fix on 2026-11-18.\n~ [b2] Situation: Customer payment methods migrating. (was: Payment method migration not started.)</external_untrusted>\n### Stream 20000000-0000-4000-8000-000000000004 · changes since 2026-11-15T06:41:05.000000Z\n<external_untrusted>Payments API · active\nPayment endpoints the apps call\nreport 2026-11-15 by Tom Becker\n~ [p1] Situation: Refund endpoint in code review. (was: Refund endpoint in progress.)</external_untrusted>\n### Task 40000000-0000-4000-8000-000000000021 · changes since 2026-11-15T06:41:05.000000Z\n<external_untrusted>Expose refunds in the Payments API · in_progress · ready · stream 20000000-0000-4000-8000-000000000004\nstatus line 2026-11-15 by Tom Becker: Refund endpoint in code review; Billing invoices wait on it.</external_untrusted>\n\n## Sections\n### Tab smart_report\n<external_untrusted>- theme:cf797bbc · Design hiring: stream 20000000-0000-4000-8000-000000000005</external_untrusted>\n### Tab b0000000-0000-4000-8000-000000000001\n<external_untrusted>- main: goal 30000000-0000-4000-8000-000000000001, stream 20000000-0000-4000-8000-000000000001, stream 20000000-0000-4000-8000-000000000002</external_untrusted>\n### Tab b0000000-0000-4000-8000-000000000002\n<external_untrusted>- main: stream 20000000-0000-4000-8000-000000000003, stream 20000000-0000-4000-8000-000000000004, task 40000000-0000-4000-8000-000000000021</external_untrusted>\n\n## Attention placed in each tab since its mark\n### Tab smart_report\n<external_untrusted>- [dates] 2026-11-16 · section due (dates:40000000-0000-4000-8000-000000000051)\n  {\"kind\":\"dates\",\"id\":\"40000000-0000-4000-8000-000000000051\",\"task_id\":\"40000000-0000-4000-8000-000000000051\",\"title\":\"Return the signed vendor contract\",\"status\":\"todo\",\"date\":\"due\",\"day\":\"2026-11-16\",\"due_date\":\"2026-11-16T17:00:00Z\",\"start_date\":null}\n- [dates] 2026-11-18 · section due (dates:40000000-0000-4000-8000-000000000054)\n  {\"kind\":\"dates\",\"id\":\"40000000-0000-4000-8000-000000000054\",\"task_id\":\"40000000-0000-4000-8000-000000000054\",\"title\":\"Kick off the Q1 planning\",\"status\":\"todo\",\"date\":\"start\",\"day\":\"2026-11-18\",\"due_date\":null,\"start_date\":\"2026-11-18\"}\n- [dates] 2026-11-19 · section due (dates:40000000-0000-4000-8000-000000000013)\n  {\"kind\":\"dates\",\"id\":\"40000000-0000-4000-8000-000000000013\",\"task_id\":\"40000000-0000-4000-8000-000000000013\",\"title\":\"Rehearse the billing cutover\",\"status\":\"todo\",\"date\":\"due\",\"day\":\"2026-11-19\",\"due_date\":\"2026-11-19T17:00:00Z\",\"start_date\":null}</external_untrusted>\n### Tab b0000000-0000-4000-8000-000000000001\n<external_untrusted>- [validations] 2026-11-15 · section main (validations:40000000-0000-4000-8000-000000000003)\n  {\"kind\":\"validations\",\"id\":\"40000000-0000-4000-8000-000000000003\",\"task_id\":\"40000000-0000-4000-8000-000000000003\",\"title\":\"Approve the store listing copy\",\"status\":\"pending_review\",\"by\":\"Priya Shah\",\"workspace_id\":\"10000000-0000-4000-8000-000000000001\"}\n- [answer_requests] 2026-11-15 · section main (answer_requests:40000000-0000-4000-8000-000000000007)\n  {\"kind\":\"answer_requests\",\"id\":\"r-0007\",\"task_id\":\"40000000-0000-4000-8000-000000000007\",\"title\":\"Set the Atlas price\",\"question\":\"Which price tier do we launch with: 4.99 or 6.99 a month?\",\"by\":\"Tom Becker\"}\n- [unblocked] 2026-11-15 · section main (unblocked:40000000-0000-4000-8000-000000000005)\n  {\"kind\":\"unblocked\",\"id\":\"40000000-0000-4000-8000-000000000005\",\"task_id\":\"40000000-0000-4000-8000-000000000005\",\"title\":\"Write the release notes\",\"status\":\"todo\"}</external_untrusted>\n### Tab b0000000-0000-4000-8000-000000000002\n<external_untrusted>- [answer_requests] 2026-11-15 · section main (answer_requests:40000000-0000-4000-8000-000000000021)\n  {\"kind\":\"answer_requests\",\"id\":\"r-0021\",\"task_id\":\"40000000-0000-4000-8000-000000000021\",\"title\":\"Expose refunds in the Payments API\",\"question\":\"Which webhook format do we keep for refunds: the old one or the provider's?\",\"by\":\"Tom Becker\"}</external_untrusted>\n\n## Attention in the first Smart Report outside every priority, since its mark\n### Tab smart_report\n<external_untrusted>- [assigned] 2026-11-15 · section outside (assigned:40000000-0000-4000-8000-000000000041)\n  {\"kind\":\"assigned\",\"id\":\"40000000-0000-4000-8000-000000000041\",\"task_id\":\"40000000-0000-4000-8000-000000000041\",\"title\":\"Answer the partner's data request\",\"status\":\"todo\",\"by\":\"Lena Ortiz\"}</external_untrusted>\n\n## Still waiting on the person since before each tab's mark, one line each: not new\n### Tab smart_report\n<external_untrusted>- [dates] since 2026-10-20 · section due · task 40000000-0000-4000-8000-000000000052: Renew the design tool licences · due 2026-10-20 (dates:40000000-0000-4000-8000-000000000052)\n- [dates] since 2026-10-02 · section due · task 40000000-0000-4000-8000-000000000053: File the Q3 expense report · due 2026-10-02 (dates:40000000-0000-4000-8000-000000000053)\n- [assigned] since 2026-11-03 · outside every priority · task 40000000-0000-4000-8000-000000000042: Review the support macro changes · by Lena Ortiz (assigned:40000000-0000-4000-8000-000000000042)</external_untrusted>"
+  ],
+  "ready_tasks": [
+   "40000000-0000-4000-8000-000000000004",
+   "40000000-0000-4000-8000-000000000005",
+   "40000000-0000-4000-8000-000000000051",
+   "40000000-0000-4000-8000-000000000041"
+  ],
+  "refused_keys": [],
+  "keys": {
+   "atlas": "theme:f1c82c7c",
+   "bill": "theme:bca91fcd",
+   "site": "theme:ae96ffdf",
+   "hire": "theme:cf797bbc",
+   "bill2": "theme:b5f51d4c",
+   "portal": "theme:4ec2b79b",
+   "beta": "theme:22929c73",
+   "beta2": "theme:12baf3ca"
+  },
+  "tasks": {
+   "40000000-0000-4000-8000-000000000006": {
+    "title": "Send the launch email",
+    "status": "todo",
+    "readiness": "waits on prerequisites",
+    "depends_on": [
+     "40000000-0000-4000-8000-000000000002"
+    ],
+    "assigned_to": "Sam Rivera"
+   },
+   "40000000-0000-4000-8000-000000000004": {
+    "title": "Make the store screenshots",
+    "status": "todo",
+    "readiness": "ready",
+    "assigned_to": null
+   },
+   "40000000-0000-4000-8000-000000000005": {
+    "title": "Write the release notes",
+    "status": "todo",
+    "readiness": "ready",
+    "assigned_to": "Sam Rivera"
+   },
+   "40000000-0000-4000-8000-000000000013": {
+    "title": "Rehearse the billing cutover",
+    "status": "todo",
+    "readiness": "waits on prerequisites",
+    "depends_on": [
+     "40000000-0000-4000-8000-000000000014"
+    ],
+    "due_date": "2026-11-19",
+    "assigned_to": "Sam Rivera"
+   },
+   "40000000-0000-4000-8000-000000000014": {
+    "title": "Run the end-to-end payment tests",
+    "status": "blocked",
+    "blocked_reason": "Provider sandbox down since 2026-11-15; fix expected 2026-11-18.",
+    "assigned_to": "Tom Becker"
+   }
+  },
+  "save": {
+   "ok": {
+    "status": "ok",
+    "tab": {
+     "id": "<the tab id, or the create id below>",
+     "position": "<its position>",
+     "text_revision": "<revision + 1>",
+     "written_at": "<now>",
+     "read_through": "<through sent>"
+    }
+   },
+   "smart_report_ok": {
+    "content": [
+     {
+      "type": "text",
+      "text": "{\"status\":\"ok\",\"tab\":{\"id\":\"b0000000-0000-4000-8000-000000000000\",\"position\":0,\"text_revision\":\"<revision + 1>\",\"written_at\":\"<now>\",\"read_through\":\"<through sent>\"}}"
+     },
+     {
+      "type": "text",
+      "text": "<octopad_directive>Once this update's last save is done, tell the person, in this conversation, the lead of the Smart Report you saved, as the skill `octopad-pad` says.</octopad_directive>"
+     }
+    ]
+   },
+   "refusals": [
+    {
+     "when": "save names a tab with an expected_revision other than its listed revision",
+     "answer": {
+      "status": "conflict",
+      "error": "STALE"
+     }
+    },
+    {
+     "when": "save on an existing tab without expected_revision",
+     "answer": {
+      "status": "invalid",
+      "error": "REVISION_REQUIRED"
+     }
+    },
+    {
+     "when": "an unblocked sentence in a priority tab's today section cites a task not in ready_tasks",
+     "answer": {
+      "status": "invalid",
+      "error": "UNBLOCKED_NOT_READY",
+      "task": "<the first such task>"
+     }
+    },
+    {
+     "when": "a selection names a key in refused_keys",
+     "answer": {
+      "status": "invalid",
+      "error": "PRIORITY_REFUSED",
+      "key": "<the key>"
+     }
+    },
+    {
+     "when": "alert or priority_lines on a tab other than smart_report",
+     "answer": {
+      "status": "invalid",
+      "error": "SMART_REPORT_ONLY",
+      "field": "<field>"
+     }
+    },
+    {
+     "when": "a reserved section on the wrong kind of tab (status, today, keep: priority tabs; due, outside: smart_report)",
+     "answer": {
+      "status": "invalid",
+      "error": "SECTION_RESERVED",
+      "key": "<key>",
+      "tab": "<priority|brief>"
+     }
+    },
+    {
+     "when": "a sentence mark a reserved section does not take",
+     "answer": {
+      "status": "invalid",
+      "error": "SECTION_MARK",
+      "key": "<key>",
+      "mark": "<mark>"
+     }
+    },
+    {
+     "when": "refusal sent with any other field",
+     "answer": {
+      "status": "invalid",
+      "error": "REFUSAL_ALONE"
+     }
+    }
+   ],
+   "note": "Each refusal is an isError result whose text is the answer as JSON, as the real `pad` tool returns it. Validate content with the contract's own checks when the harness can (contentFields in mcp-server/src/tools/pad.ts)."
+  }
+ }
+}
