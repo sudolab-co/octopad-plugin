@@ -1,11 +1,11 @@
 {
   "skill_name": "octopad-pad",
   "protocol": {
-    "status": "32.0.0 cases organize-first-run, write-organized-pad, general-alert, notepad-unreadable, priority-left-renamed, remove-priority-tab and moved-recently written 2026-11-16 with their fixtures and not run, and 32.0.0 added to the creation, correction and trigger cases; revised the same day after review (a priority tab created with its content from a read of its unsaved definition, a renamed priority matched by Today's brief's untabbed priorities and the tab's streams, checks on keep lines, chart placement and an unattributed move): an eval's model calls wait for the operator's yes on its protocol. 31.1.0 cases chart-in-another-tab, chart-form-by-information and no-chart-without-value written 2026-11-15 and not run, unasked-chart extended to 31.0.0 and 31.1.0 with the framing sentence: an eval's model calls wait for the operator's yes on its protocol. 29.1.0 case line-says-what-to-do written 2026-11-12 and not run: an eval's model calls wait for the operator's yes on its protocol. 27.0.0 cases written 2026-11-11 and not run: the operator decided that this change makes no model call. Earlier: run 2026-11-10 on 24.0.0 and 26.0.0 (80 agent runs), then reruns of 15 and 6 runs on the fixed 26.0.0 skill.",
+    "status": "32.0.0 cases organize-first-run, write-organized-pad, general-alert, notepad-unreadable, priority-left-renamed, remove-priority-tab and moved-recently written 2026-11-16 with their fixtures and not run, and 32.0.0 added to the creation, correction and trigger cases; revised the same day after review (a priority tab created with its content from a read of its unsaved definition, a key retired or re-keyed only when `context` says it is not in the Notepad, a renamed priority matched by the tab's streams, checks on keep lines, chart placement and an unattributed move): an eval's model calls wait for the operator's yes on its protocol. 31.1.0 cases chart-in-another-tab, chart-form-by-information and no-chart-without-value written 2026-11-15 and not run, unasked-chart extended to 31.0.0 and 31.1.0 with the framing sentence: an eval's model calls wait for the operator's yes on its protocol. 29.1.0 case line-says-what-to-do written 2026-11-12 and not run: an eval's model calls wait for the operator's yes on its protocol. 27.0.0 cases written 2026-11-11 and not run: the operator decided that this change makes no model call. Earlier: run 2026-11-10 on 24.0.0 and 26.0.0 (80 agent runs), then reruns of 15 and 6 runs on the fixed 26.0.0 skill.",
     "purpose": "Compare plugin 26.0.0 (Smart Report by focus theme, lead on what changed) with 27.0.0 (decision brief by subject, lead said in the conversation) on routing and on the observable Pad writes; static checks do not establish AI behavior.",
     "execution": "claude plugin eval on the Claude Code subscription, after the operator approves the protocol. Every Octopad tool is a mock answering fictional fixtures: nothing reaches an Octopad organization.",
     "comparison": "The behaviour and correction cases run on both versions; the trigger cases on 27.0.0 only. Both versions get the same server lines, including the one a Smart Report save returns, so lead-said-in-the-conversation compares them and is not a defeat proof. Defeat proofs: lead-says-what-matters-and-where-to-start must reject a 26.0.0 lead that opens on what changed since a date; the correction cases on 27.0.0 with the section \"Route a correction\" removed must fail at least one of them. The 31.1.0 chart cases run on 31.0.0 and 31.1.0: chart-in-another-tab and chart-form-by-information must fail on 31.0.0, where a tab other than the first takes a chart only on request; no-chart-without-value must pass on both. The 32.0.0 cases run on 31.1.0 and 32.0.0. Defeat proofs: organize-first-run and priority-left-renamed must fail on 31.1.0, which creates no tab without a yes, and remove-priority-tab must fail there, since 31.1.0 records no refusal; write-organized-pad must fail on 31.1.0, which writes none of the organized fields. The creation, correction and trigger cases run on 32.0.0 as a non-regression check. Not rerun on 32.0.0: due-update, line-says-what-to-do and update-in-french, whose Smart Report shape 5.0.0 replaced and the 32.0.0 writing cases cover; stale-save and failed-source, whose rules 5.0.0 keeps word for word but whose one-context check clashes with organizing a Pad that has active untabbed priorities, so they rerun only once their contexts describe a 32.0.0 Pad.",
-    "release_limit": "Unrun cases are not a routing, behavioral or non-regression pass. Before a run, the mocks must serve each case's context: a fixed date and time zone, the revisions and through values, the full Notepad with its focus themes, the goal at base_revision 3, the external scopes, and the server's real context and save lines, the same for both versions. stale-theme, outside-first, undecided-order, peer-work, unasked-chart, start-date-only, chart-in-another-tab, chart-form-by-information and no-chart-without-value have no fixtures yet. Each 32.0.0 case has a fixture in evals/fixtures, rendered by the server's own code: the start_session Pad part, the Notepad, pad get, each context with no tab in call order, each unsaved definition's context by its priorities, the ready tasks and the save rules; the mocks serve them and refuse a save as the server would, a creation without content included. The second context of organize-first-run assumes both tabs were created, and that of priority-left-renamed the expected organization; a run that organizes otherwise is graded on its calls, not on what it writes next."
+    "release_limit": "Unrun cases are not a routing, behavioral or non-regression pass. Before a run, the mocks must serve each case's context: a fixed date and time zone, the revisions and through values, the full Notepad with its focus themes, the goal at base_revision 3, the external scopes, and the server's real context and save lines, the same for both versions. stale-theme, outside-first, undecided-order, peer-work, unasked-chart, start-date-only, chart-in-another-tab, chart-form-by-information and no-chart-without-value have no fixtures yet. Each 32.0.0 case has a fixture in evals/fixtures, rendered by the server's own code: the start_session Pad part, the Notepad, pad get, each context with no tab in call order, each unsaved definition's context by its priorities, each single tab's context by its id, the ready tasks and the save rules; the mocks serve them and refuse a save as the server would, a creation without content included. The second context of organize-first-run assumes both tabs were created, and that of priority-left-renamed the expected organization; a run that organizes otherwise is graded on its calls, not on what it writes next."
   },
   "evals": [
     {
@@ -1792,13 +1792,14 @@
         "31.1.0",
         "32.0.0"
       ],
-      "context": "Fixture evals/fixtures/notepad-unreadable.json. The Notepad cannot be read; Today's brief is due with no through; the priority tabs Atlas launch and Billing migration exist.",
+      "context": "Fixture evals/fixtures/notepad-unreadable.json. The Notepad cannot be read: Today's brief and the priority tabs Atlas launch and Billing migration are not checked, each priority tab's keys unknown and its through none.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "No tab is removed.",
         "No save changes a selection or creates a tab.",
         "The Notepad is not written.",
-        "Today's brief is saved without through, and its text says the priorities could not be read. FAIL if it states the priorities as if read."
+        "Today's brief is saved without through, and its text says the priorities could not be read. FAIL if it states the priorities as if read.",
+        "The priority tabs Atlas launch (b0000000-0000-4000-8000-000000000001) and Billing migration (b0000000-0000-4000-8000-000000000002), whose keys context cannot confirm, keep their keys and stay: any save of them carries no through."
       ],
       "graders": [
         {
@@ -1848,6 +1849,14 @@
           "min": 1
         },
         {
+          "name": "priority-tabs-saved-without-through",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"b0000000-0000-4000-8000-00000000000[12]\")(?=[\\s\\S]*\"through\")",
+          "min": 0,
+          "max": 0
+        },
+        {
           "name": "says-the-notepad-was-unreadable",
           "type": "llm",
           "focus": "mock_calls"
@@ -1867,7 +1876,7 @@
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
-        "Each tab whose title is no Notepad priority's name has its keys checked with pad context on an unsaved definition that holds that key: Launch (theme:f1c82c7c or theme:ae96ffdf), Billing migration (theme:bca91fcd) and Partner portal (theme:4ec2b79b). A key whose read serves nothing it can read left the Notepad.",
+        "Each priority tab the first context did not serve and whose title is no Notepad priority's name is read with pad context and that tab: Billing migration (b0000000-0000-4000-8000-000000000002) and Partner portal (b0000000-0000-4000-8000-000000000005), whose key lines say not in the Notepad. Launch (b0000000-0000-4000-8000-000000000001), served by the first context with both keys found, is kept.",
         "The Billing migration tab (b0000000-0000-4000-8000-000000000002) is kept and re-keyed: after a pad get of that tab, a save on it whose selection.priorities holds theme:b5f51d4c and whose title is Payment provider switch. FAIL if that tab is removed or a new tab is created for theme:b5f51d4c.",
         "The Partner portal tab (b0000000-0000-4000-8000-000000000005), whose priority left the Notepad, is removed with its expected_revision, and no refusal names theme:4ec2b79b.",
         "No tab is created for theme:12baf3ca (Mobile beta program), the refused Mobile beta renamed with the same stream.",
@@ -1894,24 +1903,17 @@
           "max": 0
         },
         {
-          "name": "launch-keys-read",
+          "name": "billing-tab-read",
           "type": "tool_used",
           "tool": "mcp__plugin_octopad_octopad__pad",
-          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"context\")(?=[\\s\\S]*\"title\")(?=[\\s\\S]*\"priorities\":\\s*\\[[^\\]]*(theme:f1c82c7c|theme:ae96ffdf))",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"context\")(?=[\\s\\S]*\"tab\":\\s*\"b0000000-0000-4000-8000-000000000002\")",
           "min": 1
         },
         {
-          "name": "billing-key-read",
+          "name": "portal-tab-read",
           "type": "tool_used",
           "tool": "mcp__plugin_octopad_octopad__pad",
-          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"context\")(?=[\\s\\S]*\"title\")(?=[\\s\\S]*\"priorities\":\\s*\\[[^\\]]*(theme:bca91fcd))",
-          "min": 1
-        },
-        {
-          "name": "portal-key-read",
-          "type": "tool_used",
-          "tool": "mcp__plugin_octopad_octopad__pad",
-          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"context\")(?=[\\s\\S]*\"title\")(?=[\\s\\S]*\"priorities\":\\s*\\[[^\\]]*(theme:4ec2b79b))",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"context\")(?=[\\s\\S]*\"tab\":\\s*\"b0000000-0000-4000-8000-000000000005\")",
           "min": 1
         },
         {
@@ -2014,7 +2016,7 @@
           "name": "renamed-tab-keeps-its-name",
           "type": "tool_used",
           "tool": "mcp__plugin_octopad_octopad__pad",
-          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"b0000000-0000-4000-8000-000000000001\")(?=[\\s\\S]*\"title\":\\s*\")",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"b0000000-0000-4000-8000-000000000001\")(?=[\\s\\S]*\"title\":\\s*\"(?!Launch\"))",
           "min": 0,
           "max": 0
         },
@@ -2131,7 +2133,7 @@
         "After the last save, the message that tells the person what matters today gives weight to the Billing work they moved themselves on 2026-11-14 and 2026-11-15, beside Tom's older price question. FAIL if it names only that question as what matters, or never mentions their Billing momentum.",
         "No saved text or message credits the person with the store review task (40000000-0000-4000-8000-000000000002) moving to in progress, which nothing attributes. FAIL if one does.",
         "The Billing migration tab's lead says what moved in Billing.",
-        "No saved text or message implies the person moved the store review task (40000000-0000-4000-8000-000000000002) to in progress; when that move shaped what comes first, the message says in one line that the brief names no one for it. FAIL if a text credits the person with that move, or the move decides what comes first with no such line."
+        "No saved text or message credits the person with moving the store review task (40000000-0000-4000-8000-000000000002) to in progress; when that move shaped what comes first, the message says in one line which it put first, or that the brief names no one for that move. FAIL if a text credits the person with that move."
       ],
       "graders": [
         {

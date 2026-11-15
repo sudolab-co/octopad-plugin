@@ -79,7 +79,6 @@ Then create it in one save: the same definition, its `position`, the `through` t
 }
 ```
 
-- `status`, `today` and `keep` take no title and show fixed labels. `status` takes unmarked, `risk` and `correction` sentences and blocks; `today` takes `needs_you`, `unblocked`, unmarked and `correction`; `keep` unmarked and `correction`.
 - `about`, `card`, each `detail`, phase label and stream line is one line. A phase cites tasks or streams only.
 - A refusal of a priority's tab, by its key and the priority's references:
 
@@ -112,7 +111,7 @@ Then create it in one save: the same definition, its `position`, the `through` t
 }
 ```
 
-- `due` takes `needs_you`, `risk` and unmarked sentences; `outside` `needs_you`, `unblocked` and unmarked; neither takes a title or blocks. `alert` ({text, refs, prompt}) and `priority_lines` go in Today's brief only.
+- `alert` is {text, refs, prompt}.
 
 ## A chart in a section
 
