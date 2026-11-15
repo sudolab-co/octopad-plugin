@@ -48,7 +48,7 @@ Illustrative shapes, not defaults: take ids and choices from the person's reques
       "filters": { "workspace": { "include": [], "exclude": [] }, "goal": { "include": [], "exclude": [] },
         "stream": { "include": ["22222222-2222-4222-8222-222222222222"], "exclude": [] },
         "assignee": { "include": [], "exclude": [] }, "tags": { "include": [], "exclude": [] }, "subStatus": { "include": [], "exclude": [] },
-        "statuses": ["todo", "in_progress", "blocked"], "finishedWindow": "never", "waitingOnMe": false },
+        "statuses": ["todo", "in_progress", "blocked", "on_hold", "pending_review"], "finishedWindow": "never", "waitingOnMe": false },
       "columns": { "order": ["title"], "visible": ["title"], "widths": {} }, "sort": null, "direction": "asc" } } }
 ```
 

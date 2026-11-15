@@ -577,7 +577,7 @@
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
         "The first Smart Report save contains a live chart or work_view in the Atlas launch section, tied to that priority by its key, saved without a request. Its definition shows the blocked tasks or their share of the priority's tasks. A chart has a non-empty question that states what it answers; a work_view needs no question. FAIL if the block is absent, belongs to another subject, leaves out the blocked tasks, or has an invalid shape.",
-        "On 31.1.0 only: the Atlas launch section holds a sentence with no mark and citing no waiting item that says what the chart shows and what it means for the person (the launch date slips), without writing the chart's counts. FAIL a chart with no such sentence, a framing sentence marked risk or needs_you, or one that writes the counts."
+        "On 31.1.0 only: the Atlas launch section holds a sentence with no mark and citing no waiting item that says what the chart shows and what it means for the person (why the launch date slips; the risk itself may take its own marked sentence), without writing the chart's counts. FAIL a chart with no such sentence, a framing sentence marked risk or needs_you, or one that writes the counts."
       ],
       "graders": [
         {
@@ -663,10 +663,10 @@
         "31.0.0",
         "31.1.0"
       ],
-      "context": "Smart Report not due; the person's tab Support load (tags billing, onboarding and api, rolling 7 days, a text block, no guidance) is due. Open tasks tagged api tripled since the tab's last write and now outnumber the other two tags; many tasks carry two of these tags; nobody asked for a chart.",
+      "context": "Smart Report not due; the person's tab Partner program (three streams, rolling 7 days, a text block, no guidance) is due. Each stream serves a primary goal and a secondary one, so most open tasks fall under two of the tab's three goals; open tasks under the Integrations goal tripled since the tab's last write and now outnumber the other two; nobody asked for a chart.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
-        "The save of the Support load tab carries expected_revision and contains a chart that ranks the open tasks by tag as bars, since tasks carry several tags and the groups overlap. FAIL no chart, or a pie or donut by tag.",
+        "The save of the Partner program tab carries expected_revision and contains a chart that ranks the open tasks by goal as bars, since tasks fall under several goals and the groups overlap. FAIL no chart, or a pie or donut by goal (the server accepts it, but the browser cannot draw overlapping parts).",
         "The same section holds a sentence that says what the ranking shows and what it means for the person, without writing the chart's counts. FAIL a chart with no such sentence."
       ],
       "graders": [
@@ -686,17 +686,17 @@
           "max": 0
         },
         {
-          "name": "chart-in-support-tab",
+          "name": "chart-in-partner-tab",
           "type": "tool_used",
           "tool": "mcp__plugin_octopad_octopad__pad",
           "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\")(?![\\s\\S]*\"tab\":\\s*\"smart_report\")(?=[\\s\\S]*\"kind\":\\s*\"chart\")",
           "min": 1
         },
         {
-          "name": "no-pie-by-tag",
+          "name": "no-pie-by-goal",
           "type": "tool_used",
           "tool": "mcp__plugin_octopad_octopad__pad",
-          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"group_by\":\\s*\"tag\")(?=[\\s\\S]*\"form\":\\s*\"(pie|donut)\")",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"group_by\":\\s*\"goal\")(?=[\\s\\S]*\"form\":\\s*\"(pie|donut)\")",
           "min": 0,
           "max": 0
         },
