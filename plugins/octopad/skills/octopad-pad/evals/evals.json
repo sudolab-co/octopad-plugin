@@ -1,11 +1,11 @@
 {
   "skill_name": "octopad-pad",
   "protocol": {
-    "status": "29.1.0 case line-says-what-to-do written 2026-11-12 and not run: an eval's model calls wait for the operator's yes on its protocol. 27.0.0 cases written 2026-11-11 and not run: the operator decided that this change makes no model call. Earlier: run 2026-11-10 on 24.0.0 and 26.0.0 (80 agent runs), then reruns of 15 and 6 runs on the fixed 26.0.0 skill.",
+    "status": "31.1.0 cases chart-in-another-tab, chart-form-by-information and no-chart-without-value written 2026-11-15 and not run, unasked-chart extended to 31.0.0 and 31.1.0 with the framing sentence: an eval's model calls wait for the operator's yes on its protocol. 29.1.0 case line-says-what-to-do written 2026-11-12 and not run: an eval's model calls wait for the operator's yes on its protocol. 27.0.0 cases written 2026-11-11 and not run: the operator decided that this change makes no model call. Earlier: run 2026-11-10 on 24.0.0 and 26.0.0 (80 agent runs), then reruns of 15 and 6 runs on the fixed 26.0.0 skill.",
     "purpose": "Compare plugin 26.0.0 (Smart Report by focus theme, lead on what changed) with 27.0.0 (decision brief by subject, lead said in the conversation) on routing and on the observable Pad writes; static checks do not establish AI behavior.",
     "execution": "claude plugin eval on the Claude Code subscription, after the operator approves the protocol. Every Octopad tool is a mock answering fictional fixtures: nothing reaches an Octopad organization.",
-    "comparison": "The behaviour and correction cases run on both versions; the trigger cases on 27.0.0 only. Both versions get the same server lines, including the one a Smart Report save returns, so lead-said-in-the-conversation compares them and is not a defeat proof. Defeat proofs: lead-says-what-matters-and-where-to-start must reject a 26.0.0 lead that opens on what changed since a date; the correction cases on 27.0.0 with the section \"Route a correction\" removed must fail at least one of them.",
-    "release_limit": "Unrun cases are not a routing, behavioral or non-regression pass. Before a run, the mocks must serve each case's context: a fixed date and time zone, the revisions and through values, the full Notepad with its focus themes, the goal at base_revision 3, the external scopes, and the server's real context and save lines, the same for both versions. stale-theme, outside-first, undecided-order, peer-work, unasked-chart and start-date-only have no fixtures yet."
+    "comparison": "The behaviour and correction cases run on both versions; the trigger cases on 27.0.0 only. Both versions get the same server lines, including the one a Smart Report save returns, so lead-said-in-the-conversation compares them and is not a defeat proof. Defeat proofs: lead-says-what-matters-and-where-to-start must reject a 26.0.0 lead that opens on what changed since a date; the correction cases on 27.0.0 with the section \"Route a correction\" removed must fail at least one of them. The 31.1.0 chart cases run on 31.0.0 and 31.1.0: chart-in-another-tab and chart-form-by-information must fail on 31.0.0, where a tab other than the first takes a chart only on request; no-chart-without-value must pass on both.",
+    "release_limit": "Unrun cases are not a routing, behavioral or non-regression pass. Before a run, the mocks must serve each case's context: a fixed date and time zone, the revisions and through values, the full Notepad with its focus themes, the goal at base_revision 3, the external scopes, and the server's real context and save lines, the same for both versions. stale-theme, outside-first, undecided-order, peer-work, unasked-chart, start-date-only, chart-in-another-tab, chart-form-by-information and no-chart-without-value have no fixtures yet."
   },
   "evals": [
     {
@@ -568,13 +568,16 @@
       "kind": "behaviour",
       "versions": [
         "26.0.0",
-        "27.0.0"
+        "27.0.0",
+        "31.0.0",
+        "31.1.0"
       ],
       "context": "Smart Report due. In the Atlas launch priority, nine of fourteen tasks are blocked, which explains why the launch date slips; nobody asked for a chart.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
-        "The first Smart Report save contains a live chart or work_view in the Atlas launch section, tied to that priority by its key, saved without a request. Its definition shows the blocked tasks or their share of the priority's tasks. A chart has a non-empty question that states what it answers; a work_view needs no question. FAIL if the block is absent, belongs to another subject, leaves out the blocked tasks, or has an invalid shape."
+        "The first Smart Report save contains a live chart or work_view in the Atlas launch section, tied to that priority by its key, saved without a request. Its definition shows the blocked tasks or their share of the priority's tasks. A chart has a non-empty question that states what it answers; a work_view needs no question. FAIL if the block is absent, belongs to another subject, leaves out the blocked tasks, or has an invalid shape.",
+        "On 31.1.0 only: the Atlas launch section holds a sentence with no mark and citing no waiting item that says what the chart shows and what it means for the person (the launch date slips), without writing the chart's counts. FAIL a chart with no such sentence, a framing sentence marked risk or needs_you, or one that writes the counts."
       ],
       "graders": [
         {
@@ -603,6 +606,144 @@
           "name": "blocked-work-shown-in-atlas",
           "type": "llm",
           "focus": "mock_calls"
+        }
+      ]
+    },
+    {
+      "id": "chart-in-another-tab",
+      "prompt": "Good morning. Let us get going in Octopad, workspace Example.",
+      "must_load": true,
+      "kind": "behaviour",
+      "versions": [
+        "31.0.0",
+        "31.1.0"
+      ],
+      "context": "Smart Report not due; the person's tab Launch week (two streams, rolling 7 days, a text block, no guidance) is due. In those streams, six of nine open tasks are blocked by the same vendor contract, and the share blocked doubled since the tab's last write; nobody asked for a chart.",
+      "expected_behavior": [
+        "The run opens octopad-pad and records it with skill_opened.",
+        "The save of the Launch week tab carries expected_revision and contains, in its section, a chart whose definition counts the open tasks of the tab's streams by status, or the blocked ones, with a non-empty question, saved without a request. FAIL if no chart shows them (a task list alone does not show the share), or if the chart names a stream the tab does not follow.",
+        "The same section holds a sentence that says what the chart shows and what it means for the person, such as the vendor contract holding most of the launch, citing the contract task in refs. FAIL a chart with no such sentence, or a sentence that writes the chart's counts."
+      ],
+      "graders": [
+        {
+          "name": "opens-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 1
+        },
+        {
+          "name": "every-save-carries-its-revision",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\")(?![\\s\\S]*\"expected_revision\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "chart-in-launch-tab",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\")(?![\\s\\S]*\"tab\":\\s*\"smart_report\")(?=[\\s\\S]*\"kind\":\\s*\"chart\")",
+          "min": 1
+        },
+        {
+          "name": "chart-framed-by-a-sentence",
+          "type": "llm",
+          "focus": "mock_calls"
+        }
+      ]
+    },
+    {
+      "id": "chart-form-by-information",
+      "prompt": "Good morning. Let us get going in Octopad, workspace Example.",
+      "must_load": true,
+      "kind": "behaviour",
+      "versions": [
+        "31.0.0",
+        "31.1.0"
+      ],
+      "context": "Smart Report not due; the person's tab Support load (tags billing, onboarding and api, rolling 7 days, a text block, no guidance) is due. Open tasks tagged api tripled since the tab's last write and now outnumber the other two tags; many tasks carry two of these tags; nobody asked for a chart.",
+      "expected_behavior": [
+        "The run opens octopad-pad and records it with skill_opened.",
+        "The save of the Support load tab carries expected_revision and contains a chart that ranks the open tasks by tag as bars, since tasks carry several tags and the groups overlap. FAIL no chart, or a pie or donut by tag.",
+        "The same section holds a sentence that says what the ranking shows and what it means for the person, without writing the chart's counts. FAIL a chart with no such sentence."
+      ],
+      "graders": [
+        {
+          "name": "opens-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 1
+        },
+        {
+          "name": "every-save-carries-its-revision",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\")(?![\\s\\S]*\"expected_revision\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "chart-in-support-tab",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\")(?![\\s\\S]*\"tab\":\\s*\"smart_report\")(?=[\\s\\S]*\"kind\":\\s*\"chart\")",
+          "min": 1
+        },
+        {
+          "name": "no-pie-by-tag",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"group_by\":\\s*\"tag\")(?=[\\s\\S]*\"form\":\\s*\"(pie|donut)\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "chart-form-fits",
+          "type": "llm",
+          "focus": "mock_calls"
+        }
+      ]
+    },
+    {
+      "id": "no-chart-without-value",
+      "prompt": "Good morning. Let us get going in Octopad, workspace Example.",
+      "must_load": true,
+      "kind": "behaviour",
+      "versions": [
+        "31.0.0",
+        "31.1.0"
+      ],
+      "context": "Smart Report not due; the person's tab Launch week (two streams, rolling 7 days, a text block, no chart, no guidance) is due. Its only news: one task finished; the split of open tasks by status is the same as at the tab's last write; nobody asked for a chart.",
+      "expected_behavior": [
+        "The run opens octopad-pad and records it with skill_opened.",
+        "The save of the Launch week tab carries expected_revision and holds no chart: the finished task is told in a sentence that cites it. FAIL any chart block, since nothing here shows better as a chart and the report having none is no reason to add one."
+      ],
+      "graders": [
+        {
+          "name": "opens-octopad-pad",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__skill_opened",
+          "input_match": "\"skill\":\\s*\"octopad-pad\"",
+          "min": 1
+        },
+        {
+          "name": "every-save-carries-its-revision",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\")(?![\\s\\S]*\"expected_revision\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "no-chart-saved",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"kind\":\\s*\"chart\")",
+          "min": 0,
+          "max": 0
         }
       ]
     },

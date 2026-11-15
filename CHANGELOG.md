@@ -1,5 +1,11 @@
 # Changelog
 
+## 31.1.0 - Unreleased
+
+- `octopad-pad` 4.2.0: in every Smart Report, not only the first, the AI places a chart on its own initiative when, for that report's content and news, it shows what text cannot, never to fill a section and never in a tab whose guidance declines charts. Before, a tab other than the first showed a chart only when the person asked for one. The AI chooses the form by the kind of information (bars to rank groups or when groups overlap, as tags and goals do; a pie or donut to split one whole; figures for one total) and frames each chart with a sentence in its section that says what it shows and what that means for the person, without its figures. In the first Smart Report that sentence carries no mark and cites no waiting item, so it shows beside the chart. A request for fewer charts goes to the tab's guidance, since charts are written anew with each content.
+
+Needs no server change: the `pad` tool already accepts a chart in any tab. All three distributions move to 31.1.0.
+
 ## 31.0.0 - Unreleased
 
 - `octopad-notepad` 9.0.0: the Notepad keeps three things no other Octopad object holds: the user's priorities, notes (the `premises` block) and reminders. The AI writes on its own, without being told, what passes three tests: it comes from the user, it will still hold in the coming days, and no Octopad object holds it while it is not something to do. A table of worked cases shows the line, notably that what the user is doing now ("I'm picking X back up") writes nothing. Something to do is a task: dated, depending on the task that carries its wait, or blocked with what it waits for.

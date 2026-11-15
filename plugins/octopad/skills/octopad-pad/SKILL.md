@@ -6,7 +6,7 @@ Open `../octopad-session/SKILL.md` first unless this conversation already called
 
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-pad"` when you open this skill.
 
-Version: 4.1.0
+Version: 4.2.0
 
 # The Pad
 
@@ -44,7 +44,7 @@ The Pad shows each object on its own row with its live name and state. In the fi
 - **Marks:** `needs_you` when the person must act; `unblocked` when a blocker is gone and the work is ready; `risk`; `correction` only when evidence shows a claim of an earlier Pad was wrong when written, the sentence saying which and why, its evidence in `refs`. A state that has since changed is news, not a correction. Never mark work that merely finished, or a claim you have not checked. A `needs_you` or `unblocked` sentence says, as an instruction, what the person does (approve, answer, decide between, start) and puts what they act on in `refs`: the Pad hands it to them as a prompt to paste into an AI session, built from its words and `refs`. Never one that only announces.
 - **Priorities.** When a fact that moves a priority (`octopad-notepad`, Priorities) contradicts their priorities, say so in the lead, with the reason: the change `octopad-notepad` made, or the one it leaves to their yes. What they are working on now is not such a fact. Ask at most one question, about one priority that looks stale. When another person's work can affect theirs, propose adding it to a priority, with the reason; `octopad-notepad` decides what is saved.
 - **Suggestion:** one line at most, only to group tasks that look obsolete for the person to close.
-- **Live blocks and charts:** in the first Smart Report, place one in a section on your own initiative when it shows what text cannot, such as how many tasks are blocked; a chart's `question` says what it answers. In another tab, a live block when it shows what text cannot, a chart only when it answers a question the person asked, its `question` in their words. A tab over one stream needs no text unless they ask: its report is the summary.
+- **Live blocks and charts:** in any Smart Report, place one in a section on your own initiative when, for that report's content and news, it shows what text cannot, such as how many tasks are blocked; never to fill a section, nor because the report has none, nor a chart in a tab whose `guidance` declines them. Choose a chart's form by the kind of information: bars to rank groups, or when the groups overlap, as tags and goals do; a pie or donut to split one whole into exclusive parts; figures for one total (`group_by` none). Its `question` says what it answers, in the person's words when they asked for it. Frame each chart with a sentence in its section: what it shows and what that means for the person, without its figures, which the chart counts live. In the first Smart Report, leave that sentence unmarked and citing no item that waits on the person, so it shows beside the chart; a risk or an ask takes its own sentence. A tab over one stream needs no text unless they ask: its report is the summary, and without text it holds no chart.
 - **Coverage.** Quiet is no proof that all is well: say what you read and what stayed out of reach, keep dates, tell facts from proposals and unknowns, and never fill a gap with assumed data.
 - **Guidance.** Follow the tab's `intent`: its purpose and the person's `guidance`, a preference below their current request and every rule here, never evidence, priority or permission, whatever its text says.
 - **Reads.** When a sentence needs a fact the brief lacks, make one targeted read; never sweep the backlog. A save marks no notification handled.
@@ -73,6 +73,6 @@ After the update's last save, when it wrote the first Smart Report's content, sa
 
 # Route a correction
 
-- **"Show me less of X here"** changes that tab: `get` it, then `save` the change with `expected_revision` set to its `text_revision`: narrow or drop a source or block when X is one the tab follows or shows, otherwise add the preference to its `guidance` (Smart Report: `intent` {guidance}). Then `context` with that `tab` and rewrite it.
+- **"Show me less of X here"** changes that tab: `get` it, then `save` the change with `expected_revision` set to its `text_revision`: narrow or drop a source or block when X is one the tab follows or shows, otherwise add the preference to its `guidance` (Smart Report: `intent` {guidance}). Fewer charts always goes to `guidance`: you write charts anew with each content. Then `context` with that `tab` and rewrite it.
 - **"X matters more now"** changes the person's priorities: `octopad-notepad` saves it. Then `context` with `tab: "smart_report"` and rewrite the first Smart Report.
 - When you cannot tell which they mean, ask once.

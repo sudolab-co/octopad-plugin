@@ -42,7 +42,7 @@ Illustrative shapes, not defaults: take ids and choices from the person's reques
 ## A chart in a section
 
 ```json
-{ "kind": "chart", "question": "How many launch tasks are blocked?", "form": "bars", "group_by": "status",
+{ "kind": "chart", "question": "How do the launch's open tasks split by status?", "form": "donut", "group_by": "status",
   "definition": { "app": "work", "scope": "all", "layout": "list", "filter": {},
     "work": { "version": 1, "itemType": "tasks", "groupBy": "none",
       "filters": { "workspace": { "include": [], "exclude": [] }, "goal": { "include": [], "exclude": [] },
