@@ -1863,17 +1863,18 @@
         "31.1.0",
         "32.0.0"
       ],
-      "context": "Fixture evals/fixtures/priority-left-renamed.json. Billing migration was renamed Payment provider switch (same references); Partner portal left the Notepad; Mobile beta program is the renamed Mobile beta, whose tab the person refused on 2026-11-10 (same stream), and a question waits in it; Atlas press tour is a new, quiet priority that shares only the Atlas goal. Today's brief and Atlas launch are due.",
+      "context": "Fixture evals/fixtures/priority-left-renamed.json. The person renamed their Atlas launch tab Launch in the Desktop; Billing migration was renamed Payment provider switch (same references); Partner portal left the Notepad; Mobile beta program is the renamed Mobile beta, whose tab the person refused on 2026-11-10 (same stream), and a question waits in it; Atlas press tour is a new, quiet priority that shares only the Atlas goal. Today's brief and Atlas launch are due.",
       "expected_behavior": [
         "The run opens octopad-pad and records it with skill_opened.",
         "Every save of an existing tab carries expected_revision.",
+        "Each tab whose title is no Notepad priority's name has its keys checked with pad context on an unsaved definition that holds that key: Launch (theme:f1c82c7c or theme:ae96ffdf), Billing migration (theme:bca91fcd) and Partner portal (theme:4ec2b79b). A key whose read serves nothing it can read left the Notepad.",
         "The Billing migration tab (b0000000-0000-4000-8000-000000000002) is kept and re-keyed: after a pad get of that tab, a save on it whose selection.priorities holds theme:b5f51d4c and whose title is Payment provider switch. FAIL if that tab is removed or a new tab is created for theme:b5f51d4c.",
         "The Partner portal tab (b0000000-0000-4000-8000-000000000005), whose priority left the Notepad, is removed with its expected_revision, and no refusal names theme:4ec2b79b.",
         "No tab is created for theme:12baf3ca (Mobile beta program), the refused Mobile beta renamed with the same stream.",
         "A save with refusal alone records the person's refusal under the new key: priority key theme:12baf3ca, refs naming stream 20000000-0000-4000-8000-000000000008, refused true.",
         "After re-keying and retiring, the run calls pad context again with no tab and saves the Billing migration tab with content and the through that second context gave (2026-11-16T07:29:56.412963Z).",
         "Today's brief keeps a section sent with key theme:12baf3ca and a title for the question waiting there (40000000-0000-4000-8000-000000000061), since no tab serves that priority.",
-        "Atlas press tour (theme:919e5e2c), quiet and sharing only the Atlas goal, gets no tab and no section of Today's brief, and the Atlas launch tab (b0000000-0000-4000-8000-000000000001) keeps its selection: no save changes it.",
+        "Atlas press tour (theme:919e5e2c), quiet and sharing only the Atlas goal, gets no tab and no section of Today's brief. The tab the person renamed Launch (b0000000-0000-4000-8000-000000000001) keeps its name, its selection and its place: no save changes its title or selection, and it is not removed.",
         "Brand watch (b0000000-0000-4000-8000-000000000007) gets no call."
       ],
       "graders": [
@@ -1891,6 +1892,27 @@
           "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\")(?![\\s\\S]*\"expected_revision\")",
           "min": 0,
           "max": 0
+        },
+        {
+          "name": "launch-keys-read",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"context\")(?=[\\s\\S]*\"title\")(?=[\\s\\S]*\"priorities\":\\s*\\[[^\\]]*(theme:f1c82c7c|theme:ae96ffdf))",
+          "min": 1
+        },
+        {
+          "name": "billing-key-read",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"context\")(?=[\\s\\S]*\"title\")(?=[\\s\\S]*\"priorities\":\\s*\\[[^\\]]*(theme:bca91fcd))",
+          "min": 1
+        },
+        {
+          "name": "portal-key-read",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"context\")(?=[\\s\\S]*\"title\")(?=[\\s\\S]*\"priorities\":\\s*\\[[^\\]]*(theme:4ec2b79b))",
+          "min": 1
         },
         {
           "name": "billing-read-before-re-key",
@@ -1985,6 +2007,22 @@
           "type": "tool_used",
           "tool": "mcp__plugin_octopad_octopad__pad",
           "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"b0000000-0000-4000-8000-000000000001\")(?=[\\s\\S]*\"selection\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "renamed-tab-keeps-its-name",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"b0000000-0000-4000-8000-000000000001\")(?=[\\s\\S]*\"title\":\\s*\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "renamed-tab-kept",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"remove\")(?=[\\s\\S]*b0000000-0000-4000-8000-000000000001)",
           "min": 0,
           "max": 0
         },
@@ -2093,7 +2131,7 @@
         "After the last save, the message that tells the person what matters today gives weight to the Billing work they moved themselves on 2026-11-14 and 2026-11-15, beside Tom's older price question. FAIL if it names only that question as what matters, or never mentions their Billing momentum.",
         "No saved text or message credits the person with the store review task (40000000-0000-4000-8000-000000000002) moving to in progress, which nothing attributes. FAIL if one does.",
         "The Billing migration tab's lead says what moved in Billing.",
-        "If a saved text or the message mentions the store review task (40000000-0000-4000-8000-000000000002) moving to in progress, it says the brief names no one for that move. FAIL if it mentions the move with no such limit, or implies who made it."
+        "No saved text or message implies the person moved the store review task (40000000-0000-4000-8000-000000000002) to in progress; when that move shaped what comes first, the message says in one line that the brief names no one for it. FAIL if a text credits the person with that move, or the move decides what comes first with no such line."
       ],
       "graders": [
         {
