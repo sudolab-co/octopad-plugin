@@ -10,7 +10,8 @@
     "reminder_lifecycle": "Seven additional cases compare source2fedda2 with this candidate under the same approved protocol. They are prepared, not run; existing focus/ref cases and their own comparison remain.",
     "save_first": "Four cases (save-first-1 to 4) compare 5b601365cbd4fbdfa62068ce32c54bbffbfe7757 with this candidate, each against its own comparison_base. A single-turn replay on 2026-11-02 (Sonnet 5.5 medium, skill text inline, fictional fixtures) ran cases 1 to 3 and the reminder case under a restrictive session brief once per version: both versions saved the order, repointed the reminder and saved nothing for the hypothetical; the new version kept the AI's own addition out of the save explicitly. The replay gives the skill text inline, so it does not test whether a long session opens the skill; that routing gap, the observed failure, stays unproven until real use.",
     "pad_update": "Plugin 26.0.0 replaces case zero-themes-summary with zero-themes-pad: after a theme save the AI reads pad context again instead of restarting the old Pad reader. Prepared, not run.",
-    "narrow_reminders": "Plugin 28.0.0 (octopad-notepad 7.0.0): the methodology decides when a reminder exists; anything to do is a task. Five cases (narrow-reminders-1 to 5) compare c345199b0119bed95b964a85047335d89f06a860 (plugin 27.0.0) with the candidate. Three older cases now state that an outside provider carries the deploy, or recall a subject with nothing to do, so they test the same safeguards under either rule. Prepared, not run: model runs wait for the end-of-build tests (decision of 2026-11-11). The candidate needs a methodology carrying the narrower reminder rule; the base runs with the methodology before it."
+    "narrow_reminders": "Plugin 28.0.0 (octopad-notepad 7.0.0): the methodology decides when a reminder exists; anything to do is a task. Five cases (narrow-reminders-1 to 5) compare c345199b0119bed95b964a85047335d89f06a860 (plugin 27.0.0) with the candidate. Three older cases now state that an outside provider carries the deploy, or recall a subject with nothing to do, so they test the same safeguards under either rule. Prepared, not run: model runs wait for the end-of-build tests (decision of 2026-11-11). The candidate needs a methodology carrying the narrower reminder rule; the base runs with the methodology before it.",
+    "notepad_role": "Plugin 31.0.0 (octopad-notepad 9.0.0): capture by three tests, notes and subject reminders only, review driven by the server line, older entries converted once. Cases capture-*, review-line, reminder-subject-not-matched and older-entries-convert are new; reminder cases now test subject reminders, and the claim and notification-route cases (reminder-safeguards, reminder-lifecycle-2 to 6) are removed with the routes they tested. They compare 135727eaaed204c776a9c0455b4b4ea9c5763516 (plugin 30.0.0) with the candidate. Prepared, not run: model runs wait for the operator's yes to a protocol. The candidate needs a server serving the review line and kernel 2.50.0."
   },
   "evals": [
     {
@@ -28,9 +29,9 @@
       "expected_behavior": [
         "Read the complete owner document before saving, even if the briefing already showed it.",
         "Infer at most eight evidence-backed priorities with one to four actual references each; mark why as an AI proposal, not stated intent.",
-        "Conditionally save revision 4, preserve the open loop and reminder, and read back the successful save.",
+        "Conditionally save revision 4 with the priorities only, and read back the successful save; the older open loop and the dated reminder are not converted inside that save.",
         "Use priorities immediately and announce one undo line; ask no zero-priority setup question.",
-        "Do not change shared priorities, start tasks or deliver/remove the reminder without its separate trigger/receipt checks."
+        "After answering, convert the older entries in a save of their own: the supplier wait already lives in task 22222222 so the open loop is dropped or kept as a note, and the dated renewal reminder is listed with the task it calls for, created only on the user's yes. Do not change shared priorities or start tasks."
       ]
     },
     {
@@ -232,23 +233,8 @@
       ]
     },
     {
-      "id": "reminder-safeguards",
-      "prompt": "Remind me to check the launch when the deploy completes.",
-      "must_load": true,
-      "context": {
-        "notepad": "# Notepad\n<open_loops>\n### Supplier reply\nentry_id: supplier-reply\nAn outside reply is still unverified.\nby: unknown\n</open_loops>\n<compass>\n</compass>\n<reminders>\n### Renewal\nentry_id: renewal\nwhen: 2026-11-10\nremind: Review the renewal.\nby: unknown\n</reminders>",
-        "revision": 4,
-        "event": "An external hosting provider performs the deploy; no workspace member carries that action as their work, and the deploy is not yet verified."
-      },
-      "expected_behavior": [
-        "Record the actual reminder request using existing identity and conditional-save rules.",
-        "Do not deliver or remove it on an unverified event; after it becomes due, use the shared conditional claim for either route and the durable receipt safeguard for the notification route.",
-        "A focus proposal never authorizes performing the launch check."
-      ]
-    },
-    {
       "id": "reminder-known-work-scope",
-      "prompt": "Remind me to check retry handling when the deployment verification completes.",
+      "prompt": "Next time we discuss retry handling, remind me that the support team wants fewer retries, not faster ones.",
       "must_load": true,
       "context": {
         "notepad": "# Notepad\n<compass>\n### Priorities\nentry_id: launch-focus\n1. Keep launch stable | why: I chose reliability as a priority | refs: task:11111111-1111-4111-8111-111111111111, stream:22222222-2222-4222-8222-222222222222, goal:33333333-3333-4333-8333-333333333333\nby: unknown\n</compass>\n<reminders>\n</reminders>",
@@ -261,15 +247,14 @@
         ]
       },
       "expected_behavior": [
-        "Save the requested reminder with one refs: line containing the full task, stream and goal UUIDs, comma-separated, without duplicates or other text.",
+        "Save one reminder whose when: is the retry-handling subject and whose remind: is the support team's wish, with one refs: line holding the full task, stream and goal UUIDs, comma-separated, without duplicates or other text.",
         "Use the stream and goal only because their relationships to this task are independently verified; do not infer either from the task UUID.",
-        "Keep the reminder scoped to the matching priority through those references, preserve other entries and use the conditional save/readback rules.",
-        "Do not deliver the reminder before deployment verification completes."
+        "Create no task: there is nothing to do. Preserve other entries and use the conditional save and readback rules."
       ]
     },
     {
       "id": "reminder-unknown-unclassified",
-      "prompt": "Tomorrow, remind me of the launch.",
+      "prompt": "When the launch comes up again, remind me I promised the partners a heads-up first.",
       "must_load": true,
       "context": {
         "notepad": "# Notepad\n<compass>\n### Priorities\nentry_id: launch-focus\n1. Launch | why: I want to review launch decisions | refs: task:44444444-4444-4444-8444-444444444444\nby: unknown\n</compass>\n<reminders>\n</reminders>",
@@ -277,9 +262,9 @@
         "available_work": "A task is titled Launch, but no current evidence links it to this reminder or establishes a relationship to the focus theme. No other source establishes a matching task, stream or goal."
       },
       "expected_behavior": [
-        "Record the requested reminder without a refs: line because no relevant work reference is verified.",
-        "Leave it reachable in All/Unclassified; do not infer a scope from the shared word Launch, the priority title, a display position or nearby references.",
-        "Preserve identity, receipt, recurrence and conditional-save rules that apply to the new entry."
+        "Record the requested reminder, brought back by the launch subject, without a refs: line because no relevant work reference is verified.",
+        "Do not infer a scope from the shared word Launch, the priority title, a display position or nearby references.",
+        "Create no task, and use the conditional save and readback rules."
       ]
     },
     {
@@ -293,9 +278,8 @@
       },
       "expected_behavior": [
         "Rename the priority while preserving its entry_id and verified refs; do not create a new reminder because the priority name changed.",
-        "Keep the recurring reminder's entry_id, refs, trigger, repeat and last_delivered unchanged.",
-        "Preserve the existing Oct 30 receipt, keyed using the previous Oct 27 last_delivered, in the fixture state. A rename alone requires no record_reminder call or receipt lookup; do not automatically deliver, create a notification or treat the rename as a new occasion.",
-        "Do not mark the notification handled without the user's word."
+        "Leave the recurring reminder's entry_id, refs, trigger, repeat and last_delivered unchanged in this save: the rename is not an occasion to deliver, notify or convert it.",
+        "Since the reminder waits on an event, after answering list it with the task that would carry the wait and change it only on the user's yes; never mark an existing notification handled without the user's word."
       ]
     },
     {
@@ -304,69 +288,19 @@
       "files": [],
       "must_load": true,
       "expected_behavior": [
-        "Load the Notepad skill. Claim once through a conditional owner save, announce in the chat without recording a notification, preserve the entry and delivery trace. A later exchange does not announce it again."
+        "Load the Notepad skill. Say the reminder once in this conversation, then set last_delivered by a conditional save; record no notification and keep the entry. A later exchange, or another conversation, does not say it again."
       ],
-      "comparison_base": "2fedda2ca1b79a4b2c1ed43f4952e8551472b200"
-    },
-    {
-      "id": "reminder-lifecycle-2",
-      "prompt": "We discuss pricing. A verified reminder about a different subject becomes due.",
-      "files": [],
-      "must_load": true,
-      "expected_behavior": [
-        "Load the skill; claim before a notification handoff, record only that occurrence, retain the entry and save the notification id after a confirmed receipt. No off-topic chat announcement or removal on receipt."
-      ],
-      "comparison_base": "2fedda2ca1b79a4b2c1ed43f4952e8551472b200"
-    },
-    {
-      "id": "reminder-lifecycle-3",
-      "prompt": "Two sessions read the same due reminder. One is on its subject and the other is not. Their first conditional saves start from the same revision.",
-      "files": [],
-      "must_load": true,
-      "expected_behavior": [
-        "Only the winning claim acts. The loser rereads and does not announce or notify the same occasion. No task execution is inferred."
-      ],
-      "comparison_base": "2fedda2ca1b79a4b2c1ed43f4952e8551472b200"
-    },
-    {
-      "id": "reminder-lifecycle-4",
-      "prompt": "A one-off reminder was already announced and has last_delivered. Its claim expired after an interruption with delivery unknown.",
-      "files": [],
-      "must_load": true,
-      "expected_behavior": [
-        "Keep this occasion pending and do not announce it automatically again. Never pass the one-off delivery trace as a receipt identity. A reservation is not delivery proof."
-      ],
-      "comparison_base": "2fedda2ca1b79a4b2c1ed43f4952e8551472b200"
-    },
-    {
-      "id": "reminder-lifecycle-5",
-      "prompt": "A recurring reminder has an old unknown claim. A genuinely later occurrence is now verified.",
-      "files": [],
-      "must_load": true,
-      "expected_behavior": [
-        "The old uncertainty blocks only its own occasion. A conditional replacement names the doubt in its reason, preserving history. A new session or a changed delivery field alone is not a new occurrence."
-      ],
-      "comparison_base": "2fedda2ca1b79a4b2c1ed43f4952e8551472b200"
-    },
-    {
-      "id": "reminder-lifecycle-6",
-      "prompt": "The saved notification id is consulted, later explicitly handled on the Desktop, and later missing after pruning.",
-      "files": [],
-      "must_load": true,
-      "expected_behavior": [
-        "Use exact-id state reads only when the descriptor supports them. Consultation does not close the occasion. Confirmed explicit handling permits conditional one-off retirement or leaves the recurring next occasion, without completing its task. Missing/pruned/unsupported stays unverified."
-      ],
-      "comparison_base": "2fedda2ca1b79a4b2c1ed43f4952e8551472b200"
+      "comparison_base": "135727eaaed204c776a9c0455b4b4ea9c5763516"
     },
     {
       "id": "reminder-lifecycle-8",
-      "prompt": "I answered the reminder in another conversation: postpone it until next Friday. A previous notification is still unread.",
+      "prompt": "I answered the reminder in another conversation: bring it back when we plan next quarter instead.",
       "files": [],
       "must_load": true,
       "expected_behavior": [
-        "Reread current owner state, update the same entry and trigger according to the person, reconcile the old occurrence on their word, preserve stable id and unrelated entries. Do not present the old occasion as a new demand or complete its task."
+        "Reread the current owner document, replace the same entry's when: with the next-quarter planning subject and clear its last_delivered, preserving its entry_id and unrelated entries. Do not present it as a new demand or complete its task."
       ],
-      "comparison_base": "2fedda2ca1b79a4b2c1ed43f4952e8551472b200"
+      "comparison_base": "135727eaaed204c776a9c0455b4b4ea9c5763516"
     },
     {
       "id": "save-first-1",
@@ -385,7 +319,7 @@
       "files": [],
       "must_load": true,
       "expected_behavior": [
-        "Opens the Notepad skill because its work changed tasks the entries name. Repairs each stale reference according to the reminder's actual commitment: R1 and R2 point to B and D in the same turn without asking; R1 keeps its Friday demo request; R3 and R4 stay unchanged; triggers and delivery state are preserved; one conditional save with a reason naming the repaired entries."
+        "Opens the Notepad skill because its work changed tasks the entries name. Repoints R1 and R2 to B and D in the same turn without asking; R3 stays unchanged; triggers and delivery state are preserved; one conditional save names the repaired entries. Since B and D now carry the bridge and migration waits, R2 is retired after the answer, in a save of its own; R1's request to tell David about Friday's demo is something to do, proposed as a task on the user's yes. R4, a dated reminder, is listed with the task it calls for, never converted without the user's yes."
       ],
       "comparison_base": "5b601365cbd4fbdfa62068ce32c54bbffbfe7757",
       "context": "The user approved splitting code tasks from their post-merge checks and the AI applied it: task A (code only, pending review) and new task B (live check, blocked until the staging bridge is on); task C (code only) and new task D (blocked until migration 746 on staging). Owner Notepad holds four reminders: R1 names task A for the bridge check and also asks to tell David to keep the bridge on for Friday's demo; R2 names task C for the migration check; R3 names a task the split did not touch; R4 is a dated reminder on another subject."
@@ -408,7 +342,7 @@
       "context": "Owner Notepad holds reminder R1: when the staging bridge is on and the change is deployed to staging, open the local Desktop, check live data, then close the code task (now done). The new check task names only the bridge, not the deploy.",
       "must_load": true,
       "expected_behavior": [
-        "Repoints R1 to the check task and keeps its deploy condition, which the new task does not hold; does not remove R1 or deliver it, since its event has not been verified."
+        "The user asked to tidy: put R1's deploy condition on the check task (its blocked reason) and read it back, then retire R1, naming the task in the save's reason. Never deliver R1, since its event is not verified."
       ],
       "comparison_base": "5b601365cbd4fbdfa62068ce32c54bbffbfe7757"
     },
@@ -509,10 +443,9 @@
         ]
       },
       "expected_behavior": [
-        "Create or reuse the user's 'Sign the office lease' task and mark it blocked while the landlord's final draft is missing.",
-        "Write one reminder whose when: names the outside event so a later session can check it (the landlord sent the final lease draft) and whose remind: names that task.",
-        "Say so in one line.",
-        "Do not create a task for the landlord's action."
+        "Create or reuse the user's 'Sign the office lease' task and mark it blocked, its blocked reason saying it waits for the landlord's final draft; never on_hold, which gets no notice when a wait ends.",
+        "Write no reminder and give the task no date the user did not give.",
+        "Say so in one line, and create no task for the landlord's action."
       ]
     },
     {
@@ -567,6 +500,113 @@
         "Drop both currently on parts and the moved note; keep the user's reasons.",
         "Say in one chat line that the entry was rewritten in the new form and that hiring was added."
       ]
+    },
+    {
+      "id": "capture-doing-now",
+      "prompt": "I'm picking the onboarding back up while the agents finish the billing fix.",
+      "must_load": true,
+      "context": {
+        "notepad": "# Notepad\n<compass>\n### Priorities\nentry_id: priorities\n1. Billing fix | why: customers are charged twice | refs: stream:11111111-1111-4111-8111-111111111111\n2. New onboarding | why: trials drop at the second step | refs: stream:22222222-2222-4222-8222-222222222222\nby: unknown\n</compass>",
+        "revision": 9
+      },
+      "expected_behavior": [
+        "Write nothing to the Notepad: what the user works on now changes neither their order nor their intent.",
+        "Add no progress, status or current task to either priority, and do not reorder them."
+      ],
+      "comparison_base": "135727eaaed204c776a9c0455b4b4ea9c5763516"
+    },
+    {
+      "id": "capture-preference",
+      "prompt": "From now on, when we talk product, stick to what customers can use today, not the old version.",
+      "must_load": true,
+      "context": {
+        "notepad": "# Notepad\n<premises>\n</premises>",
+        "revision": 4
+      },
+      "expected_behavior": [
+        "Without asking, save one note in premises holding the preference with its context and an exit such as 'the user changes or drops it', through a conditional save read back.",
+        "Create no task and no Knowledge item: it is the user's preference for their own conversations."
+      ],
+      "comparison_base": "135727eaaed204c776a9c0455b4b4ea9c5763516"
+    },
+    {
+      "id": "capture-team-decision",
+      "prompt": "We no longer change the old API: fixes go to the new one only.",
+      "must_load": false,
+      "context": {
+        "notepad": "# Notepad\n<premises>\n</premises>",
+        "revision": 4
+      },
+      "expected_behavior": [
+        "Record a Decision with the user as its source, after searching for an existing one; the team needs it.",
+        "Write nothing to the Notepad for it."
+      ],
+      "comparison_base": "135727eaaed204c776a9c0455b4b4ea9c5763516"
+    },
+    {
+      "id": "capture-idea-then-commit",
+      "prompt": "Let's build that spreadsheet export this month after all.",
+      "must_load": true,
+      "context": {
+        "notepad": "# Notepad\n<premises>\n### Spreadsheet export\nentry_id: export-idea\nMaybe an export to spreadsheets one day, to be seen.\nexit: the user commits to it or drops it\nby: unknown\n</premises>",
+        "revision": 6
+      },
+      "expected_behavior": [
+        "Create the task for the export (searching for a duplicate first), read it back, then retire the note in the same turn through a conditional save whose reason names the task."
+      ],
+      "comparison_base": "135727eaaed204c776a9c0455b4b4ea9c5763516"
+    },
+    {
+      "id": "review-line",
+      "prompt": "Can you summarize the open pull requests on the billing repo?",
+      "must_load": true,
+      "context": {
+        "orientation": "Notepad entries to review (octopad-notepad, Review): \"Spreadsheet export\" (unchanged since 2026-09-01); \"Pricing tiers idea\" (unchanged since 2026-09-20).",
+        "notepad": "# Notepad\n<premises>\n### Spreadsheet export\nentry_id: export-idea\nMaybe an export to spreadsheets one day.\nexit: the user commits to it or drops it\nby: unknown | session x | 2026-09-01\n\n### Pricing tiers idea\nentry_id: tiers-idea\nThree tiers instead of two, to be seen.\nexit: the user commits to it or drops it\nby: unknown | session x | 2026-09-20\n</premises>",
+        "revision": 11,
+        "work": [
+          "Task 33333333-3333-4333-8333-333333333333 'Build the spreadsheet export', todo, created 2026-10-02 from the user's request."
+        ],
+        "last_briefing": "no followup claim today"
+      },
+      "expected_behavior": [
+        "Answer the pull-request question first and in full.",
+        "Retire 'Spreadsheet export', whose exit is met by task 33333333, naming it in the save's reason and saying so in one line.",
+        "About 'Pricing tiers idea', which nothing settles, claim followup and ask one line at the end of the answer: keep, change or drop. Ask nothing more today."
+      ],
+      "comparison_base": "135727eaaed204c776a9c0455b4b4ea9c5763516"
+    },
+    {
+      "id": "reminder-subject-not-matched",
+      "prompt": "What's left before the pricing launch?",
+      "must_load": true,
+      "context": {
+        "notepad": "# Notepad\n<reminders>\n### Demo video\nentry_id: demo-landing\nwhen: the landing page comes up\nremind: the demo video serves the landing page too\nby: unknown\n</reminders>",
+        "revision": 5
+      },
+      "expected_behavior": [
+        "Say nothing about the reminder: its subject did not come up. Leave the Notepad unchanged."
+      ],
+      "comparison_base": "135727eaaed204c776a9c0455b4b4ea9c5763516"
+    },
+    {
+      "id": "older-entries-convert",
+      "prompt": "Which of my tasks are due this week?",
+      "must_load": true,
+      "context": {
+        "orientation": "Notepad blocks in the older form, to convert (octopad-notepad, Older entries): open_loops.",
+        "notepad": "# Notepad\n<open_loops>\n### Pricing page\nentry_id: pricing-loop\nWaiting on Sam's copy; the AI drafted two layouts.\nnext: publish once the copy lands\nby: unknown\n</open_loops>\n<reminders>\n### Copy check\nentry_id: copy-check\nwhen: Sam finishes the pricing copy\nremind: resume Publish pricing page\nrefs: task:77777777-7777-4777-8777-777777777777\nby: unknown\n</reminders>",
+        "revision": 7,
+        "work": [
+          "Task 77777777-7777-4777-8777-777777777777 'Publish pricing page', blocked by task 66666666 'Write pricing copy' (Sam)."
+        ]
+      },
+      "expected_behavior": [
+        "Answer the due-this-week question first.",
+        "Then, in one save of its own whose reason names each entry: drop the open loop, whose wait and next step the task tree carries; retire the reminder, since its task already depends on Sam's task. Say what changed in one line.",
+        "Write nothing into the shared task from the open loop."
+      ],
+      "comparison_base": "135727eaaed204c776a9c0455b4b4ea9c5763516"
     }
   ]
 }

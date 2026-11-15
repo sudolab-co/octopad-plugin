@@ -1,5 +1,15 @@
 # Changelog
 
+## 31.0.0 - Unreleased
+
+- `octopad-notepad` 9.0.0: the Notepad keeps three things no other Octopad object holds: the user's priorities, notes (the `premises` block) and reminders. The AI writes on its own, without being told, what passes three tests: it comes from the user, it will still hold in the coming days, and no Octopad object holds it while it is not something to do. A table of worked cases shows the line, notably that what the user is doing now ("I'm picking X back up") writes nothing. Something to do is a task: dated, depending on the task that carries its wait, or blocked with what it waits for.
+- `octopad-notepad` 9.0.0: a reminder only brings something back when a subject comes up, or proposes resuming paused work at the user's own call. It is said once in the conversation where its subject comes up. The opening check of events, the claim with an expiry and the notification route for unrelated reminders are gone; a session that stops between saying a reminder and saving may let it come back once more.
+- `octopad-notepad` 9.0.0: upkeep follows a line `start_session` serves: notes and reminders whose `review_on:` date came or that stayed unchanged 30 days. The AI first checks each one's `exit:` and references and retires what is settled, then asks about at most one entry a day: keep, change or drop. The daily sweep and the seven-day follow-up are gone. Older `open_loops` and `context_gaps` entries and reminders waiting on a date or an event are converted once, after the user's first request is answered: tasks are created only on the user's yes, and a private note never goes into a shared task.
+- `octopad-notepad` 9.0.0: "Keep the priorities true yourself" no longer counts "they keep working on it" as a reason to move a priority.
+- `octopad-pad` 4.1.0: the Notepad sweep step is gone, and the lead flags a priority contradicted by a fact that moves it, never by what the person works on now.
+
+Needs the server change that serves the review line and the kernel text without the opening event check: a production server without it never names entries to review. All three distributions move to 31.0.0.
+
 ## 30.0.0 - Unreleased
 
 - A person's focus themes are now their priorities, and a priority holds their intent only. `octopad-notepad` 8.0.0: the compass's entry is `### Priorities`; each line is a short stable name, then a `why:` of one or two sentences saying what they want and why, with the logic between priorities when they give it, then its refs and their deadline. The AI never writes progress, the current task, quotes or dated change notes there: `currently on:`, the dated `moved` reason and the separate "user's call on work order" entry are gone, and the list order is the work order. The AI states its own change and reason in one chat line instead. When it saves a Notepad still in the older form, it rewrites that entry into the new one in the same save, keeping names, order, ids, refs, deadlines and the person's reasons.
