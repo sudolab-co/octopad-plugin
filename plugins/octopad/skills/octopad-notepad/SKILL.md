@@ -150,7 +150,7 @@ The `compass` holds at most one `### Priorities` entry: what the user wants to d
 Orientation names the notes and reminders to review: their `review_on:` date has come, or they are unchanged for 30 days. Age makes an entry a question, never a removal. For each one named:
 
 1. Check its `exit:` and references with the tools you have. When the record shows it settled (the user committed to it and a task holds it, Knowledge records it, or they dropped it), retire it, name it in the save's reason, and say so in one line.
-2. About what you cannot settle, ask at most one entry a day (claim `followup:`, see Claims), in one line at the end of your answer, never in its place: keep, change or drop? Keep: add `updated_by:` today. Later: set `review_on:` to their date. Drop: retire it. No answer: set `review_on:` to 30 days later.
+2. About what you cannot settle, ask at most one entry a day (claim `followup:`, see Claims), in one line at the end of your answer, never in its place: keep, change or drop? Keep: add `updated_by:` today and remove `review_on:`. Later: set `review_on:` to their date. Drop: retire it. No answer: set `review_on:` to 30 days later.
 
 # Older entries
 
