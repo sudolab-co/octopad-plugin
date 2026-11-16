@@ -1,5 +1,15 @@
 # Octoplan supervision
 
+## Contents
+
+- Enter or resume
+- Phase 4: advance the ready frontier
+- Resolve problems within the mandate
+- Worker prompt
+- Proof and review
+- Phase 5: reconcile change and interruption
+- Phase 6: prove closure or hand off
+
 ## Enter or resume
 
 Apply [recovery.md](recovery.md) before takeover. Native continuity objects belong to the runtime; they never replace Octopad authority. Projects and memory help retrieval, never replace current Octopad state.
@@ -8,7 +18,7 @@ Continue only while the Brief, review coverage, review floor, scope, and effects
 
 Check current ownership and authority before a spawn, effect, close or gate clearance. Receiving a message never expands a role's authority.
 
-Every message that reports delivery state or hands the user a decision starts with `**Octoplan · Step 3 of 3 — Delivery**`, then one progress line in everyday words: `Progress — 2 of 51 tasks done, 1 in progress, 48 waiting · waiting for your review of the two pilots` for a graph, or `Progress — task 3 of 8 · writing the third spec` for a sequence. Count tasks from their current status in Octopad, never from memory; after the dot, say in a few words where the work stands and, when it waits, on whom. The countable outcome unit and the kill question stay in the records and the consequence handoff, not in this line; a short answer to a status question needs none. With the desktop pane open, delivery state goes to the desktop as the kernel says; chat keeps decisions and explanations. Quote observed behavior verbatim when behavior is the output. Apply [SKILL.md](../SKILL.md), persist evidence, and use the consequence handoff for every wait.
+Every message that reports delivery state or hands the user a decision starts with `**Octoplan · Step 3 of 3: Delivery**`, then one progress line in everyday words: `Progress: 2 of 51 tasks done, 1 in progress, 48 waiting · waiting for your review of the two pilots` for a graph, or `Progress: task 3 of 8 · writing the third spec` for a sequence. Count tasks from their current status in Octopad, never from memory; after the dot, say in a few words where the work stands and, when it waits, on whom. The countable outcome unit and the kill question stay in the records and the consequence handoff, not in this line; a short answer to a status question needs none. With the desktop pane open, delivery state goes to the desktop as the kernel says; chat keeps decisions and explanations. Quote observed behavior verbatim when behavior is the output. Apply [SKILL.md](../SKILL.md), persist evidence, and use the consequence handoff for every wait.
 
 ## Phase 4: advance the ready frontier
 
@@ -37,7 +47,7 @@ While safe authorized work remains, take the next action or wait through the run
 
 Diagnose implementation, preparation, proof or environment before treating a technical problem as a user decision. Execution defects follow [recovery](recovery.md#diagnose-before-repeating) and saved failed-check continuations; missing preparation is not repaired by a stronger worker.
 
-For changed task meaning, dependencies or proof, missing context, unsettled shared choices or an impossible check, record the defect on its owning task and use one planner at a time through the runtime's supported route. Use its profile's planner or plan-repair route with bounded context: affected task and source revisions, intended result, failure, attempts and evidence, mandate, gates, remaining limits and [working judgment](../SKILL.md#working-judgment), under the brief rules below.
+For changed task meaning, dependencies or proof, missing context, unsettled shared choices or an impossible check, record the defect on its owning task and use one planner at a time through the runtime's supported route. Use its profile's planner or plan-repair route with bounded context: affected task and source revisions, intended result, failure, attempts and evidence, mandate, gates, remaining limits and working judgment as the [worker prompt](#worker-prompt) gives it, under the brief rules below.
 
 The planner returns a sourced diagnosis and the simplest compliant repair, its affected tasks, dependencies and proof, or the precise unresolved obstacle and what would resolve it. It cannot dispatch workers, take supervisor ownership or enlarge authority. The same supervisor verifies the recorded repair and resumes dependent work after planning's [change rule](planning.md#changes) is satisfied; independent covered work continues.
 
@@ -81,7 +91,7 @@ pasting it.
 
 When Verify passes on your committed head, have the work reviewed: launch one
 fresh reviewer per judgment in the task's Review, at its route for this runtime,
-read-only and without Octopad, briefed with working judgment, the task text, base and head, the
+read-only and without Octopad, briefed with working judgment as the worker prompt gives it, the task text, base and head, the
 checks you ran with their output, and the target rules as a floor. A finding
 blocks only on an effective rule, a reviewed requirement, an uncleared gate or a
 correctness failure. Fix real defects within this task yourself, including nonblocking ones,
@@ -138,14 +148,14 @@ A material change sweeps every open task, started or not, not only the tasks the
 
 ### Consequence handoff
 
-When a human decision or action becomes necessary, surface it immediately and state whether it stops all delivery or only a branch. Use the runtime's supported input route; if that blocks the actor, finish independent work before invoking it. Restate an unanswered request at the final handoff. Do not bury the need in a progress report or wait for the user to ask. Wait only for a consequence the user owns, a selected checkpoint, a person named by an effective rule, or a verified person-only access or proof step. Start with `**Octoplan · Step 3 of 3 — Delivery**`, state the handoff outcome in countable units and the one assumption that would make it worthless, then use these six labels in the user's language; at the actual finish line, publish one such recap using the supported state, with residual risks and authorized deferrals:
+When a human decision or action becomes necessary, surface it immediately and state whether it stops all delivery or only a branch. Use the runtime's supported input route; if that blocks the actor, finish independent work before invoking it. Restate an unanswered request at the final handoff. Do not bury the need in a progress report or wait for the user to ask. Wait only for a consequence the user owns, a selected checkpoint, a person named by an effective rule, or a verified person-only access or proof step. Start with `**Octoplan · Step 3 of 3: Delivery**`, state the handoff outcome in countable units and the one assumption that would make it worthless, then use these six labels in the user's language; at the actual finish line, publish one such recap using the supported state, with residual risks and authorized deferrals:
 
-- **State** — where the outcome stands.
-- **Done** — what is finished and proved.
-- **Blocked** — what is waiting and why.
-- **Decision expected** — the exact human decision or action.
-- **To unblock** — who must provide what evidence.
-- **Next step** — what resumes immediately afterwards and what safe work continues meanwhile.
+- **State**: where the outcome stands.
+- **Done**: what is finished and proved.
+- **Blocked**: what is waiting and why.
+- **Decision expected**: the exact human decision or action.
+- **To unblock**: who must provide what evidence.
+- **Next step**: what resumes immediately afterwards and what safe work continues meanwhile.
 
 Any field may say “none”. Before declaring no work available, walk the open graph and name the recorded source of each wait. Verify a claimed human-only limitation in the live environment; a false claim is a Plan defect to repair. Repeated unchanged escalation without a real recorded wait is a supervisor-owned stall, not a reason to repeat the question. Runtime polls add neither evidence nor authority.
 

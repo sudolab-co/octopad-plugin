@@ -1,20 +1,22 @@
 ---
 name: octopad-planning-and-work-design
-description: "Use while a request's task count, prerequisites, nesting, scores, dates or repetition are undecided or wrong, and before laying out several tasks as a roadmap, plan or launch, creating or changing a stream or goal, or taking a task out of its stream by archive, deletion or move, and before proposing or running a test that launches AI sessions, takes a person's time or costs money. Delivery by agents: octoplan."
+description: "Use when agreed work has an end state and needs three or more tasks over more than one sitting, when a request holds several deliverables or a step another member carries out, and when a result, a decision or a new task changes what a stream's remaining tasks assume. Also use it before laying out several tasks as a plan, when a stream or a goal is created, changed, renamed, merged, split or archived, when a task leaves its stream by archive, deletion or move, when the number of tasks, nesting, prerequisites, priority order, a date or repeating work is undecided or wrong, and before proposing a test that costs AI sessions, a person's time or money. Delivery by agents: octoplan."
 ---
-If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-planning-and-work-design"` when you open this skill.
-
-Version: 6.1.0
+Version: 6.2.0
 
 # From a need to prepared work
 
-A stream and an Octoplan use the same brief and work graph. Octoplan is the delivery of that work by agents under an agreed level of autonomy, not a second object. This skill owns the common preparation; [Octoplan](../octoplan/SKILL.md) owns its delivery mandate, executable preparation, review and activation.
+A stream and an Octoplan share one brief and one work graph: Octoplan is that work delivered by agents under an agreed autonomy, not a second object. This skill owns the shared preparation. [Octoplan](../octoplan/SKILL.md) owns the delivery mandate, the executable preparation, review and activation.
 
 ## Brief only what the request needs
 
-Read the existing stream, tasks, decisions and relevant sources first. Establish the purpose, intended result and proof, boundaries, constraints, important unknowns and who decides consequences. Ask about missing foundations that could change the result; resolve what the sources already settle yourself. Play back the intended result in proportion to the request, and confirm material interpretations before work that depends on them. A clear capture can need only a sentence, not an interview. Creating a stream or a plan grants no agent-delivery mandate and does not pause work the user already asked you to execute. A request limited to planning stays limited to planning.
-
-An ongoing stream needs its area of responsibility and routing boundaries, not an invented finish line. A small job may need one task in an existing stream or no new stream. Do not manufacture a goal, task tree or Octoplan records to complete a form. The stream rules below choose the work's home; their task count and duration are never thresholds for autonomy.
+- Read the existing stream, tasks, decisions and relevant sources first.
+- Establish the purpose, the intended result and its proof, the boundaries and constraints, the unknowns that matter and who decides the consequences.
+- Ask about a missing foundation only when it could change the result. Settle yourself what the sources already settle.
+- Play back the intended result in proportion to the request, and confirm a material interpretation before work that depends on it. A clear capture can need one sentence, not an interview.
+- An ongoing stream needs its area of responsibility and its routing boundaries, not an invented finish line.
+- A small job may need one task in an existing stream, or no new stream. Create a goal, a task tree or Octoplan records only when the work needs them, never to complete a form.
+- The stream rules below choose the work's home. Their task count and duration never set how much autonomy agents get.
 
 ## Choosing how to deliver
 
@@ -22,86 +24,93 @@ When agents could usefully deliver the prepared work, when the user asks for age
 
 # Shaping the work
 
-- Where a task's scope is ambiguous at its edge, write down what it does NOT cover; an unstated exclusion is how two people build the same half twice.
-- Count the deliverables before you count tasks: a deliverable is something that could be shipped, reviewed or closed on its own, and the number of those is the number of top-level tasks — no more and no fewer.
-- Cut each deliverable into the smallest units that make sense in the logic of its work: parts each finished and checked on its own, split at natural seams, never mid-change, an atomic change kept whole. Those units become its subtasks; a deliverable of one unit has none.
-- Never open a top-level task whose only job is to hold the others beneath it. An umbrella restates the stream and delivers nothing of its own.
-- Checking a deliverable, getting it accepted and delivering it are not parts of it: they stay in its Done when, as the methodology says, except work it makes its own task. Deliverables made one after another stay flat all the same: top-level tasks joined by dependencies.
-- A test that is its own task gets one task per system it tests, such as a signup flow or a reminder service: all that system's cases sit in its What, each with what it proves, beside its run budget, and never also in a deliverable's Done when. It depends on each deliverable it covers, which never waits for it. Its levels, such as a protocol to approve and then its runs, are its subtasks, never one per case. Accepting the result stays its approver's yes, never a task.
+- Where a task's scope is ambiguous at its edge, write down what it does not cover. An unstated exclusion is how two people build the same half twice.
+- Count the deliverables before you count tasks. A deliverable is something that could be shipped, reviewed or closed on its own, and their number is the number of top-level tasks.
+- Cut each deliverable into the smallest units that make sense in the logic of its work: parts each finished and checked on its own, split at natural seams, an atomic change kept whole. Those units become its subtasks; a deliverable of one unit has none.
+- Open no top-level task whose only job is to hold the others. An umbrella restates the stream and delivers nothing.
+- Checking a deliverable, getting it accepted and delivering it (sending, publishing, deploying) stay in its Done when, except work it makes its own task.
+- Keep deliverables made one after another flat: top-level tasks joined by dependencies.
+- A chosen test is its own task, one per system it tests, such as a signup flow or a reminder service. Put all that system's cases in its What, each with what it proves, beside its run budget, never also in a deliverable's Done when.
+- Make a test task depend on each task it tests and on each step another member runs for them, such as their deploy or migration. Nothing waits for the test unless the user makes it a gate.
+- Give a test its levels, such as a protocol to approve and then its runs, as subtasks, never one subtask per case. Accepting its result is its reviewer's yes, never a task.
 - A subtask may not fall due after the task above it.
-- Join two deliverables only where one truly cannot start until the other lands; an edge added for tidiness serialises work that could have run side by side.
-- Order is what dependencies carry, and priority says how much a thing matters within an order already settled. Reaching for priority to make something happen sooner is the sign that a real dependency, or the user's call on order, is missing.
-- Add a preparation task only for a real prerequisite, something the others cannot start without, such as a shared contract they must all follow; two unrelated fixes stay independent, whatever order they are done in. When the user wants an order no prerequisite imposes, keep it in the order of their priorities, with its reason in the `why:` of the priority it concerns, in their Notepad where they have one: never invent a prerequisite for it, and never lower a sibling's priority to push it down.
-- Between two subtasks a dependency is optional and stands in for nothing at the level above: wire one only where that subtask genuinely blocks that other one, which is rare.
-
-# The scales
-
-- Priority is read inside one stream and never across streams: High (3) is urgent or holds up other work, Normal (2) is the default, Low (1) is worth doing with nothing waiting on it.
-- Impact runs 1 to 5 — 5 serves the primary goal, 4 serves a secondary goal or clears the way for a 5, 3 keeps the stream healthy or unblocks something, 2 is a small improvement, 1 is cosmetic.
-- Score every leaf, meaning any task with no subtasks, a top-level one included; a task that has subtasks takes its figure from them, so leave it unset there.
-- The same holds inside one batch: a row that other rows in the call nest under is averaged from those rows and carries no impact of its own.
-- A parent whose subtasks arrive in a LATER call is the exception — score it, since there is nothing yet to average, and it is recomputed once the children land.
-- The AI score is computed for you. Never write one by hand.
+- Join two deliverables only where one truly cannot start until the other lands. An edge added for tidiness serializes work that could run side by side.
+- Dependencies carry order; priority says how much a thing matters within that order. Reaching for priority to make something happen sooner means a real dependency, or the user's call on order, is missing.
+- Add a preparation task only for a real prerequisite that the others cannot start without, such as a shared contract they must all follow. Two unrelated fixes stay independent, whatever order they are done in.
+- When the user wants an order no prerequisite imposes, open `../octopad-notepad/SKILL.md` and keep that order in their priorities, with its reason in the `why:` of the priority it concerns, where they have a Notepad. Never invent a prerequisite for it, and never lower a sibling's priority to push it down.
+- Wire a dependency between two subtasks only where one genuinely blocks the other, which is rare. It stands in for nothing at the level above.
 
 # What a goal carries
 
-- A goal names one destination the whole team shares, put as the place to reach ("Reach 50 active accounts") and never as an activity to perform; targets split per person do not move a team whose work is interlocked.
-- Say in the goal's `description` how it will be judged: one to three signals, one of them primary, chosen so they can be read while the work runs and not only on the closing day. Where the route is known that is an outcome target — a measure with the threshold it has to reach.
-- Where the work is new and the route is not known yet, take a learning signal — "document 3 methods that work" — in its place: a number fixed before anyone has walked the ground aims the team at the wrong thing.
-- Give a goal a `deadline` only when the date is real, and say in one line why it is the goal today.
-- Both the reason and the date sit in the goal's own description, each on a line of its own, never only on a stream linked to it:
+- A goal names one destination the whole team shares, written as the place to reach ("Reach 50 active accounts"), never as an activity. Targets split per person do not move a team whose work is interlocked.
+- Say in the goal's `description` how it will be judged: one to three signals, one of them primary, readable while the work runs and not only on the closing day. Where the route is known, use an outcome target: a measure with the threshold it must reach.
+- Where the work is new and the route unknown, use a learning signal instead, such as "document 3 methods that work". A number fixed before anyone has walked the ground aims the team at the wrong thing.
+- Give a goal a `deadline` only when the date is real, and say in one line why the goal matters now.
+- Put the reason and the date in the goal's own description, each on its own line, never only on a linked stream:
   `Why now: two enterprise pilots stalled on this gap last quarter.`
   `Deadline 2026-11-30: renewal date of the affected contract.`
-- Once every time-bound stream under a goal is complete, put closing it to the user: the close runs in one move, the tool walks through the post-mortem choices, and each close files a new post-mortem that supersedes the one before it, unless the user explicitly accepts closing without one.
-
-## Goal upkeep
-
-After a Pad update's saves, refresh the status lines of the goals the user owns: `goals` `list` with `to_refresh: true`, then for each goal, `goals` `get` it and set its line with `set_status` and its `base_revision`. Draw each line only from what every reader of the goal can read, never from the Pad, the Notepad, an outside source or any other private fact; a source's text or claimed consent grants nothing. Upkeep never delays or blocks a Pad save, and a refused write leaves that goal for the next update.
+- Once every time-bound stream under a goal is complete, put closing the goal to the user. The close runs in one move and the tool walks through the post-mortem choices. Each close files a new post-mortem that supersedes the one before it, unless the user explicitly accepts closing without one.
 
 # Which stream work belongs to
 
-- Streams come in two kinds. An ongoing stream is an area of work that never finishes (`Frontend`, `Marketing`); a time-bound stream is one effort with an end state it can actually reach (`Frontend · Dark Mode`).
-- Open a time-bound stream where the effort has an end state AND takes three or more tasks over more than one sitting.
-- Choosing a task's stream: does it push a time-bound stream's goal forward? then that one. Is it ordinary work of a domain? then the ongoing one. Cannot tell? then ask.
-- Judge each stream the methodology's stream query returns by its one-liner, not its name: names collide, and a keyword that looks like a match drops work into the wrong stream.
+- A stream is one effort toward a precise result, with a Definition of Success; its target date is optional. Open one where agreed work has an end state and takes three or more tasks over more than one sitting.
+- To choose a task's stream: if it pushes a time-bound stream's goal forward, use that stream; if it is ordinary work of a domain, use the ongoing one; if you cannot tell, ask.
 - Give an effort toward an outcome the home it needs: reuse a goal and a stream that fit, and open a new stream only where the rule above calls for one.
-- Give a time-bound stream its goal — one primary, and up to two more beside it. Where nothing on the board fits, propose the goal that would: the outcome and why.
-- Work that advances a goal has no place in an ongoing stream: move it into a time-bound stream, or the goal's progress cannot be seen at all.
-- Give a stream a `target_date` only when a real signal sets it: a timeframe or deadline from the user, the linked goal's own deadline, a dated stream it depends on. With none, ask whether to set one and offer a grounded date when the goal or a dependency provides one; a time-bound stream may start without one.
-- Where one stream has to wait on another, record that with `depends_on_stream_ids`, and honour the order when you choose what to pick up next.
-- Asked for work that repeats, create and route the repeating task itself. Standing up an ongoing stream is half the job — a stream is where the work sits, never the work itself.
+- Give a time-bound stream one primary goal, and at most two more beside it. Where nothing on the board fits, propose the goal that would, with the outcome and why.
+- Move work that advances a goal out of an ongoing stream into a time-bound one, or the goal's progress cannot be seen.
+- When you find that one stream waits on or continues another, link them with the kind and a one-line reason. When you choose what to pick up next, weigh a `depends on` link: it informs and never blocks.
+- Asked for work that repeats, create and route the repeating task itself. A stream is where the work sits, never the work.
 
 # Laying out a plan
 
-- A page that mirrors the task tree makes a second copy of the plan: it is then read in two places and goes stale as the work lands. Pages carry reference material that outlasts the effort, not a plan the tasks already hold.
-- When you lay out a stream, give each clause of its `definition_of_success` the task that proves it: a deliverable's Done when, or a test task where the methodology makes one. A clause nothing proves is otherwise found only when the last task closes.
-- The default shape of an effort is flat — the stream, its top-level tasks, and the dependencies between them. When a stream's whole work follows one logic, mark its main parts for the user: start the title of each top-level task with its phase, `P1 · <title>`, `P2 · <title>`. Subtasks carry no prefix, and a phase is never a parent task.
-- When a graph write — a create, a dependency, a change of page links — comes back naming sibling tasks that share the pages you linked, read their order and their gates again before moving on. What changed the plan changed its neighbours, not only the edge you came to add.
+- The plan is the task tree: top-level tasks with their dependencies, priority, impact and real due dates. Keep it there, not in a page or a list of your own.
+- Everything the ask names lands in one pass: the goal, the stream, and every task in as few `batch_tasks` calls as its limits allow, with assignments and dependencies. Add nothing in a second pass that you already knew.
+- Keep an effort flat by default: the stream, its top-level tasks and the dependencies between them.
+- When a stream's whole work follows one logic, mark its main parts: start each top-level task's title with its phase, `P1 · <title>`, `P2 · <title>`. Subtasks carry no prefix, and a phase is never a parent task.
+- When parts of an effort have their own success condition, owner, gate or schedule, make each its own stream under the same goal, linked `depends on` for order or `builds on` for a continuation. Keep phase prefixes for parts that one Definition of Success covers.
+- When new work arrives after a stream's Definition of Success is met, or serves another result, start a new stream linked `builds on`.
+- When a later task can be written only once the task it waits for is done, say in that dependency's rationale what it takes from it. Copy no sentence across edges.
 
 **Laying out a five-week launch.**
 
 User, on 2026-04-26: *"Lay out the launch: research, then design, then build, then ship, across the next five weeks."*
 
-- Wrong: one `tasks(action:"create")` per task and `link_dependency` calls afterwards — seven round trips for a single plan, the exact pattern `batch_tasks` exists to collapse.
-- Right: the stream first, then the entire graph in as few `batch_tasks` calls as its limits allow.
-  1. Open the time-bound stream "Launch Q2" with its `definition_of_success`, its goal, and a `target_date` of `2026-05-31`, five weeks from the day the user asked, which is the horizon they gave, set on the effort itself and never copied down onto its tasks.
-  2. The whole set, the stream given once as each call's default and `depends_on_refs` carrying every edge (to an earlier call's task by its ID), never a second pass of `link_dependency` calls.
-- Why the titles carry phases here: the launch follows one logic, research then design then build then ship, so each top-level task starts with its phase, `P1 · ` to `P4 · `, and no parent holds them. Five independent fixes, each checked in its own Done when, follow no such logic: they get no phases and no umbrella, and a test or deploy task only where the methodology calls for one.
-- Why no date sits on a task here: the user gave a rough span, not four deadlines. That span became the effort's outer horizon and stopped there, and what carries the order between the tasks is `depends_on_refs`.
+- Wrong: one `tasks(action:"create")` per task, then `link_dependency` calls: seven round trips for one plan, the pattern `batch_tasks` exists to collapse.
+- Right: the stream first, then the whole graph in as few `batch_tasks` calls as its limits allow.
+  1. Open the time-bound stream "Launch Q2" with its `definition_of_success`, its goal and a `target_date` of `2026-05-31`, five weeks from the day the user asked. That horizon sits on the effort, never copied onto its tasks.
+  2. Send the whole set with the stream given once as each call's default and `depends_on_refs` carrying every edge, an earlier call's task by its ID. Make no second pass of `link_dependency` calls.
+- Why the titles carry phases: the launch follows one logic, research then design then build then ship, so each top-level task starts with `P1 · ` to `P4 · ` and no parent holds them. Five independent fixes, each checked in its own Done when, follow no such logic: they get no phases, no umbrella, and a test task only when one is needed, as the methodology says.
+- Why no task carries a date: the user gave a rough span, not four deadlines. The span became the effort's horizon and stopped there; `depends_on_refs` carries the order between the tasks.
 
 # When an effort ends or changes shape
 
-- A task nobody is going to do (dropped, overtaken, or folded into another effort) is `cancelled`, its `status_line` naming why and what replaces it. Archiving only takes a task out of sight; it never stands in for `done` or `cancelled`.
-- Only a time-bound stream has a lifecycle, and it runs active, then completed, then archived. Completed keeps it in context and in search until its goal is reached; archived takes it out of context, so archiving ahead of the goal removes what the goal is still working from.
-- **Trackers are system-managed, with two exceptions you append yourself.** Tracker pages live in the system Trackers / Archive folders and render read-only. The system owns the Progress Report and Activity Log — never hand-write those two sections. You append exactly two things: the `## Closing Report` before completing a stream, and the structural-change note below.
-- **Structural-change note.** When a stream is archived, renamed, merged or split, or tasks move out of it, append a dated line to every tracker page the change touches, saying what changed and why.
+- Keep the stream's tasks and its Definition of Success coherent and correct. Check them each time a task is added to or closed in the stream, and as soon as the person gives an instruction that affects the stream, before dependent work continues:
+  1. Read light: the Definition of Success, one line per open top-level task (title, status, status line) and the rationale of its dependencies. Open a description only where the check touches that task.
+  2. Compare them with the person's instructions and the actual results, not only with each other.
+  3. Put right what no longer matches and nothing else: the order and its dependencies; a task made false, rewritten in place; a task left short, made precise now that what it waited for exists; a task made useless, `cancelled`; a missing task, created; work already started on the old basis, checked before it goes further.
+  4. Change a Done when or the Definition of Success only on the person's yes: show the old text, the new text and why, unless they asked for the change. Record a Definition of Success change as a Decision scoped to the stream, with old, new and why.
+  5. Tell the person in one line what moved. When nothing moved, write nothing.
+- Keep the tracker's Scope and Rationale true: correct them in place when the work shows they no longer hold.
+- Only a time-bound stream has a lifecycle: active, then completed, then archived. Completed keeps it in context and in search until its goal is reached. Archived takes it out of context, so archiving before the goal is reached removes what the goal still works from.
+- Tracker pages live in the system Trackers and Archive folders and render read-only.
+- Before you complete a stream, append its `## Closing Report` to its tracker.
+- Record a split, merge or move in the links and Decisions it changes, not as a dated line on a tracker.
+- When a stream is completed or archived, settle its open questions as `../octopad-knowledge-evidence/SKILL.md` says.
 
-## Design a costly test
+# Design a costly test
 
-A test is costly when, over all its runs, it launches AI sessions, takes a person's time or costs money. First weigh it against acting without it, by what a mistake would do before you could correct it, not by whether its text can be edited: who acts on it, what it sends, writes or ships, and to how many. When acting and correcting cost less than the test, do it within its usual approvals and watch real use: propose no test. Otherwise the test must cost less than the harm it prevents, and the method the person suggests is one option, not the brief. If the test is still worth it, before you propose it, write these in its task and show them to the person, asking for the go in that message unless they already approved these exact fields; when one changes, show them again, since a go given to anything else is no go. Before its first run, confirm that the revision it needs is deployed.
+A test is costly when, over all its runs, it launches AI sessions, takes a person's time or costs money.
 
-- **Decision:** the observable result and its threshold, and what you do on pass, on fail and on an inconclusive result. If no result would change what you do, run nothing.
-- **Method and ceiling:** the cheapest method able to establish that result, and why each cheaper one cannot; the smallest series that could change the decision: a large expected effect needs few runs, and distinct real cases come before repeats of one. Then a numeric ceiling on runs, retries and grading included, and for AI runs on the tokens they may use, counting the context each run reloads and their output, with a stop rule set before the first result; say so when nothing can stop the runs at that token ceiling. At the ceiling, stop and report: only the person extends it. Keep the model the question is about; every other agent uses the smallest that does its job.
-- **Proof:** a known failing case the test must catch and a sound case it must pass, then every attempt, aborted ones included, reconciled with its traces, and what it changed, restored and checked.
+Octopad requires no test beyond a task's Done when: the user and you choose, under their own instructions. Propose a test only when its result could change what someone does, and create it on the user's yes or when their instructions ask.
+
+1. Weigh it against acting without it, by what a mistake would do before you could correct it, not by whether its text can be edited: who acts on it, what it sends, writes or ships, and to how many. When acting and correcting cost less than the test, act within the usual approvals and watch real use: propose no test.
+2. Otherwise the test must cost less than the harm it prevents. The method the person suggests is one option, not the brief.
+3. If the test is still worth it, write the fields below in its task and show them to the person, asking for the go in that message unless they already approved these exact fields. When a field changes, show them again: a go given to anything else is no go.
+4. Before its first run, confirm that the revision it needs is deployed.
+5. Create a chosen test as its own task, as Shaping the work says.
+
+- **Decision:** the observable result and its threshold, and what you do on pass, on fail and on an inconclusive result. On fail, set the test task `blocked` with its reason and send the task at fault back to `in_progress`; a leaf whose What covers the fix carries it, and the fix's pull request names that leaf. If no result would change what you do, run nothing.
+- **Method and ceiling:** the cheapest method able to establish that result, and why each cheaper one cannot; the smallest series that could change the decision. A large expected effect needs few runs, and distinct real cases come before repeats of one. Then a numeric ceiling on runs, retries and grading included, and for AI runs on the tokens they may use, counting the context each run reloads and their output, with a stop rule set before the first result. Say so when nothing can stop the runs at that token ceiling. At the ceiling, stop and report: only the person extends it. Keep the model the question is about; every other agent uses the smallest model that does its job.
+- **Proof:** a known failing case the test must catch and a sound case it must pass. Then every attempt, aborted ones included, reconciled with its traces, and what it changed, restored and checked.
 
 One AI run shows that something can happen, never how often.

@@ -6,7 +6,7 @@ Keep durable knowledge in Pages, or in the repository docs that already hold it.
 
 ## Product Overview
 
-One per offer, a head page (`head_type: product_overview`; at most 10 live per organization and per workspace) for purpose, experience, design pillars, non-goals and relationships above system specs, with a Marketing section that `manage-product-marketing` writes; the Organization Overview shows its At a glance block. Products sold together to one audience at one price share one; a product gets its own only when its audience or its price differs. Its At a glance key `offer_and_availability` is yours, held to the evidence a Product Fact needs; `audience_and_need`, `promise` and `conditions` are product marketing's. Keep it distinct from the Product Map, which only indexes.
+One per offer, a head page (`head_type: product_overview`) for purpose, experience, design pillars, non-goals and relationships above system specs, with a Marketing section that `manage-product-marketing` writes; the Organization Overview shows its At a glance block. Products sold together to one audience at one price share one; a product gets its own only when its audience or its price differs. Its At a glance key `offer_and_availability` is yours, held to the evidence a Product Fact needs; `audience_and_need`, `promise` and `conditions` are product marketing's. Keep it distinct from the Product Map, which only indexes.
 
 ## Product Map
 

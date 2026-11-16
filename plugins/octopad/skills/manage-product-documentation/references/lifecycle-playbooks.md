@@ -1,5 +1,16 @@
 # Product documentation lifecycle playbooks
 
+## Contents
+
+- Greenfield setup
+- Existing-product setup
+- Brainstorm and design maturity
+- Implementation context retrieval
+- Pull request and delivery sync
+- Release sync
+- Maintenance and audit
+- Downstream documents
+
 ## Greenfield setup
 
 Use when there is no product documentation, repository, or established system model.
@@ -64,10 +75,10 @@ Follow repository review and merge controls. This skill grants no merge authorit
 
 ## Release sync
 
-Run one full pass per release, when changes actually reach users. It must end with updated docs or named debt, never a silent skip. Keep one durable record per release — a release page or runbook entry: step 9 writes it, and step 2 reads the previous one. On the first pass ever, no previous record exists; bound on the oldest evidence you can verify and say so.
+Run one full pass per release, when changes actually reach users. It must end with updated docs or named debt, never a silent skip. Keep one durable record per release, a release page or runbook entry: step 9 writes it, and step 2 reads the previous one. On the first pass ever, no previous record exists; bound on the oldest evidence you can verify and say so.
 
 1. Verify the repository's release policy, exact released revision, and included changes.
-2. Bound the release window. Read the boundary the previous release pass recorded: an exact revision, or failing that a date resolved to a revision. Collect every change between that boundary and this release's exact revision. Never bound on a moving branch head or a bare date; a date boundary silently drops same-day changes. When the boundary is imprecise, over-collect toward the older side and say so in the closing record — a duplicate is visible, a dropped change is not.
+2. Bound the release window. Read the boundary the previous release pass recorded: an exact revision, or failing that a date resolved to a revision. Collect every change between that boundary and this release's exact revision. Never bound on a moving branch head or a bare date; a date boundary silently drops same-day changes. When the boundary is imprecise, over-collect toward the older side and say so in the closing record: a duplicate is visible, a dropped change is not.
 3. Consume each change's documentation-impact mark when the delivery workflow records one. A mark naming a maintained doc puts that doc on the update list with the change as evidence. Recheck an explicit `none` against the diff and its receipt. A missing or wrong owner is resolved by adopting or creating the smallest authorized owner when the evidence is sufficient; otherwise file documentation debt. A mark naming another family's doc is a handoff, not an edit order.
 4. Re-read each affected draft against released code and observed product behavior when available.
 5. Edit a spec only where the release settled a direction or changed a need, choice, promise or non-goal: fold what it settled into Choices or Promises and remove the Direction line once nothing in it is still ahead. Check the Architecture Map against the released changes under its rule in [documentation-model.md](documentation-model.md), and edit it only where a component, a connection, a data store or external service, a code home or the release model changed; the release's history stays on its record (step 9).
@@ -101,4 +112,4 @@ For user docs, release notes, and Product Facts, plus handoffs to marketing:
 3. Verify every capability, limit, outcome, compatibility statement, and metric.
 4. Separate current behavior from future intent. Exclude internal implementation detail unless the audience needs it.
 5. Draft the smallest audience-appropriate change and retain source links in the working artifact when possible.
-6. Reconcile every pre-release draft after release, then obtain required publication approval. Do not publish merely because the draft is complete.
+6. Reconcile every pre-release draft after release, before it is published.

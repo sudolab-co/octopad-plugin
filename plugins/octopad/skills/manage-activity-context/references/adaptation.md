@@ -1,12 +1,12 @@
 # Adapt from first principles
 
-Start with the decision the AI must support, not a list of documents it could create. Without the fact in question, would the next action plausibly be wrong? If not, do not ask for it just to complete a profile.
+Start with the decision the AI must support, not a list of documents it could create. Ask for a fact only when a step other than writing the page depends on it, such as choosing a recipient or a price; never ask for it just to complete a profile.
 
 ## Independent dimensions
 
 | Dimension | Useful distinction | Documentation consequence |
 |---|---|---|
-| Actor and responsibility | Who is acting, deciding or accountable? An individual is not automatically a company. | Attribute context; link authoritative platform or governance records, do not duplicate personnel data. |
+| Actor and responsibility | Who acts, decides or is accountable, as the sources already show. An individual is not automatically a company. | Attribute context; link authoritative platform or governance records, do not duplicate personnel data. |
 | Purpose and beneficiaries | Learning, service, public benefit, commerce or another purpose; beneficiary, user, buyer and funder can differ. | Explain the actual purpose; avoid forcing customer vocabulary. |
 | Contribution to value | Delivered offering, means of production, coordination tool, experiment, shared infrastructure; several can coexist. | Describe each relevant use separately; a tool's functional documentation does not depend on sales. |
 | Economics | Sales, donations, grants, internal budget, unpaid effort, unknown. | Capture a safe relevant summary, not a compulsory business model or financial artifact. |

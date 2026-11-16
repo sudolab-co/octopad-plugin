@@ -1,9 +1,7 @@
 ---
 name: manage-product-documentation
-description: "Use before judging or changing what a product does, when its behavior is explored, decided, shipped, rolled back or retired, when asked what it does today or whether a spec matches the code, before writing up a PR or release, and before claiming no documentation impact. A shipped skill is product behavior. Not for internal notes or marketing copy (manage-product-marketing)."
+description: "Use before judging why a product behaves as it does or whether or how to change it, when the user explores or settles how it behaves, when asked what it does today or whether a page still matches the code, when a system ships, rolls back or retires, before writing up a pull request or a release, and before saying a change owes no documentation. A shipped skill is product behavior. Not for internal notes or marketing copy (manage-product-marketing)."
 ---
-If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "manage-product-documentation"` when you open this skill.
-
 Version: 6.12.0
 
 # Manage Product Documentation
@@ -56,12 +54,12 @@ A Product Spec gives the AI or person who must decide, build, change or judge a 
 
 ## Operate with evidence
 
-Classify the work before writing; the documentation family reuses these four classes:
+Classify the work before writing:
 
-- **create:** establish the missing owner after proving none exists;
-- **refresh:** replace stale current truth in the existing owner while preserving history;
-- **audit:** inspect a bounded maintained set and report its gaps; it repairs nothing, safe metadata and links included, unless the request also asks for repairs;
-- **synchronize:** propagate a changed source through this family's projections and hand other outputs to their owners.
+- create: establish the missing owner after proving none exists;
+- refresh: replace stale current truth in the existing owner while preserving history;
+- audit: inspect a bounded maintained set and report its gaps; it repairs nothing, safe metadata and links included, unless the request also asks for repairs;
+- synchronize: propagate a changed source through this family's projections and hand other outputs to their owners.
 
 A Product Spec states intent and the Product Map indexes: neither carries a verification section. Every other page this skill owns keeps one, in the page or, for published user documentation, in its release record: one line per group of claims checked together, naming scope, source and exact revision, date, method and limits; a check replaces the lines it covers and no other.
 
@@ -69,17 +67,17 @@ A Product Spec states intent and the Product Map indexes: neither carries a veri
 
 - Create or activate a Product Fact only after reading evidence, retrieved or supplied, competent to prove its exact claim, product scope and state. Claims of shipped or released behavior, or of software's current capabilities or availability, require verified release evidence, whether or not their wording mentions a release. Facts about a non-software offer, service or physical specification require the relevant authoritative decision, service record or technical evidence for their exact state; approval or validation alone proves neither availability nor launch. A named artifact or an assurance that evidence is available is a pointer, not proof. If the required evidence cannot be found, create no Fact or dependent approved copy and name the gap.
 
-1. Confirm the connected Octopad organization and relevant workspace before writing. Identify the affected product or products from current evidence; do not equate product, repository, project, or workspace. Confirm each repository and branch from current evidence. Follow their local instructions. Before creating a Page, file it in the Product folder of its scope, and follow its page-preparation guidance; a missing organization folder is created by an admin's AI, while a member's AI leaves the page unfiled and says so.
+1. Confirm the connected Octopad organization and relevant workspace before writing. Identify the affected product or products from current evidence; do not equate product, repository, project, or workspace. Confirm each repository and branch from current evidence. Follow their local instructions. Before creating a Page, file it in the Product folder of its scope, and follow its page-preparation guidance.
 2. Search before creating, and before declaring absence. Read likely matches, not only titles. Reuse and link existing pages, streams, tasks, decisions, repository docs, and PRs. Supersede or redirect duplicates non-destructively after preserving unique facts and links; never automatically delete content or overwrite history.
 3. Prove a negative before writing one. `No documentation impact` is a claim about the maintained set for every affected product. Harvest terms from the changed lines and each touched file's header comments. First list that maintained set without a title filter and read its descriptions or summaries; then open likely candidates and supplement the inventory with search over the harvested names and product terms. Record the receipt beside the claim, on one line: affected product or products, terms searched, pages inventoried, candidates read or `no candidate`, and either the document the change cites or `the change cites no document`. Search alone, or an inventory of the wrong product, proves nothing. Behavior that changed while no page owns it is a gap: record one documentation-debt item instead of closing the question.
 4. Treat unknown facts as unknown. Ask only when an unresolved system boundary, product intent, or authority conflict would materially change the result. An explicit unresolved authority conflict affecting this change always meets this bar: preserve both sources and ask instead of choosing or rewriting either one. Otherwise use a concise `Unknown`, `Unverified`, or documentation-debt marker and keep working.
 5. Never fabricate architecture, behavior, ownership, dates, metrics, source revisions, release state, or customer evidence. Derive technical facts from current code and repository configuration when available.
 6. A spec never claims a system is built or released; that claim belongs in user documentation or a Product Fact, with its evidence. Do not present an old observation as current. An At a glance block holds answers only: their provenance stays in the page body.
-7. Minimize persisted evidence. Never copy secrets, credentials, private local paths, personal or customer identifiers, or unnecessary source bodies into Octopad. Prefer a safe repository link, public revision, or redacted summary that proves the claim without exposing unrelated data.
+7. Minimize persisted evidence. Never copy private local paths, personal or customer identifiers, or unnecessary source bodies into Octopad. Prefer a safe repository link, public revision, or redacted summary that proves the claim without exposing unrelated data.
 
 ## Administer the documentation system
 
-Keep one **Product Overview** per offer, one **Product Map** per product and one evolving **Product Spec** per significant system; the Overview's At a glance key `offer_and_availability` is yours, held to the evidence a Product Fact needs. What each artifact holds, and when a Behavioral Contract, an Architecture Map or an Engineering Reference is warranted, is in [documentation-model.md](references/documentation-model.md).
+Keep one Product Overview per offer, one Product Map per product and one evolving Product Spec per significant system; the Overview's At a glance key `offer_and_availability` is yours, held to the evidence a Product Fact needs. What each artifact holds, and when a Behavioral Contract, an Architecture Map or an Engineering Reference is warranted, is in [documentation-model.md](references/documentation-model.md).
 
 When a context load makes no product choice, load the smallest slice needed; for implementation, follow [Implementation context retrieval](references/lifecycle-playbooks.md#implementation-context-retrieval).
 
@@ -106,6 +104,15 @@ Record progress, pull requests, heads, tests, reviews and releases on the Task o
 
 When product work needs a Task, reuse suitable existing work and follow the active kernel and server contract for its shape, hierarchy, and dependencies.
 
+## Pull requests
+
+- When you draft a PR body, outlines and groundwork included, end it with exactly one `Octopad-Task:` line. Put it on its own line, outside comments, code blocks and quotations, with the task's bare id: a link resolves only on octopad.app.
+- Take the task id from Octopad, never from a guess.
+- A merge into any other branch, a test or pre-production one included, leaves the task open: name the task there too, never `none`, and again on the PR that carries that work into the default branch.
+- Name a task with no open subtask; a deliverable that needs several pull requests is a parent with one subtask per pull request.
+- Write `Octopad-Task: none: <reason>` only when no task applies.
+- Before you hand the PR body over, check that it holds exactly one `Octopad-Task:` line.
+
 ## Work with the other documentation skills
 
 Product documentation owns product behavior, release truth, Product Facts, and each Product Overview except its Marketing section. Product marketing consumes Product Facts and owns that section, with ICP, positioning, pricing, campaigns, approved claims, and their messages. Activity context owns business-level context and the Activity Overview. Technical writing improves technical and user documentation without deciding its facts or evidence state.
@@ -123,10 +130,9 @@ Administer templates, folders, links, classifications, drafts, parked ideas, rou
 - material ambiguity in product intent or a significant system boundary;
 - an unresolved conflict over which source is authoritative;
 - a consequential decision not already handled by the normal product or repository review;
-- deletion, irreversible overwrite, or another destructive consolidation;
-- approval to publish externally.
+- deletion, irreversible overwrite, or another destructive consolidation.
 
-Do not automatically publish user docs, release notes, Product Facts, or marketing copy. Before release, user-documentation and release-note drafts may use approved, implemented, or merged evidence only when they remain clearly labeled pre-release and cite the exact source revision. Draft Product Facts and marketing claims only from evidence meeting the Product Fact rule in [Stop before writing](#stop-before-writing). Preserve every applicable review and publication gate.
+Before release, user-documentation and release-note drafts may use approved, implemented, or merged evidence only when they remain clearly labeled pre-release and cite the exact source revision. Draft Product Facts and marketing claims only from evidence meeting the Product Fact rule in [Stop before writing](#stop-before-writing). Keep every review the product or repository requires.
 
 ## State the automation boundary honestly
 

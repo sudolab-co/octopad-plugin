@@ -1,9 +1,7 @@
 ---
 name: manage-product-marketing
-description: "Use when a target customer is chosen or narrowed, an offer, promise, price or tier is set, a launch is prepared, customer-facing copy is written or reviewed, or an objection or a channel's result comes up; it keeps those choices in the Product Overview's Marketing section. Drafting method: pmm-check. Not for product behavior or market evidence."
+description: "Use when a target customer is chosen or narrowed, an offer, promise, price or tier is set, a launch is prepared, customer-facing copy is written or reviewed, above all copy carrying a number, a metric or a superlative, or an objection or a channel's result comes up. Keeps those choices in the Product Overview's Marketing section. Drafting method: pmm-check. Not for product behavior or market evidence."
 ---
-If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "manage-product-marketing"` when you open this skill.
-
 Version: 2.2.0
 
 # Maintain each offer's marketing
@@ -14,7 +12,7 @@ Keep the user's marketing knowledge in Octopad on your own, so another AI can dr
 
 Each offer's marketing lives in the Marketing section of its Product Overview, the head page `manage-product-documentation` keeps per offer; products sold together as one bundle share one. Write that section and only that section: the product skill owns the page's structure. There is no Marketing Overview, and a workspace with no offer and no audience to reach gets no marketing content. Organization-level marketing is read by every member, so a client's offers, prices and messages stay in that client's workspace.
 
-Audience, Positioning and Pricing pages are optional detail: explanation, research pointers and working material, never a competing current answer. Brand and tone shared by several offers live once, on such a page, which the offers reference. File these pages in the Product folder of their scope; a missing organization folder is created by an admin's AI, while a member's AI leaves the page unfiled and says so.
+Audience, Positioning and Pricing pages are optional detail: explanation, research pointers and working material, never a competing current answer. Brand and tone shared by several offers live once, on such a page, which the offers reference. File these pages in the Product folder of their scope.
 
 Outside this skill: why the activity exists, for whom and under which constraints (`manage-activity-context`); what an offer is and does, its availability and Product Facts (`manage-product-documentation`); what people experience, say, resist and compare, and the alternatives observed (`manage-market-intelligence`); diagnosis and copy drafts (`pmm-check`, which advises and owns nothing); publication.
 
@@ -24,7 +22,7 @@ The Marketing section answers these questions as material arrives, not as mandat
 
 Three keys of the Product Overview's At a glance block are yours: `audience_and_need`, `promise` and `conditions`, the terms. Each holds `missing`, `not applicable` or an answer, essential first; a provisional answer says so. Terms state a model and a status, and a number only with its essential conditions. Proof, tone and channels stay on the page.
 
-What one customer said goes to their CRM record where the CRM is on. Words that speak for the market, such as a phrase several customers use or an objection that recurs, stay on Market pages as short expressions with source and date, and the Marketing section links to them; a count ("4 of 6 interviewed customers") needs that many distinct sources.
+Words that speak for the market, such as a phrase several customers use or an objection that recurs, stay on Market pages as short expressions with source and date, and the Marketing section links to them; a count ("4 of 6 interviewed customers") needs that many distinct sources.
 
 ## Separate capture from choice
 

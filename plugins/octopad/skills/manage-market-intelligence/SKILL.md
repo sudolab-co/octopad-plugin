@@ -2,10 +2,8 @@
 name: manage-market-intelligence
 metadata:
   version: "3.3.0"
-description: "Use when a competitor, an alternative customers use, a review, a launch, a pricing move or a public mention comes up, when asked what rivals or the market say, or to set up, audit or refresh the market report. Not for one customer's record (octopad-crm) or for choosing positioning, target or price (manage-product-marketing)."
+description: "Use when a competitor, an alternative customers use, a review, a customer's words about the market, a launch, a pricing move or a public mention comes up, when asked what rivals or the market say, and when the market report is set up, audited or refreshed. Not for one customer's record (octopad-crm) or for choosing positioning, target or price (manage-product-marketing)."
 ---
-If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "manage-market-intelligence"` when you open this skill.
-
 # Manage market intelligence
 
 Give the user market information they can act on: the market, customers, alternatives, prices and implications, with their limits. Compare, compute and conclude; a reading list is not a result. The user and the owners named below make the choices.
@@ -16,27 +14,27 @@ Before searching outside, read the activity's context: the Activity Overview (wh
 
 ## Work like an analyst
 
-1. **Frame.** State the question, the decision it serves, the geography, buyer, need and period. Treat what the user and the Overviews assume as hypotheses to test, with the competing explanations and the evidence that would tell them apart. Include substitutes and doing nothing, not only products resembling the offer.
-2. **Plan.** For a full market study, choose the kinds of sources for every block of the report. For a focused question or a single signal, investigate only the relevant context, claims and what depends on them; never grow it into a full study because no report exists yet.
-3. **Collect and triangulate** (see Research and its limits).
-4. **Quantify.** Put numbers on every answer the evidence allows, with inputs and assumptions shown; compare in tables.
-5. **Conclude.** Each hypothesis ends supported, contradicted or unresolved within the researched scope; each finding says what it implies. Deepen where evidence could change a conclusion; stop when more research is unlikely to change the answer.
+1. Frame. State the question, the decision it serves, the geography, buyer, need and period. Treat what the user and the Overviews assume as hypotheses to test, with the competing explanations and the evidence that would tell them apart. Include substitutes and doing nothing, not only products resembling the offer.
+2. Plan. For a full market study, choose the kinds of sources for every block of the report. For a focused question or a single signal, investigate only the relevant context, claims and what depends on them; never grow it into a full study because no report exists yet.
+3. Collect and triangulate (see Research and its limits).
+4. Quantify. Put numbers on every answer the evidence allows, with inputs and assumptions shown; compare in tables.
+5. Conclude. Each hypothesis ends supported, contradicted or unresolved within the researched scope; each finding says what it implies. Deepen where evidence could change a conclusion; stop when more research is unlikely to change the answer.
 
 ## The pages
 
 A market scope, organization or workspace, keeps three kinds of pages in its Market folder; within the report, separate findings by offer and market when buyers, alternatives or geography differ:
 
-- **Market Overview** (head page, `head_type: market_overview`), one per scope: the report.
-- **One page per main competitor**: an actor a customer could realistically choose instead of the activity's offer today.
-- **Other actors**: one page grouping the secondary actors, two or three lines each (who they are, what they offer, their price when known) and why they are not main. One that becomes main moves to its own page.
+- Market Overview (head page, `head_type: market_overview`), one per scope: the report.
+- One page per main competitor: an actor a customer could realistically choose instead of the activity's offer today.
+- Other actors: one page grouping the secondary actors, two or three lines each (who they are, what they offer, their price when known) and why they are not main. One that becomes main moves to its own page.
 
-Market-wide customer voice and trends stay in the report; what customers say about one competitor goes on its page or entry. Collection notes, long lists and unread leads go in a working page of the task, whose keeping and archiving `octopad-knowledge-evidence` governs; assumptions and calculations stay beside the figures they support. A missing organization Market folder is created by an admin's AI; a member's AI leaves the page unfiled and says so.
+Market-wide customer voice and trends stay in the report; what customers say about one competitor goes on its page or entry. Collection notes, long lists and unread leads go in a working page of the task, whose keeping and archiving `octopad-knowledge-evidence` governs; assumptions and calculations stay beside the figures they support.
 
 ## The report
 
 Before you create, refresh, restructure or audit a Market Overview, or change a figure or comparison in it, read [its structure](references/market-report.md): what to remember, the market analysis blocks in their order, and what remains to verify.
 
-Its At a glance holds two short answers, the essential first, at most 1,000 characters together: `main_alternatives`, what people use instead, telling observed use from identified candidates; `what_it_implies`, the main implication with its essential limit. Each is `missing` when unknown, `not applicable` when it does not apply. Every session of the scope reads them and the brief may cut them at a sentence end. With every update of the report, send the At a glance keys that change, or `at_a_glance: "unchanged"`.
+Its At a glance holds two short answers, the essential first, at most 1,000 characters together: `main_alternatives`, what people use instead, telling observed use from identified candidates; `what_it_implies`, the main implication with its essential limit. Each is `missing` when unknown, `not applicable` when it does not apply. Every session of the scope reads them and the brief may cut them at a sentence end.
 
 A main competitor's page holds its target, offer, business model, prices, channel, dated traction signals, recent moves, customer experience and sources, and its strengths and weaknesses against the activity's verified capabilities for the same need. Read the actor's own general description before inferring its target from a sector page. Tell announced, available and observed use apart; an unknown feature is not a weakness.
 
@@ -56,7 +54,9 @@ On a later run, open What to remember with what changed since the last one (the 
 
 ## Review before delivering
 
-Before delivering a report, an audit, or a new or changed conclusion, comparison or computed figure, give a fresh reviewer, a sub-agent that did not draft it, the draft and the source material needed to check it: interpretation is where unsupported claims slip in. It checks each conclusion and figure against its source, recomputes the calculations, looks for evidence against the main conclusions, and finds contradictions between the report, its tables and the competitor pages. Without sub-agents, do this check yourself and say it was not independent. Check that each comparison meets its stated basis and that every summary, At a glance and the conversation included, keeps the evidence's scope and uncertainty; a confidence label never repairs an unsupported claim. Fix, qualify or drop what fails, recheck the changed claims and the tables and summaries that depend on them, and say in the report what the review changed.
+Scale the review to the stakes. Before you deliver a market report or an audit, or write a new or changed conclusion, comparison or computed figure into a page, give a fresh reviewer, a sub-agent that did not draft it, the draft and the source material needed to check it: interpretation is where unsupported claims slip in. It checks each conclusion and figure against its source, recomputes the calculations, looks for evidence against the main conclusions, and finds contradictions between the report, its tables and the competitor pages. Without sub-agents, do this check yourself and say it was not independent. Check that each comparison meets its stated basis and that every summary, At a glance and the conversation included, keeps the evidence's scope and uncertainty; a confidence label never repairs an unsupported claim. Fix, qualify or drop what fails, recheck the changed claims and the tables and summaries that depend on them, and say in the report what the review changed. When the report leaves the organization or is published, give it a second fresh reviewer with its own focus, such as the reader's.
+
+A conclusion, comparison or figure given in chat that records nothing needs no reviewer: check it against its sources yourself and say what you checked.
 
 A capture that only records one sourced fact where it belongs, such as a competitor's new list price quoted from its pricing page onto its page, needs no reviewer: check the fact against its source and read the page back.
 

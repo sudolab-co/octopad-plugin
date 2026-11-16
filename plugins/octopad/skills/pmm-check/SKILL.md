@@ -1,9 +1,7 @@
 ---
 name: pmm-check
-description: "Use to diagnose, draft or review positioning, an audience choice, a value proposition or marketing copy: homepage, landing page, campaign, social post, comparison, offer or sensitive claim. Gives methods and recommendations; manage-product-marketing records the accepted choices. Not for technical or user documentation (technical-writing)."
+description: "Use to diagnose, draft or review positioning, an audience choice, a value proposition or marketing copy. Gives methods and recommendations; manage-product-marketing records the accepted choices. Not for technical or user documentation (technical-writing)."
 ---
-If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "pmm-check"` when you open this skill.
-
 Version: 1.1.1
 
 # Diagnose and improve marketing
@@ -82,11 +80,11 @@ For a review, give findings worst first. A Blocker is a false or unverifiable cl
 
 For example, a locked homepage tagline reads "Halves your onboarding time" and no source measures onboarding time:
 
-- Finding: **Blocker**, homepage tagline. An outcome claim with no source, in a locked passage: `requires explicit reopen`. Proof needed: onboarding time measured before and after, with its scope.
+- Finding: Blocker, homepage tagline. An outcome claim with no source, in a locked passage: `requires explicit reopen`. Proof needed: onboarding time measured before and after, with its scope.
 - Delivered copy: the tagline is withheld and `[outcome: valid scoped evidence missing]` stands in its place. No alternative slogan is offered, and the source keeps the tagline until its owner reopens it.
 
 For a draft, state unresolved blockers first. Dependent claims appear only as placeholders or omissions. Provide usable independent copy in the requested format. For strategy, provide options, reasons, recommendation and uncertainty rather than declaring acceptance.
 
 Return to the marketing owner the scope, applicable source revisions, proposal or findings, evidence needs and affected choices. Do not update accepted choices or their durable records as a PMM review side effect. Read-only requests stay read-only. If a separately authorized draft write occurs, follow the destination's controls and read its final content after the last mutation; a write response alone is not verification. Report incomplete readback honestly.
 
-A review pass means the bounded review found no unresolved issue in the checked material and sources; it is not decision acceptance, specialist clearance or publication permission. Show exact copy and obtain current authorization for that content and destination before publishing. Do not send messages, spend money or collect data as an implied consequence of writing copy.
+A review pass means the bounded review found no unresolved issue in the checked material and sources; it is not decision acceptance, specialist clearance or publication permission. Do not send messages, spend money or collect data as an implied consequence of writing copy.

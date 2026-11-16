@@ -1,5 +1,12 @@
 # Octoplan Brief and Plan
 
+## Contents
+
+- Changes
+- Phase 1: confirm the Brief
+- Phase 2: compose the Plan
+- Phase 3: challenge and activate
+
 ## Changes
 
 A changed user outcome or foundational boundary returns to Brief. A changed graph, task meaning, route, verifier, deliverable, review trigger, disclosure, checkpoint, or gate returns affected work to Plan and focused review, except a repair that only re-cuts reviewed work along the unit rules or changes a route within its profile's rubric: the planner checks it against those rules and records it, without a fresh review.
@@ -11,7 +18,7 @@ Ask one natural question at a time only about expensive-to-change foundations. S
 Every new or materially changed outcome receives a scaled Brief playback and explicit confirmation. Replay its persisted interpretation on resume without asking again when unchanged. Where confirmation is missing, use this localized Markdown shape:
 
 ```markdown
-**Octoplan · Step 1 of 3 — Brief**
+**Octoplan · Step 1 of 3: Brief**
 
 **Purpose, audience, and ownership**
 <why, for whom, and who owns consequence decisions>
@@ -53,7 +60,7 @@ Computer Use and equivalent screen-driven GUI automation require explicit user a
 Before review, distinguish each independently executable effect and bounded target. Compare it with any recorded mandate, quote its source, and classify it as covered, awaiting the initial mandate or a new decision, or subject to a selected checkpoint or effective-rule gate. Use the Plan contract and owning tasks for this coverage; no extra register. Uncovered or ambiguous effects wait.
 
 ```markdown
-**Octoplan · Step 2 of 3 — Plan**
+**Octoplan · Step 2 of 3: Plan**
 
 1. <step and observable result>
 2. <step and observable result>
@@ -123,7 +130,7 @@ Plan only runnable `Verify` steps. Use the preflight access task when a remote s
 
 Design a defeat proof for each load-bearing check: name how it could pass while the claimed outcome is broken, then show that it does not. Match the method to the actual surface and stakes; a self-produced claim cannot verify itself. When tests can bypass a changed executable production path, require negative proof at the real call site: disable the relevant call, filter or write in the task's workspace, after committing its work and with no concurrent writer, demonstrate that the relevant check fails, restore it and demonstrate that it passes. Choose the smallest set covering the material bypass risks, not one mutation for every path. For declarative configuration, CSS or static content, use a direct falsification on the real proof surface, such as demonstrating that a broken value or rendered state is detected; do not invent a call site. Every `Verify` slot names its proof surface and runnable check matched to `Done when`.
 
-Do not create tasks for reads, logins, tool calls, status, approvals, reviews, merges, or publications unless a person owns a distinct artifact. Cut each deliverable into the smallest units that make sense in the logic of the work: one coherent change that can be built and checked on its own. Split at natural seams (in code: schema or migration, then server, then client, then AI-facing text), never mid-change, and keep an atomic change whole. A deliverable of one unit is one task; a deliverable of several is one task with one subtask per unit. Each subtask has its own **What**, **How** and **Verify**; one executor builds them in order, and in code they are commits of the task's pull request. Keep each task's pull request one coherent change a single reviewer can judge well; past that, it holds more than one deliverable: split it into more tasks, never into more reviews. A parent keeps its integrated `Verify`, `Review` and `Done when`, its `Review` being the one delivery review of its units, and its `Exec` routes that executor by its hardest unit. Consumed outputs need dependency edges. Give each user-facing text surface one final-wording owner. Require exact user-facing strings and surfaces. Put them on an unstarted owner task without changing its specification; replan if that owner started.
+Do not create tasks for reads, logins, tool calls, status, approvals, reviews, merges, or publications unless a person owns a distinct artifact. Cut each deliverable into the smallest units that make sense in the logic of the work: one coherent change that can be built and checked on its own. Split at natural seams (in code: schema or migration, then server, then client, then AI-facing text), never mid-change, and keep an atomic change whole. A deliverable of one unit is one task; a deliverable of several is one task with one subtask per unit. Each subtask has its own **What**, **How** and **Verify**; one executor builds them in order, and in code they are commits of the task's pull request. The task a pull request names has no open subtask when the pull request names it: each unit closes once its commit is in. Keep each task's pull request one coherent change a single reviewer can judge well; past that, it holds more than one deliverable: split it into more tasks, never into more reviews. A parent keeps its integrated `Verify`, `Review` and `Done when`, its `Review` being the one delivery review of its units, and its `Exec` routes that executor by its hardest unit. Consumed outputs need dependency edges. Give each user-facing text surface one final-wording owner. Require exact user-facing strings and surfaces. Put them on an unstarted owner task without changing its specification; replan if that owner started.
 
 Match proof to the deliverable and its real target. Source or test inspection cannot satisfy rendered-UI or live-API acceptance, and an aggregate cannot satisfy a no-regression decision:
 

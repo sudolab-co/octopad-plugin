@@ -1,9 +1,7 @@
 ---
 name: technical-writing
-description: "Use when writing, editing or reviewing a technical work product in English or French: README, technical or user documentation, PR descriptions, release notes, changelogs, in-app help, error messages, API docs. Removes AI-flavored prose in the Google developer style. Not for chat, emails, social posts, blogs, or marketing copy (pmm-check)."
+description: "Use when writing, editing or reviewing technical or user documentation, in English or French. Removes AI-flavored prose in the Google developer style. Not for chat, emails, social posts, blogs or marketing copy (pmm-check)."
 ---
-If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "technical-writing"` when you open this skill.
-
 Version: 2.1.0
 
 # Technical writing
@@ -21,7 +19,7 @@ Apply these principles in English and French. The target language's grammar and 
 - Define a term on first use if the reader may not know it. Write for the reader with the least context who still needs the document.
 - Plain words for a global audience: no idioms, no Latin ("for example", not "e.g."; "that is", not "i.e.").
 - Sentence case for headings. Task headings say the task: "Install the CLI", not "Installation".
-- No em-dash, ever: an Octopad house rule that overrides the Google guide. Recast with a comma, full stop, colon, or parentheses.
+- Use no em-dash unless the workspace's own style uses them: recast with a comma, full stop, colon or parentheses. This default overrides the Google guide.
 
 ## Kill the AI flavor
 
@@ -44,6 +42,6 @@ Apply these principles in English and French. The target language's grammar and 
 
 ## Scope boundary
 
-This skill governs work products only. Conversation follows the active user instructions. Emails, personal messages, social posts, blogs, and marketing content follow their owning skills. Where a repository's conventions or a delivery skill's format conflict (a changelog format or PR handoff template), those win; this skill governs only the sentences inside. It never chooses facts, document ownership, evidence state, or publication authority.
+This skill governs work products only. Where a repository's conventions or a delivery skill's format conflict (a changelog format or PR handoff template), those win; this skill governs only the sentences inside. It never chooses facts, document ownership, evidence state, or publication authority.
 
 Preserve facts, audience, and evidence state. Retain required literal identifiers, user-facing error codes, counts, and units. When sources conflict, do not choose one, edit the disputed fact, or mark the conflict resolved. Preserve the conflict and return it to the fact owner or the user.

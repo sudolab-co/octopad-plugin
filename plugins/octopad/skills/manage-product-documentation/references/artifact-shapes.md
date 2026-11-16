@@ -2,6 +2,15 @@
 
 Use these as adaptable shapes, not forms that must be filled. Omit irrelevant sections. Preserve the product's existing vocabulary and page conventions, except a Product Spec's section headings, which readers parse.
 
+## Contents
+
+- Product Map
+- Product Spec
+- Ideas
+- Behavioral Contract
+- Architecture Map
+- Documentation-debt Task
+
 ## Product Map
 
 ```markdown
@@ -63,7 +72,7 @@ Ideas with no system yet. One line each.
 ## Behavioral Contract
 
 ```markdown
-# <Behavior> — Behavioral Contract
+# <Behavior>: Behavioral Contract
 
 ## Scope
 <Boundary and actors.>
@@ -117,4 +126,4 @@ What each section keeps, and the home of everything else: [documentation-model.m
 
 ## Documentation-debt Task
 
-Keep one bounded Task for related gaps. Give its description literal `Why`, `What`, and `Done when` sections. Provide `impact` from 1 to 5 and `impact_rationale`. For a subtask, use `parent_task_id`; for every dependency edge, include its rationale. State why the missing or stale knowledge matters, what evidence or repair is needed, and what proves completion. Link the affected pages, repository locations, PRs, releases, and Decisions. Do not copy the Task's status into those pages.
+Keep one bounded Task for related gaps. For a subtask, use `parent_task_id`; for every dependency edge, include its rationale. State why the missing or stale knowledge matters, what evidence or repair is needed, and what proves completion. Link the affected pages, repository locations, PRs, releases, and Decisions. Do not copy the Task's status into those pages.

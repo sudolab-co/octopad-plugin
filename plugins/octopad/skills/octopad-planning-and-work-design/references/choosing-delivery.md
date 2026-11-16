@@ -8,7 +8,7 @@ Evaluate the bounded work agents could actually finish and verify between human 
 
 When useful agent delivery is plausible, open [Octoplan](../../octoplan/SKILL.md) to qualify the actual runtime route and review the smallest adequate Plan. Before the autonomy choice, show its summary of what agents can finish without the user and every known intervention, including access, proof and continuation limits. The user need not know the name Octoplan. Opening that skill or accepting a brief grants no delivery authority. If the benefit or capability is unproved, continue authorized preparation or collaboration and name the concrete gap; do not promise unattended delivery through it.
 
-Planning-only means the user's request or context limits the outcome to a plan, such as "only the plan" or "we will decide whether to execute later". A missing mandate, or "create the stream/Octoplan" within a delivery discussion, does not establish that limit. For useful agent delivery without a mandate, ask once for autonomy and covered effects after the reviewed Plan summary; keep an unanswered choice pending without treating silence as consent. For an actual planning-only request, do not solicit delivery unless the user changes that scope. Respect an explicit pause or postponement.
+Planning-only means the user's request or context limits the outcome to a plan, such as "only the plan" or "we will decide whether to execute later". A missing mandate, or "create the stream/Octoplan" within a delivery discussion, does not establish that limit. For an actual planning-only request, offer no delivery unless the user changes that scope. Respect an explicit pause or postponement.
 
 ## Keep the same work when delivery changes
 
