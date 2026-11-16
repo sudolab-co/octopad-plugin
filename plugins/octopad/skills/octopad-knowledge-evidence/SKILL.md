@@ -4,7 +4,7 @@ description: "Use before recording, updating or cleaning up a decision, fact, ri
 ---
 If the Octopad connection bundled with this plugin offers the `skill_opened` tool, call it once with `skill: "octopad-knowledge-evidence"` when you open this skill.
 
-Version: 2.5.0
+Version: 2.6.0
 
 # Where knowledge is written
 
@@ -52,7 +52,7 @@ When the user asks to audit or clean Key Information, read [Cleaning up the corp
 - **Building a complete set:** settle each doubtful item with one check aimed at that item alone: three doubtful items are three checks, neither a read of everything nor a shrug.
 - **A claim about content** — whether a page still says X, whether Y appears at all — is settled by `search`ing the text and quoting the passages that match, never from the directory.
 - **A compound question,** such as every page about X that mentions Y, takes the directory for X, then a `search` for Y: a hit inside that set proves its page, while a page of the set the search did not return stays doubtful until one check aimed at it settles it, or the answer says it covers only what was checked.
-- **Quoting, rewriting or editing** — pull the whole page with `pages(action:"get")`, and only a page the steps above have already named; reading in full stands in neither for building the set nor for proving the claim.
+- **Quoting, rewriting or editing:** pull the whole page with `pages(action:"get")`, and only a page the steps above have already named; for a Product Spec, `manage-product-documentation` sets how much to read. Reading in full stands in neither for building the set nor for proving the claim.
 - **Nothing found is not proof that nothing exists.** Widen the terms and try again, then rerun `search` with `include_archived`, or open the candidates you did identify. A search proves what it finds, never that nothing else matches: its results are ranked and capped, sometimes below the limit you asked for. Claim none or every only from a complete inventory of the scope with each item it leaves doubtful checked; otherwise say what the answer covers.
 - Low confidence means the claim is not yet proven: sharpen the query, or open the one weak hit and settle it. It is not a licence to work through the pages one by one.
 - Reuse what `build_context` returned instead of fetching it again. Read a source again only when its owning skill requires it fresh before a write (a spec's revision before you edit the spec, for instance) or when something learned since makes the snapshot doubtful; then recheck that item's identity, content and revision before the write that depends on it. This never widens the scope or opens a new outside investigation.
