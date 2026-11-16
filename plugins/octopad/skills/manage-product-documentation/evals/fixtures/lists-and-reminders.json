@@ -1,0 +1,32 @@
+{
+  "case": "lists-and-reminders",
+  "summary": "Workspace Example holds one product, Lists. Its Product Map links two specs: Lists, written with one subsection per element (Inbox, Search, Sharing) and an All elements subsection in each section, and Reminders, written with no subsection. Every pages read is served by the server's real outline and section reader over this content.",
+  "now": "2026-11-16T09:00:00.000Z",
+  "workspace": {
+    "id": "10000000-0000-4000-8000-000000000001",
+    "name": "Example"
+  },
+  "pages": [
+    {
+      "id": "60000000-0000-4000-8000-000000000001",
+      "title": "Lists",
+      "page_subtype": "Product Spec",
+      "updated_at": "2026-11-10T14:02:11.000Z",
+      "content": "# Lists\n\n## Need\n\n- When I plan my week, I want every item that needs me in one place, so nothing slips.\n- When I share a list with a client, I want them to see only what concerns them, so my private planning stays mine.\n\n## Outcome\n\nPeople act on what needs them without hunting for it. Signal: most items are completed from the Inbox, and no guest reports seeing an item that was not shared with them.\n\n## Direction\n\n### All elements\n\nLists move from one flat page to three elements a person moves between: the Inbox, Search and Sharing ([Lists roadmap](https://example.invalid/stream/lists-roadmap)).\n\n### Inbox\n\nThe Inbox becomes the default place to start the day. It groups items by the date they need the person, then by list. Items snoozed to a later date leave the Inbox until that date and come back at the top of their day. A later step lets a person snooze a whole list at once, so a paused project stops crowding the day ([Inbox snooze](https://example.invalid/task/inbox-snooze)).\n\n### Search\n\nSearch finds items by their words, their list and their people. Archived items stay out of results unless the person asks for them, so finished work does not crowd current work. A later step adds saved searches that a person can pin beside the Inbox ([Saved searches](https://example.invalid/task/saved-searches)).\n\n### Sharing\n\nA person shares a list with a guest by email. The guest sees the shared list and nothing else of the owner's account. Comments on a shared item reach every member of the list. A later step adds view-only guests for clients who must not edit ([View-only guests](https://example.invalid/task/view-only-guests)).\n\n## Choices\n\n### All elements\n\n- One item belongs to exactly one list, because moving an item between lists must never duplicate it (Decision \"One list per item\").\n\n### Inbox\n\n- The Inbox orders by date before list, because people plan by day, not by project.\n- Snoozing is personal to the person who snoozes, because two members of a list may plan the same item differently; see Promises, Sharing, for what a guest sees of a snoozed item.\n\n### Search\n\n- Search reads the item's text and comments, never its attachments, because attachments may hold data the owner never meant to index.\n\n### Sharing\n\n- A guest is invited per list, never per account, because owners share one project at a time.\n\n## Promises\n\n### All elements\n\n- A person's item is never lost: deleting moves it to a trash kept 30 days.\n\n### Inbox\n\n- The Inbox never shows an item the person cannot open.\n\n### Search\n\n- Search never returns an item from a list the person cannot see.\n\n### Sharing\n\n- A guest never sees an item of a list not shared with them.\n- A guest never sees who snoozed an item or until when.\n\n## Non-goals\n\n### Sharing\n\n- Public links open to anyone: lists hold private work; publishing belongs to Pages ([Pages spec](https://example.invalid/page/pages-spec)).\n\n## Open questions\n\n### Inbox\n\n- [open] Whether a snoozed item that comes back should notify the person.\n\n### Search\n\n- [idea 2026-11-02] Search across every list a team shares; read [Team search notes](https://example.invalid/page/team-search-notes) before assessing or building it.\n\n## Links\n\n[Product Map](https://example.invalid/page/product-map) · [Architecture Map](https://example.invalid/page/architecture-map) · Decision \"One list per item\" · [Pages spec](https://example.invalid/page/pages-spec)\n"
+    },
+    {
+      "id": "60000000-0000-4000-8000-000000000002",
+      "title": "Reminders",
+      "page_subtype": "Product Spec",
+      "updated_at": "2026-11-08T10:40:00.000Z",
+      "content": "# Reminders\n\n## Need\n\n- When an item has a date, I want to be reminded before it, so I am never surprised by a deadline.\n\n## Outcome\n\nPeople hear about a dated item early enough to act. Signal: few items are completed after their date.\n\n## Direction\n\nReminders reach the person by email and in the app the morning an item is due, and a day before when the item is marked important. Quiet hours hold every reminder until the person's morning. A digest gathers a day's reminders into one email for people who choose it ([Reminder digest](https://example.invalid/task/reminder-digest)). Snoozed items send no reminder until their snooze ends. Shared lists remind each member who owns the item, never the guests.\n\n## Choices\n\n- Reminders follow the person's time zone, never the list owner's, because members of one list live in different places.\n- Email and in-app reminders say the same thing, because a person reads whichever comes first.\n\n## Promises\n\n- A person can turn every reminder off in one place.\n- A reminder never reveals an item's text in an email subject when the list is marked private.\n\n## Non-goals\n\n- Text messages: their cost and consent rules outweigh their value for now.\n\n## Links\n\n[Product Map](https://example.invalid/page/product-map) · [Lists spec](https://example.invalid/page/lists-spec)\n"
+    },
+    {
+      "id": "60000000-0000-4000-8000-000000000003",
+      "title": "Product Map",
+      "page_subtype": "Product Map",
+      "updated_at": "2026-11-10T14:05:00.000Z",
+      "content": "# Product Map\n\nIndex of every system and its spec.\n\n## Planning\n- [Lists](https://example.invalid/page/lists-spec): Inbox, Search and Sharing of a person's lists\n- [Reminders](https://example.invalid/page/reminders-spec): reminders before a dated item\n"
+    }
+  ]
+}

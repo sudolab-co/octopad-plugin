@@ -1,5 +1,12 @@
 # Changelog
 
+## 32.1.0 - Unreleased
+
+- `manage-product-documentation` 6.13.0: a spec section that covers several elements of the product (a screen, a tool, a step of a flow, a group of rules) gives each element its own subsection, under the same heading in every section where it appears. A rule for every element goes in an `All elements` subsection, no text sits outside a section's subsections, and an element whose rule depends on another says so with a cross-reference. A rule for some elements lives under one of them, cross-referenced from the others. An AI that writes to such a section still without subsections splits it in the same edit and checks that no line was lost, and an audit flags the sections still without them.
+- `manage-product-documentation` 6.13.0: to judge one or a few elements, the AI reads the spec's outline, then Need, Outcome, every section without subsections or with text outside them, those elements' subsections and the `All elements` ones, then what they cross-reference, instead of the whole spec. It still reads the whole spec for a product choice, for a change that spans the product or whose boundaries are unclear, and when the spec has no subsection for that element. A narrow fix whose cause is known keeps its shortcut only when it needs no product choice.
+
+Needs no server change: `pages` get already serves `outline` and `sections` in production. All three distributions move to 32.1.0.
+
 ## 32.0.0 - Unreleased
 
 - `octopad-pad` 5.0.0: the AI organizes the Pad by the person's priorities. Without asking, it keeps one priority tab for each priority where something waits on the person or moved: it creates the tab, merges priorities that deliver the same outcome, adds a stream that serves a priority and says so in the tab's note, moves a tab to its priority's new name when its streams match, and retires a tab whose priority left the Notepad, never while the Notepad cannot be read. It never recreates a tab the person refused, and when they ask it to remove a priority tab it records their refusal first. Any other new tab still waits for their yes, and their own tabs, names and places stay theirs; only the move to a renamed priority renames a tab.
