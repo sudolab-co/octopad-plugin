@@ -1,11 +1,15 @@
 {
   "skill_name": "manage-product-documentation",
   "protocol": {
-    "status": "6.13.0 (plugin 32.1.0) cases written 2026-11-16 with their fixture and not run: an eval's model calls wait for the operator's yes on its protocol. Offline check done: the server's real outline and section reader parses both fixture specs as intended (Lists: 8 sections, 15 element subsections; Reminders: 7 sections, no subsection), and a sections read of Need, Outcome, Inbox and All elements returns 9 slices.",
-    "purpose": "Compare plugin 32.0.0 (manage-product-documentation 6.12.0: read the owning spec in full) with 32.1.0 (6.13.0: one subsection per element, and an element read through the outline unless a full read is required) on which reads the AI makes and how it writes a spec; static checks do not establish AI behavior.",
-    "execution": "claude plugin eval on the Claude Code subscription, after the operator approves the protocol. Every Octopad tool is a mock answering the fictional fixture evals/fixtures/lists-and-reminders.json: nothing reaches an Octopad organization. The pages mock serves outline and sections with the server's real reader.",
-    "comparison": "Behaviour cases run on both versions. Defeat proofs: element-read and write-restructures-flat-section must fail on 32.0.0. product-choice-full-read and no-subsection-full-read must pass on both, so the change keeps the full read where it is required. write-new-element may pass on both, since the fixture already shows the pattern: it checks that 32.1.0 keeps it. The trigger cases are the skill's routing set; this change does not need them, since the description did not change.",
-    "release_limit": "Unrun cases are not a routing, behavioral or non-regression pass. The Lists fixture is 3,403 characters, while real specs reach 80,000: a short spec may tempt a full read the rule does not allow, so a run that fails element-read should also try the fixture with more elements before the rule is blamed."
+    "status": "6.13.0 (plugin 32.1.0) cases and fixture written 2026-11-16 and not run: no model call before the operator's yes on this protocol. Offline checks done: the server's real outline and section reader parses the fixture (Lists 38,856 characters, 8 sections, 15 element subsections; Reminders 11,558 characters, 7 sections, no subsection); the element-read sections call returns 10 slices, 20,107 of the 38,856 characters; each behaviour grader matches a synthetic passing tool input and rejects a failing one.",
+    "decision": "Does 6.13.0 read a long spec by element where allowed, keep the full read where required, and write element subsections without losing a line? Pass: hand both pull requests to review. Fail: read the trace; if the skill text causes it, fix the text and rerun that case once; if not, run that case once on Opus to separate capability from wording, then report.",
+    "cases": "element-read, product-choice-full-read, no-subsection-full-read, write-new-element and write-restructures-flat-section, on 6.13.0 only. No 6.12.0 run: its text mandates the whole-spec read, and real use already shows that read. No trigger case: the description did not change; the trigger cases stay as the skill's routing set.",
+    "execution": "claude plugin eval on the Claude Code subscription with --model sonnet --runs 1 --ablation none --judge-model opus --no-publish (the defaults are 3 runs, a no-plugin arm and a Haiku judge). Every Octopad tool is a mock over evals/fixtures/lists-and-reminders.json, serving outline and sections with the server's real reader; nothing reaches an Octopad organization. claude plugin eval does not read this file: the cases must first be converted to its case folders (see release_limit).",
+    "grading": "The tool_used graders below decide what they can see. Opus grades only the expected_behavior lines no grader covers: the answer's content, the cross-reference in write-new-element, where the shared-lists line lands in write-restructures-flat-section.",
+    "ceiling": "5 runs and at most 5 Opus grading calls; 150,000 tokens per run and 900,000 in all, grading included. Only each case's max_turns and timeout_seconds can stop a run; nothing stops it at an exact token count, so a run past 150,000 tokens is reported, not cut. --max-cost-usd, an estimate checked before each run starts, can stop runs not yet started.",
+    "stop_rule": "A run that hits its turn or time limit counts as inconclusive. No rerun beyond the fail branch without the operator.",
+    "proof": "Before the first run, each behaviour grader matched one synthetic passing tool input and rejected one failing input (a full Lists read for element-read; an update without ### Digest, without expected_updated_at or missing one Direction sentence for the writes; an outline-plus-sections read for the two full-read cases).",
+    "release_limit": "Unrun cases are not a behavioural or non-regression pass. claude plugin eval reads only case folders (prompt.md or case.yaml, graders/*.md) under the plugin's evals/ directory or --eval-dir, with mocks at mocks/octopad/<tool>.md: before a run, convert each case to a folder outside the shipped plugin, passed by --eval-dir, and write mocks for pages, skill_opened, start_session and search that serve this fixture. no-direction-line-lost passes only when the split is one edit, as the skill requires."
   },
   "evals": [
     {
@@ -13,11 +17,9 @@
       "prompt": "A customer was surprised that a snoozed item left their Inbox and came back three days later at the top of that day. Is that how the Inbox is meant to treat snoozed items in Lists? Workspace Example.",
       "must_load": true,
       "kind": "behaviour",
-      "versions": [
-        "32.0.0",
-        "32.1.0"
-      ],
-      "context": "The Lists spec has subsections per element; its Inbox subsections hold the snooze behavior, and Choices, Inbox, cross-references Promises, Sharing.",
+      "max_turns": 20,
+      "timeout_seconds": 600,
+      "context": "Lists has subsections per element; its Inbox subsections hold the snooze behavior, and Choices, Inbox, cross-references Promises, Sharing.",
       "expected_behavior": [
         "The run opens manage-product-documentation and records it with skill_opened.",
         "It reads the Lists outline before any section.",
@@ -60,6 +62,7 @@
           "type": "tool_used",
           "tool": "mcp__plugin_octopad_octopad__pages",
           "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"get\")(?=[\\s\\S]*(?:60000000-0000-4000-8000-000000000001|\"page_ids?\":\\s*(?:\"[^\"]*[Ll]ists|\\[[^\\]]*[Ll]ists)))(?:(?![\\s\\S]*\"outline\":\\s*true)(?![\\s\\S]*\"sections\":\\s*\\[\\s*\")|(?=[\\s\\S]*\"sections\":\\s*\\[[^\\]]*\"[Ll]ists\"))",
+          "min": 0,
           "max": 0
         }
       ]
@@ -69,10 +72,8 @@
       "prompt": "We are thinking of letting a guest see every list in the owner's account instead of one list at a time. Should we do it in Lists? Workspace Example.",
       "must_load": true,
       "kind": "behaviour",
-      "versions": [
-        "32.0.0",
-        "32.1.0"
-      ],
+      "max_turns": 20,
+      "timeout_seconds": 600,
       "context": "A product choice that touches Sharing, Search and Inbox, and reverses a Choice of Sharing.",
       "expected_behavior": [
         "The run opens manage-product-documentation.",
@@ -101,15 +102,13 @@
       "prompt": "A user asked whether reminders should fire for a snoozed item. What does Reminders intend? Workspace Example.",
       "must_load": true,
       "kind": "behaviour",
-      "versions": [
-        "32.0.0",
-        "32.1.0"
-      ],
-      "context": "The Reminders spec has no subsection.",
+      "max_turns": 20,
+      "timeout_seconds": 600,
+      "context": "Reminders has no subsection.",
       "expected_behavior": [
         "The run opens manage-product-documentation.",
         "It reads the whole Reminders spec, with or without its outline first.",
-        "It answers that a snoozed item sends no reminder until its snooze ends."
+        "It answers that a snoozed item sends no reminder until its snooze ends, then is reminded once on the morning it returns."
       ],
       "graders": [
         {
@@ -133,14 +132,13 @@
       "prompt": "We decided to add a Calendar view to Lists: it shows a person's items by day across the month, and it hides snoozed items the same way the Inbox does. Record it in the spec. Workspace Example.",
       "must_load": true,
       "kind": "behaviour",
-      "versions": [
-        "32.0.0",
-        "32.1.0"
-      ],
+      "max_turns": 25,
+      "timeout_seconds": 900,
       "context": "An accepted direction for a new element of a spec that already has one subsection per element.",
       "expected_behavior": [
         "The run opens manage-product-documentation.",
         "It reads the Lists spec revision before the edit and passes its updated_at.",
+        "It edits with content_updates, never content, and reads the edited subsections back.",
         "The edit adds a ### Calendar subsection under Direction, and under any other section it writes Calendar content to, with the same heading each time.",
         "It writes no Calendar text outside a Calendar subsection and no text outside the subsections of a section.",
         "The Calendar text cross-references the Inbox's snooze rule (Direction, Inbox, or Choices, Inbox) instead of restating it."
@@ -161,10 +159,19 @@
           "min": 1
         },
         {
+          "name": "edits-with-content-updates",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pages",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"update\")(?=[\\s\\S]*\"content\":)",
+          "min": 0,
+          "max": 0
+        },
+        {
           "name": "edit-carries-the-revision",
           "type": "tool_used",
           "tool": "mcp__plugin_octopad_octopad__pages",
           "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"update\")(?![\\s\\S]*\"expected_updated_at\")",
+          "min": 0,
           "max": 0
         }
       ]
@@ -174,17 +181,15 @@
       "prompt": "We decided that the reminder digest should also preview the coming week, so people can plan ahead. Record this direction in the Reminders spec. Workspace Example.",
       "must_load": true,
       "kind": "behaviour",
-      "versions": [
-        "32.0.0",
-        "32.1.0"
-      ],
-      "context": "The Reminders Direction is one flat paragraph that covers several elements: email and in-app reminders, quiet hours, the digest, snoozed items and shared lists.",
+      "max_turns": 25,
+      "timeout_seconds": 900,
+      "context": "The Reminders Direction is one flat section of 3,919 characters that covers several elements: email and in-app reminders, quiet hours, days off, the digest, snoozed items and shared lists.",
       "expected_behavior": [
         "The run opens manage-product-documentation.",
         "It reads the whole Reminders spec before the edit and passes its updated_at.",
         "The same edit gives Direction one ### subsection per element it covers, a Digest subsection among them, with a rule for every element under ### All elements and no text outside the subsections.",
         "The week-ahead direction goes under ### Digest, as intent, with no schedule or wording invented.",
-        "Every line of the old Direction survives in a subsection, its words unchanged apart from the split; the line on shared lists goes under one element and is cross-referenced from another if it concerns both; no other section changes. The run reads Reminders back after the edit."
+        "Every sentence of the old Direction survives in a subsection, its words unchanged; a sentence about two elements goes under one and is cross-referenced from the other; no other section changes. The run reads Reminders back after the edit."
       ],
       "graders": [
         {
@@ -202,10 +207,18 @@
           "min": 1
         },
         {
+          "name": "no-direction-line-lost",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pages",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"update\")(?=[\\s\\S]*\"(?:new_str|content)\":\\s*\"(?:[^\"\\\\]|\\\\.)*?Reminders reach the person by email and in the app the morning an item is due, and a day before when the item is marked important\\.)(?=[\\s\\S]*\"(?:new_str|content)\":\\s*\"(?:[^\"\\\\]|\\\\.)*?An in-app reminder appears in the app's notification area and on the person's phone when they installed the app, and it disappears from every device once the person opens it on one\\.)(?=[\\s\\S]*\"(?:new_str|content)\":\\s*\"(?:[^\"\\\\]|\\\\.)*?An email reminder names the item, its list and its date, and offers to open the item, to mark it done and to move it to tomorrow, each with one tap, without signing in again when the person is already signed in on that device\\.)(?=[\\s\\S]*\"(?:new_str|content)\":\\s*\"(?:[^\"\\\\]|\\\\.)*?A person chooses, in their settings, whether reminders reach them by email, in the app, or both, and both is the starting choice for a new account\\.)(?=[\\s\\S]*\"(?:new_str|content)\":\\s*\"(?:[^\"\\\\]|\\\\.)*?Quiet hours hold every reminder until the person's morning\\.)(?=[\\s\\S]*\"(?:new_str|content)\":\\s*\"(?:[^\"\\\\]|\\\\.)*?A person sets their quiet hours once, and the starting quiet hours run from nine in the evening to eight in the morning in the person's own time zone\\.)(?=[\\s\\S]*\"(?:new_str|content)\":\\s*\"(?:[^\"\\\\]|\\\\.)*?A reminder that falls inside quiet hours is sent when they end, in the order the items are due, and a reminder held overnight is never sent twice\\.)(?=[\\s\\S]*\"(?:new_str|content)\":\\s*\"(?:[^\"\\\\]|\\\\.)*?When the person travels, quiet hours follow the time zone of the device they use, so the morning is their morning where they are\\.)(?=[\\s\\S]*\"(?:new_str|content)\":\\s*\"(?:[^\"\\\\]|\\\\.)*?A person can also set days off, such as a holiday, during which no reminder is sent at all\\.)(?=[\\s\\S]*\"(?:new_str|content)\":\\s*\"(?:[^\"\\\\]|\\\\.)*?On the first morning after days off, one message lists the items that became due during the absence and the items due that day, so the person catches up in one read\\.)(?=[\\s\\S]*\"(?:new_str|content)\":\\s*\"(?:[^\"\\\\]|\\\\.)*?A digest gathers a day's reminders into one email for people who choose it \\(\\[Reminder digest\\]\\(https:\\/\\/example\\.invalid\\/task\\/reminder-digest\\)\\)\\.)(?=[\\s\\S]*\"(?:new_str|content)\":\\s*\"(?:[^\"\\\\]|\\\\.)*?The digest arrives when quiet hours end and lists the items due that day, then the items due the next day that are marked important, each with the same one-tap actions as a single reminder\\.)(?=[\\s\\S]*\"(?:new_str|content)\":\\s*\"(?:[^\"\\\\]|\\\\.)*?A person who chooses the digest receives no separate email reminders for the items it lists, while in-app reminders keep coming one by one\\.)(?=[\\s\\S]*\"(?:new_str|content)\":\\s*\"(?:[^\"\\\\]|\\\\.)*?A day with nothing due sends no digest\\.)(?=[\\s\\S]*\"(?:new_str|content)\":\\s*\"(?:[^\"\\\\]|\\\\.)*?The digest groups items by list when it holds more than a handful, so a person can see at a glance which project the day belongs to\\.)(?=[\\s\\S]*\"(?:new_str|content)\":\\s*\"(?:[^\"\\\\]|\\\\.)*?A snoozed item sends no reminder until its snooze ends\\.)(?=[\\s\\S]*\"(?:new_str|content)\":\\s*\"(?:[^\"\\\\]|\\\\.)*?When the snooze ends, the item is treated as due that day for reminders, so the person hears about it once in the morning of its return, and an item snoozed past its own date is reminded on the day it returns, marked as overdue\\.)(?=[\\s\\S]*\"(?:new_str|content)\":\\s*\"(?:[^\"\\\\]|\\\\.)*?A whole list snoozed at once, once that step comes in Lists, silences the reminders of all its items in the same way and brings them back together\\.)(?=[\\s\\S]*\"(?:new_str|content)\":\\s*\"(?:[^\"\\\\]|\\\\.)*?Shared lists remind each member who owns the item, never the guests\\.)(?=[\\s\\S]*\"(?:new_str|content)\":\\s*\"(?:[^\"\\\\]|\\\\.)*?An item of a shared list with no assignee reminds the list's owner only, so a guest is never reminded of work that was not given to them\\.)(?=[\\s\\S]*\"(?:new_str|content)\":\\s*\"(?:[^\"\\\\]|\\\\.)*?An item assigned to a guest reminds that guest like any other item assigned to them, by the channels the guest chose in their own account\\.)(?=[\\s\\S]*\"(?:new_str|content)\":\\s*\"(?:[^\"\\\\]|\\\\.)*?A member removed from a shared list stops receiving its reminders at once, including any held by their quiet hours\\.)(?=[\\s\\S]*\"(?:new_str|content)\":\\s*\"(?:[^\"\\\\]|\\\\.)*?A recurring item reminds only for its next occurrence, never for occurrences still to come\\.)(?=[\\s\\S]*\"(?:new_str|content)\":\\s*\"(?:[^\"\\\\]|\\\\.)*?An item whose date changes after its reminder was scheduled is reminded for its new date only, and an item done before its reminder is sent sends none\\.)(?=[\\s\\S]*\"(?:new_str|content)\":\\s*\"(?:[^\"\\\\]|\\\\.)*?An email reminder is written in the person's own language, and its dates follow their own format\\.)(?=[\\s\\S]*\"(?:new_str|content)\":\\s*\"(?:[^\"\\\\]|\\\\.)*?A person can snooze an item from the reminder itself, with the same choices as in the Inbox, and the snooze silences that item's reminders like any other\\.)(?=[\\s\\S]*\"(?:new_str|content)\":\\s*\"(?:[^\"\\\\]|\\\\.)*?When a reminder cannot be delivered by email, for example because the address bounces, the in-app reminder still arrives and the person's settings show that email reminders are failing, so a broken address does not silently swallow every deadline\\.)(?=[\\s\\S]*\"(?:new_str|content)\":\\s*\"(?:[^\"\\\\]|\\\\.)*?A person who opens the app before their morning reminder sees the same items in the Inbox, and the reminder is then still sent, because the Inbox and reminders serve different moments\\.)",
+          "min": 1
+        },
+        {
           "name": "edit-carries-the-revision",
           "type": "tool_used",
           "tool": "mcp__plugin_octopad_octopad__pages",
           "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"update\")(?![\\s\\S]*\"expected_updated_at\")",
+          "min": 0,
           "max": 0
         }
       ]
@@ -215,9 +228,6 @@
       "prompt": "Does the Lists spec still match what the search code in src/search does? I think archived items show up now.",
       "must_load": true,
       "kind": "trigger",
-      "versions": [
-        "32.1.0"
-      ],
       "expected_behavior": [
         "The run opens manage-product-documentation."
       ],
@@ -236,9 +246,6 @@
       "prompt": "Draft the launch email that tells our customers saved searches are here.",
       "must_load": false,
       "kind": "trigger",
-      "versions": [
-        "32.1.0"
-      ],
       "expected_behavior": [
         "The run does not open manage-product-documentation; it routes to product marketing."
       ],
@@ -248,6 +255,7 @@
           "type": "tool_used",
           "tool": "mcp__plugin_octopad_octopad__skill_opened",
           "input_match": "\"skill\":\\s*\"manage-product-documentation\"",
+          "min": 0,
           "max": 0
         }
       ]
@@ -257,9 +265,6 @@
       "prompt": "What is left open in the Lists roadmap stream? Short answer please.",
       "must_load": false,
       "kind": "trigger",
-      "versions": [
-        "32.1.0"
-      ],
       "expected_behavior": [
         "The run does not open manage-product-documentation and reads no spec."
       ],
@@ -269,6 +274,7 @@
           "type": "tool_used",
           "tool": "mcp__plugin_octopad_octopad__skill_opened",
           "input_match": "\"skill\":\\s*\"manage-product-documentation\"",
+          "min": 0,
           "max": 0
         }
       ]
