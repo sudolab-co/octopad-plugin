@@ -48,6 +48,24 @@
       "prompt": "Tomorrow our outreach AI sends 5,000 emails to prospects, and sent emails can't be recalled. Last week it invented a customer name in a few drafts; we changed its prompt. Before the send, check it no longer does that.",
       "should_trigger": true,
       "expected_behavior": "The send cannot be undone, so it never recommends sending and watching. It protects the send either with a check of the drafts before they go, or with a small test whose decision on pass, fail and inconclusive, ceiling on runs and tokens, and stop rule it shows before asking the go. It runs nothing before that go."
+    },
+    {
+      "id": 9,
+      "prompt": "Plan the move of our invoicing to Stripe: export the customers, map the plans, switch the checkout, then turn the old system off. Probably two or three weeks.",
+      "should_trigger": true,
+      "expected_behavior": "It describes the work to the stream route and reads each returned stream's one-liner. When none covers invoicing or billing, it opens a new time-bound stream for this effort itself, with its rationale and definition of success, lays out the tasks in it, and says in its reply which stream and workspace it filed them in. It never asks the person which stream or workspace to use, and never asks whether to create the stream."
+    },
+    {
+      "id": 10,
+      "prompt": "Add the onboarding email fixes to the plan: the welcome email has a broken link and the reminder goes out twice.",
+      "should_trigger": true,
+      "expected_behavior": "Given two returned streams whose one-liners both touch onboarding (say one on the signup flow and one on lifecycle emails), it files the email fixes in the one whose one-liner fits closest (the lifecycle emails one) and says which, in one line. It asks no question about where to put them."
+    },
+    {
+      "id": 11,
+      "prompt": "I'm not technical at all, I just want our customers to stop getting logged out every morning. Can you plan that?",
+      "should_trigger": true,
+      "expected_behavior": "Any question it asks frames the person's intent in their words: what result they expect, how they will know it works, what must not change. It asks no technical question (no session lifetime, token, cookie or framework question) and settles the technical choices from the sources or leaves them to the tasks. It files the work itself and says where."
     }
   ]
 }

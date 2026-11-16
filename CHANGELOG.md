@@ -1,5 +1,12 @@
 # Changelog
 
+## 32.1.0 - Unreleased
+
+- `octopad-planning-and-work-design` 6.2.0: where work goes is the AI's call, never a question. When several streams fit a task, the AI takes the one whose one-liner fits closest; when none fits, it opens a new time-bound stream if the work is an effort that calls for one, otherwise it leaves the task without a stream. It chooses the workspace the same way, by its description, then says where it filed the work. Before, it asked the person when it could not tell.
+- `octopad-planning-and-work-design` 6.2.0: the questions the AI asks to frame the work use the person's terms: no technical question to someone who said they are not technical.
+
+Goes with the server's methodology 2.52.0, which states the same rule; the skill itself needs no server change. All three distributions move to 32.1.0.
+
 ## 32.0.0 - Unreleased
 
 - `octopad-pad` 5.0.0: the AI organizes the Pad by the person's priorities. Without asking, it keeps one priority tab for each priority where something waits on the person or moved: it creates the tab, merges priorities that deliver the same outcome, adds a stream that serves a priority and says so in the tab's note, moves a tab to its priority's new name when its streams match, and retires a tab whose priority left the Notepad, never while the Notepad cannot be read. It never recreates a tab the person refused, and when they ask it to remove a priority tab it records their refusal first. Any other new tab still waits for their yes, and their own tabs, names and places stay theirs; only the move to a renamed priority renames a tab.
