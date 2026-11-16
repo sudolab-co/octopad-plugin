@@ -64,6 +64,28 @@ test('the desktop pane hook runs after the Claude app Browser pane loads a page,
   assert.equal(json(join(PLUGIN, 'hooks.codex.json')).hooks.PostToolUse, undefined);
 });
 
+test('the moment hooks call turn_reminder with their event, in Claude Code only', () => {
+  const server = `plugin:${manifests.claude.name}:${Object.keys(json(join(PLUGIN, '.mcp.json')).mcpServers)[0]}`;
+  const call = (input, extra = {}) => ({ type: 'mcp_tool', ...extra, server, tool: 'turn_reminder', timeout: 10, input });
+  const agent = { agent_id: '${agent_id}' };
+  const expected = {
+    Stop: [{ hooks: [call({ event: 'stop', stop_hook_active: '${stop_hook_active}', ...agent })] }],
+    PreToolUse: [
+      { matcher: 'Agent', hooks: [call({ event: 'subagent_launch', prompt: '${tool_input.prompt}', ...agent })] },
+      { matcher: 'Bash', hooks: [call({ event: 'pr_create', command: '${tool_input.command}', ...agent }, { if: 'Bash(gh pr create *)' })] },
+    ],
+    SubagentStart: [{ hooks: [call({ event: 'subagent_start' })] }],
+    PreCompact: [{ hooks: [call({ event: 'pre_compact', ...agent })] }],
+  };
+  for (const [event, entries] of Object.entries(expected)) assert.deepEqual(manifests.claude.hooks[event], entries, event);
+  const compact = (manifests.claude.hooks.SessionStart ?? []).filter((entry) => entry.matcher === 'compact');
+  assert.deepEqual(compact, [{ matcher: 'compact', hooks: [call({ event: 'session_compact', ...agent })] }]);
+  const skill = (manifests.claude.hooks.PostToolUse ?? []).filter((entry) => entry.matcher === 'Skill');
+  assert.deepEqual(skill, [{ matcher: 'Skill', hooks: [call({ event: 'skill_opened', skill: '${tool_input.skill}', ...agent })] }]);
+  const codex = json(join(PLUGIN, 'hooks.codex.json')).hooks;
+  assert.deepEqual(Object.keys(codex), ['UserPromptSubmit']);
+});
+
 test('the Cursor manifest references files that exist', () => {
   const { logo, skills, agents, mcpServers } = manifests.cursor;
   for (const path of [logo, skills, agents, mcpServers]) {
