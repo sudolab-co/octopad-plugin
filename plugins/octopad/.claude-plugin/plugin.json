@@ -26,6 +26,21 @@
             "timeout": 10
           }
         ]
+      },
+      {
+        "matcher": "compact",
+        "hooks": [
+          {
+            "type": "mcp_tool",
+            "server": "plugin:octopad:octopad",
+            "tool": "turn_reminder",
+            "timeout": 10,
+            "input": {
+              "event": "session_compact",
+              "agent_id": "${agent_id}"
+            }
+          }
+        ]
       }
     ],
     "UserPromptSubmit": [
@@ -48,6 +63,105 @@
             "type": "command",
             "command": "/bin/sh \"${CLAUDE_PLUGIN_ROOT}/desktop-pane/desktop-pane.sh\"; exit 0",
             "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "Skill",
+        "hooks": [
+          {
+            "type": "mcp_tool",
+            "server": "plugin:octopad:octopad",
+            "tool": "turn_reminder",
+            "timeout": 10,
+            "input": {
+              "event": "skill_opened",
+              "skill": "${tool_input.skill}",
+              "agent_id": "${agent_id}"
+            }
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "mcp_tool",
+            "server": "plugin:octopad:octopad",
+            "tool": "turn_reminder",
+            "timeout": 10,
+            "input": {
+              "event": "stop",
+              "stop_hook_active": "${stop_hook_active}",
+              "agent_id": "${agent_id}"
+            }
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Agent",
+        "hooks": [
+          {
+            "type": "mcp_tool",
+            "server": "plugin:octopad:octopad",
+            "tool": "turn_reminder",
+            "timeout": 10,
+            "input": {
+              "event": "subagent_launch",
+              "prompt": "${tool_input.prompt}",
+              "agent_id": "${agent_id}"
+            }
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "mcp_tool",
+            "if": "Bash(gh pr create *)",
+            "server": "plugin:octopad:octopad",
+            "tool": "turn_reminder",
+            "timeout": 10,
+            "input": {
+              "event": "pr_create",
+              "command": "${tool_input.command}",
+              "agent_id": "${agent_id}"
+            }
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "type": "mcp_tool",
+            "server": "plugin:octopad:octopad",
+            "tool": "turn_reminder",
+            "timeout": 10,
+            "input": {
+              "event": "subagent_start"
+            }
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "mcp_tool",
+            "server": "plugin:octopad:octopad",
+            "tool": "turn_reminder",
+            "timeout": 10,
+            "input": {
+              "event": "pre_compact",
+              "agent_id": "${agent_id}"
+            }
           }
         ]
       }

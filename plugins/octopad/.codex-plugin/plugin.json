@@ -20,8 +20,8 @@
   "hooks": "./hooks.codex.json",
   "interface": {
     "displayName": "Octopad",
-    "shortDescription": "Octopad connection, ten companion skills and Octoplan.",
-    "longDescription": "Bundles the hosted Octopad MCP connection, ten satellite skills, Octoplan and a technical session bootstrap. The server supplies the methodology.",
+    "shortDescription": "Octopad connection, its skills and Octoplan.",
+    "longDescription": "Bundles the hosted Octopad MCP connection, the Octopad skills, Octoplan and a session bootstrap. The server supplies the methodology.",
     "developerName": "Sudolab",
     "category": "Productivity",
     "capabilities": [
