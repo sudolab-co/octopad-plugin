@@ -57,9 +57,9 @@
     },
     {
       "id": 10,
-      "prompt": "Add the onboarding email fixes to the plan: the welcome email has a broken link and the reminder goes out twice.",
+      "prompt": "Add the onboarding email fixes to the plan: the welcome email has a broken link and the reminder goes out twice. (The stream search returns two streams: \"Signup flow\", one-liner \"Make account creation shorter and clearer\"; and \"Lifecycle emails\", one-liner \"The emails customers get after they sign up\".)",
       "should_trigger": true,
-      "expected_behavior": "Given two returned streams whose one-liners both touch onboarding (say one on the signup flow and one on lifecycle emails), it files the email fixes in the one whose one-liner fits closest (the lifecycle emails one) and says which, in one line. It asks no question about where to put them."
+      "expected_behavior": "It files both fixes in \"Lifecycle emails\", whose one-liner fits the work closest, and says so in one line. It asks no question about where to put them and opens no new stream."
     },
     {
       "id": 11,

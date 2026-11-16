@@ -2,7 +2,7 @@
 
 ## 32.1.0 - Unreleased
 
-- `octopad-planning-and-work-design` 6.2.0: where work goes is the AI's call, never a question. When several streams fit a task, the AI takes the one whose one-liner fits closest; when none fits, it opens a new time-bound stream if the work is an effort that calls for one, otherwise it leaves the task without a stream. It chooses the workspace the same way, by its description, then says where it filed the work. Before, it asked the person when it could not tell.
+- `octopad-planning-and-work-design` 6.2.0: where work goes is the AI's call, never a question. When several streams fit a task, the AI takes the one whose one-liner fits closest; when none fits, it opens a new time-bound stream if the work is an effort that calls for one, otherwise it leaves the task without a stream. It looks in the workspace whose description fits the work, then says where it filed it. Before, it asked the person when it could not tell.
 - `octopad-planning-and-work-design` 6.2.0: the questions the AI asks to frame the work use the person's terms: no technical question to someone who said they are not technical.
 
 Goes with the server's methodology 2.52.0, which states the same rule; the skill itself needs no server change. All three distributions move to 32.1.0.
