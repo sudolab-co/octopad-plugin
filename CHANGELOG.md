@@ -1,12 +1,12 @@
 # Changelog
 
-## 31.1.0 - Unreleased
+## 31.1.0 - 2026-11-16
 
 - `octopad-pad` 4.2.0: in every Smart Report, not only the first, the AI places a chart on its own initiative when, for that report's content and news, it shows what text cannot, never to fill a section and never in a tab whose guidance declines charts. Before, a tab other than the first showed a chart only when the person asked for one. The AI chooses the form by the kind of information (bars to rank groups or when groups overlap, as tags and goals do; a pie or donut to split one whole; figures for one total) and frames each chart with a sentence in its section that says what it shows and what that means for the person, without its figures. In the first Smart Report that sentence carries no mark and cites no waiting item, so it shows beside the chart. A request for fewer charts goes to the tab's guidance, since charts are written anew with each content. A tab over one stream, which needs no text, takes the sentence a chart needs.
 
 Needs no server change: the `pad` tool already accepts a chart in any tab. All three distributions move to 31.1.0.
 
-## 31.0.0 - Unreleased
+## 31.0.0 - 2026-11-16
 
 - `octopad-notepad` 9.0.0: the Notepad keeps three things no other Octopad object holds: the user's priorities, notes (the `premises` block) and reminders. The AI writes on its own, without being told, what passes three tests: it comes from the user, it will still hold in the coming days, and no Octopad object holds it while it is not something to do. A table of worked cases shows the line, notably that what the user is doing now ("I'm picking X back up") writes nothing. Something to do is a task: dated, depending on the task that carries its wait, or blocked with what it waits for.
 - `octopad-notepad` 9.0.0: a reminder only brings something back when a subject comes up, or proposes resuming paused work at the user's own call. It is said once in the conversation where its subject comes up. The opening check of events, the claim with an expiry and the notification route for unrelated reminders are gone; a session that stops between saying a reminder and saving may let it come back once more.
@@ -16,7 +16,7 @@ Needs no server change: the `pad` tool already accepts a chart in any tab. All t
 
 Needs the server change that serves the review line and the kernel text without the opening event check: a production server without it never names entries to review. All three distributions move to 31.0.0.
 
-## 30.0.0 - Unreleased
+## 30.0.0 - 2026-11-16
 
 - A person's focus themes are now their priorities, and a priority holds their intent only. `octopad-notepad` 8.0.0: the compass's entry is `### Priorities`; each line is a short stable name, then a `why:` of one or two sentences saying what they want and why, with the logic between priorities when they give it, then its refs and their deadline. The AI never writes progress, the current task, quotes or dated change notes there: `currently on:`, the dated `moved` reason and the separate "user's call on work order" entry are gone, and the list order is the work order. The AI states its own change and reason in one chat line instead. When it saves a Notepad still in the older form, it rewrites that entry into the new one in the same save, keeping names, order, ids, refs, deadlines and the person's reasons.
 - `octopad-planning-and-work-design` 6.1.0: an order the user wants and no prerequisite imposes goes into the order of their priorities, with its reason in the priority it concerns, no longer into a separate Notepad entry.
@@ -24,7 +24,7 @@ Needs the server change that serves the review line and the kernel text without 
 
 Needs the server change that reads a `### Priorities` entry and lines without `currently on:`: a production server without it does not read the new entry, so the plugin and the server release together. All three distributions move to 30.0.0.
 
-## 29.4.0 - Unreleased
+## 29.4.0 - 2026-11-16
 
 - `octoplan` 9.2.0: a code task's `Verify` covers the checks its host runs on the pull request, run locally where that costs less than a failed pull-request round and otherwise read from the host, so a local pass is not taken for the pull request's gate. A check the target's rules ignore, or one already failing on the base, is named as excluded.
 - `octoplan` 9.2.0: what a task's `How` or `Verify` needs that sits on one machine only is attached to its task before review or committed by a planned unit, or the Plan names the machine it stays on. After a clean close the supervisor removes what the run created on the machine: what only served the run outright, and worktrees, local branches and evidence folders once what the records cite from them survives elsewhere; never a deliverable or a file the user keeps.
@@ -34,32 +34,32 @@ Needs the server change that reads a `### Priorities` entry and lines without `c
 
 Needs no server change. All three distributions move to 29.4.0.
 
-## 29.3.0 - Unreleased
+## 29.3.0 - 2026-11-16
 
 - `octopad-pad` 3.1.0: a Smart Report sentence that calls the person (`needs_you` or `unblocked`) says, as an instruction, what they do and cites what they act on, because the Pad now hands each such line over as a prompt to paste into an AI session. Needs no server change beyond 29.0.0's.
 
-## 29.2.0 - Unreleased
+## 29.2.0 - 2026-11-16
 
 - `manage-product-documentation` 6.12.0: the AI chooses which system owns a capability by the need it serves, not by the mechanism that delivers it (an AI instruction, a hook, a tool). A capability its reader must understand on its own, with its own need, data or rules, gets its own spec; the AI checks ownership again as the design changes and before building. The test moves from the documentation model reference into the skill's first section, read on every opening.
 
-## 29.1.0 - Unreleased
+## 29.1.0 - 2026-11-16
 
 - `octoplan` 9.1.0: a new Claude worker route starts from the rubric's first row that fits, as Codex already starts from its first worker route. A route above `Sonnet 5.5 · high` gives as its reason the judgment left after preparation that rules out each cheaper row; the planner's reread and the plan review check each route against its runtime profile. Saved routes and the user's explicit choices are kept.
 - `octoplan` 9.1.0: units that apply one design to sibling surfaces get the rules they all need settled once in the contract. Before dispatching a task that a review finding or returned defect can recur in, the supervisor repairs the contract when it leaves the cause unsettled, or else adds the existing requirement and the failing case to the brief; running executors get it too.
 
-## 29.0.0 - Unreleased
+## 29.0.0 - 2026-11-16
 
 - The feature is now the Smart Report. `octopad-pad` 3.0.0: the AI calls what it builds for a person a Smart Report, never a tab or a brief, offers to build one, and addresses the reserved first one as `smart_report` (it was `smart_brief`). `octopad-session` 29.0.0 and `octopad-notepad` 7.0.1 use the same words.
 
 Needs the server change that renames the `pad` tool's reserved id to `smart_report` and the methodology 2.43.1; the plugin and the server release together. All three distributions move to 29.0.0.
 
-## 28.1.0 - Unreleased
+## 28.1.0 - 2026-11-16
 
 - Claude Code, in the Claude desktop app: right after the AI loads the Octopad desktop in the app's Browser pane, directly or in a batch of browser actions, a hook reminds it that loading does not put the pane on screen: it brings the desktop's tab to the front, shows the pane with the app's own command, checks the pane is displayed with that tab in front, and only then says the desktop is shown. When you are away from the session, it says the desktop is not shown and shows it at your next message. Codex and Cursor are unchanged.
 
 Needs no server change. All three distributions move to 28.1.0.
 
-## 28.0.0 - Unreleased
+## 28.0.0 - 2026-11-16
 
 - `octopad-notepad` 7.0.0: the methodology decides when a reminder exists. A next step that waits on a date or on a member's work no longer gets a reminder: anything to do is a task, dated when known, and an event Octopad reports is a dependency. "Remind me" of something to do creates that task and says so in one line.
 - `octopad-session` 28.0.0: when another person's work can affect the user's own, the AI proposes adding it to one of their focus themes, with its reason, and saves it on their yes. Following through `followup` still needs the user's ask. In Codex Code Mode, the AI also passes `output_budget_tokens: 25000` to `start_session`, so a cut result needs no second call.
@@ -67,13 +67,13 @@ Needs no server change. All three distributions move to 28.1.0.
 
 Needs the Octopad server whose kernel carries the narrower reminder rule (methodology 2.41.0). All three distributions move to 28.0.0.
 
-## 27.0.0 - Unreleased
+## 27.0.0 - 2026-11-16
 
 - `octopad-pad` 2.0.0: the Smart Brief reads as a decision brief. Before writing, the AI weighs together everything that calls you (asks, dates that arrive, whom each blocks, what got unblocked, your focus themes in order, your goals) and decides what comes first and why. The lead, at most three short sentences, says what matters today and why, then what to start with; a change enters only to explain that priority, and it never opens on a date. Sections follow the day's subjects, a focus theme among them when it is one, never a kind of item, and a quiet subject gets none. The AI cites each waiting item it speaks of; whatever it does not cite, the Pad shows in a closing block, so it never lists for completeness and its sections hide nothing. When your work contradicts your focus themes, the lead says so with the change made or proposed; it asks at most one question about a stale theme, and suggests adding another person's work to a theme when it can affect yours. In the Smart Brief, it places a live block or chart on its own when it shows what text cannot. It cites a waiting item by its task; one with no task stays in the closing block. After the update's last save, it tells you the lead in the conversation and says the detail is on your Pad. The rule that it never writes what waits outside every tab goes: that attention now belongs to the Smart Brief.
 
 Needs the Octopad server that places every waiting item in the Smart Brief and accepts sections on any subject (migration 800). All three distributions move to 27.0.0.
 
-## 26.0.0 - Unreleased
+## 26.0.0 - 2026-11-16
 
 - `octopad-pad` 1.0.0, new: how your AI updates the Pad, writes a tab and creates one through the `pad` tool. An update reads one brief for every due tab and saves each tab alone with its `through`; a tab whose source could not be read is saved without it. The AI writes meaning only: the Smart Brief's lead says what changed since the last Pad, then what to do first; one section per focus theme with news; a one-line TL;DR; marked sentences that carry the objects they speak of, never their names, since the Pad shows each object on its own row. It never writes Outside focus. New tabs are proposed with `show` and saved on your yes; external sources are proposed once and never again after a no. "Show me less of X here" changes the tab; "X matters more now" changes your focus themes.
 - `octopad-session` 26.0.0: a due Pad, a request for a tab or a correction of one opens `octopad-pad` when the connection offers the `pad` tool.
@@ -82,39 +82,39 @@ Needs the Octopad server that places every waiting item in the Smart Brief and a
 
 Needs the Octopad server that serves the `pad` tool and its due line (migrations 787 and 788). All three distributions move to 26.0.0.
 
-## 25.2.0 - Unreleased
+## 25.2.0 - 2026-11-16
 
 - `manage-product-documentation` 6.11.0: the Architecture Map shows how the systems connect end to end, for a reader about to change something that crosses them. Its shape gains a "How the systems connect" section. A line stays only if a reader without it could break a connection, a boundary or the release path; one system's intent goes to its Product Spec, its mechanics to code or an Engineering Reference, delivery history to the pull request and the release record, measurements to the test that takes them, open questions to a Task. The map describes the default branch, stays readable in one go at most 20,000 characters, and durable content leaves it under the same preservation list as a spec. A delivered change or a release pass edits the map only when a component, a connection, a store or service, a code home or the release model changed; an audit checks the map against its rule and its length. Before a change that touches more than one system, the AI reads the map's components and connections. The AI marks the map with the page subtype "Architecture Map", so an Octopad server that supports it serves the map's connections in code-work briefings, asks for a check when a task with a pull request is delivered, and warns past the size line; an older server ignores the mark. Each product keeps its own marked map, linked from its Product Map and from its specs, so in a workspace with several products a task gets the map of the product it changes. One team's map had grown from 18,000 to 63,000 characters in six weeks of release passes, mostly delivery history, while describing no end-to-end flow.
 
 All three distributions move to 25.2.0.
 
-## 25.1.0 - Unreleased
+## 25.1.0 - 2026-11-16
 
 - `octopad-planning-and-work-design` 5.6.0: an AI first weighs a test that launches AI sessions against acting without it, by what a mistake would do before it could be corrected, and proposes none when acting and correcting cost less; otherwise it sizes the test before it proposes it, not only before the first run. The skill's description names that moment in observable words, the go is asked in the message that shows the decision and the ceiling unless the person already approved them, the ceiling covers the tokens AI runs may use, and a changed protocol is shown again. In a diagnosis, an AI had proposed and launched a six-run replay whose every result led to the same action, without ever opening this guide.
 
 All three distributions move to 25.1.0.
 
-## 25.0.0 - Unreleased
+## 25.0.0 - 2026-11-16
 
 - A new hook reminds the AI, at each user message, of the rules that apply at a later moment of the work: open the module a new activity needs, read the owning Product Spec before judging product behavior, test a consequential proposal's strongest objection, say what was verified, record durable knowledge, continue authorized work. In long sessions these rules, served once at the start, stopped firing although their text was still in context. The hook calls the Octopad tool `turn_reminder`, whose text the server owns: it is empty until the conversation has received the methodology, so other conversations get nothing. Claude Code declares the hook in `.claude-plugin/plugin.json`; Codex reads it from `hooks.codex.json`, and asks the user to trust it once (`/hooks`, or Settings > Hooks in the desktop app). Cursor, claude.ai and ChatGPT run no such hook. Needs a server that serves `turn_reminder`.
 - The plugin that carries the Pad module, which the server had reserved as 25.0.0, becomes 26.0.0: the server treats 26.0.0 and later as carrying it.
 
 All three distributions move to 25.0.0.
 
-## 24.0.0 - Unreleased
+## 24.0.0 - 2026-11-16
 
 - `octopad-planning-and-work-design` 5.5.0: `Design a costly test` makes a test that launches AI sessions, takes a person's time or costs money state its decision, its cheapest method, a numeric ceiling and its proof before the first run.
 - `octoplan` 9.0.0: `Working judgment` points to the methodology's Working principles and briefs copy them verbatim. Needs a server that serves that section (kernel 2.34.0).
 
 All three distributions move to 24.0.0.
 
-## 23.18.0 - Unreleased
+## 23.18.0 - 2026-11-16
 
 - `octopad-session`: a request for a tab on the user's work now leads to the Pad when the `desktop` tool offers `pad_read`, even if the user never names it. The AI reuses what the conversation says, asks what it leaves open in at most three questions, together, only those whose answer changes the page, proposes the tab with `pad_propose`, names what Octopad cannot show, saves on acceptance and applies later corrections to the same tab.
 
 All three distributions move to 23.18.0.
 
-## 23.17.0 - Unreleased
+## 23.17.0 - 2026-11-16
 
 Ship with 23.16.0, which first installs the plugin in Cursor.
 
@@ -123,82 +123,82 @@ Ship with 23.16.0, which first installs the plugin in Cursor.
 
 All three distributions move to 23.17.0.
 
-## 23.16.0 - Unreleased
+## 23.16.0 - 2026-11-16
 
 The plugin now installs in Cursor from this repository, with the same skills and Octoplan as Claude Code and Codex. It replaces the separate `sudolab-co/octopad-cursor-plugin` repository, which shipped only the Octopad connection at 0.1.0. Cursor reads `.cursor-plugin/marketplace.json` at the repository root and `plugins/octopad/.cursor-plugin/plugin.json`, connects through `plugins/octopad/mcp.json` (the server address alone) and leaves out the Claude-only Octoplan lane agents in `plugins/octopad/agents/`. Cursor has no Octoplan runtime profile: Octoplan treats it as an unknown host, which must establish its capabilities before promising autonomous delivery. A new test keeps the three manifests and `octopad-session`'s `Version:` on one version.
 
 All three distributions move to 23.16.0.
 
-## 23.15.0 - Unreleased
+## 23.15.0 - 2026-11-16
 
 Ship once production serves the companion server change, whose Pad read parses the new part.
 
 - `octopad-notepad` 5.7.0: a focus theme may end with an optional `| deadline: <the user's words>` part, precise ("2026-09-18") or vague ("before the third week of September"). Only the user dates a theme: the AI never sets, infers or borrows a deadline from a task, stream or goal, and changes or removes one only on their word. A theme without a deadline stays valid.
 
-## 23.14.0 - Unreleased
+## 23.14.0 - 2026-11-16
 
 Ship once production serves kernel 2.28.0, which makes a test its own task when it proves several deliverables or needs its own protocol, budget or someone's go.
 
 - `octopad-planning-and-work-design` 5.4.0: such a test gets one task per system it tests, depending on each deliverable it covers, which never waits for it. All that system's cases, what each proves and its run budget live in that task alone; its levels, such as a protocol to approve and then its runs, are its subtasks; acceptance stays its approver's yes. Work the methodology makes its own task, such as a deploy another member runs, no longer reads as staying in a Done when.
 - Laying out a stream gives each clause of its Definition of Success the task that proves it, so no test is found only when the last task closes. The launch example no longer rules out a test or deploy task the methodology calls for.
 
-## 23.13.0 - Unreleased
+## 23.13.0 - 2026-11-16
 
 - The Notepad skill saves the user's stated focus direction at once, even while the AI proposes changes of its own; only an uncertain AI addition or move waits for one question.
 - When an AI's work changes a task, stream or goal a Notepad entry names, it repairs that entry's references in the same turn without asking, keeping the entry's own context and reminder commitments. The skill now opens at that moment.
 
-## 23.12.0 - Unreleased
+## 23.12.0 - 2026-11-16
 
 - The Notepad skill announces a relevant triggered reminder in the conversation and records an unrelated one as a notification. Both routes share the existing conditional claim, keep the entry pending after delivery, and wait for the person's response or explicit handling before closing the occasion.
 - An announced one-off keeps its delivery trace without passing it as a recurring receipt key. Recurrence, interrupted delivery, and a later Desktop action keep their distinct states; older servers leave unsupported notification-state reads unverified.
 
-## 23.11.0 - Unreleased
+## 23.11.0 - 2026-11-16
 
 - The Notepad skill records verified task, stream, and goal references on reminders so the Pad can scope them correctly.
 
-## 23.10.0 - Unreleased
+## 23.10.0 - 2026-11-16
 
 Ship after 23.9.0, coordinated with the companion Summary instruction update. The earlier 23.6.0 reservation did not ship.
 
 - `octopad-notepad` 5.3.0: a readable, known-format owner Notepad with no focus themes gets up to eight themes inferred from actual work, explicitly marked as AI proposals, conditionally saved and used at once with a one-word undo. Unreadable, unknown-format or malformed theme entries are not treated as empty. A Summary writer re-reads its snapshot after saving themes.
 - Theme priority or new-theme doubt gets a proposal and one question; other doubt gets a fact check first. Each theme keeps the person's reason first and at most one dated AI change reason, replaced on the next change. Undo preserves newer and unrelated edits; themes still change neither shared priorities nor execution authority.
-## 23.9.0 - Unreleased
+## 23.9.0 - 2026-11-16
 
 Ship after 23.8.0; this change adds no server capability.
 
 - `octoplan` 8.11.0 makes autonomous problem resolution explicit in the shared Claude and Codex guidance. Executors repair task defects; bounded planning help repairs plan defects using the working principles while the same supervisor retains delivery ownership. Real nonblocking defects receive a disposition and required work gets an owning task. Native profiles keep their planner-launch mechanics. Existing review requirements, real attempt and spend limits, protected effects and human gates remain.
 
-## 23.8.0 - Unreleased
+## 23.8.0 - 2026-11-16
 
 Ship after 23.7.0; this routing change adds no server capability.
 
 - `octoplan` 8.10.0 prioritizes cost over elapsed time for new Codex Plans. Sol 6.1 replaces Astra as the default planner, takes prepared design and audit work at `xhigh`, and handles particularly difficult work, weak verification, high consequences and heavy reviews at `max`. Astra is reserved for justified difficult scientific or spatial/3D problems, or a diagnosed reasoning failure after Sol `max`, unless the user explicitly selects it. Luna's prepared-work route, review requirements, human gates, existing saved routes and the Claude profile stay unchanged. The defaults are provisional routing policy, not measured cost or capability rankings.
 
-## 23.7.0 - Unreleased
+## 23.7.0 - 2026-11-16
 
 Ship after the preceding plugin changes; this repair adds no server capability. Version 23.6.0 is reserved by the separate Pad focus change.
 
 - `octoplan` 8.9.0 keeps supervisors and executors in the same session after context compaction. They reload the method and reconcile the current authority, ownership, actors and uncertain effects before continuing. Context percentages and ordinary task boundaries no longer require replacement. Necessary replacements still prove predecessor cessation and claim ownership under a revision guard. A worker without Octopad access recovers from its brief and supplied sources. Compaction alone repeats no consent, preparation, review or unchanged check. Real client automatic reload remains a separate proof, not a promise of this instruction change.
 
-## 23.5.0 - Unreleased
+## 23.5.0 - 2026-11-16
 
 Ship this version with 23.4.0; it needs no server change.
 
 - Codex gives `build_context` a 25,000-token MCP output budget, matching its 100,000-character early-access result; before, Codex kept 10,000 tokens and dropped the middle of a larger briefing. In Codex Code Mode, `octopad-session` 23.5.0 asks for a 25,000-token emission budget and a separate cell for each `start_session` and `build_context` read, keeping the saved-result recovery if output is truncated.
 
-## 23.4.0 - Unreleased
+## 23.4.0 - 2026-11-16
 
 Ship this version with 23.3.0; it needs no server change.
 
 - `octoplan` 8.8.0: the progress line under the Delivery banner reads in everyday words, such as "Progress — 2 of 51 tasks done, 1 in progress, 48 waiting · waiting for your review of the two pilots", counted from current task status. Before, it read "Position — 2/0/51 tasks · phase · countable outcome unit · decisive metric", which users could not decode and which went stale when counted from memory; the outcome unit and kill question stay in the records and the consequence handoff.
 
-## 23.3.0 - Unreleased
+## 23.3.0 - 2026-11-16
 
 Ship this version with 23.2.0; it needs no server change.
 
 - `octoplan` 8.7.0: a supervisor or executor whose context was compacted now hands off before any new work, and the rule sits in the skill's main file, which Claude Code brings back after a compaction, instead of only in `supervision.md`, which it does not. The rule says how to recognize a compaction, that the client's own resume instruction, the summary's next step or a low context reading does not lift it, and that a summary written for the same session to continue opens with a line naming the rule; the supervisor checks it before each pick and calls `start_session` again before the handoff's first Octopad write, and the worker prompt gives executors the same rule and their own summary line. Before, a supervisor compacted while idle followed its summary's next step and dispatched a worker, then found the rule after the fact.
 
-## 23.2.0 - Unreleased
+## 23.2.0 - 2026-11-16
 
 Ship this version with 23.1.0 and kernel methodology 2.24.0. Each module keeps in its main file what every opening needs; a procedure only some cases use moves to a reference file the module names, with the moment to read it. An audit of the modules against Anthropic's skill-creator found the rest of the changes below.
 
@@ -213,7 +213,7 @@ Ship this version with 23.1.0 and kernel methodology 2.24.0. Each module keeps i
 - `octoplan` 8.6.1: the review floors read as one line per case, with no rule changed.
 - `octopad-notepad` 5.2.1 and `octopad-session` 23.2.0: lines the methodology or the `notepad` tool already state are cut.
 
-## 23.1.0 - Unreleased
+## 23.1.0 - 2026-11-16
 
 Ship this version before the Octopad server release with kernel methodology 2.24.0, which leaves to these modules the rules listed below.
 
@@ -222,74 +222,74 @@ Ship this version before the Octopad server release with kernel methodology 2.24
 - `octopad-notepad` 5.2.0: takes over from the methodology that a session opening or a what-next question alone needs no Notepad entry.
 - `octopad-knowledge-evidence` 2.4.0, `manage-activity-context` 7.1.0, `manage-market-intelligence` 3.2.0, `manage-product-documentation` 6.9.0, `manage-product-marketing` 2.1.0, `octopad-crm` 1.5.0, `octoplan` 8.6.0, `pmm-check` 1.1.0, `technical-writing` 2.1.0: description only.
 
-## 23.0.0 - Unreleased
+## 23.0.0 - 2026-11-16
 
 This version needs the Octopad server release whose `build_context` shows a Product Spec in the intent shape.
 
 - `manage-product-documentation` 6.8.0: a Product Spec describes the intended product, not what the code does. Its sections become Need (job stories), Outcome and its signal, Direction, Choices with their reason, Promises, Non-goals, Open questions and Links. A line stays only if a reader without it could build the wrong thing, undo a choice or break a promise; what the code does, values chosen while building and delivery history leave for code, tests, Tasks and release records. Specs lose their Verified section and their implementation, merge and release labels. Before, a spec's Behavior section restated the code and Verified carried revisions and pull requests: on 2026-10-29, a spec rewritten under 6.7.0 still kept 36,000 characters, most of them readable in the code.
 
-## 22.1.0 - Unreleased
+## 22.1.0 - 2026-11-16
 
 - `octopad-notepad` 5.1.0: the AI no longer writes a reminder for a wait Octopad already reports. A next step, or a task set `blocked` or `on_hold`, that waits on a date or an event gets a reminder unless Octopad tells the user of every event the wait needs: it tells a task's assignee and creator when the last dependency they can see closes, unless the task is `on_hold`, and when its linked pull request merges. A date, a deploy, a switch, an outside reply or the merge of a pull request no task links still gets one, and so does a wait Octopad reports only in part, such as a merge followed by a deploy, or one whose event a later session cannot check, which used to stay a loop line. Before, every blocked task got a reminder: on a live workspace on 2026-10-28, all six reminders in one Notepad repeated a task's dependency, blocked reason, review or status.
 
-## 22.0.0 - Unreleased
+## 22.0.0 - 2026-11-16
 
 This version needs the Octopad server release in which `notifications` records Notepad reminders (`record_reminder`).
 
 - `octopad-notepad` 5.0.0: before a due reminder leaves the Notepad, the AI records it with `notifications` `record_reminder`, so it stays in the user's Needs you and Notifications until they handle it; the AI marks it handled only on their word. Each occasion of a reminder gets one receipt, whichever session records it: each occasion of a repeat reminder gets its own, and a second session or a retry gets the same receipt and no second notice. A one-off reminder leaves the Notepad, and a repeat one moves to its next occasion, only once a receipt confirms it; after an unclear answer the AI calls again with the same values, which finds a receipt that landed. Before, a reminder delivered in a conversation was lost when it ended: on 2026-10-27, three reminders whose pull request had merged never reached the Desktop heads-up.
 
-## 21.1.0 - Unreleased
+## 21.1.0 - 2026-11-16
 
 - `manage-product-documentation` 6.7.0: each Product Spec section says what it holds and what never belongs in it, with that content's home: a choice between alternatives goes to a Decision, exploration and reviews worth keeping to a supporting record, delivery progress to the Task or pull request, history by version to the changelog or release record, implementation to code. A Next entry is updated in place rather than duplicated and links its Task, a new state replaces its label, opening a pull request or bumping a version changes no spec, figures chosen while building stay in code unless users meet them as limits, a spec of a skill holds its testable contract and links the skill text for the mechanics, and a spec keeps no changelog or history page of its own: replaced text lives in page versions unless the workspace keeps one. A spec guides its reader with what code cannot give (the user's intent, the choices that shape the system, the promises reached, the next milestones) and never restates the code: each line passes an admission test, recording an established need, a governing choice or a consequential promise whose absence would cause a nameable mistake; a description of the implementation (screens, layout, wording, tool parameters, validation messages, figures and steps chosen while building) never passes on its own, and the skill shows two rejected lines with what replaces them. A Next entry holds the change's state and the promise or choice it changes, its need and acceptance staying on its Task, which the AI reads before judging or releasing it; the spec changes when intent, promises, constraints or verification change, never for review progress; known exceptions stay on the promise they limit; a capability its reader must understand on its own gets its own spec; a rewrite's reviewer checks both directions. On a live workspace, specs rewritten to the earlier standard regrew within two weeks, mostly with delivery history, rejected options and one Next entry per released version; a rewrite to the section table alone then cut them by about 5%, since half their text was released behavior written as screen mechanics.
 
-## 21.0.0 - Unreleased
+## 21.0.0 - 2026-11-16
 
 This version needs the Octopad server release in which the Home Summary reads the Notepad's focus themes and accepts a theme with one reference.
 
 - `octopad-notepad` 4.0.0: the `compass` keeps the user's ordered focus themes in one `### Focus themes` entry, at most 8, one line per theme: the theme, its reason, 1 to 4 references to the goal, stream or key task it concerns, and what they are currently on. A change the user states applies at once, and the AI never undoes it without a new fact. The AI keeps the themes true itself: when a fact about work the user does, owns or waits on changes what deserves their attention first, it moves the theme that fact fits, or adds one if none fits, and retires a theme once its purpose is met or dropped; otherwise it updates only `currently on:`. Each change gets one line in the conversation (what, the fact behind it, and that one word undoes it) and a dated `moved` note in `why:`. The AI no longer asks whether a departure from a `compass` call means the order was wrong. Asked what to work on, it weighs the themes in order. Before, the `compass` held only calls on which work comes before which, with no list, so no AI wrote the focus themes the Summary reads.
 
-## 20.11.0 - Unreleased
+## 20.11.0 - 2026-11-16
 
 - `octoplan` 8.5.0: in Claude, a supervisor that hands off starts its successor without asking when its recorded mandate covers it, and proposes the session only when the app refuses the start, as it does on a turn the user did not begin. Once the app reports that the user started a successor it could only propose, the released supervisor detaches it; it never relays its successor's turn-end reports. On a live run, a supervisor at its context limit proposed its successor on a turn the user began; once the user started that session, the released supervisor left it nested under itself, so the successor's turn-end reports would reach it.
 
-## 20.10.0 - Unreleased
+## 20.10.0 - 2026-11-16
 
 - `octoplan` 8.4.0: a usage quota or rate limit on one AI model or runtime account no longer counts as shared-infrastructure distress: the affected work runs on its saved route in the other runtime, or on paid continuation only where recorded authority covers the spend, and otherwise only that work waits. On a live run, two supervisors stopped every database read, and some work that needed none, until one tool's five-hour quota reset, although that tool still ran on its credits and other work was ready.
 
-## 20.9.0 - Unreleased
+## 20.9.0 - 2026-11-16
 
 - `octoplan` 8.3.0: a launch brief or supervisor pointer names the language the user writes in, and the session it starts addresses the user in that language until they write in another. On a live run, a successor supervisor whose launch brief was written in English talked to a French-speaking user in English: nothing in its launch text named the user's language, and the Octopad brief names it only when the user's interface is in French or Spanish.
 
-## 20.8.0 - Unreleased
+## 20.8.0 - 2026-11-16
 
 - `octoplan` 8.2.0: in Claude, a supervisor session, the first or a successor, starts in, or when opened by hand enters, its own worktree, and keeps any local file a successor needs where it survives that worktree, cited by absolute path. On a live run, a released supervisor proposed its successor in its own checkout to reach evidence files; the Claude desktop app refused to detach that session, so the released supervisor kept receiving the successor's turn notes.
 
-## 20.7.0 - Unreleased
+## 20.7.0 - 2026-11-16
 
 - `octoplan` 8.1.0: a planner or supervisor cancels, without asking the user, a task the Plan replaces, in whichever stream it sits, with a comment on what its replacement adopts; a task in progress for someone else, or inside another live supervisor's boundary, stays a conflict to reconcile. On a live run, a supervisor, the planner, a plan reviewer and the delivery contract each held a replacement task's dispatch for the user's go to cancel the task it replaced, because that task sat in another stream, although no rule asked for that go.
 
-## 20.6.0 - Unreleased
+## 20.6.0 - 2026-11-16
 
 - Claude Code: the Octopad server recognizes a conversation that resumes in a new process, such as one the Claude desktop app reopens after a pause, and gives it a short reminder instead of the full brief again. A `SessionStart` hook records a SHA-256 digest of the session id for the Claude Code process that runs it, in a private temp folder (`$TMPDIR/octopad-claude-<uid>/`, one small file per process, removed after 7 days). A `headersHelper` on the Octopad connection sends that digest as the `x-octopad-claude-session` header. The raw session id never leaves the machine. A forked conversation, a nested Claude Code process and a new conversation have their own session id, so they never present another conversation's digest; subagents inside one process share its connection, as before. Any failure sends no header, and the connection works as before. The first session on a machine, or the first after 7 days without one, sends no header. When a recent record exists but none for this process (hooks turned off for a project, `claude mcp list`), the helper waits about 2 seconds before connecting without the header.
 - The hook and the helper run only in Claude Code and Cowork: claude.ai chat ignores hooks, and Codex loads neither (the hook is declared in `.claude-plugin/plugin.json` only). On Windows they send no header. Under Git Bash they stop at once. Without Git Bash, Claude Code runs the hook in PowerShell, where it does nothing and exits 0, and shows its warning that a hook ran in PowerShell at the start of each session.
 
-## 20.5.0 - Unreleased
+## 20.5.0 - 2026-11-16
 
 - `octoplan` 8.0.0: a worker keeps its final answer to what the supervisor must verify and close the task, and gives the command that reproduces longer evidence or a location that survives the workspace, because, for a worker without Octopad access, the supervisor otherwise preserves that text verbatim on a working page of the task and pays it twice. A read-only lookup that a supervisor or planner delegates may run on `Haiku 5.5` at high effort when a runnable check of correctness and completeness exists before the route is chosen; it is not a saved task route and lowers no review floor. The Claude runtime notes now name the configurable concurrent subagent cap, the error not to retry, and the Claude Code version below which Haiku 5.5 is rejected.
 
-## 20.4.0 - Unreleased
+## 20.4.0 - 2026-11-16
 
 - `octopad-planning-and-work-design` 5.1.0: a stream whose work follows one logic marks its main parts by starting each top-level task's title with its phase (`P1 · <title>`, `P2 · <title>`), instead of giving each phase a parent task. Subtasks carry no prefix, and a phase is never a parent task. A phase parent held deliverables that are not parts finished and checked alone, against the methodology's rule for subtasks; a title prefix shows the user the stream's structure without that nesting.
 
-## 20.3.0 - Unreleased
+## 20.3.0 - 2026-11-16
 
 - `octopad-crm` 1.4.0: where the organization has Octopad's own sending, the AI changes the sending configuration with `crm_send_config` `set` when a workspace admin asks it to, going live included, instead of always refusing. The server already lets workspace admins make this change. For any other user, the AI still never changes it.
 
-## 20.2.0 - Unreleased
+## 20.2.0 - 2026-11-16
 
 - `manage-product-documentation` 6.6.0: a spec edit the AI cannot make (no write access, a locked page, no Octopad connection) is named on the repository's documentation-impact mark with what blocked it, and the AI creates or reuses documentation-debt work, instead of skipping it in silence.
 
-## 20.1.0 - Unreleased
+## 20.1.0 - 2026-11-16
 
 `octoplan` 7.11.0: corrections from the first live run of 7.10.0 (2026-10-21/22), where 11 agents delivered 3 tasks at 3 to 4 agents per task instead of 2.
 
@@ -298,7 +298,7 @@ This version needs the Octopad server release in which the Home Summary reads th
 - When every remaining wait is a person's, the Claude supervisor waits on a background command that exits when one of those waits changes state, such as a pull request merging, and reconciles it.
 - Restored two rules the 7.10.0 deduplication dropped: cut each deliverable into the smallest units that make sense, and name tasks by title, never by an ID prefix, in what the user reads.
 
-## 20.0.0 - Unreleased
+## 20.0.0 - 2026-11-16
 
 Four skill lines now agree with the Octopad methodology's corrections, and three skill texts follow server changes. This version needs the Octopad server release in which `build_context` matches streams to a description of the work (`mode: "work_stream"` with `query`).
 
@@ -307,7 +307,7 @@ Four skill lines now agree with the Octopad methodology's corrections, and three
 - `octopad-session`: the AI may call `start_session` again when its context was compacted or cleared since it received the Octopad orientation, as the server's instructions ask.
 - `manage-product-documentation` 6.5.0: the Behavioral Contract and Architecture Map shapes drop their `Last verified:` line, which only a retired background check read.
 
-## 19.12.0 - Unreleased
+## 19.12.0 - 2026-11-16
 
 `octoplan` 7.10.0: an executor owns its task, its review and its fixes. A live Octoplan on 2026-10-21 spent 38 agents on two pull requests: between the supervisor and each worker sat a batch lead, each unit of a task had its own worker, and each fix and each recheck had another.
 
@@ -318,14 +318,14 @@ Four skill lines now agree with the Octopad methodology's corrections, and three
 - A plan repair that only re-cuts reviewed work or changes a route within its rubric is checked by the planner, without a fresh review, on Opus 5.5 high.
 - The skill states each rule once, in the file that owns it, and drops the manual task chains no runtime uses: 15,839 words before, 12,458 after.
 
-## 19.11.0 - Unreleased
+## 19.11.0 - 2026-11-16
 
 `manage-product-documentation` 6.4.0 has the AI read a behavior's spec before it judges it. Twice an AI analyzed a feature from what it already had, once the Notepad's usage and once a failed Octoplan run, and proposed changes without opening the feature's Product Spec.
 
 - Before judging, diagnosing or redesigning a behavior, the AI reads its owning Product Spec in full. Its shortcut for a narrow fix now applies only once the fix's cause is known. When no spec owns the behavior, the AI says so and leaves conclusions about intended behavior open.
 - The exception for agent instructions covers only the AI's own working instructions. A skill or AI behavior that a product ships to its users is product behavior, like any other feature.
 
-## 19.10.0 - Unreleased
+## 19.10.0 - 2026-11-16
 
 `octoplan` 7.9.0 sizes review to what a task risks. A live Octoplan ran two reviewers from two providers on every code task, reviewed each unit and then its parent again, and reinstalled the project for each new agent. The skill's own floors asked for none of that; their wording allowed it.
 
@@ -337,11 +337,11 @@ Four skill lines now agree with the Octopad methodology's corrections, and three
 - Plan reviews keep their floors.
 - The plugin now ships the Claude Code lane agents that pin a model and an effort for each default route (`octopad:octoplan-sonnet-high`, `-opus-medium`, `-opus-high`, `-opus-xhigh`, `-opus-max`, `-fable-xhigh`). A supervisor dispatches the lane matching a task's saved route, so the route's effort holds even where the launch call cannot set one.
 
-## 19.9.0 - Unreleased
+## 19.9.0 - 2026-11-16
 
 `octoplan` 7.8.0: a supervisor's messages to the user name tasks by title. An Octoplan supervisor reported to its user with bare task-ID prefixes, carried over from the ID-based records it keeps. Its journal and pointer blocks still keep exact IDs; whatever it tells the user names tasks by title. The Codex-only line on opaque IDs is folded into this shared rule.
 
-## 19.8.0 - Unreleased
+## 19.8.0 - 2026-11-16
 
 `octoplan` 7.7.0 and `octopad-planning-and-work-design` 4.5.0 change how work is cut and handed to agents. An audit of six recent Octoplans found that the planner cut work by deliverable only: a task could carry a migration, server code, a screen and AI-facing text at once, and one worker built it whole, with most review findings landing on choices the plan had left open.
 
@@ -352,7 +352,7 @@ Four skill lines now agree with the Octopad methodology's corrections, and three
 - Plan review now checks unit size, unsettled shared choices and rehearsal evidence. A plan resumed under this version first sends any remaining task that breaks these rules back to the planner to be split, keeping finished work.
 - Workers may read a small file whole; only large files are read by range.
 
-## 19.6.0 - Unreleased
+## 19.6.0 - 2026-11-16
 
 `octoplan` 7.6.0 changes how a delivery runs in the Claude desktop app. The planner opens the supervisor session itself, checks its model and effort, and stops receiving its turn-end notes. The supervisor hands each batch of tasks to a fresh batch lead, a subagent that runs the workers and reviewers and returns a short receipt per task; the supervisor still validates and closes every task. Where the Octopad desktop is open, each batch lead shows on its tasks what its agents are doing, step by step; this needs the Octopad server's methodology 2.14.0, released with this version. A plan defect goes back to the planner session when it is free and has room, otherwise to a planner subagent, never to both. In both Claude and Codex, a supervisor now keeps its context under 70% (or the lower limit you set): 10 points before that limit it starts nothing new, finishes what is running and hands off, and after a compaction it starts no new work and instead reconciles and hands off. The app's instructions say a session started by another session cannot open a new session on its own, so a successor session starts without your click only on a turn you began; otherwise your AI says delivery waits until you open it, and that your next message to it is enough to start the successor while your instructions still cover it.
 
@@ -365,13 +365,13 @@ The first live run showed avoidable overhead. These changes target it and keep e
 
 Both distributions move to 19.6.0.
 
-## 19.5.1 - Unreleased
+## 19.5.1 - 2026-11-16
 
 Lines meant for the Octopad team no longer load into your AI. `technical-writing` 2.0.2 and `pmm-check` 1.0.1 drop their "candidate" status lines, and `pmm-check`'s reading list drops its notes on an earlier internal method. `octoplan` 7.5.1 drops its maintainer section, now in this repository's README. In `octopad-knowledge-evidence` 2.2.1, "Building a complete set" again reads as one instruction: settle each doubtful item with one check aimed at it alone.
 
 Both distributions move to 19.5.1.
 
-## 19.5.0 - Unreleased
+## 19.5.0 - 2026-11-16
 
 Six skills lose about 3,000 words of repeated or obsolete text in all; each rule now has one home and the others point to it.
 
@@ -384,19 +384,19 @@ Six skills lose about 3,000 words of repeated or obsolete text in all; each rule
 
 Both distributions move to 19.5.0.
 
-## 19.4.0 - Unreleased
+## 19.4.0 - 2026-11-16
 
 `octopad-knowledge-evidence` 2.2.0 stops your AI from turning code into a decision nobody took. When the code differs from a decision, the code, its commit or pull request and their author show what was built, not who chose it: the decision is neither superseded nor reversed on that ground and keeps its choice until a source records the new choice and who made it; otherwise your AI asks you which holds, for each decision on its own, never through your yes to a cleanup batch. A path or a name in a decision still follows the code. A cleanup's proposed actions now include asking you. This version pairs with an Octopad server release in which the `knowledge` tool asks every decision to cite where its choice was made or recorded and say who chose (a person, a group, or an AI under a cited mandate), when and why ("unknown" for what the source lacks), no longer counts how things work today as a decision, tells your AI never to attribute a choice to whoever recorded or implemented it, and to ask you before a decision whose chooser is unknown rules out what you ask.
 
 Both distributions move to 19.4.0.
 
-## 19.3.0 - Unreleased
+## 19.3.0 - 2026-11-16
 
 `manage-market-intelligence` 3.0.0 is rewritten to give users market information they can act on. Your AI starts from what Octopad already knows about the activity and its offers, then works like an analyst: it frames hypotheses, looks for existing studies and reports, plans its sources, rests each main conclusion on at least two independent sources, quantifies and concludes. It keeps three kinds of Market pages: the Market Overview as the market report (what to remember, including how the offer's stated positioning holds against the evidence; a market analysis in fixed blocks, from size and buying to prices and economics; what remains to verify), one page per main competitor, and one page for the other actors. When the internet does not answer, it uses what Octopad holds, asks you one grouped set of questions, estimates with its calculation shown or marks the point unknown. It estimates the market's size bottom-up, from counts of potential buyers and their annual spend, with assumptions and the calculation shown. Before writing, a fresh reviewer checks each conclusion and figure against its source. It ends by presenting the report in the conversation and, on later runs, what changed.
 
 Both distributions move to 19.3.0.
 
-## 19.2.1 - Unreleased
+## 19.2.1 - 2026-11-16
 
 The planning skill 4.4.1 no longer sends an AI to a "Strategy block" to read stream descriptions: the early-access session brief has none. It reads each stream's description beside it in the session brief and, for a stream the brief does not list, the stream's framing through `build_context`.
 
