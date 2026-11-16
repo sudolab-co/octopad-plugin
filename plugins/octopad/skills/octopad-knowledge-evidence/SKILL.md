@@ -2,7 +2,7 @@
 name: octopad-knowledge-evidence
 description: "Use when a conversation surfaces something someone outside it will need: a decision, a key fact, a risk, an advisory, an open question or a customer's words. Also use it when new evidence changes a recorded item, when the user shares a file or document, when a page or file is written, linked or tagged, before saying whether something is on record or answering a question about the corpus, and when the corpus is cleaned up. Chooses where each item goes and how a claim about the corpus is proved. Not for spec content (manage-product-documentation) or one customer's facts (octopad-crm)."
 ---
-Version: 2.5.0
+Version: 3.0.0
 
 # Where knowledge is written
 

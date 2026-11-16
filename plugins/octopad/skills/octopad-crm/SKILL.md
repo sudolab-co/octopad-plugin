@@ -2,7 +2,7 @@
 name: octopad-crm
 description: "Use where the CRM is on, or the user wants it on, when a customer's contact, company or deal comes up, when what a customer did or said needs recording, when an octobot is launched or followed, when its drafts, proposals or quarantined identities wait on a decision, when an approved draft is sent or its reply recorded, when the distill is read or changed, and when records are imported or synced. Not for competitors or market-wide customer voice (manage-market-intelligence)."
 ---
-Version: 1.5.1
+Version: 2.0.0
 
 # Before anything
 

@@ -2,7 +2,7 @@
 name: octopad-notepad
 description: "Use when the user says what they want, prefer, judge or decide that no Octopad object holds, when a Notepad reminder's subject comes up, when work changes a task, stream or goal a Notepad entry names, and at an opening with no precise ask. Also use it when the user asks to be reminded, what was in progress, what to work on, where a note is or how to see their Notepad, when they name a priority or change their order, when orientation shows only an excerpt or no priorities, or names Notepad entries to review or blocks to convert, and before writing to the Notepad. Not for shared pages."
 ---
-Version: 9.0.1
+Version: 10.0.0
 
 # Whose memory
 

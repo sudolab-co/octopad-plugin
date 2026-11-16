@@ -2,7 +2,7 @@
 name: manage-product-documentation
 description: "Use before judging why a product behaves as it does or whether or how to change it, when the user explores or settles how it behaves, when asked what it does today or whether a page still matches the code, when a system ships, rolls back or retires, before writing up a pull request or a release, and before saying a change owes no documentation. A shipped skill is product behavior. Not for internal notes or marketing copy (manage-product-marketing)."
 ---
-Version: 6.12.0
+Version: 7.0.0
 
 # Manage Product Documentation
 

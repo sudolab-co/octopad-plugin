@@ -1,7 +1,7 @@
 ---
 name: manage-activity-context
 metadata:
-  version: "7.3.0"
+  version: "8.0.0"
 description: "Use when the user explains or revises why an activity or project exists, whom it serves, its relationships, strategy or constraints, when people or organizations join it, to update the Overview without asking anything, or when its Activity Overview, or an untyped Company Overview, no longer matches. Not for market evidence (manage-market-intelligence) or an offer's marketing (manage-product-marketing)."
 ---
 # Purpose and boundaries
