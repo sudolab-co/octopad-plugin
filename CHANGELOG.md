@@ -2,9 +2,10 @@
 
 ## 33.3.0 - Unreleased
 
-- `octopad-session` 33.3.0: when the plugin's own Octopad connection is missing and only another Octopad connection is listed, the AI tells the user once and asks which one to use.
-- `octopad-knowledge-evidence` 3.2.0: a date or time the AI writes into a record names its time zone, the user's when known, otherwise UTC.
-- `manage-product-documentation` 7.1.1: what each documentation skill owns is mapped in one table, `references/product-scope-and-seams.md`, which now names `manage-market-intelligence`; the skill keeps one line on its own share and points to the table.
+- `octopad-session` 33.3.0: when the plugin's own Octopad connection is missing and only another Octopad connection is listed, the AI tells the user once and asks whether to use that one or reconnect the plugin's own.
+- `octopad-knowledge-evidence` 3.2.0: a date or time the AI writes in a record's text names its time zone, the source's when it gives one, otherwise the user's when known, otherwise UTC; a date field takes the bare day the user means.
+- `manage-product-documentation` 7.2.0: what each documentation skill owns is mapped in one table, `references/product-scope-and-seams.md`, which now names `manage-market-intelligence` and has a product change revise the market comparisons that rest on it; the skill keeps one line on its own share and on product marketing's, and points to the table.
+- The plugin's tests check that every skill carries a body `Version:` line.
 - `octopad-crm` 2.0.1: two phrases lose their "yet" and "today": the CRM cannot be turned off once on, and Octopad pays for the model calls of Distill and Prospect.
 - `manage-activity-context` 8.0.1 and `manage-market-intelligence` 4.0.1 carry their version on a body `Version:` line, as every other skill does.
 

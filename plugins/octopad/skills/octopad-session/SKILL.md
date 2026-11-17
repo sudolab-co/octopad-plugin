@@ -6,7 +6,7 @@ Version: 33.3.0
 
 # Start an Octopad plugin session
 
-1. Use the Octopad MCP connection bundled with this plugin. If another Octopad connection is also listed, such as a connector or an entry added by hand, tell the user once and keep to the bundled one for the whole conversation. If the bundled connection is not listed but another Octopad connection is, tell the user once and ask which one to use. If you cannot tell which listed connection is the bundled one, ask the user.
+1. Use the Octopad MCP connection bundled with this plugin. If another Octopad connection is also listed, such as a connector or an entry added by hand, tell the user once and keep to the bundled one for the whole conversation. If the bundled connection is not listed but another Octopad connection is, tell the user once and ask whether to use that one or reconnect the plugin's own. If you cannot tell which listed connection is the bundled one, ask the user.
 2. Work in the workspace the user names or the context makes clear. Stay in the user's organization: never pick another one.
 3. Call `start_session`.
 4. When the methodology's router sends a request to a module, open `../<module>/SKILL.md`, next to this skill in this plugin. Check the path of the file you open: a personal or standalone skill with the same name never replaces it. If the bundled file cannot be opened, work from the methodology alone.

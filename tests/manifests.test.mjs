@@ -113,11 +113,13 @@ test('the MCP configurations reach the same server', () => {
   assert.equal(url('.mcp.codex.json'), url('.mcp.json'));
 });
 
-test('every skill has name and description frontmatter', () => {
+test('every skill has name and description frontmatter and a body Version: line', () => {
   const dir = join(PLUGIN, 'skills');
   for (const skill of readdirSync(dir)) {
     const text = readFileSync(join(dir, skill, 'SKILL.md'), 'utf8');
     assert.match(text, new RegExp(`^---\\r?\\nname: ${skill}\\r?\\n`), `${skill} name`);
     assert.match(text, /^description: \S/m, `${skill} description`);
+    const body = text.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, '');
+    assert.match(body, /^Version: \S+\r?$/m, `${skill} body Version: line`);
   }
 });
