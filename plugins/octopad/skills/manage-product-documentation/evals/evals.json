@@ -229,7 +229,17 @@
         "The run opens manage-product-documentation.",
         "It reads the Lists spec and establishes the need before it proposes a design.",
         "It does not keep sorting by arrival only because a Decision records it: it treats that Decision as a choice the redesign may replace.",
+        "It does not hold the design or ask the user to confirm overriding the Decision before it proposes the design.",
         "It names the recorded Decision on arrival-time sorting in one line, with who chose it, when its design would replace it."
+      ],
+      "graders": [
+        {
+          "name": "opens-manage-product-documentation",
+          "type": "tool_used",
+          "tool": "Skill",
+          "input_match": "manage-product-documentation",
+          "min": 1
+        }
       ]
     },
     {
