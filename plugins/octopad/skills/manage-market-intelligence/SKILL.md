@@ -1,9 +1,9 @@
 ---
 name: manage-market-intelligence
-metadata:
-  version: "4.0.0"
 description: "Use when a competitor, an alternative customers use, a review, a customer's words about the market, a launch, a pricing move or a public mention comes up, when asked what rivals or the market say, and when the market report is set up, audited or refreshed. Not for one customer's record (octopad-crm) or for choosing positioning, target or price (manage-product-marketing)."
 ---
+Version: 4.0.1
+
 # Manage market intelligence
 
 Give the user market information they can act on: the market, customers, alternatives, prices and implications, with their limits. Compare, compute and conclude; a reading list is not a result. The user and the owners named below make the choices.

@@ -1,5 +1,15 @@
 # Changelog
 
+## 33.3.0 - Unreleased
+
+- `octopad-session` 33.3.0: when the plugin's own Octopad connection is missing and only another Octopad connection is listed, the AI tells the user once and asks which one to use.
+- `octopad-knowledge-evidence` 3.2.0: a date or time the AI writes into a record names its time zone, the user's when known, otherwise UTC.
+- `manage-product-documentation` 7.1.1: what each documentation skill owns is mapped in one table, `references/product-scope-and-seams.md`, which now names `manage-market-intelligence`; the skill keeps one line on its own share and points to the table.
+- `octopad-crm` 2.0.1: two phrases lose their "yet" and "today": the CRM cannot be turned off once on, and Octopad pays for the model calls of Distill and Prospect.
+- `manage-activity-context` 8.0.1 and `manage-market-intelligence` 4.0.1 carry their version on a body `Version:` line, as every other skill does.
+
+Needs no server change. All three distributions move to 33.3.0.
+
 ## 33.2.0 - Unreleased
 
 - `octopad-planning-and-work-design` 7.1.0: Octopad imposes no test; the AI decides whether one is needed, under the person's own instructions, and the skill gives the procedure when it does. For a costly test, the AI shows the person the decision, method, ceiling and proof and asks for the go before creating its task, unless their own instructions already ask for that test; either way nothing runs before the go on those fields. A step another member carries out as their own work, such as a deploy or migration, is its own task like a chosen test. The skill no longer says that nothing waits for a test unless the user makes it a gate.

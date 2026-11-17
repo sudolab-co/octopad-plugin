@@ -2,7 +2,7 @@
 name: manage-product-documentation
 description: "Use before judging why a product behaves as it does or whether or how to change it, when the user explores or settles how it behaves, when asked what it does today or whether a page still matches the code, when a test, a measurement, an incident or an analysis shows how a system really behaves or fails, when a system ships, rolls back or retires, before writing up a pull request or a release, and before saying a change owes no documentation. A shipped skill is product behavior. Not for internal notes or marketing copy (manage-product-marketing)."
 ---
-Version: 7.1.0
+Version: 7.1.1
 
 # Manage Product Documentation
 
@@ -121,7 +121,7 @@ When product work needs a Task, reuse suitable existing work and follow the acti
 
 ## Work with the other documentation skills
 
-Product documentation owns product behavior, release truth, Product Facts, and each Product Overview except its Marketing section. Product marketing consumes Product Facts and owns that section, with ICP, positioning, pricing, campaigns, approved claims, and their messages. Activity context owns business-level context and the Activity Overview. Technical writing improves technical and user documentation without deciding its facts or evidence state.
+Product documentation owns product behavior, release truth, Product Facts, and each Product Overview except its Marketing section. What the other documentation skills own is mapped in [Pass changes between owners](references/product-scope-and-seams.md#pass-changes-between-owners).
 
 For a pure marketing request, do not draft the output here. Load product marketing when it is available; otherwise name that owner and hand the request over without inventing copy.
 

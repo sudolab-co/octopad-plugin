@@ -2,12 +2,12 @@
 name: octopad-crm
 description: "Use where the CRM is on, or the user wants it on, when a customer's contact, company or deal comes up, when what a customer did or said needs recording, when an octobot is launched or followed, when its drafts, proposals or quarantined identities wait on a decision, when an approved draft is sent or its reply recorded, when the distill is read or changed, and when records are imported or synced. Not for competitors or market-wide customer voice (manage-market-intelligence)."
 ---
-Version: 2.0.0
+Version: 2.0.1
 
 # Before anything
 
 - The CRM exists only in a workspace where it is switched on and the user is a member; `crm_status` says whether it is, and which octobot features the organization has, and `list_workspaces` marks each workspace that has it. Elsewhere the CRM tools refuse, or are not offered at all, and that is the answer, not a fault to work around.
-- Turning the CRM on: no tool does it. An owner or admin of the organization turns it on in the workspace's Settings, under Modules (on the desktop, Settings, then General, then Modules); there is no off switch yet. Each person then reconnects their AI to see the CRM tools. Send the user there; never report the CRM as on until `crm_status` says so.
+- Turning the CRM on: no tool does it. An owner or admin of the organization turns it on in the workspace's Settings, under Modules (on the desktop, Settings, then General, then Modules); once on, it cannot be turned off. Each person then reconnects their AI to see the CRM tools. Send the user there; never report the CRM as on until `crm_status` says so.
 - When you set up the CRM for a team that follows no sales, switch Deals off with `crm_pipeline_stages` `set_deals_enabled`, so it is not shown an empty Deals tab.
 - Three sets of tools. The record tools are there in every CRM workspace: records, search, segments, pipeline stages, custom fields, company memberships and each record's working space (`crm_record`). The octobot tools come to an organization once Octopad opens them to it: `crm_runs` (Distill and Prospect runs), `crm_outreach`, `crm_actions` and `crm_signals`. Some organizations have more octobot features; `crm_status` lists the ones this organization has. When a tool or action is missing or refused, use the fallback this skill names, say once that the rest is not available to this organization, and never report the absence as an error.
 

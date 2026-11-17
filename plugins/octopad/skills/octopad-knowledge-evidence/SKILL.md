@@ -2,13 +2,14 @@
 name: octopad-knowledge-evidence
 description: "Use when a conversation surfaces something someone outside it will need: a decision, a key fact, a risk, an advisory, an open question or a customer's words. Also use it when new evidence changes a recorded item, when the user shares a file or document, when a page or file is written, linked or tagged, before saying whether something is on record or answering a question about the corpus, and when the corpus is cleaned up. Chooses where each item goes and how a claim about the corpus is proved. Not for spec content (manage-product-documentation) or one customer's facts (octopad-crm)."
 ---
-Version: 3.1.0
+Version: 3.2.0
 
 # Where knowledge is written
 
 Three branches hold durable workspace context: `knowledge`, `pages` and `files`. Retrieval reaches only the branch a thing went into, so choose the branch on purpose, never by habit.
 
 - When a conversation surfaces something someone outside this task or conversation will need (a key fact, a decision, an open question, a risk, a customer's words, or what an analysis establishes about how a system works, even when you were asked to change nothing), record it in the same turn without asking, in one update to the item that owns it, with scope, source and source date (unknown if you do not know). Where the CRM is on, what one customer did or said goes to their CRM record. What only this task needs stays on the task. When new evidence changes a recorded item, update it in the same turn.
+- A date or time you write into a record names its time zone: the user's when you know it, otherwise UTC.
 - Write with `knowledge`, as one atomic item, what someone outside the current task or conversation will need: a fact others will rely on, a choice that binds work beyond its task, a question no open task will settle, an uncertain harm.
 - Keep checks, receipts, approvals, blockers and notes about your own tools on the task, or in chat when there is no task. A fixable gap is a task.
 - Write with `pages` the reference that outlives the effort, such as how a system is built or what a meeting settled. Research or analysis for one decision is never kept or offered as an ordinary page: its Decision's rationale cites the decisive sources.

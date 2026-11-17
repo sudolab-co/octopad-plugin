@@ -1,9 +1,9 @@
 ---
 name: manage-activity-context
-metadata:
-  version: "8.0.0"
 description: "Use when the user explains or revises why an activity or project exists, whom it serves, its relationships, strategy or constraints, when people or organizations join it, to update the Overview without asking anything, or when its Activity Overview, or an untyped Company Overview, no longer matches. Not for market evidence (manage-market-intelligence) or an offer's marketing (manage-product-marketing)."
 ---
+Version: 8.0.1
+
 # Purpose and boundaries
 
 Answer: what are we trying to accomplish, for whom, through what activity, and under which durable choices and constraints? Do not turn a profile into a required organization type or maturity ladder.
