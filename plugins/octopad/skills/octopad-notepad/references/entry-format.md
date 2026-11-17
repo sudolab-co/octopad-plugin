@@ -35,6 +35,7 @@ by: <agent and model> | session <session id> | <YYYY-MM-DD>
 <last_briefing>
 date: <YYYY-MM-DD> | session <session id>
 followup: <YYYY-MM-DD> | session <session id> | <entry_id>
+priorities_asked: <YYYY-MM-DD> | session <session id>
 </last_briefing>
 ```
 
@@ -43,7 +44,7 @@ followup: <YYYY-MM-DD> | session <session id> | <entry_id>
 - `compass`, which the user sees as Priorities: what they want to work on, in their order.
 - `premises`, which the user sees as Notes: what they said that passes What to write and is neither a priority nor a reminder, such as a preference, a way of working with them or an idea they have not committed to. Its `exit:` names what makes it leave: they commit to it, they change or drop it, or Octopad records it elsewhere.
 - `reminders`: something to bring back when a subject comes up.
-- `last_briefing`: the day's briefing claim and review claim. A missing line means no claim.
+- `last_briefing`: the day's briefing claim and review claim and, while there are no priorities, the day you asked what matters (Priorities in the skill). A missing line means no claim, or no question asked.
 - `open_loops` and `context_gaps` are the older form: never write to them (Older entries in the skill says how to convert them).
 
 ## Keys
