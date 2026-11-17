@@ -6,7 +6,7 @@ Treat a change as a scoped event, not a migration to a new organizational templa
 2. Distinguish established facts, intentions, unresolved questions and required decisions.
 3. Identify affected owners, At a glance keys and audiences. Explicitly leave unrelated scopes alone.
 4. Update only authorized context. Propose separately any new ownership, access, move or archival action.
-5. Read back. Report only a gap a next step depends on, never a key left `missing`, and hand off only the necessary product, commercial or execution work.
+5. Read back. Report only a gap a next step depends on: a key left `missing` that no next step needs is not one. Hand off only the necessary product, commercial or execution work.
 
 ## Solo exploration to company
 
