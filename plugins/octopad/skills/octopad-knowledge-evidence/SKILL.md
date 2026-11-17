@@ -1,14 +1,14 @@
 ---
 name: octopad-knowledge-evidence
-description: "Use when a conversation surfaces something someone outside it will need: a decision, a key fact, a risk, an advisory, an open question or a customer's words. Also use it when new evidence changes a recorded item, when the user shares a file or document, when a page or file is written, linked or tagged, before saying whether something is on record or answering a question about the corpus, and when the corpus is cleaned up. Chooses where each item goes and how a claim about the corpus is proved. Not for spec content (manage-product-documentation) or one customer's facts (octopad-crm)."
+description: "Use when a conversation surfaces something someone outside it will need: a decision, a key fact, a risk, an advisory, an open question or what a customer's words establish beyond that customer. Also use it when new evidence changes a recorded item, when the user shares a file or document, when a page or file is written, linked or tagged, before saying whether something is on record or answering a question about the corpus, and when the corpus is cleaned up. Chooses where each item goes and how a claim about the corpus is proved. Not for spec content (manage-product-documentation) or one customer's facts (octopad-crm)."
 ---
-Version: 3.2.0
+Version: 3.3.0
 
 # Where knowledge is written
 
 Three branches hold durable workspace context: `knowledge`, `pages` and `files`. Retrieval reaches only the branch a thing went into, so choose the branch on purpose, never by habit.
 
-- When a conversation surfaces something someone outside this task or conversation will need (a key fact, a decision, an open question, a risk, a customer's words, or what an analysis establishes about how a system works, even when you were asked to change nothing), record it in the same turn without asking, in one update to the item that owns it, with scope, source and source date (unknown if you do not know). Where the CRM is on, what one customer did or said goes to their CRM record. What only this task needs stays on the task. When new evidence changes a recorded item, update it in the same turn.
+- When a conversation surfaces something someone outside this task or conversation will need (a key fact, a decision, an open question, a risk, what a customer's words establish beyond that customer, or what an analysis establishes about how a system works, even when you were asked to change nothing), record it in the same turn without asking, in one update to the item that owns it, with scope, source and source date (unknown if you do not know). A customer's own words stay with their source: their CRM record where the CRM is on, otherwise the task or working page of the work that heard them; only what they establish beyond that customer becomes Key Information, citing the customer and the date. What only this task needs stays on the task. When new evidence changes a recorded item, update it in the same turn.
 - A date or time you write in a record's text names its time zone: the source's when it gives one, otherwise the user's when you know it, otherwise UTC. A date field takes the bare day the user means.
 - Write with `knowledge`, as one atomic item, what someone outside the current task or conversation will need: a fact others will rely on, a choice that binds work beyond its task, a question no open task will settle, an uncertain harm.
 - Keep checks, receipts, approvals, blockers and notes about your own tools on the task, or in chat when there is no task. A fixable gap is a task.
@@ -64,7 +64,7 @@ Fit the method to what the claim has to hold up: reading all of a corpus, its su
 - A search proves what it finds, never that nothing else matches: its results are ranked and capped, sometimes below the limit you asked for.
 - Claim none or every only from a complete inventory of the scope, with each item it leaves doubtful checked. Otherwise say what the answer covers.
 - Read low confidence as a claim not yet proven: sharpen the query, or open the one weak hit and settle it. It is no licence to work through the pages one by one.
-- Reuse what `build_context` returned instead of fetching it again. Read a source again only when its owning skill requires it fresh before a write, such as a spec's revision before you edit the spec, or when something learned since makes the snapshot doubtful. Then recheck that item's identity, content and revision before the write that depends on it. This never widens the scope or opens a new outside investigation.
+- Within a turn, reuse what `build_context` returned instead of fetching it again; in a later turn, read a value again before you state it as current or copy it into a write. Read a source again only when its owning skill requires it fresh before a write, such as a spec's revision before you edit the spec, or when something learned since makes the snapshot doubtful. Then recheck that item's identity, content and revision before the write that depends on it. This never widens the scope or opens a new outside investigation.
 
 # When two sources disagree
 

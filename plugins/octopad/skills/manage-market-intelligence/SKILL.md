@@ -2,7 +2,7 @@
 name: manage-market-intelligence
 description: "Use when a competitor, an alternative customers use, a review, a customer's words about the market, a launch, a pricing move or a public mention comes up, when asked what rivals or the market say, and when the market report is set up, audited or refreshed. Not for one customer's record (octopad-crm) or for choosing positioning, target or price (manage-product-marketing)."
 ---
-Version: 4.0.1
+Version: 4.1.0
 
 # Manage market intelligence
 
@@ -62,7 +62,7 @@ A capture that only records one sourced fact where it belongs, such as a competi
 
 ## Write and keep it true
 
-- An audit or dry run reports gaps and proposals without writing.
+- An audit or dry run changes nothing in the report until the user's yes: it reports each gap with the change that closes it, and its findings are kept as the method says.
 - An ordinary update costs one read of the destination and its sources, one write, version-checked so it never overwrites newer content, and one verification.
 - A fact lives in one place: a competitor's detail on its page or entry, the report summarizing and linking it.
 - The offer's chosen target, positioning, promise and terms belong to product marketing, in its Product Overview's Marketing section, which links to the customer words kept here; the product's behavior and availability belong to product documentation; the activity's identity to activity context; individual customers to the CRM. Never rewrite them. When your evidence makes their text stale, that owner's skill makes the fix when the request covers it; otherwise tell the user.

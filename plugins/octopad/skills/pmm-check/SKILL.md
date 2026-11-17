@@ -2,7 +2,7 @@
 name: pmm-check
 description: "Use to diagnose, draft or review positioning, an audience choice, a value proposition or marketing copy. Gives methods and recommendations; manage-product-marketing records the accepted choices. Not for technical or user documentation (technical-writing)."
 ---
-Version: 2.0.0
+Version: 2.1.0
 
 # Diagnose and improve marketing
 
@@ -85,6 +85,6 @@ For example, a locked homepage tagline reads "Halves your onboarding time" and n
 
 For a draft, state unresolved blockers first. Dependent claims appear only as placeholders or omissions. Provide usable independent copy in the requested format. For strategy, provide options, reasons, recommendation and uncertainty rather than declaring acceptance.
 
-Return to the marketing owner the scope, applicable source revisions, proposal or findings, evidence needs and affected choices. Do not update accepted choices or their durable records as a PMM review side effect. Read-only requests stay read-only. If a separately authorized draft write occurs, follow the destination's controls and read its final content after the last mutation; a write response alone is not verification. Report incomplete readback honestly.
+Return to the marketing owner the scope, applicable source revisions, proposal or findings, evidence needs and affected choices. Do not update accepted choices or their durable records as a PMM review side effect. A request to change nothing leaves the user's records as they are, and its findings are still kept as the method says. If a separately authorized draft write occurs, follow the destination's controls and read its final content after the last mutation; a write response alone is not verification. Report incomplete readback honestly.
 
 A review pass means the bounded review found no unresolved issue in the checked material and sources; it is not decision acceptance, specialist clearance or publication permission. Do not send messages, spend money or collect data as an implied consequence of writing copy.

@@ -2,7 +2,7 @@
 name: manage-product-marketing
 description: "Use when a target customer is chosen or narrowed, an offer, promise, price or tier is set, a launch is prepared, customer-facing copy is written or reviewed, above all copy carrying a number, a metric or a superlative, or an objection or a channel's result comes up. Keeps those choices in the Product Overview's Marketing section. Drafting method: pmm-check. Not for product behavior or market evidence."
 ---
-Version: 3.0.0
+Version: 3.0.1
 
 # Maintain each offer's marketing
 
@@ -26,7 +26,7 @@ Words that speak for the market, such as a phrase several customers use or an ob
 
 ## Separate capture from choice
 
-File observations, such as a customer's words, an objection heard or a channel that worked, without interrupting the user. Show choices (target, promise, terms) for validation; record a choice the user states explicitly without asking again, and record a Decision only when the user accepts or rejects one. Whether a claim is proven and whether it is chosen are separate questions: a chosen promise can lack proof, which blocks its use in copy, not its recording. Check every factual claim against its source before it enters copy, and keep proposed, catalogue and applied prices apart. Existing copy proves past wording, not current capability.
+File observations, such as what customers' words show, an objection heard or a channel that worked, without interrupting the user. Show choices (target, promise, terms) for validation; record a choice the user states explicitly without asking again, and record a Decision only when the user accepts or rejects one. Whether a claim is proven and whether it is chosen are separate questions: a chosen promise can lack proof, which blocks its use in copy, not its recording. Check every factual claim against its source before it enters copy, and keep proposed, catalogue and applied prices apart. Existing copy proves past wording, not current capability.
 
 At first creation, read onboarding and the existing owners, then seed only identified offers with supported information; an offer with no Product Overview gets one through `manage-product-documentation`. An activity's purpose never sets an offer's target, price or difference: what you infer stays marked proposed. Ask about a gap the session brief shows as missing only when the conversation touches it, never as a questionnaire.
 

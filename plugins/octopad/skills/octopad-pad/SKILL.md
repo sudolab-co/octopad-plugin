@@ -4,7 +4,7 @@ description: "Use when `start_session` names a Pad tab due or not checked, when 
 ---
 Open `../octopad-session/SKILL.md` first unless this conversation already called `start_session`.
 
-Version: 6.0.0
+Version: 6.1.0
 
 # The Pad
 
@@ -108,7 +108,7 @@ Any tab but a priority tab:
 
 1. Reuse what the conversation says; ask only what changes the page, at most three questions together: what it helps decide or watch, which sources, which period, whether text leads it. A request that names its sources and period needs none.
 2. `context` with the unsaved definition (`title`, `intent` {request, purpose}, `selection`, `blocks`), then write its content.
-3. `show` it with its `reason`: a concrete benefit drawn from work you read, and what Octopad cannot show.
+3. `show` it with its `reason`: a concrete benefit drawn from work you read, and what Octopad cannot show. With no browser tool, show it in the chat instead: its title, its `reason` and its text.
 4. On the person's yes, `save` without `tab`: the definition, the content, the `through`. Shapes: [tab shapes](references/tab-shapes.md).
 
 - To let the person see Needs you, goals or reminders once, `show` that `source`: no tab. Never propose a tab of all reminders: the Pad shows one by itself.

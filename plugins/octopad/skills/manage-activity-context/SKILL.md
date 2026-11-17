@@ -2,7 +2,7 @@
 name: manage-activity-context
 description: "Use when the user explains or revises why an activity or project exists, whom it serves, its relationships, strategy or constraints, when people or organizations join it, to update the Overview without asking anything, or when its Activity Overview, or an untyped Company Overview, no longer matches. Not for market evidence (manage-market-intelligence) or an offer's marketing (manage-product-marketing)."
 ---
-Version: 8.0.1
+Version: 8.1.0
 
 # Purpose and boundaries
 
@@ -14,7 +14,7 @@ Read [adaptation](references/adaptation.md) before deciding where context belong
 
 # Establish the minimum context
 
-1. Interpret the request: discussion and audit are read-only; capture, refresh or synchronization permits only the requested mutations. State material scope assumptions. If several unrelated ideas fit, ask one routing question before writing.
+1. Interpret the request: discussion and audit change no Overview until the user's yes, an audit proposing the change for each gap it finds; capture, refresh or synchronization permits only the requested mutations. State material scope assumptions. If several unrelated ideas fit, draft each in its place, then say where and ask whether to adjust.
 
    Before any write, know which case you are in. When the user let you draft, add faithful, minimal provenance within the scope and audience they authorized, without asking. A later repair never authorizes an earlier out-of-scope write.
 
