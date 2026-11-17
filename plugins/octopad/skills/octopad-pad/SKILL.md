@@ -26,7 +26,7 @@ What `context` serves as attention in Today's brief outside every priority belon
 
 - A `get` showing a newer `revision` than the brief's: another session saved first. If its `read_through` (from `get`) is not earlier than your `through`, leave it; otherwise `context` with that `tab` and write it again.
 - A refused save names what to fix: fix that and save the tab again.
-- A tab due for priority discovery: `octopad-notepad` (Priorities) says whether to propose priorities or ask what matters, and saves them only on the person's yes. Write the Pad meanwhile from the brief you have and, after telling the person (below), make the proposal or ask the question. Once their priorities are saved, `context` again, since the priorities decide what the Pad follows, and organize and write from the new brief only.
+- A tab due for priority discovery: `octopad-notepad` (Priorities) says whether to propose priorities, ask what matters or do neither, and saves them only on the person's yes. Write the Pad meanwhile from the brief you have and, after telling the person (below), make the proposal or ask the question it calls for. Once their priorities are saved, `context` again, since the priorities decide what the Pad follows, and organize and write from the new brief only.
 - When the person asks to update a tab that is not due: `context` with that `tab`, then steps 2 and 4 to 6.
 
 # Organize the Pad

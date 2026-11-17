@@ -12,7 +12,7 @@
     "pad_update": "Plugin 26.0.0 replaces case zero-themes-summary with zero-themes-pad: after a theme save the AI reads pad context again instead of restarting the old Pad reader. Prepared, not run.",
     "narrow_reminders": "Plugin 28.0.0 (octopad-notepad 7.0.0): the methodology decides when a reminder exists; anything to do is a task. Five cases (narrow-reminders-1 to 5) compare c345199b0119bed95b964a85047335d89f06a860 (plugin 27.0.0) with the candidate. Three older cases now state that an outside provider carries the deploy, or recall a subject with nothing to do, so they test the same safeguards under either rule. Prepared, not run: model runs wait for the end-of-build tests (decision of 2026-11-11). The candidate needs a methodology carrying the narrower reminder rule; the base runs with the methodology before it.",
     "notepad_role": "Plugin 31.0.0 (octopad-notepad 9.0.0): capture by three tests, notes and subject reminders only, review driven by the server line, older entries converted once. Cases capture-*, review-line, reminder-subject-not-matched and older-entries-convert are new; reminder cases now test subject reminders, and the claim and notification-route cases (reminder-safeguards, reminder-lifecycle-2 to 6) are removed with the routes they tested. They compare 135727eaaed204c776a9c0455b4b4ea9c5763516 (plugin 30.0.0) with the candidate. Prepared, not run: model runs wait for the operator's yes to a protocol. The candidate needs a server serving the review line and kernel 2.50.0.",
-    "capture_rule": "Plugin 33.7.0 (octopad-notepad 10.1.0): the AI proposes priorities and saves them only on the user's yes, asks once what matters when the work is too thin and records the question as a priorities_asked line, and proposes every move or retirement. Cases zero-themes-main, zero-themes-pad, second-move, revision-conflict, no-evidence and save-first-1 now expect no AI-proposed save before a yes and no undo word; undo-after-concurrent-edit is replaced by decline-then-ask; thin-work-ask-once, asked-line-stands, asked-then-work-grew, import-pass, join-no-setup-question and retire-on-stream-done are new. They compare dcb760f37c6ebd2085de6e95476ef262b0d8ac9f (plugin 33.5.0) with the candidate. Prepared, not run: model runs wait for the operator's yes to a protocol."
+    "capture_rule": "Plugin 33.7.0 (octopad-notepad 10.1.0): the AI proposes priorities and saves them only on the user's yes, asks once what matters when the work is too thin and records the question as a priorities_asked line, and proposes every move or retirement. Cases zero-themes-main, zero-themes-pad, second-move, revision-conflict, no-evidence and save-first-1, and the undo line of priorities-intent-only, now expect no AI-proposed save before a yes and no undo word; undo-after-concurrent-edit is replaced by decline-then-ask; thin-work-ask-once, asked-line-stands, asked-then-work-grew, asked-then-third-task, import-pass, join-no-setup-question and retire-on-stream-done are new. They compare dcb760f37c6ebd2085de6e95476ef262b0d8ac9f (plugin 33.5.0) with the candidate. Prepared, not run: model runs wait for the operator's yes to a protocol."
   },
   "evals": [
     {
@@ -482,7 +482,7 @@
         "Conditionally save revision 3 at once: Rules reliability as priority 1 with a verified reference, Desktop delivery as priority 2.",
         "Each why says the intent in one or two short sentences; the logic the user gave (the rules come first, the Desktop resumes after) sits in a why, with no separate work-order entry.",
         "Write no progress, status, current task, quote or dated note in either line; keep the Desktop name and entry_id unchanged.",
-        "Announce the change in one chat line with an undo word."
+        "Say the saved change in one chat line, with no undo word."
       ]
     },
     {
@@ -637,10 +637,11 @@
         "revision": 3,
         "work": [
           "Task 55555555-5555-4555-8555-555555555555: the user's only task: send the onboarding survey."
-        ]
+        ],
+        "pad_due": "start_session names smart_report under Pad due today; its pad context says due: no priority in the Notepad: priority discovery"
       },
       "expected_behavior": [
-        "Ask nothing about priorities and propose none: the priorities_asked line stands, there are no priorities, and no work begun after its date meets the threshold.",
+        "Write the due Pad from the brief at hand; ask nothing about priorities and propose none: the priorities_asked line stands, there are no priorities, and no work begun since its date changes what the AI would propose.",
         "Do not rewrite or remove the priorities_asked line.",
         "If the user then says what matters to them, save it at once as their priority and remove the priorities_asked line in that same save."
       ],
@@ -710,6 +711,24 @@
         "Ask no question about what matters: the priorities_asked line stands.",
         "Propose priorities from the Partner portal work, begun after the line's date, with reasons and verified references; save none before a yes.",
         "On the no, save no priority and set the priorities_asked line to today and this session by a conditional save, keeping every other line."
+      ],
+      "comparison_base": "dcb760f37c6ebd2085de6e95476ef262b0d8ac9f"
+    },
+    {
+      "id": "asked-then-third-task",
+      "prompt": "What should I work on today?",
+      "must_load": true,
+      "context": {
+        "notepad": "# Notepad\n<compass>\n</compass>\n<last_briefing>\npriorities_asked: 2026-11-05 | session s0\n</last_briefing>",
+        "revision": 4,
+        "work": [
+          "Tasks 99999999-9999-4999-8999-999999999991 and -992, created before 2026-11-05: both on the customer survey, the user's.",
+          "Task 99999999-9999-4999-8999-999999999993, created 2026-11-12: a third task on the customer survey, the user's."
+        ]
+      },
+      "expected_behavior": [
+        "Propose a customer survey priority with its reasons and verified references: the work now meets the threshold and the third task, begun after the line's date, changes the proposal.",
+        "Ask nothing about what matters; save nothing before a yes."
       ],
       "comparison_base": "dcb760f37c6ebd2085de6e95476ef262b0d8ac9f"
     }
