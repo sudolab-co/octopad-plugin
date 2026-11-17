@@ -4,7 +4,7 @@ description: "Use when `start_session` names a Pad tab due or not checked, when 
 ---
 Open `../octopad-session/SKILL.md` first unless this conversation already called `start_session`.
 
-Version: 6.2.0
+Version: 6.3.0
 
 # The Pad
 
