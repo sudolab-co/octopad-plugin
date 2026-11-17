@@ -218,6 +218,30 @@
       ]
     },
     {
+      "id": "redesign-replaces-decision",
+      "prompt": "Let's redesign how Lists sorts the Inbox: I want items sorted by due date, not by when they arrived. Workspace Example.",
+      "must_load": true,
+      "kind": "behaviour",
+      "max_turns": 20,
+      "timeout_seconds": 600,
+      "context": "Needs, beside the Lists spec, a recorded Decision in Example saying the Inbox sorts items by arrival time, chosen by a named person. Not run yet: added with manage-product-documentation 7.3.0.",
+      "expected_behavior": [
+        "The run opens manage-product-documentation.",
+        "It reads the Lists spec as the skill asks before it proposes the design.",
+        "It designs sorting by due date as asked, and does not argue for sorting by arrival or hold the design until the user confirms the old Decision.",
+        "It names the recorded Decision on arrival-time sorting in one line, with who chose it, as a choice this design would replace."
+      ],
+      "graders": [
+        {
+          "name": "opens-manage-product-documentation",
+          "type": "tool_used",
+          "tool": "Skill",
+          "input_match": "manage-product-documentation",
+          "min": 1
+        }
+      ]
+    },
+    {
       "id": "trigger-spec-against-code",
       "prompt": "Does the Lists spec still match what the search code in src/search does? I think archived items show up now.",
       "must_load": true,

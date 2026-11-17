@@ -2,7 +2,7 @@
 name: octopad-knowledge-evidence
 description: "Use when a conversation surfaces something someone outside it will need: a decision, a key fact, a risk, an advisory, an open question or a customer's words. Also use it when new evidence changes a recorded item, when the user shares a file or document, when a page or file is written, linked or tagged, before saying whether something is on record or answering a question about the corpus, and when the corpus is cleaned up. Chooses where each item goes and how a claim about the corpus is proved. Not for spec content (manage-product-documentation) or one customer's facts (octopad-crm)."
 ---
-Version: 3.2.0
+Version: 3.3.0
 
 # Where knowledge is written
 
@@ -68,5 +68,4 @@ Fit the method to what the claim has to hold up: reading all of a corpus, its su
 
 # When two sources disagree
 
-- Say what the search turned up, and raise any clash with a decision already on record before you put a direction forward.
 - When two sources conflict, first check they are the same workspace, the same page, the same version and the same origin. Then suspend only the point in dispute, and leave everything else that is established standing.

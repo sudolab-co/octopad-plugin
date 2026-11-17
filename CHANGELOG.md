@@ -1,5 +1,10 @@
 # Changelog
 
+## 33.4.0 - Unreleased
+
+- `octopad-knowledge-evidence` 3.3.0: the sentence that told the AI to raise a clash with a recorded decision before putting a direction forward is gone. A line on the results that show a Decision now says it once: when the user's direction goes against a Decision, the AI names it in one line and carries on with the user's direction; its own direction yields to the Decision unless the user chooses otherwise.
+- `manage-product-documentation` 7.3.0: when the user asks to redesign a system, its current choices and Decisions are what the design may replace, not limits on it; the AI designs the target from the need, then names each recorded Decision it would replace.
+
 ## 33.3.0 - Unreleased
 
 - `octopad-session` 33.3.0: when the plugin's own Octopad connection is missing and only another Octopad connection is listed, the AI tells the user once and asks whether to use that one or reconnect the plugin's own.
