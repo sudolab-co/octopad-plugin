@@ -8,7 +8,7 @@ Teaches one kind of stream, an effort toward a result, now that Octopad assemble
 - `octoplan` 10.1.1: the multi-stream reference speaks of a stream closing, with no stream kind.
 - `octopad-pad` 6.2.0: a priority tab writes a stream's line from the stream's state as `context` serves it. The first priority tab that follows the stream in full shows the line; a later tab lists the stream too, where the Pad shows a pointer to the first.
 
-Needs no server change. All three distributions move to 33.6.0.
+Needs the server change that serves methodology 3.6.0 and, under each existing ongoing stream in `build_context` and `work_streams` results, the line that keeps it the home of its domain's tasks until the organization's Update sorts it: `octopad-planning-and-work-design` 7.2.0 drops its own routing for those streams, so a production server without that line leaves the AI no rule for them, and the plugin lands only once production runs it. All three distributions move to 33.6.0.
 
 ## 33.5.0 - Unreleased
 
