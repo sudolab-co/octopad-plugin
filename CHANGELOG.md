@@ -9,6 +9,7 @@ Removes texts that gave the AI opposite orders at the same moment (Rules V3 fina
 - `octopad-knowledge-evidence` 3.3.0: what `build_context` returned is reused within a turn; in a later turn, a value is read again before the AI states it as current or copies it into a write. A customer's own words stay with their source, their CRM record where the CRM is on, otherwise the task or working page of the work that heard them; only what they establish beyond that customer is recorded beyond it, citing the customer and the date: as Key Information, or market voice where `manage-market-intelligence` keeps it.
 - `manage-product-marketing` 3.1.0: the observations it files are what customers' words show, not the words themselves.
 - `octopad-pad` 6.1.0: with no browser tool, a new Smart Report is shown in the chat before its save, since the Desktop stays unused there. When the `start_session` line asks the person whether to update the Pad (a weak model), the update waits for their yes.
+- `manage-product-documentation` 7.3.0: a parked `[idea]` line links the `idea` task the methodology files for an idea voiced for later, so the spec and the task list hold the same idea once, linked.
 - `octoplan` 10.1.0: the supervisor closes each unit once its commit is in the task's branch, before it opens the task's pull request, so the pull request names a task with no open unit; an executor still closes no task.
 
 Needs no server change. All three distributions move to 33.4.0.
