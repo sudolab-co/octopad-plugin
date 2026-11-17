@@ -12,7 +12,7 @@ The Pad is the person's own: Smart Reports of their work, the Desktop showing ea
 
 # Update the due tabs
 
-When `start_session` names tabs under "Pad due today" or "Pad not checked", do this first:
+When `start_session` names tabs under "Pad due today" or "Pad not checked", do this first; when its line asks the person whether to update, do it only once they say yes:
 
 1. Call `pad` `context` with no `tab`.
 2. One `pad` `get` with no `tab`: every tab with the priorities it serves, and the priorities the person refused. Then `get` each due tab whose content you do not hold at its listed `revision`.

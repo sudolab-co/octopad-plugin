@@ -14,7 +14,7 @@ Read [adaptation](references/adaptation.md) before deciding where context belong
 
 # Establish the minimum context
 
-1. Interpret the request: discussion and audit change no Overview until the user's yes, an audit proposing the change for each gap it finds; capture, refresh or synchronization permits only the requested mutations. State material scope assumptions. If several unrelated ideas fit, draft each in its place, then say where and ask whether to adjust.
+1. Interpret the request. A discussion (the user explores and has not settled) and an audit change no Overview until the user's yes; an audit proposes the change that closes each gap it finds. A capture (the user states or revises the activity's context), a refresh or a synchronization makes only the requested changes, without asking. State material scope assumptions. When a capture holds several unrelated ideas, write each where it belongs, then say where and ask whether to adjust.
 
    Before any write, know which case you are in. When the user let you draft, add faithful, minimal provenance within the scope and audience they authorized, without asking. A later repair never authorizes an earlier out-of-scope write.
 

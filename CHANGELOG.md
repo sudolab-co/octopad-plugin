@@ -5,10 +5,10 @@
 Removes texts that gave the AI opposite orders at the same moment (Rules V3 final review).
 
 - `manage-market-intelligence` 4.1.0, `manage-activity-context` 8.1.0 and `pmm-check` 2.1.0: an audit or a request to change nothing no longer writes nothing at all. It leaves the report, the Overview or the accepted choices as they are until the user's yes, proposes the change for each gap it finds, and keeps its findings as the methodology says.
-- `manage-activity-context` 8.1.0: when several unrelated ideas fit, the AI drafts each in its place, says where and asks whether to adjust, instead of asking a routing question before writing.
-- `octopad-knowledge-evidence` 3.3.0: what `build_context` returned is reused within a turn; in a later turn, a value is read again before the AI states it as current or copies it into a write. A customer's own words stay with their source, their CRM record where the CRM is on, otherwise the task or working page of the work that heard them; only what they establish beyond that customer becomes Key Information, citing the customer and the date.
-- `manage-product-marketing` 3.0.1: the observations it files are what customers' words show, not the words themselves.
-- `octopad-pad` 6.1.0: with no browser tool, a new Smart Report is shown in the chat before its save, since the Desktop stays unused there.
+- `manage-activity-context` 8.1.0: a capture that holds several unrelated ideas writes each where it belongs, then says where and asks whether to adjust, instead of asking a routing question before writing; a discussion and an audit still change no Overview before the yes.
+- `octopad-knowledge-evidence` 3.3.0: what `build_context` returned is reused within a turn; in a later turn, a value is read again before the AI states it as current or copies it into a write. A customer's own words stay with their source, their CRM record where the CRM is on, otherwise the task or working page of the work that heard them; only what they establish beyond that customer is recorded beyond it, citing the customer and the date: as Key Information, or market voice where `manage-market-intelligence` keeps it.
+- `manage-product-marketing` 3.1.0: the observations it files are what customers' words show, not the words themselves.
+- `octopad-pad` 6.1.0: with no browser tool, a new Smart Report is shown in the chat before its save, since the Desktop stays unused there. When the `start_session` line asks the person whether to update the Pad (a weak model), the update waits for their yes.
 - `octoplan` 10.1.0: the supervisor closes each unit once its commit is in the task's branch, before it opens the task's pull request, so the pull request names a task with no open unit; an executor still closes no task.
 
 Needs no server change. All three distributions move to 33.4.0.
