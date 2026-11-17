@@ -1,11 +1,19 @@
 # Changelog
 
-## 32.1.0 - Unreleased
+## 32.2.0 - Unreleased
 
-- `octopad-planning-and-work-design` 6.2.0: where work goes is the AI's call, never a question. When several streams fit a task, the AI takes the one whose one-liner fits closest; when none fits, it opens a new time-bound stream if the work is an effort that calls for one, otherwise it leaves the task without a stream. It looks in the workspace whose description fits the work, then says where it filed it. Before, it asked the person when it could not tell.
+- `octopad-planning-and-work-design` 6.2.0: where work goes is the AI's call, never a question. When several streams fit a task, the AI takes the one whose one-liner fits closest; when none fits, it opens a new time-bound stream if the work is an effort that calls for one, otherwise it leaves the task without a stream. It looks in this session's workspace, or in another whose description fits the work better once the person confirms that workspace, then says where it filed it. Before, it asked the person when it could not tell.
 - `octopad-planning-and-work-design` 6.2.0: the questions the AI asks to frame the work use the person's terms: no technical question to someone who said they are not technical.
 
-Goes with the server's methodology 2.52.0, which states the same rule; the skill itself needs no server change. All three distributions move to 32.1.0.
+Goes with the server's methodology 2.52.0, which states the same rule; the skill itself needs no server change. All three distributions move to 32.2.0.
+
+## 32.1.0 - Unreleased
+
+- `manage-product-documentation` 6.13.0: a spec section that covers several elements of the product (a screen, a tool, a step of a flow, a group of rules) gives each element its own subsection, under the same heading in every section where it appears. A rule for every element goes in an `All elements` subsection, no text sits outside a section's subsections, and an element whose rule depends on another says so with a cross-reference. A rule for some elements lives under one of them, cross-referenced from the others. An AI that writes to such a section still without subsections reads the whole spec, splits the section in the same edit and checks that no line was lost, and an audit flags the sections still without them.
+- `manage-product-documentation` 6.13.0: to judge, quote or edit one or a few elements, the AI reads the spec's outline, then Need, Outcome, every section without subsections or with text outside them, those elements' subsections and the `All elements` ones, then each cross-reference whose pointer bears on what it judges, instead of the whole spec. It still reads the whole spec for a product choice, for a change that spans the product or whose boundaries are unclear, and when the spec has no subsection for that element. A narrow fix whose cause is known keeps its shortcut only when it needs no product choice. It edits a spec read in parts only with `content_updates` and reads the edited subsections back.
+- `octopad-knowledge-evidence` 2.6.0: before quoting, rewriting or editing a Product Spec, the AI reads as much of it as `manage-product-documentation` sets, instead of always the whole page; any other page is still read whole.
+
+Needs no server change: `pages` get already serves `outline` and `sections` in production. All three distributions move to 32.1.0.
 
 ## 32.0.0 - Unreleased
 
