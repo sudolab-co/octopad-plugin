@@ -1,7 +1,7 @@
 {
   "skill_name": "octopad-pad",
   "protocol": {
-    "status": "33.0.0: skills no longer call skill_opened (a Claude Code hook reports the opening), so the opening graders check the Skill tool; step 7 follows the goal status lines a save's result names, so goal upkeep is checked as a goals set_status after the saves. The fixtures do not yet serve those save-result lines, and no 33.0.0 case has run. 32.0.0 cases organize-first-run, write-organized-pad, general-alert, notepad-unreadable, priority-left-renamed, remove-priority-tab and moved-recently written 2026-11-16 with their fixtures and not run, and 32.0.0 added to the creation, correction and trigger cases; revised the same day after review (a priority tab created with its content from a read of its unsaved definition, a key retired or re-keyed only when `context` says it is not in the Notepad, a renamed priority matched by the tab's streams, checks on keep lines, chart placement and an unattributed move): an eval's model calls wait for the operator's yes on its protocol. 31.1.0 cases chart-in-another-tab, chart-form-by-information and no-chart-without-value written 2026-11-15 and not run, unasked-chart extended to 31.0.0 and 31.1.0 with the framing sentence: an eval's model calls wait for the operator's yes on its protocol. 29.1.0 case line-says-what-to-do written 2026-11-12 and not run: an eval's model calls wait for the operator's yes on its protocol. 27.0.0 cases written 2026-11-11 and not run: the operator decided that this change makes no model call. Earlier: run 2026-11-10 on 24.0.0 and 26.0.0 (80 agent runs), then reruns of 15 and 6 runs on the fixed 26.0.0 skill.",
+    "status": "33.0.0: skills no longer call skill_opened (a Claude Code hook reports the opening), so the opening graders check the Skill tool; step 7 follows the goal status lines a save's result names, so goal upkeep is checked as a goals set_status after the saves. The fixtures do not yet serve those save-result lines, and no 33.0.0 case has run. 32.0.0 cases organize-first-run, write-organized-pad, general-alert, notepad-unreadable, priority-left-renamed, remove-priority-tab and moved-recently written 2026-11-16 with their fixtures and not run, and 32.0.0 added to the creation, correction and trigger cases; revised the same day after review (a priority tab created with its content from a read of its unsaved definition, a key retired or re-keyed only when `context` says it is not in the Notepad, a renamed priority matched by the tab's streams, checks on keep lines, chart placement and an unattributed move): an eval's model calls wait for the operator's yes on its protocol. 31.1.0 cases chart-in-another-tab, chart-form-by-information and no-chart-without-value written 2026-11-15 and not run, unasked-chart extended to 31.0.0 and 31.1.0 with the framing sentence: an eval's model calls wait for the operator's yes on its protocol. 29.1.0 case line-says-what-to-do written 2026-11-12 and not run: an eval's model calls wait for the operator's yes on its protocol. 27.0.0 cases written 2026-11-11 and not run: the operator decided that this change makes no model call. Earlier: run 2026-11-10 on 24.0.0 and 26.0.0 (80 agent runs), then reruns of 15 and 6 runs on the fixed 26.0.0 skill. 33.7.0 (octopad-pad 6.2.0): a priority change is only proposed until the person's yes, so stale-theme checks that the lead names the proposed change and that no Notepad update runs; a tab due for priority discovery is written meanwhile and reorganized once priorities are saved. Prepared, not run.",
     "purpose": "Compare plugin 26.0.0 (Smart Report by focus theme, lead on what changed) with 27.0.0 (decision brief by subject, lead said in the conversation) on routing and on the observable Pad writes; static checks do not establish AI behavior.",
     "execution": "claude plugin eval on the Claude Code subscription, after the operator approves the protocol. Every Octopad tool is a mock answering fictional fixtures: nothing reaches an Octopad organization.",
     "comparison": "The behaviour and correction cases run on both versions; the trigger cases on 27.0.0 only. Both versions get the same server lines, including the one a Smart Report save returns, so lead-said-in-the-conversation compares them and is not a defeat proof. Defeat proofs: lead-says-what-matters-and-where-to-start must reject a 26.0.0 lead that opens on what changed since a date; the correction cases on 27.0.0 with the section \"Route a correction\" removed must fail at least one of them. The 31.1.0 chart cases run on 31.0.0 and 31.1.0: chart-in-another-tab and chart-form-by-information must fail on 31.0.0, where a tab other than the first takes a chart only on request; no-chart-without-value must pass on both. The 32.0.0 cases run on 31.1.0 and 32.0.0. Defeat proofs: organize-first-run and priority-left-renamed must fail on 31.1.0, which creates no tab without a yes, and remove-priority-tab must fail there, since 31.1.0 records no refusal; write-organized-pad must fail on 31.1.0, which writes none of the organized fields. The creation, correction and trigger cases run on 32.0.0 as a non-regression check. Not rerun on 32.0.0: due-update, line-says-what-to-do and update-in-french, whose Smart Report shape 5.0.0 replaced and the 32.0.0 writing cases cover; stale-save and failed-source, whose rules 5.0.0 keeps word for word but whose one-context check clashes with organizing a Pad that has active untabbed priorities, so they rerun only once their contexts describe a 32.0.0 Pad.",
@@ -421,8 +421,9 @@
       "expected_behavior": [
         "The run opens octopad-pad with the Skill tool.",
         "Every save of an existing tab carries expected_revision.",
-        "The saved Smart Report lead says that the work contradicts the priorities (Hiring looks stale, Billing holds the work), with the reason: the change octopad-notepad made, or the one it leaves to the person's yes. FAIL if the lead does not say it.",
-        "Grade the conversation: at most one question is asked about the priorities."
+        "The saved Smart Report lead says that the work contradicts the priorities (Hiring looks stale, Billing holds the work), with the reason and the change octopad-notepad proposes. FAIL if the lead does not say it, or if it says a priority change was already made.",
+        "Grade the conversation: at most one question is asked about the priorities.",
+        "No Notepad update: the proposed change waits for the person's yes."
       ],
       "graders": [
         {
@@ -448,6 +449,14 @@
         {
           "name": "one-theme-question-at-most",
           "type": "llm"
+        },
+        {
+          "name": "no-priority-saved-before-yes",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__notepad",
+          "input_match": "\"action\":\\s*\"update\"",
+          "min": 0,
+          "max": 0
         }
       ]
     },
