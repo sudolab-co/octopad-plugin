@@ -8,6 +8,7 @@
 - The plugin's tests check that every skill carries a body `Version:` line.
 - `octopad-crm` 2.0.1: two phrases lose their "yet" and "today": the CRM cannot be turned off once on, and Octopad pays for the model calls of Distill and Prospect.
 - `manage-activity-context` 8.0.1 and `manage-market-intelligence` 4.0.1 carry their version on a body `Version:` line, as every other skill does.
+- `octoplan` 10.0.1: the plan summary the person reads lists the skill's own words to keep out (graph, edge, route, verifier, journal, mandate, supervisor and the like) with what to say instead.
 
 Needs no server change. All three distributions move to 33.3.0.
 
