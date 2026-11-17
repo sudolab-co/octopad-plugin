@@ -1,5 +1,9 @@
 # Changelog
 
+## 33.2.0 - Unreleased
+
+- `octopad-planning-and-work-design` 7.1.0: Octopad imposes no test; the AI decides whether one is needed, under the person's own instructions, and the skill gives the procedure when it does. For a costly test, the AI shows the person the decision, method, ceiling and proof and asks for the go before creating its task, unless their own instructions already ask for that test; either way nothing runs before the go on those fields. A step another member carries out as their own work, such as a deploy or migration, is its own task like a chosen test. The skill no longer says that nothing waits for a test unless the user makes it a gate.
+
 ## 33.1.0 - Unreleased
 
 - `manage-product-documentation` 7.1.0: a Product Spec gets a Known limits section for what work has established about how the system really behaves or fails, that a later design, change or judgment must take into account. When a test, a measurement, an incident, a diagnosis, an analysis or an audit of a system establishes such a limit, the AI writes it there in the same turn without asking, after checking it is not already recorded; a task comment alone no longer stands for it. A design or fix that a known limit bears on says how it takes it into account. The skill also opens when a test, a measurement, an incident or an analysis shows how a system really behaves or fails.

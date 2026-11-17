@@ -2,7 +2,7 @@
 name: octopad-planning-and-work-design
 description: "Use when agreed work has an end state and needs three or more tasks over more than one sitting, when a request holds several deliverables or a step another member carries out, and when a result, a decision or a new task changes what a stream's remaining tasks assume. Also use it before laying out several tasks as a plan, when a stream or a goal is created, changed, renamed, merged, split or archived, when a task leaves its stream by archive, deletion or move, when the number of tasks, nesting, prerequisites, priority order, a date or repeating work is undecided or wrong, and before proposing a test that costs AI sessions, a person's time or money. Delivery by agents: octoplan."
 ---
-Version: 7.0.0
+Version: 7.1.0
 
 # From a need to prepared work
 
@@ -28,10 +28,10 @@ When agents could usefully deliver the prepared work, when the user asks for age
 - Count the deliverables before you count tasks. A deliverable is something that could be shipped, reviewed or closed on its own, and their number is the number of top-level tasks.
 - Cut each deliverable into the smallest units that make sense in the logic of its work: parts each finished and checked on its own, split at natural seams, an atomic change kept whole. Those units become its subtasks; a deliverable of one unit has none.
 - Open no top-level task whose only job is to hold the others. An umbrella restates the stream and delivers nothing.
-- Checking a deliverable, getting it accepted and delivering it (sending, publishing, deploying) stay in its Done when, except work it makes its own task.
+- Checking a deliverable, getting it accepted and delivering it (sending, publishing, deploying) stay in its Done when, except a chosen test and a step another member carries out as their own work, such as a deploy or migration, each its own task.
 - Keep deliverables made one after another flat: top-level tasks joined by dependencies.
 - A chosen test is its own task, one per system it tests, such as a signup flow or a reminder service. Put all that system's cases in its What, each with what it proves, beside its run budget, never also in a deliverable's Done when.
-- Make a test task depend on each task it tests and on each step another member runs for them, such as their deploy or migration. Nothing waits for the test unless the user makes it a gate.
+- Make a test task depend on each task it tests and on each step another member runs for them, such as their deploy or migration.
 - Give a test its levels, such as a protocol to approve and then its runs, as subtasks, never one subtask per case. Accepting its result is its reviewer's yes, never a task.
 - A subtask may not fall due after the task above it.
 - Join two deliverables only where one truly cannot start until the other lands. An edge added for tidiness serializes work that could run side by side.
@@ -101,13 +101,13 @@ User, on 2026-04-26: *"Lay out the launch: research, then design, then build, th
 
 A test is costly when, over all its runs, it launches AI sessions, takes a person's time or costs money.
 
-Octopad requires no test beyond a task's Done when: the user and you choose, under their own instructions. Propose a test only when its result could change what someone does, and create it on the user's yes or when their instructions ask.
+Octopad imposes no test: you decide whether one is needed, under the person's own instructions. A test is worth it only when its result could change what someone does.
 
 1. Weigh it against acting without it, by what a mistake would do before you could correct it, not by whether its text can be edited: who acts on it, what it sends, writes or ships, and to how many. When acting and correcting cost less than the test, act within the usual approvals and watch real use: propose no test.
 2. Otherwise the test must cost less than the harm it prevents. The method the person suggests is one option, not the brief.
-3. If the test is still worth it, write the fields below in its task and show them to the person, asking for the go in that message unless they already approved these exact fields. When a field changes, show them again: a go given to anything else is no go.
-4. Before its first run, confirm that the revision it needs is deployed.
-5. Create a chosen test as its own task, as Shaping the work says.
+3. If the test is still worth it, show the person the fields below and ask for the go in that message, unless they already approved these exact fields. When a field changes, show them again: a go given to anything else is no go.
+4. Create the test as its own task, as Shaping the work says, with these fields in it, on that go or when the person's own instructions ask for this test. Run nothing before the go on its fields.
+5. Before its first run, confirm that the revision it needs is deployed.
 
 - **Decision:** the observable result and its threshold, and what you do on pass, on fail and on an inconclusive result. On fail, set the test task `blocked` with its reason and send the task at fault back to `in_progress`; a leaf whose What covers the fix carries it, and the fix's pull request names that leaf. If no result would change what you do, run nothing.
 - **Method and ceiling:** the cheapest method able to establish that result, and why each cheaper one cannot; the smallest series that could change the decision. A large expected effect needs few runs, and distinct real cases come before repeats of one. Then a numeric ceiling on runs, retries and grading included, and for AI runs on the tokens they may use, counting the context each run reloads and their output, with a stop rule set before the first result. Say so when nothing can stop the runs at that token ceiling. At the ceiling, stop and report: only the person extends it. Keep the model the question is about; every other agent uses the smallest model that does its job.
