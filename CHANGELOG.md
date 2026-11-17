@@ -1,6 +1,6 @@
 # Changelog
 
-## 33.0.0 - Unreleased
+## 33.0.0 - 2026-11-17
 
 - Each Octopad rule now lives where its moment is seen: the server's methodology and connection instructions, a tool or parameter text, a line the server adds to a result, a refusal, a Claude Code hook, or the one skill that owns it. Every skill drops what moved out and keeps what its moment needs, and each description follows the methodology router's situations. `manage-activity-context` 8.0.0, `manage-market-intelligence` 4.0.0, `manage-product-documentation` 7.0.0, `manage-product-marketing` 3.0.0, `octopad-crm` 2.0.0, `octopad-knowledge-evidence` 3.0.0, `octopad-notepad` 10.0.0, `octopad-pad` 6.0.0, `octopad-planning-and-work-design` 7.0.0, `octopad-session` 33.0.0, `octoplan` 10.0.0, `pmm-check` 2.0.0 and `technical-writing` 3.0.0.
 - Claude Code hooks call the server's `turn_reminder` tool at Stop, at SessionStart after a compaction, at PreCompact, at SubagentStart, before an `Agent` launch, before `gh pr create`, and after a `Skill` opening; the server answers with the rule that moment needs, or nothing. Skills no longer call `skill_opened`: the `Skill` hook reports an Octopad skill's opening, so Codex and Cursor no longer report skill openings. Codex keeps the per-message hook only; Cursor runs no hook. These hooks send Octopad the sub-agent's brief, the `gh pr create` command and the opened skill's name (README, What runs on your machine).
@@ -11,14 +11,14 @@
 
 Needs the server change that serves methodology 3.0.0, answers the `turn_reminder` events, and carries in its tool texts, result lines and refusals the rules the skills dropped: a production server without it answers the new hooks with the per-message text and loses those rules, so the plugin lands only once production runs it. All three distributions move to 33.0.0.
 
-## 32.2.0 - Unreleased
+## 32.2.0 - 2026-11-17
 
 - `octopad-planning-and-work-design` 6.2.0: where work goes is the AI's call, never a question. When several streams fit a task, the AI takes the one whose one-liner fits closest; when none fits, it opens a new time-bound stream if the work is an effort that calls for one, otherwise it leaves the task without a stream. It looks in this session's workspace, or in another whose description fits the work better once the person confirms that workspace, then says where it filed it. Before, it asked the person when it could not tell.
 - `octopad-planning-and-work-design` 6.2.0: the questions the AI asks to frame the work use the person's terms: no technical question to someone who said they are not technical.
 
 Goes with the server's methodology 2.52.0, which states the same rule; the skill itself needs no server change. All three distributions move to 32.2.0.
 
-## 32.1.0 - Unreleased
+## 32.1.0 - 2026-11-17
 
 - `manage-product-documentation` 6.13.0: a spec section that covers several elements of the product (a screen, a tool, a step of a flow, a group of rules) gives each element its own subsection, under the same heading in every section where it appears. A rule for every element goes in an `All elements` subsection, no text sits outside a section's subsections, and an element whose rule depends on another says so with a cross-reference. A rule for some elements lives under one of them, cross-referenced from the others. An AI that writes to such a section still without subsections reads the whole spec, splits the section in the same edit and checks that no line was lost, and an audit flags the sections still without them.
 - `manage-product-documentation` 6.13.0: to judge, quote or edit one or a few elements, the AI reads the spec's outline, then Need, Outcome, every section without subsections or with text outside them, those elements' subsections and the `All elements` ones, then each cross-reference whose pointer bears on what it judges, instead of the whole spec. It still reads the whole spec for a product choice, for a change that spans the product or whose boundaries are unclear, and when the spec has no subsection for that element. A narrow fix whose cause is known keeps its shortcut only when it needs no product choice. It edits a spec read in parts only with `content_updates` and reads the edited subsections back.
@@ -26,7 +26,7 @@ Goes with the server's methodology 2.52.0, which states the same rule; the skill
 
 Needs no server change: `pages` get already serves `outline` and `sections` in production. All three distributions move to 32.1.0.
 
-## 32.0.0 - Unreleased
+## 32.0.0 - 2026-11-17
 
 - `octopad-pad` 5.0.0: the AI organizes the Pad by the person's priorities. Without asking, it keeps one priority tab for each priority where something waits on the person or moved: it creates the tab, merges priorities that deliver the same outcome, adds a stream that serves a priority and says so in the tab's note, moves a tab to its priority's new name when its streams match, and retires a tab whose priority left the Notepad, never while the Notepad cannot be read. It never recreates a tab the person refused, and when they ask it to remove a priority tab it records their refusal first. Any other new tab still waits for their yes, and their own tabs, names and places stay theirs; only the move to a renamed priority renames a tab.
 - `octopad-pad` 5.0.0: Today's brief has fixed parts: an alert only for an incident that touches all the person's work, one sentence on where their priorities stand together, one line saying what each priority is, the dated items with what to do, a detail and a prompt, then what waits outside every priority and what can wait. A priority tab has its own: what the priority is, the AI's note when it reorganized the tab, a TL;DR, the short card Today's brief shows, at most one watch line, its steps read from existing tasks, what to decide and what to launch (ready tasks only), each with a reason and a prompt, what can wait, what to keep in mind and one line per stream.
