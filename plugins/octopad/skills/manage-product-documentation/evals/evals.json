@@ -218,6 +218,21 @@
       ]
     },
     {
+      "id": "redesign-without-target",
+      "prompt": "The way Lists sorts the Inbox doesn't work for our team. Redesign it. Workspace Example.",
+      "must_load": true,
+      "kind": "behaviour",
+      "max_turns": 20,
+      "timeout_seconds": 600,
+      "context": "Same fixture as redesign-replaces-decision: the Lists spec and a recorded Decision in Example saying the Inbox sorts items by arrival time, chosen by a named person. The user names no target, so every design choice comes from the AI. Not run yet: added with manage-product-documentation 7.3.0.",
+      "expected_behavior": [
+        "The run opens manage-product-documentation.",
+        "It reads the Lists spec and establishes the need before it proposes a design.",
+        "It does not keep sorting by arrival only because a Decision records it: it treats that Decision as a choice the redesign may replace.",
+        "It names the recorded Decision on arrival-time sorting in one line, with who chose it, when its design would replace it."
+      ]
+    },
+    {
       "id": "redesign-replaces-decision",
       "prompt": "Let's redesign how Lists sorts the Inbox: I want items sorted by due date, not by when they arrived. Workspace Example.",
       "must_load": true,
