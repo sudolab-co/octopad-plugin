@@ -1,0 +1,277 @@
+{
+  "skill_name": "manage-product-documentation",
+  "protocol": {
+    "status": "7.0.0 (plugin 33.0.0): skills no longer call skill_opened (a Claude Code hook reports the opening), so the opening graders check the Skill tool; no 7.0.0 case has run. 6.13.0 (plugin 32.1.0) run on 2026-11-16, after the operator's yes. Round 1, a Claude Code subagent per case: about 95,000 tokens a run, so the 250,000 ceiling was reached after three runs and the two write cases were stopped before writing. product-choice-full-read and no-subsection-full-read passed. element-read answered right but skipped the Sharing pointer, and write-restructures-flat-section read only Direction: two ambiguities in the text, both fixed (follow a cross-reference whose pointer bears on what you judge; before splitting a section, read the whole spec). Round 2, on the operator's extension of 250,000 tokens, ran claude -p with the skill in the prompt, no settings, no MCP server and Bash only: element-read 74,738 tokens, write-new-element 108,451, write-restructures-flat-section 87,713, 270,902 in all, past the extension by about 21,000. All three pass on substance: element-read reads the outline and half of Lists, skips the guest pointer, answers right and names the open question; write-new-element adds a Calendar subsection in Direction, Choices, Promises and Open questions with content_updates and the revision, reads it back, and points to the Inbox rules; write-restructures-flat-section reads the whole spec, splits Direction into ten subsections in one update, loses none of its 28 sentences, files the week-ahead preview under Digest with its details left open, and reads it back. Gaps seen: write-restructures-flat-section made no All elements subsection, and wrote an [open] line in Open questions; write-new-element also named the Calendar in two All elements lines that list the elements and in the Product Map.",
+    "decision": "Does 6.13.0 read a long spec by element where allowed, keep the full read where required, and write element subsections without losing a line? Pass: hand both pull requests to review. Fail: read the trace; if the skill text causes it, fix the text and rerun that case once; if not, run that case once on Opus to separate capability from wording, then report.",
+    "cases": "element-read, product-choice-full-read, no-subsection-full-read, write-new-element and write-restructures-flat-section, on 6.13.0 only. No 6.12.0 run: its text mandates the whole-spec read, and real use already shows that read. No trigger case: the description did not change; the trigger cases stay as the skill's routing set.",
+    "execution": "A decision test per case, run by the operator's session. A fresh Sonnet agent at medium effort gets the 6.13.0 SKILL.md text, the case prompt, and one paragraph on the pages tool's get options (outline: true lists headings and sizes; sections returns every subsection whose heading matches, nested spans once; neither returns the whole page with its Last updated value; update takes expected_updated_at with content_updates or content). It states each call it would make, one at a time, as the JSON arguments it would send. The runner answers each pages read with the exact output of the session's read script, which runs the pages tool's own get code over the fixture evals/fixtures/lists-and-reminders.json, answers any other call from the fixture, and lets the agent continue until it answers or writes; a write case ends with the exact update call. No tool runs: the runner plays Octopad from the fixture.",
+    "grading": "The grader regexes below apply to the call arguments the agent stated. In write-restructures-flat-section the runner checks the saved page: every sentence of the old Direction is still in Direction, and no text sits outside its subsections; an edit that only inserts headings keeps sentences out of new_str, so a regex over the stated update cannot check it. The runner session, on Opus, grades only the expected_behavior lines those cannot see: the answer's content, the cross-reference in write-new-element, where the shared-lists line lands in write-restructures-flat-section.",
+    "ceiling": "5 runs, 40,000 tokens per run and 250,000 in all, grading included. Nothing stops a subagent at an exact token count, so a run past its ceiling is reported and counts as inconclusive. Measured: a Claude Code subagent costs about 95,000 tokens a run; the claude -p setup of round 2 costs 75,000 to 110,000.",
+    "stop_rule": "A run past its token ceiling counts as inconclusive. No rerun beyond the fail branch without the operator. The per-case max_turns and timeout_seconds serve only a later run under claude plugin eval.",
+    "proof": "Before the first run, each behaviour grader matched one synthetic passing tool input and rejected one failing input (a full Lists read for element-read; an update without ### Digest, without expected_updated_at or missing one Direction sentence for the writes; an outline-plus-sections read for the two full-read cases).",
+    "release_limit": "Unrun cases are not a behavioural or non-regression pass. A decision test shows what the text leads a model to do, not how a full session behaves: the session's kernel, turn reminder and tool descriptions are absent, and server texts that still push full reads belong to the task \"Make the server's texts agree with partial spec reads\". Reliability is measured in real use once the plugin and the server changes both ship. For a later tool-level run with claude plugin eval: it reads only case folders (prompt.md or case.yaml, graders/*.md) under the plugin's evals/ directory or --eval-dir, with mocks at mocks/octopad/<tool>.md; each case becomes a folder outside the shipped plugin, passed by --eval-dir, with mocks for pages, skill_opened, start_session and search; a fixed mock cannot run the reader, so the pages mock holds the reader's output for each read a case expects and an agent mock, itself a model call, picks among them. no-direction-line-lost passes only when the split is one edit, as the skill requires."
+  },
+  "evals": [
+    {
+      "id": "element-read",
+      "prompt": "A customer was surprised that a snoozed item left their Inbox and came back three days later at the top of that day. Is that how the Inbox is meant to treat snoozed items in Lists? Workspace Example.",
+      "must_load": true,
+      "kind": "behaviour",
+      "max_turns": 20,
+      "timeout_seconds": 600,
+      "context": "Lists has subsections per element; its Inbox subsections hold the snooze behavior, and Choices, Inbox, cross-references Promises, Sharing.",
+      "expected_behavior": [
+        "The run opens manage-product-documentation.",
+        "It reads the Lists outline before any section.",
+        "It reads Need, Outcome, Links, the Inbox subsections and the All elements subsections, in one sections call or a few.",
+        "It skips the pointer from Choices, Inbox, to Promises, Sharing: its text says it concerns what a guest sees, which this question does not ask.",
+        "It never reads the whole Lists spec.",
+        "It answers that a snoozed item leaving the Inbox until its date and coming back at the top of its day is intended, and names the open question on whether a returning item notifies the person."
+      ],
+      "graders": [
+        {
+          "name": "opens-manage-product-documentation",
+          "type": "tool_used",
+          "tool": "Skill",
+          "input_match": "manage-product-documentation",
+          "min": 1
+        },
+        {
+          "name": "reads-the-outline",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pages",
+          "input_match": "\"outline\":\\s*true",
+          "min": 1
+        },
+        {
+          "name": "reads-the-inbox-subsections",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pages",
+          "input_match": "^(?=[\\s\\S]*\"sections\")(?=[\\s\\S]*\"Inbox\")",
+          "min": 1
+        },
+        {
+          "name": "skips-the-guest-pointer",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pages",
+          "input_match": "^(?=[\\s\\S]*\"sections\")(?=[\\s\\S]*\"Sharing\")",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "no-full-read-of-lists",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pages",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"get\")(?=[\\s\\S]*(?:60000000-0000-4000-8000-000000000001|\"page_ids?\":\\s*(?:\"[^\"]*[Ll]ists|\\[[^\\]]*[Ll]ists)))(?:(?![\\s\\S]*\"outline\":\\s*true)(?![\\s\\S]*\"sections\":\\s*\\[\\s*\")|(?=[\\s\\S]*\"sections\":\\s*\\[[^\\]]*\"[Ll]ists\"))",
+          "min": 0,
+          "max": 0
+        }
+      ]
+    },
+    {
+      "id": "product-choice-full-read",
+      "prompt": "We are thinking of letting a guest see every list in the owner's account instead of one list at a time. Should we do it in Lists? Workspace Example.",
+      "must_load": true,
+      "kind": "behaviour",
+      "max_turns": 20,
+      "timeout_seconds": 600,
+      "context": "A product choice that touches Sharing, Search and Inbox, and reverses a Choice of Sharing.",
+      "expected_behavior": [
+        "The run opens manage-product-documentation.",
+        "It reads the whole Lists spec.",
+        "It names the Choice it would reverse (a guest is invited per list) and the promises at stake (a guest never sees an item of a list not shared with them; Search never returns an item from a list the person cannot see), and leaves the choice to the person."
+      ],
+      "graders": [
+        {
+          "name": "opens-manage-product-documentation",
+          "type": "tool_used",
+          "tool": "Skill",
+          "input_match": "manage-product-documentation",
+          "min": 1
+        },
+        {
+          "name": "reads-the-whole-lists-spec",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pages",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"get\")(?=[\\s\\S]*(?:60000000-0000-4000-8000-000000000001|\"page_ids?\":\\s*(?:\"[^\"]*[Ll]ists|\\[[^\\]]*[Ll]ists)))(?:(?![\\s\\S]*\"outline\":\\s*true)(?![\\s\\S]*\"sections\":\\s*\\[\\s*\")|(?=[\\s\\S]*\"sections\":\\s*\\[[^\\]]*\"[Ll]ists\"))",
+          "min": 1
+        }
+      ]
+    },
+    {
+      "id": "no-subsection-full-read",
+      "prompt": "A user asked whether reminders should fire for a snoozed item. What does Reminders intend? Workspace Example.",
+      "must_load": true,
+      "kind": "behaviour",
+      "max_turns": 20,
+      "timeout_seconds": 600,
+      "context": "Reminders has no subsection.",
+      "expected_behavior": [
+        "The run opens manage-product-documentation.",
+        "It reads the whole Reminders spec, with or without its outline first.",
+        "It answers that a snoozed item sends no reminder until its snooze ends, then is reminded once on the morning it returns."
+      ],
+      "graders": [
+        {
+          "name": "opens-manage-product-documentation",
+          "type": "tool_used",
+          "tool": "Skill",
+          "input_match": "manage-product-documentation",
+          "min": 1
+        },
+        {
+          "name": "reads-the-whole-reminders-spec",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pages",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"get\")(?=[\\s\\S]*(?:60000000-0000-4000-8000-000000000002|\"page_ids?\":\\s*(?:\"[^\"]*[Rr]eminders|\\[[^\\]]*[Rr]eminders)))(?:(?![\\s\\S]*\"outline\":\\s*true)(?![\\s\\S]*\"sections\":\\s*\\[\\s*\")|(?=[\\s\\S]*\"sections\":\\s*\\[[^\\]]*\"[Rr]eminders\"))",
+          "min": 1
+        }
+      ]
+    },
+    {
+      "id": "write-new-element",
+      "prompt": "We decided to add a Calendar view to Lists: it shows a person's items by day across the month, and it hides snoozed items the same way the Inbox does. Record it in the spec. Workspace Example.",
+      "must_load": true,
+      "kind": "behaviour",
+      "max_turns": 25,
+      "timeout_seconds": 900,
+      "context": "An accepted direction for a new element of a spec that already has one subsection per element.",
+      "expected_behavior": [
+        "The run opens manage-product-documentation.",
+        "It reads the Lists spec revision before the edit and passes its updated_at.",
+        "It edits with content_updates, never content, and reads the edited subsections back.",
+        "The edit adds a ### Calendar subsection under Direction, and under any other section it writes Calendar content to, with the same heading each time.",
+        "It writes no Calendar text outside a Calendar subsection and no text outside the subsections of a section.",
+        "The Calendar text cross-references the Inbox's snooze rule (Direction, Inbox, or Choices, Inbox) instead of restating it."
+      ],
+      "graders": [
+        {
+          "name": "opens-manage-product-documentation",
+          "type": "tool_used",
+          "tool": "Skill",
+          "input_match": "manage-product-documentation",
+          "min": 1
+        },
+        {
+          "name": "adds-a-calendar-subsection",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pages",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"update\")(?=[\\s\\S]*### Calendar)",
+          "min": 1
+        },
+        {
+          "name": "edits-with-content-updates",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pages",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"update\")(?=[\\s\\S]*\"content\":)",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "edit-carries-the-revision",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pages",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"update\")(?![\\s\\S]*\"expected_updated_at\")",
+          "min": 0,
+          "max": 0
+        }
+      ]
+    },
+    {
+      "id": "write-restructures-flat-section",
+      "prompt": "We decided that the reminder digest should also preview the coming week, so people can plan ahead. Record this direction in the Reminders spec. Workspace Example.",
+      "must_load": true,
+      "kind": "behaviour",
+      "max_turns": 25,
+      "timeout_seconds": 900,
+      "context": "The Reminders Direction is one flat section of 3,919 characters that covers several elements: email and in-app reminders, quiet hours, days off, the digest, snoozed items and shared lists.",
+      "expected_behavior": [
+        "The run opens manage-product-documentation.",
+        "It reads the whole Reminders spec before the edit and passes its updated_at.",
+        "The same edit gives Direction one ### subsection per element it covers, a Digest subsection among them, with a rule for every element under ### All elements and no text outside the subsections.",
+        "The week-ahead direction goes under ### Digest, as intent, with no schedule or wording invented.",
+        "Every sentence of the old Direction survives in a subsection, its words unchanged; a sentence about two elements goes under one and is cross-referenced from the other; no other section changes. The run reads Reminders back after the edit."
+      ],
+      "graders": [
+        {
+          "name": "opens-manage-product-documentation",
+          "type": "tool_used",
+          "tool": "Skill",
+          "input_match": "manage-product-documentation",
+          "min": 1
+        },
+        {
+          "name": "splits-direction-with-a-digest-subsection",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pages",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"update\")(?=[\\s\\S]*### Digest)",
+          "min": 1
+        },
+        {
+          "name": "edit-carries-the-revision",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__pages",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"update\")(?![\\s\\S]*\"expected_updated_at\")",
+          "min": 0,
+          "max": 0
+        }
+      ]
+    },
+    {
+      "id": "trigger-spec-against-code",
+      "prompt": "Does the Lists spec still match what the search code in src/search does? I think archived items show up now.",
+      "must_load": true,
+      "kind": "trigger",
+      "expected_behavior": [
+        "The run opens manage-product-documentation."
+      ],
+      "graders": [
+        {
+          "name": "opens-manage-product-documentation",
+          "type": "tool_used",
+          "tool": "Skill",
+          "input_match": "manage-product-documentation",
+          "min": 1
+        }
+      ]
+    },
+    {
+      "id": "trigger-launch-email",
+      "prompt": "Draft the launch email that tells our customers saved searches are here.",
+      "must_load": false,
+      "kind": "trigger",
+      "expected_behavior": [
+        "The run does not open manage-product-documentation; it routes to product marketing."
+      ],
+      "graders": [
+        {
+          "name": "does-not-open-manage-product-documentation",
+          "type": "tool_used",
+          "tool": "Skill",
+          "input_match": "manage-product-documentation",
+          "min": 0,
+          "max": 0
+        }
+      ]
+    },
+    {
+      "id": "trigger-stream-status",
+      "prompt": "What is left open in the Lists roadmap stream? Short answer please.",
+      "must_load": false,
+      "kind": "trigger",
+      "expected_behavior": [
+        "The run does not open manage-product-documentation and reads no spec."
+      ],
+      "graders": [
+        {
+          "name": "does-not-open-manage-product-documentation",
+          "type": "tool_used",
+          "tool": "Skill",
+          "input_match": "manage-product-documentation",
+          "min": 0,
+          "max": 0
+        }
+      ]
+    }
+  ]
+}

@@ -59,7 +59,7 @@ Fit the method to what the claim has to hold up: reading all of a corpus, its su
 - Building a complete set: settle each doubtful item with one check aimed at that item alone. Three doubtful items are three checks, neither a read of everything nor a shrug.
 - A claim about content, such as whether a page still says X or whether Y appears at all: `search` the text and quote the passages that match, never answer from the directory.
 - A compound question, such as every page about X that mentions Y: take the directory for X, then `search` for Y. A hit inside that set proves its page. A page of the set the search did not return stays doubtful until one check aimed at it settles it, or the answer says it covers only what was checked.
-- Quoting, rewriting or editing: pull the whole page with `pages(action:"get")`, and only a page the steps above already named. Reading in full replaces neither building the set nor proving the claim.
+- Quoting, rewriting or editing: pull the whole page with `pages(action:"get")`, and only a page the steps above already named; for a Product Spec, `manage-product-documentation` sets how much to read. Reading in full replaces neither building the set nor proving the claim.
 - A search proves what it finds, never that nothing else matches: its results are ranked and capped, sometimes below the limit you asked for.
 - Claim none or every only from a complete inventory of the scope, with each item it leaves doubtful checked. Otherwise say what the answer covers.
 - Read low confidence as a claim not yet proven: sharpen the query, or open the one weak hit and settle it. It is no licence to work through the pages one by one.

@@ -12,7 +12,7 @@ A stream and an Octoplan share one brief and one work graph: Octoplan is that wo
 
 - Read the existing stream, tasks, decisions and relevant sources first.
 - Establish the purpose, the intended result and its proof, the boundaries and constraints, the unknowns that matter and who decides the consequences.
-- Ask about a missing foundation only when it could change the result. Settle yourself what the sources already settle.
+- Ask about a missing foundation only when it could change the result, in the person's terms: no technical question to someone who said they are not technical. Settle yourself what the sources already settle; where to file the work, its workspace and stream, is always yours to settle.
 - Play back the intended result in proportion to the request, and confirm a material interpretation before work that depends on it. A clear capture can need one sentence, not an interview.
 - An ongoing stream needs its area of responsibility and its routing boundaries, not an invented finish line.
 - A small job may need one task in an existing stream, or no new stream. Create a goal, a task tree or Octoplan records only when the work needs them, never to complete a form.
@@ -54,7 +54,7 @@ When agents could usefully deliver the prepared work, when the user asks for age
 # Which stream work belongs to
 
 - A stream is one effort toward a precise result, with a Definition of Success; its target date is optional. Open one where agreed work has an end state and takes three or more tasks over more than one sitting.
-- To choose a task's stream: if it pushes a time-bound stream's goal forward, use that stream; if it is ordinary work of a domain, use the ongoing one; if you cannot tell, ask.
+- To choose a task's stream, look in this session's workspace, or in another whose description fits the work better once the person confirms it, as the session's workspace list asks. If the task pushes a time-bound stream's goal forward, use that stream; if it is ordinary work of a domain, use the ongoing one. If several fit, take the one whose one-liner fits closest. If none fits, open a new time-bound stream when the rule above calls for one, otherwise leave the task without a stream. Then say where you filed the work; never ask where to file it.
 - Give an effort toward an outcome the home it needs: reuse a goal and a stream that fit, and open a new stream only where the rule above calls for one.
 - Give a time-bound stream one primary goal, and at most two more beside it. Where nothing on the board fits, propose the goal that would, with the outcome and why.
 - Move work that advances a goal out of an ongoing stream into a time-bound one, or the goal's progress cannot be seen.
