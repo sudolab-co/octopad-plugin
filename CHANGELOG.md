@@ -1,5 +1,15 @@
 # Changelog
 
+## 33.6.0 - Unreleased
+
+Teaches one kind of stream, an effort toward a result, now that Octopad assembles each stream's Progress Report itself.
+
+- `octopad-planning-and-work-design` 7.2.0: a task goes in a stream whose one-liner covers it; with none, in a new stream when the work calls for one, otherwise in its workspace with the tags already in use that fit it, and a new tag only when none does. The lines that set ongoing streams apart go: no brief for an ongoing stream, no move of goal work out of one, and goals, lifecycle and the launch example speak of streams alone. `references/choosing-delivery.md` opens a new stream only when the work's scope calls for one.
+- `octoplan` 10.1.1: the multi-stream reference speaks of a stream closing, with no stream kind.
+- `octopad-pad` 6.2.0: a priority tab writes a stream's line from the stream's state as `context` serves it. The first priority tab that follows the stream in full shows the line; a later tab lists the stream too, where the Pad shows a pointer to the first.
+
+Needs no server change. All three distributions move to 33.6.0.
+
 ## 33.5.0 - Unreleased
 
 Removes texts that gave the AI opposite orders at the same moment (Rules V3 final review).

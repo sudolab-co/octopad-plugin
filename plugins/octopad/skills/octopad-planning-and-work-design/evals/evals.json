@@ -53,7 +53,7 @@
       "id": 9,
       "prompt": "Plan the move of our invoicing to Stripe: export the customers, map the plans, switch the checkout, then turn the old system off. Probably two or three weeks.",
       "should_trigger": true,
-      "expected_behavior": "It describes the work to the stream route and reads each returned stream's one-liner. When none covers invoicing or billing, it opens a new time-bound stream for this effort itself, with its rationale and definition of success, lays out the tasks in it, and says in its reply which stream and workspace it filed them in. It never asks the person which stream or workspace to use, and never asks whether to create the stream."
+      "expected_behavior": "It describes the work to the stream route and reads each returned stream's one-liner. When none covers invoicing or billing, it opens a new stream for this effort itself, with its rationale and definition of success, lays out the tasks in it, and says in its reply which stream and workspace it filed them in. It never asks the person which stream or workspace to use, and never asks whether to create the stream."
     },
     {
       "id": 10,

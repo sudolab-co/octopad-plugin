@@ -4,7 +4,7 @@ description: "Use when `start_session` names a Pad tab due or not checked, when 
 ---
 Open `../octopad-session/SKILL.md` first unless this conversation already called `start_session`.
 
-Version: 6.1.0
+Version: 6.2.0
 
 # The Pad
 
@@ -83,7 +83,7 @@ In this order:
 - `phases`: your reading of its existing tasks and streams, never a second plan: name each step, order them, and cite the tasks or streams each covers; the Pad shows each step's state from them. Keep the last write's steps unless the work changed. A step the work needs and no task covers stays a step with no `refs`, and `today` proposes its task.
 - `today` section: what they decide (`needs_you`), then what they can launch (`unblocked`), only tasks ready to launch: to do, or blocked with no reason, every dependency done, unassigned or theirs; `save` refuses another. Each of these lines gives its reason in `detail` and its `prompt`, and may group tasks, citing each. Then, unmarked, what can wait.
 - `keep` section: short unmarked lines they should keep in mind.
-- `streams`: one line per stream its priorities name: what its row does not show and what it changes for them. A stream gets this line in the first priority tab that names it, no other.
+- `streams`: one line per stream its priorities name, written from the stream's state as `context` serves it: what its row does not show and what it changes for them. The first priority tab whose selection or priorities name the stream follows it in full and shows that line; a later tab lists the stream too, where the Pad shows a pointer to the first.
 
 ## The tabs they asked for
 

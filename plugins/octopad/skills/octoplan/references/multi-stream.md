@@ -34,6 +34,6 @@ A changed interface, split, merge, new or removed stream, or changed dependency 
 
 ## Close local and common results separately
 
-A time-bound stream closes when its own success definition and gates are proved, even while independent streams continue. Its supervisor may finish that boundary without claiming the common outcome complete. The integration owner closes the common result only when current assembled evidence covers every required stream and seam, with no unresolved required effect.
+A stream closes when its own success definition and gates are proved, even while independent streams continue. Its supervisor may finish that boundary without claiming the common outcome complete. The integration owner closes the common result only when current assembled evidence covers every required stream and seam, with no unresolved required effect.
 
 Use existing receipts and native logs to assess accepted local and integrated results, avoidable human restarts, dependency-ready-to-resume delay, irrelevant re-reviews, and total orchestration cost. State coverage and unknowns; add no manual metrics register or instrumentation merely to satisfy this guidance.

@@ -2,7 +2,7 @@
 name: octopad-planning-and-work-design
 description: "Use when agreed work has an end state and needs three or more tasks over more than one sitting, when a request holds several deliverables or a step another member carries out, and when a result, a decision or a new task changes what a stream's remaining tasks assume. Also use it before laying out several tasks as a plan, when a stream or a goal is created, changed, renamed, merged, split or archived, when a task leaves its stream by archive, deletion or move, when the number of tasks, nesting, prerequisites, priority order, a date or repeating work is undecided or wrong, and before proposing a test that costs AI sessions, a person's time or money. Delivery by agents: octoplan."
 ---
-Version: 7.1.0
+Version: 7.2.0
 
 # From a need to prepared work
 
@@ -14,7 +14,6 @@ A stream and an Octoplan share one brief and one work graph: Octoplan is that wo
 - Establish the purpose, the intended result and its proof, the boundaries and constraints, the unknowns that matter and who decides the consequences.
 - Ask about a missing foundation only when it could change the result, in the person's terms: no technical question to someone who said they are not technical. Settle yourself what the sources already settle; where to file the work, its workspace and stream, is always yours to settle.
 - Play back the intended result in proportion to the request, and confirm a material interpretation before work that depends on it. A clear capture can need one sentence, not an interview.
-- An ongoing stream needs its area of responsibility and its routing boundaries, not an invented finish line.
 - A small job may need one task in an existing stream, or no new stream. Create a goal, a task tree or Octoplan records only when the work needs them, never to complete a form.
 - The stream rules below choose the work's home. Their task count and duration never set how much autonomy agents get.
 
@@ -49,15 +48,14 @@ When agents could usefully deliver the prepared work, when the user asks for age
 - Put the reason and the date in the goal's own description, each on its own line, never only on a linked stream:
   `Why now: two enterprise pilots stalled on this gap last quarter.`
   `Deadline 2026-11-30: renewal date of the affected contract.`
-- Once every time-bound stream under a goal is complete, put closing the goal to the user. The close runs in one move and the tool walks through the post-mortem choices. Each close files a new post-mortem that supersedes the one before it, unless the user explicitly accepts closing without one.
+- Once every stream under a goal is complete, put closing the goal to the user. The close runs in one move and the tool walks through the post-mortem choices. Each close files a new post-mortem that supersedes the one before it, unless the user explicitly accepts closing without one.
 
 # Which stream work belongs to
 
 - A stream is one effort toward a precise result, with a Definition of Success; its target date is optional. Open one where agreed work has an end state and takes three or more tasks over more than one sitting.
-- To choose a task's stream, look in this session's workspace, or in another whose description fits the work better once the person confirms it, as the session's workspace list asks. If the task pushes a time-bound stream's goal forward, use that stream; if it is ordinary work of a domain, use the ongoing one. If several fit, take the one whose one-liner fits closest. If none fits, open a new time-bound stream when the rule above calls for one, otherwise leave the task without a stream. Then say where you filed the work; never ask where to file it.
+- To choose a task's stream, look in this session's workspace, or in another whose description fits the work better once the person confirms it, as the session's workspace list asks. Use a stream whose one-liner covers the task; if several do, take the one that fits closest. If none fits, open a new stream when the rule above calls for one; otherwise file the task in its workspace with no stream, with the tags already in use that fit it, and mint a tag only when none does. Then say where you filed the work; never ask where to file it.
 - Give an effort toward an outcome the home it needs: reuse a goal and a stream that fit, and open a new stream only where the rule above calls for one.
-- Give a time-bound stream one primary goal, and at most two more beside it. Where nothing on the board fits, propose the goal that would, with the outcome and why.
-- Move work that advances a goal out of an ongoing stream into a time-bound one, or the goal's progress cannot be seen.
+- Give a stream one primary goal, and at most two more beside it. Where nothing on the board fits, propose the goal that would, with the outcome and why.
 - When you find that one stream waits on or continues another, link them with the kind and a one-line reason. When you choose what to pick up next, weigh a `depends on` link: it informs and never blocks.
 - Asked for work that repeats, create and route the repeating task itself. A stream is where the work sits, never the work.
 
@@ -77,7 +75,7 @@ User, on 2026-04-26: *"Lay out the launch: research, then design, then build, th
 
 - Wrong: one `tasks(action:"create")` per task, then `link_dependency` calls: seven round trips for one plan, the pattern `batch_tasks` exists to collapse.
 - Right: the stream first, then the whole graph in as few `batch_tasks` calls as its limits allow.
-  1. Open the time-bound stream "Launch Q2" with its `definition_of_success`, its goal and a `target_date` of `2026-05-31`, five weeks from the day the user asked. That horizon sits on the effort, never copied onto its tasks.
+  1. Open the stream "Launch Q2" with its `definition_of_success`, its goal and a `target_date` of `2026-05-31`, five weeks from the day the user asked. That horizon sits on the effort, never copied onto its tasks.
   2. Send the whole set with the stream given once as each call's default and `depends_on_refs` carrying every edge, an earlier call's task by its ID. Make no second pass of `link_dependency` calls.
 - Why the titles carry phases: the launch follows one logic, research then design then build then ship, so each top-level task starts with `P1 · ` to `P4 · ` and no parent holds them. Five independent fixes, each checked in its own Done when, follow no such logic: they get no phases, no umbrella, and a test task only when one is needed, as the methodology says.
 - Why no task carries a date: the user gave a rough span, not four deadlines. The span became the effort's horizon and stopped there; `depends_on_refs` carries the order between the tasks.
@@ -91,7 +89,7 @@ User, on 2026-04-26: *"Lay out the launch: research, then design, then build, th
   4. Change a Done when or the Definition of Success only on the person's yes: show the old text, the new text and why, unless they asked for the change. Record a Definition of Success change as a Decision scoped to the stream, with old, new and why.
   5. Tell the person in one line what moved. When nothing moved, write nothing.
 - Keep the tracker's Scope and Rationale true: correct them in place when the work shows they no longer hold.
-- Only a time-bound stream has a lifecycle: active, then completed, then archived. Completed keeps it in context and in search until its goal is reached. Archived takes it out of context, so archiving before the goal is reached removes what the goal still works from.
+- A stream goes from active to completed, then archived. Completed keeps it in context and in search until its goal is reached. Archived takes it out of context, so archiving before the goal is reached removes what the goal still works from.
 - Tracker pages live in the system Trackers and Archive folders and render read-only.
 - Before you complete a stream, append its `## Closing Report` to its tracker.
 - Record a split, merge or move in the links and Decisions it changes, not as a dated line on a tracker.
