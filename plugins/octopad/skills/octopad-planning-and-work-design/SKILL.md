@@ -1,8 +1,8 @@
 ---
 name: octopad-planning-and-work-design
-description: "Use when agreed work has an end state and needs three or more tasks over more than one sitting, when a request holds several deliverables or a step another member carries out, and when a result, a decision or a new task changes what a stream's remaining tasks assume. Also use it before laying out several tasks as a plan, when a stream or a goal is created, changed, renamed, merged, split or archived, when a task leaves its stream by archive, deletion or move, when the number of tasks, nesting, prerequisites, priority order, a date or repeating work is undecided or wrong, and before proposing a test that costs AI sessions, a person's time or money. Delivery by agents: octoplan."
+description: "Use when agreed work has an end state and needs three or more tasks over more than one sitting, when a request holds several deliverables or a step another member carries out, and when a result, a decision or a new task changes what a stream's remaining tasks assume. Also use it before laying out several tasks as a plan, when a stream or a goal is created, changed, completed, renamed, merged, split or archived, when one stream waits on or continues another, when a task leaves its stream by archive, deletion or move, when the number of tasks, nesting, prerequisites, priority order, a date or repeating work is undecided or wrong, and before proposing a test that costs AI sessions, a person's time or money. Delivery by agents: octoplan."
 ---
-Version: 7.2.0
+Version: 7.3.0
 
 # From a need to prepared work
 
@@ -12,7 +12,7 @@ A stream and an Octoplan share one brief and one work graph: Octoplan is that wo
 
 - Read the existing stream, tasks, decisions and relevant sources first.
 - Establish the purpose, the intended result and its proof, the boundaries and constraints, the unknowns that matter and who decides the consequences.
-- Ask about a missing foundation only when it could change the result, in the person's terms: no technical question to someone who said they are not technical. Settle yourself what the sources already settle; where to file the work, its workspace and stream, is always yours to settle.
+- Ask about a missing foundation only when it could change the result, in the person's terms: no technical question to someone who said they are not technical. Settle yourself what the sources already settle; where to file the work, its workspace and stream, is yours to settle, except a task that may be personal: ask first.
 - Play back the intended result in proportion to the request, and confirm a material interpretation before work that depends on it. A clear capture can need one sentence, not an interview.
 - A small job may need one task in an existing stream, or no new stream. Create a goal, a task tree or Octoplan records only when the work needs them, never to complete a form.
 - The stream rules below choose the work's home. Their task count and duration never set how much autonomy agents get.
@@ -53,7 +53,7 @@ When agents could usefully deliver the prepared work, when the user asks for age
 # Which stream work belongs to
 
 - A stream is one effort toward a precise result, with a Definition of Success; its target date is optional. Open one where agreed work has an end state and takes three or more tasks over more than one sitting.
-- To choose a task's stream, look in this session's workspace, or in another whose description fits the work better once the person confirms it, as the session's workspace list asks. Use a stream whose one-liner covers the task; if several do, take the one that fits closest. If none fits, open a new stream when the rule above calls for one; otherwise file the task in its workspace with no stream, with the tags already in use that fit it, and mint a tag only when none does. Then say where you filed the work; never ask where to file it.
+- To choose a task's stream, look in this session's workspace, or in another whose description fits the work better once you have confirmed it fits. Use a stream whose one-liner covers the task; if several do, take the one that fits closest. If none fits, open a new stream when the rule above calls for one; otherwise file the task in its workspace with no stream, with the tags already in use that fit it, and mint a tag only when none does. Then say where you filed the work.
 - Give an effort toward an outcome the home it needs: reuse a goal and a stream that fit, and open a new stream only where the rule above calls for one.
 - Give a stream one primary goal, and at most two more beside it. Where nothing on the board fits, propose the goal that would, with the outcome and why.
 - When you find that one stream waits on or continues another, link them with the kind and a one-line reason. When you choose what to pick up next, weigh a `depends on` link: it informs and never blocks.
@@ -82,12 +82,11 @@ User, on 2026-04-26: *"Lay out the launch: research, then design, then build, th
 
 # When an effort ends or changes shape
 
-- Keep the stream's tasks and its Definition of Success coherent and correct. Check them each time a task is added to or closed in the stream, and as soon as the person gives an instruction that affects the stream, before dependent work continues:
+- Keep the stream's tasks and its Definition of Success coherent and correct. Check them each time a task is added to, reopened in or closed in the stream, and as soon as the person gives an instruction that affects the stream, before dependent work continues:
   1. Read light: the Definition of Success, one line per open top-level task (title, status, status line) and the rationale of its dependencies. Open a description only where the check touches that task.
   2. Compare them with the person's instructions and the actual results, not only with each other.
   3. Put right what no longer matches and nothing else: the order and its dependencies; a task made false, rewritten in place; a task left short, made precise now that what it waited for exists; a task made useless, `cancelled`; a missing task, created; work already started on the old basis, checked before it goes further.
-  4. Change a Done when or the Definition of Success only on the person's yes: show the old text, the new text and why, unless they asked for the change. Record a Definition of Success change as a Decision scoped to the stream, with old, new and why.
-  5. Tell the person in one line what moved. When nothing moved, write nothing.
+  4. Tell the person in one line what moved. When nothing moved, write nothing.
 - Keep the tracker's Scope and Rationale true: correct them in place when the work shows they no longer hold.
 - A stream goes from active to completed, then archived. Completed keeps it in context and in search until its goal is reached. Archived takes it out of context, so archiving before the goal is reached removes what the goal still works from.
 - Tracker pages live in the system Trackers and Archive folders and render read-only.

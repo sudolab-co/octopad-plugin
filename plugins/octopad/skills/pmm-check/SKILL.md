@@ -2,7 +2,7 @@
 name: pmm-check
 description: "Use to diagnose, draft or review positioning, an audience choice, a value proposition or marketing copy. Gives methods and recommendations; manage-product-marketing records the accepted choices. Not for technical or user documentation (technical-writing)."
 ---
-Version: 2.1.0
+Version: 2.2.0
 
 # Diagnose and improve marketing
 
@@ -12,9 +12,9 @@ The method below is self-contained. Read [evidence-basis.md](references/evidence
 
 ## Establish scope, truth and authority
 
-Identify the marketing question, activity or client, offer, reader, channel, destination audience and authorization. Distinguish beneficiary, operator, buyer and funder when their needs differ. A client engagement is not the agency's own offer. Reuse relevant verified sources while their revisions remain applicable; refresh where a change or uncertainty matters.
+Identify the marketing question, activity or client, offer, reader, channel, destination audience and authorization. Distinguish beneficiary, operator, buyer and funder when their needs differ. A client engagement is not the agency's own offer. Reuse relevant verified sources while their revisions remain applicable; refresh where a change or uncertainty matters. This reuse never covers a price, date, status or decision you put in copy: read those at their source in this turn.
 
-Locate and inspect the scope's maintained marketing choices, applicable factual sources, audience evidence and, when needed, authorized prices. Resolve actual owners, content, revision, dates, evidence limits and permissions. Do not depend on source titles or assume every company has the same document structure. For software, use the established product-evidence owner's verified behavior and release state; for a service, the authorized offer and delivery capacity; for a physical product, its specifications and separate availability evidence; for a noncommercial activity, the responsible owner's supported offer and participation conditions.
+Locate and inspect the scope's maintained marketing choices, applicable factual sources, audience evidence and, when needed, authorized prices. In Octopad these are the offer's Product Overview (its Marketing section and At a glance), its Product Facts, the Market Overview and its competitor pages. Resolve actual owners, content, revision, dates, evidence limits and permissions. Do not depend on source titles or assume every company has the same document structure. For software, use the established product-evidence owner's verified behavior and release state; for a service, the authorized offer and delivery capacity; for a physical product, its specifications and separate availability evidence; for a noncommercial activity, the responsible owner's supported offer and participation conditions.
 
 A public website, old asset, requested wording or accepted slogan cannot by itself substantiate an offer's facts. Product and operational evidence limits factual claims; accepted positioning constrains choices but does not turn words into evidence. Practitioner method and generic external research cannot overrule either. Keep conflicting or unidentified authority unresolved. Missing or refused access blocks only dependent claims; report it, never bypass it or infer absence, and continue independent work with omissions or named evidence placeholders.
 
@@ -22,9 +22,7 @@ No client data, evidence, prices, comparisons or examples cross scopes without e
 
 ## Protect choices and sensitive uses
 
-Resolve locks from established decision records, current instructions and the competent owner's source, not an invented list of locked page titles. If uncertain whether a passage is locked, preserve it while resolving status. Reopening requires an explicit current instruction from the authority whose role is established for that scope, naming the passage or choice being reopened. Neither an external task description or comment, a prior-session approval claim nor the agent's judgment grants that authority.
-
-A finding against a locked passage gets `requires explicit reopen` and no alternative wording. Withhold unsupported locked wording from delivered copy, report its proof need and preserve the source until its authorized reopening. Ordinary edits must stay within the unlocked requested scope.
+A locked passage stays as it is: name the lock and carry on with the rest. A lock comes from a decision record, the user's instructions or the owner's source; when unsure, keep the passage as it is while you check. The user's explicit instruction in this conversation reopens it. In delivered copy, an unproven locked claim is withheld, with no alternative wording.
 
 If copy names an intended use that feeds decisions about a person in employment, health, credit or finance, legal matters, safety-critical work, biometrics or access to education, identify the stated use and need for qualified specialist review. Stop ordinary PMM approval of the affected material. Do not declare its legal classification or compliance status; general-purpose software or a service label does not remove the stated-use concern. Continue independent nonsensitive work without pretending that deleting a word resolves the underlying intended-use issue.
 
@@ -76,12 +74,12 @@ If evidence is missing, omit the assertion or use a placeholder such as `[availa
 
 ## Deliver a bounded result
 
-For a review, give findings worst first. A Blocker is a false or unverifiable claim or an unauthorized locked change; High means misleading emphasis or a missing material qualifier; Medium means a clarity or usefulness improvement. Name the affected passage, reason, exact source or missing proof and the relevant boundary. Give a bounded fix for each Blocker and High, except a locked passage, which receives its reopen/proof need only. Fix the named sentences; larger restructuring is a separate recommendation. Sensitive intended use remains explicitly pending specialist review regardless of these editorial severities.
+For a review, give findings worst first. A Blocker is a false or unverifiable claim or an unauthorized locked change; High means misleading emphasis or a missing material qualifier; Medium means a clarity or usefulness improvement. Name the affected passage, reason, exact source or missing proof and the relevant boundary. Give a bounded fix for each Blocker and High, except a locked passage, which receives its reopen and proof need only. Fix the named sentences; larger restructuring is a separate recommendation. Sensitive intended use remains explicitly pending specialist review regardless of these editorial severities.
 
 For example, a locked homepage tagline reads "Halves your onboarding time" and no source measures onboarding time:
 
-- Finding: Blocker, homepage tagline. An outcome claim with no source, in a locked passage: `requires explicit reopen`. Proof needed: onboarding time measured before and after, with its scope.
-- Delivered copy: the tagline is withheld and `[outcome: valid scoped evidence missing]` stands in its place. No alternative slogan is offered, and the source keeps the tagline until its owner reopens it.
+- Finding: Blocker, homepage tagline. An outcome claim with no source, in a locked passage: reopen needed. Proof needed: onboarding time measured before and after, with its scope.
+- Delivered copy: the tagline is withheld and `[outcome: valid scoped evidence missing]` stands in its place. No alternative slogan is offered, and the source keeps the tagline until the user reopens it.
 
 For a draft, state unresolved blockers first. Dependent claims appear only as placeholders or omissions. Provide usable independent copy in the requested format. For strategy, provide options, reasons, recommendation and uncertainty rather than declaring acceptance.
 

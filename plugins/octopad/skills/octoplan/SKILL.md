@@ -2,7 +2,7 @@
 name: octoplan
 description: "Use when prepared work could benefit from delivery by agents, when the user wants agents to carry a stream to its outcome, before proposing how agents should organize, plan or deliver it, and when the user names, resumes or supervises an Octoplan. Opening it authorizes no delivery. Stream preparation itself: octopad-planning-and-work-design."
 ---
-Version: 10.2.0
+Version: 10.3.0
 
 # Octoplan
 
@@ -79,14 +79,4 @@ Mode and effect coverage are separate. An effect written into a task after the c
 
 ## Run controls report
 
-When you post an Octoplan run's controls to the desktop with the `report` command, send your whole report: it replaces the previous one.
-
-- `run` says where the run stands. Send it with every report, from the brief on, since the Desktop draws the run only from it.
-- `step` is brief, plan or delivery. `mode` is full_autonomy, checkpoints or step_by_step, and null until the person chooses it.
-- `state` is running while at least one agent works; waiting_on_you whenever a request in `needs_you` waits on the person, even if others are waited on too; waiting_on_others with `waiting_on`, the names of the people the run really waits on (1 to 12 names, 80 characters each, never a guess); paused when the mode stopped the run on purpose; delivered once every task is done; stopped when the run broke and cannot go on alone.
-- `summary` is one line, or null. `done`, `watch_out` and `next` are lists of at most 12 plain-text lines of at most 240 characters: no markdown, since the desktop renders text.
-- `working` maps each task UUID being worked on right now, at most 12 of them, to one line of at most 160 characters saying what is happening on it. The report is timestamped for you.
-- `needs_you` is a list of at most 12 { task_id, message } objects, one per task. Each message states the required user action in nonempty plain text of at most 240 characters. Use `needs_you` only for explicit human intervention.
-- `blockers` describes waiting without implying human action, with the same shape and caps.
-- `needs_you` and `blockers` accept an optional `actor` (the known responsible actor, 80 characters) and an optional `action` {type: task|page, id, label} that opens a known target (label 80 characters). Omit an unknown cause, actor or target, and never invent one.
-- Every affected task must be accessible, live and in this stream, and action targets must be accessible in this organization. Otherwise the entire report is refused. Over-long input is refused, never shortened for you.
+With the desktop open, post the run's controls with `desktop` `report` from the brief on; its text gives the fields and limits.

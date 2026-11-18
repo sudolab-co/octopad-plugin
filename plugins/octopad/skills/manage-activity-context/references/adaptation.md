@@ -1,6 +1,6 @@
 # Adapt from first principles
 
-Start with the decision the AI must support, not a list of documents it could create. Ask for a fact only when a step other than writing the page depends on it, such as choosing a recipient or a price; never ask for it just to complete a profile.
+Start with the decision the AI must support, not a list of documents it could create.
 
 ## Independent dimensions
 

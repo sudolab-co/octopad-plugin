@@ -2,7 +2,7 @@
 name: octopad-crm
 description: "Use where the CRM is on, or the user wants it on, when a customer's contact, company or deal comes up, when what a customer did or said needs recording, when an octobot is launched or followed, when its drafts, proposals or quarantined identities wait on a decision, when an approved draft is sent or its reply recorded, when the distill is read or changed, and when records are imported or synced. Not for competitors or market-wide customer voice (manage-market-intelligence)."
 ---
-Version: 2.0.1
+Version: 2.1.0
 
 # Before anything
 
@@ -40,7 +40,7 @@ Each kind of fact has one home; pick it on purpose.
 - You act with your member's permissions and in their name. Approve or reject proposals with `crm_actions` `decide`, and resolve quarantined identities with `resolve_identity` where the organization has it. A rejection always carries its `reason`, so the same value is not proposed again. List what is pending before a bulk decision, and say what an approval does when it is not obvious:
   - an approved outreach batch approves its drafts, and Octopad sends none of them; pass the drafts you reviewed as `draft_ids`;
   - where the organization has Scout, an approved scout batch adds every candidate in it, unless you pass `candidate_ids` (read them with `candidates`): then only those are added and the rest are rejected.
-- An agent key is not a person. A connection that uses an agent key may list drafts, read an approved one in full, send it with its own mail tool and record the send and the reply. It may not approve or reject a draft, decide a proposal, resolve a quarantined identity or switch a contact's AI summary, and it never uses Octopad's own sending. Those wait for the member, from their own connected AI or in the CRM screens.
+- An agent key is not a person. A connection that uses an agent key may list drafts, read an approved one in full, send it with its own mail tool when its instruction asks it to, and record the send and the reply. It may not approve or reject a draft, decide a proposal, resolve a quarantined identity or switch a contact's AI summary, and it never uses Octopad's own sending. Those wait for the member, from their own connected AI or in the CRM screens.
 - Archive a record only on explicit instruction. Permanent deletion needs the same confirmation a person would give in the app, and so does removing a custom field, since its values go with it by default.
 - When a create is refused because the organization reached its record allowance, tell the user where the allowance is raised. Never delete or archive records to make room.
 
@@ -59,4 +59,3 @@ Each procedure lives in a reference: read the one you need before your first cal
 
 - An issue a customer raised becomes a task in the workspace that owns that work. Name the record in the task, and append an entry on the record that names the task, so each side leads to the other.
 - Move the specific item across, never access: people on the task do not need the CRM, and customer data goes into the task only as far as the work needs it.
-- A reply to the customer that comes out of that work stays for a person to approve before it goes out.

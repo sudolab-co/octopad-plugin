@@ -47,7 +47,7 @@ While safe authorized work remains, take the next action or wait through the run
 
 Diagnose implementation, preparation, proof or environment before treating a technical problem as a user decision. Execution defects follow [recovery](recovery.md#diagnose-before-repeating) and saved failed-check continuations; missing preparation is not repaired by a stronger worker.
 
-For changed task meaning, dependencies or proof, missing context, unsettled shared choices or an impossible check, record the defect on its owning task and use one planner at a time through the runtime's supported route. Use its profile's planner or plan-repair route with bounded context: affected task and source revisions, intended result, failure, attempts and evidence, mandate, gates, remaining limits and working judgment as the [worker prompt](#worker-prompt) gives it, under the brief rules below.
+For changed task meaning, dependencies or proof, missing context, unsettled shared choices or an impossible check, record the defect on its owning task and use one planner at a time through the runtime's supported route. Use its profile's planner or plan-repair route with bounded context: affected task and source revisions, the affected task's Done when, intended result, failure, attempts and evidence, mandate, gates, remaining limits and working judgment as the [worker prompt](#worker-prompt) gives it, under the brief rules below.
 
 The planner returns a sourced diagnosis and the simplest compliant repair, its affected tasks, dependencies and proof, or the precise unresolved obstacle and what would resolve it. It cannot dispatch workers, take supervisor ownership or enlarge authority. The same supervisor verifies the recorded repair and resumes dependent work after planning's [change rule](planning.md#changes) is satisfied; independent covered work continues.
 
@@ -63,13 +63,13 @@ Octopad: <organization and its ID> / <workspace> / <work stream>.
 Use <this runtime's saved model and effort> and the recorded observation rule.
 Review: <each judgment: light or heavy, with its route>; recheck: <this runtime's light-review route>.
 Recorded mandate: <source, exact allowed scope, effects and targets>.
-Working judgment: <the methodology's Working principles, verbatim>.
+Working judgment (only when no Octopad sub-agent hook runs): <the methodology's Working principles, verbatim>.
 Uncleared checkpoints and effective-rule gates: <relevant waits, or none>.
 Computer Use: <accepted targets and actions with source, or not authorized;
 verified access and remaining permission or runtime limits>.
 
-[Octopad: yes] Connect to Octopad, in the organization and workspace named above, and read this task.
-[Octopad: no] Do not call Octopad, not even `skill_opened`. Your task, verbatim:
+[Octopad: yes] Connect to Octopad, in the organization and workspace named above, and read this task. Its Done when, verbatim: <Done when>.
+[Octopad: no] Do not call Octopad. Your task, verbatim:
 <description without its Exec and Octopad lines>.
 
 You do this task for the user as a delegated session: the installed skills,

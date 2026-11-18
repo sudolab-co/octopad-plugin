@@ -2,7 +2,7 @@
 name: manage-product-documentation
 description: "Use before judging why a product behaves as it does or whether or how to change it, when the user explores or settles how it behaves, when asked what it does today or whether a page still matches the code, when a test, a measurement, an incident or an analysis shows how a system really behaves or fails, when a system ships, rolls back or retires, before writing up a pull request or a release, and before saying a change owes no documentation. A shipped skill is product behavior. Not for internal notes or marketing copy (manage-product-marketing)."
 ---
-Version: 7.4.0
+Version: 7.5.0
 
 # Manage Product Documentation
 
@@ -22,9 +22,11 @@ Before concluding or handing off, check the result against that intent: each nee
 
 Changing or regrouping the means does not retire a need: name where it is now served, or the attributed Decision that retires or replaces it. Before your first change, record the spec's version id or `updated_at` on the task or PR as the baseline, and judge your edits against that revision, reconciled with material source changes and explicit user directions during the work. If the baseline is missing or its version has been pruned, name that gap and leave dependent conclusions unresolved. Record a direction already given without asking for it again; unresolved authority conflicts still follow step 4 of [Stop before writing](#stop-before-writing). A required review uses these primary sources, not only the author's summary or rewritten spec.
 
+To answer what a system does today, or whether a page still matches the code, take its intent from the spec and its current behavior from code, tests, its Known limits and release evidence; name each gap as a defect or an unbuilt promise, never intent as current behavior.
+
 ## Write for the reader
 
-A Product Spec gives the AI or person who must decide, build, change or judge a system what code cannot: what the people it serves need, the result sought, where it is going, the choices already made and why, and what it must never do. It describes the intended product, built or not.
+A Product Spec gives the AI or person who must decide, build, change or judge a system what code cannot: what the people it serves need, the result sought, where it is going, the choices already made and why, and what it must never do. It describes the intended product, built or not, with the limits work has established.
 
 - Keep a line only if a reader without it could build the wrong thing, undo a choice or break a promise. What the code does, how it does it, values and steps chosen while building (screens, wording, parameters, size limits, budgets, ordering) and delivery history (pull requests, revisions, reviews, releases) never pass: code, tests, the design document, Tasks and release records hold them. A value or an observed behavior stays only when it is the promise or the known limit itself. Never invent a need or a reason to keep a line. Not "`create` requires `title`; at most 80 characters" but "each item says in one line what it is for; input is never cut silently".
 - Write intent (Need, Outcome, Direction, Choices) in short full sentences, each choice with its reason; one bullet per promise or non-goal. Mark what is undecided `[open]`; never guess it. Need and Outcome are always present, `[open]` while unknown, so readers recognize a spec; omit other empty sections. No transitions, history or comments on sources. A fact lives once; elsewhere it is linked. Write in the page's language and the workspace's style.
@@ -63,7 +65,7 @@ Classify the work before writing:
 - audit: inspect a bounded maintained set and report its gaps; it repairs nothing, safe metadata and links included, unless the request also asks for repairs;
 - synchronize: propagate a changed source through this family's projections and hand other outputs to their owners.
 
-A Product Spec states intent and the Product Map indexes: neither carries a verification section. Every other page this skill owns keeps one, in the page or, for published user documentation, in its release record: one line per group of claims checked together, naming scope, source and exact revision, date, method and limits; a check replaces the lines it covers and no other.
+A Product Spec states intent and its known limits, and the Product Map indexes: neither carries a verification section. Every other page this skill owns keeps one, in the page or, for published user documentation, in its release record: one line per group of claims checked together, naming scope, source and exact revision, date, method and limits; a check replaces the lines it covers and no other.
 
 ## Stop before writing
 
@@ -74,7 +76,7 @@ A Product Spec states intent and the Product Map indexes: neither carries a veri
 3. Prove a negative before writing one. `No documentation impact` is a claim about the maintained set for every affected product. Harvest terms from the changed lines and each touched file's header comments. First list that maintained set without a title filter and read its descriptions or summaries; then open likely candidates and supplement the inventory with search over the harvested names and product terms. Record the receipt beside the claim, on one line: affected product or products, terms searched, pages inventoried, candidates read or `no candidate`, and either the document the change cites or `the change cites no document`. Search alone, or an inventory of the wrong product, proves nothing. Behavior that changed while no page owns it is a gap: record one documentation-debt item instead of closing the question.
 4. Treat unknown facts as unknown. Ask only when an unresolved system boundary, product intent, or authority conflict would materially change the result. An explicit unresolved authority conflict affecting this change always meets this bar: preserve both sources and ask instead of choosing or rewriting either one. Otherwise use a concise `Unknown`, `Unverified`, or documentation-debt marker and keep working.
 5. Never fabricate architecture, behavior, ownership, dates, metrics, source revisions, release state, or customer evidence. Derive technical facts from current code and repository configuration when available.
-6. A spec never claims a system is built or released; that claim belongs in user documentation or a Product Fact, with its evidence. Do not present an old observation as current. An At a glance block holds answers only: their provenance stays in the page body.
+6. A spec never claims a system is built or released, beyond what a Known limits line establishes with its source and date; that claim belongs in user documentation or a Product Fact, with its evidence. Do not present an old observation as current. An At a glance block holds answers only: their provenance stays in the page body.
 7. Minimize persisted evidence. Never copy private local paths, personal or customer identifiers, or unnecessary source bodies into Octopad. Prefer a safe repository link, public revision, or redacted summary that proves the claim without exposing unrelated data.
 
 ## Administer the documentation system
@@ -93,7 +95,7 @@ Park what exploration leaves behind: at the end of a brainstorm, and whenever an
 
 ## Record what work establishes about a system
 
-When work establishes a limit of a system (through a test, a measurement, an incident, a diagnosis, an analysis or an audit of that system), meaning a way it really behaves or fails that whoever later designs, changes or judges it must take into account, in the same turn and without asking, write it as a line under Known limits in the owning spec, even while that work stays open; a task comment, a report or a note alone does not record it. A result that confirms the intended behavior, a defect to fix and a measurement that constrains no design are not limits. Recording a limit is not a repair of the documentation: an audit of the documentation set still only reports. Search the spec and the records it links first: a limit already written, even as the reason of another line, is moved or updated there with the new evidence and never presented as a discovery. A limit several systems share lives in the spec of the system it belongs to, linked from the others. When later evidence shows a limit no longer holds, replace or remove its line and name that evidence on the Task.
+When work establishes a limit of a system (through a test, a measurement, an incident, a diagnosis, an analysis or an audit of that system), meaning a way it really behaves or fails that whoever later designs, changes or judges it must take into account, in the same turn and without asking, write it as a line under Known limits in the owning spec, even while that work stays open; a task comment, a report or a note alone does not record it. When no spec owns the system, record the limit as Key Information on the work's stream or task, say no spec owns it, and file one documentation-debt item. A result that confirms the intended behavior, a defect to fix and a measurement that constrains no design are not limits. Recording a limit is not a repair of the documentation: an audit of the documentation set still only reports. Search the spec and the records it links first: a limit already written, even as the reason of another line, is moved or updated there with the new evidence and never presented as a discovery. A limit several systems share lives in the spec of the system it belongs to, linked from the others. When later evidence shows a limit no longer holds, replace or remove its line and name that evidence on the Task.
 
 ## Preserve lifecycle and product scope
 
@@ -111,6 +113,8 @@ Record progress, pull requests, heads, tests, reviews and releases on the Task o
 When product work needs a Task, reuse suitable existing work and follow the active kernel and server contract for its shape, hierarchy, and dependencies.
 
 ## Pull requests
+
+Record the change's documentation impact in the PR body: the spec it names or changes, as [Preserve lifecycle and product scope](#preserve-lifecycle-and-product-scope) says, or `No documentation impact` with the receipt of [Stop before writing](#stop-before-writing) step 3.
 
 - When you draft a PR body, outlines and groundwork included, end it with exactly one `Octopad-Task:` line. Put it on its own line, outside comments, code blocks and quotations, with the task's bare id: a link resolves only on octopad.app.
 - Take the task id from Octopad, never from a guess.

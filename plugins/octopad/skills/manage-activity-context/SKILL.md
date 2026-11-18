@@ -2,7 +2,7 @@
 name: manage-activity-context
 description: "Use when the user explains or revises why an activity or project exists, whom it serves, its relationships, strategy or constraints, when the user says people or organizations join it, to update the Overview without asking anything, or when its Activity Overview, or an untyped Company Overview, no longer matches. Not for market evidence (manage-market-intelligence) or an offer's marketing (manage-product-marketing)."
 ---
-Version: 8.1.0
+Version: 8.2.0
 
 # Purpose and boundaries
 
@@ -18,7 +18,7 @@ Read [adaptation](references/adaptation.md) before deciding where context belong
 
    Before any write, know which case you are in. When the user let you draft, add faithful, minimal provenance within the scope and audience they authorized, without asking. A later repair never authorizes an earlier out-of-scope write.
 
-2. Read the Activity Overview of the affected scope, with its At a glance block, and relevant context owners, plus available onboarding facts, before deciding the change. A listing of page titles is not this read; reading the page does not authorize changing it. Search before declaring an owner absent. Inaccessible is not absent. Reuse sufficiently clear facts; ask only about a gap that a step other than writing the page depends on.
+2. Read the Activity Overview of the affected scope, with its At a glance block, and relevant context owners, plus available onboarding facts, before deciding the change. A listing of page titles is not this read; reading the page does not authorize changing it. Search before declaring an owner absent. Inaccessible is not absent.
 3. Separate the actor, activity, project, built solution, beneficiaries and contribution to value. Distinguish funding from selling that solution. Identify only the relationships needed for this request; do not create a relationship registry.
 4. Locate the authoritative section for each changed question. An Activity Overview, charter, README or brief can own context. Preserve that owner's identity; a familiar page type is not a reason to duplicate it. Custom pages may be explicitly adopted for a named question after reading them; adoption is scoped, not automatic maintenance of all custom content.
 5. Use the smallest adequate document. Keep directly captured context in the Activity Overview if it remains clear and appropriately shared. Create a separate activity or project brief only when an independent durable question, audience, scope or growing detail warrants it. No compulsory Brief, empty skeleton, or second Activity Overview.
@@ -35,7 +35,7 @@ Each session opens on the At a glance blocks of the organization's head pages an
 - `binding_constraints`: only the durable constraints every session must respect.
 - `who_decides`: a responsibility summary, never a member roster.
 
-Each holds `missing`, `not applicable` or an answer the page supports, its essential point first. Write `missing` for each key the person has not given, and go on. Ask for a fact only when a step other than writing this page depends on it, such as choosing a recipient or a price. A key left `missing` is neither work that remains nor something you could not record: leave it out of your reply. When the user says people or organizations join the activity, update the Overview and ask nothing; a join an audit finds waits for the yes like its other gaps. Ask who decides only when a step other than writing this page depends on it. When your change alters what the At a glance block says, update it in the same turn. The block holds answers only: sources, detail and history stay in the body, beside the facts they support. Offers and their prices go in each offer's Product Overview, not here. An organization-level block is read by every member, so client or project detail stays in its workspace's Activity Overview.
+Each holds `missing`, `not applicable` or an answer the page supports, its essential point first. Write `missing` for each key the person has not given, and go on. Ask for a fact, who decides included, only when a step other than writing this page depends on it, such as choosing a recipient or a price. When the user says people or organizations join the activity, update the Overview and ask nothing; a join an audit finds waits for the yes like its other gaps. The block holds answers only: sources, detail and history stay in the body, beside the facts they support. Offers and their prices go in each offer's Product Overview, not here. An organization-level block is read by every member, so client or project detail stays in its workspace's Activity Overview.
 
 # Cut-over from a Company Overview
 

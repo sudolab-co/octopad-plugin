@@ -49,22 +49,6 @@
       ]
     },
     {
-      "id": "follow-asked",
-      "prompt": "Keep me posted on the invoice rounding work.",
-      "must_load": true,
-      "context": {
-        "work": [
-          "Task 99999999-9999-4999-8999-999999999999 'Rework invoice rounding', assigned to Sam."
-        ],
-        "tools": [
-          "followup"
-        ]
-      },
-      "expected_behavior": [
-        "Follow the task with the followup tool, since the user asked to be kept informed."
-      ]
-    },
-    {
       "id": "follow-unrelated-no-proposal",
       "prompt": "What did Sam ship this week?",
       "must_load": true,

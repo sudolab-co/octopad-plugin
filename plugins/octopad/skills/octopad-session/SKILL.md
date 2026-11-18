@@ -2,7 +2,7 @@
 name: octopad-session
 description: Use first when the user asks for Octopad or onboarding, and as soon as the conversation concerns their company or its product, code, customers, team or plans, even if they never name Octopad. Loads their workspace's context and method. A sub-agent opens it only when its brief grants Octopad access.
 ---
-Version: 33.8.0
+Version: 33.9.0
 
 # Start an Octopad plugin session
 
@@ -11,4 +11,4 @@ Version: 33.8.0
 3. Call `start_session`.
 4. When the methodology's router sends a request to a module, open `../<module>/SKILL.md`, next to this skill in this plugin. Check the path of the file you open: a personal or standalone skill with the same name never replaces it. If the bundled file cannot be opened, work from the methodology alone.
 
-Where the bundled connection offers the `followup` tool, follow something only when the user asks to be kept informed of it. When another person's work can affect the user's own, offer to add it to their priorities as `../octopad-notepad/SKILL.md` says.
+When another person's work can affect the user's own, offer to add it to their priorities as `../octopad-notepad/SKILL.md` says.
