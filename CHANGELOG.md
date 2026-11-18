@@ -1,5 +1,13 @@
 # Changelog
 
+## 33.8.0 - Unreleased
+
+Keeps a Claude supervisor running when a pull request it opened merges.
+
+- `octoplan` 10.2.0: in the Claude desktop app, a pull request a session opens is bound to it, and with the user's auto-archive setting on, its merge archived the supervisor and stopped delivery. The supervisor's first action now turns auto-archive off for its own session and checks it, and tells the user at once if it cannot; the planner's launch proposal names the switch and its one approval. The user's account setting never changes.
+
+Needs no server change. All three distributions move to 33.8.0.
+
 ## 33.7.0 - 2026-11-18
 
 The AI proposes the person's priorities and saves them only on their yes.
