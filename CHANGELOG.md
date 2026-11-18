@@ -1,6 +1,6 @@
 # Changelog
 
-## 33.7.0 - Unreleased
+## 33.7.0 - 2026-11-18
 
 The AI proposes the person's priorities and saves them only on their yes.
 
@@ -9,7 +9,7 @@ The AI proposes the person's priorities and saves them only on their yes.
 
 Needs no server change: both Notepad readers keep the `priorities_asked:` line. All three distributions move to 33.7.0.
 
-## 33.6.0 - Unreleased
+## 33.6.0 - 2026-11-18
 
 Teaches one kind of stream, an effort toward a result, now that Octopad assembles each stream's Progress Report itself.
 
@@ -19,7 +19,7 @@ Teaches one kind of stream, an effort toward a result, now that Octopad assemble
 
 Needs the server change that serves methodology 3.6.0 and, under each existing ongoing stream in `build_context` and `work_streams` results, the line that keeps it the home of its domain's tasks until the organization's Update sorts it: `octopad-planning-and-work-design` 7.2.0 drops its own routing for those streams, so a production server without that line leaves the AI no rule for them, and the plugin lands only once production runs it. All three distributions move to 33.6.0.
 
-## 33.5.0 - Unreleased
+## 33.5.0 - 2026-11-18
 
 Removes texts that gave the AI opposite orders at the same moment (Rules V3 final review).
 
@@ -33,14 +33,14 @@ Removes texts that gave the AI opposite orders at the same moment (Rules V3 fina
 
 Needs no server change. All three distributions move to 33.5.0.
 
-## 33.4.0 - Unreleased
+## 33.4.0 - 2026-11-18
 
 - `octopad-knowledge-evidence` 3.3.0: the sentence that told the AI to raise a clash with a recorded decision before putting a direction forward is gone. A line on the results that show a Decision now says it once: when what the user asks now, a redesign included, goes against an active Decision, the AI names it in one line, with who chose it as its record shows, and carries on with the user's direction; outside what the user asks, the AI's own direction yields to the Decision, and the AI says so when that changes what it proposes.
 - `manage-product-documentation` 7.3.0: when the user asks to redesign a system, its current choices and Decisions are what the design may replace, not limits on it; the AI designs the target from the need, then names each recorded Decision it would replace.
 
 Relies on the server's Decision line, served to organizations on the early-access list: land it once production serves that line.
 
-## 33.3.0 - Unreleased
+## 33.3.0 - 2026-11-18
 
 - `octopad-session` 33.3.0: when the plugin's own Octopad connection is missing and only another Octopad connection is listed, the AI tells the user once and asks whether to use that one or reconnect the plugin's own.
 - `octopad-knowledge-evidence` 3.2.0: a date or time the AI writes in a record's text names its time zone, the source's when it gives one, otherwise the user's when known, otherwise UTC; a date field takes the bare day the user means.
@@ -53,11 +53,11 @@ Relies on the server's Decision line, served to organizations on the early-acces
 
 Needs no server change. All three distributions move to 33.3.0.
 
-## 33.2.0 - Unreleased
+## 33.2.0 - 2026-11-18
 
 - `octopad-planning-and-work-design` 7.1.0: Octopad imposes no test; the AI decides whether one is needed, under the person's own instructions, and the skill gives the procedure when it does. For a costly test, the AI shows the person the decision, method, ceiling and proof and asks for the go before creating its task, unless their own instructions already ask for that test; either way nothing runs before the go on those fields. A step another member carries out as their own work, such as a deploy or migration, is its own task like a chosen test. The skill no longer says that nothing waits for a test unless the user makes it a gate.
 
-## 33.1.0 - Unreleased
+## 33.1.0 - 2026-11-18
 
 - `manage-product-documentation` 7.1.0: a Product Spec gets a Known limits section for what work has established about how the system really behaves or fails, that a later design, change or judgment must take into account. When a test, a measurement, an incident, a diagnosis, an analysis or an audit of a system establishes such a limit, the AI writes it there in the same turn without asking, after checking it is not already recorded; a task comment alone no longer stands for it. A design or fix that a known limit bears on says how it takes it into account. The skill also opens when a test, a measurement, an incident or an analysis shows how a system really behaves or fails.
 - `octopad-knowledge-evidence` 3.1.0: such a limit goes straight to the spec's Known limits, not to the working page that holds an analysis's other findings.
