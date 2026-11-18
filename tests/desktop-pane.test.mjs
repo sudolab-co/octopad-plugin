@@ -33,6 +33,7 @@ function reminds(stdout) {
   assert.match(text, /mcp__Claude_Browser__tabs_context/);
   assert.match(text, /tabs_select with the desktop tab's tabId/);
   assert.match(text, /in no window, the desktop is not shown: say so/);
+  assert.match(text, /in no window, the desktop is not shown: say so, with the public desktop link that Octopad's open answer gave you,/);
   assert.doesNotMatch(text, /will show when they return/);
 }
 

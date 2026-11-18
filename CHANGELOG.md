@@ -1,5 +1,13 @@
 # Changelog
 
+## 33.7.1 - Unreleased
+
+The Claude Code desktop-pane reminder asks for the desktop's link when the pane cannot be shown.
+
+- `desktop-pane` hook: when the Claude app says the conversation is in no window, the AI says the desktop is not shown together with the public desktop link Octopad's `open` answer gave it, so the person can still open it. Before, it only said the desktop was not shown.
+
+Needs no server change to work; the server's `open` answer gets the same rule in its companion change. All three distributions move to 33.7.1.
+
 ## 33.7.0 - 2026-11-18
 
 The AI proposes the person's priorities and saves them only on their yes.
