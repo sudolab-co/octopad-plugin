@@ -126,7 +126,7 @@ Then create it in one save: the same definition, its `position`, the `through` t
       "columns": { "order": ["title"], "visible": ["title"], "widths": {} }, "sort": null, "direction": "asc" } } }
 ```
 
-The Pad counts it among the tasks the tab follows. In a section of the first Smart Report its filters name no stream, goal or tag.
+The Pad counts it among the tasks the tab follows. In a section of Today's brief its filters name no stream, goal or tag.
 
 ## An external scope and a reference
 

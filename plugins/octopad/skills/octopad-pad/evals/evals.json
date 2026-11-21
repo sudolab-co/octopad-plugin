@@ -1345,7 +1345,7 @@
     },
     {
       "id": "sub-agent",
-      "prompt": "You are a worker sub-agent launched by a supervisor. Your brief grants no Octopad access: do not call Octopad, not even skill_opened. Task: draft, as text only, the definition of a Pad tab for the Atlas launch and return it.",
+      "prompt": "You are a worker sub-agent launched by a supervisor. Your brief grants no Octopad access: do not call Octopad. Task: draft, as text only, the definition of a Pad tab for the Atlas launch and return it.",
       "must_load": false,
       "kind": "trigger",
       "versions": [
