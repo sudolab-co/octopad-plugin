@@ -18,22 +18,22 @@ Use when there is no product documentation, repository, or established system mo
 Begin this setup after the user explicitly asks to establish product documentation or a substantive design discussion needs its first owner. A passing idea alone is not setup authority.
 
 1. Confirm the product, users, problem, and current evidence state from the conversation. Ask only about a material missing boundary or intent.
-2. Follow the workspace's existing folder and page-preparation guidance, then create the Product Map index from [artifact-shapes.md](artifact-shapes.md), one line per known feature. Do not invent milestones, architecture, integrations, or implementation choices.
+2. Create the Product Map index from [artifact-shapes.md](artifact-shapes.md#product-map), filed as SKILL.md's Stop before writing step 1 says, one line per known feature. Do not invent milestones, architecture, integrations, or implementation choices.
 3. From here on, park passing ideas under [Brainstorm and design maturity](#brainstorm-and-design-maturity).
-4. Once discussion develops a real system boundary, behavior, contract, or meaningful alternative, follow SKILL.md's substantive-design rule. Do not invent execution work.
-5. Reuse the user's work stream and Tasks or create only the finite execution work needed by the normal workflow. Link that work to the spec; do not copy its changing status into the page.
+4. Once discussion develops a real system boundary, behavior, contract, or meaningful alternative, follow [Capture exploration without waiting for a build decision](../SKILL.md#capture-exploration-without-waiting-for-a-build-decision). Do not invent execution work.
+5. Reuse the user's stream and Tasks or create only the finite execution work needed by the normal workflow. Link that work to the spec; do not copy its changing status into the page.
 6. Do not create an Architecture Map as if architecture exists. Before code exists, retain only confirmed technical constraints or Decisions. Create the map once code gives evidence of stable architecture, in Octopad or in the repository when the team wants it beside the code.
 
 ## Existing-product setup
 
 Use before creating structure for a product that already has code, docs, or Octopad history.
 
-1. Bound the inventory: connected Octopad organization and workspaces, repositories, default and release branches, docs locations, and active work streams.
-2. Search Octopad Pages, Tasks, work streams, and Decisions by product terms and likely synonyms. Read candidate bodies and links before judging duplicates.
-3. Inspect repository READMEs, docs indexes, architecture records, contribution rules, release policy, and current code structure. Treat stale or generated docs as time-bounded evidence, not automatic canon.
+1. Bound the inventory: connected Octopad organization and workspaces, repositories, default and release branches, docs locations, and active streams.
+2. Search Octopad Pages, Tasks, streams, and Decisions by product terms and likely synonyms. Read candidate bodies and links before judging duplicates.
+3. Inspect repository READMEs, docs indexes, architecture records, contribution rules, release policy, and current code structure. Treat stale or generated docs as time-bounded evidence, never as current truth on their own.
 4. Build a temporary adoption table: artifact, current authority, evidence revision, model destination, duplicate or conflict, and action.
 5. Designate or reshape one Product Map for this product documentation set. Adopt existing product or feature docs as evolving Product Specs when they already own coherent system boundaries.
-6. Preserve useful unique content and inbound links before consolidation. Use redirects, superseded markers, or links by default. Require explicit approval before deleting content or irreversibly overwriting history.
+6. Preserve useful unique content and inbound links before consolidation. Use redirects, superseded markers, or links by default. Get the user's explicit confirmation before deleting content or irreversibly overwriting history.
 7. Adopt one credible architecture overview wherever it already lives, and record that home. Otherwise create the smallest canonical Architecture Map from verified code and configuration, in Octopad or in the repository when the team wants it beside the code.
 8. Link existing streams, Tasks, Decisions, PRs, and docs. Do not recreate completed history or replace an Octoplan task graph with a documentation-owned plan.
 9. Mark conflicts, gaps, and unverifiable claims as documentation debt. Ask about authority only when evidence and normal review cannot resolve it.
@@ -44,12 +44,21 @@ Classify impact continuously without making the conversation feel like a form, a
 
 - `no impact`: a rejected or abandoned idea, or work outside product documentation. Create no documentation artifact, not even a parked idea line.
 - `existing-system change`: idea, explored, accepted, or later behavior inside a known system boundary. Update the evolving Product Spec, an unaccepted idea in Open questions and accepted intent in its section, and link the existing execution work.
-- `new system`: substantive design establishing a new coherent capability or responsibility, beginning at `idea`. Add its Product Map line and create its Product Spec with an `[idea]` entry, under SKILL.md's substantive-design rule.
-- `technical-only`: implementation or operational work with no product behavior change. Update the Architecture Map only under its rule in [documentation-model.md](documentation-model.md), and a targeted Engineering Reference only when the change creates durable, non-derivable knowledge.
+- `new system`: substantive design establishing a new coherent capability or responsibility, beginning at `idea`. Add its Product Map line and create its Product Spec with an `[idea]` entry, under [Capture exploration without waiting for a build decision](../SKILL.md#capture-exploration-without-waiting-for-a-build-decision).
+- `technical-only`: implementation or operational work with no product behavior change. Update the Architecture Map only under its rule in [documentation-model.md](documentation-model.md#architecture-map), and a targeted Engineering Reference only when the change creates durable, non-derivable knowledge.
 
 If the product or system boundary remains materially ambiguous after reading current context, ask one focused question and continue unaffected organization work.
 
-Parking: one `[idea <date parked>]` line per idea, carrying the idea and the problem it addresses and linking the `idea` task the methodology files for an idea voiced for later, in the Open questions of the Product Spec it concerns, or on the product documentation set's single Ideas page when it concerns no existing system yet; move the line to that system's spec once one exists. Creating that page on first use and linking it from the Product Map is part of parking, not a separate authority. Add no owner, priority, status, origin or rationale, and keep each line within the persisted-evidence rules. Never park an idea the user turned down or dropped. A line leaves the list when the idea is committed, where ordinary commitment handling takes over, or when the user rejects it; remove it rather than replacing it with a rejected or abandoned line, and put any useful rejection reason in history. Moving or removing a parked line, or dropping an emptied section, is routine list maintenance, not the content deletion that needs approval. Before a Product Map exists, keep ideas in the conversation and follow the setup playbooks.
+Parking:
+- Write one `[idea <date parked>]` line per idea, carrying the idea and the problem it addresses, and linking its `idea` task when one exists:
+  - in the Open questions of the Product Spec it concerns;
+  - or, when it concerns no existing system yet, on the product documentation set's single Ideas page; move the line to that system's spec once one exists.
+- Creating that page on first use and linking it from the Product Map is part of parking, not a separate authority.
+- Add no owner, priority, status, origin or rationale, and keep each line within the persisted-evidence rules ([Stop before writing](../SKILL.md#stop-before-writing) step 7).
+- Never park an idea the user turned down or dropped.
+- A line leaves the list when the idea is committed, where ordinary commitment handling takes over, or when the user rejects it: remove it rather than replacing it with a rejected or abandoned line, and put any useful rejection reason in history.
+- Moving or removing a parked line, or dropping an emptied section, is routine list maintenance, not the content deletion that needs the user's confirmation.
+- Before a Product Map exists, park the idea in the Product Spec it concerns when one exists; otherwise file it as a `todo` task tagged `idea` with no date, or reuse the one already filed, say where, and follow the setup playbooks.
 
 ## Implementation context retrieval
 
@@ -63,29 +72,31 @@ Do not load every Product Spec or the whole repository merely because the Produc
 
 ## Pull request and delivery sync
 
-1. Determine documentation impact: none, existing-system change, new system, or technical-only. Record it on the PR in the repository's normal way, naming affected documents or carrying the proven negative receipt. A `none` follows SKILL.md's no-impact protocol. `technical-only` does not imply `none` when durable architecture or an Engineering Reference changed.
-2. Link the existing Task or work stream to the PR through the repository's normal fields; the spec's Direction links that Task or stream when it serves an accepted direction.
+1. Determine documentation impact: none, existing-system change, new system, or technical-only. Record it on the PR in the repository's normal way, naming affected documents or carrying the proven negative receipt. A `none` follows [Stop before writing](../SKILL.md#stop-before-writing) step 3. `technical-only` does not imply `none` when durable architecture or an Engineering Reference changed.
+2. Link the existing Task to the PR through the `Octopad-Task:` line of its body ([Pull requests](../SKILL.md#pull-requests)), and a stream through the repository's normal fields; the spec's Direction links that Task or stream when it serves an accepted direction.
 3. Record exact head and base revisions on the pull request or Task. Re-check after material drift.
-4. Change the spec only as SKILL.md's delivery rule allows, and the Architecture Map only under its rule in [documentation-model.md](documentation-model.md).
+4. Change the spec only as SKILL.md's delivery rule allows ([Preserve lifecycle and product scope](../SKILL.md#preserve-lifecycle-and-product-scope)), and the Architecture Map only under its rule in [documentation-model.md](documentation-model.md#architecture-map).
 5. Verify coverage under [Work from product intent](../SKILL.md#work-from-product-intent), using code, tests and the actual diff rather than the PR description alone.
-6. Draft pre-release user documentation or release notes when useful, under SKILL.md's pre-release rule; never as shipped wording, Product Facts or marketing claims.
+6. Draft pre-release user documentation or release notes when useful, under SKILL.md's pre-release rule ([Keep human authority narrow and meaningful](../SKILL.md#keep-human-authority-narrow-and-meaningful)); never as shipped wording, Product Facts or marketing claims.
 7. When evidence remains missing, mark the update stale or unverified and create or reuse documentation-debt work.
 
 Follow repository review and merge controls. This skill grants no merge authority and creates no separate approval system.
 
 ## Release sync
 
-Run one full pass per release, when changes actually reach users. It must end with updated docs or named debt, never a silent skip. Keep one durable record per release, a release page or runbook entry: step 9 writes it, and step 2 reads the previous one. On the first pass ever, no previous record exists; bound on the oldest evidence you can verify and say so.
+- Run one full pass per release, when changes actually reach users; end it with updated docs or named debt, never a silent skip.
+- Keep one durable record per release, a release page or runbook entry: step 9 writes it, and step 2 reads the previous one.
+- On the first pass ever, no previous record exists: bound on the oldest evidence you can verify, and say so.
 
 1. Verify the repository's release policy, exact released revision, and included changes.
 2. Bound the release window. Read the boundary the previous release pass recorded: an exact revision, or failing that a date resolved to a revision. Collect every change between that boundary and this release's exact revision. Never bound on a moving branch head or a bare date; a date boundary silently drops same-day changes. When the boundary is imprecise, over-collect toward the older side and say so in the closing record: a duplicate is visible, a dropped change is not.
 3. Consume each change's documentation-impact mark when the delivery workflow records one. A mark naming a maintained doc puts that doc on the update list with the change as evidence. Recheck an explicit `none` against the diff and its receipt. A missing or wrong owner is resolved by adopting or creating the smallest authorized owner when the evidence is sufficient; otherwise file documentation debt. A mark naming another family's doc is a handoff, not an edit order.
 4. Re-read each affected draft against released code and observed product behavior when available.
-5. Edit a spec only where the release settled a direction or changed a need, choice, promise or non-goal, or established or lifted a known limit: fold what it settled into Choices or Promises and remove the Direction line once nothing in it is still ahead. Check the Architecture Map against the released changes under its rule in [documentation-model.md](documentation-model.md), and edit it only where a component, a connection, a data store or external service, a code home or the release model changed; the release's history stays on its record (step 9).
+5. Edit a spec only as SKILL.md's delivery rule allows, where the release settled a direction or changed a need, the outcome, a choice, a promise or a non-goal, or established or lifted a known limit: fold what it settled into Choices or Promises and remove the Direction line once nothing in it is still ahead. Check the Architecture Map against the released changes under its rule in [documentation-model.md](documentation-model.md#architecture-map), and edit it only where a component, a connection, a data store or external service, a code home or the release model changed; the release's history stays on its record (step 9).
 6. Keep unverified claims out of shipped truth. Track them as documentation debt.
 7. Resolve and open each existing product authority affected by the release, including the Product Map and any Product Facts whose dependencies moved. A Product Facts page is born only with the first substantiated public claim; its prior absence is normal. Create or adopt a missing ordinary owner when the released evidence and session authority support it, or record the exact gap. Only a document the product context explicitly marks as locked requires exact before/after approval before editing.
-8. Reconcile pre-release user documentation or release notes against verified released evidence before removing their label. Draft or revise Product Facts here. Hand marketing claims and final marketing wording to product marketing. Preserve every review and publication gate.
-9. Close the loop on the release record: the boundary covered and this release's exact revision (the next pass's lower bound), each doc updated with its evidence, each canon outcome (not needed, validated and applied, pending task, or escalated), and a link to the documentation-debt work.
+8. Reconcile pre-release user documentation or release notes against verified released evidence before removing their label. Draft or revise Product Facts here. Hand marketing claims and final marketing wording to `manage-product-marketing`. Preserve every review and publication gate.
+9. Close the loop on the release record: the boundary covered and this release's exact revision (the next pass's lower bound), each doc updated with its evidence, the outcome for each product authority of step 7 (not needed, validated and applied, pending task, or escalated), and a link to the documentation-debt work.
 
 If repository policy explicitly proves that merge equals release, record that policy as evidence. Otherwise keep merge and release separate.
 
@@ -97,9 +108,9 @@ An audit alone changes no page: steps 3 to 7 then list what they would change, a
 2. Check links, ownership metadata, and, where a page carries them, lifecycle labels, source revisions and last-verification times.
 3. Repair safe metadata and broken links directly when the correct target is unambiguous.
 4. For each page you will change, check intent and coverage under [Work from product intent](../SKILL.md#work-from-product-intent). Check a spec against the requests and Decisions it rests on, never rewritten to match code: an accepted promise not yet built stays, its gap a Task. Check each Known limits line against its source and newer evidence. Compare other pages' claims with current code, release evidence, Decisions and user-facing behavior; mark unsupported claims stale or unverified instead of guessing.
-5. Consolidate duplicates only after preserving unique knowledge and history. Require explicit approval before deletion or irreversible overwrite.
+5. Consolidate duplicates only after preserving unique knowledge and history. Get the user's explicit confirmation before a deletion or an irreversible overwrite.
 6. Review parked ideas and the Ideas page. Propose removing lines whose problem has lapsed, in one batch; do not remove them silently.
-7. Check each spec section against its line in SKILL.md's Write for the reader: lines its first rule rejects, content that belongs elsewhere, duplicates, undecided points not marked `[open]`, several elements without a subsection each. Prune under its preservation rule. Check the Architecture Map against its rule in [documentation-model.md](documentation-model.md) the same way: lines that belong elsewhere, and its length.
+7. Check each spec section against its line in SKILL.md's Write for the reader: lines the "Keep a line only if" rule rejects, content that belongs elsewhere, duplicates, undecided points not marked `[open]`, several elements without a subsection each. Prune under SKILL.md's preservation rule. Check the Architecture Map against its rule in [documentation-model.md](documentation-model.md#architecture-map) the same way: lines that belong elsewhere, and its length.
 8. Create or reuse one bounded documentation-debt Task for related missing evidence, unresolved conflicts, or substantial rewrites. Do not create one task per broken link.
 9. Report repairs, remaining uncertainty, and the evidence needed to resolve it.
 
@@ -107,8 +118,8 @@ An audit alone changes no page: steps 3 to 7 then list what they would change, a
 
 For user docs, release notes, and Product Facts, plus handoffs to marketing:
 
-1. Pre-release user documentation and release notes follow SKILL.md's pre-release rule.
-2. For Product Facts, apply SKILL.md's Product Fact evidence rule (Stop before writing). Route marketing claims and final marketing wording to product marketing with those Facts as inputs.
+1. Pre-release user documentation and release notes follow SKILL.md's pre-release rule ([Keep human authority narrow and meaningful](../SKILL.md#keep-human-authority-narrow-and-meaningful)).
+2. For Product Facts, apply the Product Fact rule in SKILL.md, section "Stop before writing". Route marketing claims and final marketing wording to `manage-product-marketing` with those Facts as inputs.
 3. Verify every capability, limit, outcome, compatibility statement, and metric.
 4. Separate current behavior from future intent. Exclude internal implementation detail unless the audience needs it.
 5. Draft the smallest audience-appropriate change and retain source links in the working artifact when possible.
