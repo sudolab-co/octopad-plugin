@@ -1,6 +1,6 @@
 # Changelog
 
-## 33.8.0 - Unreleased
+## 33.8.0 - 2026-11-21
 
 Keeps a Claude supervisor running when a pull request it opened merges.
 
@@ -8,7 +8,7 @@ Keeps a Claude supervisor running when a pull request it opened merges.
 
 Needs no server change. All three distributions move to 33.8.0.
 
-## 33.7.1 - Unreleased
+## 33.7.1 - 2026-11-21
 
 The Claude Code desktop-pane reminder asks for the desktop's link when the pane cannot be shown.
 
