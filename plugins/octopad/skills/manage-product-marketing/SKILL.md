@@ -2,7 +2,7 @@
 name: manage-product-marketing
 description: "Use when a target customer is chosen or narrowed, an offer, promise, price or tier is set, a launch is prepared, customer-facing copy is written or reviewed, above all copy carrying a number, a metric or a superlative, or an objection or a channel's result comes up. Keeps those choices in the Product Overview's Marketing section. Drafting method: pmm-check. Not for product behavior or market evidence."
 ---
-Version: 3.2.0
+Version: 3.3.0
 
 # Maintain each offer's marketing
 

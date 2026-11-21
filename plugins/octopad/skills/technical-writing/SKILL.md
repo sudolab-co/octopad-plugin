@@ -2,7 +2,7 @@
 name: technical-writing
 description: "Use when writing, editing or reviewing technical or user documentation, in English or French. Removes AI-flavored prose in the Google developer style. Not for chat, emails, social posts, blogs or marketing copy (pmm-check)."
 ---
-Version: 3.0.0
+Version: 3.0.1
 
 # Technical writing
 

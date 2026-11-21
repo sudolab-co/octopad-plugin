@@ -2,7 +2,7 @@
 name: octopad-knowledge-evidence
 description: "Use when a conversation surfaces something someone outside it will need: a decision, a key fact, a risk, an open question, what a customer's words establish beyond that customer, or how a system works as an analysis establishes it. Also use it when new evidence changes a recorded item, when the user shares a file or document, when a page or file is written, linked or tagged, before saying whether something is on record or answering a question about the corpus, and when the corpus is cleaned up. Chooses where each item goes and how a claim about the corpus is proved. Not for spec content (manage-product-documentation) or one customer's facts (octopad-crm)."
 ---
-Version: 3.5.0
+Version: 3.6.0
 
 # Where knowledge is written
 
@@ -129,7 +129,6 @@ Fit the method to what the claim has to hold up: reading all of a corpus, its su
   - reading in full replaces neither building the set nor proving the claim.
 - Report no search result as all there is: a search proves what it found, not that nothing else exists, and its results are ranked and capped, sometimes below the limit you asked for.
 - Claim none or every only from a complete inventory of the scope, with each item it leaves doubtful checked. Otherwise say what the answer covers.
-- Read low confidence as a claim not yet proven: sharpen the query, or open the one weak hit and settle it. It is no licence to work through the pages one by one.
 - Within the turn, read a source again only:
   - when its owning skill requires it fresh before a write, such as a spec's revision before you edit the spec;
   - or when something learned since makes the snapshot doubtful.
