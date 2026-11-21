@@ -1,10 +1,17 @@
 # Method provenance and further reading
 
-These links are reading suggestions, not findings established by this file. Verify the source, context, date and exact conclusion before using it to substantiate a research or legal statement. The operational method in the skill is self-contained and makes no empirical conversion or compliance guarantee.
+These links are reading suggestions, not findings established by this file.
+- Before using one to substantiate a research or legal statement, verify its source, context, date and exact conclusion.
+- The operational method in the skill is self-contained and makes no empirical conversion or compliance guarantee.
 
 ## Keep different kinds of authority separate
 
-The scoped factual owner supplies offer-specific evidence. Competent decision authority accepts positioning choices. Practitioner methods help develop options. Research can inform general hypotheses after assessment; it does not establish what a particular offer does. Official sources require jurisdiction and intended-use analysis by the appropriate specialist before a legal conclusion. None grants access, acceptance or publication authority.
+- The scoped factual owner supplies offer-specific evidence.
+- Competent decision authority accepts positioning choices.
+- Practitioner methods help develop options.
+- Research can inform general hypotheses after assessment; it does not establish what a particular offer does.
+- Official sources require jurisdiction and intended-use analysis by the appropriate specialist before a legal conclusion.
+- None grants access, acceptance or publication authority.
 
 ## Research links
 

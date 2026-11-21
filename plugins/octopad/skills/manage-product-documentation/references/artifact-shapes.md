@@ -1,6 +1,8 @@
 # Compact artifact shapes
 
-Use these as adaptable shapes, not forms that must be filled. Omit irrelevant sections. Preserve the product's existing vocabulary and page conventions, except a Product Spec's section headings, which readers parse.
+- Use these as adaptable shapes, not forms that must be filled.
+- Omit irrelevant sections; a Product Spec still always has Need and Outcome.
+- Preserve the product's existing vocabulary and page conventions, except a Product Spec's section headings, which readers parse.
 
 ## Contents
 
@@ -24,7 +26,11 @@ Overview: <link> · Architecture: <link> · Ideas: <link>
 - <System>: <one-liner>; no spec (<task link>)
 ```
 
-One line per named feature, reusing the spec link when several share a spec; audience in the one-liner when limited ("early access"); a feature with no spec links its documentation-debt Task when one exists. The header links each Product Overview and lists the Engineering References of the maintained set on one line. No state, gaps, active work or verification.
+- Write one line per named feature, reusing the spec link when several share a spec.
+- When a feature's audience is limited, say so in its one-liner (for example "early access").
+- For a feature with no spec, link its documentation-debt Task when one exists.
+- In the header, link each Product Overview, and list the Engineering References of the maintained set on one line.
+- Write no state, gaps, active work or verification.
 
 ## Product Spec
 
@@ -60,7 +66,9 @@ One line per named feature, reusing the spec link when several share a spec; aud
 <Product Map> · <Architecture Map> · <Decisions> · <related specs and contracts> · <design document> · <code entry point>
 ```
 
-Need and Outcome always; omit other empty sections. What each section holds: SKILL.md, Write for the reader. A dropped promise or choice leaves with the Decision that drops it; page versions keep its text. Split specs only at a system boundary ([documentation-model.md](documentation-model.md)).
+- Always write Need and Outcome; omit other empty sections. What each section holds: SKILL.md, Write for the reader.
+- A dropped promise or choice leaves with the Decision that drops it; page versions keep its text.
+- Split specs only at a system boundary ([documentation-model.md](documentation-model.md#product-spec)).
 
 ## Ideas
 
@@ -125,8 +133,12 @@ Ideas with no system yet. One line each.
 - Gaps: <explicit unknowns>
 ```
 
-What each section keeps, and the home of everything else: [documentation-model.md](documentation-model.md).
+What each section keeps, and the home of everything else: [documentation-model.md](documentation-model.md#architecture-map).
 
 ## Documentation-debt Task
 
-Keep one bounded Task for related gaps. For a subtask, use `parent_task_id`; for every dependency edge, include its rationale. State why the missing or stale knowledge matters, what evidence or repair is needed, and what proves completion. Link the affected pages, repository locations, PRs, releases, and Decisions. Do not copy the Task's status into those pages.
+- Keep one bounded Task for related gaps.
+- For a subtask, use `parent_task_id`; for every dependency edge, include its rationale.
+- State why the missing or stale knowledge matters, what evidence or repair is needed, and what proves completion.
+- Link the affected pages, repository locations, PRs, releases and Decisions.
+- Do not copy the Task's status into those pages.

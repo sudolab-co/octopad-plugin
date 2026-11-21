@@ -6,11 +6,12 @@ Version: 3.0.0
 
 # Technical writing
 
-Work products are read by people who were not in the conversation: users, reviewers, maintainers, and future contributors. They get professional documentation style, not chat style or a personal assistant's voice.
+Write work products for people who were not in the conversation (users, reviewers, maintainers and future contributors) in professional documentation style, not chat style or a personal assistant's voice.
 
-Base standard: the Google developer documentation style guide (https://developers.google.com/style). The distillation below is the working set; consult the guide when a case is not covered.
+- Base standard: the Google developer documentation style guide (https://developers.google.com/style).
+- Work from the distillation below; when a case is not covered, consult the guide.
 
-Apply these principles in English and French. The target language's grammar and established product terms win.
+Apply these principles in English and French; where they conflict with the target language's grammar or established product terms, those win.
 
 ## Voice and grammar
 
@@ -42,6 +43,10 @@ Apply these principles in English and French. The target language's grammar and 
 
 ## Scope boundary
 
-This skill governs work products only. Where a repository's conventions or a delivery skill's format conflict (a changelog format or PR handoff template), those win; this skill governs only the sentences inside. It never chooses facts, document ownership, evidence state, or publication authority.
+- This skill governs work products only.
+- When a repository's conventions or a delivery skill's format conflict with it (a changelog format or PR handoff template), those win; this skill governs only the sentences inside.
+- Never choose facts, document ownership, evidence state or publication authority with this skill.
 
-Preserve facts, audience, and evidence state. Retain required literal identifiers, user-facing error codes, counts, and units. When sources conflict, do not choose one, edit the disputed fact, or mark the conflict resolved. Preserve the conflict and return it to the fact owner or the user.
+- Preserve facts, audience and evidence state.
+- Retain required literal identifiers, user-facing error codes, counts and units.
+- When sources conflict, do not choose one, edit the disputed fact or mark the conflict resolved: preserve the conflict and return it to the fact owner or the user.

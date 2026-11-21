@@ -1,6 +1,6 @@
 # Adapt from first principles
 
-Start with the decision the AI must support, not a list of documents it could create.
+Start with the decision the AI must support, not a list of documents it could create. Ask for a fact only when a step other than writing the page depends on it, such as choosing a recipient or a price; never ask for it just to complete a profile.
 
 ## Independent dimensions
 
@@ -13,15 +13,19 @@ Start with the decision the AI must support, not a list of documents it could cr
 | Relationships and audience | A project may involve an agency, a client and an operating team. | Place each fact with its owner and authorized audience; avoid org-wide leakage. |
 | Evidence and commitment | Idea, intended direction, observed use, actual sale, explicit decision. | Keep them distinct, attributed and revisable; do not derive one from another. |
 
-These dimensions are optional lenses, not tags to populate or mutually exclusive personas. Add an unanticipated dimension only when it changes a real decision.
+- Use these dimensions as optional lenses, not tags to populate or mutually exclusive personas.
+- Add an unanticipated dimension only when it changes a real decision.
 
 ## Decide where context belongs
 
-Read the existing owner first. An association charter can own mission; a project README can own experimental purpose; the Activity Overview onboarding seeded can own the creator's directly stated activity. Keep substantial detail on its owning page rather than copying it.
+- Read the existing owner first. An association charter can own mission; a project README can own experimental purpose; the Activity Overview onboarding seeded can own the creator's directly stated activity.
+- Keep substantial detail on its owning page rather than copying it.
+- Create a separate brief when its independent scope or audience requires it, or when context can no longer stay concise without losing necessary meaning.
+- Before extracting context, identify which section becomes authoritative, preserve its provenance, and obtain any required move/overwrite authorization. Leave a link in its place, never a second copy.
 
-Create a separate brief when its independent scope or audience requires it, or when context can no longer stay concise without losing necessary meaning. Before extracting context, identify which section becomes authoritative, preserve its provenance, and obtain any required move/overwrite authorization. Leave a link in its place, never a second copy.
-
-A brief may contain purpose, relevant participants/relationships, contribution to value, chosen direction and non-choices, constraints and source links. These are possible content, not mandatory headings. Diagnosis is useful when an actual obstacle drives a choice; do not require “the single obstacle” for every activity. A good choice explains what it changes and excludes; generic aspirational strategy is insufficient.
+A brief may contain purpose, relevant participants/relationships, contribution to value, chosen direction and non-choices, constraints and source links. These are possible content, not mandatory headings.
+- Diagnosis is useful when an actual obstacle drives a choice; do not require “the single obstacle” for every activity.
+- A good choice explains what it changes and excludes; generic aspirational strategy is insufficient.
 
 ## Counterexamples to challenge the model
 
