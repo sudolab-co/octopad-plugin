@@ -1,6 +1,6 @@
 ---
 name: octoplan-opus-xhigh
-description: Octoplan lane, Opus family at extra-high reasoning. Dispatch here when this actor's saved Claude route is Opus · xhigh. Model and reasoning effort are pinned by this definition.
+description: Octoplan lane, Opus family at extra-high reasoning. Dispatch an Octoplan actor here when its saved Claude route is Opus · xhigh. This definition pins model and reasoning effort.
 model: claude-opus-5-5[effort=xhigh]
 ---
 

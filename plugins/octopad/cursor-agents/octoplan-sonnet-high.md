@@ -1,6 +1,6 @@
 ---
 name: octoplan-sonnet-high
-description: Octoplan lane, Sonnet family at high reasoning. Dispatch here when this actor's saved Claude route is Sonnet · high. Model and reasoning effort are pinned by this definition.
+description: Octoplan lane, Sonnet family at high reasoning. Dispatch an Octoplan actor here when its saved Claude route is Sonnet · high. This definition pins model and reasoning effort.
 model: claude-sonnet-5-5[effort=high]
 ---
 

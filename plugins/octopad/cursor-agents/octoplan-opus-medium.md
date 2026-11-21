@@ -1,6 +1,6 @@
 ---
 name: octoplan-opus-medium
-description: Octoplan lane, Opus family at medium reasoning. Dispatch here when this actor's saved Claude route is Opus · medium. Model and reasoning effort are pinned by this definition.
+description: Octoplan lane, Opus family at medium reasoning. Dispatch an Octoplan actor here when its saved Claude route is Opus · medium. This definition pins model and reasoning effort.
 model: claude-opus-5-5[effort=medium]
 ---
 

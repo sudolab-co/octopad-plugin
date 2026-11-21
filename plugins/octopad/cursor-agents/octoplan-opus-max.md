@@ -1,6 +1,6 @@
 ---
 name: octoplan-opus-max
-description: Octoplan lane, Opus family at max reasoning. Dispatch here only when this actor's saved Claude route is Opus · max with its recorded reason. Model and reasoning effort are pinned by this definition.
+description: Octoplan lane, Opus family at max reasoning. Dispatch an Octoplan actor here only when its saved Claude route is Opus · max with its recorded reason. This definition pins model and reasoning effort.
 model: claude-opus-5-5[effort=max]
 ---
 

@@ -11,7 +11,7 @@
       "id": 2,
       "prompt": "You are an Octoplan executor. Your own context was compacted after unit two of a three-unit task. You have no Octopad access in your brief. Your supplied brief, repository rules, current diff, logs and reviewer findings remain readable; unit three is covered by the same authority. State how you continue, which tools you need and whether you return or request a new executor.",
       "should_trigger": true,
-      "expected_behavior": "Stay same executor; reread brief, rules and actual artifact including uncommitted work, checks and unresolved effects. Call no Octopad tool, even start_session or skill_opened. Resume covered third unit after recovery; request only material missing context from supervisor. Preserve review findings and attempt limits; no replacement or fresh review solely for compaction."
+      "expected_behavior": "Stay same executor; reread brief, rules and actual artifact including uncommitted work, checks and unresolved effects. Call no Octopad tool, even start_session. Resume covered third unit after recovery; request only material missing context from supervisor. Preserve review findings and attempt limits; no replacement or fresh review solely for compaction."
     },
     {
       "id": 3,

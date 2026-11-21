@@ -1,6 +1,6 @@
 ---
 name: octoplan-fable-xhigh
-description: Octoplan lane, Fable family at extra-high reasoning. Dispatch here only when this actor's saved Claude route is Fable · xhigh and its conditions hold (availability, 30-day data retention accepted). Model and reasoning effort are pinned by this definition.
+description: Octoplan lane, Fable family at extra-high reasoning. Dispatch an Octoplan actor here only when its saved Claude route is Fable · xhigh and the route's conditions hold (availability, 30-day data retention accepted). This definition pins model and reasoning effort.
 model: claude-fable-5-1[effort=xhigh]
 ---
 
