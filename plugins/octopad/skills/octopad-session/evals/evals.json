@@ -3,9 +3,9 @@
   "protocol": {
     "status": "unrun_pending_user_protocol_approval",
     "model_calls_run": 0,
-    "purpose": "Compare the `followup` description before and after group 5's F1 on the follow rule; static checks do not establish AI behavior.",
+    "purpose": "Compare the `followup` description before and after the rework of its follow rule; static checks do not establish AI behavior.",
     "execution": "Subscription CLI only, after the operator approves the concrete protocol (decision of 2026-11-11: model runs wait for the end-of-build tests). Fictional fixtures and intercepted writes; no real person's Notepad, paid API or background action.",
-    "comparison": "Run each case with the current plugin twice: once with the `followup` description served at `f61fd8395`, once with group 5's F1. Score each expected outcome independently; a follow that does not clearly help the user or that the reply does not tell them of, a theme saved without the user's yes or a repeated start_session fails its case.",
+    "comparison": "Run each case with the current plugin twice: once with the `followup` description served before that rework, once with the reworked one. Score each expected outcome independently; a follow that does not clearly help the user or that the reply does not tell them of, a theme saved without the user's yes or a repeated start_session fails its case.",
     "release_limit": "Unrun cases are not a routing, behavioral or non-regression pass."
   },
   "evals": [
