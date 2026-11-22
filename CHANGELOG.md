@@ -1,6 +1,6 @@
 # Changelog
 
-## 33.10.0 - Unreleased
+## 33.10.0 - 2026-11-22
 
 Applies the final texts of the rule review: each skill states its rules one per line, a few rules move to the methodology or to a tool's own text, and some behavior is added or dropped.
 
@@ -21,7 +21,7 @@ Applies the final texts of the rule review: each skill states its rules one per 
 
 Needs the server change that serves methodology 3.10.0 (the companion server pull request): the question about a task that may be personal in the `tasks` and `batch_tasks` texts; the stream states, trackers and Closing Report in the `work_streams` `status` text; the step on a low-confidence result in the `search` and `batch_search` result line; and the final tool descriptions, parameter texts, result lines, refusals and hook answers of the same review. The planning skill's links also need the server change that replaces the `builds_on` kind with `link` in the `tasks` and `work_streams` texts. All three distributions move to 33.10.0.
 
-## 33.9.0 - Unreleased
+## 33.9.0 - 2026-11-22
 
 Gives each rule one home: the skills drop the copies the methodology or a tool text now carries, and close the gaps a review of the whole rule set found.
 
