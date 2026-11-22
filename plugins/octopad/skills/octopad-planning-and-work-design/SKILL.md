@@ -2,7 +2,7 @@
 name: octopad-planning-and-work-design
 description: "Use when agreed work has an end state and needs three or more tasks over more than one sitting; when a request holds several deliverables or a step another member carries out; when you are about to create, change, complete, rename, merge, split or archive a stream or a goal, or learn of such a change; when one stream waits on or continues another; when a task leaves its stream by archive, deletion or move; when a result, a decision or a new task changes what a stream's remaining tasks assume; before laying out several tasks as a plan; when the number of tasks, nesting, prerequisites, priority order, a date or repeating work is undecided or wrong; and when a test would launch AI sessions, take a person's time or cost money. When the prepared work could benefit from delivery by agents, such as work that needs no choice from the user at each step, open the `octoplan` skill for that delivery."
 ---
-Version: 7.4.0
+Version: 7.5.0
 
 # From a need to prepared work
 
@@ -45,7 +45,7 @@ Before you offer agent delivery or change how work is delivered, read [Choosing 
 - Add a preparation task only for a real prerequisite that the others cannot start without, such as a shared contract they must all follow; two unrelated fixes stay independent, whatever order they are done in.
 - When the user wants an order no prerequisite imposes, open the `octopad-notepad` skill, section "Priorities", and keep that order in their priorities, with its reason in the `why:` of the priority it concerns, where they have a Notepad. Never invent a prerequisite for it, and never lower a sibling's priority to push it down.
 - Link two subtasks by a dependency only where one truly blocks the other, which is rare. That link never replaces a dependency between their parent tasks: where the parents need one, link them too.
-- When a task takes up or continues another task's result without waiting on it, such as a fix opened after a review, link it `builds_on` with what it takes from that result; keep `depends_on` for a real wait. Link no duplicate: cancel it, naming the task it duplicates.
+- When a task takes up or continues another task's result without waiting on it, such as a fix opened after a review, give it a link of kind `link` whose reason says what it takes from that result; keep `depends_on` for a real wait. Link no duplicate: cancel it, naming the task it duplicates.
 
 # What a goal carries
 
@@ -76,8 +76,8 @@ Before you offer agent delivery or change how work is delivered, read [Choosing 
 - The plan is the task tree: top-level tasks with their dependencies, priority, impact and real due dates. Keep it there, not in a page or a list of your own.
 - Before you start the first task, land everything the ask names in one pass: the goal, the stream, and every task you already know, in as few `batch_tasks` calls as its limits allow, with assignments and dependencies.
 - When a stream's whole work follows one logic, mark its main parts: start each top-level task's title with its phase, `P1 · <title>`, `P2 · <title>`. Subtasks carry no prefix, and a phase is never a parent task.
-- When parts of an effort have their own success condition, owner, gate or schedule, make each its own stream under the same goal, linked `depends_on` for order or `builds_on` for a continuation. Keep phase prefixes for parts that one Definition of Success covers.
-- When new work arrives after a stream's Definition of Success is met, or serves another result, start a new stream linked `builds_on`.
+- When parts of an effort have their own success condition, owner, gate or schedule, make each its own stream under the same goal, linked `depends_on` for order or `link` for a continuation. Keep phase prefixes for parts that one Definition of Success covers.
+- When new work arrives after a stream's Definition of Success is met, or serves another result, start a new stream with a link of kind `link` to that stream, its reason saying what it continues.
 - When a later task can be written only once the task it waits for is done, say in that dependency's rationale what it takes from it. Copy no sentence across edges.
 
 **Laying out a five-week launch.**
