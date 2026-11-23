@@ -96,6 +96,12 @@
       "prompt": "For my own work this week I want to do the pricing page before the onboarding copy, no reason other than my energy.",
       "should_trigger": true,
       "expected_behavior": "Keeps that order in the user's priorities through the `octopad-pad` skill, section \"Priorities\", with its reason in the `why:` of the priority it concerns. Writes nothing in any goal's description and adds no dependency."
+    },
+    {
+      "id": 17,
+      "prompt": "Pause the 'Partner API' stream until the legal review is back. (Its answer shows the stream 'Partner portal' depends on it, and its link to 'Billing v2' is marked to review.)",
+      "should_trigger": true,
+      "expected_behavior": "After the pause, checks the stream once: reads each open top-level task in one line and the links marked to review; rewrites the line of the 'Billing v2' link, or confirms it with `confirm: true` when it still holds; tells the user in one line that 'Partner portal' waits on the paused stream. Changes no other stream's status."
     }
   ]
 }
