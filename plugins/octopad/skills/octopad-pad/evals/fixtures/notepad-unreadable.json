@@ -487,9 +487,9 @@
    "beta2": "theme:12baf3ca",
    "press": "theme:919e5e2c"
   },
-  "notepad_get": {
-   "status": "unavailable",
-   "error": "NOTEPAD_UNAVAILABLE"
+  "notes_get": {
+   "isError": true,
+   "text": "\"Private Notepad unavailable. No change was made; shared pages are not a private fallback.\""
   },
   "save": {
    "ok": {
