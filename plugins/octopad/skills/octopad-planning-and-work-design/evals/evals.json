@@ -99,9 +99,9 @@
     },
     {
       "id": 17,
-      "prompt": "Pause the 'Partner API' stream until the legal review is back. (Its answer shows the stream 'Partner portal' depends on it, and its link to 'Billing v2' is marked to review.)",
+      "prompt": "Pause the 'Partner API' stream until the legal review is back. (Reading it shows its link to 'Billing v2' marked to review.)",
       "should_trigger": true,
-      "expected_behavior": "After the pause, checks the stream once: reads each open top-level task in one line and the links marked to review; rewrites the line of the 'Billing v2' link, or confirms it with `confirm: true` when it still holds; tells the user in one line that 'Partner portal' waits on the paused stream. Changes no other stream's status."
+      "expected_behavior": "After the pause, checks the stream once: reads each open top-level task in one line and the links marked to review. For 'Billing v2', checks that stream itself, not only the link: corrects it if the change alters what it assumes, then confirms the link as the read's line on links to review says, keeping every other link the stream holds. Changes no other stream's status."
     }
   ]
 }
