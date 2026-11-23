@@ -4,11 +4,10 @@
 
 Teaches goals as the server now holds them: their own framing fields and a measured figure, and the goal lines a Pad save returns.
 
-- `octopad-planning-and-work-design` 8.0.0: a goal's why, success criterion and target go in its own fields (`rationale`, `success_criterion`, `nature` with `baseline_value`, `target_value` and `target_unit`, and, only when real, `goal_scope`, `guardrails` and `stop_condition`), no longer as "Why now:", "Deadline", "Scope:", "Guardrail:" and "Stop if:" lines in its `description`. The reason for a real deadline goes in `rationale`. The AI records each new figure of a number goal's primary signal with `record_measurement`, and judges the goal from it, never from its done tasks.
+- `octopad-planning-and-work-design` 8.0.0: a goal's why, success criterion and target go in its own fields (`rationale`, `success_criterion`, `nature` with `baseline_value`, `target_value` and `target_unit`, and, only when real, `goal_scope`, `guardrails` and `stop_condition`), no longer as "Why now:", "Deadline", "Scope:", "Guardrail:" and "Stop if:" lines in its `description`. The reason for a real deadline goes in `rationale`. The AI records each new figure of a number goal's primary signal with `record_measurement`, with where it comes from, and judges the goal from it, never from its done tasks.
 - `octopad-pad` 7.0.0: after the Pad update, the AI acts on every goal line that the save of Today's brief returns, a missing update, a missing figure or a passed deadline, no longer on goal status lines alone.
-- `octopad-session` 34.0.0.
 
-Needs the server change that serves methodology 3.13.0 (the companion server pull request) and the database changes it relies on: the status updates (migration 845), the goal framing and figures (848) and the passed deadlines (852).
+Needs the server change that serves methodology 3.13.0 (the companion server pull request) and the database changes it relies on: the status updates (migration 845), the goal framing and figures (848) and the passed deadlines (852). All three distributions move to 34.0.0.
 
 ## 33.12.0 - Unreleased
 
