@@ -1,5 +1,12 @@
 # Changelog
 
+## 33.12.0 - Unreleased
+
+- `octopad-session` 33.12.0: the skill opens as soon as the conversation concerns something the user organizes or follows over time, at work or in their own life (a company, a project, a product, code, customers, a team, plans, or their own affairs: paperwork, a move, a household), no longer only their company and its work.
+- `octopad-planning-and-work-design` 7.5.1: a goal's destination is one everyone involved shares; the goal rules no longer presume a team. Same demands.
+
+Pairs with the server change that widens the same trigger in the server instructions. All three distributions move to 33.12.0.
+
 ## 33.11.0 - Unreleased
 
 - `octoplan` 10.5.0: when an outcome names a population (every user, AI client, platform or pricing plan), the Plan contract lists its variants with what is measured for each, and gives each a task, a measurement or a named limit; a task covering only some names which. Phase 3's review attacks population coverage.
