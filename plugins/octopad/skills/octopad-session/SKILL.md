@@ -10,4 +10,4 @@ Version: 35.0.0
 2. Call `start_session`.
 3. When the methodology's router sends a request to a skill, open `../<skill>/SKILL.md`, beside this skill, and check its path: never use a personal or standalone skill of the same name in its place. If you cannot open that file, work from the methodology alone.
 
-When another person's work can affect the user's own, offer to add it to their priorities as the `octopad-notepad` skill (section "Priorities") says.
+When another person's work can affect the user's own, offer to add it to their priorities as the `octopad-pad` skill (section "Priorities") says.
