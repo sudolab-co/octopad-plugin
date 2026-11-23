@@ -60,7 +60,7 @@ Before you offer agent delivery or change how work is delivered, read [Choosing 
   - `guardrails`: `Support load stays under 20 tickets a week.`
   - `stop_condition`: `Fewer than 5 active accounts after the beta.`
 - When you learn a new figure of a number goal's primary signal, from the user or a source, record it with `record_measurement`: its `note` saying where it comes from, and its `sources` when a record holds it. A number goal is judged from that figure, never from its done tasks.
-- When the team chooses an order between goals that no prerequisite imposes, write it, with its reason, in the `description` of each goal it concerns, which every member reads: never as an invented dependency, and never only in one person's priorities.
+- When the team chooses an order between goals that no prerequisite imposes, write it, with its reason, in the `description` of each goal it concerns, which every member reads: never as an invented dependency, and never only in one person's priorities. Before you propose an order across goals, or what to pick up next among them, read the `description` of the goals concerned.
 - When part of one goal serves part of another goal of the organization, link them with `link_goal`, saying which part serves which; a goal may serve several goals or none. When a goal changes, closes or is dropped, check that its links still hold.
 - Once a goal not yet closed is the primary goal of streams and none of them is active or paused, propose closing it to the user, with the outcome they name.
 
@@ -68,7 +68,7 @@ Before you offer agent delivery or change how work is delivered, read [Choosing 
 
 - File work yourself and say where: this session's workspace, or another whose description fits the work better. When no workspace fits the work, ask the user where to file it; otherwise never ask where to file work.
 - Agreed work: reuse a goal and a stream that fit it, and open a new stream only when the work has an end state and takes three or more tasks over more than one sitting.
-- Before you create a stream or a goal, read the streams close to it under any goal, with their links (`build_context(mode: "work_stream", query)`), and the goals orientation lists: reuse one, or link the new one to it, rather than duplicate it.
+- Before you create a stream or a goal, read the active streams nearest to it in meaning, whatever their goal (`build_context(mode: "work_stream", query)`), then the links of each that fits (`work_stream_name`), and the goals orientation lists: reuse one, or link the new one to it, rather than duplicate it.
 - A single task: match its stream as `work_stream_id` says; with no stream, give it the tags already in use that fit it.
 - Where no goal fits the work, propose the one that would, with its outcome and why; create it on the user's confirmation, and continue independent authorized work meanwhile.
 - When you find that one stream waits on or continues another, link them through `links`. Weigh a stream's `depends_on` link when you choose what to pick up next; it never blocks.
@@ -96,11 +96,11 @@ User, on 2026-04-26: *"Lay out the launch: research, then design, then build, th
 
 # When an effort ends or changes shape
 
-- Each time a task is added to, reopened in, closed in, moved into or out of a stream, or handed over for review, and as soon as the user gives an instruction that affects the stream, check the stream's tasks and Definition of Success against the user's instructions and the actual results, not only against each other, before dependent work continues:
+- Each time a task is added to, reopened in, closed in, moved into or out of a stream, or handed over for review (`pending_review`), and as soon as the user gives an instruction that affects the stream, check once each stream concerned, even when a batch changes several of its tasks (for a move, the one it left and the one it joined): its tasks and Definition of Success against the user's instructions and the actual results, not only against each other, before dependent work continues:
   1. Read only its Definition of Success and, for each open top-level task, its title, one-liner, status, status line and the rationale of its dependencies; open a task's description only where the check touches it.
   2. Put right what no longer matches and nothing else: the order and its dependencies; a task made false, rewritten in place; a task left short, made precise now that what it waited for exists; a task made useless, `cancelled`; a missing task, created; work already started on the old basis, checked before it goes further. When you change a Done when or the Definition of Success, tell the user the old text, the new and why; lowering what one requires when the user did not ask for it needs their confirmation first. Record a Definition of Success change as a Decision scoped to the stream, with the old text, the new and why.
   3. Tell the user in one line what moved; when nothing moved, write nothing.
-- When the user keeps on purpose a stream that looks finished or idle, write that and why in its update (`work_streams` `set_status`), which every member's AI reads, so no AI proposes its cleanup again.
+- When the user keeps on purpose a stream that looks finished or idle, write that and why in its update, where `work_streams` offers `set_status`, which every member's AI reads, so no AI proposes its cleanup again.
 - Keep the tracker's Scope and Rationale true: correct them in place when the work shows they no longer hold.
 - Record a split, merge or move in the links and Decisions it changes, not as a dated line on a tracker.
 

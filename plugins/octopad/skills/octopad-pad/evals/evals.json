@@ -2970,7 +2970,8 @@
       },
       "expected_behavior": [
         "Saves the priority's removal at once, as the user's word.",
-        "Names in one line the unfinished work it held (the stream's 3 open tasks) and asks whether to close it, set it aside with a reminder or keep it; changes no task before the answer."
+        "Names in one line the unfinished work it held (the stream's 3 open tasks) and asks whether to close it, set it aside with a reminder or keep it; changes no task before the answer.",
+        "When the user then says to close it, proposes each open task's fate and waits for their yes before ending the stream."
       ]
     },
     {
@@ -2986,6 +2987,34 @@
         "Writes one `needs_you` sentence in Today's brief's `outside` section citing 'Beta launch', its `detail` saying why it looks done and its `prompt` starting a session to archive it.",
         "Leaves out 'Partner portal', kept on purpose per its latest update.",
         "Archives nothing itself."
+      ]
+    },
+    {
+      "id": "priority-reorder-asks-nothing",
+      "prompt": "Put the Desktop priority first and the rules second.",
+      "must_load": true,
+      "context": {
+        "work": [
+          "Priorities: 1 'Rules' (stream with 4 open tasks), 2 'Desktop' (stream with 6 open tasks)."
+        ]
+      },
+      "expected_behavior": [
+        "Saves the new order at once, as the user's word.",
+        "Asks nothing about the open tasks of the priority that moved down, and changes no task."
+      ]
+    },
+    {
+      "id": "finished-streams-none",
+      "prompt": "Update my Pad.",
+      "must_load": true,
+      "context": {
+        "work": [
+          "Pad context for Today's brief lists no completed or cancelled stream."
+        ]
+      },
+      "expected_behavior": [
+        "Writes no stream cleanup sentence in Today's brief.",
+        "Archives nothing."
       ]
     }
   ]

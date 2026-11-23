@@ -81,15 +81,21 @@
     },
     {
       "id": 14,
-      "prompt": "Create a stream for redoing the signup emails.",
+      "prompt": "Create a stream for redoing the signup emails. (The workspace already has an active stream 'Onboarding emails', under another goal, whose one-liner covers the signup sequence.)",
       "should_trigger": true,
-      "expected_behavior": "Before creating, reads the streams close to it under any goal with their links (`build_context(mode: \"work_stream\", query)`), and the goals orientation lists. When one fits (for example an active stream on onboarding emails), proposes reusing it or links the new stream to it with a one-line reason instead of creating a duplicate."
+      "expected_behavior": "Before creating, reads the active streams nearest in meaning (`build_context(mode: \"work_stream\", query)`), then the links of 'Onboarding emails'. Proposes reusing 'Onboarding emails' for this work, or creating the new stream linked to it with a one-line reason; never creates an unlinked duplicate."
     },
     {
       "id": 15,
       "prompt": "Leave the 'Partner portal' stream as it is, I know it looks finished but I want to keep it open for the next partner.",
       "should_trigger": true,
       "expected_behavior": "Writes in the stream's update (`work_streams` `set_status`) that the user keeps it open on purpose and why (waiting for the next partner), so no AI proposes its cleanup again. Changes neither its status nor its tasks."
+    },
+    {
+      "id": 16,
+      "prompt": "For my own work this week I want to do the pricing page before the onboarding copy, no reason other than my energy.",
+      "should_trigger": true,
+      "expected_behavior": "Keeps that order in the user's priorities through the `octopad-pad` skill, section \"Priorities\", with its reason in the `why:` of the priority it concerns. Writes nothing in any goal's description and adds no dependency."
     }
   ]
 }
