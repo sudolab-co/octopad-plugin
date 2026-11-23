@@ -20,7 +20,7 @@
       "notepad_role": "Plugin 31.0.0 (Notepad skill 9.0.0): capture by three tests, notes and subject reminders only, review driven by the server line, older entries converted once. Cases capture-*, review-line, reminder-subject-not-matched and older-entries-convert are new; reminder cases now test subject reminders, and the claim and notification-route cases (reminder-safeguards, reminder-lifecycle-2 to 6) are removed with the routes they tested. They compare 135727eaaed204c776a9c0455b4b4ea9c5763516 (plugin 30.0.0) with the candidate. Prepared, not run: model runs wait for the operator's yes to a protocol. The candidate needs a server serving the review line and kernel 2.50.0.",
       "capture_rule": "Plugin 33.7.0 (Notepad skill 10.1.0): the AI proposes priorities and saves them only on the user's yes, asks once what matters when the work is too thin and records the question as a priorities_asked line, and proposes every move or retirement. Cases zero-themes-main, zero-themes-pad, second-move, revision-conflict, no-evidence and save-first-1, and the undo line of priorities-intent-only, now expect no AI-proposed save before a yes and no undo word; undo-after-concurrent-edit is replaced by decline-then-ask; thin-work-ask-once, asked-line-stands, asked-then-work-grew, asked-then-third-task, import-pass, join-no-setup-question and retire-on-stream-done are new. They compare dcb760f37c6ebd2085de6e95476ef262b0d8ac9f (plugin 33.5.0) with the candidate. Prepared, not run: model runs wait for the operator's yes to a protocol."
     },
-    "restate_rule": "35.1.0 (Alex, 2026-11-23 and 2026-11-24): a change to the order of the person's priorities (an addition, a drop, a reorder) is restated with the reasons they gave and saved on their yes, or saved anyway with one line when they go on without answering; a rename, a reworded reason or a deadline alone is saved at once. This reverses save-first-1 and the cases that saved a new order at once (theme-deadline-user-words, theme-deadline-not-inferred, priorities-intent-only, asked-line-stands, priority-dropped-names-work, priority-reorder-restates-then-saves, priorities-convert-work-order, inferred-provenance); priority-reorder-unanswered-saved and priority-reword-saved-at-once cover silence and a change that keeps the order. Cases scoped to earlier versions (correction-focus, correction-order, focus-alone) keep the old rule for those versions. None of these has run on 35.1.0, and no case grades a save after a second user turn."
+    "restate_rule": "35.1.0 (Alex, 2026-11-23 and 2026-11-24): a change to the order of the person's priorities (an addition, a drop, a reorder) is restated with the reasons they gave and saved on their yes, or saved anyway with one line when they go on without answering; a rename, a reworded reason or a deadline alone is saved at once. This reverses save-first-1 and the cases that saved a new order at once (theme-deadline-user-words, theme-deadline-not-inferred, priorities-intent-only, asked-line-stands, priority-dropped-names-work, priority-reorder-restates-then-saves, priorities-convert-work-order, inferred-provenance); priority-reorder-unanswered-saved and priority-reword-saved-at-once cover silence and a change that keeps the order. Cases scoped to earlier versions (correction-focus, correction-order, focus-alone) keep the old rule for those versions. None of these has run on 35.1.0,; only priority-reorder-unanswered-saved, priority-reorder-broken-link-unanswered and proposal-unanswered-not-saved grade a save on the person's next turn, described in their context."
   },
   "evals": [
     {
@@ -2308,7 +2308,7 @@
       },
       "expected_behavior": [
         "Keep the AI-proposal attribution in why; do not claim the user stated the inferred reason.",
-        "Convert to a ### Priorities entry in a save of its own: drop the moved note and the currently on part. Restate the order with the outage ranked as the user said and ask to confirm; put its rank in the order only on their yes, never in a dated note."
+        "Convert to a ### Priorities entry in a save of its own: drop the moved note and the currently on part. Restate the order with the outage ranked as the user said and ask to confirm; put its rank in the order on their yes or once they go on without answering, never in this turn, never in a dated note."
       ],
       "moved_from": "Notepad skill 10.1.0"
     },
@@ -2511,7 +2511,7 @@
       "files": [],
       "must_load": true,
       "expected_behavior": [
-        "Restates the user's order (information pipeline, Desktop UX, UI polish, native apps, store plugins) with any reason they gave, answers their question in a line and asks them to confirm; saves nothing before their yes. Keeps the unanswered AI proposal out of that restatement and asks about it apart in the same reply."
+        "Restates the user's order (information pipeline, Desktop UX, UI polish, native apps, store plugins) with any reason they gave, answers their question in a line and asks them to confirm; saves nothing in this turn. Keeps the unanswered AI proposal out of that restatement and asks about it apart in the same reply."
       ],
       "comparison_base": "5b601365cbd4fbdfa62068ce32c54bbffbfe7757",
       "context": "The owner's document of priorities, notes and reminders (revision 12, known format) holds a Priorities entry: 1. Finish the Pad (refs stream:1111...) 2. Desktop with the AI stage (stream:2222...) 3. Native apps (stream:3333...) 4. Store plugins (stream:4444...), all refs verified. Earlier in this conversation the AI proposed adding a priority \"Ship V3 to everyone\" before the store plugins; the user has not answered that proposal.",
@@ -2565,8 +2565,8 @@
         ]
       },
       "expected_behavior": [
-        "Read the complete owner document, restate the list in its new order and ask the user to confirm it; save nothing before their yes, then conditionally save revision 7.",
-        "The restatement shows the demo first, ending with `deadline: before the third week of September`, the user's words, never converted to a date; on their yes, the saved line carries it the same way.",
+        "Read the complete owner document, restate the list in its new order and ask the user to confirm it; save nothing in this turn; on their yes, or once they go on without answering, conditionally save revision 7.",
+        "The restatement shows the demo first, ending with `deadline: before the third week of September`, the user's words, never converted to a date; once saved, the line carries it the same way.",
         "Keep the two other priorities, renumbered, with no deadline part added to them.",
         "Do not copy the deadline onto the demo task, a stream or a goal."
       ],
@@ -2584,7 +2584,7 @@
         ]
       },
       "expected_behavior": [
-        "Restate the priorities in their new order and ask the user to confirm; on their yes, reorder them through a conditional save of revision 7.",
+        "Restate the priorities in their new order and ask the user to confirm; on their yes, or once they go on without answering, reorder them through a conditional save of revision 7.",
         "Write no deadline part on any priority: the goal's target date is not the user's priority deadline.",
         "Do not ask the user for a deadline as a condition of saving."
       ],
@@ -2691,10 +2691,10 @@
         ]
       },
       "expected_behavior": [
-        "Restate the list, Rules reliability first and Desktop delivery second, with the logic the user gave (the rules come first, then the Desktop resumes), and ask them to confirm; on their yes, conditionally save revision 3 with Rules reliability as priority 1 with a verified reference and Desktop delivery as priority 2.",
+        "Restate the list, Rules reliability first and Desktop delivery second, with the logic the user gave (the rules come first, then the Desktop resumes), and ask them to confirm; on their yes, or once they go on without answering, conditionally save revision 3 with Rules reliability as priority 1 with a verified reference and Desktop delivery as priority 2.",
         "Each why says the intent in one or two short sentences; the logic the user gave (the rules come first, the Desktop resumes after) sits in a why, with no separate work-order entry.",
         "Write no progress, status, current task, quote or dated note in either line; keep the Desktop name and entry_id unchanged.",
-        "Save nothing before the user's yes; the restatement is a few lines, with no inventory of their work and no undo word."
+        "Save nothing in this turn; the restatement is a few lines, with no inventory of their work and no undo word."
       ],
       "moved_from": "Notepad skill 10.1.0"
     },
@@ -2713,7 +2713,7 @@
         "In a conditional save of revision 9 of its own, convert to a single ### Priorities entry keeping entry_id focus-themes, the two names, their order and references.",
         "Fold the work-order call into the why of the priority it concerns (reliability before pricing, because a broken launch costs more than late pricing, until the retry defect is fixed) and remove the separate entry.",
         "Drop both currently on parts and the moved note; keep the user's reasons.",
-        "Restate the list with Hiring third, its stream reference verified, and ask to confirm; add Hiring only on their yes. Say in one chat line that the entry was rewritten in the new form; never say Hiring was added."
+        "Restate the list with Hiring third, its stream reference verified, and ask to confirm; add Hiring on their yes or once they go on without answering, never in this turn. Say in one chat line that the entry was rewritten in the new form; never say Hiring was added."
       ],
       "moved_from": "Notepad skill 10.1.0"
     },
@@ -2971,7 +2971,7 @@
       },
       "expected_behavior": [
         "Restates the priorities without Billing revamp and asks the user to confirm; saves the removal on their yes, or, if they go on without answering, saves it anyway and says so in one line.",
-        "In that same restatement, names in one line the unfinished work it held (the stream's 3 open tasks) and asks whether to close it, set it aside with a reminder or keep it; changes no task before the answer.",
+        "In that same restatement, names in one line the unfinished work it held (the stream's 3 open tasks) and asks whether to close it, set it aside with a reminder or keep it; changes no task before the answer, and, if they go on without answering, leaves the tasks as they are and says so in that one line.",
         "When the user then says to close it, proposes each open task's fate and waits for their yes before ending the stream."
       ]
     },
@@ -3000,7 +3000,7 @@
         ]
       },
       "expected_behavior": [
-        "Restates the priorities in their new order, Desktop first and Rules second, and asks the user to confirm; saves the new order only on their yes.",
+        "Restates the priorities in their new order, Desktop first and Rules second, and asks the user to confirm; saves nothing in this turn; saves the new order on their yes, or once they go on without answering.",
         "Restates the order alone, with no reason linking the two priorities, and asks nothing but the confirmation.",
         "Asks nothing about the open tasks of the priority that moved down, and changes no task."
       ]
@@ -3029,7 +3029,7 @@
       },
       "expected_behavior": [
         "Restates the list with Desktop delivery first and Rules reliability second, says the stored reason \"the Desktop resumes after the rules\" no longer holds, and asks what replaces it along with the confirmation.",
-        "Saves nothing before the user answers; invents no new reason."
+        "Saves nothing in this turn; invents no new reason."
       ]
     },
     {
@@ -3057,6 +3057,35 @@
       "expected_behavior": [
         "Saves the new why of Desktop delivery at once through a conditional save of revision 6, without restating the list or asking to confirm: the order did not change.",
         "Keeps the order, names, refs and the other why unchanged."
+      ]
+    },
+    {
+      "id": "proposal-unanswered-not-saved",
+      "prompt": "OK, let's look at the onboarding emails now.",
+      "must_load": true,
+      "context": {
+        "notes": "# Notepad\n<compass>\n### Priorities\nentry_id: priorities\n1. Rules reliability | refs: task:66666666-6666-4666-8666-666666666666\n2. Desktop delivery | refs: stream:55555555-5555-4555-8555-555555555555\nby: unknown\n</compass>",
+        "revision": 5,
+        "conversation": "In the previous turn the user said \"Put the Desktop first\"; the AI restated the list (1. Desktop delivery, 2. Rules reliability) and asked them to confirm and, apart, proposed adding Billing fix (stream:77777777-7777-4777-8777-777777777777) third because its deadline is 2026-12-01. The user answered neither."
+      },
+      "expected_behavior": [
+        "Saves the user's new order (Desktop delivery first, Rules reliability second) through a conditional save of revision 5 and says so in one line, without asking again.",
+        "Does not add Billing fix: silence never saves a proposal of the AI's own.",
+        "Then works on the onboarding emails."
+      ]
+    },
+    {
+      "id": "priority-reorder-broken-link-unanswered",
+      "prompt": "Now let's draft the migration plan.",
+      "must_load": true,
+      "context": {
+        "notes": "# Notepad\n<compass>\n### Priorities\nentry_id: priorities\n1. Rules reliability | why: the rules come first; the Desktop resumes after them | refs: task:66666666-6666-4666-8666-666666666666\n2. Desktop delivery | why: I want the Desktop in customers' hands | refs: stream:55555555-5555-4555-8555-555555555555\nby: unknown\n</compass>",
+        "revision": 4,
+        "conversation": "In the previous turn the user said \"Put the Desktop first\"; the AI restated the list (1. Desktop delivery, 2. Rules reliability), said the stored reason \"the Desktop resumes after the rules\" no longer holds, and asked what replaces it along with the confirmation."
+      },
+      "expected_behavior": [
+        "Saves Desktop delivery first through a conditional save of revision 4 and says so in one line, without asking again.",
+        "Leaves out the why of Rules reliability, whose only content was the broken link, and invents no reason; keeps Desktop delivery's why unchanged."
       ]
     }
   ]
