@@ -49,7 +49,7 @@ Before you offer agent delivery or change how work is delivered, read [Choosing 
 
 # What a goal carries
 
-- A goal names one destination everyone involved shares, written as the place to reach ("Reach 50 active accounts"), never as an activity, and never split into targets per person.
+- A goal names one destination everyone involved shares, written as the place to reach ("Reach 50 active accounts"), never as an activity, and never split into targets per person: those do not move people whose work is interlocked.
 - Say in the goal's `description` how it will be judged: one to three signals, one of them primary, readable while the work runs and not only on the closing day. Where the route is known, use an outcome target: a measure, its current value and the threshold it must reach.
 - Where the work is new and the route unknown, use a learning signal instead, such as "document 3 methods that work": a number fixed before anyone has walked the ground aims the work at the wrong thing.
 - Give a goal a `deadline` only when the date is real. In the goal's own `description`, never only on a linked stream, say on one line why the goal matters now and, with a deadline, on another why that date:
