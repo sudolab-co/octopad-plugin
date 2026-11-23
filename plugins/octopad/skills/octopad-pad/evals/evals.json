@@ -20,7 +20,7 @@
       "notepad_role": "Plugin 31.0.0 (Notepad skill 9.0.0): capture by three tests, notes and subject reminders only, review driven by the server line, older entries converted once. Cases capture-*, review-line, reminder-subject-not-matched and older-entries-convert are new; reminder cases now test subject reminders, and the claim and notification-route cases (reminder-safeguards, reminder-lifecycle-2 to 6) are removed with the routes they tested. They compare 135727eaaed204c776a9c0455b4b4ea9c5763516 (plugin 30.0.0) with the candidate. Prepared, not run: model runs wait for the operator's yes to a protocol. The candidate needs a server serving the review line and kernel 2.50.0.",
       "capture_rule": "Plugin 33.7.0 (Notepad skill 10.1.0): the AI proposes priorities and saves them only on the user's yes, asks once what matters when the work is too thin and records the question as a priorities_asked line, and proposes every move or retirement. Cases zero-themes-main, zero-themes-pad, second-move, revision-conflict, no-evidence and save-first-1, and the undo line of priorities-intent-only, now expect no AI-proposed save before a yes and no undo word; undo-after-concurrent-edit is replaced by decline-then-ask; thin-work-ask-once, asked-line-stands, asked-then-work-grew, asked-then-third-task, import-pass, join-no-setup-question and retire-on-stream-done are new. They compare dcb760f37c6ebd2085de6e95476ef262b0d8ac9f (plugin 33.5.0) with the candidate. Prepared, not run: model runs wait for the operator's yes to a protocol."
     },
-    "restate_rule": "35.1.0 (Alex, 2026-11-23): a change to the person's priorities waits for their yes to a restatement of the list. This reverses save-first-1 and the cases that saved a priority change at once (theme-deadline-user-words, theme-deadline-not-inferred, priorities-intent-only, asked-line-stands, priority-dropped-names-work, priority-reorder-restates-then-saves, priorities-convert-work-order, inferred-provenance); reminder-recurrence-theme-rename-same-receipt now starts at the yes. Cases scoped to earlier versions (correction-focus, correction-order, focus-alone) keep the old rule for those versions. None of these has run on 35.1.0, and no case grades a save after a second user turn."
+    "restate_rule": "35.1.0 (Alex, 2026-11-23 and 2026-11-24): a change to the order of the person's priorities (an addition, a drop, a reorder) is restated with the reasons they gave and saved on their yes, or saved anyway with one line when they go on without answering; a rename, a reworded reason or a deadline alone is saved at once. This reverses save-first-1 and the cases that saved a new order at once (theme-deadline-user-words, theme-deadline-not-inferred, priorities-intent-only, asked-line-stands, priority-dropped-names-work, priority-reorder-restates-then-saves, priorities-convert-work-order, inferred-provenance); priority-reorder-unanswered-saved and priority-reword-saved-at-once cover silence and a change that keeps the order. Cases scoped to earlier versions (correction-focus, correction-order, focus-alone) keep the old rule for those versions. None of these has run on 35.1.0, and no case grades a save after a second user turn."
   },
   "evals": [
     {
@@ -2469,16 +2469,15 @@
     },
     {
       "id": "reminder-recurrence-theme-rename-same-receipt",
-      "prompt": "Yes, go ahead.",
+      "prompt": "Rename my Launch focus theme to Release safety.",
       "must_load": true,
       "context": {
         "notes": "# Notepad\n<compass>\n### Priorities\nentry_id: launch-focus\n1. Launch | why: I want reliable releases | refs: task:11111111-1111-4111-8111-111111111111, stream:22222222-2222-4222-8222-222222222222\nby: unknown\n</compass>\n<reminders>\n### Retry health\nentry_id: recurring-retry-health\nwhen: the next completed production deployment\nremind: Review retry health.\nrefs: task:11111111-1111-4111-8111-111111111111, stream:22222222-2222-4222-8222-222222222222\nrepeat: each completed production deployment\nlast_delivered: 2026-10-30 | 09:15 UTC | session prior-fixture\nby: unknown\n</reminders>",
         "revision": 14,
-        "trigger_and_receipt": "The Oct 30 deployment at 09:15 UTC is the last completed deployment and was already delivered. Its existing receipt for entry recurring-retry-health was recorded with when: the next completed production deployment and the PREVIOUS last_delivered: 2026-10-27 | 09:15 UTC | session earlier-fixture (the prior completed deployment). Its occurrence key is 21847a625e12efe27a71068ab8fdb27604a75231da37cb0a1682566b792bc71e. After that delivery, their document was saved with the current Oct 30 last_delivered shown above; that current value is not the input of the Oct 30 receipt. No later deployment occurred. The rename is the same focus entry and the work relationships are unchanged.",
-        "conversation": "Earlier in this conversation the user asked to rename their Launch focus theme to Release safety; the AI restated the list with the new name and asked them to confirm."
+        "trigger_and_receipt": "The Oct 30 deployment at 09:15 UTC is the last completed deployment and was already delivered. Its existing receipt for entry recurring-retry-health was recorded with when: the next completed production deployment and the PREVIOUS last_delivered: 2026-10-27 | 09:15 UTC | session earlier-fixture (the prior completed deployment). Its occurrence key is 21847a625e12efe27a71068ab8fdb27604a75231da37cb0a1682566b792bc71e. After that delivery, their document was saved with the current Oct 30 last_delivered shown above; that current value is not the input of the Oct 30 receipt. No later deployment occurred. The rename is the same focus entry and the work relationships are unchanged."
       },
       "expected_behavior": [
-        "Rename the priority while preserving its entry_id and verified refs; do not create a new reminder because the priority name changed.",
+        "Rename the priority at once, without restating the list or asking, while preserving its entry_id and verified refs; do not create a new reminder because the priority name changed.",
         "Leave the recurring reminder's entry_id, refs, trigger, repeat and last_delivered unchanged in this save: the rename is not an occasion to deliver, notify or convert it.",
         "Since the reminder waits on an event, after answering list it with the task that would carry the wait and change it only on the user's yes; never mark an existing notification handled without the user's word."
       ],
@@ -2866,7 +2865,7 @@
       "expected_behavior": [
         "Write the due Pad from the brief at hand; ask nothing about priorities and propose none: the priorities_asked line stands, there are no priorities, and no work begun since its date changes what the AI would propose.",
         "Do not rewrite or remove the priorities_asked line.",
-        "If the user then says what matters to them, restate it as their priority and ask them to confirm; on their yes, save it and remove the priorities_asked line in that same save."
+        "If the user then says what matters to them, restate it as their priority and ask them to confirm; on their yes, or if they go on without answering, save it and remove the priorities_asked line in that same save."
       ],
       "comparison_base": "dcb760f37c6ebd2085de6e95476ef262b0d8ac9f",
       "moved_from": "Notepad skill 10.1.0"
@@ -2971,7 +2970,7 @@
         ]
       },
       "expected_behavior": [
-        "Restates the priorities without Billing revamp and asks the user to confirm; saves the removal only on their yes.",
+        "Restates the priorities without Billing revamp and asks the user to confirm; saves the removal on their yes, or, if they go on without answering, saves it anyway and says so in one line.",
         "In that same restatement, names in one line the unfinished work it held (the stream's 3 open tasks) and asks whether to close it, set it aside with a reminder or keep it; changes no task before the answer.",
         "When the user then says to close it, proposes each open task's fate and waits for their yes before ending the stream."
       ]
@@ -3031,6 +3030,33 @@
       "expected_behavior": [
         "Restates the list with Desktop delivery first and Rules reliability second, says the stored reason \"the Desktop resumes after the rules\" no longer holds, and asks what replaces it along with the confirmation.",
         "Saves nothing before the user answers; invents no new reason."
+      ]
+    },
+    {
+      "id": "priority-reorder-unanswered-saved",
+      "prompt": "Now let's draft the migration plan.",
+      "must_load": true,
+      "context": {
+        "notes": "# Notepad\n<compass>\n### Priorities\nentry_id: priorities\n1. Rules reliability | refs: task:66666666-6666-4666-8666-666666666666\n2. Desktop delivery | refs: stream:55555555-5555-4555-8555-555555555555\nby: unknown\n</compass>",
+        "revision": 5,
+        "conversation": "In the previous turn the user said \"Put the Desktop first\"; the AI restated the list (1. Desktop delivery, 2. Rules reliability) and asked them to confirm."
+      },
+      "expected_behavior": [
+        "Saves the new order (Desktop delivery first) through a conditional save of revision 5 and says so in one line, without asking again.",
+        "Then works on the migration plan."
+      ]
+    },
+    {
+      "id": "priority-reword-saved-at-once",
+      "prompt": "For the Desktop priority, the reason is now that the YC demo films it.",
+      "must_load": true,
+      "context": {
+        "notes": "# Notepad\n<compass>\n### Priorities\nentry_id: priorities\n1. Rules reliability | why: the rules come first | refs: task:66666666-6666-4666-8666-666666666666\n2. Desktop delivery | why: I want the Desktop in customers' hands | refs: stream:55555555-5555-4555-8555-555555555555\nby: unknown\n</compass>",
+        "revision": 6
+      },
+      "expected_behavior": [
+        "Saves the new why of Desktop delivery at once through a conditional save of revision 6, without restating the list or asking to confirm: the order did not change.",
+        "Keeps the order, names, refs and the other why unchanged."
       ]
     }
   ]
