@@ -1,5 +1,9 @@
 # Changelog
 
+## 33.11.0 - Unreleased
+
+- `octoplan` 10.5.0: when an outcome names a population (every user, AI client, platform or pricing plan), the Plan contract lists its variants with what is measured for each, and gives each a task, a measurement or a named limit; a task covering only some names which. Phase 3's review attacks population coverage.
+
 ## 33.10.0 - 2026-11-22
 
 Applies the final texts of the rule review: each skill states its rules one per line, a few rules move to the methodology or to a tool's own text, and some behavior is added or dropped.

@@ -83,6 +83,8 @@ Computer Use and any equivalent screen-driven GUI automation:
 - Before the autonomy choice, carry the scope, the acceptance and the access state into the reviewed summary.
 - When acceptance is refused, or access is unavailable or revoked, adapt through permitted interfaces or expose the person-only step, keeping the outcome and proof requirements.
 
+When the outcome names a population (every user, AI client, platform or pricing plan), list its variants in the Plan contract with what is measured for each, and give each variant a task, a measurement or a named limit; a task that covers only some variants names them in its **What** and **Done when**.
+
 Before review, identify each independently executable effect and its bounded target, compare it with any recorded mandate, quote that mandate's source, and class the effect as one of:
 - covered;
 - awaiting the initial mandate or a new decision;
@@ -225,7 +227,7 @@ Match proof to the deliverable and its real target. Source or test inspection ca
 - Each reviewer reads the bounded current evidence and stays read-only. Give a reviewer without an Octopad grant the exact revisions it judges, and tell it: "Do not call Octopad."
 - Never present missing production access as a completed live review.
 
-- Across the required lenses, attack: mandate fidelity, the upstream premise, missing work, a simpler decomposition, unit size, unsettled shared choices, rehearsal evidence, dependencies, failure containment, consumers, proof, assumptions, route fit (each route meets its runtime profile, saved floors kept), effects, authority and gates.
+- Across the required lenses, attack: mandate fidelity, the upstream premise, missing work, population coverage, a simpler decomposition, unit size, unsettled shared choices, rehearsal evidence, dependencies, failure containment, consumers, proof, assumptions, route fit (each route meets its runtime profile, saved floors kept), effects, authority and gates.
 - Ask what verified result remains possible if the user leaves right after confirming delivery; reject an autonomy recommendation that conceals an immediate stop or rests on unproved access.
 - Check a planning-only classification against the user's request and context, not only the planner's label; flag an omitted autonomy question when delivery is intended.
 - For broad parallel work, assign integration and conflict lenses; when triggered, assign distinct privacy, security, data loss, reversibility, permissions, spend or public-effect lenses.

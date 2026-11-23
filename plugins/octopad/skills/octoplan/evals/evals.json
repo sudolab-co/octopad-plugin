@@ -174,6 +174,12 @@
       "prompt": "Supervising an Octoplan with four code executors in parallel on my laptop, each in its own worktree. Each task's integrated Verify ends with the full test suite and a production build. Nothing in the repository's rules says how many can run at once. How do I brief them?",
       "should_trigger": true,
       "expected_behavior": "Treats four full suites and builds at once as heavy enough to saturate one laptop, with no rule or load already measured there showing it can run them. Executors run their targeted checks and return their committed head; the supervisor runs the full checks on each head in turn before its pull request; each brief, reviewers' included, says so. A failure the work causes goes with its output to a fresh executor on the first part of the task's route, the `on failed checks` part only if that fix fails; an infrastructure failure follows recovery. Matches processes by pattern and prints only IDs and names when checking for a running suite."
+    },
+    {
+      "id": 30,
+      "prompt": "Plan an Octoplan for this stream: its outcome is that every user's AI recognizes a returning conversation without a second brief. The tasks so far only change how Claude Code sends its session id.",
+      "should_trigger": true,
+      "expected_behavior": "Before review, lists the AI clients the outcome covers (Claude Code, Codex, ChatGPT, claude.ai and any other the workspace names) with what is measured for each, and gives each a task, a measurement or a named limit; a task that covers only Claude Code says so in its What and Done when. Phase 3's challenge checks that coverage and does not present a Claude-Code-only plan as meeting the outcome."
     }
   ]
 }
