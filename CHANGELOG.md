@@ -1,5 +1,16 @@
 # Changelog
 
+## 35.0.0 - Unreleased
+
+The person's priorities, notes and reminders now live in Today's brief: one skill, `octopad-pad`, teaches what the AI keeps for them and how, through the `pad` tool's `notes_*` actions.
+
+- `octopad-notepad` is removed. `octopad-pad` 8.0.0 takes every rule it held, written for `pad` `notes_get`, `notes_update` and the `notes_*` history actions: what to write without asking, reminders by subject, review, priorities proposed and saved on the person's yes, asking once what matters, the pass over imported work, older entries, claims and recovery from history. Its description takes the old skill's triggers. Asked where a note is, the AI says Today's brief on their Pad shows it and that it changes through the AI; the product name "AI Notepad" is gone.
+- `octopad-pad` 8.0.0: a note or reminder about one priority carries one `priority:` line, which places it under that priority in Today's brief; renaming a priority rewrites those lines in the same save. A stream named by a priority that is paused or cancelled, or a goal that is paused or closed (achieved, partial, missed or dropped), is a reason to propose changing or retiring the priority; a task on hold because its stream paused is none. A goal clarification the person accepts is made by the goal's creator or an admin, and filed as a change request by anyone else.
+- `octopad-pad` 8.0.0: its Pad steps (the daily update, the tabs) apply where `pad` offers its tab actions. Where it offers only the `notes_*` actions, as for an agent key, the AI keeps the once-a-day briefing at an opening. Today's brief no longer gets a `priority_lines` section: the Pad shows the priority list, each priority's notes and reminders, read from the person's document.
+- `octopad-pad` 8.0.0: the AI Notepad tab is gone from the tab shapes.
+
+Needs the server change that registers `pad` for every connection that had `notepad`, makes each `notepad` action answer that it moved, serves one Today's brief block at session start with methodology 3.14.0, and removes the AI Notepad entry (the companion server pull request). Lands at the production cutover that deploys that companion. All three distributions move to 35.0.0.
+
 ## 34.0.0 - Unreleased
 
 Teaches goals as the server now holds them: their own framing fields and a measured figure, and the goal lines a Pad save returns.

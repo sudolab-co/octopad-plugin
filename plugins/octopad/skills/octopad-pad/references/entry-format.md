@@ -1,4 +1,4 @@
-# Notepad entry format
+# Entry format of the person's priorities, notes and reminders
 
 Read this before you write, condense, move or recover an entry.
 
@@ -20,6 +20,7 @@ by: <agent and model> | session <session id> | <YYYY-MM-DD>
 entry_id: <stable id>
 <what the user said, with the context that makes it usable>
 exit: <what makes it leave>
+priority: <the name of the priority it concerns, as listed>
 by: <agent and model> | session <session id> | <YYYY-MM-DD>
 </premises>
 
@@ -49,7 +50,8 @@ priorities_asked: <YYYY-MM-DD> | session <session id>
 
 ## Keys
 
-- Add an optional key only when its rule applies: `refs:` on any entry; `repeat:` and `last_delivered:` on reminders; `review_on:` on notes and reminders.
+- Add an optional key only when its rule applies: `refs:` on any entry; `priority:` on a note or reminder; `repeat:` and `last_delivered:` on reminders; `review_on:` on notes and reminders.
+- `priority:` names one priority on the list, as its line names it: Today's brief shows the entry under that priority, and at the bottom when no priority on the list matches. One line at most. When a priority is renamed, the same save rewrites every `priority:` line that named it.
 - Give each entry a stable `entry_id:`. Keep it across edits and moves, and assign one when you first maintain an entry that lacks it.
 - Keep the original `by:` line. Record a later intervention on an `updated_by:` line in the same form, never replacing the origin.
 - Write your runtime's actual session id, never an invented label. If the runtime exposes none, write `unavailable`, and sign each claim with a random token you keep for this conversation, so no two sessions share a claim.

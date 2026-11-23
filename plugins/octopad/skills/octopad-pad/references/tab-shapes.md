@@ -37,7 +37,6 @@ Illustrative shapes, not defaults: take ids and choices from the person's reques
 - Other blocks: `{ "kind": "progress_report", "streams": [...] }`, `{ "kind": "needs_you", "kinds": [] }`, `{ "kind": "goals", "states": [] }`, `{ "kind": "reminders", "scope": "all" }` (or `"unclassified"`, or `{ "refs": [{ "kind": "task", "id": "…" }] }`). An empty list means all. A view's `worked_by_agent` names an agent key and shows that agent's dated actions in the period.
 - Every stream, goal, tag and agent a block names is in `selection`; tag filters take tag ids. With a workspace `scope`, each view and workspace filter stays on that workspace. In a tab with a period, a view shows the tasks that moved in it: set `finishedWindow` to `never`.
 - `intent`, `blocks`, `references` and each `selection` key are saved whole: resend what stays, such as `request` and `purpose` with a `guidance` you change, or the current `external_scopes` with a new scope. Keep the person's earlier preferences in `guidance` unless they replace them.
-- A tab that shows the AI Notepad is `{ "kind": "notepad" }` alone; save one only when the person asks.
 
 ## A priority tab
 
