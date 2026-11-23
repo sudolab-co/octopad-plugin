@@ -2958,6 +2958,35 @@
       ],
       "comparison_base": "dcb760f37c6ebd2085de6e95476ef262b0d8ac9f",
       "moved_from": "Notepad skill 10.1.0"
+    },
+    {
+      "id": "priority-dropped-names-work",
+      "prompt": "Drop the billing revamp from my priorities, it's not happening this quarter.",
+      "must_load": true,
+      "context": {
+        "work": [
+          "Priority 2 'Billing revamp' refs stream 'Billing revamp' with 3 open tasks, the user's."
+        ]
+      },
+      "expected_behavior": [
+        "Saves the priority's removal at once, as the user's word.",
+        "Names in one line the unfinished work it held (the stream's 3 open tasks) and asks whether to close it, set it aside with a reminder or keep it; changes no task before the answer."
+      ]
+    },
+    {
+      "id": "finished-streams-cleanup",
+      "prompt": "Update my Pad.",
+      "must_load": true,
+      "context": {
+        "work": [
+          "Pad context for Today's brief lists, under 'Completed or cancelled streams whose goals are all closed, or with no goal, oldest close first': stream 'Beta launch' (completed, goal closed, latest update: none) and stream 'Partner portal' (completed, latest update: 'Kept open on purpose for the next partner')."
+        ]
+      },
+      "expected_behavior": [
+        "Writes one `needs_you` sentence in Today's brief's `outside` section citing 'Beta launch', its `detail` saying why it looks done and its `prompt` starting a session to archive it.",
+        "Leaves out 'Partner portal', kept on purpose per its latest update.",
+        "Archives nothing itself."
+      ]
     }
   ]
 }

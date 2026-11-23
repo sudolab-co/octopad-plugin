@@ -1,5 +1,14 @@
 # Changelog
 
+## 35.1.0 - Unreleased
+
+The AI keeps the work graph coherent at the moments it changes: a stream or goal created, a stream changed, a priority dropped, the daily Pad update.
+
+- `octopad-planning-and-work-design` 8.1.0: before creating a stream or a goal, the AI reads the close streams under any goal with their links, and the goals orientation lists, and reuses or links rather than duplicates. The stream check also runs when a task moves into or out of a stream or is handed over for review. An order the team chooses between goals goes, with its reason, in those goals' `description`, never in an invented dependency or one person's priorities; an order for the user's own work stays in their priorities. A stream the user keeps on purpose is recorded, with why, in its update, so no AI proposes its cleanup again.
+- `octopad-pad` 8.1.0: when the person drops a priority or moves one down, the AI names the unfinished work it holds and asks whether to close it, set it aside with a reminder, or keep it. When Today's brief context lists completed or cancelled streams whose goals are all closed, or with no goal, the AI proposes their cleanup in one `needs_you` sentence of `outside`, with a prompt that starts the session to archive them, leaving out any stream kept on purpose; it never archives one from the Pad.
+
+Needs the server change that serves methodology 3.15.0 (the companion server pull request), and, for the finished streams, the Today's brief context that lists them. All three distributions move to 35.1.0.
+
 ## 35.0.0 - Unreleased
 
 The person's priorities, notes and reminders now live in Today's brief: one skill, `octopad-pad`, teaches what the AI keeps for them and how, through the `pad` tool's `notes_*` actions.
