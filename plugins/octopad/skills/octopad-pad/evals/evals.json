@@ -1,7 +1,7 @@
 {
   "skill_name": "octopad-pad",
   "protocol": {
-    "status": "35.0.0 (octopad-pad 8.0.0): the Notepad skill folds into this skill. Its 47 cases move here, marked moved_from, with their fixture key `notepad` renamed `notes` (the document pad notes_get returns), their orientation lines in the server's new wording and their writes as pad notes_update; their own protocol (moved_notepad_protocol) still applies to them, and none has run against 8.0.0. 34.0.0: step 7 acts on each goal line of the save result (a missing update, a missing figure, a passed deadline); no case serves the figure or deadline lines yet. 33.0.0: skills no longer call skill_opened (a Claude Code hook reports the opening), so the opening graders check the Skill tool; step 7 follows the goal status lines a save's result names, so goal upkeep is checked as a goals set_status after the saves. The fixtures do not yet serve those save-result lines, and no 33.0.0 case has run. 32.0.0 cases organize-first-run, write-organized-pad, general-alert, notepad-unreadable, priority-left-renamed, remove-priority-tab and moved-recently written 2026-11-16 with their fixtures and not run, and 32.0.0 added to the creation, correction and trigger cases; revised the same day after review (a priority tab created with its content from a read of its unsaved definition, a key retired or re-keyed only when `context` says it is not in the Notepad, a renamed priority matched by the tab's streams, checks on keep lines, chart placement and an unattributed move): an eval's model calls wait for the operator's yes on its protocol. 31.1.0 cases chart-in-another-tab, chart-form-by-information and no-chart-without-value written 2026-11-15 and not run, unasked-chart extended to 31.0.0 and 31.1.0 with the framing sentence: an eval's model calls wait for the operator's yes on its protocol. 29.1.0 case line-says-what-to-do written 2026-11-12 and not run: an eval's model calls wait for the operator's yes on its protocol. 27.0.0 cases written 2026-11-11 and not run: the operator decided that this change makes no model call. Earlier: run 2026-11-10 on 24.0.0 and 26.0.0 (80 agent runs), then reruns of 15 and 6 runs on the fixed 26.0.0 skill. 33.7.0 (octopad-pad 6.3.0): a priority change is only proposed until the person's yes, so stale-theme checks that the lead names the proposed change and that no Notepad update runs; a tab due for priority discovery is written meanwhile and reorganized once priorities are saved. Prepared, not run.",
+    "status": "35.0.0, after review: the seven Pad fixtures' start_session carries the Today's brief block the server now renders (regenerated with its renderer), their key `notepad` is `notes`, their stored Today's brief holds no priority_lines, and their pad context lines name no Notepad; graders that watched notepad update watch pad notes_update, and write-organized-pad checks that Today's brief is saved without priority_lines. None has run. 35.0.0 (octopad-pad 8.0.0): the Notepad skill folds into this skill. Its 47 cases move here, marked moved_from, with their fixture key `notepad` renamed `notes` (the document pad notes_get returns), their orientation lines in the server's new wording and their writes as pad notes_update; their own protocol (moved_notepad_protocol) still applies to them, and none has run against 8.0.0. 34.0.0: step 7 acts on each goal line of the save result (a missing update, a missing figure, a passed deadline); no case serves the figure or deadline lines yet. 33.0.0: skills no longer call skill_opened (a Claude Code hook reports the opening), so the opening graders check the Skill tool; step 7 follows the goal status lines a save's result names, so goal upkeep is checked as a goals set_status after the saves. The fixtures do not yet serve those save-result lines, and no 33.0.0 case has run. 32.0.0 cases organize-first-run, write-organized-pad, general-alert, notepad-unreadable, priority-left-renamed, remove-priority-tab and moved-recently written 2026-11-16 with their fixtures and not run, and 32.0.0 added to the creation, correction and trigger cases; revised the same day after review (a priority tab created with its content from a read of its unsaved definition, a key retired or re-keyed only when `context` says it is not in the Notepad, a renamed priority matched by the tab's streams, checks on keep lines, chart placement and an unattributed move): an eval's model calls wait for the operator's yes on its protocol. 31.1.0 cases chart-in-another-tab, chart-form-by-information and no-chart-without-value written 2026-11-15 and not run, unasked-chart extended to 31.0.0 and 31.1.0 with the framing sentence: an eval's model calls wait for the operator's yes on its protocol. 29.1.0 case line-says-what-to-do written 2026-11-12 and not run: an eval's model calls wait for the operator's yes on its protocol. 27.0.0 cases written 2026-11-11 and not run: the operator decided that this change makes no model call. Earlier: run 2026-11-10 on 24.0.0 and 26.0.0 (80 agent runs), then reruns of 15 and 6 runs on the fixed 26.0.0 skill. 33.7.0 (octopad-pad 6.3.0): a priority change is only proposed until the person's yes, so stale-theme checks that the lead names the proposed change and that no Notepad update runs; a tab due for priority discovery is written meanwhile and reorganized once priorities are saved. Prepared, not run.",
     "purpose": "Compare plugin 26.0.0 (Smart Report by focus theme, lead on what changed) with 27.0.0 (decision brief by subject, lead said in the conversation) on routing and on the observable Pad writes; static checks do not establish AI behavior.",
     "execution": "claude plugin eval on the Claude Code subscription, after the operator approves the protocol. Every Octopad tool is a mock answering fictional fixtures: nothing reaches an Octopad organization.",
     "comparison": "The behaviour and correction cases run on both versions; the trigger cases on 27.0.0 only. Both versions get the same server lines, including the one a Smart Report save returns, so lead-said-in-the-conversation compares them and is not a defeat proof. Defeat proofs: lead-says-what-matters-and-where-to-start must reject a 26.0.0 lead that opens on what changed since a date; the correction cases on 27.0.0 with the section \"Route a correction\" removed must fail at least one of them. The 31.1.0 chart cases run on 31.0.0 and 31.1.0: chart-in-another-tab and chart-form-by-information must fail on 31.0.0, where a tab other than the first takes a chart only on request; no-chart-without-value must pass on both. The 32.0.0 cases run on 31.1.0 and 32.0.0. Defeat proofs: organize-first-run and priority-left-renamed must fail on 31.1.0, which creates no tab without a yes, and remove-priority-tab must fail there, since 31.1.0 records no refusal; write-organized-pad must fail on 31.1.0, which writes none of the organized fields. The creation, correction and trigger cases run on 32.0.0 as a non-regression check. Not rerun on 32.0.0: due-update, line-says-what-to-do and update-in-french, whose Smart Report shape 5.0.0 replaced and the 32.0.0 writing cases cover; stale-save and failed-source, whose rules 5.0.0 keeps word for word but whose one-context check clashes with organizing a Pad that has active untabbed priorities, so they rerun only once their contexts describe a 32.0.0 Pad.",
@@ -437,7 +437,7 @@
         "Every save of an existing tab carries expected_revision.",
         "The saved Smart Report lead says that the work contradicts the priorities (Hiring looks stale, Billing holds the work), with the reason and the change the Priorities section proposes. FAIL if the lead does not say it, or if it says a priority change was already made.",
         "Grade the conversation: at most one question is asked about the priorities.",
-        "No Notepad update: the proposed change waits for the person's yes."
+        "No save of their priorities: the proposed change waits for the person's yes."
       ],
       "graders": [
         {
@@ -467,8 +467,8 @@
         {
           "name": "no-priority-saved-before-yes",
           "type": "tool_used",
-          "tool": "mcp__plugin_octopad_octopad__notepad",
-          "input_match": "\"action\":\\s*\"update\"",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "\"action\":\\s*\"notes_update\"",
           "min": 0,
           "max": 0
         }
@@ -521,7 +521,7 @@
         "26.0.0",
         "27.0.0"
       ],
-      "context": "Smart Report due. Within the same priority, Validation A and Validation B are both ready and due Nov 12; neither blocks anything or serves a goal. They have equal effects, and no Notepad call, date, dependency or other supplied fact favors either.",
+      "context": "Smart Report due. Within the same priority, Validation A and Validation B are both ready and due Nov 12; neither blocks anything or serves a goal. They have equal effects, and no call on their priorities, notes and reminders, date, dependency or other supplied fact favors either.",
       "expected_behavior": [
         "The run opens octopad-pad with the Skill tool.",
         "Every save of an existing tab carries expected_revision.",
@@ -850,7 +850,7 @@
         "The run opens octopad-pad with the Skill tool.",
         "Every save of an existing tab carries expected_revision.",
         "The first Smart Report saves a guidance about hiring.",
-        "The Notepad is not changed.",
+        "Their priorities, notes and reminders are not changed.",
         "context is read for the first Smart Report alone, to rewrite it."
       ],
       "graders": [
@@ -879,8 +879,8 @@
         {
           "name": "focus-themes-untouched",
           "type": "tool_used",
-          "tool": "mcp__plugin_octopad_octopad__notepad",
-          "input_match": "\"action\":\\s*\"update\"",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "\"action\":\\s*\"notes_update\"",
           "min": 0,
           "max": 0
         },
@@ -907,7 +907,7 @@
       "expected_behavior": [
         "The run opens octopad-pad with the Skill tool.",
         "Every save of an existing tab carries expected_revision.",
-        "The Notepad update moves Billing up the priorities.",
+        "The pad notes_update save moves Billing up the priorities.",
         "No Pad guidance is written for it.",
         "context is read for the first Smart Report alone, to rewrite it."
       ],
@@ -930,8 +930,8 @@
         {
           "name": "focus-theme-moved-up",
           "type": "tool_used",
-          "tool": "mcp__plugin_octopad_octopad__notepad",
-          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"update\")(?=[\\s\\S]*[12]\\.\\s*Billing)",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"notes_update\")(?=[\\s\\S]*[12]\\.\\s*Billing)",
           "min": 1
         },
         {
@@ -965,7 +965,7 @@
       "expected_behavior": [
         "The run opens octopad-pad with the Skill tool.",
         "Every save of an existing tab carries expected_revision.",
-        "The Notepad update makes Billing the first priority, which the first Smart Report then weighs first.",
+        "The pad notes_update save makes Billing the first priority, which the first Smart Report then weighs first.",
         "No Pad guidance is written for it."
       ],
       "graders": [
@@ -987,8 +987,8 @@
         {
           "name": "billing-first-in-focus",
           "type": "tool_used",
-          "tool": "mcp__plugin_octopad_octopad__notepad",
-          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"update\")(?=[\\s\\S]*1\\.\\s*Billing)",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"notes_update\")(?=[\\s\\S]*1\\.\\s*Billing)",
           "min": 1
         },
         {
@@ -1437,7 +1437,7 @@
         "No call names Brand watch (b0000000-0000-4000-8000-000000000007), the person's own tab.",
         "No save creates a tab that serves no priority; a tab on Support backlog, if proposed, only goes through show.",
         "Before creating each tab, the run reads it with pad context on its unsaved definition (title, selection.priorities, blocks), then creates it in one save that carries its content and the through that read gave (2026-11-16T07:29:20.412927Z for Atlas launch, 2026-11-16T07:29:21.412928Z for Billing migration). FAIL if a creation save has no content: the server refuses it (TEXT_REQUIRED).",
-        "Once the tabs exist, the run calls pad context again with no tab and saves Today's brief with that context's through (2026-11-16T07:29:30.412937Z), with no note and no card; its priority_lines name the four priority keys once each, in the Notepad's order.",
+        "Once the tabs exist, the run calls pad context again with no tab and saves Today's brief with that context's through (2026-11-16T07:29:30.412937Z), with no note, no card and no priority_lines: the Pad shows the four priorities itself, from their document.",
         "Each creation save places its tab right after Today's brief (position 1 or 2), ahead of Brand watch."
       ],
       "graders": [
@@ -1573,7 +1573,7 @@
         "Every save of an existing tab carries expected_revision.",
         "pad context is called exactly once, and no tab is created, re-keyed or removed: the Pad needs no reorganizing.",
         "Today's brief's lead is one sentence on where the four priorities stand together. FAIL if it has more than one sentence, lists asks, or opens on a date or on \"Since\".",
-        "Today's brief's priority_lines hold exactly one line per priority, keys theme:f1c82c7c, theme:bca91fcd, theme:ae96ffdf, theme:cf797bbc in that order, each one plain sentence saying what the priority is. FAIL if a line gives its state, progress, a reference, a reason or a prompt.",
+        "Today's brief's save carries no priority_lines: the Pad shows the person's own list, read from their document.",
         "Today's brief has no alert: no incident touches all the work.",
         "Today's brief's due section cites every dated item: 40000000-0000-4000-8000-000000000051 (due 2026-11-16), 40000000-0000-4000-8000-000000000052 and 40000000-0000-4000-8000-000000000053 (late), 40000000-0000-4000-8000-000000000054 (starts 2026-11-18) and 40000000-0000-4000-8000-000000000013 (due 2026-11-19); each sentence that calls the person has a detail and a prompt. FAIL if a dated item is missing or such a sentence lacks either.",
         "Today's brief's outside section has the partner's data request (40000000-0000-4000-8000-000000000041) as needs_you with a detail and a prompt, then the support macro review (40000000-0000-4000-8000-000000000042) unmarked.",
@@ -1640,11 +1640,12 @@
           "max": 0
         },
         {
-          "name": "priority-lines-in-order",
+          "name": "no-priority-lines-sent",
           "type": "tool_used",
           "tool": "mcp__plugin_octopad_octopad__pad",
-          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_report\")(?=[\\s\\S]*\"priority_lines\"[\\s\\S]*theme:f1c82c7c[\\s\\S]*theme:bca91fcd[\\s\\S]*theme:ae96ffdf[\\s\\S]*theme:cf797bbc)",
-          "min": 1
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"save\")(?=[\\s\\S]*\"tab\":\\s*\"smart_report\")(?=[\\s\\S]*\"priority_lines\")",
+          "min": 0,
+          "max": 0
         },
         {
           "name": "no-alert",
@@ -1815,12 +1816,12 @@
         "31.1.0",
         "32.0.0"
       ],
-      "context": "Fixture evals/fixtures/notepad-unreadable.json. The Notepad cannot be read: Today's brief and the priority tabs Atlas launch and Billing migration are not checked, each priority tab's keys unknown and its through none.",
+      "context": "Fixture evals/fixtures/notepad-unreadable.json. Their priorities, notes and reminders cannot be read: Today's brief and the priority tabs Atlas launch and Billing migration are not checked, each priority tab's keys unknown and its through none.",
       "expected_behavior": [
         "The run opens octopad-pad with the Skill tool.",
         "No tab is removed.",
         "No save changes a selection or creates a tab.",
-        "The Notepad is not written.",
+        "Their priorities, notes and reminders are not written.",
         "Today's brief is saved without through, and its text says the priorities could not be read. FAIL if it states the priorities as if read.",
         "The priority tabs Atlas launch (b0000000-0000-4000-8000-000000000001) and Billing migration (b0000000-0000-4000-8000-000000000002), whose keys context cannot confirm, keep their keys and stay: any save of them carries no through."
       ],
@@ -1857,10 +1858,10 @@
           "max": 0
         },
         {
-          "name": "notepad-untouched",
+          "name": "notes-untouched",
           "type": "tool_used",
-          "tool": "mcp__plugin_octopad_octopad__notepad",
-          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"(update|restore)\")",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"notes_(update|restore)\")",
           "min": 0,
           "max": 0
         },
@@ -1880,7 +1881,7 @@
           "max": 0
         },
         {
-          "name": "says-the-notepad-was-unreadable",
+          "name": "says-the-list-was-unreadable",
           "type": "llm",
           "focus": "mock_calls"
         }
@@ -1895,13 +1896,13 @@
         "31.1.0",
         "32.0.0"
       ],
-      "context": "Fixture evals/fixtures/priority-left-renamed.json. The person renamed their Atlas launch tab Launch in the Desktop; Billing migration was renamed Payment provider switch (same references); Partner portal left the Notepad; Mobile beta program is the renamed Mobile beta, whose tab the person refused on 2026-11-10 (same stream), and a question waits in it; Atlas press tour is a new, quiet priority that shares only the Atlas goal. Today's brief and Atlas launch are due.",
+      "context": "Fixture evals/fixtures/priority-left-renamed.json. The person renamed their Atlas launch tab Launch in the Desktop; Billing migration was renamed Payment provider switch (same references); Partner portal left their priorities; Mobile beta program is the renamed Mobile beta, whose tab the person refused on 2026-11-10 (same stream), and a question waits in it; Atlas press tour is a new, quiet priority that shares only the Atlas goal. Today's brief and Atlas launch are due.",
       "expected_behavior": [
         "The run opens octopad-pad with the Skill tool.",
         "Every save of an existing tab carries expected_revision.",
-        "Each priority tab the first context did not serve and whose title is no Notepad priority's name is read with pad context and that tab: Billing migration (b0000000-0000-4000-8000-000000000002) and Partner portal (b0000000-0000-4000-8000-000000000005), whose key lines say not in the Notepad. Launch (b0000000-0000-4000-8000-000000000001), served by the first context with both keys found, is kept.",
+        "Each priority tab the first context did not serve and whose title is the name of none of their priorities is read with pad context and that tab: Billing migration (b0000000-0000-4000-8000-000000000002) and Partner portal (b0000000-0000-4000-8000-000000000005), whose key lines say not in the Notepad. Launch (b0000000-0000-4000-8000-000000000001), served by the first context with both keys found, is kept.",
         "The Billing migration tab (b0000000-0000-4000-8000-000000000002) is kept and re-keyed: after a pad get of that tab, a save on it whose selection.priorities holds theme:b5f51d4c and whose title is Payment provider switch. FAIL if that tab is removed or a new tab is created for theme:b5f51d4c.",
-        "The Partner portal tab (b0000000-0000-4000-8000-000000000005), whose priority left the Notepad, is removed with its expected_revision, and no refusal names theme:4ec2b79b.",
+        "The Partner portal tab (b0000000-0000-4000-8000-000000000005), whose priority left their list, is removed with its expected_revision, and no refusal names theme:4ec2b79b.",
         "No tab is created for theme:12baf3ca (Mobile beta program), the refused Mobile beta renamed with the same stream.",
         "A save with refusal alone records the person's refusal under the new key: priority key theme:12baf3ca, refs naming stream 20000000-0000-4000-8000-000000000008, refused true.",
         "After re-keying and retiring, the run calls pad context again with no tab and saves the Billing migration tab with content and the through that second context gave (2026-11-16T07:29:56.412963Z).",
@@ -2092,7 +2093,7 @@
         "A save with refusal alone records the refusal: priority key theme:bca91fcd, refs naming stream 20000000-0000-4000-8000-000000000003 and task 40000000-0000-4000-8000-000000000021, refused true.",
         "The tab b0000000-0000-4000-8000-000000000002 is removed with expected_revision 3, after the refusal is saved. FAIL if it is removed first or with no refusal.",
         "No other tab is removed.",
-        "The Notepad is not changed: the priority stays."
+        "Their priorities are not changed: the priority stays."
       ],
       "graders": [
         {
@@ -2126,10 +2127,10 @@
           "max": 0
         },
         {
-          "name": "notepad-untouched",
+          "name": "notes-untouched",
           "type": "tool_used",
-          "tool": "mcp__plugin_octopad_octopad__notepad",
-          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"(update|restore)\")",
+          "tool": "mcp__plugin_octopad_octopad__pad",
+          "input_match": "^(?=[\\s\\S]*\"action\":\\s*\"notes_(update|restore)\")",
           "min": 0,
           "max": 0
         },
@@ -2221,7 +2222,7 @@
       "context": {
         "notes": "# Notepad\n<open_loops>\n### Supplier reply\nentry_id: supplier-reply\nAn outside reply is still unverified.\nby: unknown\n</open_loops>\n<compass>\n</compass>\n<reminders>\n### Renewal\nentry_id: renewal\nwhen: 2026-11-10\nremind: Review the renewal.\nby: unknown\n</reminders>",
         "revision": 4,
-        "pad_due": "start_session names smart_report under Pad due today; its pad context says due: no priority in the Notepad: priority discovery",
+        "pad_due": "start_session names smart_report under Pad due today; its pad context says due: the person has no priority yet: priority discovery",
         "work": [
           "Task 11111111-1111-4111-8111-111111111111: in stream 44444444-4444-4444-8444-444444444444 (Launch), which the user owns; the user owns launch reliability and a retry defect needs attention."
         ]
@@ -2245,7 +2246,7 @@
       },
       "expected_behavior": [
         "Do not create or overwrite priorities and do not substitute a shared page or administrator read.",
-        "Say the Notepad/reminders could not be checked; continue independent work without claiming there are none."
+        "Say their priorities, notes and reminders could not be checked; continue independent work without claiming there are none."
       ],
       "moved_from": "Notepad skill 10.1.0"
     },
@@ -2258,7 +2259,7 @@
         "revision": 4
       },
       "expected_behavior": [
-        "Do not treat unrecognized private text as an empty structured Notepad.",
+        "Do not treat unrecognized private text as an empty structured document of priorities, notes and reminders.",
         "No inferred priority write, conversion, data loss or shared-page fallback."
       ],
       "moved_from": "Notepad skill 10.1.0"
@@ -2290,7 +2291,7 @@
       "expected_behavior": [
         "Rewrite the Focus themes entry as one ### Priorities entry in the same conditional save of revision 7, keeping its entry_id, name, reference and provenance.",
         "Keep the person's reason I want a calm launch in why; drop the moved 2026-10-28 note and the currently on part, and write no new dated note.",
-        "Name the fact (the outage now blocks the launch) in the chat, not in the Notepad; propose any move it calls for and save that move only on the user's yes, with no undo word."
+        "Name the fact (the outage now blocks the launch) in the chat, not in their notes; propose any move it calls for and save that move only on the user's yes, with no undo word."
       ],
       "moved_from": "Notepad skill 10.1.0"
     },
@@ -2408,7 +2409,7 @@
       "prompt": "Edit the shared onboarding page to correct this sentence.",
       "must_load": false,
       "context": {
-        "notepad_context": "No personal memory, reminder, focus or interrupted subject is involved."
+        "notes_context": "No personal memory, reminder, focus or interrupted subject is involved."
       },
       "expected_behavior": [
         "Do not load octopad-pad solely because a shared page contains notes.",
@@ -2421,7 +2422,7 @@
       "prompt": "Change this task title to Fix retry handling.",
       "must_load": false,
       "context": {
-        "notepad_context": "No Notepad entry, focus intent, reminder or next-step capture is involved."
+        "notes_context": "No priority, note, reminder or next-step capture is involved."
       },
       "expected_behavior": [
         "Route to task editing without loading octopad-pad or manufacturing a focus change."
@@ -2472,7 +2473,7 @@
       "context": {
         "notes": "# Notepad\n<compass>\n### Priorities\nentry_id: launch-focus\n1. Launch | why: I want reliable releases | refs: task:11111111-1111-4111-8111-111111111111, stream:22222222-2222-4222-8222-222222222222\nby: unknown\n</compass>\n<reminders>\n### Retry health\nentry_id: recurring-retry-health\nwhen: the next completed production deployment\nremind: Review retry health.\nrefs: task:11111111-1111-4111-8111-111111111111, stream:22222222-2222-4222-8222-222222222222\nrepeat: each completed production deployment\nlast_delivered: 2026-10-30 | 09:15 UTC | session prior-fixture\nby: unknown\n</reminders>",
         "revision": 14,
-        "trigger_and_receipt": "The Oct 30 deployment at 09:15 UTC is the last completed deployment and was already delivered. Its existing receipt for entry recurring-retry-health was recorded with when: the next completed production deployment and the PREVIOUS last_delivered: 2026-10-27 | 09:15 UTC | session earlier-fixture (the prior completed deployment). Its occurrence key is 21847a625e12efe27a71068ab8fdb27604a75231da37cb0a1682566b792bc71e. After that delivery, the Notepad was saved with the current Oct 30 last_delivered shown above; that current value is not the input of the Oct 30 receipt. No later deployment occurred. The rename is the same focus entry and the work relationships are unchanged."
+        "trigger_and_receipt": "The Oct 30 deployment at 09:15 UTC is the last completed deployment and was already delivered. Its existing receipt for entry recurring-retry-health was recorded with when: the next completed production deployment and the PREVIOUS last_delivered: 2026-10-27 | 09:15 UTC | session earlier-fixture (the prior completed deployment). Its occurrence key is 21847a625e12efe27a71068ab8fdb27604a75231da37cb0a1682566b792bc71e. After that delivery, their document was saved with the current Oct 30 last_delivered shown above; that current value is not the input of the Oct 30 receipt. No later deployment occurred. The rename is the same focus entry and the work relationships are unchanged."
       },
       "expected_behavior": [
         "Rename the priority while preserving its entry_id and verified refs; do not create a new reminder because the priority name changed.",
@@ -2512,7 +2513,7 @@
         "Saves the user's stated order in the same turn through one conditional pad notes_update, keeping verified refs, and says so in one line. Leaves the unanswered AI proposal unsaved and asks about it in one question. Never waits for a validation of the user's order."
       ],
       "comparison_base": "5b601365cbd4fbdfa62068ce32c54bbffbfe7757",
-      "context": "Owner Notepad (revision 12, known format) holds a Priorities entry: 1. Finish the Pad (refs stream:1111...) 2. Desktop with the AI stage (stream:2222...) 3. Native apps (stream:3333...) 4. Store plugins (stream:4444...), all refs verified. Earlier in this conversation the AI proposed adding a priority \"Ship V3 to everyone\" before the store plugins; the user has not answered that proposal.",
+      "context": "The owner's document of priorities, notes and reminders (revision 12, known format) holds a Priorities entry: 1. Finish the Pad (refs stream:1111...) 2. Desktop with the AI stage (stream:2222...) 3. Native apps (stream:3333...) 4. Store plugins (stream:4444...), all refs verified. Earlier in this conversation the AI proposed adding a priority \"Ship V3 to everyone\" before the store plugins; the user has not answered that proposal.",
       "moved_from": "Notepad skill 10.1.0"
     },
     {
@@ -2524,7 +2525,7 @@
         "Opens octopad-pad because its work changed tasks the entries name. Repoints R1 and R2 to B and D in the same turn without asking; R3 stays unchanged; triggers and delivery state are preserved; one conditional save names the repaired entries. Since B and D now carry the bridge and migration waits, R2 is retired after the answer, in a save of its own; R1's request to tell David about Friday's demo is something to do, proposed as a task on the user's yes. R4, a dated reminder, is listed with the task it calls for, never converted without the user's yes."
       ],
       "comparison_base": "5b601365cbd4fbdfa62068ce32c54bbffbfe7757",
-      "context": "The user approved splitting code tasks from their post-merge checks and the AI applied it: task A (code only, pending review) and new task B (live check, blocked until the staging bridge is on); task C (code only) and new task D (blocked until migration 746 on staging). Owner Notepad holds four reminders: R1 names task A for the bridge check and also asks to tell David to keep the bridge on for Friday's demo; R2 names task C for the migration check; R3 names a task the split did not touch; R4 is a dated reminder on another subject.",
+      "context": "The user approved splitting code tasks from their post-merge checks and the AI applied it: task A (code only, pending review) and new task B (live check, blocked until the staging bridge is on); task C (code only) and new task D (blocked until migration 746 on staging). The owner's document holds four reminders: R1 names task A for the bridge check and also asks to tell David to keep the bridge on for Friday's demo; R2 names task C for the migration check; R3 names a task the split did not touch; R4 is a dated reminder on another subject.",
       "moved_from": "Notepad skill 10.1.0"
     },
     {
@@ -2536,14 +2537,14 @@
         "Treats the hypothetical as discussion, not stated direction: changes no priority and does not save."
       ],
       "comparison_base": "5b601365cbd4fbdfa62068ce32c54bbffbfe7757",
-      "context": "Owner Notepad (revision 12, known format) holds a Priorities entry: 1. Finish the Pad (refs stream:1111...) 2. Desktop with the AI stage (stream:2222...) 3. Native apps (stream:3333...) 4. Store plugins (stream:4444...), all refs verified. No reminder is due and no other condition requires a write.",
+      "context": "The owner's document of priorities, notes and reminders (revision 12, known format) holds a Priorities entry: 1. Finish the Pad (refs stream:1111...) 2. Desktop with the AI stage (stream:2222...) 3. Native apps (stream:3333...) 4. Store plugins (stream:4444...), all refs verified. No reminder is due and no other condition requires a write.",
       "moved_from": "Notepad skill 10.1.0"
     },
     {
       "id": "save-first-4",
       "prompt": "I closed the code task for the bridge check and opened its check task. Tidy whatever needs it.",
       "files": [],
-      "context": "Owner Notepad holds reminder R1: when the staging bridge is on and the change is deployed to staging, open the local Desktop, check live data, then close the code task (now done). The new check task names only the bridge, not the deploy.",
+      "context": "The owner's document holds reminder R1: when the staging bridge is on and the change is deployed to staging, open the local Desktop, check live data, then close the code task (now done). The new check task names only the bridge, not the deploy.",
       "must_load": true,
       "expected_behavior": [
         "The user asked to tidy: put R1's deploy condition on the check task (its blocked reason) and read it back, then retire R1, naming the task in the save's reason. Never deliver R1, since its event is not verified."
@@ -2724,7 +2725,7 @@
         "revision": 9
       },
       "expected_behavior": [
-        "Write nothing to the Notepad: what the user works on now changes neither their order nor their intent.",
+        "Write nothing to their priorities, notes and reminders: what the user works on now changes neither their order nor their intent.",
         "Add no progress, status or current task to either priority, and do not reorder them."
       ],
       "comparison_base": "135727eaaed204c776a9c0455b4b4ea9c5763516",
@@ -2755,7 +2756,7 @@
       },
       "expected_behavior": [
         "Record a Decision with the user as its source, after searching for an existing one; the team needs it.",
-        "Write nothing to the Notepad for it."
+        "Write nothing to their notes for it."
       ],
       "comparison_base": "135727eaaed204c776a9c0455b4b4ea9c5763516",
       "moved_from": "Notepad skill 10.1.0"
@@ -2804,7 +2805,7 @@
         "revision": 5
       },
       "expected_behavior": [
-        "Say nothing about the reminder: its subject did not come up. Leave the Notepad unchanged."
+        "Say nothing about the reminder: its subject did not come up. Leave their notes and reminders unchanged."
       ],
       "comparison_base": "135727eaaed204c776a9c0455b4b4ea9c5763516",
       "moved_from": "Notepad skill 10.1.0"
@@ -2858,7 +2859,7 @@
         "work": [
           "Task 55555555-5555-4555-8555-555555555555: the user's only task: send the onboarding survey."
         ],
-        "pad_due": "start_session names smart_report under Pad due today; its pad context says due: no priority in the Notepad: priority discovery"
+        "pad_due": "start_session names smart_report under Pad due today; its pad context says due: the person has no priority yet: priority discovery"
       },
       "expected_behavior": [
         "Write the due Pad from the brief at hand; ask nothing about priorities and propose none: the priorities_asked line stands, there are no priorities, and no work begun since its date changes what the AI would propose.",
@@ -2893,7 +2894,7 @@
       "prompt": "Hi, I just accepted the invite to this organization.",
       "must_load": true,
       "context": {
-        "notes": "absent: the member just joined; no Notepad entry yet.",
+        "notes": "absent: the member just joined; no priority, note or reminder yet.",
         "work": "No task, stream or goal is the member's yet."
       },
       "expected_behavior": [

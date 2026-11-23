@@ -193,7 +193,7 @@ What `context` serves as attention in Today's brief outside every priority belon
 Keep one priority tab for each of the person's priorities where something waits on them or moved: you create, merge, re-key and retire these without asking. Organize only when Today's brief is in the brief: its sections list each priority no tab serves, with its key and what it follows. A tab serves a priority through that key in its `selection.priorities`, which `get` lists.
 
 - Re-key or retire:
-  - Under each priority tab it serves, `context` says whether each key is still among their priorities; for a priority tab it did not serve whose `title` is the name of none of their priorities, `context` with that `tab`. Only a key it calls "not in the Notepad" has left.
+  - Under each priority tab it serves, `context` says whether each key is still among their priorities; for a priority tab it did not serve whose `title` is the name of none of their priorities, `context` with that `tab`. Only a key it calls "not among their priorities" has left.
   - `get` that tab: a priority Today's brief's sections list whose streams are all among those the tab's `streams` lines and `phases` cite, at least one, is that key's priority, renamed: save its key in place of the old one, and its name as `title` when the tab serves no other priority.
   - Otherwise drop the key, and `remove` a tab left with none.
 - Create a tab for a priority with no tab once anything it follows moved or waits on the person; a quiet priority gets none.

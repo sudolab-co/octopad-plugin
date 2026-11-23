@@ -90,10 +90,6 @@ Then create it in one save: the same definition, its `position`, the `through` t
 ```json
 {
   "lead": "Everything leads to the Atlas release: the app waits for the store, billing moves next week and hiring is paused.",
-  "priority_lines": [
-    { "key": "theme:3f9a1c27", "text": "Ship the Atlas app to every customer." },
-    { "key": "theme:7d20be4a", "text": "Move billing to the new payment provider." }
-  ],
   "sections": [
     { "key": "due", "sentences": [
       { "mark": "needs_you", "text": "Send the signed vendor contract back, due 2026-11-16.", "refs": [ { "kind": "task", "id": "55555555-5555-4555-8555-555555555552" } ],

@@ -5,7 +5,7 @@ Read this before you write, condense, move or recover an entry.
 The document holds state, not these rules. Use the blocks below as literal XML boundaries, with `###` entry headings inside. A block may be empty or absent, but the document keeps at least one. Use only these blocks, and keep their tags: never turn them into Markdown headings.
 
 ```markdown
-# Notepad
+# Priorities, notes and reminders
 
 <compass>
 ### Priorities

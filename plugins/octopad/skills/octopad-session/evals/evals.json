@@ -4,7 +4,7 @@
     "status": "unrun_pending_user_protocol_approval",
     "model_calls_run": 0,
     "purpose": "Compare the `followup` description before and after the rework of its follow rule; static checks do not establish AI behavior.",
-    "execution": "Subscription CLI only, after the operator approves the concrete protocol (decision of 2026-11-11: model runs wait for the end-of-build tests). Fictional fixtures and intercepted writes; no real person's Notepad, paid API or background action.",
+    "execution": "Subscription CLI only, after the operator approves the concrete protocol (decision of 2026-11-11: model runs wait for the end-of-build tests). Fictional fixtures and intercepted writes; no real person's document, paid API or background action.",
     "comparison": "Run each case with the current plugin twice: once with the `followup` description served before that rework, once with the reworked one. Score each expected outcome independently; a follow that does not clearly help the user or that the reply does not tell them of, a theme saved without the user's yes or a repeated start_session fails its case.",
     "release_limit": "Unrun cases are not a routing, behavioral or non-regression pass."
   },
@@ -14,7 +14,7 @@
       "prompt": "What's moving on billing this week?",
       "must_load": true,
       "context": {
-        "notepad": "# Notepad\n<compass>\n### Priorities\nentry_id: priorities\n1. Pricing launch | why: revenue this quarter | refs: goal:33333333-3333-4333-8333-333333333333\nby: unknown\n</compass>",
+        "notes": "# Notepad\n<compass>\n### Priorities\nentry_id: priorities\n1. Pricing launch | why: revenue this quarter | refs: goal:33333333-3333-4333-8333-333333333333\nby: unknown\n</compass>",
         "revision": 9,
         "work": [
           "Task 99999999-9999-4999-8999-999999999999 'Rework invoice rounding', assigned to Sam, in_progress; it changes the totals the pricing pages show.",
@@ -36,11 +36,11 @@
       "must_load": true,
       "context": {
         "previous_turn": "The AI proposed adding Sam's task 99999999-9999-4999-8999-999999999999 to the Pricing launch priority because it changes the totals the user's pages show.",
-        "notepad": "# Notepad\n<compass>\n### Priorities\nentry_id: priorities\n1. Pricing launch | why: revenue this quarter | refs: goal:33333333-3333-4333-8333-333333333333\nby: unknown\n</compass>",
+        "notes": "# Notepad\n<compass>\n### Priorities\nentry_id: priorities\n1. Pricing launch | why: revenue this quarter | refs: goal:33333333-3333-4333-8333-333333333333\nby: unknown\n</compass>",
         "revision": 9,
         "tools": [
           "followup",
-          "notepad"
+          "pad"
         ]
       },
       "expected_behavior": [
@@ -53,7 +53,7 @@
       "prompt": "What did Sam ship this week?",
       "must_load": true,
       "context": {
-        "notepad": "# Notepad\n<compass>\n### Priorities\nentry_id: priorities\n1. Pricing launch | why: revenue this quarter | refs: goal:33333333-3333-4333-8333-333333333333\nby: unknown\n</compass>",
+        "notes": "# Notepad\n<compass>\n### Priorities\nentry_id: priorities\n1. Pricing launch | why: revenue this quarter | refs: goal:33333333-3333-4333-8333-333333333333\nby: unknown\n</compass>",
         "revision": 9,
         "work": [
           "Sam merged a fix to the office printer queue; nothing in it touches the user's work."
