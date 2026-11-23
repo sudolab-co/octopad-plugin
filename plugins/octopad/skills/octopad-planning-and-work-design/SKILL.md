@@ -61,7 +61,7 @@ Before you offer agent delivery or change how work is delivered, read [Choosing 
   - `stop_condition`: `Fewer than 5 active accounts after the beta.`
 - When you learn a new figure of a number goal's primary signal, from the user or a source, record it with `record_measurement`: its `note` saying where it comes from, and its `sources` when a record holds it. A number goal is judged from that figure, never from its done tasks.
 - When part of one goal serves part of another goal of the organization, link them with `link_goal`, saying which part serves which; a goal may serve several goals or none. When a goal changes, closes or is dropped, check that its links still hold.
-- Once a goal not yet closed has streams and none of them is active or paused, propose closing it to the user, with the outcome they name.
+- Once a goal not yet closed is the primary goal of streams and none of them is active or paused, propose closing it to the user, with the outcome they name.
 
 # Which stream work belongs to
 
