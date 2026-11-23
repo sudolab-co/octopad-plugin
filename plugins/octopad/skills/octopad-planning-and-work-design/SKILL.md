@@ -2,7 +2,7 @@
 name: octopad-planning-and-work-design
 description: "Use when agreed work has an end state and needs three or more tasks over more than one sitting; when a request holds several deliverables or a step another member carries out; when you are about to create, change, complete, rename, merge, split or archive a stream or a goal, or learn of such a change; when one stream waits on or continues another; when a task leaves its stream by archive, deletion or move; when a result, a decision or a new task changes what a stream's remaining tasks assume; before laying out several tasks as a plan; when the number of tasks, nesting, prerequisites, priority order, a date or repeating work is undecided or wrong; and when a test would launch AI sessions, take a person's time or cost money. When the prepared work could benefit from delivery by agents, such as work that needs no choice from the user at each step, open the `octoplan` skill for that delivery."
 ---
-Version: 7.5.1
+Version: 8.0.0
 
 # From a need to prepared work
 
@@ -50,15 +50,16 @@ Before you offer agent delivery or change how work is delivered, read [Choosing 
 # What a goal carries
 
 - A goal names one destination everyone involved shares, written as the place to reach ("Reach 50 active accounts"), never as an activity, and never split into targets per person: those do not move people whose work is interlocked.
-- Say in the goal's `description` how it will be judged: one to three signals, one of them primary, readable while the work runs and not only on the closing day. Where the route is known, use an outcome target: a measure, its current value and the threshold it must reach.
+- Say in `success_criterion` how the goal will be judged met: one to three signals, one of them primary, readable while the work runs and not only on the closing day. Name each other signal there with its baseline and target: Octopad measures only the primary one.
+- Where the route is known, make the primary signal an outcome target: `nature: "number"`, the measure's current value in `baseline_value`, the threshold it must reach in `target_value` and its unit in `target_unit`.
 - Where the work is new and the route unknown, use a learning signal instead, such as "document 3 methods that work": a number fixed before anyone has walked the ground aims the work at the wrong thing.
-- Give a goal a `deadline` only when the date is real. In the goal's own `description`, never only on a linked stream, say on one line why the goal matters now and, with a deadline, on another why that date:
-  `Why now: two enterprise pilots stalled on this gap last quarter.`
-  `Deadline 2026-11-30: renewal date of the affected contract.`
-- When they are real, add to the `description`, each on its own line, what the goal pursues and leaves out, what must not degrade on the way, and what would make everyone involved drop it:
-  `Scope: self-serve accounts; enterprise deals left out.`
-  `Guardrail: support load stays under 20 tickets a week.`
-  `Stop if: fewer than 5 active accounts after the beta.`
+- Say in the goal's own `rationale`, never only on a linked stream, why the goal matters now. Give a goal a `deadline` only when the date is real, and then say in `rationale` why that date too, for example:
+  `Two enterprise pilots stalled on this gap last quarter; the deadline is the renewal date of the affected contract.`
+- Fill `goal_scope`, `guardrails` and `stop_condition` only when they are real: what the goal pursues and leaves out, what must not degrade on the way, and when to stop or rethink it. For example:
+  - `goal_scope`: `Self-serve accounts; enterprise deals left out.`
+  - `guardrails`: `Support load stays under 20 tickets a week.`
+  - `stop_condition`: `Fewer than 5 active accounts after the beta.`
+- When you learn a new figure of a number goal's primary signal, from the user or a source, record it with `record_measurement` and its sources: a number goal is judged from that figure, never from its done tasks.
 - When part of one goal serves part of another goal of the organization, link them with `link_goal`, saying which part serves which; a goal may serve several goals or none. When a goal changes, closes or is dropped, check that its links still hold.
 - Once a goal not yet closed has streams and none of them is active or paused, propose closing it to the user, with the outcome they name.
 

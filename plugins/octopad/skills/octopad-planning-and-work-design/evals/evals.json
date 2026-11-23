@@ -66,6 +66,12 @@
       "prompt": "I'm not technical at all, I just want our customers to stop getting logged out every morning. Can you plan that?",
       "should_trigger": true,
       "expected_behavior": "Any question it asks frames the person's intent in their words: what result they expect, how they will know it works, what must not change. It asks no technical question (no session lifetime, token, cookie or framework question) and settles the technical choices from the sources or leaves them to the tasks. It files the work itself and says where."
+    },
+    {
+      "id": 12,
+      "prompt": "Set a goal for us: 50 active accounts by March 31, because the seed extension we need depends on it. We have 12 today. Leave enterprise deals out of it.",
+      "should_trigger": true,
+      "expected_behavior": "Creates the goal with its framing fields, not lines in `description`: `rationale` says why it matters now (the seed extension) and why March 31; `success_criterion` says how it is judged met; `nature` is \"number\" with `baseline_value` 12, `target_value` 50 and a unit such as active accounts; `deadline` is March 31; `goal_scope` leaves enterprise deals out. It invents no guardrail or stop condition the user did not give, and writes no \"Why now:\" or \"Deadline\" line in `description`."
     }
   ]
 }

@@ -4,7 +4,7 @@ description: "Use when `start_session` names a Pad tab due or not checked, when 
 ---
 Unless this conversation already called `start_session`, open `../octopad-session/SKILL.md` first.
 
-Version: 6.4.0
+Version: 7.0.0
 
 # The Pad
 
@@ -23,7 +23,7 @@ When `start_session` names tabs under "Pad due today" or "Pad not checked", do t
 4. Write each tab the last `context` served from the objects of its sections, what changed in them and the attention placed in it, as "Write a Smart Report" says.
 5. Save each tab alone: `save` with `tab`, `expected_revision` (the `revision` the brief lists), `content` and its `through` as given. When nothing changed for it, the same save without `content`. A tab whose `through` reads none (a source could not be read) is saved without `through`, its text saying what could not be read. One tab's failure stops no other.
 6. Tell the person (below).
-7. Then the goal status lines that the result of Today's brief's save names. It never delays or blocks a save.
+7. Then act on each goal line the result of Today's brief's save gives, as it says: a missing update, a missing figure, a passed deadline. It never delays or blocks a save.
 
 What `context` serves as attention in Today's brief outside every priority belongs to its `outside` section: weigh it like the rest.
 
