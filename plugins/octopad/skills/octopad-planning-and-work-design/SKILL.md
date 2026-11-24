@@ -2,7 +2,7 @@
 name: octopad-planning-and-work-design
 description: "Use when agreed work has an end state and needs three or more tasks over more than one sitting; when a request holds several deliverables or a step another member carries out; when you are about to create, change, complete, rename, merge, split or archive a stream or a goal, or learn of such a change; when one stream waits on another or matters to it; when a task leaves its stream by archive, deletion or move; when a result, a decision or a new task changes what a stream's remaining tasks assume; before laying out several tasks as a plan; when the number of tasks, nesting, prerequisites, priority order, a date or repeating work is undecided or wrong; and when a test would launch AI sessions, take a person's time or cost money. When the prepared work could benefit from delivery by agents, such as work that needs no choice from the user at each step, open the `octoplan` skill for that delivery."
 ---
-Version: 8.2.0
+Version: 8.3.0
 
 # From a need to prepared work
 
@@ -109,7 +109,7 @@ User, on 2026-04-26: *"Lay out the launch: research, then design, then build, th
   1. Read only its Definition of Success and, for each open top-level task, its title, one-liner, status, status line and the rationale of its dependencies, and its links to other streams marked to review; open a task's description only where the check touches it.
   2. Put right what no longer matches and nothing else: the order and its dependencies; a task made false, rewritten in place; a task left short, made precise now that what it waited for exists; a task made useless, `cancelled`; a missing task, created; each link to review, handled as the read's line on links to review says; work already started on the old basis, checked before it goes further. When you change a Done when or the Definition of Success, tell the user the old text, the new and why; lowering what one requires when the user did not ask for it needs their confirmation first. Record a Definition of Success change as a Decision scoped to the stream, with the old text, the new and why.
   3. Tell the user in one line what moved; when nothing moved, write nothing.
-- When the user keeps on purpose a stream that looks finished or idle, write that and why in its update, where `work_streams` offers `set_status`, which every member's AI reads, so no AI proposes its cleanup again.
+- When the user keeps on purpose a stream that looks finished or idle, write that in its update, and why when they say, where `work_streams` offers `set_status`, which every member's AI reads, so no AI proposes its cleanup again.
 - Keep the tracker's Scope and Rationale true: correct them in place when the work shows they no longer hold.
 - Record a split, merge or move in the links and Decisions it changes, not as a dated line on a tracker.
 

@@ -4,7 +4,7 @@ description: "Use when the user says what they want, prefer, judge or decide tha
 ---
 Unless this conversation already called `start_session`, open `../octopad-session/SKILL.md` first.
 
-Version: 8.1.0
+Version: 8.2.0
 
 # The Pad
 
@@ -255,7 +255,7 @@ It keeps only what reads at a glance that day: how you organized the Pad, steps 
   - A date that asks nothing yet stays unmarked.
 - A priority no tab serves keeps a section, sent with its `key`, when something in it waits on them or moved; a quiet one gets none.
 - `outside` section: what waits on them that no other tab follows: first what they decide (`needs_you`) or can launch (`unblocked`), each with its `detail` and `prompt`; then, unmarked, what can wait.
-  - Finished streams: when `context` lists completed or cancelled streams whose goals are all closed, or with no goal, add one `needs_you` sentence citing them, its `detail` saying why each looks done, and its `prompt` starting a session that archives what should be archived. Leave out a stream whose latest update says it is kept on purpose; for one whose update could not be read, say so and propose nothing for it. When the person keeps one, record it as the `octopad-planning-and-work-design` skill, section "When an effort ends or changes shape", says. Never archive one yourself from the Pad.
+  - Finished streams: when `context` lists completed or cancelled streams whose goals are all closed, or with no goal, add one `needs_you` sentence citing them, its `detail` saying why each looks done, and its `prompt` starting a session that archives what should be archived and, for each stream the person keeps, writes in its update with `work_streams` `set_status` that they keep it, and why when they say. Leave out a stream whose latest update says it is kept on purpose; for one whose update could not be read, say so and propose nothing for it. When the person keeps one in this conversation, write that in its update with `work_streams` `set_status`, and why when they say, as the `octopad-planning-and-work-design` skill (section "When an effort ends or changes shape") says. Never archive one yourself from the Pad.
 
 ## A priority tab
 

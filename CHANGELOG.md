@@ -1,5 +1,14 @@
 # Changelog
 
+## 35.4.0 - Unreleased
+
+A person who refuses to archive a finished stream that Today's brief proposes gets that refusal remembered: on 2026-11-24 a staging test found that Sonnet never opened the planning skill, which alone said to write it, so the brief would have proposed the stream again the next day.
+
+- `octopad-pad` 8.2.0: the finished-streams line says the write itself (an update with `work_streams` `set_status` saying the person keeps the stream, and why when they say) instead of only pointing to the planning skill, and the brief's `prompt` for the archiving session carries the same step, so the session where the person answers has it in its first message.
+- `octopad-planning-and-work-design` 8.3.0: a stream the user keeps is recorded even when they give no reason; the reason is written when they say it.
+
+Needs no server change. All three distributions move to 35.4.0.
+
 ## 35.3.0 - Unreleased
 
 The AI gets the rule for writing links between tasks and between streams that the link design gave the planning skill: when a link is worth writing, what its line says, and when never to write one.
