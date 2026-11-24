@@ -224,7 +224,7 @@ The delivery rule:
 - Record progress, pull requests, heads, tests, reviews and releases on the Task or pull request; none changes a spec.
 - Change a spec only when a need, the outcome, a direction, a choice, a promise or a non-goal changes, or a known limit is established or lifted, including when building reveals one. A version bump alone changes no spec.
 - When a change needs no spec edit, still name the spec in the repository's documentation-impact mark.
-- When a needed spec edit is blocked or must wait for a later event, such as a release reaching production, name there the spec, what it waits for and the task that makes the edit, documentation-debt work when the edit is blocked: create or reuse that task first, as the `octopad-planning-and-work-design` skill (section "Shaping the work") says.
+- When a needed spec edit is blocked or must wait for a later event, such as a release reaching production, name there the spec, what it waits for and the task that makes the edit: create or reuse that task first, as the `octopad-planning-and-work-design` skill (section "Shaping the work") says. When the edit is blocked, that task is documentation-debt work.
 - An `[idea]` or `[open]` line is not delivery: write an `[idea]` line under [Capture exploration without waiting for a build decision](#capture-exploration-without-waiting-for-a-build-decision) and an `[open]` mark under [Write for the reader](#write-for-the-reader).
 
 When product work needs a Task, reuse suitable existing work and follow the active kernel and server contract for its shape, hierarchy, and dependencies.
