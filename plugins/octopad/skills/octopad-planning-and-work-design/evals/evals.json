@@ -111,9 +111,9 @@
     },
     {
       "id": 19,
-      "prompt": "Link 'Pricing page copy' to 'Pricing page redesign', they're both about pricing.",
+      "prompt": "Link the 'Pricing page copy' stream to the 'Pricing page redesign' stream, they're both about pricing.",
       "should_trigger": true,
-      "expected_behavior": "Checks the test before linking: a shared topic alone gets no link. Asks or checks whether one changes what the other assumes (for example the copy must fit the redesign's layout); if so, writes one link from the task that depends on that fact, its line naming it in that task's voice, at most 160 characters; if one truly waits on the other, uses depends_on instead. Never writes a line such as 'both about pricing'."
+      "expected_behavior": "Checks the test before linking: a shared topic alone gets no link. Asks or checks whether one stream changes what the other assumes (for example the copy must fit the redesign's layout); if so, sends the links of the stream that depends on that fact with a link of kind `link` whose line names it in that stream's voice, at most 160 characters, keeping the links it already holds; if one truly waits on the other, uses `depends_on` instead. Never writes a line such as 'both about pricing'."
     }
   ]
 }
