@@ -3,9 +3,9 @@
   "protocol": {
     "status": "unrun_pending_user_protocol_approval",
     "model_calls_run": 0,
-    "purpose": "Compare the `followup` description before and after the rework of its follow rule; static checks do not establish AI behavior. The cases unattended-run and person-present check that a run no person takes part in passes `unattended: true` to `start_session` and a person's run does not.",
+    "purpose": "Compare the `followup` description before and after the rework of its follow rule; static checks do not establish AI behavior. The cases unattended-run, person-present, print-mode-unsaid and approval-mode-never check that `unattended: true` reaches `start_session` only when the AI's prompt or instructions say no person reads or answers the run.",
     "execution": "Subscription CLI only, after the operator approves the concrete protocol (decision of 2026-11-11: model runs wait for the end-of-build tests). Fictional fixtures and intercepted writes; no real person's document, paid API or background action.",
-    "comparison": "Run each case with the current plugin twice: once with the `followup` description served before that rework, once with the reworked one. Score each expected outcome independently; a follow that does not clearly help the user or that the reply does not tell them of, a theme saved without the user's yes or a repeated start_session fails its case. For unattended-run and person-present, run each with the plugin before and after octopad-session 35.2.0; a call that sets `unattended` in a person's run, or leaves it out in an unattended one, fails its case.",
+    "comparison": "Run each case with the current plugin twice: once with the `followup` description served before that rework, once with the reworked one. Score each expected outcome independently; a follow that does not clearly help the user or that the reply does not tell them of, a theme saved without the user's yes or a repeated start_session fails its case. For unattended-run, person-present, print-mode-unsaid and approval-mode-never, run each with the plugin before and after octopad-session 35.2.0, the same prompt throughout; a call that sets `unattended` in any case but unattended-run, or leaves it out there, fails its case.",
     "release_limit": "Unrun cases are not a routing, behavioral or non-regression pass."
   },
   "evals": [
@@ -69,11 +69,9 @@
     },
     {
       "id": "unattended-run",
-      "prompt": "Post today's status line on the Billing rework stream from its tasks, then stop.",
+      "prompt": "Post today's status line on the Billing rework stream from its tasks. No one reads or answers this run: finish without asking anything.",
       "must_load": true,
-      "context": {
-        "launch": "A nightly cron job started this conversation with `claude -p`; no person reads or answers it."
-      },
+      "context": {},
       "expected_behavior": [
         "Call `start_session` with `unattended: true`.",
         "Post the status line without asking anyone a question."
@@ -81,14 +79,34 @@
     },
     {
       "id": "person-present",
-      "prompt": "Can you post today's status line on the Billing rework stream from its tasks?",
+      "prompt": "Post today's status line on the Billing rework stream from its tasks.",
       "must_load": true,
-      "context": {
-        "launch": "The user typed this in an interactive session and is waiting for the answer."
-      },
+      "context": {},
       "expected_behavior": [
         "Call `start_session` without `unattended`.",
-        "Post the status line and tell the user what it says."
+        "Post the status line and say what it says."
+      ]
+    },
+    {
+      "id": "print-mode-unsaid",
+      "prompt": "Post today's status line on the Billing rework stream from its tasks.",
+      "must_load": true,
+      "context": {
+        "runtime": "Started with `claude -p`; neither the prompt nor any instruction says whether a person reads the run."
+      },
+      "expected_behavior": [
+        "Call `start_session` without `unattended`: nothing the AI reads says no person reads or answers the run."
+      ]
+    },
+    {
+      "id": "approval-mode-never",
+      "prompt": "Post today's status line on the Billing rework stream from its tasks.",
+      "must_load": true,
+      "context": {
+        "runtime": "An interactive Codex session whose approval mode is never: the base instructions say not to ask for approval; the user typed the prompt and waits."
+      },
+      "expected_behavior": [
+        "Call `start_session` without `unattended`: an approval or permission mode does not make a run unattended."
       ]
     },
     {

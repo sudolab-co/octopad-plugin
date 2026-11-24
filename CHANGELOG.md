@@ -4,7 +4,7 @@
 
 A run no person takes part in says so when it opens its session, so it never gets the person's daily Pad update nor starts their day.
 
-- `octopad-session` 35.2.0: when a script, a schedule or another agent launched the conversation and no one answers in it, the AI passes `unattended: true` to `start_session`.
+- `octopad-session` 35.2.0: the AI passes `unattended: true` to `start_session` only when its prompt or instructions say no person reads or answers the run, as the parameter says; a sub-agent, an approval mode or a permission mode is no such run.
 
 Needs the server change that accepts `start_session`'s `unattended` (the companion server pull request); where the person has no Pad, the server drops it without a word. All three distributions move to 35.2.0.
 
