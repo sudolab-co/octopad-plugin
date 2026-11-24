@@ -2985,7 +2985,7 @@
         ]
       },
       "expected_behavior": [
-        "Writes one `needs_you` sentence in Today's brief's `outside` section citing 'Beta launch', its `detail` saying why it looks done and its `prompt` starting a session to archive it.",
+        "Writes one `needs_you` sentence in Today's brief's `outside` section citing 'Beta launch', its `detail` saying why it looks done and its `prompt` starting a session to archive it, that `prompt` also asking, for each stream the person keeps, to write in its update with `work_streams` `set_status` that they keep it.",
         "Leaves out 'Partner portal', kept on purpose per its latest update.",
         "Archives nothing itself."
       ]
@@ -3003,6 +3003,20 @@
         "Restates the priorities in their new order, Desktop first and Rules second, and asks the user to confirm; saves nothing in this turn; saves the new order on their yes, or once they go on without answering.",
         "Restates the order alone, with no reason linking the two priorities, and asks nothing but the confirmation.",
         "Asks nothing about the open tasks of the priority that moved down, and changes no task."
+      ]
+    },
+    {
+      "id": "finished-streams-kept",
+      "prompt": "Don't archive Beta launch, I'm keeping it until the launch numbers come in.",
+      "must_load": true,
+      "context": {
+        "work": [
+          "Earlier in this conversation the Pad update wrote Today's brief proposing to archive the completed stream 'Beta launch' (goal closed, latest update: none)."
+        ]
+      },
+      "expected_behavior": [
+        "Writes in 'Beta launch''s update with `work_streams` `set_status` that the person keeps it until the launch numbers come in.",
+        "Archives nothing and changes neither the stream's status nor its tasks."
       ]
     },
     {
