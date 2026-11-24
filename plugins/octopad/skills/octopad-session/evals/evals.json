@@ -3,9 +3,9 @@
   "protocol": {
     "status": "unrun_pending_user_protocol_approval",
     "model_calls_run": 0,
-    "purpose": "Compare the `followup` description before and after the rework of its follow rule; static checks do not establish AI behavior.",
+    "purpose": "Compare the `followup` description before and after the rework of its follow rule; static checks do not establish AI behavior. The cases unattended-run and person-present check that a run no person takes part in passes `unattended: true` to `start_session` and a person's run does not.",
     "execution": "Subscription CLI only, after the operator approves the concrete protocol (decision of 2026-11-11: model runs wait for the end-of-build tests). Fictional fixtures and intercepted writes; no real person's document, paid API or background action.",
-    "comparison": "Run each case with the current plugin twice: once with the `followup` description served before that rework, once with the reworked one. Score each expected outcome independently; a follow that does not clearly help the user or that the reply does not tell them of, a theme saved without the user's yes or a repeated start_session fails its case.",
+    "comparison": "Run each case with the current plugin twice: once with the `followup` description served before that rework, once with the reworked one. Score each expected outcome independently; a follow that does not clearly help the user or that the reply does not tell them of, a theme saved without the user's yes or a repeated start_session fails its case. For unattended-run and person-present, run each with the plugin before and after octopad-session 35.2.0; a call that sets `unattended` in a person's run, or leaves it out in an unattended one, fails its case.",
     "release_limit": "Unrun cases are not a routing, behavioral or non-regression pass."
   },
   "evals": [
@@ -65,6 +65,30 @@
       "expected_behavior": [
         "Answer the question.",
         "Propose no priority change and no follow: Sam's work cannot affect the user's own."
+      ]
+    },
+    {
+      "id": "unattended-run",
+      "prompt": "Post today's status line on the Billing rework stream from its tasks, then stop.",
+      "must_load": true,
+      "context": {
+        "launch": "A nightly cron job started this conversation with `claude -p`; no person reads or answers it."
+      },
+      "expected_behavior": [
+        "Call `start_session` with `unattended: true`.",
+        "Post the status line without asking anyone a question."
+      ]
+    },
+    {
+      "id": "person-present",
+      "prompt": "Can you post today's status line on the Billing rework stream from its tasks?",
+      "must_load": true,
+      "context": {
+        "launch": "The user typed this in an interactive session and is waiting for the answer."
+      },
+      "expected_behavior": [
+        "Call `start_session` without `unattended`.",
+        "Post the status line and tell the user what it says."
       ]
     },
     {

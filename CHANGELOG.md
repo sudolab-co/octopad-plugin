@@ -1,5 +1,13 @@
 # Changelog
 
+## 35.2.0 - Unreleased
+
+A run no person takes part in says so when it opens its session, so it never gets the person's daily Pad update nor starts their day.
+
+- `octopad-session` 35.2.0: when a script, a schedule or another agent launched the conversation and no one answers in it, the AI passes `unattended: true` to `start_session`.
+
+Needs the server change that accepts `start_session`'s `unattended` (the companion server pull request); where the person has no Pad, the server drops it without a word. All three distributions move to 35.2.0.
+
 ## 35.1.0 - Unreleased
 
 The AI keeps the work graph coherent at the moments it changes: a stream or goal created, a stream changed, a priority changed or dropped, the daily Pad update. A new order of the person's priorities is restated before it is saved.
