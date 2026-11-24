@@ -12,7 +12,7 @@
 - When the next meaningful steps depend on repeated user choices, continue direct collaboration, and reconsider once those choices settle.
 - Do not offer agent delivery on every turn.
 
-- When useful agent delivery is plausible, open the `octoplan` skill to qualify the actual runtime route and review the smallest adequate Plan.
+- When useful agent delivery is plausible, open the `octoplan` skill to qualify the actual runtime route and have its draft plan reviewed.
 - Before the user chooses how much autonomy agents get, show the Plan's summary: what agents can finish without the user, and every known intervention, access, proof and continuation limits included.
 - Offer it in plain words: the user need not know the name Octoplan.
 - Opening the `octoplan` skill or accepting a brief grants no delivery authority: delivery by Octoplan agents needs the user's explicit confirmation (What needs the user's confirmation first).
@@ -32,4 +32,4 @@ When work moves from collaboration to agent delivery:
 
 - Open a new stream only when the work's actual scope calls for one under [the stream rules](../SKILL.md#which-stream-work-belongs-to), never just to turn on agent delivery.
 - On resume, check current state and ownership; an existing valid Octoplan follows its own resume rules, without a duplicate choice.
-- Before work returns to direct collaboration, stop the delivery as the `octoplan` skill says (supervision, "Stop or hand over"); never leave agents or pending effects running under a superseded mandate.
+- Before work returns to direct collaboration, stop the delivery as the `octoplan` skill (section "Stop or hand over") says; never leave agents or pending effects running under a superseded mandate.

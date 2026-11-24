@@ -16,7 +16,7 @@ Repeat until every task is done or no safe work remains:
 1. **Pick** a ready task: prerequisites done, no placeholder, claimed by no one else. Set it `in_progress`.
 2. **Brief** one fresh executor on the task's saved route for this runtime, with the [executor brief](#executor-brief), after rereading the task from Octopad. Give an executor without Octopad access the task's attached files at a path it can read.
 3. **Check** its report: confirm the decisive checks on the exact commit or result from a source the executor did not write (hosted results, or one rerun), and that any review the `Review` line names came back with each finding handled.
-4. **Close** each subtask once its commit is in the branch, then push and open the pull request as the mandate allows; close the task once `Done when` holds. Write the spec or record changes the executor returned. Add one short comment: the checks, the pull request or commit, the review outcome, any decision taken.
+4. **Close** each subtask once its commit is in the branch, then push and open the pull request as the mandate allows; close the task once `Done when` holds. Write the spec or record changes the executor returned; a change that waits for a later event, such as a release reaching production, first gets its own task, as the `octopad-planning-and-work-design` skill (section "Shaping the work") says. Add one short comment: the checks, the pull request or commit, the review outcome, any decision taken.
 
 - When a defect or finding can recur in other open tasks, add the rule and the failing case to their briefs before dispatch, and send it to running executors it reaches. When the plan lacks the rule itself, first [fix the plan](#fix-the-plan) for all affected tasks at once.
 - Run tasks in parallel only when their writes are proved independent: different files and outputs, separate workspaces. Never parallelize migrations, shared generated files, or tasks where one shapes the other.
@@ -36,6 +36,7 @@ Repeat until every task is done or no safe work remains:
 When a task's meaning, dependencies or checks are wrong, context is missing or a shared choice is unsettled:
 - Note the defect on its task and hold only the tasks it affects.
 - Launch one planner sub-agent at your profile's plan repair route, with the affected tasks and their `Done when`, the failure and its evidence, and the mandate. Tell it to read planning.md's "Draft the plan" and "Changes", and to call no Octopad tool. It returns a diagnosis and the full text of each changed or new task, both routes and `Review` included, or the exact obstacle; it dispatches no one and cannot widen the mandate.
+- When the returned text changes a task's meaning, dependencies, checks, effects or review, launch one fresh reviewer on it at your profile's reviewer route for the plan, read-only and told to call no Octopad tool, with the affected tasks as saved, the failure and the mandate ([Changes](planning.md#changes)). Fix each real defect in the text before you write it, with no second review.
 - Write the repair, reread it as saved, then resume.
 
 ## Executor brief
@@ -71,7 +72,7 @@ Report: the commit or result, the checks and their outcome, the review verdict a
 ## Finish
 
 - The delivery is done when every task is closed with its proof and every checkpoint has the user's go. Before you say no work remains, name what each open task waits on.
-- Publish the final recap with the labels of [What the user reads](../SKILL.md#what-the-user-reads), and post a stream update saying the delivery finished and what remains.
+- Publish the final recap with the labels of [What the user reads](../SKILL.md#what-the-user-reads), naming each remaining item by its task, and post a stream update saying the delivery finished and what remains.
 - Remove what the run left on the machine that serves nothing now: locks, caches, temporary copies, worktrees and local branches with no unmerged work. Keep deliverables and anything a record cites.
 
 ## Stop or hand over

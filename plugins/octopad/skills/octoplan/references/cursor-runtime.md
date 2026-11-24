@@ -26,6 +26,6 @@ Read on 2026-11-04 from Cursor's documentation and plugins, not measured in a ru
 - Give no compaction advice.
 - The planner ends its turn with the [pointer](planning.md#launch) and asks the user to open a new Agent chat with it at `claude-opus-5-5[effort=high]`, for a repository in its own worktree (the Agents Window offers one; in the editor, begin with `/worktree`).
 - Launch one executor per task on its lane, in an isolated worktree when another writer works in the same repository. Until a background completion has been seen to wake an idle supervisor in this Cursor version, use `run_in_background: false`, independent executors in one message.
-- Where an executor cannot launch its reviewer, launch it yourself and `resume` the executor without `model`, passing the findings. A plan repair runs as a planner sub-agent.
+- Where an executor cannot launch its reviewer, launch it yourself and `resume` the executor without `model`, passing the findings. A plan repair runs as a planner sub-agent; once it returns, you launch its reviewer ([Fix the plan](supervision.md#fix-the-plan)).
 - Wait for pull-request checks in the active turn on a command that exits once every check finished. When every wait is a person's, report and end the turn; the user's next message resumes the same chat.
 - For a successor, give the pointer; the user confirms that the previous chat stopped, since no tool reads another chat.

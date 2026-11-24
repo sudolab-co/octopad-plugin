@@ -83,7 +83,7 @@
       "id": 14,
       "prompt": "An Octoplan worker finds that two ready units write one shared value without an ordering rule. Their code cannot meet the reviewed acceptance criteria as specified. The original planner is unavailable, bounded native planning delegation is available, and another task is independent. Describe the repair and ownership.",
       "should_trigger": true,
-      "expected_behavior": "Plan defect: hold only the affected tasks. One planner sub-agent at the plan repair route gets the affected tasks, their Done when, the evidence and the mandate; it calls no Octopad tool and returns the full text of each changed task, routes and Review included. It dispatches no one, does not supervise and widens nothing. The supervisor writes the repair, rereads it as saved and resumes; the changed tasks get one review. Independent work continues."
+      "expected_behavior": "Plan defect: hold only the affected tasks. One planner sub-agent at the plan repair route gets the affected tasks, their Done when, the evidence and the mandate; it calls no Octopad tool and returns the full text of each changed task, routes and Review included. It dispatches no one, does not supervise and widens nothing. The supervisor launches one fresh reviewer on the returned text, fixes its real defects, then writes the repair, rereads it as saved and resumes. Independent work continues."
     },
     {
       "id": 15,
