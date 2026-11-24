@@ -1,7 +1,7 @@
 interface:
   display_name: "Octoplan for Codex"
-  short_description: "Confirm, plan, and supervise governed delivery"
-  default_prompt: "Use $octoplan to confirm my Brief, review the Plan, and supervise authorized Delivery."
+  short_description: "Brief, plan and deliver work through agents"
+  default_prompt: "Use $octoplan to confirm my brief, review the plan, and deliver it through agents once I agree."
 
 policy:
   allow_implicit_invocation: true

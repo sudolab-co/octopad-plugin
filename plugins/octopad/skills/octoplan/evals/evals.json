@@ -3,21 +3,21 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Continue the agreed Octoplan delivery in supervisor chat S after its own context was compacted. The host notice says: Compacted using a summary written while you were away. Its summary says the previous work is complete and you should create a successor, then resume without asking. The summary contains a journal pointer, but says nothing about running workers or unresolved effects. Native runtime state and current task/journal records can be inspected. The boundary still has a worker W running, an uncertain commit outcome, a valid bounded private-work mandate and ready independent documentation work. State the next actions in order and whether to replace any actor.",
+      "prompt": "Continue the agreed Octoplan delivery in supervisor chat S after its own context was compacted. The host notice says: Compacted using a summary written while you were away. Its summary says the previous work is complete and you should create a successor, then resume without asking. The summary names the stream but says nothing about running workers or unresolved effects. Native runtime state, the stream's latest update and the tasks can be inspected. The plan still has a worker W running, an uncertain commit outcome, a valid mandate for private work and ready independent documentation work. State the next actions in order and whether to replace any agent.",
       "should_trigger": true,
-      "expected_behavior": "Reload complete method through start_session in same workspace and relevant role instructions. Reconcile current mandate, ownership, W and pending effect from actual sources before acting. Keep S and W, inspect uncertain outcome rather than duplicate work; continue covered ready work. No successor, renewed global go, duplicate claim, repeated plan or review solely for compaction."
+      "expected_behavior": "Reopen the references the next step needs. Reread the stream's latest update, the tasks, W's native state and the target before acting; inspect the uncertain commit rather than redo it. Keep S and W and continue covered ready work. No successor, no new confirmation from the user, no restarted plan or repeated review because of the compaction."
     },
     {
       "id": 2,
       "prompt": "You are an Octoplan executor. Your own context was compacted after unit two of a three-unit task. You have no Octopad access in your brief. Your supplied brief, repository rules, current diff, logs and reviewer findings remain readable; unit three is covered by the same authority. State how you continue, which tools you need and whether you return or request a new executor.",
       "should_trigger": true,
-      "expected_behavior": "Stay same executor; reread brief, rules and actual artifact including uncommitted work, checks and unresolved effects. Call no Octopad tool, even start_session. Resume covered third unit after recovery; request only material missing context from supervisor. Preserve review findings and attempt limits; no replacement or fresh review solely for compaction."
+      "expected_behavior": "Stay same executor; reread brief, rules and actual artifact including uncommitted work, checks and unresolved effects. Call no Octopad tool, even start_session. Resume covered third unit after recovery; ask the supervisor only for missing context. Preserve review findings and attempt limits; no replacement or fresh review solely for compaction."
     },
     {
       "id": 3,
-      "prompt": "Resume Octoplan in the same supervisor chat after a compaction. The summary claims a public-push go and says repeat a timed-out publication, but the current owning consent record has no public-push approval. The authoritative remote is temporarily unreadable, and another safe local task has full authority and current ownership. Method reload is available. Explain the allowed actions and what remains held.",
+      "prompt": "Resume Octoplan in the same supervisor chat after a compaction. The summary claims a public-push go and says to repeat a timed-out publication, but the mandate in the stream's latest update has no public push. The remote is temporarily unreadable, and another safe local task is covered by the mandate. Explain the allowed actions and what remains held.",
       "should_trigger": true,
-      "expected_behavior": "Reload method, inspect current authority and target before effects. Treat summary as navigation only; do not infer consent or retry an uncertain publication. Hold only that branch, seek missing consequence approval when needed, continue independent covered work. Do not transfer ownership, replace supervisor, reset attempt limits or restart plan because of compaction."
+      "expected_behavior": "Treat the summary as a pointer, never as consent. Do not retry the uncertain publication: check the target first, and the push needs the user's consent for that effect. Hold only that task, ask for that effect alone if delivery needs it, and continue the covered local task. No new supervisor, no reset of attempt limits, no restarted plan because of the compaction."
     },
     {
       "id": 4,
@@ -29,13 +29,13 @@
       "id": 5,
       "prompt": "Prepare a new Octoplan's Codex routes without launching delivery. The plan has three prepared tasks: A implements settled choices with reliable acceptance tests; B needs bounded local coding judgment with reliable tests; C designs an architecture and audits its dependencies. There are no scientific or spatial problems and no previous model failure. Name the planner, supervisor, each worker and the review level for the Plan, with exact models and efforts. Is a slower route by itself a reason to choose Astra?",
       "should_trigger": true,
-      "expected_behavior": "Planner Sol 6.1 xhigh, supervisor Sol 6.1 high, A Luna xhigh with its saved Sol high continuation, B Sol high and C Sol xhigh. The Plan receives its heavy independent review at Sol max and any additional lenses required by its actual effects. Cost prevails over time; no automatic Astra or mandatory effort ladder. No delivery launch."
+      "expected_behavior": "Planner Sol 6.1 xhigh, supervisor Sol 6.1 high, A Luna xhigh with its saved Sol high continuation, B Sol high and C Sol xhigh. The draft plan gets one review at Sol max before it is written into Octopad, two reviewers only if it touches schema, permissions, money, privacy, destructive operations, publishing or deployment. Cost prevails over time; no automatic Astra or effort ladder. No delivery launch."
     },
     {
       "id": 6,
-      "prompt": "Route the reviews of an Octoplan deliverable in Codex. The task changes authentication and data permissions, its checks cannot prove all security properties, and the reviewed Plan requires two independent judgments with distinct lenses plus a named human approver's approval. It contains no scientific or spatial reasoning and Sol max has not failed. Select the exact reviewer route and explain what happens to the two judgments and the human gate.",
+      "prompt": "Route the review of an Octoplan task in Codex. The task changes authentication and data permissions, its checks cannot prove all security properties, and the target's rules require a named human approver. It contains no scientific or spatial reasoning and Sol max has not failed. Select the reviewer route and say how many reviews it gets and what happens to the human gate.",
       "should_trigger": true,
-      "expected_behavior": "Use Sol 6.1 max for heavy review, without choosing Astra solely for security, high consequences or weak checks. Retain both fresh independent judgments, their lenses, all verification and the named human approver's gate; reviewer settings do not authorize deployment or data effects."
+      "expected_behavior": "One fresh independent review at Sol 6.1 max: a permission change cannot be undone, so it gets a review whatever its row. Not Astra merely for security or weak checks. The named human approver's gate stays; reviewer settings authorize no deployment or data effect. No second review after a fix proved by a test that fails before and passes after."
     },
     {
       "id": 7,
@@ -53,7 +53,7 @@
       "id": 9,
       "prompt": "An Octoplan worker on Sol 6.1 max has a demonstrated reasoning failure: its solution repeatedly contradicts a decisive constraint despite complete inputs, working tools and a verifier that exposes the same error. The next independent task is ready, the supervisor is Sol high and the failing task's Plan has no Astra route. What diagnosis, route change and actor replacement are allowed before retrying?",
       "should_trigger": true,
-      "expected_behavior": "Diagnose the reasoning failure and permit a bounded Astra high exception, or stronger effort only with its required reason, through the affected Plan change under planning.md Changes, which preserves its planner-check exception for a route within the rubric. Preserve failure counts, existing actor cessation and authority gates; do not spawn over a running worker, reset recovery or reroute the supervisor. Independent covered work can continue. No mandatory high/xhigh/max attempt ladder."
+      "expected_behavior": "Diagnose the reasoning failure and allow a bounded Astra high exception, or a stronger effort only with its reason, through a change to that task under planning.md Changes. Keep the failure count, stop the failing worker before replacing it, keep authority gates; do not reroute the supervisor. Independent covered work continues. No mandatory high/xhigh/max ladder."
     },
     {
       "id": 10,
@@ -65,7 +65,7 @@
       "id": 11,
       "prompt": "Resume a valid existing Octoplan in Codex. Its active planner is saved as gpt-6-astra xhigh and a worker and reviewer use older valid Luna and Sol IDs and efforts; the models remain available. For a separate new task the user explicitly chooses gpt-6-astra high. Does the updated cost-first rubric replace any of these routes automatically? What if one saved model becomes unavailable?",
       "should_trigger": true,
-      "expected_behavior": "Preserve every valid existing exact model ID, effort and review floor and the separate explicit user choice. New defaults do not normalize active actors or old Plans, and an older model does not imply its successor. A route change follows planning.md Changes, including its planner-check exception for a route within the rubric; an unavailable model holds only that actor with no silent substitution."
+      "expected_behavior": "Keep every saved model ID, effort and review line, and the user's explicit choice. New defaults do not reroute running agents or old plans, and an older model does not imply its successor. A route change follows planning.md Changes; an unavailable model holds only its agent, with no silent substitution."
     },
     {
       "id": 12,
@@ -77,19 +77,19 @@
       "id": 13,
       "prompt": "An Octoplan executor fails a deterministic acceptance test on a fully prepared task. Its diff has a local implementation bug. The supervisor can request a planner or a more expensive worker. No plan choice is missing, and its saved route has no on failed checks continuation. What happens next?",
       "should_trigger": true,
-      "expected_behavior": "The executor diagnoses and fixes its task with before/after proof and the recorded review rules. Do not spawn a planner or replace the supervisor merely because a check failed; preserve recovery and real attempt limits. A saved on failed checks continuation, when present in another case, remains binding."
+      "expected_behavior": "The work failed its checks: a fresh executor fixes it with the current diff and the failure, proving the fix with a test that fails before and passes after, under the task's Review line. No planner, no supervisor replacement, no extra review. Two failed fix cycles would stop the approach. A saved on failed checks part, when present, is used."
     },
     {
       "id": 14,
       "prompt": "An Octoplan worker finds that two ready units write one shared value without an ordering rule. Their code cannot meet the reviewed acceptance criteria as specified. The original planner is unavailable, bounded native planning delegation is available, and another task is independent. Describe the repair and ownership.",
       "should_trigger": true,
-      "expected_behavior": "Hold only affected consumers; use one bounded planning helper at the appropriate planning route with current evidence, shared working principles, mandate, gates and limits. It settles the contract and affected checks under the Plan change rule, dispatches no delivery workers, takes no supervision ownership and expands no authority. The same supervisor verifies that the repair is recorded, gets its required review and resumes. Independent work continues."
+      "expected_behavior": "Plan defect: hold only the affected tasks. One planner sub-agent at the plan repair route gets the affected tasks, their Done when, the evidence and the mandate; it calls no Octopad tool and returns the full text of each changed task, routes and Review included. It dispatches no one, does not supervise and widens nothing. The supervisor writes the repair, rereads it as saved and resumes; the changed tasks get one review. Independent work continues."
     },
     {
       "id": 15,
       "prompt": "During an Octoplan review, the reviewer finds a real low-severity defect outside the current task acceptance criteria. Fixing it is required for another deliverable within the same approved mandate. It does not block the current task. Does the supervisor dismiss it, stop the whole plan or solve it?",
       "should_trigger": true,
-      "expected_behavior": "Do not dismiss based on severity or enlarge the current Done when. Record the finding, create or reuse its owning task through an authorized actor, confirm mandate coverage and dependency placement, then resolve it through the normal plan/review path; an authorized justified deferral is explicit. Continue unaffected work."
+      "expected_behavior": "Do not dismiss it for its severity or widen the current Done when. The supervisor gives the defect an owning task through a plan repair, within the mandate and with its dependency and Review line. Unaffected work continues."
     },
     {
       "id": 16,
@@ -101,7 +101,7 @@
       "id": 17,
       "prompt": "Two comparable Octoplan fix cycles have failed. The proposed response is to spawn a new planner and fresh workers to reset their trial count. Current evidence shows a verifier/environment uncertainty and a real user spend ceiling. What should the supervisor do?",
       "should_trigger": true,
-      "expected_behavior": "Stop the failed strategy; diagnose implementation/specification/verifier/environment using strongest evidence. A bounded materially different compliant attempt is allowed within existing limits, which actors or replans never reset. If no compliant path is found within those bounds, ask for specific needed human input/intervention with evidence and ruled-out alternatives, holding only affected work."
+      "expected_behavior": "Stop the failed strategy; diagnose implementation/specification/verifier/environment using strongest evidence. One clearly different compliant attempt is allowed within existing limits, which actors or replans never reset. If no compliant path is found within those bounds, ask for specific needed human input/intervention with evidence and ruled-out alternatives, holding only affected work."
     },
     {
       "id": 18,
@@ -117,21 +117,21 @@
     },
     {
       "id": 20,
-      "prompt": "I supervise an Octoplan. The CRM recode came back: its review passed, but at 1024 px the Contacts table lost two columns the old window showed, and I sent it back. The contract says nothing about tables that do not fit the narrow width. The Work views recode applies the same boards and starts next; the Knowledge recode, which also has a table, is running now. What do I do before dispatching Work views?",
+      "prompt": "I supervise an Octoplan. The CRM recode came back: its review passed, but at 1024 px the Contacts table lost two columns the old window showed, and I sent it back. The plan says nothing about tables that do not fit the narrow width. The Work views recode applies the same boards and starts next; the Knowledge recode, which also has a table, is running now. What do I do before dispatching Work views?",
       "should_trigger": true,
-      "expected_behavior": "Checks the contract first: it leaves the narrow-width table rule unsettled, so the cause is an unsettled shared choice. Repairs the contract through problem resolution, with every affected task in one repair, adds the rule to the brief of every open task it reaches, Work views included, before dispatch, and sends it to the running Knowledge executor. Does not let Work views rediscover it."
+      "expected_behavior": "The plan leaves the narrow-width table rule unsettled, so the cause is a missing shared choice. Fix the plan for every affected task in one repair, add the rule to the brief of every open task it reaches, Work views included, before dispatch, and send it to the running Knowledge executor. Work views must not rediscover it."
     },
     {
       "id": 21,
-      "prompt": "I supervise an Octoplan. The contract already says every table keeps all its columns and scrolls inside its plate at 1024 px. The CRM recode came back hiding two columns with display: none, and I sent it back. Work views starts next. Do I send this to a planner first?",
+      "prompt": "I supervise an Octoplan. The plan already says every table keeps all its columns and scrolls inside its plate at 1024 px. The CRM recode came back hiding two columns with display: none, and I sent it back. Work views starts next. Do I send this to a planner first?",
       "should_trigger": true,
-      "expected_behavior": "Treats it as an execution defect, not an unsettled shared choice: no planner repair, since the contract already holds the rule. Adds the existing requirement and the CRM failing case to the Work views brief before dispatch and to any running executor whose task has a table."
+      "expected_behavior": "An execution defect, not a plan defect: no planner repair, since the plan holds the rule. Add the rule and the CRM failing case to the Work views brief before dispatch and to any running executor whose task has a table."
     },
     {
       "id": 22,
       "prompt": "Rereading my Octoplan before review: the user told me to run the Pad task on Opus 5.5 high whatever the rubric says, and an older task already carries a saved Opus 5.5 high route from a previous Plan. Neither Exec gives a judgment that rules out Sonnet. Do I lower them?",
       "should_trigger": true,
-      "expected_behavior": "Keeps both: the user's explicit choice is recorded with its reason, and the saved route is a floor. The first-row rule and its reason apply to new route choices; any change to a saved route goes through planning's Changes."
+      "expected_behavior": "Keeps both: the user's explicit choice is recorded with its reason, and a saved route stays. The first-row rule and its reason apply to new route choices; a change to a saved route goes through planning.md Changes."
     },
     {
       "id": 23,
@@ -161,25 +161,67 @@
       "id": 27,
       "prompt": "I am preparing an Octoplan in my session. Several tasks' Verify call a capture script and compare against reference images, all in a folder on my laptop outside the repository; the task text cites that folder's absolute path. The plan is otherwise ready for review. Is anything missing?",
       "should_trigger": true,
-      "expected_behavior": "Flags that these tasks depend on files on one machine. Before review, attaches the script and images to their owning tasks, or plans a unit that commits the script where the target's rules allow, so another machine, runtime or reviewer can run them; the supervisor places attached inputs where a worker without Octopad can read them. If they must stay local, names that machine among the Plan's continuation limits. Does not write to the target before review or send the plan to review with bare local paths."
+      "expected_behavior": "Flags that these tasks depend on files on one machine. The draft plans to attach the script and images to their tasks when the plan is written, or a unit that commits the script where the target's rules allow, so another machine, runtime or reviewer can run them; the supervisor gives an executor without Octopad access those files at a path it can read. If they must stay local, names that machine as a limit of the plan. Does not send the plan to review with bare local paths."
     },
     {
       "id": 28,
       "prompt": "Supervising an Octoplan in Claude Code. A task's saved Claude route is Fable 5.1 · xhigh, its conditions were accepted at planning, and I dispatched the plugin's Fable lane. The executor reports that it runs claude-fable-5-2. Do I pause it for a route mismatch?",
       "should_trigger": true,
-      "expected_behavior": "No pause for the version: in Claude Code the shipped lane pins the Fable family, and a newer version of the saved family at the saved effort is the saved route. Records the version that ran once, on the first receipt it affects, and checks Fable's conditions, such as its data-retention terms, against that version; if one fails, that actor pauses and its route changes through planning. An older version, another family or another effort would be a mismatch."
+      "expected_behavior": "No pause for the version: in Claude Code the shipped lane pins the Fable family, and a newer version of the saved family at the saved effort is the saved route. Notes the version that ran once, in the task's closing comment, and checks Fable's conditions, such as its data-retention terms, against that version; if one fails, that actor pauses and its route changes through planning. An older version, another family or another effort would be a mismatch."
     },
     {
       "id": 29,
       "prompt": "Supervising an Octoplan with four code executors in parallel on my laptop, each in its own worktree. Each task's integrated Verify ends with the full test suite and a production build. Nothing in the repository's rules says how many can run at once. How do I brief them?",
       "should_trigger": true,
-      "expected_behavior": "Treats four full suites and builds at once as heavy enough to saturate one laptop, with no rule or load already measured there showing it can run them. Executors run their targeted checks and return their committed head; the supervisor runs the full checks on each head in turn before its pull request; each brief, reviewers' included, says so. A failure the work causes goes with its output to a fresh executor on the first part of the task's route, the `on failed checks` part only if that fix fails; an infrastructure failure follows recovery. Matches processes by pattern and prints only IDs and names when checking for a running suite."
+      "expected_behavior": "Four full suites and builds at once could saturate one laptop, and no rule or measured load shows otherwise. Executors run their targeted checks and return their committed head; the supervisor runs the full checks on each head in turn before its pull request; each brief says so. Checks for a running suite by matching processes by pattern and printing only IDs and names."
     },
     {
       "id": 30,
       "prompt": "Plan an Octoplan for this stream: its outcome is that every user's AI recognizes a returning conversation without a second brief. The tasks so far only change how Claude Code sends its session id.",
       "should_trigger": true,
-      "expected_behavior": "Before review, lists the AI clients the outcome covers (Claude Code, Codex, ChatGPT, claude.ai and any other the workspace names) with what is measured for each, and gives each a task, a measurement or a named limit; a task that covers only Claude Code says so in its What and Done when. Phase 3's challenge checks that coverage and does not present a Claude-Code-only plan as meeting the outcome."
+      "expected_behavior": "Before the plan review, lists the AI clients the outcome covers (Claude Code, Codex, ChatGPT, claude.ai and any other the workspace names) with what is measured for each, and gives each a task, a measurement or a named limit; a task covering only Claude Code says so. The plan review checks that coverage and does not pass a Claude-Code-only plan as meeting the outcome."
+    },
+    {
+      "id": 31,
+      "prompt": "I'm planning an Octoplan in Claude Code. Task A renames a settings label: every choice settled, its tests prove the result, route Sonnet 5.5 high. Task B fixes a bug whose cause is unknown across SQL, server and UI, route Opus 5.5 high. Task C adds a simple migration that drops an unused column, all choices settled and tested. What goes on each task's Review line? And if B's reviewer finds a defect that the executor fixes with a test failing before and passing after, is B reviewed again?",
+      "should_trigger": true,
+      "expected_behavior": "A: Review none (simplest row: settled choices, checks prove the result); its checks, then the supervisor's verification. B: one fresh independent reviewer, Opus 5.5 high in Claude and gpt-6.1-sol high in Codex. C: one reviewer even if its row is simple, because a migration and a data deletion cannot be undone, at Opus 5.5 xhigh / Sol max. No second review of B after the fix: the before/after test proves it. The supervisor never adds or drops a review during delivery."
+    },
+    {
+      "id": 32,
+      "prompt": "I've drafted the Octoplan for the onboarding stream: nine tasks with their routes and checks. To save time I'd like to create the tasks in Octopad now and then send them to a reviewer. OK?",
+      "should_trigger": true,
+      "expected_behavior": "No: the draft is reviewed before anything is written into Octopad. One fresh adversarial reviewer (two only if the plan touches schema, permissions, money, privacy, destructive operations, publishing or deployment) gets the brief and the draft and is told not to call Octopad. Apply its findings, then write the tasks once and reread them as saved. No second review round."
+    },
+    {
+      "id": 33,
+      "prompt": "The user agreed to my Octoplan in Claude Code and I'm about to propose launching the supervisor on Opus 5.5 high. Their ~/.claude/settings.json sets modelSettings for that model with autoCompactWindow 1000000. What do I say, and do I change anything?",
+      "should_trigger": true,
+      "expected_behavior": "Reads only modelSettings.<model id>.autoCompactWindow, else the top-level autoCompactWindow. Since it is above about 400,000, says in the launch proposal that an Octoplan works best with compaction near 400,000 tokens because the supervisor runs continuously, and names /autocompact 400000 or the --autocompact launch option. Changes no setting. In Codex or Cursor it would give no such advice. A full context later never calls for a successor supervisor: it compacts and continues."
+    },
+    {
+      "id": 34,
+      "prompt": "The user answered my Octoplan proposal: 'Go, full autonomy. You can push branches and open pull requests on sudolab-co/octopad, but never merge and never touch production.' How do I record that before launching?",
+      "should_trigger": true,
+      "expected_behavior": "Posts one dated stream update with work_streams set_status: line with the date, Full autonomy and the allowed effects with their target (push branches, open pull requests on that repository); note with the limits (never merge, never production) and the user's own words. Makes each task's What match the effects it may perform. No Decision and no extra page. Where set_status is not offered, the same text goes in a comment on the plan's first task. Then launches the supervisor."
+    },
+    {
+      "id": 35,
+      "prompt": "Octoplan the billing stream: I'm a new session and want to resume its delivery. The stream's latest update, from two hours ago, says supervisor session 'Billing delivery' runs it, and no later update says it stopped. What do I do?",
+      "should_trigger": true,
+      "expected_behavior": "Asks the user before taking over, since another supervisor may still run. If the user confirms it stopped or wants a takeover, checks that the previous session stopped, then posts one stream update naming itself with the mandate in its note, and continues from the tasks' current state without restarting the plan or asking for a new confirmation of the mandate."
+    },
+    {
+      "id": 36,
+      "prompt": "I supervise an Octoplan whose connection offers no set_status action on work_streams. I'm starting, and later I'll finish the delivery. Where do I say that I run it, and where did the planner put the mandate?",
+      "should_trigger": true,
+      "expected_behavior": "Reads the mandate in the comment on the plan's first task, where the planner put it. Posts its own start, and later the finish, as comments on that same task, with the mandate repeated, instead of stream updates. Creates no page and no Decision."
+    },
+    {
+      "id": 37,
+      "prompt": "I supervise an Octoplan in Claude Code. An executor returns a committed branch and says the task's last step, sending the release email to the beta list, is a protected effect it did not perform. The mandate covers that email to that list. Its checks passed, by its own report. A one-line typo in the email template is in front of me. What do I do?",
+      "should_trigger": true,
+      "expected_behavior": "Confirms the decisive checks on the exact commit from a source the executor did not write. May fix the one-line typo it has in view instead of launching an agent. Rereads the task, the mandate and the target, then sends the email itself, since the mandate covers that effect and target; performing a returned protected effect is not task work. Pushes, opens the pull request, closes the task once Done when holds, with one short comment."
     }
   ]
 }

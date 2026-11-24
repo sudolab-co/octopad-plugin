@@ -1,39 +1,33 @@
 ---
 name: octoplan
-description: "Use when prepared work could benefit from delivery by agents, when the user wants agents to carry a stream to its outcome, before proposing how agents should organize, plan or deliver a stream, and when the user names, resumes or supervises an Octoplan. Opening it authorizes no delivery. Not for preparing the stream itself (octopad-planning-and-work-design)."
+description: "Use when prepared work could be delivered by agents, when the user wants agents to carry a stream to its outcome, before proposing how agents should deliver a stream, and when the user names, resumes or supervises an Octoplan. It confirms a brief, has a drafted plan reviewed, writes it into Octopad as tasks, then launches one supervisor that hands each task to an executor agent. Opening it authorizes no delivery. Not for preparing the stream itself (octopad-planning-and-work-design), nor for work done with the user turn by turn."
 ---
-Version: 10.5.0
+Version: 11.0.0
 
 # Octoplan
 
+Octoplan delivers a stream's prepared work through agents:
+
+1. **Brief.** The planner captures the need and asks only what it must to confirm its understanding. The user confirms.
+2. **Plan.** The planner drafts a detailed plan, has the draft reviewed, and fixes it.
+3. **Write.** The planner writes the final plan into Octopad once, as tasks.
+4. **Agree.** The planner shows the plan in plain words. The user chooses the autonomy and what agents may do without asking; the planner records it in Octopad.
+5. **Deliver.** The planner launches one supervisor, a separate session that runs the tasks in order, or in parallel where their writes are proved independent. It hands each task to one executor agent and never does task work itself, except fixing a few lines it already has in view.
+
+Read [planning.md](references/planning.md) for steps 1 to 4, [supervision.md](references/supervision.md) for step 5, and the profile of the host you run in: [claude-runtime.md](references/claude-runtime.md) in Claude Code, [codex-runtime.md](references/codex-runtime.md) in Codex, [cursor-runtime.md](references/cursor-runtime.md) in Cursor, which runs the Claude routes. To choose routes, read the route sections of both the Claude and the Codex profiles. On another host, check that it can launch and wake agents before you promise delivery.
+
 ## After a compaction
 
-This section binds every supervisor and executor. A compaction may bring back this file without its references: after one, reopen each reference your next action needs.
+The same supervisor or executor continues in the same session: compaction alone never replaces it. A client can bring back this file without its references. Before your next dispatch or effect:
 
-Compaction is normal continuity in the same session, not a reason to retire a supervisor or executor. When a summary replaces your own earlier turns, or a notice says your context was compacted or continued, recover before the next dispatch or effect:
+1. Reopen the references your next step needs.
+2. Reread the state from its sources: the stream's latest update, the tasks with their status and comments, the agents still running, and the target (branch, diff, uncommitted work, pull request).
+3. Treat the summary as a pointer, never as permission or as proof that work is done.
+4. Continue in the same role, with the same agents, mandate and pending questions. Do not ask the user again, restart the plan, launch a new session or repeat a review because of the compaction.
 
-1. Reconcile the current mandate, ownership, active actors, pending effects and human gates from their owning records and the actual delivery target:
-   - Inspect native actor state and the boundary's current-supervision header, active work and unresolved effects, even when the summary omits them.
-   - Use the summary as a source pointer, never as permission, proof of completion or a complete inventory.
-   - Beyond those recovery checks, read only what the next action depends on; keep checks and reviews whose inputs are demonstrably unchanged.
-2. Once that state is established, continue in the same role and session:
-   - Keep the existing workers, valid authority and pending decisions.
-   - A stop, release or retirement stays binding: recovery never reactivates a released or replaced actor.
-   - Do not recreate actors, reclaim unchanged ownership, restart preparation or ask for a new confirmation because of compaction.
-   - Missing material evidence holds only the work that needs it: resolve it through [recovery.md](references/recovery.md#reconcile-effects-before-retrying).
+## What the user reads
 
-Around recovery:
-- A predecessor's brief or report is not a compaction of your own context.
-- When you prepare a continuation summary, include the method reload, current source pointers and unresolved effects, so this same actor can recover.
-- Neither a summary's next step nor the client's resume instruction bypasses recovery.
-- Compaction alone never replaces an actor.
-- Replace a supervisor only on a demonstrated inability to continue after recovery, a host constraint or the user's request.
-- Executor failure and saved escalation routes follow [supervision.md](references/supervision.md#phase-4-advance-the-ready-frontier).
-- Every actual replacement keeps the cessation and ownership rules in [recovery.md](references/recovery.md).
-
-## One visible program
-
-Once the user enters Octoplan planning or delivery, start each message that reports state or hands the user a decision with the applicable banner, in every runtime; a short status answer needs none. Merely qualifying or offering agent delivery during ordinary stream preparation does not start this program or impose its banners:
+Start each message that reports progress or asks for a decision with its step's banner, in every runtime; a short status answer needs none. Offering agent delivery while preparing a stream does not start Octoplan.
 
 ```markdown
 **Octoplan · Step 1 of 3: Brief**
@@ -41,118 +35,56 @@ Once the user enters Octoplan planning or delivery, start each message that repo
 **Octoplan · Step 3 of 3: Delivery**
 ```
 
-- Put the banner first in the message, before any incident narrative, explanation or table.
-- Write what the user reads in everyday words: name what will happen and who does it. Keep this skill's vocabulary out of it, along with any synonym doing the same job; say the thing itself instead.
-- Ask about a consequence the user owns in words they can answer. Technical uncertainty goes to diagnosis or review: the user never certifies technical correctness.
-- Records written for other sessions, such as Decisions, tasks, receipts, prompts and pointer blocks, keep the precise wording.
-- A launch brief or pointer names the language the user writes in; the session it starts addresses the user in it until they write in another.
+- Write in the user's language and in everyday words, and name tasks by their title. Keep this skill's words out: "what agents may do without asking", not "mandate"; "which AI does each task", not "route".
+- Ask the user only about consequences they own. Diagnose technical doubts yourself.
 
-From the need to delivery:
-- The user describes the need. Apply the common brief and preparation in [octopad-planning-and-work-design](../octopad-planning-and-work-design/SKILL.md), including for a direct Octoplan request. Reuse valid confirmed intent and the same graph.
-- The planner qualifies the delivery path, records and reviews the smallest adequate Plan, then shows its summary and human interventions before agreeing autonomy and launching a fresh supervisor through the selected runtime.
-- The supervisor owns delivery of the Brief's outcome, including adapting the approach and resolving incidents within the mandate.
-- An executor produces its task's deliverable and has it reviewed.
-- Internal roles add no user-facing stage.
+When a human decision or action becomes necessary, raise it at once, never inside a progress report. Say whether it stops all delivery or one task, under these labels in the user's language:
 
-## Load only what the work needs
+- **State**: where the outcome stands.
+- **Done**: what is finished and proved.
+- **Blocked**: what waits, and why.
+- **Decision expected**: the exact decision or action needed.
+- **To unblock**: who must provide what.
+- **Next step**: what resumes afterwards, and what continues meanwhile.
 
-Load and report only the coordination, routing and recovery mechanics the work needs.
+The final recap uses the same labels. With the Octopad desktop open, post the run's state with `desktop` `report` from the brief on.
 
-- For the Brief, autonomy, the Plan, its review and activation, read [planning.md](references/planning.md).
-- For delivery or a resume, read [supervision.md](references/supervision.md).
-- Select the runtime profile from the actual host, not the model's name:
-  - in Claude Code, [claude-runtime.md](references/claude-runtime.md);
-  - in Codex, [codex-runtime.md](references/codex-runtime.md);
-  - in Cursor, which runs the saved Claude routes, [cursor-runtime.md](references/cursor-runtime.md).
-- Read only that profile when you launch, resume or check capabilities.
-- When you choose routes, read the route sections of both the Claude and the Codex profiles: every task names a route for each runtime ([planning.md](references/planning.md#phase-2-compose-the-plan)).
-- On an unknown host, establish its capabilities before you promise autonomous delivery.
-- Before you read or write a delivery contract or journal, read [records.md](references/records.md).
-- Only for multiple streams, read [multi-stream.md](references/multi-stream.md).
-- Before duplicable or hard-to-undo effects, or on ambiguity, shared-infrastructure distress, a usage quota or rate limit, actor failure, repeated non-progress, takeover or replan, read [recovery.md](references/recovery.md).
-- Only when the selected runtime requires a manual launch or handoff, read [continuation.md](references/continuation.md).
+## Autonomy and mandate
 
-## Shared foundation
+The mandate is what the user agreed agents may do without asking: the mode, the allowed effects with their targets, and the limits, in the user's words, with the date. An effect is a change outside the working copy, such as a push, a message, a deployment or a payment.
 
-- F1, control plane:
-  - Read current Octopad and target state.
-  - In every durable record, use verified sources, revisions or hashes, and read time.
-  - Re-derive moving numbers, link live state, and copy no secrets or unnecessary private text.
-- F3, progressive complexity:
-  - Keep your tool output small, as every actor does, and say so in every brief you delegate, as the [worker prompt](references/supervision.md#worker-prompt) does.
-  - Smaller output never narrows what a check or review covers.
-- F5, falsifiable plan:
-  - Verify material premises.
-  - Record what would kill the run.
-  - Challenge the complete artifact graph before activation.
-- F7, ready work moves:
-  - Advance safe ready branches inside the mandate.
-  - A wait or failure blocks only work that needs it.
-  - A failed trial is evidence to diagnose, not proof that the entire mission must stop.
-  - A failed worker, proof route, reviewer verdict or run generation is not by itself a human decision: a verdict describes the reviewed artifact's validity, not whether all authorized diagnosis must stop.
-- F8, invariant safety:
-  - Autonomy changes interruptions, never applicable rules, verification, review, persistence or the evidence floor.
-  - Exact-artifact consent and actions reserved to a person by effective rules remain explicit gates; no mode removes them.
-- F10, integrated closure:
-  - Close only from current integrated evidence: `built`, `reviewed`, `merged`, `applied`, `verified`, `released`, `accepted`, or the domain equivalent.
-  - Silence, timeouts, irrelevant green checks and unrun checks are not PASS.
-  - An unavailable verifier blocks.
-- F13, protected effects:
-  - Disclose any effect that bills money to any party or cannot be undone, even when no house rule names it.
-  - Its authorization must cover the actual effect and target.
-- F14, environment intact:
-  - Effective target rules, installed skills, hooks, permissions, privacy and legal boundaries remain binding.
-  - Each actor loads guidance applicable to its work; Octoplan does not replace it or prescribe a fixed catalog.
-  - User acceptance never overrides runtime restrictions or transfers system or app permissions to another actor.
-- F15, rigor sized to the stakes:
-  - Read every verification, review and recheck against the recorded stakes, in both directions: reversible internal work gets the floor and nothing more; irreversible or outward work gets the full floors.
-  - Verification that outgrows the decision it protects is a defect, the same as verification that falls short.
-  - Two consecutive rounds that add process without changing what ships trigger F15, not a third round.
-- F16, no unmeasured technical claims: write into a record only a path, command, version, count or behavior you read or measured in this session; write what you cannot measure now as unknown, never as fact.
+Delivery needs the user's explicit agreement (What needs the user's confirmation first), in one of three modes:
+- **Full autonomy:** agents continue all covered work and report progress.
+- **Checkpoints:** agents also stop where the user chose; by default, at each protected effect and each human step.
+- **Step-by-step:** agents stop after each task.
 
-## Autonomy and authority
+In every mode:
+- The mode changes interruptions only, never checks or reviews.
+- A protected effect bills anyone or cannot be undone: disclose it even when no rule names it, and get consent that covers the actual effect and target.
+- The target's written team rules bind; an action they reserve to a person stays with that person.
+- Computer Use, or any automation that drives the screen, needs the user's explicit acceptance of the disclosed targets and actions; Full autonomy grants none.
+- An effect the mandate does not cover waits: ask for it alone, keep the mode, and continue covered work.
+- A planning-only request gets no autonomy question and no launch.
 
-When an earlier explicit choice applies, reuse it: show the reviewed Plan and ask only for a missing consequence decision or a launch choice the runtime requires.
+## Review
 
-- Full autonomy:
-  - Continue covered work and report progress.
-  - Ordinary corrections, replanning, review and supervisor changes preserve the mandate.
-  - A new outcome, authority need, protected effect, user-owned consequence or substantive gate needs only its own new decision; technical choices and dependency placement alone do not.
-  - Ask only when the user owns a new consequence or a rule requires their decision.
-- Checkpoints: also pause at the selected checkpoints. Default to every protected effect, human step and Plan landing; the user may adjust this set within applicable rules.
-- Step-by-step: pause after each agreed step.
+- **The plan:** one fresh adversarial review of the draft, before anything is written into Octopad. Two independent reviewers when the plan touches schema, permissions, money, privacy, destructive operations, publishing or deployment.
+- **A delivered task:** the planner sets the task's `Review` line, and delivery never decides it again; only a plan repair sets it, by this same rule, for the tasks it changes:
+  - none when both of the task's routes sit on the two simplest rows of their runtime profiles (every choice settled, runnable checks prove the result): its checks, then the supervisor's verification;
+  - one fresh independent reviewer for any other task;
+  - one reviewer, on any row, for a change that cannot be undone, such as a migration, a data deletion, a permission change or a payment.
+- **Findings:** fix each real defect. A test that fails before the fix and passes after it proves the fix; where no test can, the executor says how it checked. No second review pass. A defect outside the task goes to the supervisor, which gives it an owning task through a plan repair.
 
-Mode and effect coverage are separate:
-- An effect written into a task after the choice is not thereby authorized: send workers only the authority actually given.
-- When an effect needs clarification, keep the chosen mode: ask only for that delta and continue independent covered work; do not convert Full autonomy to Checkpoints to represent it.
-- An uncovered effect that was found and rejected is not an authority delta: report it, keep the mode and continue; do not offer the user a new choice of mode.
-- Cancelling a task the Plan replaces, whatever its stream, is not an authority delta either: cancel it yourself, with a comment on what its replacement adopts. If that task is in progress for someone else, or inside another live supervisor's boundary, it stays a conflict to reconcile instead.
+## When something goes wrong
 
-## Review floors
+- Diagnose a technical problem and solve it within the mandate before you ask the user anything.
+- A wait or a failure holds only the work that depends on it.
+- Two failed fix cycles on one task stop that approach: diagnose, then try one clearly different way, or record the blocker. A new agent or plan does not reset the count.
+- Never get around a permission, an authentication or a safety refusal.
 
-- A Plan:
-  - Before activation, give it one fresh independent review; activate only with every applicable lens at PASS.
-  - For eight or more tasks, or for schema, permissions, money, privacy, destructive operations, publishing or deployment, use at least two independent judgments with distinct lenses.
-  - A count-only trigger may reduce to one judgment for internal reversible work with deterministic proof; named risk triggers and stricter effective rules may not.
-- A deliverable:
-  - Every material executable change and every published or client-facing deliverable gets one fresh independent review of the whole deliverable, run by its executor as its last step. For a task with units, that review covers its integrated diff, which covers its units, the parent and its pull request at once.
-  - Where the executor cannot launch it, the supervisor does and returns the findings to that executor.
-  - Add a second focused judgment only for a one-way-door surface, or for an expertise the Plan names that the first lens lacks.
-  - Low-risk non-material internal work may close on machine checks plus supervisor verification.
-- A unit: review it on its own only when the Plan names a risk later work must not build on unchecked.
-- Staging: when the target offers staging, land changes there before production, within the applicable access and authorization limits. Unavailable access is a gate, not permission to skip staging.
-- Findings:
-  - Resolve real defects within the mandate, including nonblocking ones: nonblocking is not false.
-  - Disposition each finding as fixed, deferred with authority and rationale, or dismissed with evidence.
-  - Required work outside the task gets an owning task under planning's [change rule](references/planning.md#changes), created or reused by an actor with record authority; record mandate coverage before dispatch.
-- A Plan fix: give a stable fix to a Plan one targeted recheck of the changes and the conclusions they affect, by the same reviewer where the runtime can resume it.
-- A deliverable fix:
-  - Prove it with a test that fails before it and passes after.
-  - Only when it fixes a blocking finding of a heavy review, or reaches beyond its findings, also give it one targeted recheck per fix cycle, by a fresh reviewer at the light-review route, given the previous findings.
-- Any recheck:
-  - A recheck is never a fresh floor, and a replacement reviewer adds no judgment.
-  - The supervisor may recheck a repair whose blast radius is one reversible internal record.
+## Records
 
-## Run controls report
-
-With the desktop open, post the run's controls with `desktop` `report` from the Brief on; the `report` parameter's text gives the fields and limits.
+- The tasks hold the plan and, at close, one short comment with the proof.
+- The stream's updates hold the mandate and who supervises, or comments on the plan's first task where `work_streams` offers no `set_status` ([Record the mandate](references/planning.md#record-the-mandate)).
+- Create no other page, and no Decision, for the brief, the plan, the mandate or the supervision.
+- A sub-agent calls no Octopad tool unless its task's `Octopad` line grants it, read-only unless that line names a write. The session that launched it records its results.

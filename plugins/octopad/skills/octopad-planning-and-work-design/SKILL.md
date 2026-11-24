@@ -2,13 +2,13 @@
 name: octopad-planning-and-work-design
 description: "Use when agreed work has an end state and needs three or more tasks over more than one sitting; when a request holds several deliverables or a step another member carries out; when you are about to create, change, complete, rename, merge, split or archive a stream or a goal, or learn of such a change; when one stream waits on another or matters to it; when a task leaves its stream by archive, deletion or move; when a result, a decision or a new task changes what a stream's remaining tasks assume; before laying out several tasks as a plan; when the number of tasks, nesting, prerequisites, priority order, a date or repeating work is undecided or wrong; and when a test would launch AI sessions, take a person's time or cost money. When the prepared work could benefit from delivery by agents, such as work that needs no choice from the user at each step, open the `octoplan` skill for that delivery."
 ---
-Version: 8.3.0
+Version: 8.3.1
 
 # From a need to prepared work
 
 - A stream and its Octoplan share one brief and one work graph: Octoplan is that work delivered by agents under an agreed autonomy. Never create a second brief or work graph for it.
 - This skill owns the preparation both share.
-- The `octoplan` skill owns the delivery mandate, the executable preparation, its review and its activation.
+- The `octoplan` skill owns the delivery mandate, the executable plan, its review and its launch.
 
 ## Brief only what the request needs
 
