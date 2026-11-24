@@ -2,7 +2,7 @@
 name: octopad-planning-and-work-design
 description: "Use when agreed work has an end state and needs three or more tasks over more than one sitting; when a request holds several deliverables or a step another member carries out; when you are about to create, change, complete, rename, merge, split or archive a stream or a goal, or learn of such a change; when one stream waits on another or matters to it; when a task leaves its stream by archive, deletion or move; when a result, a decision or a new task changes what a stream's remaining tasks assume; before laying out several tasks as a plan; when the number of tasks, nesting, prerequisites, priority order, a date or repeating work is undecided or wrong; and when a test would launch AI sessions, take a person's time or cost money. When the prepared work could benefit from delivery by agents, such as work that needs no choice from the user at each step, open the `octoplan` skill for that delivery."
 ---
-Version: 8.3.0
+Version: 8.4.0
 
 # From a need to prepared work
 
@@ -33,7 +33,10 @@ Before you offer agent delivery or change how work is delivered, read [Choosing 
 - Count the deliverables before the tasks: a deliverable can be shipped, reviewed or closed on its own, and each one is a top-level task.
 - Cut each deliverable into the smallest units that make sense in the logic of its work: parts each finished and checked on its own, split at natural seams, an atomic change kept whole. Those units are its subtasks; a deliverable of one unit has none.
 - Open no top-level task whose only job is to hold the others: an umbrella restates the stream and delivers nothing.
-- Checking a deliverable, getting it accepted and delivering it (sending, publishing, deploying) stay in its Done when. Two steps are their own tasks: a chosen test, and a step another member carries out as their own work, such as a deploy or migration.
+- Checking a deliverable, getting it accepted and delivering it (sending, publishing, deploying) stay in its Done when. Three steps are their own tasks:
+  - a chosen test;
+  - a step another member carries out as their own work, such as a deploy or migration;
+  - work that waits for an event after its task closes, such as a spec edit due once a release reaches production when a merge closes the task. Create it when you defer the work, depending on the task that brings the event, or `blocked` with the event as its reason, and name it wherever you mention the wait. Never leave the wait as a sentence in a spec, a pull request or a comment.
 - Keep an effort flat by default: the stream, its top-level tasks and the dependencies between them.
 - Keep deliverables made one after another flat: top-level tasks joined by dependencies.
 - A chosen test is its own task, one per system it tests, such as a signup flow or a reminder service. Put all that system's cases in its What, each with what it proves, beside its run budget, never also in a deliverable's Done when.

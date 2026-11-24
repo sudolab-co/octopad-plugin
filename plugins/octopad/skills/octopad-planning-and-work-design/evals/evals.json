@@ -120,6 +120,12 @@
       "prompt": "Don't close the 'Partner portal' stream, keep it.",
       "should_trigger": true,
       "expected_behavior": "Writes in the stream's update (`work_streams` `set_status`) that the user keeps it open on purpose, with no invented reason since the user gave none. Changes neither its status nor its tasks."
+    },
+    {
+      "id": 21,
+      "prompt": "The pull request that removes the old Inbox sort is ready. Once it reaches production, the Lists spec should say the old sort is retired. Note that in the spec and the PR body; a merge closes the task.",
+      "should_trigger": true,
+      "expected_behavior": "Before writing the deferral anywhere, creates a task for the spec edit that waits for production, depending on the task that brings the production release or `blocked` with that event as its reason, and names that task in the spec's line and in the PR body's documentation-impact line. Never leaves 'once in production' as a sentence alone, and never relies on the pull request's own task, which the merge closes first."
     }
   ]
 }
