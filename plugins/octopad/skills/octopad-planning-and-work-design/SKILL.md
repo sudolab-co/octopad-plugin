@@ -36,7 +36,7 @@ Before you offer agent delivery or change how work is delivered, read [Choosing 
 - Checking a deliverable, getting it accepted and delivering it (sending, publishing, deploying) stay in its Done when. Three steps are their own tasks:
   - a chosen test;
   - a step another member carries out as their own work, such as a deploy or migration;
-  - work that waits for an event after its task closes, such as a spec edit due once a release reaches production when a merge closes the task. Create it when you defer the work, depending on the task that brings the event, or `blocked` with the event as its reason, and name it wherever you mention the wait. Never leave the wait as a sentence in a spec, a pull request or a comment.
+  - work that waits for an event after its task closes, such as a spec edit due once a release reaches production when a merge closes the task. When you defer such work, create or reuse its task then, depending on the task that brings the event, or, when no member's task brings it, `blocked` with the event as its reason; name that task wherever you mention the wait, in a spec, a pull request or a comment.
 - Keep an effort flat by default: the stream, its top-level tasks and the dependencies between them.
 - Keep deliverables made one after another flat: top-level tasks joined by dependencies.
 - A chosen test is its own task, one per system it tests, such as a signup flow or a reminder service. Put all that system's cases in its What, each with what it proves, beside its run budget, never also in a deliverable's Done when.

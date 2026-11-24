@@ -2,10 +2,11 @@
 
 ## 35.5.0 - Unreleased
 
-Work an AI defers to a later event becomes its own task when it is deferred. On 2026-11-23 a spec edit due "once this is in production" was written as a sentence in the spec and in a pull request's documentation-impact line; the pull request's task closed at its merge, before production, and nobody did the edit.
+Work an AI defers to a later event becomes its own task when it is deferred. On 2026-11-23 a spec edit due "once this is in production" was written as a sentence in the spec and in a pull request's documentation-impact line; the pull request's task closed at its merge, before production, and no task held the edit.
 
-- `octopad-planning-and-work-design` 8.4.0: "Shaping the work" adds a third step that is its own task: work that waits for an event after its task closes. It is created when the work is deferred, depends on the task that brings the event or is `blocked` with the event as its reason, and is named wherever the wait is mentioned, never left as a sentence in a spec, a pull request or a comment. Eval 21 covers the case.
-- `manage-product-documentation` 7.7.0: the delivery rule covers a spec edit that must wait for a later event, not only a blocked one, and names the task that makes the edit in the documentation-impact mark; "Pull requests" says to name the task for any work the body leaves for later. Eval `deferred-spec-edit-gets-a-task` covers it.
+- `octopad-planning-and-work-design` 8.4.0: "Shaping the work" adds a third step that is its own task: work that waits for an event after its task closes. It is created when the work is deferred, depending on the task that brings the event (`blocked` only when no member's task brings it), and is named wherever the wait is mentioned. Eval 21 covers the case.
+- `manage-product-documentation` 7.7.0: the delivery rule covers a spec edit that must wait for a later event, not only a blocked one, and names the task that makes the edit in the documentation-impact mark (documentation-debt work stays the form for a blocked edit); "Pull requests" says to create or reuse a task for needed work the body leaves for later and name it beside that work, never in the `Octopad-Task:` line; the release pass makes an edit whose task a mark names, then closes that task. Eval `deferred-spec-edit-gets-a-task` covers it.
+- `octoplan` 10.6.0: a finding or a deferral the supervisor accepts is deferred to a named task.
 
 Needs no server change. All three distributions move to 35.5.0.
 

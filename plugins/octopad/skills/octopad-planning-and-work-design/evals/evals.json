@@ -123,9 +123,9 @@
     },
     {
       "id": 21,
-      "prompt": "The pull request that removes the old Inbox sort is ready. Once it reaches production, the Lists spec should say the old sort is retired. Note that in the spec and the PR body; a merge closes the task.",
+      "prompt": "Lay out the tasks for retiring saved searches in Lists: one pull request removes them, and once it reaches production the Lists spec must mark them retired. A merge closes the pull request's task; David runs production releases in his release task.",
       "should_trigger": true,
-      "expected_behavior": "Before writing the deferral anywhere, creates a task for the spec edit that waits for production, depending on the task that brings the production release or `blocked` with that event as its reason, and names that task in the spec's line and in the PR body's documentation-impact line. Never leaves 'once in production' as a sentence alone, and never relies on the pull request's own task, which the merge closes first."
+      "expected_behavior": "Makes the spec edit its own task, separate from the pull request's task that the merge closes, depending on David's release task (not `blocked`, since a member's task brings the event), and names it wherever the wait is mentioned. Never leaves 'once in production' as a sentence in the code task's Done when or description."
     }
   ]
 }

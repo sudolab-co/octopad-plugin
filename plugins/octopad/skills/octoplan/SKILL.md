@@ -2,7 +2,7 @@
 name: octoplan
 description: "Use when prepared work could benefit from delivery by agents, when the user wants agents to carry a stream to its outcome, before proposing how agents should organize, plan or deliver a stream, and when the user names, resumes or supervises an Octoplan. Opening it authorizes no delivery. Not for preparing the stream itself (octopad-planning-and-work-design)."
 ---
-Version: 10.5.0
+Version: 10.6.0
 
 # Octoplan
 
@@ -143,7 +143,7 @@ Mode and effect coverage are separate:
 - Staging: when the target offers staging, land changes there before production, within the applicable access and authorization limits. Unavailable access is a gate, not permission to skip staging.
 - Findings:
   - Resolve real defects within the mandate, including nonblocking ones: nonblocking is not false.
-  - Disposition each finding as fixed, deferred with authority and rationale, or dismissed with evidence.
+  - Disposition each finding as fixed, deferred to a named task with authority and rationale, or dismissed with evidence.
   - Required work outside the task gets an owning task under planning's [change rule](references/planning.md#changes), created or reused by an actor with record authority; record mandate coverage before dispatch.
 - A Plan fix: give a stable fix to a Plan one targeted recheck of the changes and the conclusions they affect, by the same reviewer where the runtime can resume it.
 - A deliverable fix:

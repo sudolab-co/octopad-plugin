@@ -222,7 +222,7 @@ When a human decision or action becomes necessary:
   - **To unblock**: who must provide what evidence.
   - **Next step**: what resumes immediately afterwards and what safe work continues meanwhile.
 
-At the actual finish line, publish one such recap using the supported state, with residual risks and authorized deferrals.
+At the actual finish line, publish one such recap using the supported state, with residual risks and authorized deferrals, each named by its task.
 
 - Any field may say "none".
 - Before you declare that no work is available, walk the open graph and name the recorded source of each wait.
