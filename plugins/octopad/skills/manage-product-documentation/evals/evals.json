@@ -321,6 +321,37 @@
           "max": 0
         }
       ]
+    },
+    {
+      "id": "deferred-spec-edit-gets-a-task",
+      "prompt": "Draft the PR body for the change that removes saved searches from Lists. The Lists spec should mark saved searches retired, but only once this is in production, and a merge here closes the task. Workspace Example.",
+      "must_load": true,
+      "kind": "behaviour",
+      "max_turns": 20,
+      "timeout_seconds": 600,
+      "context": "The pull request's own task closes at merge; production comes later, at a release another member runs under the task \"Release Lists changes to production\". No task yet holds the spec edit.",
+      "expected_behavior": [
+        "The run opens manage-product-documentation.",
+        "Before handing the body over, it creates (or reuses) a task for the spec edit that waits for production, depending on the task \"Release Lists changes to production\".",
+        "The body's documentation-impact line names the Lists spec, says the edit waits for production and names that task.",
+        "The body ends with exactly one `Octopad-Task:` line naming the pull request's own task, never the deferred one."
+      ],
+      "graders": [
+        {
+          "name": "opens-manage-product-documentation",
+          "type": "tool_used",
+          "tool": "Skill",
+          "input_match": "manage-product-documentation",
+          "min": 1
+        },
+        {
+          "name": "creates-the-deferred-task",
+          "type": "tool_used",
+          "tool": "mcp__plugin_octopad_octopad__tasks",
+          "input_match": "\"action\":\\s*\"create\"[\\s\\S]*[Ss]aved search",
+          "min": 1
+        }
+      ]
     }
   ]
 }

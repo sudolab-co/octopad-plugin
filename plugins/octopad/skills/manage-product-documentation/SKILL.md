@@ -2,7 +2,7 @@
 name: manage-product-documentation
 description: "Use before judging why a product behaves as it does, even in one run, or whether or how to change it, when the user explores or settles how it behaves, when asked what it does today or whether a page still matches the code, when a test, a measurement, an incident or an analysis shows how a system really behaves or fails, when a system ships, rolls back or retires, before writing up a pull request, a release or user documentation, and before saying a change owes no documentation. A shipped skill is product behavior. Not for internal notes or marketing copy (manage-product-marketing)."
 ---
-Version: 7.6.0
+Version: 7.7.0
 
 # Manage Product Documentation
 
@@ -224,7 +224,7 @@ The delivery rule:
 - Record progress, pull requests, heads, tests, reviews and releases on the Task or pull request; none changes a spec.
 - Change a spec only when a need, the outcome, a direction, a choice, a promise or a non-goal changes, or a known limit is established or lifted, including when building reveals one. A version bump alone changes no spec.
 - When a change needs no spec edit, still name the spec in the repository's documentation-impact mark.
-- When a needed spec edit is blocked, name the spec and blocker there, and create or reuse documentation-debt work.
+- When a needed spec edit is blocked or must wait for a later event, such as a release reaching production, name there the spec, what it waits for and the task that makes the edit: create or reuse that task first, as the `octopad-planning-and-work-design` skill (section "Shaping the work") says. When the edit is blocked, that task is documentation-debt work.
 - An `[idea]` or `[open]` line is not delivery: write an `[idea]` line under [Capture exploration without waiting for a build decision](#capture-exploration-without-waiting-for-a-build-decision) and an `[open]` mark under [Write for the reader](#write-for-the-reader).
 
 When product work needs a Task, reuse suitable existing work and follow the active kernel and server contract for its shape, hierarchy, and dependencies.
@@ -238,6 +238,7 @@ Record the change's documentation impact in the PR body: the spec it names or ch
 - Name a task with no open subtask: a merge into the repository's default branch closes the task the line names, and a task that still has an open subtask may wait in `pending_review` instead. A deliverable that needs several pull requests is a parent with one subtask per pull request.
 - A merge into any other branch, a test or pre-production one included, leaves the task open: name the task there too, never `none`, and again on the PR that carries that work into the default branch.
 - Write `Octopad-Task: none: <reason>` only when no task applies.
+- When the body leaves needed work for later, a spec edit that waits for production included, create or reuse its task first and name it beside that work, never in the `Octopad-Task:` line, as [the delivery rule](#preserve-lifecycle-and-product-scope) says.
 - Before you hand the PR body over, check that it holds exactly one `Octopad-Task:` line.
 - Once a pull request to the repository's default branch is open and ready for review, set its task `pending_review`: merging it closes the task, so get its acceptance before the merge.
 - To link an open pull request to its task, or to fix its line, edit the body (for example with `gh pr edit`): Octopad reads the line again whenever the body changes.

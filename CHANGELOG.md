@@ -1,6 +1,6 @@
 # Changelog
 
-## 35.5.0 - Unreleased
+## 35.6.0 - Unreleased
 
 Octoplan is lighter. The planner confirms a brief, has its draft plan reviewed, writes the plan into Octopad once, records what the user agreed agents may do, and launches one supervisor that hands each task to an executor. Measured in November on one machine, Octoplan ran 303 reviewer agents for 221 workers, and supervisor and planner sessions cost about twice what reviewers cost. The skill's instructions go from about 18,600 words in ten files to about 6,400 in six.
 
@@ -9,9 +9,20 @@ Octoplan is lighter. The planner confirms a brief, has its draft plan reviewed, 
 - `octoplan` 11.0.0: what the user agreed agents may do (mode, effects and targets, limits, their words, date) is one dated stream update written with `work_streams` `set_status`, repeated in the note of every later Octoplan update, since a read shows only the latest one; where `set_status` is not offered, every such update is a comment on the plan's first task. Each task's `What` names the effects it may perform. A starting supervisor posts one update naming itself, a session that finds a running supervisor asks the user before taking over, and the finish posts one. The skill's description now opens with when to use it, then says what it does.
 - `octoplan` 11.0.0: one supervisor runs the whole plan, even across streams. It hands every task to one executor and never does task work itself, except fixing a few lines it already has in view; it pushes, opens pull requests and performs the protected effects executors return, as the mandate allows. A plan repair sub-agent calls no Octopad tool and returns the repaired tasks' text for the supervisor to write. A full context never calls for a successor: the supervisor compacts and continues. In Claude Code, before proposing the launch, the planner reads the supervisor model's auto-compact value (`modelSettings.<model id>.autoCompactWindow`, else `autoCompactWindow`) and, when it is above about 400,000 tokens, absent or unreadable, recommends `/autocompact 400000` or `--autocompact`, changing no setting.
 - `octoplan` 11.0.0 removes: the delivery contract and journal working pages; plan-review, activation and execution receipts bound to task revisions, and the drift comparisons they needed; `OCTOPLAN_ACTION` keys; guarded supervision headers and routine cessation proofs; several supervisors with disjoint scopes and the cross-stream coordinator; light and heavy deliverable reviews, rechecks after fixes and second judgments; the numbered foundation rules; the Haiku lookup route; the Codex Goal rules beyond creating one on request; and the references `records.md`, `recovery.md`, `continuation.md` and `multi-stream.md`, whose remaining rules move into SKILL.md, `planning.md` and `supervision.md`. Evals: cases on removed mechanisms are reworded; new cases cover review by task level, the plan reviewed before it is written, the compaction advice before launch, the mandate as a stream update, a takeover, a connection without `set_status`, and a supervisor performing an effect an executor returned.
-- `octopad-planning-and-work-design` 8.3.1: its delivery lines say where Octoplan now keeps its plan and mandate, and send a return to direct collaboration to Octoplan's "Stop or hand over".
+- `octoplan` 11.0.0 keeps 10.6.0's deferred work: when the supervisor closes a task, a spec or record change that waits for a later event, such as a release reaching production, first gets its own task, and the final recap names each remaining item by its task. A plan repair gets one fresh reviewer, launched by the supervisor at its profile's reviewer route on the returned text, before the supervisor writes it.
+- `octopad-planning-and-work-design` 8.4.1: its delivery lines say where Octoplan now keeps its plan and mandate, and send a return to direct collaboration to the `octoplan` skill (section "Stop or hand over").
 
-Needs no server change; where a connection does not offer `work_streams` `set_status`, the mandate goes in a task comment. All three distributions move to 35.5.0.
+Needs no server change; where a connection does not offer `work_streams` `set_status`, the mandate goes in a task comment. All three distributions move to 35.6.0.
+
+## 35.5.0 - Unreleased
+
+Work an AI defers to a later event becomes its own task when it is deferred. On 2026-11-23 a spec edit due "once this is in production" was written as a sentence in the spec and in a pull request's documentation-impact line; the pull request's task closed at its merge, before production, and no task held the edit.
+
+- `octopad-planning-and-work-design` 8.4.0: "Shaping the work" adds a third step that is its own task: work that waits for an event after its task closes. It is created when the work is deferred, depending on the task that brings the event (`blocked` only when no member's task brings it), and is named wherever the wait is mentioned. Eval 21 covers the case.
+- `manage-product-documentation` 7.7.0: the delivery rule covers a spec edit that must wait for a later event, not only a blocked one, and names the task that makes the edit in the documentation-impact mark (documentation-debt work stays the form for a blocked edit); "Pull requests" says to create or reuse a task for needed work the body leaves for later and name it beside that work, never in the `Octopad-Task:` line; the release pass makes an edit whose task a mark names, then closes that task. Eval `deferred-spec-edit-gets-a-task` covers it.
+- `octoplan` 10.6.0: a finding or a deferral the supervisor accepts is deferred to a named task.
+
+Needs no server change. All three distributions move to 35.5.0.
 
 ## 35.4.0 - Unreleased
 

@@ -2,7 +2,7 @@
 name: octopad-planning-and-work-design
 description: "Use when agreed work has an end state and needs three or more tasks over more than one sitting; when a request holds several deliverables or a step another member carries out; when you are about to create, change, complete, rename, merge, split or archive a stream or a goal, or learn of such a change; when one stream waits on another or matters to it; when a task leaves its stream by archive, deletion or move; when a result, a decision or a new task changes what a stream's remaining tasks assume; before laying out several tasks as a plan; when the number of tasks, nesting, prerequisites, priority order, a date or repeating work is undecided or wrong; and when a test would launch AI sessions, take a person's time or cost money. When the prepared work could benefit from delivery by agents, such as work that needs no choice from the user at each step, open the `octoplan` skill for that delivery."
 ---
-Version: 8.3.1
+Version: 8.4.1
 
 # From a need to prepared work
 
@@ -33,7 +33,10 @@ Before you offer agent delivery or change how work is delivered, read [Choosing 
 - Count the deliverables before the tasks: a deliverable can be shipped, reviewed or closed on its own, and each one is a top-level task.
 - Cut each deliverable into the smallest units that make sense in the logic of its work: parts each finished and checked on its own, split at natural seams, an atomic change kept whole. Those units are its subtasks; a deliverable of one unit has none.
 - Open no top-level task whose only job is to hold the others: an umbrella restates the stream and delivers nothing.
-- Checking a deliverable, getting it accepted and delivering it (sending, publishing, deploying) stay in its Done when. Two steps are their own tasks: a chosen test, and a step another member carries out as their own work, such as a deploy or migration.
+- Checking a deliverable, getting it accepted and delivering it (sending, publishing, deploying) stay in its Done when. Three steps are their own tasks:
+  - a chosen test;
+  - a step another member carries out as their own work, such as a deploy or migration;
+  - work that waits for an event after its task closes, such as a spec edit due once a release reaches production when a merge closes the task. When you defer such work, create or reuse its task then, depending on the task that brings the event, or, when no member's task brings it, `blocked` with the event as its reason; name that task wherever you mention the wait, in a spec, a pull request or a comment.
 - Keep an effort flat by default: the stream, its top-level tasks and the dependencies between them.
 - Keep deliverables made one after another flat: top-level tasks joined by dependencies.
 - A chosen test is its own task, one per system it tests, such as a signup flow or a reminder service. Put all that system's cases in its What, each with what it proves, beside its run budget, never also in a deliverable's Done when.
@@ -78,7 +81,7 @@ Before you offer agent delivery or change how work is delivered, read [Choosing 
 - Between two tasks or two streams of one workspace, use `depends_on` when one waits on the other, and a link (kind `link`) for any other tie that passes the test below, each with a one-line reason.
 - Link two items when, if one changed or ended tomorrow, the AI working on the other would need to know. Write the link when you create work that comes from another item, such as a fix opened after a review, and when a result or a decision shows that one item changes what another assumes.
 - Send the link with the write that creates the work: in the `tasks` create call for one task, in the `work_streams` create call for a stream; after `batch_tasks`, add each link with `tasks` `link_dependency` in the same turn.
-- Never give a link of kind `link` for a wait, which is a dependency, for membership alone or a shared topic; a page, Key Information or a goal never takes this kind.
+- Never use kind `link` for a wait (use `depends_on`), for two items that only share a stream or goal, or for a shared topic; a page, Key Information or a goal never takes this kind.
 - When a task duplicates another, cancel it, naming the task it duplicates; never link the two.
 - Write the line from the item that holds the link, in its voice: why the other matters to it, in one line. Rewrite it in that voice when it no longer says why.
 - When you record a decision that changes a task or a stream, read that task's or stream's links, both ways. Correct in this turn each linked item the decision changes; when a correction needs the user's confirmation, ask for it and leave the link of kind `link` to review until the correction is made or the user declines it. Then confirm that link, rewrite its line or remove it.
