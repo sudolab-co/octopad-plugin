@@ -1,5 +1,13 @@
 # Changelog
 
+## 35.6.0 - Unreleased
+
+A person with no priorities gets a proposed list from any model, not only the strongest. On 2026-11-24 a staging test found that only Opus proposed priorities: the rule fired on a read of the person's whole document, which Sonnet never made once the session start said the list was empty.
+
+- `octopad-pad` 8.3.0: "Propose from their work" applies when Today's brief says the person has no priority and serves the lines on their work, and still when a read of their document finds no priority. The proposal comes from those lines alone; the whole read they point to is opened only for streams of work that reaches no goal, for tying a wait or a date to a priority, and for each reference's id before the save. It sets the moment (a question on what to work on, an opening with no precise ask, or right after the daily update, once per conversation) and the form: one line saying nothing is saved, at most five priorities each with one reason from the facts in plain words, one closing question, nothing else. Tasks the person created are not read as intent; a goal marked priority that none of their work reaches is not proposed; a task's place in a delivery order ranks nothing. Eval `no-priorities-from-brief-lines` uses the lines the server renders; `zero-themes-main` follows the new rule.
+
+The lines come from the server change that serves the person's work at session start (sudolab-co/octopad#1996); without them the rule falls back to the earlier read. All three distributions move to 35.6.0.
+
 ## 35.5.0 - Unreleased
 
 Work an AI defers to a later event becomes its own task when it is deferred. On 2026-11-23 a spec edit due "once this is in production" was written as a sentence in the spec and in a pull request's documentation-impact line; the pull request's task closed at its merge, before production, and no task held the edit.
