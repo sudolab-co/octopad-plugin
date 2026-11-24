@@ -2,13 +2,13 @@
 name: octopad-planning-and-work-design
 description: "Use when agreed work has an end state and needs three or more tasks over more than one sitting; when a request holds several deliverables or a step another member carries out; when you are about to create, change, complete, rename, merge, split or archive a stream or a goal, or learn of such a change; when one stream waits on another or matters to it; when a task leaves its stream by archive, deletion or move; when a result, a decision or a new task changes what a stream's remaining tasks assume; before laying out several tasks as a plan; when the number of tasks, nesting, prerequisites, priority order, a date or repeating work is undecided or wrong; and when a test would launch AI sessions, take a person's time or cost money. When the prepared work could benefit from delivery by agents, such as work that needs no choice from the user at each step, open the `octoplan` skill for that delivery."
 ---
-Version: 8.4.0
+Version: 8.4.1
 
 # From a need to prepared work
 
 - A stream and its Octoplan share one brief and one work graph: Octoplan is that work delivered by agents under an agreed autonomy. Never create a second brief or work graph for it.
 - This skill owns the preparation both share.
-- The `octoplan` skill owns the delivery mandate, the executable preparation, its review and its activation.
+- The `octoplan` skill owns the delivery mandate, the executable plan, its review and its launch.
 
 ## Brief only what the request needs
 
@@ -81,7 +81,7 @@ Before you offer agent delivery or change how work is delivered, read [Choosing 
 - Between two tasks or two streams of one workspace, use `depends_on` when one waits on the other, and a link (kind `link`) for any other tie that passes the test below, each with a one-line reason.
 - Link two items when, if one changed or ended tomorrow, the AI working on the other would need to know. Write the link when you create work that comes from another item, such as a fix opened after a review, and when a result or a decision shows that one item changes what another assumes.
 - Send the link with the write that creates the work: in the `tasks` create call for one task, in the `work_streams` create call for a stream; after `batch_tasks`, add each link with `tasks` `link_dependency` in the same turn.
-- Never give a link of kind `link` for a wait, which is a dependency, for membership alone or a shared topic; a page, Key Information or a goal never takes this kind.
+- Never use kind `link` for a wait (use `depends_on`), for two items that only share a stream or goal, or for a shared topic; a page, Key Information or a goal never takes this kind.
 - When a task duplicates another, cancel it, naming the task it duplicates; never link the two.
 - Write the line from the item that holds the link, in its voice: why the other matters to it, in one line. Rewrite it in that voice when it no longer says why.
 - When you record a decision that changes a task or a stream, read that task's or stream's links, both ways. Correct in this turn each linked item the decision changes; when a correction needs the user's confirmation, ask for it and leave the link of kind `link` to review until the correction is made or the user declines it. Then confirm that link, rewrite its line or remove it.
