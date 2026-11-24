@@ -1,8 +1,8 @@
 ---
 name: octopad-planning-and-work-design
-description: "Use when agreed work has an end state and needs three or more tasks over more than one sitting; when a request holds several deliverables or a step another member carries out; when you are about to create, change, complete, rename, merge, split or archive a stream or a goal, or learn of such a change; when one stream waits on or continues another; when a task leaves its stream by archive, deletion or move; when a result, a decision or a new task changes what a stream's remaining tasks assume; before laying out several tasks as a plan; when the number of tasks, nesting, prerequisites, priority order, a date or repeating work is undecided or wrong; and when a test would launch AI sessions, take a person's time or cost money. When the prepared work could benefit from delivery by agents, such as work that needs no choice from the user at each step, open the `octoplan` skill for that delivery."
+description: "Use when agreed work has an end state and needs three or more tasks over more than one sitting; when a request holds several deliverables or a step another member carries out; when you are about to create, change, complete, rename, merge, split or archive a stream or a goal, or learn of such a change; when one stream waits on another or matters to it; when a task leaves its stream by archive, deletion or move; when a result, a decision or a new task changes what a stream's remaining tasks assume; before laying out several tasks as a plan; when the number of tasks, nesting, prerequisites, priority order, a date or repeating work is undecided or wrong; and when a test would launch AI sessions, take a person's time or cost money. When the prepared work could benefit from delivery by agents, such as work that needs no choice from the user at each step, open the `octoplan` skill for that delivery."
 ---
-Version: 8.1.0
+Version: 8.2.0
 
 # From a need to prepared work
 
@@ -45,7 +45,6 @@ Before you offer agent delivery or change how work is delivered, read [Choosing 
 - Add a preparation task only for a real prerequisite that the others cannot start without, such as a shared contract they must all follow; two unrelated fixes stay independent, whatever order they are done in.
 - When the user wants for their own work an order no prerequisite imposes, open the `octopad-pad` skill, section "Priorities", and keep that order in their priorities, with its reason in the `why:` of the priority it concerns, where the `pad` tool is offered. An order the team chooses between goals goes in those goals instead (What a goal carries). Never invent a prerequisite for either, and never lower a sibling's priority to push it down.
 - Link two subtasks by a dependency only where one truly blocks the other, which is rare. That link never replaces a dependency between their parent tasks: where the parents need one, link them too.
-- When a task takes up or continues another task's result without waiting on it, such as a fix opened after a review, give it a link of kind `link` whose reason says what it takes from that result; keep `depends_on` for a real wait. Link no duplicate: cancel it, naming the task it duplicates.
 
 # What a goal carries
 
@@ -71,16 +70,26 @@ Before you offer agent delivery or change how work is delivered, read [Choosing 
 - Before you create a stream or a goal, read the active streams nearest to it in meaning, whatever their goal (`build_context(mode: "work_stream", query)`), then the links of each that fits (`work_stream_name`), the paused streams `work_streams` `list` shows, and the goals orientation lists: reuse one, or link the new one to it, rather than duplicate it.
 - A single task: match its stream as `work_stream_id` says; with no stream, give it the tags already in use that fit it.
 - Where no goal fits the work, propose the one that would, with its outcome and why; create it on the user's confirmation, and continue independent authorized work meanwhile.
-- When you find that one stream waits on or continues another, link them through `links`. Weigh a stream's `depends_on` link when you choose what to pick up next; it never blocks.
+- When you find that one stream waits on another, link them through `links` as `depends_on`, with a one-line reason. Weigh a stream's `depends_on` link when you choose what to pick up next; it never blocks.
 - For work that repeats, create the repeating task itself and file it like any task: a stream is where work sits, never the work.
+
+# Links between pieces of work
+
+- Between two tasks or two streams of one workspace, use `depends_on` when one waits on the other, and a link (kind `link`) for any other tie that passes the test below, each with a one-line reason.
+- Link two items when, if one changed or ended tomorrow, the AI working on the other would need to know. Write the link when you create work that comes from another item, such as a fix opened after a review, and when a result or a decision shows that one item changes what another assumes.
+- Send the link with the write that creates the work: in the `tasks` create call for one task, in the `work_streams` create call for a stream; after `batch_tasks`, add each link with `tasks` `link_dependency` in the same turn.
+- Never give a link of kind `link` for a wait, which is a dependency, for membership alone or a shared topic; a page, Key Information or a goal never takes this kind.
+- When a task duplicates another, cancel it, naming the task it duplicates; never link the two.
+- Write the line from the item that holds the link, in its voice: why the other matters to it, in one line. Rewrite it in that voice when it no longer says why.
+- When you record a decision that changes a task or a stream, read that task's or stream's links, both ways. Correct in this turn each linked item the decision changes; when a correction needs the user's confirmation, ask for it and leave the link of kind `link` to review until the correction is made or the user declines it. Then confirm that link, rewrite its line or remove it.
 
 # Laying out a plan
 
 - The plan is the task tree: top-level tasks with their dependencies, priority, impact and real due dates. Keep it there, not in a page or a list of your own.
 - Before you start the first task, land everything the ask names in one pass: the goal, the stream, and every task you already know, in as few `batch_tasks` calls as its limits allow, with assignments and dependencies.
 - When a stream's whole work follows one logic, mark its main parts: start each top-level task's title with its phase, `P1 · <title>`, `P2 · <title>`. Subtasks carry no prefix, and a phase is never a parent task.
-- When parts of an effort have their own success condition, owner, gate or schedule, make each its own stream under the same goal, linked `depends_on` for order or `link` for a continuation. Keep phase prefixes for parts that one Definition of Success covers.
-- When new work arrives after a stream's Definition of Success is met, or serves another result, start a new stream with a link of kind `link` to that stream, its reason saying what it continues.
+- When parts of an effort have their own success condition, owner, gate or schedule, make each its own stream under the same goal, linked `depends_on` for order, or by a link whose line says what one takes from the other. Keep phase prefixes for parts that one Definition of Success covers.
+- When new work arrives after a stream's Definition of Success is met, or serves another result, start a new stream, linked to the first with a line saying what it takes from it.
 - When a later task can be written only once the task it waits for is done, say in that dependency's rationale what it takes from it. Copy no sentence across edges.
 
 **Laying out a five-week launch.**

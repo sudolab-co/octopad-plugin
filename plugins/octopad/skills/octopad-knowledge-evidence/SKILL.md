@@ -2,7 +2,7 @@
 name: octopad-knowledge-evidence
 description: "Use when a conversation surfaces something someone outside it will need: a decision, a key fact, a risk, an open question, what a customer's words establish beyond that customer, or how a system works as an analysis establishes it. Also use it when new evidence changes a recorded item, when the user shares a file or document, when a page or file is written, linked or tagged, before saying whether something is on record or answering a question about the corpus, and when the corpus is cleaned up. Chooses where each item goes and how a claim about the corpus is proved. Not for spec content (manage-product-documentation) or one customer's facts (octopad-crm)."
 ---
-Version: 3.6.0
+Version: 3.7.0
 
 # Where knowledge is written
 
@@ -58,7 +58,9 @@ Write with `knowledge`, as one atomic item, what someone outside the current tas
 Wire what belongs together:
 - a page or a file onto the task it informs;
 - a Key Information item, through its `links`, onto what it bears on (concerns: a task, page, stream, goal or file), what it comes from (source) and the task that settles it (closed_by), each with a one-line reason;
-- one task onto another, with the reason the dependency exists.
+- one task onto another: `depends_on` when one waits on the other, otherwise a link (kind `link`) when the `octopad-planning-and-work-design` skill (section "Links between pieces of work") calls for one; each with a one-line reason.
+
+When a decision you record changes a task or a stream, open the `octopad-planning-and-work-design` skill, section "Links between pieces of work", and check that task's or stream's links in this turn.
 
 # Keeping knowledge true
 

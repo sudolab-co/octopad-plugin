@@ -1,5 +1,14 @@
 # Changelog
 
+## 35.3.0 - Unreleased
+
+The AI gets the rule for writing links between tasks and between streams that the link design gave the planning skill: when a link is worth writing, what its line says, and when never to write one.
+
+- `octopad-planning-and-work-design` 8.2.0: a new section "Links between pieces of work" holds the test (if one item changed or ended tomorrow, would the AI working on the other need to know?), when to write the link (at creation of work that comes from another item, in the create call, or after `batch_tasks` with `link_dependency`; and when a result or a decision shows one item changes what another assumes), the line in the holding item's voice, what never gets a link, duplicates cancelled, and the check of a task's or stream's links after a decision changes it. The "Shaping the work" bullet on taking up another task's result moves into it. A stream that matters to another, not only one that waits on or continues it, now gets a link.
+- `octopad-knowledge-evidence` 3.7.0: tasks are wired by `depends_on` for a wait, otherwise by a link the planning skill calls for; a decision that changes a task or a stream sends the AI to check that item's links.
+
+Needs no server change; the companion server pull request also serves the kernel's matching router line. All three distributions move to 35.3.0.
+
 ## 35.2.0 - Unreleased
 
 A run no person takes part in says so when it opens its session, so it never gets the person's daily Pad update nor starts their day.

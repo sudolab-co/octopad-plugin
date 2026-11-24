@@ -102,6 +102,18 @@
       "prompt": "Pause the 'Partner API' stream until the legal review is back. (Reading it shows its link to 'Billing v2' marked to review.)",
       "should_trigger": true,
       "expected_behavior": "After the pause, checks the stream once: reads each open top-level task in one line and the links marked to review. For 'Billing v2', checks that stream itself, not only the link: corrects it if the change alters what it assumes, then confirms the link as the read's line on links to review says, keeping every other link the stream holds. Changes no other stream's status."
+    },
+    {
+      "id": 18,
+      "prompt": "The review of 'Import CSV contacts' found two bugs. Open the fixes as tasks in the same stream, and add a task to write the import docs while you're at it.",
+      "should_trigger": true,
+      "expected_behavior": "Creates the three tasks with batch_tasks, then in the same turn adds a link of kind `link` from each fix task to 'Import CSV contacts' with tasks link_dependency, each line in the fix's voice saying what it takes from the review (for example the bug the review found), not a vague 'related to'. Gives the docs task no link to the reviewed task unless its line passes the test (it would need to know if that task changed or ended); uses depends_on only for a real wait."
+    },
+    {
+      "id": 19,
+      "prompt": "Link 'Pricing page copy' to 'Pricing page redesign', they're both about pricing.",
+      "should_trigger": true,
+      "expected_behavior": "Checks the test before linking: a shared topic alone gets no link. Asks or checks whether one changes what the other assumes (for example the copy must fit the redesign's layout); if so, writes one link from the task that depends on that fact, its line naming it in that task's voice, at most 160 characters; if one truly waits on the other, uses depends_on instead. Never writes a line such as 'both about pricing'."
     }
   ]
 }
