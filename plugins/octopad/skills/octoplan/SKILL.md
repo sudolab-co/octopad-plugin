@@ -2,7 +2,7 @@
 name: octoplan
 description: "Use when prepared work could be delivered by agents, when the user wants agents to carry a stream to its outcome, before proposing how agents should deliver a stream, and when the user names, resumes or supervises an Octoplan. It confirms a brief, has a drafted plan reviewed, writes it into Octopad as tasks, then launches one supervisor that hands each task to an executor agent. Opening it authorizes no delivery. Not for preparing the stream itself (octopad-planning-and-work-design), nor for work done with the user turn by turn."
 ---
-Version: 11.0.0
+Version: 11.0.1
 
 # Octoplan
 
@@ -12,9 +12,9 @@ Octoplan delivers a stream's prepared work through agents:
 2. **Plan.** The planner drafts a detailed plan, has the draft reviewed, and fixes it.
 3. **Write.** The planner writes the final plan into Octopad once, as tasks.
 4. **Agree.** The planner shows the plan in plain words. The user chooses the autonomy and what agents may do without asking; the planner records it in Octopad.
-5. **Deliver.** The planner launches one supervisor, a separate session that runs the tasks in order, or in parallel where their writes are proved independent. It hands each task to one executor agent and never does task work itself, except fixing a few lines it already has in view.
+5. **Deliver.** The planner launches one supervisor, a separate session that runs the tasks in order, or in parallel where their writes are proved independent. It hands each task to one executor agent and does no task work itself, except fixing a few lines it already has in view.
 
-Read [planning.md](references/planning.md) for steps 1 to 4, [supervision.md](references/supervision.md) for step 5, and the profile of the host you run in: [claude-runtime.md](references/claude-runtime.md) in Claude Code, [codex-runtime.md](references/codex-runtime.md) in Codex, [cursor-runtime.md](references/cursor-runtime.md) in Cursor, which runs the Claude routes. To choose routes, read the route sections of both the Claude and the Codex profiles. On another host, check that it can launch and wake agents before you promise delivery.
+Read [planning.md](references/planning.md) for steps 1 to 4, [supervision.md](references/supervision.md) for step 5, and your host's profile: [claude-runtime.md](references/claude-runtime.md) in Claude Code, [codex-runtime.md](references/codex-runtime.md) in Codex, [cursor-runtime.md](references/cursor-runtime.md) in Cursor. To choose routes, read the route sections of both the Claude and the Codex profiles. On another host, check that it can launch and wake agents before you promise delivery.
 
 ## After a compaction
 
@@ -36,7 +36,7 @@ Start each message that reports progress or asks for a decision with its step's 
 ```
 
 - Write in the user's language and in everyday words, and name tasks by their title. Keep this skill's words out: "what agents may do without asking", not "mandate"; "which AI does each task", not "route".
-- Ask the user only about consequences they own. Diagnose technical doubts yourself.
+- Ask the user only about consequences they own. Diagnose technical doubts and problems yourself, and solve a problem within the mandate before you ask the user anything.
 
 When a human decision or action becomes necessary, raise it at once, never inside a progress report. Say whether it stops all delivery or one task, under these labels in the user's language:
 
@@ -68,8 +68,8 @@ In every mode:
 
 ## Review
 
-- **The plan:** one fresh adversarial review of the draft, before anything is written into Octopad. Two independent reviewers when the plan touches schema, permissions, money, privacy, destructive operations, publishing or deployment.
-- **A delivered task:** the planner sets the task's `Review` line, and delivery never decides it again; only a plan repair sets it, by this same rule, for the tasks it changes:
+- **The plan:** one fresh adversarial review of the draft before anything is written into Octopad; two independent reviewers when the plan touches schema, permissions, money, privacy, destructive operations, publishing or deployment.
+- **A delivered task:** the planner sets its `Review` line and delivery never decides it again; only a plan repair sets it, by this rule, for the tasks it changes:
   - none when both of the task's routes sit on the two simplest rows of their runtime profiles (every choice settled, runnable checks prove the result): its checks, then the supervisor's verification;
   - one fresh independent reviewer for any other task;
   - one reviewer, on any row, for a change that cannot be undone, such as a migration, a data deletion, a permission change or a payment.
@@ -77,7 +77,6 @@ In every mode:
 
 ## When something goes wrong
 
-- Diagnose a technical problem and solve it within the mandate before you ask the user anything.
 - A wait or a failure holds only the work that depends on it.
 - Two failed fix cycles on one task stop that approach: diagnose, then try one clearly different way, or record the blocker. A new agent or plan does not reset the count.
 - Never get around a permission, an authentication or a safety refusal.

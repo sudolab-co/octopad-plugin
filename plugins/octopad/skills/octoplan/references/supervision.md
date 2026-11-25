@@ -3,8 +3,8 @@
 ## Start or resume
 
 1. Read the stream's latest update, the tasks with their status and comments, and the target's state.
-2. If the latest update says another supervisor runs this delivery, or tasks are in progress that this session did not start, ask the user before you take over.
-3. Post one stream update with `work_streams` `set_status`: in `line`, that you supervise from this date, naming your session and runtime; in `note`, the mandate ([Record the mandate](planning.md#record-the-mandate)). One supervisor runs the whole plan, even across several streams: post it on each.
+2. If the latest update says another supervisor runs this delivery, or tasks this session did not start are in progress, ask the user before you take over.
+3. One supervisor runs the whole plan, even across several streams. On each, post one stream update with `work_streams` `set_status`: in `line`, that you supervise from this date, naming your session and runtime; in `note`, the mandate ([Record the mandate](planning.md#record-the-mandate)).
 4. Do what your runtime profile asks of a starting supervisor.
 
 Under the Step 3 banner, give one progress line in everyday words, counted from the tasks' status in Octopad: `Progress: 2 of 9 tasks done, 1 in progress, 6 waiting · waiting for your review of the pricing page`.
@@ -18,7 +18,7 @@ Repeat until every task is done or no safe work remains:
 3. **Check** its report: confirm the decisive checks on the exact commit or result from a source the executor did not write (hosted results, or one rerun), and that any review the `Review` line names came back with each finding handled.
 4. **Close** each subtask once its commit is in the branch, then push and open the pull request as the mandate allows; close the task once `Done when` holds. Write the spec or record changes the executor returned; a change that waits for a later event, such as a release reaching production, first gets its own task, as the `octopad-planning-and-work-design` skill (section "Shaping the work") says. Add one short comment: the checks, the pull request or commit, the review outcome, any decision taken.
 
-- When a defect or finding can recur in other open tasks, add the rule and the failing case to their briefs before dispatch, and send it to running executors it reaches. When the plan lacks the rule itself, first [fix the plan](#fix-the-plan) for all affected tasks at once.
+- When a defect or finding can recur in other open tasks, add the rule and the failing case to their briefs before dispatch, and send it to the running executors it reaches. When the plan lacks the rule itself, first [fix the plan](#fix-the-plan) for all affected tasks at once.
 - Run tasks in parallel only when their writes are proved independent: different files and outputs, separate workspaces. Never parallelize migrations, shared generated files, or tasks where one shapes the other.
 - When parallel full test suites or builds could saturate one machine, executors run only their targeted checks and you run the full checks on each head, brought up to date with its base, in turn before its pull request. To check for a running suite, match processes by pattern and print only their IDs and names.
 - To wait for an agent or a check, end your turn only where your runtime wakes you; otherwise wait in the foreground. A message that says "in progress" and stops is a stall.
@@ -36,7 +36,7 @@ Repeat until every task is done or no safe work remains:
 When a task's meaning, dependencies or checks are wrong, context is missing or a shared choice is unsettled:
 - Note the defect on its task and hold only the tasks it affects.
 - Launch one planner sub-agent at your profile's plan repair route, with the affected tasks and their `Done when`, the failure and its evidence, and the mandate. Tell it to read planning.md's "Draft the plan" and "Changes", and to call no Octopad tool. It returns a diagnosis and the full text of each changed or new task, both routes and `Review` included, or the exact obstacle; it dispatches no one and cannot widen the mandate.
-- When the returned text changes a task's meaning, dependencies, checks, effects or review, launch one fresh reviewer on it at your profile's reviewer route for the plan, read-only and told to call no Octopad tool, with the affected tasks as saved, the failure and the mandate ([Changes](planning.md#changes)). Fix each real defect in the text before you write it, with no second review.
+- When the returned text changes a task's meaning, dependencies, checks, effects or review, launch one fresh reviewer on it at your profile's plan review route, read-only and told to call no Octopad tool, with the affected tasks as saved, the failure and the mandate ([Changes](planning.md#changes)). Fix each real defect in the text before you write it.
 - Write the repair, reread it as saved, then resume.
 
 ## Executor brief
@@ -64,7 +64,7 @@ How you work:
 - Build the units in order, one commit each, and commit before you return. Run Verify; return a long external wait, such as hosted CI, instead of waiting on it.
 - If Review names a reviewer, launch it once Verify passes on your committed head: fresh, read-only, in the foreground, with the task, base and head, your checks with their output, the target's rules, and "Do not call Octopad." Fix each real defect in the task, test first, or say how you checked where no test can. Ask for no second review and launch no other agent. Return defects outside the task with their evidence.
 - After two failed fix cycles, stop and report why.
-- After a compaction, stay this task's executor in this session. Before your next effect, reread this brief, the target's rules and the current work, uncommitted changes included. Without Octopad access call no Octopad tool; with it, call start_session first. A summary never supplies consent or turns an unrun check into a pass: ask the supervisor for what is missing. Then continue, with no new executor or review.
+- After a compaction, stay this task's executor in this session. Before your next effect, reread this brief, the target's rules and the current work, uncommitted changes included; with Octopad access, call start_session first. A summary never supplies consent or turns an unrun check into a pass: ask the supervisor for what is missing. Then continue, with no new executor or review.
 
 Report: the commit or result, the checks and their outcome, the review verdict and each finding's handling, decisions, blockers, missing context, user-facing strings, and the exact text of any spec or record change the task needs. For long evidence, give a command or a lasting path, not a paste.
 ```

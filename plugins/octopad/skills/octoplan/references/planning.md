@@ -1,9 +1,11 @@
 # Brief and plan
 
+Sections: Brief; Check the path before you promise; Draft the plan; Review the draft; Write the plan into Octopad; Propose delivery, with Record the mandate and Launch; Changes.
+
 ## Brief
 
 - Apply the brief and preparation of [octopad-planning-and-work-design](../../octopad-planning-and-work-design/SKILL.md), and keep the brief where it says. Reuse a confirmed brief while its outcome is unchanged.
-- Read the stream, its tasks and the sources first; settle yourself what they settle. Ask only about choices costly to change later, one question at a time, and state reasonable assumptions. Never make the user design the implementation.
+- Read the stream, its tasks and the sources first, and settle yourself what they settle. Ask only about choices costly to change later, one question at a time, stating reasonable assumptions. Never make the user design the implementation.
 - When the outcome names a population (every user, AI client, platform or plan), list its variants and give each a task, a measurement or a named limit; a task covering only some names them.
 
 Get the user's explicit confirmation of a brief scaled to the work:
@@ -22,13 +24,13 @@ Get the user's explicit confirmation of a brief scaled to the work:
 ## Check the path before you promise
 
 - List what the work needs: access, credentials (never their values), tools, human inputs, and whether this host can launch and wake a supervisor.
-- Probe an uncertain capability that could stop the outcome with the smallest harmless check on the real target. A document or a mock proves no path.
+- Probe an uncertain capability that could stop the outcome with the smallest harmless check on the real target: a document or a mock proves no path.
 - A step only a person can do, such as granting an access, becomes one human task; only the tasks that need it wait for it.
 - For Computer Use, disclose the purpose, the device and apps, the actions and any setup; after the user's explicit acceptance, check access with a harmless probe.
 
 ## Draft the plan
 
-- One deliverable is one task. Cut it into the smallest coherent units, each one change that can be built and checked alone, split at natural seams (schema, server, client, AI-facing text), never mid-change.
+- One deliverable is one task, cut into the smallest coherent units: each one change that can be built and checked alone, split at natural seams (schema, server, client, AI-facing text), never mid-change.
 - Several units become subtasks, each with its own `What`, `How` and `Verify`, built in order by one executor. In code they are the commits of the task's pull request, and one pull request finishes the task it names. Past what one reviewer can judge well, split into more tasks.
 - Create no task for a read, a login, a review or a merge unless a person owns a distinct result. Give each dependency a one-line reason, and each user-facing text one owner task.
 
@@ -54,28 +56,28 @@ Codex: <route from the Codex profile, with its reason>
 
 Checks:
 - Plan only checks someone can run, matched to `Done when`.
-- For a pull request, cover each check its host runs, locally where cheaper than a failed round, else as a hosted result to wait on. A local pass never stands in for the hosted gate. Name as excluded a check the target's rules ignore or one already failing on the base.
+- For a pull request, cover each check its host runs, locally where cheaper than a failed round, else as a hosted result to wait on; a local pass never stands in for the hosted gate. Name as excluded a check the target's rules ignore or one already failing on the base.
 - For each check the result rests on, say how it could pass on a broken outcome, and show it does not; when tests can bypass the changed code, disable that code once and show the check fails.
 - Run a measurement or research task end to end on two or three real inputs, one with a known answer, before scaling it.
 - When you write the plan, attach to its task anything a check needs that sits on one machine only, or name that machine as a limit.
 - Plan a change through the target's staging environment, when it has one, before production.
 
 Routes:
-- Choose each task's `Exec` from the judgment left after preparation, once per runtime, from each profile's rubric. Keep a saved route, or one the user chose, unless [Changes](#changes) applies; never substitute one silently.
+- Choose each task's `Exec` once per runtime, from each profile's rubric and the judgment left after preparation. Keep a saved route, or one the user chose, unless [Changes](#changes) applies; never substitute one silently.
 - A route with an `on failed checks` part is one route: when the work fails its checks, one new executor takes the second part from the current result.
 - A step only one runtime supports names its equivalent in the other, or the gap as a blocker.
 - Set `Review` from the [review rule](../SKILL.md#review) and each profile's review column.
 
 ## Review the draft
 
-Before writing anything into Octopad, give the whole draft to one fresh reviewer, or two when the review rule asks, at your profile's plan review route, with the brief, the sources, the effects and the target's rules, and "Do not call Octopad." Ask it to attack missing work and a simpler cut, unit size, unsettled shared choices, dependencies, checks that could pass on a broken outcome, route and `Review` fit, effects and consent, and what still finishes if the user leaves right after agreeing.
+Before writing anything into Octopad, give the whole draft to one fresh reviewer, or two when the review rule asks, at your profile's plan review route, with the brief, the sources, the effects, the target's rules and "Do not call Octopad." Ask it to attack missing work and a simpler cut, unit size, unsettled shared choices, dependencies, checks that could pass on a broken outcome, route and `Review` fit, effects and consent, and what still finishes if the user leaves right after agreeing.
 
 It answers `PASS`, `REVISE` with findings, or a question only the user can answer. Apply the findings; one that changes the brief goes back to the user. Run no second round.
 
 ## Write the plan into Octopad
 
 - Write the tasks, subtasks and dependencies once. Reread each task as saved and fix any missing heading, route or reason.
-- Add ` (octoplanned)` to the stream's name, except for a planning-only request: post a stream update saying the plan is `Not authorized for delivery`, and stop.
+- Add ` (octoplanned)` to the stream's name. For a planning-only request, instead post a stream update saying the plan is `Not authorized for delivery`, and stop.
 
 ## Propose delivery
 
