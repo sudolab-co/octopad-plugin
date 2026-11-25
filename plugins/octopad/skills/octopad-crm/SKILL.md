@@ -2,7 +2,7 @@
 name: octopad-crm
 description: "Use where the CRM is on, or the user wants it on, when a customer's contact, company or deal comes up, when what a customer did or said is to be recorded, when an octobot is launched or followed, when drafts, proposals or quarantined identities wait for a decision, when an approved draft is sent or its reply comes in, when the distill is read or changed, and when records are imported or synced. Reads and writes customer records and runs octobots, outreach, the distill and imports. Not for competitors or market-wide customer voice (manage-market-intelligence)."
 ---
-Version: 2.2.1
+Version: 2.3.0
 
 # Before anything
 
@@ -56,10 +56,13 @@ Put each kind of fact in its one home:
 # Acting for the user
 
 - You act with your member's permissions and in their name.
+- When an octobot's proposal, outreach draft or quarantined identity waits for a decision, decide it only on the instruction of the member you act for; one instruction can cover a whole queue.
 - Approve or reject proposals with `crm_actions` `decide`. Where the organization has it, resolve quarantined identities with `crm_actions` `resolve_identity`.
 - Before a bulk decision, list what is pending, and say what an approval does when it is not obvious:
   - an approved outreach batch approves its drafts, and Octopad sends none of them: send each as [Sending an approved draft](references/outreach.md#sending-an-approved-draft) says;
   - where the organization has Scout, an approved scout batch adds every candidate in it, unless you pass `candidate_ids`.
+- A member's approval of a draft covers its send: send that exact draft once, without asking again; when the user approves it in this conversation, send it then. Leave unsent a draft the approval did not cover.
+- When a task's work produces a reply to a customer, treat it as a draft: send it only after a member approves it, as above.
 - An agent key is not a person. A connection that uses an agent key:
   - may list drafts, read an approved one in full, send it with its own mail tool when its instruction asks it to, and record the send and the reply;
   - may not approve or reject a draft, decide a proposal, resolve a quarantined identity or switch a contact's AI summary, and never uses Octopad's own sending: those wait for the member, from their own connected AI or in the CRM screens.
@@ -67,6 +70,16 @@ Put each kind of fact in its one home:
 - When a create or a sync is refused because the organization reached its record allowance, tell the user how to raise it, as the refusal says. Never delete or archive records to make room.
 
 # Octobots, outreach, the distill and imports
+
+- Before a paid octobot launch (`crm_runs` `launch` other than a dry run, or `crm_outreach` `draft`):
+  - once Octopad has said in this conversation that it could not get the user's answer, or when the tool's description does not say the call asks the user to approve it: first tell the user what the run does, on how many records at most and what it may spend, and launch only after their confirmation;
+  - otherwise, make the call: the tool asks the user, and their answer there is their confirmation;
+  - where the organization has Enrich, the user picks the values to buy (`fields`) for an Enrich run: ask when their request does not say.
+- Make a change that adds model spend only on the user's instruction in chat, and tell them its cost: before, when you propose it; with the result, which states it, when they asked for it. These changes are:
+  - turning the nightly distill on or raising its cap (`crm_runs` `set_schedule`);
+  - saving or restoring directions (`crm_runs` `set_directions`, `restore_directions`);
+  - a re-fold request (`crm_runs` `request_refold`) or switching a field's re-fold flag (`crm_fields` `set_refold`);
+  - a distill preview (`crm_runs` `preview_distill`).
 
 Each procedure lives in a reference: read the one you need before your first call for it.
 
@@ -86,4 +99,4 @@ Each procedure lives in a reference: read the one you need before your first cal
 - Name the record in the task, and append an entry on the record that names the task, so each side leads to the other.
 - Move the specific item into the task, never access to the CRM: people on the task do not need the CRM.
 - Put customer data into the task only as far as the work needs it.
-- A reply to the customer that comes out of that work is a draft: send it only after a member approves it.
+- Send a reply to the customer that comes out of that work as "Acting for the user" says.

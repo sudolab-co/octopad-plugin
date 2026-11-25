@@ -118,6 +118,7 @@ Once a discussion, not a passing thought, develops a real user problem, system b
 6. Remove any duplicate parked entry, preserving its unique content in the spec.
 
 - Record the thinking without claiming approval or delivery, and without inventing an execution Task. On acceptance, move the line to Direction or Choices in that same spec; work tracking owns execution.
+- When the user settles how the product behaves, read the owning Product Spec before you answer, write the behavior into it in the same turn, before it is built, and log it as a Decision with the `knowledge` tool too.
 - At the end of a brainstorm, and whenever an idea comes up in passing during other work, park each remaining passing idea the user engaged with and left open, without asking, under the [parking rule](references/lifecycle-playbooks.md#brainstorm-and-design-maturity).
 
 ## Record what work establishes about a system

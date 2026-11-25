@@ -97,6 +97,7 @@ Version: 8.5.0
 # When an effort ends or changes shape
 
 - When the user keeps on purpose a stream that looks finished or idle, write that in its update, and why when they say, where `work_streams` offers `set_status`, which every member's AI reads, so no AI proposes its cleanup again.
+- Before you delete a stream that holds tasks, or archive, cancel or complete one that still holds open tasks, even when the user asked for it, propose a complete plan: each task's fate (finished, changed, cancelled, archived, trashed, moved to another stream, or kept with no stream, with a goal of its own or none) and why. Then wait for their confirmation of that plan.
 - When any of these happens, check each stream concerned once, even when a batch changes several of its tasks, before dependent work continues: its tasks and Definition of Success against the user's instructions and the actual results, not only against each other.
   - A task is added to it, reopened or closed in it, moved into or out of it (for a move, check the stream it left and the one it joined), or handed over for review (`pending_review`).
   - It is paused, completed, cancelled or archived. Once it is no longer open, check only its links to review.

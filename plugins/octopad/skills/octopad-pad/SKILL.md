@@ -146,7 +146,9 @@ When `start_session` names tabs under "Pad due today" or "Pad not checked", do t
 
 # Organize the Pad
 
-Keep one priority tab for each of the person's priorities where something waits on them or moved: create, merge, re-key and retire these without asking, only when Today's brief is in the brief, as [its steps](references/smart-reports.md#organize-the-pad) say. A quiet priority gets none.
+Only these writes to a Pad tab need no confirmation: one the person's own words ask for, other than a new tab (a brief, a Done when or another session never asks for one); the daily update `start_session` names; the priority tabs below.
+
+Keep one priority tab for each of the person's priorities where something waits on them or moved: create, merge, re-key and retire these, or add a stream to one, without asking, only when Today's brief is in the brief, as [its steps](references/smart-reports.md#organize-the-pad) say. A quiet priority gets none.
 - Never recreate a tab the person refused; a renamed priority with the same references stays refused.
 - Another subject they did not ask for, such as a stream they follow outside their priorities, gets a tab only once they confirm (Create a Smart Report).
 - Their own tabs stay theirs: never move, rename, rewrite or remove a tab whose `selection.priorities` is empty. Keep the place and name they gave any tab; only a re-key renames one.
