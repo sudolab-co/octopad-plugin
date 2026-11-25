@@ -15,11 +15,10 @@ The Market Overview holds, in this order:
    - **Prices and economics**:
      - Give pricing models and units.
      - Give totals for justified customer cases with the same needs, units, volumes, tax basis and period, including setup, hardware, usage, migration and the tools kept. Keep partial substitutes and quotes not obtained out of the comparable totals.
-     - Keep listed prices, actual spending and willingness to pay apart: they are different things.
+     - Keep listed prices, actual spending and willingness to pay apart.
      - Where it decides the answer, weigh the customer's gain against switching costs, and the offer's revenue against acquisition, channel, onboarding and service costs.
    - **Customer voice**: praise, friction and switching experiences, who reported them, and the sample's limits.
    - **Environment**: rules, technology and channels, only when they change a conclusion.
 3. **What remains to verify**: the material unknowns ranked, the cheapest useful check for each, and which answer would change a conclusion.
 
 - Link each actor named to its page or its entry in Other actors.
-- Keep assumptions, calculations and decisive sources beside the findings they support.
