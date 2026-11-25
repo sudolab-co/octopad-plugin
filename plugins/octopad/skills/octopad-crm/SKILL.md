@@ -43,6 +43,7 @@ Put each kind of fact in its one home:
 - Write a field on the record with `crm_contacts`, `crm_companies` or `crm_deals`: `update` for one record, `batch_update` for many in one call.
 - When a customer's own words come up that someone outside this conversation will need, keep them on their record in the same turn, without asking: append an entry of type `note` that quotes the words that matter, with who said them, where and when (unknown if you do not know). When they change what the team understands, update the brief too.
 - When their words establish something beyond that customer, record that too, citing the customer and the date: open the `octopad-knowledge-evidence` skill, section "Where knowledge is written".
+- When a customer you hear about has no record, search for it with `crm_search` first; when it finds none, create the record without asking (`crm_contacts` or `crm_companies` `create`), file what the customer said or did on it, and say so in your recap at the end of the exchange.
 
 # Who owns a value
 
@@ -50,7 +51,6 @@ Put each kind of fact in its one home:
 - When your evidence disagrees with such a value, say so and let a person decide.
 - Never treat your own confidence as authority to write.
 - Never write a placeholder, a guess or a vendor's filler value as a record value.
-- When a customer you hear about has no record, search for it with `crm_search` first; when it finds none, create the record without asking (`crm_contacts` or `crm_companies` `create`), file what the customer said or did on it, and say so in your recap at the end of the exchange.
 - Fill a record from outside sources only when the user asks.
 
 # Acting for the user
