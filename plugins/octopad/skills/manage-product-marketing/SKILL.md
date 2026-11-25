@@ -6,12 +6,12 @@ Version: 3.3.1
 
 # Maintain each offer's marketing
 
-Keep the user's marketing knowledge in Octopad on your own, so another AI can draft any marketing asset from it without inventing a claim: whom each offer addresses, what it promises, on which terms, and what its audience says and resists.
+Keep the user's marketing knowledge in Octopad on your own: whom each offer addresses, what it promises, on which terms, and what its audience says and resists.
 
 ## Find the owner
 
 - Keep each offer's marketing in the Marketing section of its Product Overview, the head page `manage-product-documentation` keeps per offer. Products sold together to one audience at one price share one Overview; a product gets its own only when its audience or its price differs.
-- Write that section and your three At a glance keys, and nothing else on the page: `manage-product-documentation` owns the page's structure.
+- Write that section and your three At a glance keys, and nothing else on the page.
 - Create no Marketing Overview. A workspace with no offer and no audience to reach gets no marketing content.
 - Every member reads organization-level marketing: keep a client's offers, prices and messages in that client's workspace.
 - Treat Audience, Positioning and Pricing pages as optional detail: explanation, research pointers and working notes, never a competing current answer.

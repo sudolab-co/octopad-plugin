@@ -3,7 +3,7 @@
 The Market Overview holds, in this order:
 
 1. **What to remember**: findings ranked by importance, each with what it implies for the activity, how sure it is and its limits. Then the status of each hypothesis, and the offer's stated target, promise and difference (its Product Overview's Marketing section) held against the evidence: supported, contradicted or unresolved, without choosing replacements.
-2. **Market analysis**, one heading per block in this order. Fill each, or write "unknown" or "not applicable" and why. Use tables where they compare; never leave an empty one.
+2. **Market analysis**, one heading per block in this order. Fill each, or write "unknown" or "not applicable" and why. Never leave an empty table.
    - **Size and change**:
      - Tell the customers' industry from this offer's market, businesses from sites, the whole market from the reachable segment.
      - Estimate buyers times annual relevant spend, inputs sourced and assumptions explicit; cross-check against a separate estimate when one exists and explain the gap.

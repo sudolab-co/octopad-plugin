@@ -6,7 +6,6 @@ Version: 2.3.1
 
 # Diagnose and improve marketing
 
-Supply diagnosis, method, proposals and review.
 - `manage-product-marketing` maintains the choices, messages and evidence pointers.
 - The competent decision-maker accepts or rejects choices.
 - A PMM recommendation or review pass does neither. A review pass means only that the bounded review found no unresolved issue in the checked material and sources: it is no specialist clearance and no leave to publish.
@@ -32,7 +31,7 @@ Only when you assess the method's provenance or plan more research, read [eviden
 - Let product and operational evidence limit factual claims, and accepted positioning limit choices without turning its words into evidence; let neither practitioner method nor generic external research overrule them.
 - Keep conflicting or unidentified authority unresolved.
 - When access is missing or refused, block only the claims that depend on it: report it, and continue independent work with omissions or named evidence placeholders.
-- Never let client data, evidence, prices, comparisons or examples cross scopes without explicit shared scope and permission. Public skill distribution does not authorize data sharing.
+- Never let client data, evidence, prices, comparisons or examples cross scopes without explicit shared scope and permission.
 - Keep secrets and personal identifiers out of marketing artifacts.
 
 ## Protect choices and sensitive uses
@@ -52,7 +51,7 @@ When copy names an intended use that feeds decisions about a person in employmen
 
 ## Choose the marketing job
 
-Classify by reader intent, not channel alone: for example, a homepage can educate an unfamiliar audience, and a social post can answer an active buyer's question.
+Classify by reader intent, not channel alone.
 - Demand capture, when the reader is already seeking a solution or comparing alternatives:
   - lead with the present capability and the task it addresses;
   - put no category manifesto on the first screen;
@@ -83,7 +82,7 @@ Classify by reader intent, not channel alone: for example, a homepage can educat
   - for a physical item, what its supported properties enable;
   - for an association, what participation makes possible.
 - Do not force software language onto other activities or turn enabled value into a guaranteed business or personal outcome.
-- Write for one primary reader per message, chosen from context rather than from an assumed job title: for example an executive, a practitioner, a beneficiary or a funder.
+- Write for one primary reader per message, chosen from context rather than from an assumed job title.
 - Different reader needs may warrant separate assets, only within the requested scope.
 - Use a specific task and example before abstractions.
 - Name a real alternative when supported.
@@ -123,10 +122,6 @@ For each finding:
 - name the affected passage, reason, exact source or missing proof and the relevant boundary;
 - give a bounded fix for each Blocker and High, except a locked passage, which gets only its reopen and proof need;
 - fix the named sentences; make larger restructuring a separate recommendation.
-
-For example, a locked homepage tagline reads "Halves your onboarding time" and no source measures onboarding time:
-- Finding: Blocker, homepage tagline. An outcome claim with no source, in a locked passage: reopen needed. Proof needed: onboarding time measured before and after, with its scope.
-- Delivered copy: the tagline is withheld and `[outcome: valid scoped evidence missing]` stands in its place. No alternative slogan is offered, and the source keeps the tagline until the user reopens it.
 
 - For a draft:
   - state unresolved blockers first;

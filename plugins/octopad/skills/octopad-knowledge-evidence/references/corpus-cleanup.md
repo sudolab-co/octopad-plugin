@@ -1,7 +1,5 @@
 # Cleaning up the corpus
 
-When the user asks to audit or clean Key Information:
-
 1. List every item of each kind in scope with `knowledge` `list`, through every page it returns, and count them.
 2. Work in batches by subject or stream, so a decision is read beside the ones that may replace it.
 3. Check each item against its evidence: later decisions, task and stream state, the code that runs, the page that owns the subject. Note per item:
@@ -14,6 +12,6 @@ When the user asks to audit or clean Key Information:
    - a related decision taken for a replacement, or a real successor missed;
    - a reverse of a choice still applied or not built yet;
    - a new decision, a supersede or a reverse resting on the code rather than on a source of the choice.
-5. Show the user the exact batch, each item's current and new text, and apply it only once they confirm that batch. Keep that batch on the cleanup's working page, so any change can be undone.
+5. Show the user the exact batch, each item's current and new text. Keep that batch on the cleanup's working page, so any change can be undone.
 6. Apply item by item with `expected_updated_at`; a conflict voids that item's change until it is read and shown again. Then list again, check the counts and statuses, and name any item left unapplied.
 7. Report how many items went stale for each cause.

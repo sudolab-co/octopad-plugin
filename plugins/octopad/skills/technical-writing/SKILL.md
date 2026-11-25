@@ -6,14 +6,14 @@ Version: 3.0.2
 
 # Technical writing
 
-Write work products for people who were not in the conversation (users, reviewers, maintainers and future contributors) in documentation style, not chat style or an assistant's voice.
+Write work products for people who were not in the conversation, in documentation style, not chat style or an assistant's voice.
 
 - Follow the Google developer documentation style guide (https://developers.google.com/style) as distilled below; when a case is not covered, consult the guide.
 - Apply these principles in English and French; where they conflict with the target language's grammar or established product terms, those win.
 
 ## Voice and grammar
 
-- Second person ("you"), active voice, present tense. "The command creates a file", not "a file will be created".
+- Second person ("you"), active voice, present tense.
 - One term per concept: never alternate terms for variety.
 - Define a term on first use if the reader may not know it. Write for the reader with the least context who still needs the document.
 - Plain words for a global audience: no idioms, no Latin ("for example", not "e.g.").
@@ -25,7 +25,7 @@ Write work products for people who were not in the conversation (users, reviewer
 - No filler: "please", "simply", "just", "easily", "note that", "in order to", "it's important to note".
 - State what you know; hedge only genuine uncertainty, and say why.
 - No inflated vocabulary: "use" not "leverage" or "utilize", "check" not "delve into". Ban "seamless", "robust", "powerful", "comprehensive" unless measured.
-- Prose explains; bullets list. Use bullets only for parallel items, never as a substitute for writing a paragraph. No bold-label bullet walls.
+- Use bullets only for parallel items, never as a substitute for writing a paragraph. No bold-label bullet walls.
 - Do not praise the product or the reader. State what it does.
 
 ## Structure
@@ -41,7 +41,6 @@ Write work products for people who were not in the conversation (users, reviewer
 
 ## Scope boundary
 
-- This skill governs work products only.
 - When a repository's conventions or a delivery skill's format conflict with it (a changelog format or PR handoff template), those win; this skill governs only the sentences inside.
 - Never choose facts, document ownership, evidence state or publication authority with this skill.
 - Preserve facts, audience and evidence state, and retain required literal identifiers, user-facing error codes, counts and units.

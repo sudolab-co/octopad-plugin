@@ -6,15 +6,12 @@ Version: 7.8.0
 
 # Manage Product Documentation
 
-- Keep a living, attributed account of what the user wants each part of the product to achieve and why, even before code exists.
-- Organize and link the documents so the user's AI finds and applies the right context, without the user administering the structure.
-
 ## Resolve the product first
 
 - Before you select a document to change, establish the affected products from current evidence by [Resolve product scope](references/product-scope-and-seams.md#resolve-product-scope): a workspace, repository, project, document or search result is not a product selection.
 - Choose the owning system by the need it serves, not by its delivery mechanism (an AI instruction, a hook, a tool).
 - Give a capability its own spec, linked from the affected specs, when its reader must understand it independently, with its own need, data or rules.
-- Never split a spec for length alone: element subsections let a reader take a long spec in parts ([Write for the reader](#write-for-the-reader)).
+- Never split a spec for length alone: element subsections let a reader take a long spec in parts.
 - Recheck ownership as the design changes and before building.
 
 ## Work from product intent
@@ -47,12 +44,12 @@ Before you conclude or hand off, check the result against that intent in the exi
 A Product Spec gives whoever must decide, build, change or judge a system what code cannot. Describe in it the intended product, built or not, with the limits work has established.
 
 - Keep a line only if a reader without it could build the wrong thing, undo a choice or break a promise.
-  - Leave out what the code does and how, values and steps chosen while building (screens, wording, parameters, size limits, budgets, ordering) and delivery history (pull requests, revisions, reviews, releases): code, tests, the design document, Tasks and release records hold them.
+  - Leave out what the code does and how, and values and steps chosen while building (screens, wording, parameters, size limits, budgets, ordering): code, tests, the design document, Tasks and release records hold them.
   - Keep a value or an observed behavior only when it is the promise or the known limit itself; never invent a need or a reason to keep a line.
   - Example: not "`create` requires `title`; at most 80 characters" but "each item says in one line what it is for; input is never cut silently".
 - Write intent (Need, Outcome, Direction, Choices) in short full sentences, each choice with its reason, and one bullet per promise or non-goal.
 - Mark what is undecided `[open]`, never guessed. Use only two labels, `[open]` and `[idea <date>]` in Open questions; move an accepted line to Direction, Choices or Promises, unlabelled.
-- Always write Need and Outcome, `[open]` while unknown, so readers recognize a spec; omit other empty sections. Keep the headings below word for word: readers parse them.
+- Always write Need and Outcome, `[open]` while unknown; omit other empty sections. Keep the headings below word for word.
 - Write each fact once, linked elsewhere, in the page's language and the workspace's style, with no transitions, history or comments on sources. Keep no changelog or history page per spec unless the workspace's rule keeps one: chronology lives on the release record or changelog.
 - Put in each section only its own content:
 
@@ -79,7 +76,7 @@ A Product Spec gives whoever must decide, build, change or judge a system what c
 <Product Map> · <Architecture Map> · <Decisions> · <supporting records> · <contracts> · <related specs> · <design document> · <code entry point>. (Nothing else.)
 ```
 
-- Put everything else in its home, linked when still needed: delivery status, progress, branches and test runs (Task, pull request); a replaced design or text (page versions); who chose when (Decision); a defect, even one breaking a promise (Task, linked); negated bugs ("does not crash"); a measurement that constrains no design (the test or script that measures it); exploration narrative (supporting record).
+- Put everything else in its home, linked when still needed: a replaced design or text (page versions); who chose when (Decision); a defect, even one breaking a promise (Task, linked); negated bugs ("does not crash"); a measurement that constrains no design (the test or script that measures it); exploration narrative (supporting record).
 - When a section covers several elements of the product (a screen, a tool, a step of a flow, a group of rules), give each element a `###` subsection, under the same heading in every section where it appears, so a reader can fetch one element across the spec:
   - put a rule that holds for every element in a subsection headed `All elements`, in every language, and write no text outside the subsections;
   - put a rule for some elements but not all under one of them, cross-referenced from each of the others; when an element's rule depends on another element, cross-reference that element's section and heading;
@@ -167,7 +164,7 @@ The delivery rule:
   - an unresolved conflict over which source is authoritative;
   - a consequential decision not already handled by the normal product or repository review;
   - deletion, irreversible overwrite, or another destructive consolidation.
-- Record a direction already given without asking for it again; an unresolved authority conflict still follows step 4 of [Stop before writing](#stop-before-writing).
+- Record a direction already given without asking for it again.
 
 The pre-release rule:
 - Before release, base a user-documentation or release-note draft on approved, implemented or merged evidence only when it stays clearly labeled pre-release and cites the exact source revision.
@@ -187,7 +184,6 @@ When owned product truth changes:
 2. Identify every affected downstream output, and hand each one to its owner.
 3. When that owner's skill is available, the same request authorizes the downstream edit and its own gates are satisfied, open that skill and continue rather than leaving known stale text behind.
 
-- Product Facts are the operational seam: produce and verify them per product here; `manage-product-marketing` consumes them and owns the claims derived from them.
 - On a correction or rollback, leave the Fact-to-output dependency visible, so affected messages can be reviewed without rewriting unrelated products or outputs.
 
 ## Administer the documentation system
@@ -196,4 +192,3 @@ When owned product truth changes:
 - You own the Overview's At a glance key `offer_and_availability`; hold it to the evidence the Product Fact rule ([Stop before writing](#stop-before-writing)) asks.
 - For what each artifact holds, and when a Behavioral Contract, an Architecture Map or an Engineering Reference is warranted, read [documentation-model.md](references/documentation-model.md).
 - When a context load makes no product choice, load the smallest slice needed.
-- For implementation, follow [Implementation context retrieval](references/lifecycle-playbooks.md#implementation-context-retrieval).

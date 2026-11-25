@@ -1,7 +1,5 @@
 # Brief and plan
 
-Sections: Brief; Check the path before you promise; Draft the plan; Review the draft; Write the plan into Octopad; Propose delivery, with Record the mandate and Launch; Changes.
-
 ## Brief
 
 - Apply the brief and preparation of [octopad-planning-and-work-design](../../octopad-planning-and-work-design/SKILL.md), and keep the brief where it says. Reuse a confirmed brief while its outcome is unchanged.
@@ -59,12 +57,12 @@ Checks:
 - For a pull request, cover each check its host runs, locally where cheaper than a failed round, else as a hosted result to wait on; a local pass never stands in for the hosted gate. Name as excluded a check the target's rules ignore or one already failing on the base.
 - For each check the result rests on, say how it could pass on a broken outcome, and show it does not; when tests can bypass the changed code, disable that code once and show the check fails.
 - Run a measurement or research task end to end on two or three real inputs, one with a known answer, before scaling it.
-- When you write the plan, attach to its task anything a check needs that sits on one machine only, or name that machine as a limit.
+- Attach to its task anything a check needs that sits on one machine only, or name that machine as a limit.
 - Plan a change through the target's staging environment, when it has one, before production.
 
 Routes:
 - Choose each task's `Exec` once per runtime, from each profile's rubric and the judgment left after preparation. Keep a saved route, or one the user chose, unless [Changes](#changes) applies; never substitute one silently.
-- A route with an `on failed checks` part is one route: when the work fails its checks, one new executor takes the second part from the current result.
+- A route with an `on failed checks` part is one route.
 - A step only one runtime supports names its equivalent in the other, or the gap as a blocker.
 - Set `Review` from the [review rule](../SKILL.md#review) and each profile's review column.
 
@@ -97,11 +95,11 @@ It answers `PASS`, `REVISE` with findings, or a question only the user can answe
 ### Record the mandate
 
 Before the launch, never only in chat:
-- Post one stream update with `work_streams` `set_status`: in `line` (up to 300 characters), the date, the mode, and the allowed effects with their targets; in `note` (up to three lines and 600 characters), the limits and the user's decisive words.
+- Post one stream update with `work_streams` `set_status`: in `line`, the date, the mode, and the allowed effects with their targets; in `note`, the limits and the user's decisive words.
 - Make each task's `What` match the effects the answer allows.
 - Where `work_streams` offers no `set_status`, every update this skill posts or reads is a comment on the plan's first task instead.
 
-A read shows only the stream's latest update, so every later Octoplan update repeats the mandate in its `note`. When the latest update lacks it, take the effects from the tasks and ask the user only for the rest, such as the mode.
+Every later Octoplan update repeats the mandate in its `note`. When the latest update lacks it, take the effects from the tasks and ask the user only for the rest, such as the mode.
 
 ### Launch
 

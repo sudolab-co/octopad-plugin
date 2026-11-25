@@ -28,10 +28,10 @@ Prove it for the maintained set of every affected product:
 
 ## Pull request and delivery sync
 
-1. Determine documentation impact: none, existing-system change, new system, or technical-only. Record it on the PR in the repository's normal way, naming affected documents or carrying the proven negative receipt. A `none` follows the receipt above. `technical-only` does not imply `none` when durable architecture or an Engineering Reference changed.
+1. Determine documentation impact: none, existing-system change, new system, or technical-only. Record it on the PR in the repository's normal way, naming affected documents or carrying the proven negative receipt. `technical-only` does not imply `none` when durable architecture or an Engineering Reference changed.
 2. Link the existing Task to the PR through the `Octopad-Task:` line of its body, and a stream through the repository's normal fields; the spec's Direction links that Task or stream when it serves an accepted direction.
 3. Record exact head and base revisions on the pull request or Task. Re-check after material drift.
-4. Change the spec only as SKILL.md's delivery rule allows, and the Architecture Map only under [its rule](documentation-model.md#architecture-map).
+4. Change the Architecture Map only under [its rule](documentation-model.md#architecture-map).
 5. Verify coverage under SKILL.md, section "Work from product intent", using code, tests and the actual diff rather than the PR description alone.
 6. Draft pre-release user documentation or release notes when useful, under SKILL.md's pre-release rule (section "Keep human authority narrow and meaningful"); never as shipped wording, Product Facts or marketing claims.
 7. When evidence remains missing, mark the update stale or unverified and create or reuse documentation-debt work.

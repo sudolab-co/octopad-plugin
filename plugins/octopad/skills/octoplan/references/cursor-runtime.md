@@ -16,7 +16,7 @@ Cursor runs the saved Claude routes, reviewer and supervisor included, chosen un
 Read on 2026-11-04 from Cursor's documentation and plugins, not measured in a run; correct them from what a run shows.
 
 - The Task tool launches sub-agents in the foreground or the background (`run_in_background`); `resume` with an agent ID and no `model` continues one.
-- The main agent and its direct sub-agents can launch sub-agents; a sub-agent's sub-agent cannot. Supervisor, executor and reviewer fit.
+- The main agent and its direct sub-agents can launch sub-agents; a sub-agent's sub-agent cannot.
 - Sub-agents share the parent's checkout unless launched with isolation, and inherit its tools and MCP servers.
 - Unknown: whether a background completion wakes an idle parent, how many sub-agents may run at once, and what survives Cursor's own compaction.
 - No documented tool lets an agent start a top-level chat or message another chat.
@@ -28,4 +28,4 @@ Read on 2026-11-04 from Cursor's documentation and plugins, not measured in a ru
 - Launch one executor per task on its lane, in an isolated worktree when another writer works in the same repository. Until a background completion has been seen to wake an idle supervisor in this Cursor version, use `run_in_background: false`, with independent executors in one message.
 - Where an executor cannot launch its reviewer, launch it yourself and `resume` the executor without `model`, passing the findings.
 - Wait for pull-request checks in the active turn on a command that exits once every check finished. When every wait is a person's, report and end the turn; the user's next message resumes the same chat.
-- For a successor, give the pointer; the user confirms that the previous chat stopped, since no tool reads another chat.
+- For a successor, give the pointer; the user confirms that the previous chat stopped.

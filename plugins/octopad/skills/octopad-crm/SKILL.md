@@ -13,7 +13,7 @@ Version: 2.3.0
 - When the user wants the CRM on, send them to the workspace's Settings, under Modules (on the desktop: Settings, General, Modules), where an owner or admin of the organization turns it on: no tool does it. Once on, it cannot be turned off.
 - After it is turned on, each person reconnects their AI to see the CRM tools.
 - Never report the CRM as on until `crm_status` says so.
-- When you set up the CRM, switch Deals off with `crm_pipeline_stages` `set_deals_enabled` for a team that follows no sales discussions through stages to won or lost, such as a product tracking its own users or a network of contacts with no sales to follow, so it is not shown an empty Deals tab.
+- When you set up the CRM, switch Deals off with `crm_pipeline_stages` `set_deals_enabled` for a team that follows no sales discussions through stages to won or lost, such as a product tracking its own users or a network of contacts with no sales to follow.
 - The CRM tools come in three sets:
   - record tools, in every CRM workspace: `crm_contacts`, `crm_companies`, `crm_deals`, `crm_search`, `crm_segments`, `crm_pipeline_stages`, `crm_fields`, `crm_contact_companies`, `crm_record` and `crm_status`;
   - octobot tools, once Octopad opens them to the organization: `crm_runs`, `crm_outreach`, `crm_actions` and `crm_signals`;
@@ -24,7 +24,7 @@ Version: 2.3.0
 
 - When you read a contact, read its card (its current AI summary) first, then its brief and recent entries.
 - When you read a company or a deal, read its brief and latest hand-off: they have no card.
-- Read them with `build_context` in contact, company or opportunity mode, which cuts the longer parts short; read the whole brief with `crm_record` `get_brief` and the recent entries with `list_entries`.
+- Read them with `build_context` in contact, company or opportunity mode; read the whole brief with `crm_record` `get_brief` and the recent entries with `list_entries`.
 - When you read a campaign or a list, read it in one batch call (`build_context` with `ids`, up to 200 records), never one record at a time.
 - When you report what a contact's card says, say how fresh it is: its `**Card:**` line gives the date it was distilled, and an `**Out of date:**` line says why it may no longer hold.
 - Report a stale or missing card as such; never pass it off as current understanding.
@@ -55,7 +55,6 @@ Put each kind of fact in its one home:
 
 # Acting for the user
 
-- You act with your member's permissions and in their name.
 - When an octobot's proposal, outreach draft or quarantined identity waits for a decision, decide it only on the instruction of the member you act for; one instruction can cover a whole queue.
 - Approve or reject proposals with `crm_actions` `decide`. Where the organization has it, resolve quarantined identities with `crm_actions` `resolve_identity`.
 - Before a bulk decision, list what is pending, and say what an approval does when it is not obvious:
@@ -81,8 +80,6 @@ Put each kind of fact in its one home:
   - a re-fold request (`crm_runs` `request_refold`) or switching a field's re-fold flag (`crm_fields` `set_refold`);
   - a distill preview (`crm_runs` `preview_distill`).
 
-Each procedure lives in a reference: read the one you need before your first call for it.
-
 - Before you rehearse, launch, follow or explain an octobot run, read [Running octobots](references/octobot-runs.md#running-octobots).
 - Before you approve, reject, list or send a draft, record a send or a reply, or record a message sent outside a draft, read [Sending an approved draft](references/outreach.md#sending-an-approved-draft).
 - Before you read or change the distill's directions, questions, nightly switch or re-folds, read [Running the distill](references/distill.md#running-the-distill).
@@ -96,7 +93,7 @@ Each procedure lives in a reference: read the one you need before your first cal
 # Linking customers to work
 
 - When a customer raises an issue, create a task for it in the workspace that owns that work.
-- Name the record in the task, and append an entry on the record that names the task, so each side leads to the other.
-- Move the specific item into the task, never access to the CRM: people on the task do not need the CRM.
+- Name the record in the task, and append an entry on the record that names the task.
+- Move the specific item into the task, never access to the CRM.
 - Put customer data into the task only as far as the work needs it.
 - Send a reply to the customer that comes out of that work as "Acting for the user" says.

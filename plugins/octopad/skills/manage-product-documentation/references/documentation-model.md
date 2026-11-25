@@ -14,21 +14,21 @@
 - Product Facts
 
 - Use the smallest set of durable artifacts that makes the product understandable and safe to change.
-- Adopt clear existing vocabulary and page conventions instead of renaming established systems merely to fit this model; only a Product Spec's section headings are fixed, since readers parse them.
+- Adopt clear existing vocabulary and page conventions instead of renaming established systems merely to fit this model; only a Product Spec's section headings are fixed.
 - Use the shapes below as adaptable shapes, not forms that must be filled: omit irrelevant sections.
 - Keep durable knowledge in Pages, or in the repository docs that already hold it; keep finite execution, owners and current status in existing streams and Tasks.
 - When an Octoplan-created stream or task graph exists, reuse it; do not require Octoplan, and do not create a parallel planning system.
 
 ## Product Overview
 
-- Keep one per offer: a head page (`head_type: product_overview`) for purpose, experience, design pillars, non-goals and relationships above system specs, with a Marketing section that `manage-product-marketing` writes. The Organization Overview shows its At a glance block.
+- A head page (`head_type: product_overview`) for purpose, experience, design pillars, non-goals and relationships above system specs, with a Marketing section that `manage-product-marketing` writes.
 - Give products sold together to one audience at one price one shared Overview; give a product its own only when its audience or its price differs.
-- Of its At a glance keys, `offer_and_availability` is yours, held to the evidence a Product Fact needs; `audience_and_need`, `promise` and `conditions` belong to `manage-product-marketing`.
+- Its At a glance keys `audience_and_need`, `promise` and `conditions` belong to `manage-product-marketing`.
 - Keep it distinct from the Product Map, which only indexes.
 
 ## Product Map
 
-- Keep exactly one per product: the index of every system, nothing else.
+- The index of every system, nothing else.
 - When an existing index already serves as the entry point, adopt it.
 - A portfolio index may route to several Product Maps; never restate their product truth in it.
 
@@ -52,10 +52,7 @@ Overview: <link> · Architecture: <link> · Ideas: <link>
 ## Product Spec
 
 - Keep one evolving Product Spec per significant product system: a coherent user capability, durable behavior or boundary that people need to reason about independently. Split specs only at such a boundary.
-- Once a discussion develops that boundary or behavior far enough to become real design work, create or adopt its spec at `idea`; a build decision is not required.
-- For which system owns a capability, follow SKILL.md, section "Resolve the product first"; for its shape and what each section holds, section "Write for the reader".
 - Put vision and offer in the Product Overview and precise shared invariants in a Behavioral Contract.
-- Update the existing spec as the system evolves; replaced text stays in page versions.
 - A dropped promise or choice leaves with the Decision that drops it.
 - In a spec of a text users' AIs read, such as a skill, keep its promises with their conditions, exceptions, authority boundaries and failure cases, and link that text at its released revision for the mechanics; never restate it rule by rule.
 
@@ -110,8 +107,8 @@ Keep architecture intentionally asymmetric: one short map per product, not one e
 - Name one canonical home; do not maintain both. Adopt an existing map where it already lives rather than moving it.
 - Create the map only once code gives evidence of stable architecture; otherwise leave it uncreated and record the gap.
 - Give the map's Octopad page, or the Octopad entry of a repository map, the page subtype "Architecture Map", and give it to no other page; each product keeps its own map. When two marked pages describe one product, keep the mark on the canonical one.
-- Link the map, with the URL Octopad returns for it, from its Product Map and from the Links of each of that product's specs: when a workspace holds several maps, Octopad serves a task the one its linked pages point to.
-- Keep the heading "How the systems connect" word for word: Octopad finds the section by it, serves it in a code-work task briefing, asks for a check when a task with a linked pull request is delivered, and warns when an edit leaves the map past its size line.
+- Link the map, with the URL Octopad returns for it, from its Product Map and from the Links of each of that product's specs.
+- Keep the heading "How the systems connect" word for word.
 
 Its reader is an AI or a person about to change something that crosses systems: the map shows how the systems connect end to end, so they see what else the change touches before they start. Include only stable orientation:
 
@@ -133,7 +130,6 @@ Keep a line only if a reader without it could break a connection, a boundary or 
 - Describe in the map the code on the default branch, the base every change starts from; when released state differs in a way a reader needs, say so in one line.
 - When a change lands that alters a component, a connection, a data store or external service, a code home or the release model, update the map; check it at each release sync.
 - Keep it short enough to read whole before a change: at most 20,000 characters of page text. When a system's detail would push past that, move it to its home.
-- Before durable content leaves the map, list it under SKILL.md's preservation rule (section "Write for the reader"), as for a spec.
 
 ```markdown
 # Architecture Map
@@ -188,14 +184,11 @@ Verification sections:
 
 ## Product Facts
 
-The Product Fact rule (SKILL.md, section "Stop before writing"):
 - Before you create or activate a Product Fact, read evidence, retrieved or supplied, competent to prove its exact claim, product scope and state.
   - A claim of shipped or released behavior, or of software's current capabilities or availability, needs verified release evidence, whether or not its wording mentions a release.
   - A fact about a non-software offer, service or physical specification needs the relevant authoritative decision, service record or technical evidence for its exact state; approval or validation alone proves neither availability nor launch.
   - A named artifact, or an assurance that evidence is available, is a pointer, not proof.
-- When the required evidence cannot be found, create no Fact or dependent approved copy, and name the gap.
 
-- Keep each Fact attributable to one product; a shared component does not make its release state universal.
 - Give each Fact:
   - exact claimable wording;
   - dated evidence, verified state and product scope;

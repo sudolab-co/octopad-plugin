@@ -1,8 +1,6 @@
 # Method provenance and further reading
 
-These links are reading suggestions, not findings established by this file.
-- Before you use one to substantiate a research or legal statement, verify its source, context, date and exact conclusion.
-- The skill's method is self-contained and makes no empirical conversion or compliance guarantee.
+- Before you use a link below to substantiate a research or legal statement, verify its source, context, date and exact conclusion.
 
 ## Keep different kinds of authority separate
 
@@ -24,8 +22,8 @@ These links are reading suggestions, not findings established by this file.
 
 - [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework): a risk-review reference, not a certification for any offer.
 - [FTC advertising substantiation policy statement](https://www.ftc.gov/legal-library/browse/ftc-policy-statement-regarding-advertising-substantiation): a source for specialist assessment of applicable advertising rules, not a universal legal conclusion.
-- [EU AI Act official text](https://eur-lex.europa.eu/eli/reg/2024/1689/oj): a source for specialist assessment of intended use, applicable rules and dates. The skill's sensitive-use tripwires are escalation heuristics, not legal classifications.
+- [EU AI Act official text](https://eur-lex.europa.eu/eli/reg/2024/1689/oj): a source for specialist assessment of intended use, applicable rules and dates.
 
 ## Practitioner background
 
-[April Dunford's Obviously Awesome](https://www.april-dunford.com/obviously-awesome) is a positioning-practice reference. The skill provides its own operational sequence and does not claim to reproduce or certify that method.
+[April Dunford's Obviously Awesome](https://www.april-dunford.com/obviously-awesome) is a positioning-practice reference.

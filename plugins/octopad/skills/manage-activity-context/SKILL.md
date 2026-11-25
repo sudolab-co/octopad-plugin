@@ -41,7 +41,7 @@ Before deciding where context belongs, read [the adaptation guide](references/ad
 5. Use the smallest adequate document.
    - Keep directly captured context in the Activity Overview while it stays clear and appropriately shared.
    - Create a separate activity or project brief only when an independent durable question, audience, scope or growing detail warrants it.
-   - Create no compulsory Brief, empty skeleton or second Activity Overview.
+   - Create no compulsory Brief or empty skeleton.
 
 Before mutation, distinguish changed facts, the At a glance keys they alter, and unchanged pages; write only the first two.
 - A statement that another project remains unchanged is a constraint to preserve, not a request to restate it in that project's page.
@@ -52,16 +52,16 @@ Before mutation, distinguish changed facts, the At a glance keys they alter, and
 
 The Activity Overview is the Activity family's head page (`head_type: activity_overview`): one for the organization, and one in each workspace that is an activity of its own, such as a client mission or a personal project.
 - Find it by its type, whatever its title.
-- Onboarding seeds the organization's with every At a glance key `missing`: fill that page, never a second one.
+- Onboarding seeds the organization's with every At a glance key `missing`: fill that page.
 - File Activity pages in the Activity folder of their scope.
 
-Each session opens on the At a glance blocks of the organization's head pages and its workspace's, binding constraints first and whole; the body is read on demand. The Activity Overview's keys:
+The Activity Overview's keys:
 
 - `what_we_do`, `for_whom`, `why`: the activity, whom it serves and what it is for.
 - `binding_constraints`: only the durable constraints every session must respect.
 - `who_decides`: a responsibility summary, never a member roster.
 
-Each key holds `missing`, `not applicable` or an answer the page supports, its essential point first.
+Each key holds an answer the page supports, its essential point first.
 - Write `missing` for each key the person has not given, and go on.
 - Ask for a fact, who decides included, only when a step other than writing this page depends on it, such as choosing a recipient or a price.
 - When the user says people or organizations join the activity, update the Overview and ask nothing. A join an audit finds waits for the user's confirmation like the audit's other gaps.
@@ -74,7 +74,7 @@ Each key holds `missing`, `not applicable` or an answer the page supports, its e
 
 An organization whose sessions still open on an untyped Company Overview switches to the Organization Overview when that page becomes its Activity Overview.
 - When you work on the organization's context, offer the cut-over.
-- Only an organization admin's AI can carry it out, since retyping an organization page is admin-only. As a member's AI, say so and create no organization Activity Overview beside it.
+- Only an organization admin's AI can carry it out. As a member's AI, say so.
 - Before carrying it out, read [the cut-over steps](references/company-overview-cut-over.md#cut-over-from-a-company-overview).
 
 # Scope, access and durable change

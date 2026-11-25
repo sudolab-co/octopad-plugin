@@ -2,7 +2,7 @@
 
 ## Routes
 
-Put the cost of an accepted result before elapsed time. These are defaults, not measured rankings. Choose the effort from the judgment left after preparation, never through a ladder of attempts.
+Put the cost of an accepted result before elapsed time. Choose the effort from the judgment left after preparation, never through a ladder of attempts.
 
 | Executor: judgment left after preparation | Route | Review |
 |---|---|---|
@@ -41,5 +41,5 @@ The supervisor is a separate native chat the user can open, and launches executo
 - Where an executor cannot launch its reviewer, launch it yourself and pass the findings to the executor with `followup_task`.
 - End a turn with agents running only where native wake-up is demonstrated; otherwise wait in the active turn. Add no loop, hook or scheduler.
 - Create a native Goal only on the user's explicit request, with no token budget unasked. Its objective is the whole delivery with its proof; executors never create one.
-- After a compaction, continue in the same chat. The server cannot see a client's compaction.
+- After a compaction, continue in the same chat.
 - Replace a supervisor automatically only when a native mechanism proves the previous one stopped; otherwise give the pointer and end. Never wake a stopped supervisor.

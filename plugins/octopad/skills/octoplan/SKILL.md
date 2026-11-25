@@ -64,7 +64,6 @@ In every mode:
 - The target's written team rules bind; an action they reserve to a person stays with that person.
 - Computer Use, or any automation that drives the screen, needs the user's explicit acceptance of the disclosed targets and actions; Full autonomy grants none.
 - An effect the mandate does not cover waits: ask for it alone, keep the mode, and continue covered work.
-- A planning-only request gets no autonomy question and no launch.
 
 ## Review
 

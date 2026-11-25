@@ -1,7 +1,5 @@
 # Costly test fields
 
-The fields you show the person for confirmation ([Design a costly test](../SKILL.md#design-a-costly-test), step 1):
-
 - **Decision:** the observable result and its threshold, and what you do on pass, on fail (step 4) and on an inconclusive result.
 - **Method and ceiling:**
   - the cheapest method able to establish that result, and why each cheaper one cannot;

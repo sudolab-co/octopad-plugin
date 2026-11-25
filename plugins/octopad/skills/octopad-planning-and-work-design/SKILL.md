@@ -7,15 +7,14 @@ Version: 8.5.0
 # From a need to prepared work
 
 - A stream and its Octoplan (the same work, delivered by agents under an agreed autonomy) share one brief and one work graph: never create a second brief or work graph for it.
-- This skill owns the preparation both share; the `octoplan` skill owns the delivery mandate, the executable plan, its review and its launch.
 
 ## Brief only what the request needs
 
 - Read the existing stream, tasks, decisions and relevant sources first.
 - Establish the purpose, the intended result and its proof, the boundaries and constraints, the unknowns that matter and who decides the consequences.
 - Ask about a missing foundation only when it could change the result.
-- Play back the intended result in proportion to the request, and confirm a material interpretation before work that depends on it: a clear capture can need one sentence.
-- Create a goal, a task tree or Octoplan records only when the work needs them, never to fill a form: a small job may need one task in an existing stream, or no new stream.
+- Play back the intended result in proportion to the request, and confirm a material interpretation before work that depends on it.
+- Create a goal, a task tree or Octoplan records only when the work needs them.
 - A stream's task count and duration never set how much autonomy agents get.
 
 ## Choosing how to deliver
@@ -26,8 +25,8 @@ Version: 8.5.0
 
 - Count the deliverables before the tasks: a deliverable can be shipped, reviewed or closed on its own, and each one is a top-level task.
 - Cut each deliverable into the smallest units that make sense in the logic of its work: parts each finished and checked on its own, split at natural seams, an atomic change kept whole. Those units are its subtasks; a deliverable of one unit has none.
-- Open no top-level task whose only job is to hold the others: an umbrella restates the stream and delivers nothing.
-- Where a task's scope is ambiguous at its edge, write down what it does not cover: an unstated exclusion is how two people build the same half twice.
+- Open no top-level task whose only job is to hold the others.
+- Where a task's scope is ambiguous at its edge, write down what it does not cover.
 - Checking a deliverable, getting it accepted and delivering it (sending, publishing, deploying) stay in its Done when. Three steps are their own tasks:
   - a chosen test;
   - a step another member carries out as their own work, such as a deploy or migration;
@@ -35,28 +34,23 @@ Version: 8.5.0
 - Keep an effort flat by default: the stream, its top-level tasks and the dependencies between them.
 - Keep deliverables made one after another flat: top-level tasks joined by dependencies.
 - Give a chosen test one task per system it tests, such as a signup flow or a reminder service. Put all that system's cases in its What, each with what it proves, beside its run budget, never also in a deliverable's Done when.
-- Make a test task depend on each task it tests and on each step another member runs for them, such as their deploy or migration.
+- Make a test task depend on each task it tests and on each step another member runs for them.
 - Give a test its levels, such as a protocol to approve and then its runs, as subtasks, never one subtask per case. Accepting its result is its reviewer's yes, never a task.
 - A subtask never falls due after its parent.
-- Join two deliverables only where one truly cannot start until the other lands: an edge added for tidiness serializes work that could run side by side.
+- Join two deliverables only where one truly cannot start until the other lands.
 - Dependencies carry order; priority says how much a thing matters within that order. When you want priority to make something happen sooner, find the missing dependency or the user's call on order instead.
 - Add a preparation task only for a real prerequisite the others cannot start without, such as a shared contract they must all follow; two unrelated fixes stay independent, whatever order they are done in.
-- When the user wants for their own work an order no prerequisite imposes, open the `octopad-pad` skill, section "Priorities", and keep that order in their priorities, with its reason in the `why:` of the priority it concerns, where the `pad` tool is offered. An order the team chooses between goals goes in those goals instead (What a goal carries). Never invent a prerequisite for either, and never lower a sibling's priority to push it down.
+- When the user wants for their own work an order no prerequisite imposes, open the `octopad-pad` skill, section "Priorities", and keep that order in their priorities, with its reason in the `why:` of the priority it concerns, where the `pad` tool is offered. Never invent a prerequisite for it, and never lower a sibling's priority to push it down.
 - Link two subtasks by a dependency only where one truly blocks the other, which is rare. That link never replaces a dependency between their parent tasks: where the parents need one, link them too.
 
 # What a goal carries
 
-- When you learn a new figure of a number goal's primary signal, from the user or a source, record it with `goals` `record_measurement`: its `note` saying where it comes from, and its `sources` when a record holds it. A number goal is judged from that figure, never from its done tasks.
+- Record a number goal's new primary-signal figure with `goals` `record_measurement`: its `note` saying where it comes from, and its `sources` when a record holds it. A number goal is judged from that figure, never from its done tasks.
 - A goal names one destination everyone involved shares, written as the place to reach ("Reach 50 active accounts"), never as an activity, and never split into targets per person: those do not move people whose work is interlocked.
 - Say in `success_criterion` how the goal will be judged met: one to three signals, one of them primary, readable while the work runs and not only on the closing day.
 - Where the route is known, make the primary signal an outcome target: `nature: "number"`, the measure's current value in `baseline_value`, the threshold it must reach in `target_value` and its unit in `target_unit`.
-- Where the work is new and the route unknown, use a learning signal instead, such as "document 3 methods that work": a number fixed before anyone has walked the ground aims the work at the wrong thing.
-- Say in the goal's own `rationale`, never only on a linked stream, why the goal matters now. Give a goal a `deadline` only when the date is real, and then say in `rationale` why that date too, for example:
-  `Two enterprise pilots stalled on this gap last quarter; the deadline is the renewal date of the affected contract.`
-- Fill `goal_scope`, `guardrails` and `stop_condition` only when they are real, for example:
-  - `goal_scope`: `Self-serve accounts; enterprise deals left out.`
-  - `guardrails`: `Support load stays under 20 tickets a week.`
-  - `stop_condition`: `Fewer than 5 active accounts after the beta.`
+- Where the work is new and the route unknown, use a learning signal instead, such as "document 3 methods that work".
+- Say in the goal's own `rationale`, never only on a linked stream, why the goal matters now. Give a goal a `deadline` only when the date is real, and then say in `rationale` why that date too.
 - When the team chooses an order between goals that no prerequisite imposes, write it, with its reason, in the `description` of each goal it concerns, which every member reads: never as an invented dependency, and never only in one person's priorities. Before you propose an order across goals, or what to pick up next among them, read the `description` of the goals concerned.
 - When part of one goal serves part of another goal of the organization, link them with `goals` `link_goal`; a goal may serve several goals or none. When a goal changes, closes or is dropped, check that its links still hold.
 - Once a goal not yet closed is the primary goal of streams and none of them is active or paused, propose closing it to the user, with the outcome they name.
@@ -96,7 +90,7 @@ Version: 8.5.0
 
 # When an effort ends or changes shape
 
-- When the user keeps on purpose a stream that looks finished or idle, write that in its update, and why when they say, where `work_streams` offers `set_status`, which every member's AI reads, so no AI proposes its cleanup again.
+- When the user keeps on purpose a stream that looks finished or idle, write that in its update, and why when they say, where `work_streams` offers `set_status`.
 - Before you delete a stream that holds tasks, or archive, cancel or complete one that still holds open tasks, even when the user asked for it, propose a complete plan: each task's fate (finished, changed, cancelled, archived, trashed, moved to another stream, or kept with no stream, with a goal of its own or none) and why. Then wait for their confirmation of that plan.
 - When any of these happens, check each stream concerned once, even when a batch changes several of its tasks, before dependent work continues: its tasks and Definition of Success against the user's instructions and the actual results, not only against each other.
   - A task is added to it, reopened or closed in it, moved into or out of it (for a move, check the stream it left and the one it joined), or handed over for review (`pending_review`).

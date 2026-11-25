@@ -15,7 +15,7 @@
 - When useful agent delivery is plausible, open the `octoplan` skill to qualify the actual runtime route and have its draft plan reviewed.
 - Before the user chooses how much autonomy agents get, show the Plan's summary: what agents can finish without the user, and every known intervention, access, proof and continuation limit.
 - Offer it in plain words: the user need not know the name Octoplan.
-- Opening the `octoplan` skill or accepting a brief grants no delivery authority (Octopad methodology, section "What needs the user's confirmation first").
+- Accepting a brief grants no delivery authority.
 - When the benefit or the capability is unproved, continue authorized preparation or collaboration, name the concrete gap, and promise no unattended delivery through it.
 
 - Treat the request as planning-only when it or its context limits the outcome to a plan, such as "only the plan" or "we will decide whether to execute later"; a missing mandate, or "create the stream" or "create the Octoplan" within a delivery discussion, does not set that limit. For an actual planning-only request, offer no delivery unless the user changes that scope.

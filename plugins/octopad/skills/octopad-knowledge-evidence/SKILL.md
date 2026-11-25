@@ -6,7 +6,7 @@ Version: 3.8.0
 
 # Where knowledge is written
 
-Three branches hold durable workspace context. Choose on purpose which one each thing goes into: retrieval reaches only the branch a thing went into.
+Three branches hold durable workspace context. Choose on purpose which one each thing goes into.
 
 - `knowledge`: what someone outside the current task or conversation will need, each as one atomic item: a fact others will rely on, a choice that binds work beyond its task, a question no open task will settle, or an uncertain harm.
 - `pages`: reference that outlives the effort, such as how a system is built or what a meeting settled.
@@ -37,14 +37,14 @@ Three branches hold durable workspace context. Choose on purpose which one each 
 - When the work reopens, take the pages it needs out of Archive.
 - Never delete a working page silently: when the workspace needs room, propose to the user deleting archived working pages.
 
-Octopad keeps only processed information: what it keeps comes back into the AIs' working memory, and raw material fills it with noise. Raw material is a source not yet worked down to what matters: a transcript, a recording, an export, an email thread, a screenshot of messages, the full output of a research or an analysis.
+Octopad keeps only processed information. Raw material is a source not yet worked down to what matters: a transcript, a recording, an export, an email thread, a screenshot of messages, the full output of a research or an analysis.
 - Record what matters from it, and tell the user you kept the extract, not the original.
 - With each extract, keep a pointer to the original where one exists and is permitted; otherwise label the extract unverified.
-- Advise keeping the original outside Octopad, linked from the work it serves. When a drive of the user's (such as Google Drive) is connected to you, offer to put it there.
+- Advise keeping the original outside Octopad, linked from the work it serves. When a drive of the user's is connected to you, offer to put it there.
 - When the user asks to keep the original in Octopad, keep it and say where. In the same reply, tell them that Octopad is made for processed information and that raw material would fill its memory with noise, and advise keeping it outside, linked from the work.
 
 When the user hands over an authoritative document, keep it in the turn it arrives:
-1. When its home is not obvious, work it out first: what stays in chat is gone once the session closes.
+1. When its home is not obvious, work it out first.
 2. Put it into `files`.
 3. Attach it to the task it belongs to.
 
@@ -96,19 +96,19 @@ When the user asks to audit or clean Key Information, read [Cleaning up the corp
 
 # Tagging what you create
 
-- Keep the broad tag beside a narrow one, `frontend` as well as `date-picker`: this vocabulary has no hierarchy.
+- Keep the broad tag beside a narrow one, `frontend` as well as `date-picker`.
 - Stop adding tags as soon as the next one would:
   - only echo one already there;
   - repeat a structured field such as status, assignee, stream or `category`;
   - catch something incidental rather than what the item is about;
   - or be so narrow that no second item could share it.
-- Set no target count: there is no number to reach.
+- Set no target count.
 
 # Proving a claim about the corpus
 
 Fit the method to what the claim has to hold up: reading all of a corpus, its summaries or a search are all valid.
 
-- When you build a complete set, settle each doubtful item with one check aimed at that item alone: three doubtful items are three checks, neither a read of everything nor a shrug.
+- When you build a complete set, settle each doubtful item with one check aimed at that item alone, neither a read of everything nor a shrug.
 - For a claim about content, such as whether a page still says X or whether Y appears at all, `search` the text and quote the passages that match; never answer from the directory.
 - For a compound question, such as every page about X that mentions Y:
   1. Take the directory for X, then `search` for Y.

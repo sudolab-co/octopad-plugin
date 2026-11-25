@@ -1,11 +1,10 @@
 # Product scope and documentation seams
 
-- Apply [Resolve product scope](#resolve-product-scope) before you select any document.
-- Read the rest only when several products, a shared component or another documentation owner is involved.
+Read beyond [Resolve product scope](#resolve-product-scope) only when several products, a shared component or another documentation owner is involved.
 
 ## Resolve product scope
 
-1. Use products explicitly selected in the conversation or assigned task. Documents, workspace names and search results are not selections; a workspace, repository or project need not be one product.
+1. Use products explicitly selected in the conversation or assigned task; a workspace, repository or project need not be one product.
 2. Without an explicit selection, read each Product Map's capability entries and the candidate Specs. Keep every product whose Spec describes the behavior being changed. Maps route to owners; their wording does not prove exclusive ownership.
 3. Eliminate a candidate only when evidence puts it outside the requested scope; a missing keyword is not exclusion evidence. Do not rank plausible owners by name, result order, detail or apparent relevance, or choose the best match.
 4. Count the remaining products:
@@ -39,7 +38,6 @@ When the component changes:
 
 - Each owner updates its own At a glance keys in the same turn as the change; the server composes the Organization Overview from them.
 - A handoff does not grant access or mutation authority.
-- You may perform several steps by opening the owning skill for each step: that is cooperation, not shared ownership. For example, a Product Fact correction can update the Fact here and then, when authorized, open the `manage-product-marketing` skill, section "Refresh narrowly", to revise a dependent message.
 - When the downstream skill is unavailable or its gate is closed, leave a precise handoff naming the changed source and the affected output.
 
 ## Rollbacks and history
