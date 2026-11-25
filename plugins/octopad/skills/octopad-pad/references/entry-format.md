@@ -40,9 +40,7 @@ priorities_asked: <YYYY-MM-DD> | session <session id>
 
 ## What each block holds
 
-- `compass`, which the user sees as Priorities: what they want to work on, in their order.
-- `premises`, which the user sees as Notes: what they said that passes What to write and is neither a priority nor a reminder, such as a preference, a way of working with them or an idea they have not committed to. Its `exit:` names what makes it leave: they commit to it, they change or drop it, or Octopad records it elsewhere.
-- `reminders`: something to bring back when a subject comes up.
+- `premises` (Notes): what passes What to write and is neither a priority nor a reminder, such as a preference, a way of working with them or an idea they have not committed to. Its `exit:` names what makes it leave: they commit to it, they change or drop it, or Octopad records it elsewhere.
 - `last_briefing`: the day's briefing claim and review claim and, while there are no priorities, the day you asked what matters. A missing line means no claim, or no question asked.
 - `open_loops` and `context_gaps` are the older form: never write to them.
 
@@ -60,7 +58,7 @@ priorities_asked: <YYYY-MM-DD> | session <session id>
 
 ## The Priorities entry
 
-- The Pad reads only the form the template shows, and flags any other line. Write at most 8 priorities, one line each, numbered from 1 in their order: a short name, then `| why:` when their reason is known, then `| refs:`, then `| deadline: <their words>` only when the user dated it, and no other `|`.
+- The Pad reads only the template's form and flags any other line. Write at most 8 priorities, one line each, numbered from 1 in their order: a short name, then `| why:` when their reason is known, then `| refs:`, then `| deadline: <their words>` only when the user dated it, and no other `|`.
 - The name is a few words in the user's terms. When you rename a priority, rewrite in the same save the `priority:` line of each note and reminder that named it.
 - `why:` says in one or two short sentences what they want and why, and how it relates to another priority only when they said so. Adapt it to what they said, and leave it out rather than invent a reason.
 - `refs:` holds 1 to 4 comma-separated references, each `goal:`, `stream:` or `task:` with the item's full id: the goal it serves, its stream, its key task, never a list of its work.

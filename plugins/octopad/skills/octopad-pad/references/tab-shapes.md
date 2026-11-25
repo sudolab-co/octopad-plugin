@@ -33,10 +33,10 @@ Illustrative shapes, not defaults: take ids and choices from the person's reques
 }
 ```
 
-- `{ "kind": "text" }` says where the text shows; a tab's first text comes with it. A tab over one stream needs none: its report is the summary.
+- A tab's first text comes with its `{ "kind": "text" }`. A tab over one stream needs none: its report is the summary.
 - Other blocks: `{ "kind": "progress_report", "streams": [...] }`, `{ "kind": "needs_you", "kinds": [] }`, `{ "kind": "goals", "states": [] }`, `{ "kind": "reminders", "scope": "all" }` (or `"unclassified"`, or `{ "refs": [{ "kind": "task", "id": "…" }] }`). An empty list means all. A view's `worked_by_agent` names an agent key and shows that agent's dated actions in the period.
 - Every stream, goal, tag and agent a block names is in `selection`; tag filters take tag ids. With a workspace `scope`, each view and workspace filter stays on that workspace. In a tab with a period, a view shows the tasks that moved in it: set `finishedWindow` to `never`.
-- `intent`, `blocks`, `references` and each `selection` key are saved whole: resend what stays, such as `request` and `purpose` with a `guidance` you change, or the current `external_scopes` with a new scope. Keep the person's earlier preferences in `guidance` unless they replace them.
+- `blocks` and `references` are saved whole, like `intent` and each `selection` key: resend what stays. Keep the person's earlier preferences in `guidance` unless they replace them.
 
 ## A priority tab
 
@@ -110,8 +110,6 @@ Its first save; the `context` before it takes the same definition without `posit
         "statuses": ["todo", "in_progress", "blocked", "on_hold", "pending_review"], "finishedWindow": "never", "waitingOnMe": false },
       "columns": { "order": ["title"], "visible": ["title"], "widths": {} }, "sort": null, "direction": "asc" } } }
 ```
-
-The Pad counts it among the tasks the tab follows. In a section of Today's brief its filters name no stream, goal or tag.
 
 ## An external scope and a reference
 
