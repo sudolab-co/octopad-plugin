@@ -40,14 +40,7 @@ Illustrative shapes, not defaults: take ids and choices from the person's reques
 
 ## A priority tab
 
-Read it before it exists, with `context` on its unsaved definition:
-
-```json
-{ "action": "context", "title": "Atlas launch", "selection": { "scope": "all", "priorities": ["theme:3f9a1c27", "theme:5b81e0d4"] },
-  "blocks": [ { "kind": "text" } ] }
-```
-
-Then create it in one save: the same definition, its `position`, the `through` that read gave and its first `content`. A later save sends `tab`, `expected_revision`, `through` and `content`.
+Its first save; the `context` before it takes the same definition without `position`, `through` or `content`.
 
 ```json
 { "action": "save", "title": "Atlas launch", "selection": { "scope": "all", "priorities": ["theme:3f9a1c27", "theme:5b81e0d4"] },
@@ -59,7 +52,6 @@ Then create it in one save: the same definition, its `position`, the `through` t
     "card": "The release waits only on your pricing answer; the rest runs without you.",
     "phases": [
       { "label": "Build the app", "refs": [ { "kind": "task", "id": "44444444-4444-4444-8444-444444444441" } ] },
-      { "label": "Store review", "refs": [ { "kind": "task", "id": "44444444-4444-4444-8444-444444444442" } ] },
       { "label": "Press kit", "refs": [] }
     ],
     "sections": [
@@ -98,8 +90,6 @@ Then create it in one save: the same definition, its `position`, the `through` t
         "detail": "They were due on 2026-10-02 and 2026-10-20.", "prompt": "Show me my two late tasks and help me move, drop the date of, or close each one." }
     ] },
     { "key": "outside", "sentences": [
-      { "mark": "needs_you", "text": "Answer the office move question.", "refs": [ { "kind": "task", "id": "55555555-5555-4555-8555-555555555555" } ],
-        "detail": "The office manager needs your choice of desk area.", "prompt": "Open \"Choose desk areas for the move\" and give me the options." },
       { "text": "The newsletter draft can wait.", "refs": [ { "kind": "task", "id": "55555555-5555-4555-8555-555555555556" } ] }
     ] }
   ]
