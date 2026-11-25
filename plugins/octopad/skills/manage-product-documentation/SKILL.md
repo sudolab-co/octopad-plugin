@@ -39,6 +39,91 @@ Before you conclude or hand off, check the result against that intent in the exi
 - For a required review, use these primary sources, not only the author's summary or rewritten spec.
 - When asked what a system does today, or whether a page still matches the code, take its intent from the spec and its current behavior from code, tests, its Known limits and release evidence. Name each gap as a defect or an unbuilt promise; never present intent as current behavior.
 
+## Stop before writing
+
+The Product Fact rule: before you create or activate a Product Fact, read evidence competent to prove its exact claim, product scope and state, as [Product Facts](references/documentation-model.md#product-facts) defines it. When that evidence cannot be found, create no Fact or dependent approved copy, and name the gap.
+
+1. Before writing, confirm the connected Octopad organization and the relevant workspace, and each repository and branch from current evidence. Before you create a Page, file it in the Product folder of its scope.
+2. Before you create, and before you declare something absent, search and read likely matches, not only titles. Reuse and link existing pages, streams, tasks, Decisions, repository docs and PRs. Supersede or redirect duplicates non-destructively, after preserving their unique facts and links; never delete content or overwrite history automatically.
+3. Before you write a negative, prove it. `No documentation impact` is a claim about the maintained set of every affected product: write it only with the receipt [Proving no documentation impact](references/pull-requests.md#proving-no-documentation-impact) sets.
+   - Search alone, or an inventory of the wrong product, proves nothing.
+   - When behavior changed while no page owns it, that is a gap: record one documentation-debt item instead of closing the question.
+4. Treat unknown facts as unknown: ask only when an unresolved system boundary, product intent or authority conflict would materially change the result. An explicit unresolved authority conflict that affects this change always does: preserve both sources and ask, instead of choosing or rewriting either one. Otherwise use a concise `Unknown`, `Unverified` or documentation-debt marker and keep working.
+5. Never fabricate architecture, behavior, ownership, dates, metrics, source revisions, release state or customer evidence, nor a value to make a template look complete: write an explicit unknown. Derive technical facts from current code and repository configuration when available.
+6. In a spec, never claim a system is built or released beyond what a Known limits line establishes with its source and date; put that claim in user documentation or a Product Fact, with its evidence. Never present an old observation as current. In an At a glance block, write answers only; keep their provenance in the page body.
+7. Never copy private local paths, personal or customer identifiers, or unnecessary source bodies into Octopad; prefer a safe repository link, public revision or redacted summary that proves the claim without exposing unrelated data.
+
+## Keep human authority narrow and meaningful
+
+- Administer templates, folders, links, classifications, drafts, parked ideas, routine sync, and safe metadata or link repair without asking, except in an audit alone.
+- An audit inspects a bounded maintained set and reports its gaps; it repairs nothing, safe metadata and links included, unless the request also asks for repairs.
+- Ask the user only for:
+  - material ambiguity in product intent or a significant system boundary;
+  - an unresolved conflict over which source is authoritative;
+  - a consequential decision not already handled by the normal product or repository review;
+  - deletion, irreversible overwrite, or another destructive consolidation.
+- Record a direction already given without asking for it again.
+
+The pre-release rule:
+- Before release, base a user-documentation or release-note draft on approved, implemented or merged evidence only when it stays clearly labeled pre-release and cites the exact source revision.
+- Draft Product Facts and marketing claims only from evidence meeting the Product Fact rule in [Stop before writing](#stop-before-writing).
+- Keep every review the product or repository requires.
+
+This skill acts only while an AI runs: it cannot observe GitHub or update Octopad after the AI stops. Never claim it enables background synchronization: that needs a separately authorized event or automation trigger.
+
+## Capture exploration without waiting for a build decision
+
+During product discussion, silently classify the likely documentation impact as `no impact`, `existing-system change`, `new system` or `technical-only`, and make the smallest useful update for that class ([definitions and updates](references/lifecycle-playbooks.md#brainstorm-and-design-maturity)).
+
+Once a discussion, not a passing thought, develops a real user problem, system boundary, behavior, contract or meaningful alternative, in the same turn:
+1. Create or adopt the owning Product Spec.
+2. Add an `[idea]` line to its Open questions holding the direction and open questions, not the discussion, or update the line the subject already has.
+3. Put a choice between alternatives in a Decision.
+4. Put exploration or detailed design with lasting value in a supporting record linked from the line: what the exploration established, never its raw material (a transcript, the full output of a research or an analysis); for the original, open the `octopad-knowledge-evidence` skill, section "Where knowledge is written". Before you assess, accept or build the idea, read that record.
+5. Add its Product Map line.
+6. Remove any duplicate parked entry, preserving its unique content in the spec.
+
+- Record the thinking without claiming approval or delivery, and without inventing an execution Task. On acceptance, move the line to Direction, Choices or Promises in that same spec; work tracking owns execution.
+- When the user settles how the product behaves, read the owning Product Spec before you answer, write the behavior into it in the same turn, before it is built, and log it as a Decision with the `knowledge` tool too.
+- At the end of a brainstorm, and whenever an idea comes up in passing during other work, park each remaining passing idea the user engaged with and left open, without asking, under the [parking rule](references/lifecycle-playbooks.md#brainstorm-and-design-maturity).
+
+## Record what work establishes about a system
+
+When work (a test, a measurement, an incident, a diagnosis, an analysis or an audit of that system) establishes a limit of a system, meaning a way it really behaves or fails that whoever later designs, changes or judges it must take into account:
+- First search the spec and the records it links: when a limit is already written there, even as the reason of another line, move it under Known limits or update it there with the new evidence, and never present it as a discovery.
+- In the same turn and without asking, write it as a line under Known limits in the owning spec, even while that work stays open; a task comment, a report or a note alone does not record it.
+- Put a limit several systems share in the spec of the system it belongs to, linked from the others.
+- When no spec owns the system, record the limit as Key Information on the work's stream or task, say no spec owns it, and file one documentation-debt item.
+- When later evidence shows a limit no longer holds, replace or remove its line and name that evidence on the Task.
+
+Not limits: a result that confirms the intended behavior, a defect to fix, a measurement that constrains no design. Recording a limit is not a repair of the documentation: an audit of the documentation set still only reports.
+
+## Pull requests
+
+- Before you draft a PR body, outlines and groundwork included, fix its `Octopad-Task:` line or sync documentation with a pull request, read [pull-requests.md](references/pull-requests.md): the body records the change's documentation impact and ends with exactly one `Octopad-Task:` line holding the task's bare id from Octopad.
+- Once a pull request to the repository's default branch is open and ready for review, set its task `pending_review`: merging it closes the task, so get its acceptance before the merge.
+- To link an open pull request to its task, or to fix its line, edit the body (for example `gh pr edit`): Octopad reads the line again whenever the body changes.
+
+## Load the needed guidance
+
+- Before you create, adopt, split, merge, substantially restructure or materially reshape product documentation (a Product Map, Product Spec, Behavioral Contract, Architecture Map, Ideas page or documentation-debt Task), write the spec of a text users' AIs read, such as a skill, or write a page this skill owns other than a Product Spec or the Product Map (which carry no verification section), read [documentation-model.md](references/documentation-model.md).
+- For setup, brainstorm classification and parking, implementation context, release sync, audits (before the first maintained-content read) and drafts of user documentation, release notes or Product Facts, read only the section of [lifecycle-playbooks.md](references/lifecycle-playbooks.md) the work needs.
+- When the workspace contains several products, a shared component changes, a Product Fact moves, or another documentation skill owns a downstream output, read [product-scope-and-seams.md](references/product-scope-and-seams.md).
+
+## Preserve lifecycle and product scope
+
+- Keep `idea`, `explored`, `accepted`, `implemented`, `merged`, `released` and `retired` distinct; never infer one from another. When an existing record uses `proposed` or `approved`, keep its vocabulary and map it explicitly to the same evidence boundary.
+- Code or tests can prove implementation, not approval or release; a pull request, a proposed source revision; a merge, only that a revision reached its base branch.
+- Mark behavior as released or shipped only after verifying the repository's actual release policy and release evidence: a merge is not a production release unless that policy proves it.
+- Attribute every lifecycle claim and Product Fact to its product. A shared component can have one canonical spec, but deployment, activation, rollback, availability and claim scope advance separately for each consuming product: never let evidence for one product promote another.
+
+The delivery rule:
+- Record progress, pull requests, heads, tests, reviews, releases and implementation, merge and release states on Tasks, pull requests, release records and Product Facts; none changes a spec.
+- Change a spec only when a need, the outcome, a direction, a choice, a promise or a non-goal changes, or a known limit is established or lifted, including when building reveals one. A version bump alone changes no spec.
+- When a change needs no spec edit, still name the spec in the repository's documentation-impact mark.
+- When a needed spec edit is blocked or must wait for a later event, such as a release reaching production, name there the spec, what it waits for and the task that makes the edit: create or reuse that task first, as the `octopad-planning-and-work-design` skill (section "Shaping the work") says. When the edit is blocked, that task is documentation-debt work.
+- An `[idea]` or `[open]` line is not delivery: write an `[idea]` line under [Capture exploration](#capture-exploration-without-waiting-for-a-build-decision) and an `[open]` mark under [Write for the reader](#write-for-the-reader).
+
 ## Write for the reader
 
 A Product Spec gives whoever must decide, build, change or judge a system what code cannot. Describe in it the intended product, built or not, with the limits work has established.
@@ -87,91 +172,6 @@ The preservation rule, when content leaves a spec or an Architecture Map:
 - Before anything else leaves, a need, choice, promise, constraint, scenario, rationale or unresolved finding included, list each one on the Task, pull request or reply, never on the page, as kept, moved (where), replaced or unresolved. A move between sections or a link change needs no list.
 - Write moved text to its destination and read it back first.
 - Give a substantive rewrite a reviewer who did not write it, who checks both directions: nothing needed lost, nothing kept that the "Keep a line only if" rule rejects.
-
-## Stop before writing
-
-The Product Fact rule: before you create or activate a Product Fact, read evidence competent to prove its exact claim, product scope and state, as [Product Facts](references/documentation-model.md#product-facts) defines it. When that evidence cannot be found, create no Fact or dependent approved copy, and name the gap.
-
-1. Before writing, confirm the connected Octopad organization and the relevant workspace, and each repository and branch from current evidence. Before you create a Page, file it in the Product folder of its scope.
-2. Before you create, and before you declare something absent, search and read likely matches, not only titles. Reuse and link existing pages, streams, tasks, Decisions, repository docs and PRs. Supersede or redirect duplicates non-destructively, after preserving their unique facts and links; never delete content or overwrite history automatically.
-3. Before you write a negative, prove it. `No documentation impact` is a claim about the maintained set of every affected product: write it only with the receipt [Proving no documentation impact](references/pull-requests.md#proving-no-documentation-impact) sets.
-   - Search alone, or an inventory of the wrong product, proves nothing.
-   - When behavior changed while no page owns it, that is a gap: record one documentation-debt item instead of closing the question.
-4. Treat unknown facts as unknown: ask only when an unresolved system boundary, product intent or authority conflict would materially change the result. An explicit unresolved authority conflict that affects this change always does: preserve both sources and ask, instead of choosing or rewriting either one. Otherwise use a concise `Unknown`, `Unverified` or documentation-debt marker and keep working.
-5. Never fabricate architecture, behavior, ownership, dates, metrics, source revisions, release state or customer evidence, nor a value to make a template look complete: write an explicit unknown. Derive technical facts from current code and repository configuration when available.
-6. In a spec, never claim a system is built or released beyond what a Known limits line establishes with its source and date; put that claim in user documentation or a Product Fact, with its evidence. Never present an old observation as current. In an At a glance block, write answers only; keep their provenance in the page body.
-7. Never copy private local paths, personal or customer identifiers, or unnecessary source bodies into Octopad; prefer a safe repository link, public revision or redacted summary that proves the claim without exposing unrelated data.
-
-## Capture exploration without waiting for a build decision
-
-During product discussion, silently classify the likely documentation impact as `no impact`, `existing-system change`, `new system` or `technical-only`, and make the smallest useful update for that class ([definitions and updates](references/lifecycle-playbooks.md#brainstorm-and-design-maturity)).
-
-Once a discussion, not a passing thought, develops a real user problem, system boundary, behavior, contract or meaningful alternative, in the same turn:
-1. Create or adopt the owning Product Spec.
-2. Add an `[idea]` line to its Open questions holding the direction and open questions, not the discussion, or update the line the subject already has.
-3. Put a choice between alternatives in a Decision.
-4. Put exploration or detailed design with lasting value in a supporting record linked from the line: what the exploration established, never its raw material (a transcript, the full output of a research or an analysis); for the original, open the `octopad-knowledge-evidence` skill, section "Where knowledge is written". Before you assess, accept or build the idea, read that record.
-5. Add its Product Map line.
-6. Remove any duplicate parked entry, preserving its unique content in the spec.
-
-- Record the thinking without claiming approval or delivery, and without inventing an execution Task. On acceptance, move the line to Direction, Choices or Promises in that same spec; work tracking owns execution.
-- When the user settles how the product behaves, read the owning Product Spec before you answer, write the behavior into it in the same turn, before it is built, and log it as a Decision with the `knowledge` tool too.
-- At the end of a brainstorm, and whenever an idea comes up in passing during other work, park each remaining passing idea the user engaged with and left open, without asking, under the [parking rule](references/lifecycle-playbooks.md#brainstorm-and-design-maturity).
-
-## Record what work establishes about a system
-
-When work (a test, a measurement, an incident, a diagnosis, an analysis or an audit of that system) establishes a limit of a system, meaning a way it really behaves or fails that whoever later designs, changes or judges it must take into account:
-- First search the spec and the records it links: when a limit is already written there, even as the reason of another line, move it under Known limits or update it there with the new evidence, and never present it as a discovery.
-- In the same turn and without asking, write it as a line under Known limits in the owning spec, even while that work stays open; a task comment, a report or a note alone does not record it.
-- Put a limit several systems share in the spec of the system it belongs to, linked from the others.
-- When no spec owns the system, record the limit as Key Information on the work's stream or task, say no spec owns it, and file one documentation-debt item.
-- When later evidence shows a limit no longer holds, replace or remove its line and name that evidence on the Task.
-
-Not limits: a result that confirms the intended behavior, a defect to fix, a measurement that constrains no design. Recording a limit is not a repair of the documentation: an audit of the documentation set still only reports.
-
-## Preserve lifecycle and product scope
-
-- Keep `idea`, `explored`, `accepted`, `implemented`, `merged`, `released` and `retired` distinct; never infer one from another. When an existing record uses `proposed` or `approved`, keep its vocabulary and map it explicitly to the same evidence boundary.
-- Code or tests can prove implementation, not approval or release; a pull request, a proposed source revision; a merge, only that a revision reached its base branch.
-- Mark behavior as released or shipped only after verifying the repository's actual release policy and release evidence: a merge is not a production release unless that policy proves it.
-- Attribute every lifecycle claim and Product Fact to its product. A shared component can have one canonical spec, but deployment, activation, rollback, availability and claim scope advance separately for each consuming product: never let evidence for one product promote another.
-
-The delivery rule:
-- Record progress, pull requests, heads, tests, reviews, releases and implementation, merge and release states on Tasks, pull requests, release records and Product Facts; none changes a spec.
-- Change a spec only when a need, the outcome, a direction, a choice, a promise or a non-goal changes, or a known limit is established or lifted, including when building reveals one. A version bump alone changes no spec.
-- When a change needs no spec edit, still name the spec in the repository's documentation-impact mark.
-- When a needed spec edit is blocked or must wait for a later event, such as a release reaching production, name there the spec, what it waits for and the task that makes the edit: create or reuse that task first, as the `octopad-planning-and-work-design` skill (section "Shaping the work") says. When the edit is blocked, that task is documentation-debt work.
-- An `[idea]` or `[open]` line is not delivery: write an `[idea]` line under [Capture exploration](#capture-exploration-without-waiting-for-a-build-decision) and an `[open]` mark under [Write for the reader](#write-for-the-reader).
-
-## Pull requests
-
-- Before you draft a PR body, outlines and groundwork included, fix its `Octopad-Task:` line or sync documentation with a pull request, read [pull-requests.md](references/pull-requests.md): the body records the change's documentation impact and ends with exactly one `Octopad-Task:` line holding the task's bare id from Octopad.
-- Once a pull request to the repository's default branch is open and ready for review, set its task `pending_review`: merging it closes the task, so get its acceptance before the merge.
-- To link an open pull request to its task, or to fix its line, edit the body (for example `gh pr edit`): Octopad reads the line again whenever the body changes.
-
-## Load the needed guidance
-
-- Before you create, adopt, split, merge, substantially restructure or materially reshape product documentation (a Product Map, Product Spec, Behavioral Contract, Architecture Map, Ideas page or documentation-debt Task), write the spec of a text users' AIs read, such as a skill, or write a page this skill owns other than a Product Spec or the Product Map (which carry no verification section), read [documentation-model.md](references/documentation-model.md).
-- For setup, brainstorm classification and parking, implementation context, release sync, audits (before the first maintained-content read) and drafts of user documentation, release notes or Product Facts, read only the section of [lifecycle-playbooks.md](references/lifecycle-playbooks.md) the work needs.
-- When the workspace contains several products, a shared component changes, a Product Fact moves, or another documentation skill owns a downstream output, read [product-scope-and-seams.md](references/product-scope-and-seams.md).
-
-## Keep human authority narrow and meaningful
-
-- Administer templates, folders, links, classifications, drafts, parked ideas, routine sync, and safe metadata or link repair without asking, except in an audit alone.
-- An audit inspects a bounded maintained set and reports its gaps; it repairs nothing, safe metadata and links included, unless the request also asks for repairs.
-- Ask the user only for:
-  - material ambiguity in product intent or a significant system boundary;
-  - an unresolved conflict over which source is authoritative;
-  - a consequential decision not already handled by the normal product or repository review;
-  - deletion, irreversible overwrite, or another destructive consolidation.
-- Record a direction already given without asking for it again.
-
-The pre-release rule:
-- Before release, base a user-documentation or release-note draft on approved, implemented or merged evidence only when it stays clearly labeled pre-release and cites the exact source revision.
-- Draft Product Facts and marketing claims only from evidence meeting the Product Fact rule in [Stop before writing](#stop-before-writing).
-- Keep every review the product or repository requires.
-
-This skill acts only while an AI runs: it cannot observe GitHub or update Octopad after the AI stops. Never claim it enables background synchronization: that needs a separately authorized event or automation trigger.
 
 ## Work with the other documentation skills
 
