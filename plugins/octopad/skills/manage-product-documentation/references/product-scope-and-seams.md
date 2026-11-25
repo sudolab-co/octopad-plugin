@@ -1,6 +1,6 @@
 # Product scope and documentation seams
 
-- Apply Resolve product scope before you select any document.
+- Apply [Resolve product scope](#resolve-product-scope) before you select any document.
 - Read the rest only when several products, a shared component or another documentation owner is involved.
 
 ## Resolve product scope
@@ -32,12 +32,13 @@ When the component changes:
 
 | Truth or output | Owner | On change |
 |---|---|---|
-| Product behavior, lifecycle, release truth, Product Facts, Product Overviews | `manage-product-documentation` | Update the canonical product record and, in the same turn, `offer_and_availability` when it changes; name affected outputs. |
 | Each Product Overview's Marketing section: ICP, positioning, pricing, campaigns, approved claims and messages | `manage-product-marketing` | Consume Product Facts; revise owned outputs when a dependency changes. |
-| Durable activity context and the Activity Overview | `manage-activity-context` | Preserve directly owned context. Each owner updates its own At a glance keys in the same turn as the change; the server composes the Organization Overview from them. A handoff does not grant access or mutation authority. |
+| Durable activity context and the Activity Overview | `manage-activity-context` | Preserve directly owned context. |
 | Market evidence: the market report, competitor pages, and what people experience, say, resist and compare | `manage-market-intelligence` | Revise the comparisons that rest on a changed capability; leave target, positioning, promise and price choices to `manage-product-marketing`. |
 | Technical and user-documentation craft | `technical-writing` | Improve expression without changing facts, ownership, evidence state, or publication gates. |
 
+- Each owner updates its own At a glance keys in the same turn as the change; the server composes the Organization Overview from them.
+- A handoff does not grant access or mutation authority.
 - You may perform several steps by opening the owning skill for each step: that is cooperation, not shared ownership. For example, a Product Fact correction can update the Fact here and then, when authorized, open the `manage-product-marketing` skill, section "Refresh narrowly", to revise a dependent message.
 - When the downstream skill is unavailable or its gate is closed, leave a precise handoff naming the changed source and the affected output.
 
