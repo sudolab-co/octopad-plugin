@@ -42,7 +42,7 @@ In doubt, write nothing: a missed note costs the user one repetition, a wrong on
 |---|---|
 | "First the billing fix, then the new onboarding" | Priorities, after restating the new order: billing before onboarding |
 | "When we talk product, stick to what customers can use today" | A note |
-| "Maybe an export to spreadsheets one day, to be seen" | A note: an idea not committed to |
+| "Maybe an export to spreadsheets one day, to be seen" | A `todo` task tagged `idea`, with no date |
 | "We no longer change the old API" | A Decision: the team needs it |
 | "Remind me on the 2nd to read the contract" | A task due on the 2nd |
 | "Test it on staging once that pull request merges" | A task depending on the pull request's task |
