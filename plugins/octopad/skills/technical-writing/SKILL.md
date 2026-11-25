@@ -2,42 +2,40 @@
 name: technical-writing
 description: "Use when writing, editing or reviewing technical or user documentation, in English or French. Removes AI-flavored prose in the Google developer style. Not for chat, emails, social posts, blogs or marketing copy (pmm-check)."
 ---
-Version: 3.0.1
+Version: 3.0.2
 
 # Technical writing
 
-Write work products for people who were not in the conversation (users, reviewers, maintainers and future contributors) in professional documentation style, not chat style or a personal assistant's voice.
+Write work products for people who were not in the conversation (users, reviewers, maintainers and future contributors) in documentation style, not chat style or an assistant's voice.
 
-- Base standard: the Google developer documentation style guide (https://developers.google.com/style).
-- Work from the distillation below; when a case is not covered, consult the guide.
-
-Apply these principles in English and French; where they conflict with the target language's grammar or established product terms, those win.
+- Follow the Google developer documentation style guide (https://developers.google.com/style) as distilled below; when a case is not covered, consult the guide.
+- Apply these principles in English and French; where they conflict with the target language's grammar or established product terms, those win.
 
 ## Voice and grammar
 
 - Second person ("you"), active voice, present tense. "The command creates a file", not "a file will be created".
-- One term per concept, everywhere. Pick "workspace" or "project" and never alternate for variety.
+- One term per concept: never alternate terms for variety.
 - Define a term on first use if the reader may not know it. Write for the reader with the least context who still needs the document.
-- Plain words for a global audience: no idioms, no Latin ("for example", not "e.g."; "that is", not "i.e.").
+- Plain words for a global audience: no idioms, no Latin ("for example", not "e.g.").
 - Sentence case for headings. Task headings say the task: "Install the CLI", not "Installation".
 - Use no em-dash unless the workspace's own style uses them: recast with a comma, full stop, colon or parentheses. This default overrides the Google guide.
 
 ## Kill the AI flavor
 
 - No filler: "please", "simply", "just", "easily", "note that", "in order to", "it's important to note".
-- No hedging when you know: state the fact. Hedge only genuine uncertainty, and say why.
+- State what you know; hedge only genuine uncertainty, and say why.
 - No inflated vocabulary: "use" not "leverage" or "utilize", "check" not "delve into". Ban "seamless", "robust", "powerful", "comprehensive" unless measured.
-- Prose explains; bullets list. Use bullets only for genuinely parallel items, never as a substitute for writing a paragraph. No bold-label-colon bullet walls.
+- Prose explains; bullets list. Use bullets only for parallel items, never as a substitute for writing a paragraph. No bold-label bullet walls.
 - Do not praise the product or the reader. State what it does.
 
 ## Structure
 
 - Before drafting, list the facts and literal identifiers the output must retain; check the finished text against that list.
-- Lead with what the reader can do or must know. Context after, never before.
+- Lead with what the reader can do or must know; context after.
 - Numbered steps: one action per step, in execution order. State the goal before step 1 and the expected result after the last step.
-- A concrete example beats a paragraph of abstraction: show the command, the input, the output.
-- Document the why, the constraints, and the failure modes. Skip what the interface already makes obvious.
-- Timeless writing: no "currently", "new", "coming soon". Date what must be dated.
+- Show a concrete example rather than a paragraph of abstraction: the command, the input, the output.
+- Document the why, the constraints and the failure modes. Skip what the interface already makes obvious.
+- Write timelessly: no "currently", "new", "coming soon". Date what must be dated.
 - Link text says where it goes ("the style guide"), never "click here".
 - Images get alt text; never rely on color alone to carry meaning.
 
@@ -46,7 +44,5 @@ Apply these principles in English and French; where they conflict with the targe
 - This skill governs work products only.
 - When a repository's conventions or a delivery skill's format conflict with it (a changelog format or PR handoff template), those win; this skill governs only the sentences inside.
 - Never choose facts, document ownership, evidence state or publication authority with this skill.
-
-- Preserve facts, audience and evidence state.
-- Retain required literal identifiers, user-facing error codes, counts and units.
+- Preserve facts, audience and evidence state, and retain required literal identifiers, user-facing error codes, counts and units.
 - When sources conflict, do not choose one, edit the disputed fact or mark the conflict resolved: preserve the conflict and return it to the fact owner or the user.
