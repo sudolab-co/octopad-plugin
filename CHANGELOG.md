@@ -1,6 +1,6 @@
 # Changelog
 
-## 35.8.0 - Unreleased
+## 35.8.0 - 2026-11-26
 
 Every skill was reread line by line against the kernel and the tool texts the server serves, after a review of the whole rule system on 2026-11-24 and 2026-11-25. A line leaves a skill only when another text the AI reads before it acts holds the rule whole, or when it states general behavior with nothing specific to Octopad; every other rule, case, exception and example stays. Skills open on what they do, and a long body keeps its triggers and gates while procedures read at one moment move to references.
 
@@ -24,7 +24,7 @@ Details the kernel's lines leave now sit in the skill section each line points t
 
 The lines cut as repeats rest on the kernel and the tool and parameter texts of the companion server change in sudolab-co/octopad. All three distributions move to 35.8.0.
 
-## 35.7.0 - Unreleased
+## 35.7.0 - 2026-11-26
 
 A person with no priorities gets a proposed list from any model, not only the strongest. On 2026-11-24 a staging test found that only Opus proposed priorities: the rule fired on a read of the person's whole document, which Sonnet never made once the session start said the list was empty.
 
@@ -32,7 +32,7 @@ A person with no priorities gets a proposed list from any model, not only the st
 
 The lines come from the server change that serves the person's work at session start (sudolab-co/octopad#1996); without them the rule falls back to the earlier read. All three distributions move to 35.7.0.
 
-## 35.6.0 - Unreleased
+## 35.6.0 - 2026-11-26
 
 Octoplan is lighter. The planner confirms a brief, has its draft plan reviewed, writes the plan into Octopad once, records what the user agreed agents may do, and launches one supervisor that hands each task to an executor. Measured in November on one machine, Octoplan ran 303 reviewer agents for 221 workers, and supervisor and planner sessions cost about twice what reviewers cost. The skill's instructions go from about 18,600 words in ten files to about 6,400 in six.
 
@@ -46,7 +46,7 @@ Octoplan is lighter. The planner confirms a brief, has its draft plan reviewed, 
 
 Needs no server change; where a connection does not offer `work_streams` `set_status`, the mandate goes in a task comment. All three distributions move to 35.6.0.
 
-## 35.5.0 - Unreleased
+## 35.5.0 - 2026-11-26
 
 Work an AI defers to a later event becomes its own task when it is deferred. On 2026-11-23 a spec edit due "once this is in production" was written as a sentence in the spec and in a pull request's documentation-impact line; the pull request's task closed at its merge, before production, and no task held the edit.
 
@@ -56,7 +56,7 @@ Work an AI defers to a later event becomes its own task when it is deferred. On 
 
 Needs no server change. All three distributions move to 35.5.0.
 
-## 35.4.0 - Unreleased
+## 35.4.0 - 2026-11-26
 
 A person who refuses to archive a finished stream that Today's brief proposes gets that refusal remembered: on 2026-11-24 a staging test found that Sonnet never opened the planning skill, which alone said to write it, so the brief would have proposed the stream again the next day.
 
@@ -65,7 +65,7 @@ A person who refuses to archive a finished stream that Today's brief proposes ge
 
 Needs no server change. All three distributions move to 35.4.0.
 
-## 35.3.0 - Unreleased
+## 35.3.0 - 2026-11-26
 
 The AI gets the rule for writing links between tasks and between streams that the link design gave the planning skill: when a link is worth writing, what its line says, and when never to write one.
 
@@ -74,7 +74,7 @@ The AI gets the rule for writing links between tasks and between streams that th
 
 Needs no server change; the companion server pull request also serves the kernel's matching router line. All three distributions move to 35.3.0.
 
-## 35.2.0 - Unreleased
+## 35.2.0 - 2026-11-26
 
 A run no person takes part in says so when it opens its session, so it never gets the person's daily Pad update nor starts their day.
 
@@ -82,7 +82,7 @@ A run no person takes part in says so when it opens its session, so it never get
 
 Needs the server change that accepts `start_session`'s `unattended` (the companion server pull request); where the person has no Pad, the server drops it without a word. All three distributions move to 35.2.0.
 
-## 35.1.0 - Unreleased
+## 35.1.0 - 2026-11-26
 
 The AI keeps the work graph coherent at the moments it changes: a stream or goal created, a stream changed, a priority changed or dropped, the daily Pad update. A new order of the person's priorities is restated before it is saved.
 
@@ -91,7 +91,7 @@ The AI keeps the work graph coherent at the moments it changes: a stream or goal
 
 Needs the server change that serves methodology 3.15.0 (the companion server pull request), and, for the finished streams, the Today's brief context that lists them. All three distributions move to 35.1.0.
 
-## 35.0.0 - Unreleased
+## 35.0.0 - 2026-11-26
 
 The person's priorities, notes and reminders now live in Today's brief: one skill, `octopad-pad`, teaches what the AI keeps for them and how, through the `pad` tool's `notes_*` actions.
 
@@ -103,7 +103,7 @@ The person's priorities, notes and reminders now live in Today's brief: one skil
 
 Needs the server change that registers `pad` for every connection that had `notepad`, makes each `notepad` action answer that it moved, serves one Today's brief block at session start with methodology 3.14.0, words its `pad` `context` lines without "Notepad" (a departed key is "not among their priorities"), and removes the AI Notepad entry (the companion server pull request). Lands at the production cutover that deploys that companion. All three distributions move to 35.0.0.
 
-## 34.0.0 - Unreleased
+## 34.0.0 - 2026-11-26
 
 Teaches goals as the server now holds them: their own framing fields and a measured figure, and the goal lines a Pad save returns.
 
@@ -112,14 +112,14 @@ Teaches goals as the server now holds them: their own framing fields and a measu
 
 Needs the server change that serves methodology 3.13.0 (the companion server pull request) and the database changes it relies on: the status updates (migration 845), the goal framing and figures (848) and the passed deadlines (852). All three distributions move to 34.0.0.
 
-## 33.12.0 - Unreleased
+## 33.12.0 - 2026-11-26
 
 - `octopad-session` 33.12.0: the skill opens as soon as the conversation concerns something the user organizes or follows over time, at work or in their own life (a company, a project, a product, code, customers, a team, plans, or their own affairs: paperwork, a move, a household), no longer only their company and its work.
 - `octopad-planning-and-work-design` 7.5.1: a goal's destination is one everyone involved shares, and per-person targets are ruled out because they do not move people whose work is interlocked; the goal rules no longer presume a team. Same demands.
 
 Pairs with the server change that widens the same trigger in the server instructions. All three distributions move to 33.12.0.
 
-## 33.11.0 - Unreleased
+## 33.11.0 - 2026-11-26
 
 - `octoplan` 10.5.0: when an outcome names a population (every user, AI client, platform or pricing plan), the Plan contract lists its variants with what is measured for each, and gives each a task, a measurement or a named limit; a task covering only some names which. Phase 3's review attacks population coverage.
 
