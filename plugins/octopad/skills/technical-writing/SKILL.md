@@ -25,7 +25,7 @@ Write documentation for readers who missed the conversation. Use documentation s
 - No filler: "please", "simply", "just", "easily", "note that", "in order to", "it's important to note".
 - State what you know. Hedge only real uncertainty and explain why.
 - No inflated vocabulary: "use" not "leverage" or "utilize", "check" not "delve into". Ban "seamless", "robust", "powerful", "comprehensive" unless measured.
-- Use bullets for parallel items, not in place of paragraphs. Avoid walls of bold-label bullets.
+- Use bullets for parallel items, not in place of paragraphs. Write no walls of bold-label bullets.
 - Do not praise the product or the reader. State what it does.
 
 ## Structure
@@ -33,7 +33,7 @@ Write documentation for readers who missed the conversation. Use documentation s
 - List required facts and literal identifiers before drafting. Check the finished text against the list.
 - Lead with what the reader can do or must know; context after.
 - Number steps in execution order, one action per step. Give the goal before step 1 and the expected result after the last step.
-- Show the command, input and output instead of explaining them abstractly.
+- Show a concrete example, such as the command, input and output, instead of an abstract paragraph.
 - Document the why, the constraints and the failure modes. Skip what the interface already makes obvious.
 - Write timelessly: no "currently", "new", "coming soon". Date what must be dated.
 - Link text says where it goes ("the style guide"), never "click here".

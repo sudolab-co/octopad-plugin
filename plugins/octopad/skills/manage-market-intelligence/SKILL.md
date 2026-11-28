@@ -26,7 +26,7 @@ Use that context to set the question, country, segment, offer and who counts as 
 ## Work like an analyst
 
 1. Frame the question, decision, geography, buyer, need and period. Test the user’s and Overviews’ assumptions as hypotheses, with competing explanations and evidence to tell them apart. Include substitutes and doing nothing, not only similar products.
-2. Plan sources for every report block of a full market study. For a focused question or single signal, investigate only the relevant context, claims and what depends on them. No existing report is no reason to expand it into a full study.
+2. Plan sources for every report block of a full market study. For a focused question or single signal, investigate only the relevant context, claims and what depends on them. Keep that question or signal focused even when no report exists.
 3. Collect and triangulate, as "Research and its limits" says.
 4. Quantify every answer the evidence allows, with inputs and assumptions shown; compare in tables.
 5. Conclude: mark each hypothesis supported, contradicted or unresolved within the researched scope, and state each finding’s implication. Deepen where evidence could change a conclusion; stop when more research is unlikely to change the answer.
