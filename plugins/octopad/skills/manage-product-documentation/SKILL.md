@@ -28,7 +28,7 @@ How much of a spec to read:
 3. Before you build, add the context [Implementation context retrieval](references/lifecycle-playbooks.md#implementation-context-retrieval) lists.
 4. Before you conclude or hand off, check the result against that intent in the existing task, pull request or reply, not in a new document or approval step:
    - each need within the request: covered with evidence, still unmet, or out of the request with its reason;
-   - the source-defined scenarios it touches: which were checked and which were not;
+   - the source-defined scenarios it touches: checked or unchecked;
    - an accepted need the request does not cover: keep it visible, without making it an instruction to build it;
    - a design or fix that a Known limits line bears on: say how it takes that limit into account.
 
@@ -143,12 +143,12 @@ When you draft a pull request body, outlines and groundwork included, fix its `O
 ## Work with the other documentation skills
 
 - This skill owns product behavior, release truth, Product Facts and each Product Overview except its Marketing section, which `manage-product-marketing` owns with ICP, positioning, pricing and approved claims.
-- For a Product Fact move, or a request or output another documentation skill owns, read [Product scope and documentation seams](references/product-scope-and-seams.md#product-scope-and-documentation-seams).
+- For a Product Fact move or another documentation skill's request or output, read [Pass changes between owners](references/product-scope-and-seams.md#pass-changes-between-owners).
 
 When owned product truth changes:
 1. Update this skill's canonical records.
 2. Apply the [Product Fact rule](#load-the-needed-guidance) before writing `offer_and_availability`. Update that Product Overview key in the same turn when the change alters it.
-3. Identify every affected downstream output and hand each to its owner.
+3. Hand each affected downstream output to [its owner](references/product-scope-and-seams.md#pass-changes-between-owners).
 
 ## Administer the documentation system
 
