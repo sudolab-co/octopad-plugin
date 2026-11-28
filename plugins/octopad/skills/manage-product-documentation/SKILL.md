@@ -142,9 +142,13 @@ When you draft a pull request body, outlines and groundwork included, fix its `O
 
 ## Work with the other documentation skills
 
-When owned product truth changes, a Product Fact moves, or a request or output belongs to another documentation skill:
 - This skill owns product behavior, release truth, Product Facts and each Product Overview except its Marketing section, which `manage-product-marketing` owns with ICP, positioning, pricing and approved claims.
-- Update this skill's canonical records. When the change alters the Product Overview's `offer_and_availability`, update that key in the same turn. Then hand each affected output to its owner as [Pass changes between owners](references/product-scope-and-seams.md#pass-changes-between-owners) says, which also covers a pure marketing request.
+- For a Product Fact move, or a request or output another documentation skill owns, read [Product scope and documentation seams](references/product-scope-and-seams.md#product-scope-and-documentation-seams).
+
+When owned product truth changes:
+1. Update this skill's canonical records.
+2. Apply the [Product Fact rule](#load-the-needed-guidance) before writing `offer_and_availability`. Update that Product Overview key in the same turn when the change alters it.
+3. Identify every affected downstream output and hand each to its owner.
 
 ## Administer the documentation system
 
