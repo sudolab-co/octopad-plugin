@@ -21,7 +21,7 @@ Structure everything you write in the Pad (priorities, notes, reminders, every t
 - Never migrate, remove or rewrite a legacy shared page unasked.
 - Any authorized session may maintain the person's entries, whoever wrote them, after checking evidence.
 - If `notes_*` or storage is unavailable, say so and keep pending context in the conversation.
-- Blocks: `compass` (Priorities), `premises` (Notes), `reminders`, `last_briefing`. Convert `open_loops` and `context_gaps` as Older entries says.
+- Its blocks are `compass` (Priorities), `premises` (Notes), `reminders` and `last_briefing`; `open_loops` and `context_gaps` are the older form (Older entries).
 - Before writing, condensing, moving or recovering an entry, read [Entry format](references/entry-format.md#entry-format-of-the-persons-priorities-notes-and-reminders).
 
 # What to write
