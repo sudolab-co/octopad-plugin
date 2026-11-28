@@ -46,6 +46,8 @@ When the user asks what a system does today, or whether a page still matches the
 - Attribute every lifecycle claim and Product Fact to its product; for a component several products share, follow [Store shared truth once](references/product-scope-and-seams.md#store-shared-truth-once).
 - Never copy private local paths, personal or customer identifiers, or unnecessary source bodies into Octopad; prefer a safe repository link, public revision or redacted summary that proves the claim without exposing unrelated data.
 
+This skill acts only while an AI runs: it cannot observe GitHub or update Octopad after the AI stops. Never claim it enables background synchronization: that needs a separately authorized event or automation trigger.
+
 When a system ships, rolls back or retires (the delivery rule below decides whether its spec changes):
 - At each release that reaches users, run the [Release sync](references/lifecycle-playbooks.md#release-sync) pass.
 - On a rollback or correction, revise or retire current truth as [Rollbacks and history](references/product-scope-and-seams.md#rollbacks-and-history) says.
