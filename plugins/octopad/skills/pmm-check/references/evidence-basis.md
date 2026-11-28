@@ -1,6 +1,6 @@
 # Method provenance and further reading
 
-- Before you use a link below to substantiate a research or legal statement, verify its source, context, date and exact conclusion.
+- Before using a link below to support a research or legal statement, verify its source, context, date and exact conclusion.
 
 ## Keep different kinds of authority separate
 

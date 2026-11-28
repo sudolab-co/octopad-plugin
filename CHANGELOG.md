@@ -1,5 +1,10 @@
 # Changelog
 
+## 36.4.0 - Unreleased
+
+- Rewrite market intelligence, product marketing, marketing diagnosis and technical writing for kernel 4.1.0, preserving their evidence, ownership and publication limits.
+- Restore the supported-and-useful alternative, association support and grounded-example choices in the marketing method.
+
 ## 36.3.0 - Unreleased
 
 - Align CRM and Activity Context procedures with kernel 4.1.0 while keeping spend, consent, scope and audience boundaries.
