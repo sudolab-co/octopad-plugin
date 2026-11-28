@@ -4,7 +4,7 @@
 
 1. Read [Record the mandate](planning.md#record-the-mandate), then the latest update, the tasks' status and comments, and the target. Where stream updates are unavailable, read and post this delivery's updates as comments on the plan's first task.
 2. If the latest update says another supervisor runs this delivery, or tasks this session did not start are in progress, ask the user before you take over.
-3. One supervisor runs the whole plan, even across several streams. On each, post one stream update with `work_streams` `set_status`: in `line`, that you supervise from this date, naming your session and runtime; in `note`, the mandate ([Record the mandate](planning.md#record-the-mandate)).
+3. One supervisor runs the whole plan, even across several streams. Before dispatch, post on each stream with `work_streams` `set_status`, or as a comment on the plan's first task when unavailable: the start date, your session and runtime, and the mandate from [Record the mandate](planning.md#record-the-mandate).
 4. Do what your runtime profile asks of a starting supervisor.
 
 Under the Step 3 banner, give one progress line in everyday words, counted from the tasks' status in Octopad: `Progress: 2 of 9 tasks done, 1 in progress, 6 waiting · waiting for your review of the pricing page`.
@@ -37,7 +37,7 @@ When a task's meaning, dependencies or checks are wrong, context is missing or a
 - Note the defect on its task and hold only the tasks it affects.
 - Launch one planner sub-agent at your profile's plan repair route with the affected tasks, their `Done when`, the failure, evidence and mandate. Give it [Draft the plan](planning.md#draft-the-plan), [Changes](planning.md#changes), [Review](../SKILL.md#review) and [Claude Routes](claude-runtime.md#routes) and [Codex Routes](codex-runtime.md#routes). It calls no Octopad tool, dispatches no one and widens no mandate. It returns a diagnosis and full changed or new tasks with both routes and `Review`, or the exact obstacle.
 - When the returned text changes a task's meaning, dependencies, checks, effects or review, launch one fresh reviewer on it at your profile's plan review route, read-only and told to call no Octopad tool, with the affected tasks as saved, the failure and the mandate ([Changes](planning.md#changes)). Fix each real defect in the text before you write it.
-- Write the repair, reread it as saved, then resume.
+- Reread the current mandate from [Record the mandate](planning.md#record-the-mandate)'s supported record before writing the repair. Write the repair, reread it as saved, then resume.
 
 ## Executor brief
 
@@ -72,7 +72,7 @@ Report: the commit or result, the checks and their outcome, the review verdict a
 ## Finish
 
 - The delivery is done when every task is closed with its proof and every checkpoint has the user's go. Before you say no work remains, name what each open task waits on.
-- Publish the final recap with the labels of [What the user reads](../SKILL.md#what-the-user-reads), naming each remaining item by its task, and post a stream update saying the delivery finished and what remains.
+- Publish the final recap with the labels of [What the user reads](../SKILL.md#what-the-user-reads), naming each remaining item by its task. Post completion and remaining work on each stream, or in the plan's first-task comments when stream updates are unavailable.
 - Remove what the run left on the machine that serves nothing now: locks, caches, temporary copies, worktrees and local branches with no unmerged work. Keep deliverables and anything a record cites.
 
 ## Stop or hand over
@@ -81,5 +81,5 @@ Replace a supervisor only when it cannot continue after recovery, the host force
 
 1. Stop dispatching; collect or stop running executors and background commands.
 2. Check each uncertain effect, and write the current state on the tasks.
-3. Post a stream update saying this supervisor stopped, and why.
+3. Post that this supervisor stopped and why on each stream, or in the plan's first-task comments when stream updates are unavailable.
 4. For a successor, launch it as your profile says, or give the user the pointer from [Launch](planning.md#launch). The successor checks that you stopped before it acts.

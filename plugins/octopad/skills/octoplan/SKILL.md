@@ -21,7 +21,7 @@ Before actions 1 to 4, read [Brief and plan](references/planning.md#brief-and-pl
 The same supervisor or executor continues in the same session: compaction alone never replaces it. A client can bring back this file without its references. Before your next dispatch or effect:
 
 1. Reopen the references your next step needs.
-2. Reread the state from its sources: the stream's latest update, the tasks with their status and comments, the agents still running, and the target (branch, diff, uncommitted work, pull request).
+2. Reread the state from its sources: the latest delivery update in the record [Record the mandate](references/planning.md#record-the-mandate) names, the tasks' status and comments, running agents, and the target (branch, diff, uncommitted work, pull request).
 3. Treat the summary as a pointer, never as permission or as proof that work is done.
 4. Continue in the same role, with the same agents, mandate and pending questions. Do not ask the user again, restart the plan, launch a new session or repeat a review because of the compaction.
 
@@ -47,7 +47,7 @@ When a human decision or action becomes necessary, raise it at once, never insid
 - **To unblock**: who must provide what.
 - **Next step**: what resumes afterwards, and what continues meanwhile.
 
-The final recap uses the same labels. With the Octopad desktop open, post the run's state with `desktop` `report` from the brief on.
+The final recap uses the same labels. Post the run's state with `desktop` `report` from the brief on only with a usable, permitted browser and the Desktop pane open. Follow the kernel's "Showing work on the desktop" gates and the agreed Computer Use limits.
 
 ## Autonomy and mandate
 

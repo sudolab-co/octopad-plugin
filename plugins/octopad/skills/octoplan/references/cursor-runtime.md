@@ -9,7 +9,7 @@ Cursor runs the saved Claude routes, reviewer and supervisor included, chosen un
 - Never run a route on a fast variant or a Cursor-only model (Composer, Grok, GPT, Gemini); a user's choice of one is a route change.
 - Fable also needs its data-retention policy approved in the Cursor dashboard when Privacy Mode is on.
 - Cursor may run another model without failing: when an admin blocks the model, when the plan lacks it, or on a legacy plan without Max Mode, where sub-agents run Composer. The task card shows which model ran; a mismatch pauses that agent. When you cannot read it, continue and say so once in the task's closing comment.
-- Use a `cursor-agents/` lane only when its pinned model and effort match the saved route. The Task tool takes its bare name, such as `subagent_type: "octoplan-opus-high"`; check each lane's first task card. With no match, pass a verified route slug as `model`; after rejection, use a matching slug from the error, or pause that agent.
+- Use a `cursor-agents/` lane only when its pinned model and effort match the saved route. The Task tool takes its bare name, such as `subagent_type: "octoplan-opus-high"`; check each lane's first task card. With no match, pass a verified route slug as `model`; if no slug is verified, pause that agent. After rejection, use a matching slug from the error, or pause that agent.
 
 ## Runtime facts
 
