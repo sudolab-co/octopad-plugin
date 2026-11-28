@@ -36,7 +36,7 @@ It is then a priority if it changes what they want to work on or in what order, 
 
 What fails goes straight to where it lives, never through the document:
 
-- Something to do is a task, never a reminder. When it waits, link the task that carries the wait; if none does, set it `blocked` with what it waits for. Never `on_hold`, which gets no notice when the wait ends.
+- Something to do is a task, never a reminder. For a task or outside-event wait, link the task that carries it; if none does, set it `blocked` with what it waits for. Never use `on_hold` for that wait: no notice comes when it ends.
 - A choice or fact the team needs is Key Information.
 - Write no work state here: the task tree and its reports hold it.
 
@@ -164,7 +164,7 @@ Where `pad` offers only its `notes_*` actions, as for an agent key, brief only a
 
 # Update the due tabs
 
-When `start_session` names tabs under "Pad due today" or "Pad not checked", follow [the update steps](references/smart-reports.md#update-the-due-tabs), which also cover a tab they ask to update that is not due.
+Follow [Update the due tabs](references/smart-reports.md#update-the-due-tabs) when `start_session` names "Pad due today" or "Pad not checked", or the person asks to update their Pad or a Smart Report, even when none is due.
 
 # Organize the Pad
 

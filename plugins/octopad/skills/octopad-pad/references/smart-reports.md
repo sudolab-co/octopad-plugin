@@ -24,9 +24,12 @@ Today's brief's sections list each priority no tab serves, with its key and what
   - Under each priority tab it serves, `context` says whether each key is still among their priorities; for a priority tab it did not serve whose `title` is the name of none of their priorities, `context` with that `tab`. Only a key it calls "not among their priorities" has left.
   - `get` that tab: a priority Today's brief's sections list whose streams are all among those the tab's `streams` lines and `phases` cite, at least one, is that key's priority, renamed: save its key in place of the old one, and its name as `title` when the tab serves no other priority.
   - Otherwise drop the key, and `remove` a tab left with none.
-- Merge priorities that deliver the same outcome into one tab: name each key in its `selection.priorities`, `remove` any other tab one of them had, and say why in its `note`.
-- Create a tab for a priority with no tab once anything it follows moved or waits on the person:
-  - Its definition: the priority's name as its `title`, `selection` {priorities: [its key]}, `blocks` [{kind: "text"}].
+- Group priorities that deliver the same outcome before creating tabs. Exclude refused priorities and leave unreadable tabs alone.
+  - With an existing priority tab for the group, keep one survivor. Preserve the group's keys and each tab's still-useful sources, preferences and content in that survivor; say why in its `note`.
+  - Save and read back the survivor before removing another priority tab of the group. Verify the survivor holds what must survive. If its save or readback fails, remove nothing.
+  - Move, rename, redefine or remove no tab whose `selection.priorities` is empty unasked.
+- Create one tab for a group with no survivor once anything it follows moved or waits on the person:
+  - Its definition: a title in the priorities' terms, `selection` {priorities: [each group key]}, `blocks` [{kind: "text"}]. A single priority uses its name and key.
   - `context` with that unsaved definition, write the tab from what it serves (A priority tab), then `save` without `tab`: the definition, the `position` right after Today's brief and the priority tabs of earlier priorities, the `content` and the `through` that read gave. A new tab is saved with its content or not at all.
 - Add a stream that serves the priority but none of its references names to the tab's `selection.streams`, and say so in its `note`.
 - A refused priority renamed with the same references: `get` lists each refused key with its references; save the refusal again under its new key (Route a correction).
@@ -114,7 +117,11 @@ Any tab but a priority tab:
 
 ## Route a correction
 
-- "Remove this tab" on a priority tab: first save, alone, their `refusal` of each priority it serves, with that priority's references; then `remove` the tab. Asked for it back, save the same refusal with `refused: false`, then create the tab (Organize the Pad). Any other tab goes with no refusal.
+- "Remove this tab" on a priority tab: first save, alone, their `refusal` of each priority it serves, with that priority's references; then `remove` the tab. Any other tab goes with no refusal.
+- Asked for a refused priority's report back:
+  1. Save its refusal with `refused: false`.
+  2. Read `context` with no `tab` and `get` with no `tab`. If that brief omits Today's brief, read `context` with `tab: "smart_report"` to get its current priority keys and sections.
+  3. Restore only the requested priority's group, if the priority remains on their list. Follow Organize the Pad's grouping and survivor-or-create steps, using that Today's brief and the current `get`; change no unrelated tab and keep every other refusal. A failed read leaves restoration pending.
 - "Show me less of X here" changes that tab:
   - `get` it, then `save` the change with `expected_revision` set to its `text_revision`: narrow or drop a source or block when X is one the tab follows or shows, otherwise add the preference to its `guidance` (Today's brief: `intent` {guidance} only).
   - Fewer charts always goes to `guidance`: you write charts anew with each content.
