@@ -21,6 +21,8 @@ How much of a spec to read:
 - To judge, quote or edit one or a few elements that have subsections: the outline (`pages` `get` with `outline: true`); then, in one call, `sections: ["Need", "Outcome", "<each section without subsections, or larger than its heading and subsections together>", "<each of those elements' headings>", "All elements"]` (a heading returns every subsection that uses it); then each part they cross-reference whose pointer bears on what you judge.
 - Other specs or history only when a dependency, a contradiction or the request calls for them.
 
+- Before your first change, record the spec's version id or `updated_at` on the task or PR as the baseline, and judge your edits against that revision, reconciled with material source changes and explicit user directions during the work. When the baseline is missing or its version was pruned, name that gap and leave dependent conclusions unresolved.
+
 1. Before you judge, diagnose or redesign a behavior, or choose how to serve a user need, establish the requested outcome and constraints from the request, the owning spec, the Tasks and records its Direction links for the work, and the Decisions that change its scope.
 2. When the user asks to redesign a system, its current choices and Decisions are what the design may replace, not limits on it: design the target from the need, then name each recorded Decision it would replace.
 3. Before you build, add the context [Implementation context retrieval](references/lifecycle-playbooks.md#implementation-context-retrieval) lists.
@@ -60,7 +62,7 @@ For every delivery, a pull request, a merge or a release:
 ## Stop before writing
 
 - Before writing, confirm from current evidence the connected Octopad organization, the workspace, and each repository and branch. File a new page in the Product folder of its scope.
-- Before you create, and before you declare something absent, search and read likely matches, not only titles.
+- Before you create, and before you declare something absent, search and read likely matches, not only titles. Before you write a negative, prove it.
 - Reuse and link existing pages, streams, tasks, Decisions, repository docs and pull requests. Supersede or redirect a duplicate non-destructively, after preserving its unique facts and links; never delete content or overwrite history automatically.
 - Administer templates, folders, links, classifications, drafts, parked ideas, routine sync, and safe metadata or link repair without asking, except in an audit alone. Record a direction already given without asking for it again.
 - Ask the user only for:
@@ -76,7 +78,6 @@ Before you say a change needs no documentation update: `No documentation impact`
 ## Write for the reader
 
 When you write to a Product Spec, or content leaves a spec or an Architecture Map:
-- Before your first change, record the spec's version id or `updated_at` on the task or pull request as the baseline. Judge edits against it, reconciled with material source changes and explicit user directions. When it is missing or its version was pruned, name the gap and leave dependent conclusions unresolved.
 - When you edit a spec you read in parts, use `pages` `update` with `content_updates` only, never `content`, and read the edited subsections back to check that the change landed there.
 - Change a spec only as [the delivery rule](#the-delivery-rule) allows.
 
@@ -123,7 +124,7 @@ When work (a test, a measurement, an incident, a diagnosis, an analysis or an au
 - When no spec owns the system, record the limit as Key Information on the work's stream or task, say no spec owns it, and file one documentation-debt item.
 - When later evidence shows a limit no longer holds, replace or remove its line and name that evidence on the Task.
 - Not limits: a result that confirms the intended behavior, a defect to fix, a measurement that constrains no design.
-- Recording a limit does not repair the documentation: an audit still only reports.
+- Recording a limit does not repair the documentation: an audit of the documentation set still only reports.
 
 ## Load the needed guidance
 
@@ -140,7 +141,7 @@ When you draft a pull request body, outlines and groundwork included, fix its `O
 
 When owned product truth changes, a Product Fact moves, or a request or output belongs to another documentation skill:
 - This skill owns product behavior, release truth, Product Facts and each Product Overview except its Marketing section, which `manage-product-marketing` owns with ICP, positioning, pricing and approved claims.
-- Update the Product Overview's `offer_and_availability` in the same turn when the change alters it, then hand each affected output to its owner as [Pass changes between owners](references/product-scope-and-seams.md#pass-changes-between-owners) says, which also covers a pure marketing request.
+- Update this skill's canonical records. When the change alters the Product Overview's `offer_and_availability`, update that key in the same turn. Then hand each affected output to its owner as [Pass changes between owners](references/product-scope-and-seams.md#pass-changes-between-owners) says, which also covers a pure marketing request.
 
 ## Administer the documentation system
 
