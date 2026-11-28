@@ -63,6 +63,8 @@ For every delivery, a pull request, a merge or a release:
 
 ## Stop before writing
 
+- Before filing documentation debt, read [Documentation-debt Task](references/documentation-model.md#documentation-debt-task).
+
 - Before writing, confirm the connected organization, workspace and each repository and branch from current evidence. File a new page in its scope's Product folder.
 - Before you create, and before you declare something absent, search and read likely matches, not only titles. Before you write a negative, prove it.
 - Reuse and link existing pages, streams, tasks, Decisions, repository docs and pull requests. Supersede or redirect a duplicate non-destructively, after preserving its unique facts and links; never delete content or overwrite history automatically.
