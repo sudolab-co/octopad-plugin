@@ -4,7 +4,7 @@
 
 1. Read [Record the mandate](planning.md#record-the-mandate), then the latest update, the tasks' status and comments, and the target. Where stream updates are unavailable, read and post this delivery's updates as comments on the plan's first task.
 2. If the latest update says another supervisor runs this delivery, or tasks this session did not start are in progress, ask the user before you take over.
-3. One supervisor runs the whole plan, even across several streams. Before dispatch, post on each with `work_streams` `set_status`: start date, session and runtime in `line`, the mandate in `note`. When unavailable, post both as a comment on the plan's first task, as [Record the mandate](planning.md#record-the-mandate) says.
+3. One supervisor runs the whole plan, even across several streams. Before dispatch, on each post with `work_streams` `set_status`: in `line`, that you supervise from this date, naming your session and runtime; in `note`, the mandate. When unavailable, post the same supervisor claim, date, session, runtime and mandate as a comment on the plan's first task ([Record the mandate](planning.md#record-the-mandate)).
 4. Do what your runtime profile asks of a starting supervisor.
 
 Under the Step 3 banner, give one progress line in everyday words, counted from the tasks' status in Octopad: `Progress: 2 of 9 tasks done, 1 in progress, 6 waiting · waiting for your review of the pricing page`.
