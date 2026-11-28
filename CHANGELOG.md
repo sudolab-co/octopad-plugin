@@ -1,5 +1,13 @@
 # Changelog
 
+## 36.2.0 - Unreleased
+
+### Changed
+
+- Align Pad capture, reminder questions and personal report updates with the current methodology. Apply the same clear structure to every Pad write.
+- Use the live focus read for next-work advice, keeping personal priorities first and naming goal-order or stream-wait conflicts.
+- Keep Pad entry points within the skill reading window; place capture examples in a reference and organize priority reports in the served order.
+
 ## 36.1.0 - Unreleased
 
 - Align Planning, Knowledge and Session with kernel 4.1.0. Planning keeps the stream brief, layout and recap together, repairs empty umbrella tasks without losing their work, restores concrete goal fields and captures future work in kept-open streams. Knowledge keeps its evidence, cleanup and working-page duties; Session names the router and reports the bundled version. Requires kernel 4.1.0.

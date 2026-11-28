@@ -4,7 +4,7 @@ description: "Keeps priorities, notes, reminders and Smart Reports. Use when the
 ---
 Unless this conversation already called `start_session`, open `../octopad-session/SKILL.md` first.
 
-Version: 8.4.0
+Version: 9.0.0
 
 # The Pad
 
