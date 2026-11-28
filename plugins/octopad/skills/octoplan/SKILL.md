@@ -47,7 +47,7 @@ When a human decision or action becomes necessary, raise it at once, never insid
 - **To unblock**: who must provide what.
 - **Next step**: what resumes afterwards, and what continues meanwhile.
 
-The final recap uses the same labels. Post the run's state with `desktop` `report` from the brief on only with a usable, permitted browser and the Desktop pane open. Follow the kernel's "Showing work on the desktop" gates and the agreed Computer Use limits.
+The final recap uses the same labels. Post the run's state with `desktop` `report` from the brief on only with a usable, permitted browser and the Desktop pane open. Follow the kernel's "Showing work on the desktop" gates; screen automation separately needs the acceptance in [Autonomy and mandate](#autonomy-and-mandate).
 
 ## Autonomy and mandate
 
