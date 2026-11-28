@@ -2,7 +2,7 @@
 name: manage-activity-context
 description: "Use when the user explains or revises an activity's or project's purpose, beneficiaries, relationships, strategy or constraints; its Activity Overview, or an untyped Company Overview, no longer matches; people or organizations join the activity; you write an Activity Overview; or you work on the organization's context, such as its Company Overview or an Activity Overview, while its sessions still open on an untyped Company Overview. Keeps the Activity Overview and At a glance block. Not for market evidence (manage-market-intelligence) or an offer's marketing (manage-product-marketing)."
 ---
-Version: 8.4.0
+Version: 9.0.0
 
 # Purpose and boundaries
 

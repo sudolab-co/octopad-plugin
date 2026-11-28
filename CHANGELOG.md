@@ -1,5 +1,11 @@
 # Changelog
 
+## 36.3.0 - Unreleased
+
+- Align CRM and Activity Context procedures with kernel 4.1.0 while keeping spend, consent, scope and audience boundaries.
+- Restore exclusive source-field ownership guidance and clarify refused prospect selection and approved-draft sending.
+- Keep the Activity Overview body current, with history in page versions and linked Decisions.
+
 ## 36.2.0 - Unreleased
 
 ### Changed
