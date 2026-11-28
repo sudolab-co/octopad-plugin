@@ -1,8 +1,8 @@
 ---
 name: octopad-crm
-description: "Use where the CRM is on, or the user wants it on, when a customer's contact, company or deal comes up, when what a customer did or said is to be recorded, when an octobot is launched or followed, when drafts, proposals or quarantined identities wait for a decision, when an approved draft is sent or its reply comes in, when the distill is read or changed, and when records are imported or synced. Reads and writes customer records and runs octobots, outreach, the distill and imports. Not for competitors or market-wide customer voice (manage-market-intelligence)."
+description: "Use where the CRM is on or the user wants it on: when a customer's contact, company or deal comes up; what a customer did or said is to be recorded; drafts, proposals or quarantined identities wait for a decision; an octobot is launched or followed; an approved draft is sent or its reply comes in; the distill is read or changed; or records are imported or synced. Not for competitors or market-wide customer voice (manage-market-intelligence)."
 ---
-Version: 2.3.0
+Version: 3.0.0
 
 # Before anything
 
@@ -22,10 +22,10 @@ Version: 2.3.0
 
 # Reading a customer
 
-- When you read a contact, read its card (its current AI summary) first, then its brief and recent entries.
-- When you read a company or a deal, read its brief and latest hand-off: they have no card.
+- Read a contact's card (its current AI summary) first, then its brief and recent entries.
+- Read a company's or deal's brief and latest hand-off: they have no card.
 - Read them with `build_context` in contact, company or opportunity mode; read the whole brief with `crm_record` `get_brief` and the recent entries with `list_entries`.
-- When you read a campaign or a list, read it in one batch call (`build_context` with `ids`, up to 200 records), never one record at a time.
+- Read a campaign or list in one batch (`build_context` with `ids`, up to 200 records), never one record at a time.
 - When you report what a contact's card says, say how fresh it is: its `**Card:**` line gives the date it was distilled, and an `**Out of date:**` line says why it may no longer hold.
 - Report a stale or missing card as such; never pass it off as current understanding.
 - When a read returns nothing, reaches a record you cannot open, or fails for part of a batch, say so plainly; none of them means the customer does not exist.
@@ -49,14 +49,15 @@ Put each kind of fact in its one home:
 
 - Treat a value a person entered or approved as theirs: replace it only on your member's explicit instruction, and say whose value it replaces.
 - When your evidence disagrees with such a value, say so and let a person decide.
-- Never treat your own confidence as authority to write.
+- Your confidence never authorizes a write.
 - Never write a placeholder, a guess or a vendor's filler value as a record value.
 - Fill a record from outside sources only when the user asks.
 
 # Acting for the user
 
-- When an octobot's proposal, outreach draft or quarantined identity waits for a decision, decide it only on the instruction of the member you act for; one instruction can cover a whole queue.
+- When an octobot's proposal, an outreach draft or a quarantined identity waits for a decision, decide only as the member you act for tells you. One instruction can cover a whole queue.
 - Approve or reject proposals with `crm_actions` `decide`. Where the organization has it, resolve quarantined identities with `crm_actions` `resolve_identity`.
+- Before you approve, reject or send an outreach draft, read [Sending an approved draft](references/outreach.md#sending-an-approved-draft).
 - Before a bulk decision, list what is pending, and say what an approval does when it is not obvious:
   - an approved outreach batch approves its drafts, and Octopad sends none of them: send each as [Sending an approved draft](references/outreach.md#sending-an-approved-draft) says;
   - where the organization has Scout, an approved scout batch adds every candidate in it, unless you pass `candidate_ids`.
@@ -70,11 +71,11 @@ Put each kind of fact in its one home:
 
 # Octobots, outreach, the distill and imports
 
-- Before a paid octobot launch (`crm_runs` `launch` other than a dry run, or `crm_outreach` `draft`):
+- Get the user's confirmation before a paid octobot launch: `crm_runs` `launch` other than a dry run, or `crm_outreach` `draft`.
   - once Octopad has said in this conversation that it could not get the user's answer, or when the tool's description does not say the call asks the user to approve it: first tell the user what the run does, on how many records at most and what it may spend, and launch only after their confirmation;
   - otherwise, make the call: the tool asks the user, and their answer there is their confirmation;
   - where the organization has Enrich, the user picks the values to buy (`fields`) for an Enrich run: ask when their request does not say.
-- Make a change that adds model spend only on the user's instruction in chat, and tell them its cost: before, when you propose it; with the result, which states it, when they asked for it. These changes are:
+- Make a change that adds model spend only when the user asks for it in chat, and tell them its cost: before the change when you propose it, otherwise with its result. These changes are:
   - turning the nightly distill on or raising its cap (`crm_runs` `set_schedule`);
   - saving or restoring directions (`crm_runs` `set_directions`, `restore_directions`);
   - a re-fold request (`crm_runs` `request_refold`) or switching a field's re-fold flag (`crm_fields` `set_refold`);
@@ -87,7 +88,7 @@ Put each kind of fact in its one home:
 - Never ask for a sync token in chat, and never paste one anywhere.
 - When a person asks not to be summarized, call `crm_contacts` `update` with `ai_summary_off: true`. The record's brief stays readable and embedded, so never restate the withheld summary there.
 - When you pick prospect contacts where the workspace's outreach privacy gate is on, by a fact the gate withholds from outreach (the `crm_runs` and `crm_outreach` descriptions name them), the AI-summary switch or a distill answer:
-  - put that filter in a segment and target the segment, where the gate can check it;
+  - you cannot prospect by those facts: a prospect run on a segment that filters on them is refused;
   - never launch on the contacts the same filter returns through `crm_search`, `crm_contacts` `list` or `crm_segments` `run`.
 
 # Linking customers to work
