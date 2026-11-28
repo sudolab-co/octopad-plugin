@@ -8,13 +8,13 @@
 
 ## The PR body
 
-- Record the change's documentation impact in the PR body: the spec it names or changes, as SKILL.md's delivery rule (section "Preserve lifecycle and product scope") says, or `No documentation impact` with the receipt [below](#proving-no-documentation-impact).
+- Record the change's documentation impact in the PR body: the spec it names or changes, as [the delivery rule](../SKILL.md#the-delivery-rule) says, or `No documentation impact` with the receipt [below](#proving-no-documentation-impact).
 - When you draft a PR body, outlines and groundwork included, end it with exactly one `Octopad-Task:` line. Put it on its own line, outside comments, code blocks and quotations, with the task's bare id: a link resolves only on octopad.app.
 - Take the task id from Octopad, never from a guess.
 - Name a task with no open subtask: a merge into the repository's default branch closes the task the line names, and a task that still has an open subtask may wait in `pending_review` instead. A deliverable that needs several pull requests is a parent with one subtask per pull request.
 - A merge into any other branch, a test or pre-production one included, leaves the task open: name the task there too, never `none`, and again on the PR that carries that work into the default branch.
 - Write `Octopad-Task: none: <reason>` only when no task applies.
-- When the body leaves needed work for later, a spec edit that waits for production included, create or reuse its task first and name it beside that work, never in the `Octopad-Task:` line, as the delivery rule says.
+- When the body leaves needed work for later, a spec edit that waits for production included, create or reuse its task first and name it beside that work, never in the `Octopad-Task:` line, as [the delivery rule](../SKILL.md#the-delivery-rule) says.
 - Before you hand the PR body over, check that it holds exactly one `Octopad-Task:` line.
 
 ## Proving no documentation impact
@@ -29,11 +29,14 @@ Prove it for the maintained set of every affected product:
 ## Pull request and delivery sync
 
 1. Determine documentation impact: none, existing-system change, new system, or technical-only. Record it on the PR in the repository's normal way, naming affected documents or carrying the proven negative receipt. `technical-only` does not imply `none` when durable architecture or an Engineering Reference changed.
-2. Link the existing Task to the PR through the `Octopad-Task:` line of its body, and a stream through the repository's normal fields; the spec's Direction links that Task or stream when it serves an accepted direction.
-3. Record exact head and base revisions on the pull request or Task. Re-check after material drift.
-4. Change the Architecture Map only under [its rule](documentation-model.md#architecture-map).
-5. Verify coverage under SKILL.md, section "Work from product intent", using code, tests and the actual diff rather than the PR description alone.
-6. Draft pre-release user documentation or release notes when useful, under SKILL.md's pre-release rule (section "Keep human authority narrow and meaningful"); never as shipped wording, Product Facts or marketing claims.
-7. When evidence remains missing, mark the update stale or unverified and create or reuse documentation-debt work.
+2. Link the existing Task to the PR through the `Octopad-Task:` line of its body, and a stream through the repository's normal fields; the spec's Direction links that Task or stream when it serves an accepted direction. To link an open pull request to its task, or to fix its line, edit the body (for example `gh pr edit`): Octopad reads the line again whenever the body changes.
+3. Once a pull request to the repository's default branch is open and ready for review, set its task `pending_review`: merging it closes the task, so get its acceptance before the merge.
+4. Record exact head and base revisions on the pull request or Task. Re-check after material drift.
+5. Change the Architecture Map only under [its rule](documentation-model.md#architecture-map).
+6. Verify coverage as [Work from product intent](../SKILL.md#work-from-product-intent) says, using code, tests and the actual diff rather than the PR description alone.
+7. Draft pre-release user documentation or release notes when useful, as [Downstream documents](lifecycle-playbooks.md#downstream-documents) says.
+8. When evidence remains missing, mark the update stale or unverified and create or reuse documentation-debt work.
 
 Follow repository review and merge controls. This skill grants no merge authority and creates no separate approval system.
+
+This skill acts only while an AI runs: it cannot observe GitHub or update Octopad after the AI stops. Never claim it enables background synchronization: that needs a separately authorized event or automation trigger.

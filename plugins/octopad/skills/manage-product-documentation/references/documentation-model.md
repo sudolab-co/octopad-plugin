@@ -4,7 +4,7 @@
 
 - Product Overview
 - Product Map
-- Product Spec
+- Product Spec: Spec sections, Element subsections
 - Ideas page
 - Behavioral Contract
 - Architecture Map
@@ -18,17 +18,19 @@
 - Use the shapes below as adaptable shapes, not forms that must be filled: omit irrelevant sections.
 - Keep durable knowledge in Pages, or in the repository docs that already hold it; keep finite execution, owners and current status in existing streams and Tasks.
 - When an Octoplan-created stream or task graph exists, reuse it; do not require Octoplan, and do not create a parallel planning system.
+- Every page type below except a Product Spec and the Product Map also takes a verification section, as [Relationships and provenance](#relationships-and-provenance) says.
 
 ## Product Overview
 
 - A head page (`head_type: product_overview`) for purpose, experience, design pillars, non-goals and relationships above system specs, with a Marketing section that `manage-product-marketing` writes.
-- Give products sold together to one audience at one price one shared Overview; give a product its own only when its audience or its price differs.
-- Its At a glance keys `audience_and_need`, `promise` and `conditions` belong to `manage-product-marketing`.
+- Keep one Product Overview per offer: give products sold together to one audience at one price one shared Overview; give a product its own only when its audience or its price differs.
+- Its At a glance keys `audience_and_need`, `promise` and `conditions` belong to `manage-product-marketing`. This skill owns the key `offer_and_availability`: hold it to the Product Fact rule ([Load the needed guidance](../SKILL.md#load-the-needed-guidance)).
+- In an At a glance block, write answers only; keep their provenance in the page body.
 - Keep it distinct from the Product Map, which only indexes.
 
 ## Product Map
 
-- The index of every system, nothing else.
+- Keep one Product Map per product: the index of every system, nothing else.
 - When an existing index already serves as the entry point, adopt it.
 - A portfolio index may route to several Product Maps; never restate their product truth in it.
 
@@ -51,14 +53,60 @@ Overview: <link> · Architecture: <link> · Ideas: <link>
 
 ## Product Spec
 
-- Keep one evolving Product Spec per significant product system: a coherent user capability, durable behavior or boundary that people need to reason about independently. Split specs only at such a boundary.
+- Keep one evolving Product Spec per significant product system: a coherent user capability, durable behavior or boundary that people need to reason about independently, with its own need, data or rules. Give such a capability its own spec, linked from the affected specs. Split specs only at such a boundary, never for length alone: element subsections let a reader take a long spec in parts.
 - Put vision and offer in the Product Overview and precise shared invariants in a Behavioral Contract.
 - A dropped promise or choice leaves with the Decision that drops it.
 - In a spec of a text users' AIs read, such as a skill, keep its promises with their conditions, exceptions, authority boundaries and failure cases, and link that text at its released revision for the mechanics; never restate it rule by rule.
 
+### Spec sections
+
+A Product Spec gives whoever must decide, build, change or judge a system what code cannot. Describe in it the intended product, built or not, with the limits work has established.
+
+```markdown
+# <System name>
+## Need
+- When <situation>, I want <motivation>, so <outcome>. (Whom it serves and their situation; never personas or features.)
+## Outcome
+<The result sought.> Signal: <what shows it is reached>.
+## Direction
+- <An accepted direction beyond what exists> (<its Task or stream>).
+## Choices
+- <A choice that shapes the system>, because <reason> (<its Decision, when one exists>). (A rejected alternative: only a link to its Decision.)
+## Promises
+- <What it must always or never do for the people it serves: rules protecting their work, data or privacy, accessibility, safety, compatibility, a guarantee they rely on; its conditions and audience when limited>.
+## Non-goals
+- <What it could reasonably do and deliberately does not>: <reason>; <neighbouring owner (link)>.
+## Known limits
+- <One limit work established: how it really behaves or fails, and what that imposes on whoever designs, changes or judges it> (<source>, <date>; <Engineering Reference for bulk detail>).
+## Open questions
+- [open] <undecided point>. (Never a settled choice: Choices, Decision.)
+- [idea <date>] <direction>; read <supporting record> before assessing or building it.
+## Links
+<Product Map> · <Architecture Map> · <Decisions> · <supporting records> · <contracts> · <related specs> · <design document> · <code entry point>. (Nothing else.)
+```
+
+- Put in each section only its own content.
+- Write intent (Need, Outcome, Direction, Choices) in short full sentences, each choice with its reason, and one bullet per promise or non-goal.
+- Write each fact once, linked elsewhere, in the page's language and the workspace's style, with no transitions, history or comments on sources. Keep no changelog or history page per spec unless the workspace's rule keeps one: chronology lives on the release record or changelog.
+- Put everything else in its home, linked when still needed:
+  - what the code does and how, and values and steps chosen while building (screens, wording, parameters, size limits, budgets, ordering): code, tests, the design document, Tasks and release records;
+  - a replaced design or text: page versions;
+  - who chose when: Decision;
+  - a defect, even one breaking a promise: Task, linked;
+  - negated bugs ("does not crash");
+  - a measurement that constrains no design: the test or script that measures it;
+  - exploration narrative: supporting record.
+
+### Element subsections
+
+When a section covers several elements of the product (a screen, a tool, a step of a flow, a group of rules), give each element a `###` subsection, under the same heading in every section where it appears, so a reader can fetch one element across the spec:
+- put a rule that holds for every element in a subsection headed `All elements`, in every language, and write no text outside the subsections;
+- put a rule for some elements but not all under one of them, cross-referenced from each of the others; when an element's rule depends on another element, cross-reference that element's section and heading;
+- when you write to such a section that has no subsections, read the whole spec and give it its subsections in the same edit, a move that changes no content; read it back and check that every old line survived.
+
 ## Ideas page
 
-The product documentation set's single page for ideas with no system yet, kept by the [parking rule](lifecycle-playbooks.md#brainstorm-and-design-maturity):
+The product documentation set's single page for ideas with no system yet, kept by the [parking rule](lifecycle-playbooks.md#parking):
 
 ```markdown
 # Ideas
@@ -130,6 +178,7 @@ Keep a line only if a reader without it could break a connection, a boundary or 
 - Describe in the map the code on the default branch, the base every change starts from; when released state differs in a way a reader needs, say so in one line.
 - When a change lands that alters a component, a connection, a data store or external service, a code home or the release model, update the map; check it at each release sync.
 - Keep it short enough to read whole before a change: at most 20,000 characters of page text. When a system's detail would push past that, move it to its home.
+- Whenever content leaves the map, follow the preservation rule ([When content leaves a spec or an Architecture Map](../SKILL.md#when-content-leaves-a-spec-or-an-architecture-map)).
 
 ```markdown
 # Architecture Map
@@ -184,10 +233,10 @@ Verification sections:
 
 ## Product Facts
 
-- Before you create or activate a Product Fact, read evidence, retrieved or supplied, competent to prove its exact claim, product scope and state.
-  - A claim of shipped or released behavior, or of software's current capabilities or availability, needs verified release evidence, whether or not its wording mentions a release.
-  - A fact about a non-software offer, service or physical specification needs the relevant authoritative decision, service record or technical evidence for its exact state; approval or validation alone proves neither availability nor launch.
-  - A named artifact, or an assurance that evidence is available, is a pointer, not proof.
+Evidence competent for a Fact, which the Product Fact rule ([Load the needed guidance](../SKILL.md#load-the-needed-guidance)) requires, retrieved or supplied:
+- A claim of shipped or released behavior, or of software's current capabilities or availability, needs verified release evidence, whether or not its wording mentions a release.
+- A fact about a non-software offer, service or physical specification needs the relevant authoritative decision, service record or technical evidence for its exact state; approval or validation alone proves neither availability nor launch.
+- A named artifact, or an assurance that evidence is available, is a pointer, not proof.
 
 - Give each Fact:
   - exact claimable wording;
