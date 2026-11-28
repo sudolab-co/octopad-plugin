@@ -94,7 +94,7 @@ On a main competitor's page, write its target, offer, business model, prices, ch
 ## Review before delivering
 
 Scale the review to the stakes.
-- Before delivering a market report or audit, or writing a new or changed conclusion, comparison or computed figure on a page, give a fresh sub-agent reviewer the draft and needed sources. The reviewer must not have drafted it and:
+- Before you deliver a market report or an audit, or write a new or changed conclusion, comparison or computed figure into a page, give a fresh reviewer, a sub-agent that did not draft it, the draft and the source material needed to check it. The reviewer:
   - checks each conclusion and figure against its source;
   - recomputes the calculations;
   - looks for evidence against the main conclusions;
