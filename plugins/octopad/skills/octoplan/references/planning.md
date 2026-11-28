@@ -2,14 +2,14 @@
 
 ## Brief
 
-- Apply the brief and preparation of [octopad-planning-and-work-design](../../octopad-planning-and-work-design/SKILL.md), and keep the brief where it says. Reuse a confirmed brief while its outcome is unchanged.
+- Read [Brief only what the request needs](../../octopad-planning-and-work-design/SKILL.md#brief-only-what-the-request-needs) and [Prepare enough to choose how to deliver](../../octopad-planning-and-work-design/references/choosing-delivery.md#prepare-enough-to-choose-how-to-deliver) before briefing. Keep the brief there; reuse its confirmation while the outcome is unchanged.
 - Read the stream, its tasks and the sources first, and settle yourself what they settle. Ask only about choices costly to change later, one question at a time, stating reasonable assumptions. Never make the user design the implementation.
 - When the outcome names a population (every user, AI client, platform or plan), list its variants and give each a task, a measurement or a named limit; a task covering only some names them.
 
 Get the user's explicit confirmation of a brief scaled to the work:
 
 ```markdown
-**Octoplan · Step 1 of 3: Brief**
+**Step 1 of 3: Brief**
 
 **Why and for whom**
 **Result and proof**
@@ -28,8 +28,8 @@ Get the user's explicit confirmation of a brief scaled to the work:
 
 ## Draft the plan
 
-- One deliverable is one task, cut into the smallest coherent units: each one change that can be built and checked alone, split at natural seams (schema, server, client, AI-facing text), never mid-change.
-- Several units become subtasks, each with its own `What`, `How` and `Verify`, built in order by one executor. In code they are the commits of the task's pull request, and one pull request finishes the task it names. Past what one reviewer can judge well, split into more tasks.
+- Give each deliverable one task. Cut it into the smallest coherent units, each built and checked alone, at natural seams (schema, server, client, AI-facing text), never mid-change.
+- Make several units subtasks with `What`, `How` and `Verify`, built in order by one executor. In code, each is a commit of the task's pull request. One pull request finishes its task; split work too large for one reviewer into more tasks.
 - Create no task for a read, a login, a review or a merge unless a person owns a distinct result. Give each dependency a one-line reason, and each user-facing text one owner task.
 
 Each executable task carries:
@@ -50,7 +50,7 @@ Codex: <route from the Codex profile, with its reason>
 - `How` gives the result and its constraints; name a technique only when evidence shows it fits.
 - Write only paths, commands, versions and behavior you read or measured this session; mark the rest unknown.
 - A spec or record update is no reason for `Octopad: yes`: the executor returns the text and the supervisor writes it.
-- Settle every choice several units rely on: each shared value's writers and their order; which unit produces each input; each overlapping pull request, task or Decision; and, when units apply one design to sibling surfaces, each rule they would otherwise decide one by one. What cannot be settled yet becomes a first design or probe task.
+- Settle choices shared by units: each value's writers and order, each input's producer, overlapping pull requests, tasks and Decisions, and rules sibling surfaces would otherwise choose separately. Put unsettled choices in a first design or probe task.
 
 Checks:
 - Plan only checks someone can run, matched to `Done when`.
@@ -68,7 +68,7 @@ Routes:
 
 ## Review the draft
 
-Before writing anything into Octopad, give the whole draft to one fresh reviewer, or two when the review rule asks, at your profile's plan review route, with the brief, the sources, the effects, the target's rules and "Do not call Octopad." Ask it to attack missing work and a simpler cut, unit size, unsettled shared choices, dependencies, checks that could pass on a broken outcome, route and `Review` fit, effects and consent, and what still finishes if the user leaves right after agreeing.
+Before writing anything into Octopad, give the whole draft to fresh reviewers under [Review](../SKILL.md#review), at your profile's plan review route. Include the brief, sources, effects, target's rules and "Do not call Octopad." Ask them to attack missing work, a simpler cut, unit size, shared choices, dependencies, false-passing checks, routes, `Review`, consent and what finishes if the user leaves after agreeing.
 
 It answers `PASS`, `REVISE` with findings, or a question only the user can answer. Apply the findings; one that changes the brief goes back to the user. Run no second round.
 
@@ -80,7 +80,7 @@ It answers `PASS`, `REVISE` with findings, or a question only the user can answe
 ## Propose delivery
 
 ```markdown
-**Octoplan · Step 2 of 3: Plan**
+**Step 2 of 3: Plan**
 
 1. <task title: what it produces>
 **What agents will do on their own** <each effect, its target and when; any Computer Use>
