@@ -8,7 +8,7 @@ Version: 3.0.0
 
 - `manage-product-marketing` maintains the choices, messages and evidence pointers.
 - The competent decision-maker accepts or rejects choices.
-- A PMM recommendation or review pass neither accepts nor rejects choices and maintains no record. A pass means only that the checked material and sources have no unresolved review issue. It grants neither specialist clearance nor permission to publish.
+- A PMM recommendation or review pass neither accepts nor rejects choices and maintains no canonical marketing record. A pass means only that the checked material and sources have no unresolved review issue. It grants neither specialist clearance nor permission to publish.
 
 Read [Method provenance and further reading](references/evidence-basis.md#method-provenance-and-further-reading) only when assessing provenance or planning more research. Its links establish no fact about an offer.
 
