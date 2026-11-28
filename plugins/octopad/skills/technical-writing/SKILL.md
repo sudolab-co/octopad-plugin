@@ -18,14 +18,14 @@ Write documentation for readers who missed the conversation. Use documentation s
 - Define unfamiliar terms on first use. Write for the reader who needs the document with the least prior context.
 - Plain words for a global audience: no idioms, no Latin ("for example", not "e.g.").
 - Sentence case for headings. Task headings say the task: "Install the CLI", not "Installation".
-- Recast em-dashes with commas, full stops, colons or parentheses. This default overrides Google’s guide; use em-dashes when the workspace’s own style does.
+- Recast em-dashes with commas, full stops, colons or parentheses. This default overrides Google’s guide; you may use em-dashes when the workspace’s own style does.
 
 ## Kill the AI flavor
 
 - No filler: "please", "simply", "just", "easily", "note that", "in order to", "it's important to note".
 - State what you know. Hedge only real uncertainty and explain why.
 - No inflated vocabulary: "use" not "leverage" or "utilize", "check" not "delve into". Ban "seamless", "robust", "powerful", "comprehensive" unless measured.
-- Use bullets for parallel items, not in place of paragraphs. Write no walls of bold-label bullets.
+- Use bullets only for parallel items, not in place of paragraphs. Write no walls of bold-label bullets.
 - Do not praise the product or the reader. State what it does.
 
 ## Structure
