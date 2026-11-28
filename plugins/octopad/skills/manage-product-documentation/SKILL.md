@@ -16,7 +16,7 @@ Read the first three sections at every opening.
 - When no spec owns the behavior, say so, keep establishing the facts, and leave conclusions about its intended behavior unresolved.
 
 How much of a spec to read:
-- A narrow fix whose cause is known and that needs no product choice: only the spec's purpose, constraints and the clause the fix restores, which you name first.
+- A narrow fix with a known cause and no product choice: only the spec's purpose, constraints and the clause it restores, which you name first.
 - Otherwise, for a product choice, a change across the product, unclear boundaries or an element with no subsection: the whole spec. An outline, a section read, a summary or a truncated result is not a whole read: get the missing text, or name the access limit and leave dependent conclusions unresolved.
 - To judge, quote or edit one or a few elements that have subsections: the outline (`pages` `get` with `outline: true`); then, in one call, `sections: ["Need", "Outcome", "<each section without subsections, or larger than its heading and subsections together>", "<each of those elements' headings>", "All elements"]` (a heading returns every subsection that uses it); then each part they cross-reference whose pointer bears on what you judge.
 - Other specs or history only when a dependency, a contradiction or the request calls for them.
@@ -39,7 +39,7 @@ When the user asks what a system does today, or whether a page still matches the
 
 ## Preserve lifecycle and product scope
 
-- Treat unknown facts as unknown: mark them with a concise `Unknown`, `Unverified` or documentation-debt marker and keep working. Never fabricate architecture, behavior, ownership, dates, metrics, source revisions, release state or customer evidence, nor a value to make a template look complete.
+- Mark unknown facts `Unknown`, `Unverified` or with a documentation-debt marker and keep working. Never fabricate architecture, behavior, ownership, dates, metrics, source revisions, release state or customer evidence, nor a value to make a template look complete.
 - Derive technical facts from current code and repository configuration when available. Never present an old observation as current.
 - Keep `idea`, `explored`, `accepted`, `implemented`, `merged`, `released` and `retired` distinct; never infer one from another. A record that uses `proposed` or `approved` keeps its words, mapped explicitly to the same evidence boundary.
 - Code or tests can prove implementation, not approval or release; a pull request, a proposed source revision; a merge, only that a revision reached its base branch. Mark behavior released or shipped only after you verify the repository's actual release policy and release evidence: a merge is not a production release unless that policy proves it.
@@ -61,7 +61,7 @@ For every delivery, a pull request, a merge or a release:
 
 ## Stop before writing
 
-- Before writing, confirm from current evidence the connected Octopad organization, the workspace, and each repository and branch. File a new page in the Product folder of its scope.
+- Before writing, confirm the connected organization, workspace and each repository and branch from current evidence. File a new page in its scope's Product folder.
 - Before you create, and before you declare something absent, search and read likely matches, not only titles. Before you write a negative, prove it.
 - Reuse and link existing pages, streams, tasks, Decisions, repository docs and pull requests. Supersede or redirect a duplicate non-destructively, after preserving its unique facts and links; never delete content or overwrite history automatically.
 - Administer templates, folders, links, classifications, drafts, parked ideas, routine sync, and safe metadata or link repair without asking, except in an audit alone. Record a direction already given without asking for it again.
@@ -71,7 +71,7 @@ For every delivery, a pull request, a merge or a release:
   - a consequential decision the normal product or repository review does not already handle;
   - deletion, irreversible overwrite, or another destructive consolidation.
 
-Before you say a change needs no documentation update: `No documentation impact` is a claim about the maintained set of every affected product.
+A `No documentation impact` claim covers the maintained set of every affected product.
 - Write it only with the receipt [Proving no documentation impact](references/pull-requests.md#proving-no-documentation-impact) sets. Search alone, or an inventory of the wrong product, proves nothing.
 - When behavior changed while no page owns it, that is a gap: record one documentation-debt item instead of closing the question.
 
@@ -83,7 +83,7 @@ When you write to a Product Spec, or content leaves a spec or an Architecture Ma
 
 ### What a spec holds
 
-- Keep a line only if a reader without it could build the wrong thing, undo a choice or break a promise. Keep a value or an observed behavior only when it is the promise or the known limit itself; never invent a need or a reason to keep a line. Example: not "`create` requires `title`; at most 80 characters" but "each item says in one line what it is for; input is never cut silently".
+- Keep a line only if a reader without it could build the wrong thing, undo a choice or break a promise. Keep a value or an observed behavior only when it is the promise or the known limit itself; never invent a need or a reason to keep a line.
 - Never claim a system is built or released beyond what a Known limits line establishes with its source and date; put that claim in user documentation or a Product Fact, with its evidence.
 - Use the headings Need, Outcome, Direction, Choices, Promises, Non-goals, Known limits, Open questions and Links word for word. Always write Need and Outcome, `[open]` while unknown; omit other empty sections.
 - Mark what is undecided `[open]`, never guessed. Use only two labels, `[open]` and `[idea <date>]` in Open questions; move an accepted line to Direction, Choices or Promises, unlabelled. Neither label is delivery.
@@ -132,7 +132,6 @@ When release notes, user documentation, a Product Fact or a marketing claim rest
 - The Product Fact rule: before you draft, create or activate a Product Fact or a marketing claim, read evidence competent to prove its exact claim, product scope and state, as [Product Facts](references/documentation-model.md#product-facts) defines it; without it, create no Fact or dependent approved copy, and name the gap.
 - Draft and reconcile user documentation and release notes, pre-release drafts included, as [Downstream documents](references/lifecycle-playbooks.md#downstream-documents) says, and keep every review the product or repository requires.
 
-
 ## Pull requests
 
 When you draft a pull request body, outlines and groundwork included, fix its `Octopad-Task:` line, or sync documentation with a pull request: the body records the change's documentation impact and ends with exactly one `Octopad-Task:` line holding the task's bare id from Octopad. Write it as [The PR body](references/pull-requests.md#the-pr-body) says, then follow [Pull request and delivery sync](references/pull-requests.md#pull-request-and-delivery-sync), which also sets the task's status once it is open.
@@ -150,4 +149,4 @@ Keep one Product Overview per offer, one Product Map per product and one evolvin
 When product documentation is set up or audited, or a page of it, other than a spec's content, is created, adopted, split, merged or substantially reshaped:
 - Shape the page as the [documentation model](references/documentation-model.md#contents) says in the section named after its type.
 - To set up documentation, follow [Greenfield setup](references/lifecycle-playbooks.md#greenfield-setup) or [Existing-product setup](references/lifecycle-playbooks.md#existing-product-setup).
-- An audit inspects a bounded maintained set and reports its gaps; it repairs nothing, safe metadata and links included, unless the request also asks for repairs. Open [Maintenance and audit](references/lifecycle-playbooks.md#maintenance-and-audit) before your first read of maintained content.
+- In an audit, inspect a bounded maintained set and report its gaps. Repair nothing, safe metadata and links included, unless asked for repairs. Read [Maintenance and audit](references/lifecycle-playbooks.md#maintenance-and-audit) before the first read of maintained content.

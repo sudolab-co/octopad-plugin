@@ -62,6 +62,8 @@ Overview: <link> · Architecture: <link> · Ideas: <link>
 
 A Product Spec gives whoever must decide, build, change or judge a system what code cannot. Describe in it the intended product, built or not, with the limits work has established.
 
+- Example: not "`create` requires `title`; at most 80 characters" but "each item says in one line what it is for; input is never cut silently".
+
 ```markdown
 # <System name>
 ## Need
