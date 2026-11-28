@@ -40,7 +40,7 @@ priorities_asked: <YYYY-MM-DD> | session <session id>
 
 ## What each block holds
 
-- `premises` (Notes): what passes What to write and is neither a priority nor a reminder, such as a preference, a way of working with them or an idea they have not committed to. Its `exit:` names what makes it leave: they commit to it, they change or drop it, or Octopad records it elsewhere.
+- `premises` (Notes): what passes What to write and is neither a priority nor a reminder, such as a preference or a way of working with them. An idea for later is a task (What to write), never a note. Its `exit:` names what makes it leave: they commit to it, they change or drop it, or Octopad records it elsewhere.
 - `last_briefing`: the day's briefing claim and review claim and, while there are no priorities, the day you asked what matters. A missing line means no claim, or no question asked.
 - `open_loops` and `context_gaps` are the older form: never write to them.
 

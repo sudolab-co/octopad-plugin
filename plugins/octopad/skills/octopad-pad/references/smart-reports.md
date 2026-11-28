@@ -24,10 +24,10 @@ Today's brief's sections list each priority no tab serves, with its key and what
   - Under each priority tab it serves, `context` says whether each key is still among their priorities; for a priority tab it did not serve whose `title` is the name of none of their priorities, `context` with that `tab`. Only a key it calls "not among their priorities" has left.
   - `get` that tab: a priority Today's brief's sections list whose streams are all among those the tab's `streams` lines and `phases` cite, at least one, is that key's priority, renamed: save its key in place of the old one, and its name as `title` when the tab serves no other priority.
   - Otherwise drop the key, and `remove` a tab left with none.
+- Merge priorities that deliver the same outcome into one tab: name each key in its `selection.priorities`, `remove` any other tab one of them had, and say why in its `note`.
 - Create a tab for a priority with no tab once anything it follows moved or waits on the person:
   - Its definition: the priority's name as its `title`, `selection` {priorities: [its key]}, `blocks` [{kind: "text"}].
   - `context` with that unsaved definition, write the tab from what it serves (A priority tab), then `save` without `tab`: the definition, the `position` right after Today's brief and the priority tabs of earlier priorities, the `content` and the `through` that read gave. A new tab is saved with its content or not at all.
-- Merge priorities that deliver the same outcome into one tab: name each key in its `selection.priorities`, `remove` any other tab one of them had, and say why in its `note`.
 - Add a stream that serves the priority but none of its references names to the tab's `selection.streams`, and say so in its `note`.
 - A refused priority renamed with the same references: `get` lists each refused key with its references; save the refusal again under its new key (Route a correction).
 
@@ -44,7 +44,7 @@ Today's brief's sections list each priority no tab serves, with its key and what
   - Never put first work that waits on a prerequisite or is blocked; a prerequisite someone else holds is something to arrange with them, not a go.
   - A start date is not a deadline.
 - Citing: put a waiting item's task in the `refs` of the sentence that speaks of it, so the item shows under that sentence. Never use a notification or reminder id as a task id. Lesser asks may share one sentence that cites each task. Never list items to be complete: what you do not cite still shows in its section.
-- Sentences: short and complete, each a fact and what it means for the person. Put each object it speaks of in `refs`, by the id the brief or a read gave, and never its name, state or progress figures: its row shows them live. A count names its tasks in `refs`, or drops the number. Write a date as a date, never "today" or "tomorrow".
+- Sentences: short and complete. Put each object it speaks of in `refs`, by the id the brief or a read gave, and never its name, state or progress figures: its row shows them live. A count names its tasks in `refs`, or drops the number. Write a date as a date, never "today" or "tomorrow".
 - Marks:
   - `needs_you` when the person must act; `unblocked` when a blocker is gone and the work is ready; `risk`.
   - `correction` only when evidence shows a claim of an earlier Pad was wrong when written, the sentence saying which and why, its evidence in `refs`, and never in `due` or `outside`. A state that has since changed is news, not a correction.
