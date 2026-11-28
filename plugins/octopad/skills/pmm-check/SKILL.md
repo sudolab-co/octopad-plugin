@@ -28,7 +28,7 @@ Read [Method provenance and further reading](references/evidence-basis.md#method
   - for a physical product, its specifications and separate availability evidence;
   - for a noncommercial activity, the responsible owner's supported offer and participation conditions.
 - Never take a public website, old asset, requested wording or accepted slogan by itself as proof of an offer's facts.
-- Limit factual claims to product and operational evidence, and choices to accepted positioning. Positioning is no factual proof; practitioner methods and generic external research overrule neither.
+- Let product and operational evidence limit factual claims, and accepted positioning limit choices without turning its words into evidence; let neither practitioner method nor generic external research overrule them.
 - Keep conflicting or unidentified authority unresolved.
 - When access is missing or refused, report it and block only dependent claims. Continue independent work with omissions or named evidence placeholders.
 - Never let client data, evidence, prices, comparisons or examples cross scopes without explicit shared scope and permission.
@@ -87,7 +87,7 @@ Classify by reader intent, not channel alone.
 - Use a specific task and example before abstractions.
 - Name a real alternative when supported and useful.
 - Cut phrases that add no discriminating information.
-- Build the requested message from the offer, an audience-relevant task, supported proof, material limits and a next action. Include only the supporting points the evidence warrants.
+- Build the requested message from the offer, an audience-relevant task, a supported reason to believe, material limits and a next action. Use only as many supporting points as the evidence warrants.
 - Distinguish a proposed positioning statement from publishable copy.
 - Use the five-second test to diagnose whether an unfamiliar reader could identify the offer and task from the first screen. Report no measured reader behavior without a test.
 
