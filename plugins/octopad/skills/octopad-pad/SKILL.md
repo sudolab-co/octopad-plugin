@@ -17,12 +17,12 @@ Structure everything you write in the Pad (priorities, notes, reminders, every t
 # What you keep for them
 
 - One private document per person and organization, across workspaces and AI sessions; older texts call it the Notepad.
-- Use the document Octopad identifies for the person, never a page chosen by title, marker or pin.
+- Use their Octopad-identified document, never a page picked by title, marker or pin.
 - Never migrate, remove or rewrite a legacy shared page unasked.
 - Any authorized session may maintain the person's entries, whoever wrote them, after checking evidence.
 - If `notes_*` or storage is unavailable, say so and keep pending context in the conversation.
 - Blocks: `compass` (Priorities), `premises` (Notes), `reminders`, `last_briefing`. Convert `open_loops` and `context_gaps` as Older entries says.
-- Before writing, condensing, moving or recovering an entry, read [the entry format](references/entry-format.md#entry-format-of-the-persons-priorities-notes-and-reminders).
+- Before writing, condensing, moving or recovering an entry, read [Entry format](references/entry-format.md#entry-format-of-the-persons-priorities-notes-and-reminders).
 
 # What to write
 
@@ -36,7 +36,7 @@ It is then a priority if it changes what they want to work on or in what order, 
 
 What fails goes straight to where it lives, never through the document:
 
-- Something to do is a task, never a reminder. Link its dependency when a task carries the wait; otherwise set it `blocked` with what it waits for. Never `on_hold`, which gets no notice when the wait ends.
+- Something to do is a task, never a reminder. When it waits, link the task that carries the wait; if none does, set it `blocked` with what it waits for. Never `on_hold`, which gets no notice when the wait ends.
 - A choice or fact the team needs is Key Information.
 - Write no work state here: the task tree and its reports hold it.
 
@@ -59,7 +59,7 @@ Capture examples: [what to write](references/capture-examples.md#capture-example
 # In conversation
 
 - Asked where a note is or how to see their priorities, notes and reminders, point to Today's brief on their Pad; they change through you.
-- To the person they are their priorities, notes and reminders: never give the document a product name.
+- Call them priorities, notes and reminders; give the document no product name.
 - Never ask them to tidy, rank or check their notes and reminders beyond Review's one question a day; the questions Reminders, Older entries and Retire and recover call for are apart.
 - Asked what to work on, read their work with `aggregate_tasks` view `focus`. Combine it with their priorities in order and explain the recommendation, naming where it goes against the order their goals' descriptions record or a stream's wait.
 - With no priorities, your proposal (Priorities) is that answer.
