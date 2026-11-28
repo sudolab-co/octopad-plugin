@@ -2,9 +2,9 @@
 
 ## Start or resume
 
-1. Read the stream's latest update, the tasks with their status and comments, and the target's state.
+1. Read [Record the mandate](planning.md#record-the-mandate), then the latest update, the tasks' status and comments, and the target. Where stream updates are unavailable, read and post this delivery's updates as comments on the plan's first task.
 2. If the latest update says another supervisor runs this delivery, or tasks this session did not start are in progress, ask the user before you take over.
-3. One supervisor runs the whole plan, even across several streams. On each, post one stream update with `work_streams` `set_status`: in `line`, that you supervise from this date, naming your session and runtime; in `note`, the mandate ([Record the mandate](planning.md#record-the-mandate)).
+3. One supervisor runs the whole plan, even across several streams. Before dispatch, on each post with `work_streams` `set_status`: in `line`, that you supervise from this date, naming your session and runtime; in `note`, the mandate. When unavailable, post the same supervisor claim, date, session, runtime and mandate as a comment on the plan's first task ([Record the mandate](planning.md#record-the-mandate)).
 4. Do what your runtime profile asks of a starting supervisor.
 
 Under the Step 3 banner, give one progress line in everyday words, counted from the tasks' status in Octopad: `Progress: 2 of 9 tasks done, 1 in progress, 6 waiting · waiting for your review of the pricing page`.
@@ -13,8 +13,8 @@ Under the Step 3 banner, give one progress line in everyday words, counted from 
 
 Repeat until every task is done or no safe work remains:
 
-1. **Pick** a ready task: prerequisites done, no placeholder, claimed by no one else. Set it `in_progress`.
-2. **Brief** one fresh executor on the task's saved route for this runtime, with the [executor brief](#executor-brief), after rereading the task from Octopad. Give an executor without Octopad access the task's attached files at a path it can read.
+1. **Pick** a ready task: prerequisites done, no placeholder, claimed by no one else. Load `build_context(mode: "task")` before claiming or updating it; follow its start and confirmation instructions, then set it `in_progress`.
+2. **Brief** one fresh executor on the task's saved route for this runtime, with the [executor brief](#executor-brief). Pass the loaded context, source revisions and attached files at readable paths to an executor without Octopad access. An executor granted access loads its own task context.
 3. **Check** its report: confirm the decisive checks on the exact commit or result from a source the executor did not write (hosted results, or one rerun), and that any review the `Review` line names came back with each finding handled.
 4. **Close** each subtask once its commit is in the branch, then push and open the pull request as the mandate allows; close the task once `Done when` holds. Write the spec or record changes the executor returned; a change that waits for a later event, such as a release reaching production, first gets its own task, as the `octopad-planning-and-work-design` skill (section "Shaping the work") says. Add one short comment: the checks, the pull request or commit, the review outcome, any decision taken.
 
@@ -35,9 +35,9 @@ Repeat until every task is done or no safe work remains:
 
 When a task's meaning, dependencies or checks are wrong, context is missing or a shared choice is unsettled:
 - Note the defect on its task and hold only the tasks it affects.
-- Launch one planner sub-agent at your profile's plan repair route, with the affected tasks and their `Done when`, the failure and its evidence, and the mandate. Tell it to read planning.md's "Draft the plan" and "Changes", and to call no Octopad tool. It returns a diagnosis and the full text of each changed or new task, both routes and `Review` included, or the exact obstacle; it dispatches no one and cannot widen the mandate.
+- Launch one planner sub-agent at your profile's plan repair route with the affected tasks, their `Done when`, the failure, evidence and mandate. Tell it to read [Draft the plan](planning.md#draft-the-plan), [Changes](planning.md#changes), [Review](../SKILL.md#review), [Claude Routes](claude-runtime.md#routes) and [Codex Routes](codex-runtime.md#routes) before repairing tasks. It calls no Octopad tool, dispatches no one and widens no mandate. It returns a diagnosis and full changed or new tasks with both routes and `Review`, or the exact obstacle.
 - When the returned text changes a task's meaning, dependencies, checks, effects or review, launch one fresh reviewer on it at your profile's plan review route, read-only and told to call no Octopad tool, with the affected tasks as saved, the failure and the mandate ([Changes](planning.md#changes)). Fix each real defect in the text before you write it.
-- Write the repair, reread it as saved, then resume.
+- Reread the current mandate from [Record the mandate](planning.md#record-the-mandate)'s supported record before writing the repair. Write the repair, reread it as saved, then resume.
 
 ## Executor brief
 
@@ -49,7 +49,7 @@ Octopad: <organization and its ID> / <workspace> / <stream>.
 Model and effort: <saved route>: <how this launch sets them, such as `pinned by your lane definition`>.
 Review: <none; or one reviewer at <route for this runtime>, attacking <focus>>.
 Mandate: <the effects and targets this task may perform, and the limits>.
-Working judgment (only when no Octopad sub-agent hook runs): <the methodology's Working principles, verbatim>.
+Working judgment (when the agent cannot read the methodology): <the methodology's Working principles, verbatim>.
 Human gates not yet cleared: <relevant ones, or none>.
 Computer Use: <accepted targets and actions with their source, or not authorized>.
 Full checks: <only when the supervisor runs them: "Run only your targeted checks.">
@@ -60,7 +60,7 @@ Full checks: <only when the supervisor runs them: "Run only your targeted checks
 
 How you work:
 - Installed skills and hooks apply; the target's rules are a floor. Act only within the mandate: approve nothing, close no task, and return any protected effect to the supervisor.
-- Keep each tool result under about 2,000 tokens: search before reading, and send test and build output to a log file, printing only the status, totals and failures.
+- Search before reading; read every needed source and continuation in full. Send test and build output to a log file, printing the status, totals and failures; a short report never narrows a check or review.
 - Build the units in order, one commit each, and commit before you return. Run Verify; return a long external wait, such as hosted CI, instead of waiting on it.
 - If Review names a reviewer, launch it once Verify passes on your committed head: fresh, read-only, in the foreground, with the task, base and head, your checks with their output, the target's rules, and "Do not call Octopad." Fix each real defect in the task, test first, or say how you checked where no test can. Ask for no second review and launch no other agent. Return defects outside the task with their evidence.
 - After two failed fix cycles, stop and report why.
@@ -72,7 +72,7 @@ Report: the commit or result, the checks and their outcome, the review verdict a
 ## Finish
 
 - The delivery is done when every task is closed with its proof and every checkpoint has the user's go. Before you say no work remains, name what each open task waits on.
-- Publish the final recap with the labels of [What the user reads](../SKILL.md#what-the-user-reads), naming each remaining item by its task, and post a stream update saying the delivery finished and what remains.
+- Publish the final recap with the labels of [What the user reads](../SKILL.md#what-the-user-reads), naming each remaining item by its task. Post completion and remaining work on each stream, or in the plan's first-task comments when stream updates are unavailable.
 - Remove what the run left on the machine that serves nothing now: locks, caches, temporary copies, worktrees and local branches with no unmerged work. Keep deliverables and anything a record cites.
 
 ## Stop or hand over
@@ -81,5 +81,5 @@ Replace a supervisor only when it cannot continue after recovery, the host force
 
 1. Stop dispatching; collect or stop running executors and background commands.
 2. Check each uncertain effect, and write the current state on the tasks.
-3. Post a stream update saying this supervisor stopped, and why.
+3. Post that this supervisor stopped and why on each stream, or in the plan's first-task comments when stream updates are unavailable.
 4. For a successor, launch it as your profile says, or give the user the pointer from [Launch](planning.md#launch). The successor checks that you stopped before it acts.

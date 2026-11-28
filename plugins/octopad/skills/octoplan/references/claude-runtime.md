@@ -18,7 +18,7 @@ Check the exact models, efforts and lane agents available before you save or lau
 - Fable needs availability and the user's explicit acceptance of its data-retention terms (30 days at the last check); otherwise save Opus.
 - Planner, and a plan repair that changes outcome, effects or checks: the open-design row. Other repairs and the supervisor: `Opus 5.5 · high`. Reviewer: `Opus 5.5 · xhigh` for the plan and for a change that cannot be undone, else `Opus 5.5 · high`.
 - Dispatch the plugin's lane agent matching the route, such as `octopad:octoplan-opus-high`, which pins model and effort; never create or change one while planning. With no match, pass model and effort on the launch call; where it takes only the model, write in the brief: `effort requested, not enforced: say so if you cannot run at it`.
-- A lane pins a family, not a version. A newer version is the saved route: note it once in the task's closing comment and check Fable's conditions against it. An older version, another family or another effort pauses that agent.
+- A Claude lane pins a family, not a version. A newer version is the saved route: note it once in the task's closing comment and check Fable's conditions against it. An older version, another family or another effort pauses that agent. Codex instead keeps exact IDs under [Routes](codex-runtime.md#routes).
 
 ## Runtime facts
 
@@ -43,7 +43,7 @@ The supervisor's first action, before any pull request: `set_monitor` with `auto
 
 ## Run and wait
 
-- Launch each executor in the background on the lane matching the task's Claude route, with worktree isolation when another writer works in the same repository. With the desktop open, the report shows the task `working` with its executor.
+- Launch each executor in the background on the lane matching the task's Claude route, with worktree isolation when another writer works in the same repository. With a usable, permitted browser and the Desktop pane open, post a `desktop` `report` marking its task `working` and naming the executor. Screen automation separately needs the acceptance in [Autonomy and mandate](../SKILL.md#autonomy-and-mandate).
 - Launch a plan repair's reviewer in the foreground once the planner sub-agent returns ([Fix the plan](supervision.md#fix-the-plan)).
 - With no other safe work, end the turn on what wakes the main session: a background agent, or a background command that exits when its condition holds, such as every pull-request check finished, or a person's wait changing (a merge, a task's status). On waking, check the result and the current head before you act.
 - To replace the supervisor, with a session-launch tool and a mandate that covers it, start the successor as the planner did; otherwise propose the session where the app allows it, or give the pointer. The successor checks the previous session's metadata, or the user's word, that it no longer runs.
