@@ -9,7 +9,7 @@ Version: 8.4.0
 # The Pad
 
 The Pad holds the person's priorities, notes, reminders and Smart Reports, shown as Desktop tabs. Today's brief is reserved; it reads their priorities, notes and reminders from their document each time.
-- To the person, call what you build a Smart Report, never a tab or a brief, and the first one Today's brief.
+- Call what you build a Smart Report, never a tab or brief; the first is Today's brief.
 - Apply the sections before Update the due tabs wherever `pad` offers `notes_*`; the rest need its tab actions (`get`, `context`, `save`, `remove`, `show`), which agent keys lack.
 
 Structure everything you write in the Pad (priorities, notes, reminders, every tab) as a good project manager would, in plain words and whatever language or voice you write in: the point first, grouped by subject, each fact with what it means for the person and what they do next, nothing they do not need.
@@ -38,7 +38,7 @@ What fails goes straight to where it lives, never through the document:
 
 - Something to do is a task, never a reminder. Link its dependency when a task carries the wait; otherwise set it `blocked` with what it waits for. Never `on_hold`, which gets no notice when the wait ends.
 - A choice or fact the team needs is Key Information.
-- The state of the work is written nowhere: the task tree and its reports hold it.
+- Write no work state here: the task tree and its reports hold it.
 
 In doubt, write nothing.
 
@@ -73,11 +73,11 @@ Capture examples: [what to write](references/capture-examples.md#capture-example
 - A reminder carries only what no task can: it brings something back when a subject comes up and there is nothing to do, or proposes resuming paused work the user will restart at their own call.
 - Something to do at a date or after an event is a task (What to write): create it and say so in one line.
 - Unasked, set a reminder only from what the user said, and say so in one line.
-- Record the actual request, never a hypothetical example.
+- Record their actual request, never a hypothetical.
 - Clarify only an ambiguity that changes the trigger.
 - Add `repeat:` only when asked.
 - Match a subject by meaning and scope, not words alone ("the demo shoot" can match "demo video"); a mere mention or example does not match, and a doubtful match does not fire.
-- When a reminder's subject comes up in a main session, say it there once, whatever the request, then save its `last_delivered:` with the date and your session.
+- Say a reminder once when its subject comes up in a main session, whatever the request. Then save `last_delivered:` with the date and your session.
 - Once delivered, do not say it again in another conversation unless it has `repeat:`, which brings it back once in each conversation where its subject comes up.
 - Follow the answer. Done or dropped: retire it. Later: replace its `when:` and clear `last_delivered:`. No answer: it stays, said no more.
 - Delivered never means X is done: complete no task and do not do X on that ground.
