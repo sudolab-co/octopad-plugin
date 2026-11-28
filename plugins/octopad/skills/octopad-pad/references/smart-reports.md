@@ -26,11 +26,11 @@ Today's brief's sections list each priority no tab serves, with its key and what
   - `get` that tab: a priority Today's brief's sections list whose streams are all among those the tab's `streams` lines and `phases` cite, at least one, is that key's priority, renamed: save its key in place of the old one, and its name as `title` when the tab serves no other priority.
   - Otherwise drop the key, and `remove` a tab left with none.
 - Group priorities that deliver the same outcome before creating tabs. Exclude refused priorities and leave unreadable tabs alone.
-  - Merge only when each external source's authorization covers the survivor's activity, account and query or channel. If consolidation would lose material settings or needs a new source scope, leave the original tabs intact and ask for that change first.
+  - Merge only when each external source's authorization covers the survivor's activity, account and query or channel. If consolidation would lose material settings or needs a new source scope, leave the original tabs intact and ask for that change first. Create no replacement tab while that merge is held.
   - With a safe existing priority tab for the group, keep one survivor. Preserve the group's keys and each tab's still-useful sources, preferences and content in that survivor; say why in its `note`.
   - Save and read back the survivor before removing another priority tab of the group. Verify the survivor holds what must survive. If its save or readback fails, remove nothing.
   - Move, rename, redefine or remove no tab whose `selection.priorities` is empty unasked.
-- Create one tab for a group with no survivor once anything it follows moved or waits on the person:
+- Create one tab for a group with no existing tab once anything it follows moved or waits on the person:
   - Its definition: a title in the priorities' terms, `selection` {priorities: [each group key]}, `blocks` [{kind: "text"}]. A single priority uses its name and key.
   - `context` with that unsaved definition, write the tab from what it serves (A priority tab), then `save` without `tab`: the definition, the `position` right after Today's brief and the priority tabs of earlier priorities, the `content` and the `through` that read gave. A new tab is saved with its content or not at all.
 - Add a stream that serves the priority but none of its references names to the tab's `selection.streams`, and say so in its `note`.
