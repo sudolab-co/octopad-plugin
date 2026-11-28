@@ -2,7 +2,7 @@
 name: octopad-session
 description: Use first when the user asks for Octopad or onboarding, and as soon as the conversation concerns something the user organizes or follows over time, at work or in their own life (a company, a project, a product, code, customers, a team, plans, or their own affairs: paperwork, a move, a household), even if they never name Octopad. Loads their workspace's context and method. A sub-agent opens it only when its brief grants Octopad access.
 ---
-Version: 36.0.0
+Version: 36.1.0
 
 # Start an Octopad plugin session
 

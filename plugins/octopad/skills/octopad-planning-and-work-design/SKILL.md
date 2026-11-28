@@ -2,7 +2,7 @@
 name: octopad-planning-and-work-design
 description: "Use when agreed work has an end state and needs three or more tasks over more than one conversation; before laying out several tasks as a plan; a request holds several deliverables or a step another member carries out; you create or change a stream or goal, learn of a change, or a number goal's primary signal gets a new figure; the user keeps on purpose a stream that looks finished or idle; one stream waits on another or matters to it; a task leaves its stream by archive, deletion or move; a result, decision or new task changes a fact that a stream's remaining tasks rely on; the number of tasks, nesting, prerequisites, priority order, a date or repeating work is undecided or wrong; or a test launches AI sessions, takes a person's time, costs money or fails. Changes include completing, cancelling, deleting, renaming, merging, splitting and archiving. When prepared work could benefit from delivery by agents, open the `octoplan` skill."
 ---
-Version: 8.5.0
+Version: 9.0.0
 
 # From a need to prepared work
 
