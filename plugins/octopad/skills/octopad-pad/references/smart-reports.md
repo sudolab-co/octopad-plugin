@@ -26,6 +26,7 @@ Today's brief's sections list each priority no tab serves, with its key and what
   - `get` that tab: a priority Today's brief's sections list whose streams are all among those the tab's `streams` lines and `phases` cite, at least one, is that key's priority, renamed: save its key in place of the old one, and its name as `title` when the tab serves no other priority.
   - Otherwise drop the key, and `remove` a tab left with none.
 - Group priorities that deliver the same outcome before creating tabs. Exclude refused priorities and leave unreadable tabs alone.
+  - Before judging a group's compatibility or preservation, `get` each candidate tab whose content and references you do not hold at its listed `text_revision`. A failed or unreadable read leaves all original tabs intact.
   - Merge only when each external source's authorization covers the survivor's activity, account and query or channel. If consolidation would lose material settings or needs a new source scope, leave the original tabs intact and ask for that change first. Create no replacement tab while that merge is held.
   - With a safe existing priority tab for the group, keep one survivor. Preserve all group and existing tab keys, including keys outside the group and the work they cover, plus each tab's still-useful sources, preferences and content in that survivor; say why in its `note`.
   - Save and read back the survivor before removing another priority tab of the group. Verify the survivor holds what must survive. If its save or readback fails, remove nothing.
