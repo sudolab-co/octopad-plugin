@@ -157,4 +157,4 @@ Keep one Product Overview per offer, one Product Map per product and one evolvin
 When product documentation is set up or audited, or a page of it, other than a spec's content, is created, adopted, split, merged or substantially reshaped:
 - Shape the page as the [documentation model](references/documentation-model.md#contents) says in the section named after its type.
 - To set up documentation, follow [Greenfield setup](references/lifecycle-playbooks.md#greenfield-setup) or [Existing-product setup](references/lifecycle-playbooks.md#existing-product-setup).
-- In an audit, inspect a bounded maintained set and report its gaps. Repair nothing, safe metadata and links included, unless asked for repairs. Read [Maintenance and audit](references/lifecycle-playbooks.md#maintenance-and-audit) before the first read of maintained content.
+- In an audit, inspect a bounded maintained set and report its gaps. Repair nothing, safe metadata and links included, unless the request asks for repairs. Read [Maintenance and audit](references/lifecycle-playbooks.md#maintenance-and-audit) before the first read of maintained content.
