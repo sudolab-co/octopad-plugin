@@ -68,7 +68,7 @@ Routes:
 
 ## Review the draft
 
-Before writing anything into Octopad, give the whole draft to fresh reviewers under [Review](../SKILL.md#review), at your profile's plan review route. Include the brief, sources, effects, target's rules and "Do not call Octopad." Ask them to attack missing work, a simpler cut, unit size, shared choices, dependencies, false-passing checks, routes, `Review`, consent and what finishes if the user leaves after agreeing.
+Before writing anything into Octopad, give the whole draft to fresh reviewers under [Review](../SKILL.md#review), at your profile's plan review route. Include the brief, sources, effects, target's rules and "Do not call Octopad." Ask them to attack missing work, a simpler cut, unit size, shared choices, dependencies, false-passing checks, routes, `Review`, effects and consent against the user's request, and what finishes if the user leaves after agreeing.
 
 It answers `PASS`, `REVISE` with findings, or a question only the user can answer. Apply the findings; one that changes the brief goes back to the user. Run no second round.
 

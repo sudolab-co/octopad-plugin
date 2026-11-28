@@ -13,8 +13,8 @@ Under the Step 3 banner, give one progress line in everyday words, counted from 
 
 Repeat until every task is done or no safe work remains:
 
-1. **Pick** a ready task: prerequisites done, no placeholder, claimed by no one else. Set it `in_progress`.
-2. **Brief** one fresh executor on the task's saved route for this runtime, with the [executor brief](#executor-brief). First load `build_context(mode: "task")` yourself and pass its needed context, source revisions and attached files at readable paths to an executor without Octopad access. An executor granted access loads its own task context.
+1. **Pick** a ready task: prerequisites done, no placeholder, claimed by no one else. Load `build_context(mode: "task")` before claiming or updating it; follow its start and confirmation instructions, then set it `in_progress`.
+2. **Brief** one fresh executor on the task's saved route for this runtime, with the [executor brief](#executor-brief). Pass the loaded context, source revisions and attached files at readable paths to an executor without Octopad access. An executor granted access loads its own task context.
 3. **Check** its report: confirm the decisive checks on the exact commit or result from a source the executor did not write (hosted results, or one rerun), and that any review the `Review` line names came back with each finding handled.
 4. **Close** each subtask once its commit is in the branch, then push and open the pull request as the mandate allows; close the task once `Done when` holds. Write the spec or record changes the executor returned; a change that waits for a later event, such as a release reaching production, first gets its own task, as the `octopad-planning-and-work-design` skill (section "Shaping the work") says. Add one short comment: the checks, the pull request or commit, the review outcome, any decision taken.
 
