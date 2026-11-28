@@ -1,35 +1,35 @@
 ---
 name: manage-market-intelligence
-description: "Use when a competitor, an alternative customers use, a review, a customer's words about the market, a launch, a pricing move or a public mention comes up, when asked what rivals or the market say, and when the market report is set up, audited or refreshed. Keeps the market report (the Market Overview) and competitor pages, from sourced and cross-checked research. Not for one customer's record (octopad-crm) or for choosing positioning, target or price (manage-product-marketing)."
+description: "Use when a competitor, an alternative customers use, a review of an offer, a customer's words about the market, a rival's launch or pricing move, or a public mention comes up; when asked what rivals or the market say; or when the market report is set up, audited or refreshed. Keeps the market report (the Market Overview) and competitor pages, from sourced and cross-checked research. Not for one customer's record (octopad-crm) or for choosing positioning, target or price (manage-product-marketing)."
 ---
 Version: 4.3.1
 
 # Manage market intelligence
 
-Give the user market information they can act on, with its limits.
+Give the user usable market findings and their limits.
 - Compare, compute and conclude: a reading list is not a result.
-- Leave the choices to the user and to the owners named below.
+- Leave choices to the user and the owners below.
 
 ## Start from what Octopad knows
 
-Before searching outside, read the activity's context:
+Before searching outside, read:
 - the Activity Overview;
 - each relevant Product Overview: the offer, its audience, its market, its Marketing section;
 - the relevant Market pages;
 - where the CRM is on, what customers have said.
 
-This context sets the question, the market's boundaries (country, segment, offer) and who counts as a competitor.
+Use that context to set the question, country, segment, offer and who counts as a competitor.
 - Ask the user only what this context leaves open and what would change the research; otherwise state the scope you took.
 - Distinguish users, buyers, beneficiaries and funders where they differ.
 - Mark a commercial question that does not apply to the activity as such.
 
 ## Work like an analyst
 
-1. Frame the question, the decision it serves, the geography, buyer, need and period. Treat what the user and the Overviews assume as hypotheses to test, with the competing explanations and the evidence that would tell them apart. Include substitutes and doing nothing, not only products resembling the offer.
-2. Plan. For a full market study, choose the kinds of sources for every block of the report. For a focused question or a single signal, investigate only the relevant context, claims and what depends on them; never grow it into a full study because no report exists yet.
+1. Frame the question, decision, geography, buyer, need and period. Test the user’s and Overviews’ assumptions as hypotheses, with competing explanations and evidence to tell them apart. Include substitutes and doing nothing, not only similar products.
+2. Plan sources for every report block of a full market study. For a focused question or single signal, investigate only the relevant context, claims and what depends on them. No existing report is no reason to expand it into a full study.
 3. Collect and triangulate, as "Research and its limits" says.
 4. Quantify every answer the evidence allows, with inputs and assumptions shown; compare in tables.
-5. Conclude: each hypothesis ends supported, contradicted or unresolved within the researched scope, and each finding says what it implies. Deepen where evidence could change a conclusion; stop when more research is unlikely to change the answer.
+5. Conclude: mark each hypothesis supported, contradicted or unresolved within the researched scope, and state each finding’s implication. Deepen where evidence could change a conclusion; stop when more research is unlikely to change the answer.
 
 ## The pages
 
@@ -40,13 +40,13 @@ Keep three kinds of pages in the Market folder of each market scope (organizatio
 
 - Keep market-wide customer voice and trends in the report, and what customers say about one competitor on its page or entry, each as a short expression with source and date.
 - Keep a customer's own words with their source: their CRM record where the CRM is on, otherwise the task or working page of the work that heard them.
-- Put collection notes, long lists and unread leads in a working page of the task; `octopad-knowledge-evidence` governs its keeping and archiving.
+- Put collection notes, long lists and unread leads on the task’s working page; open the `octopad-knowledge-evidence` skill, section "Where knowledge is written", for keeping and archiving it.
 - Keep assumptions, calculations and decisive sources beside the figures and findings they support.
-- From raw material, such as a research's full output, a scrape or a dump of reviews, keep only what matters in these pages, and advise keeping the original outside Octopad, linked from the work; for the rest, open the `octopad-knowledge-evidence` skill, section "Where knowledge is written".
+- From raw research, scrapes or review dumps, keep only what matters in these pages. Advise keeping the original outside Octopad, linked from the work; for the rest, open the `octopad-knowledge-evidence` skill, section "Where knowledge is written".
 
 ## The report
 
-Before you create, refresh, restructure or audit a Market Overview, or change a figure or comparison in it, read [its structure](references/market-report.md#the-market-overview).
+Before creating, refreshing, restructuring or auditing a Market Overview, or changing its figures or comparisons, read [The Market Overview](references/market-report.md#the-market-overview).
 
 Write the Market Overview's At a glance as two short answers:
 - `main_alternatives`: what people use instead, telling observed use from identified candidates;
@@ -60,7 +60,7 @@ On a main competitor's page, write its target, offer, business model, prices, ch
 - Tell announced, available and observed use apart.
 - Never count an unknown feature as a weakness.
 
-- On a later run, open What to remember with what changed since the last one (the market moved, something newly found, a correction), then update the passages affected, keeping the report's order. "Nothing significant changed" is a valid result.
+- On a later run, start What to remember with changes since the last run: market moves, new findings or corrections. Update affected passages in the report’s order. "Nothing significant changed" is valid.
 - Put a single piece of news (a launch, a price change, a review) on its actor's page or entry, and into every passage of the report it changes.
 
 ## Research and its limits
@@ -73,7 +73,7 @@ On a main competitor's page, write its target, offer, business model, prices, ch
   - reviews, customer records and interviews for experience;
   - trade press, trade shows, distributors, tenders and job posts for leads.
 - Open the original source behind every decisive claim: a menu link or a search snippet is a lead, not a source.
-- Rest each main conclusion on at least two independent sources suited to the claim, preferably of different methods or interests; when research finds only one, narrow the conclusion and state the coverage limit. Syndicated stories and vendor-chosen testimonials are not independent.
+- Support each main conclusion with at least two independent sources suited to the claim, preferably with different methods or interests. With only one, narrow the conclusion and state the coverage limit. Syndicated stories and vendor-chosen testimonials are not independent.
 - Look for counterexamples.
 - Check every count and calculation against the observations it comes from.
 - Tell facts, reported claims, proxies and inference apart:
@@ -94,7 +94,7 @@ On a main competitor's page, write its target, offer, business model, prices, ch
 ## Review before delivering
 
 Scale the review to the stakes.
-- Before you deliver a market report or an audit, or write a new or changed conclusion, comparison or computed figure into a page, give a fresh reviewer, a sub-agent that did not draft it, the draft and the source material needed to check it. The reviewer:
+- Before delivering a market report or audit, or writing a new or changed conclusion, comparison or computed figure on a page, give a fresh sub-agent reviewer the draft and needed sources. The reviewer must not have drafted it and:
   - checks each conclusion and figure against its source;
   - recomputes the calculations;
   - looks for evidence against the main conclusions;
@@ -102,14 +102,14 @@ Scale the review to the stakes.
 - Without sub-agents, do this check yourself and say it was not independent.
 - Check that each comparison meets its stated basis and that every summary, the At a glance and the conversation included, keeps the evidence's scope and uncertainty; a confidence label never repairs an unsupported claim.
 - Fix, qualify or drop what fails, recheck the changed claims and the tables and summaries that depend on them, and say in the report what the review changed.
-- When the report leaves the organization or is published, give it a second fresh reviewer with its own focus, such as the reader's.
+- Before the report leaves the organization or is published, give it a second fresh reviewer with its own focus, such as the reader’s.
 - For a conclusion, comparison or figure you give in chat and record nowhere, no reviewer is needed: check it against its sources yourself and say what you checked.
 - For a capture that only records one sourced fact where it belongs, such as a competitor's new list price onto its page, no reviewer is needed: check the fact against its source and read the page back.
 
 ## Write and keep it true
 
 - In an audit or a dry run, change nothing in the report until the user's confirmation: report each gap with the change that closes it, and keep the findings on a working page of the task or stream it serves.
-- Do an ordinary update in one read of the destination and its sources, one write and one verification.
+- For an ordinary update: read the destination and sources once, write once, then verify.
 - Keep each fact in one place: a competitor's detail on its page or entry, which the report summarizes and links.
 - Never rewrite what other owners hold:
   - the offer's chosen target, positioning, promise and terms: `manage-product-marketing`, in its Product Overview's Marketing section;
