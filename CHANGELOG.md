@@ -1,5 +1,9 @@
 # Changelog
 
+## 36.0.0 - Unreleased
+
+- Align Product Documentation guidance with kernel 4.1.0 while preserving its rules and named sections. Keep preservation checks in the main skill and link each reference by its heading. Requires kernel 4.1.0.
+
 ## 35.8.0 - 2026-11-26
 
 Every skill was reread line by line against the kernel and the tool texts the server serves, after a review of the whole rule system on 2026-11-24 and 2026-11-25. A line leaves a skill only when another text the AI reads before it acts holds the rule whole, or when it states general behavior with nothing specific to Octopad; every other rule, case, exception and example stays. Skills open on what they do, and a long body keeps its triggers and gates while procedures read at one moment move to references.
