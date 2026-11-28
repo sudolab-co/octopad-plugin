@@ -36,8 +36,8 @@ Before deciding where context belongs, read [the adaptation guide](references/ad
 3. Separate the actor, activity, project, built solution, beneficiaries and contribution to value, and funding from selling that solution.
    - Identify only the relationships this request needs; create no relationship registry.
 4. Locate the authoritative section for each changed question: an Activity Overview, charter, README or brief can own context.
-   - Preserve that owner's identity and detail; never duplicate it for a more familiar page type.
-   - Adopt a custom page for a named question only explicitly and after reading it. The adoption covers that question alone.
+   - Preserve that owner's identity and keep detail there; never duplicate it for a more familiar page type.
+   - You may adopt a custom page for a named question, explicitly and after reading it. The adoption covers that question alone.
 5. Use the smallest adequate document.
    - Keep captured context in the Activity Overview while it stays clear and appropriately shared.
    - Create an activity or project brief only for an independent durable question, audience, scope or growing detail.
@@ -89,7 +89,7 @@ An organization whose sessions still open on an untyped Company Overview switche
 Preserve project identity and sibling projects through evolution.
 - When something changes, identify exactly what changed, who stated it, and the owners and audiences it affects.
 - Keep established facts, intentions, open questions and required decisions apart.
-- A participant, legal entity, paying customer or use case joining or leaving changes only the affected facts and relationships. Restart no onboarding, whole-activity rewrite or startup progression.
+- A participant, legal entity, paying customer or use case joining or leaving changes only the affected facts and relationships. None requires restarting onboarding, rewriting the whole activity or following a startup progression.
 - Keep current established context in the body; history belongs in available version records and linked Decisions.
 - Preserve relevant earlier choices without silently overwriting history.
 - Keep speculative directions visibly provisional: evidence of use is not a decision to adopt a strategy, and a sale does not prove the current public price, repeatable demand or a pricing decision.
