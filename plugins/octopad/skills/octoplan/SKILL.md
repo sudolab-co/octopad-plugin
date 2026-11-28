@@ -14,7 +14,7 @@ The three stages use five actions: Brief (1), Plan (2 to 4), Delivery (5):
 4. **Agree.** The planner shows the plan in plain words. The user chooses the autonomy and what agents may do without asking; the planner records it in Octopad.
 5. **Deliver.** The planner launches one supervisor, a separate session that runs the tasks in order, or in parallel where their writes are proved independent. It hands each task to one executor agent and does no task work itself, except fixing a few lines it already has in view.
 
-Before actions 1 to 4, read [Brief and plan](references/planning.md#brief-and-plan); before action 5, read [Delivery](references/supervision.md#delivery). Read your host's profile: [Claude runtime](references/claude-runtime.md#claude-runtime), [Codex runtime](references/codex-runtime.md#codex-runtime) or [Cursor runtime](references/cursor-runtime.md#cursor-runtime). Before choosing routes, read both profiles' Routes sections. On another host, check launch and wake-up before promising delivery.
+Before actions 1 to 4, read [Brief and plan](references/planning.md#brief-and-plan); before action 5, read [Delivery](references/supervision.md#delivery). Read your host's profile: [Claude runtime](references/claude-runtime.md#claude-runtime), [Codex runtime](references/codex-runtime.md#codex-runtime) or [Cursor runtime](references/cursor-runtime.md#cursor-runtime). Before choosing routes, read [Claude Routes](references/claude-runtime.md#routes) and [Codex Routes](references/codex-runtime.md#routes). On another host, check launch and wake-up before promising delivery.
 
 ## After a compaction
 

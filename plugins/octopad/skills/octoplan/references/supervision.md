@@ -35,7 +35,7 @@ Repeat until every task is done or no safe work remains:
 
 When a task's meaning, dependencies or checks are wrong, context is missing or a shared choice is unsettled:
 - Note the defect on its task and hold only the tasks it affects.
-- Launch one planner sub-agent at your profile's plan repair route with the affected tasks, their `Done when`, the failure, evidence and mandate. Give it [Draft the plan](planning.md#draft-the-plan), [Changes](planning.md#changes), [Review](../SKILL.md#review) and both runtime profiles' Routes sections. It calls no Octopad tool, dispatches no one and widens no mandate. It returns a diagnosis and full changed or new tasks with both routes and `Review`, or the exact obstacle.
+- Launch one planner sub-agent at your profile's plan repair route with the affected tasks, their `Done when`, the failure, evidence and mandate. Give it [Draft the plan](planning.md#draft-the-plan), [Changes](planning.md#changes), [Review](../SKILL.md#review) and [Claude Routes](claude-runtime.md#routes) and [Codex Routes](codex-runtime.md#routes). It calls no Octopad tool, dispatches no one and widens no mandate. It returns a diagnosis and full changed or new tasks with both routes and `Review`, or the exact obstacle.
 - When the returned text changes a task's meaning, dependencies, checks, effects or review, launch one fresh reviewer on it at your profile's plan review route, read-only and told to call no Octopad tool, with the affected tasks as saved, the failure and the mandate ([Changes](planning.md#changes)). Fix each real defect in the text before you write it.
 - Write the repair, reread it as saved, then resume.
 
