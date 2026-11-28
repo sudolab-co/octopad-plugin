@@ -2,7 +2,7 @@
 name: manage-market-intelligence
 description: "Use when a competitor, an alternative customers use, a review of an offer, a customer's words about the market, a rival's launch or pricing move, or a public mention comes up; when asked what rivals or the market say; or when the market report is set up, audited or refreshed. Keeps the market report (the Market Overview) and competitor pages, from sourced and cross-checked research. Not for one customer's record (octopad-crm) or for choosing positioning, target or price (manage-product-marketing)."
 ---
-Version: 4.3.1
+Version: 5.0.0
 
 # Manage market intelligence
 

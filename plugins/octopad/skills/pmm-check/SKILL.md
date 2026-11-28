@@ -2,7 +2,7 @@
 name: pmm-check
 description: "Use to diagnose, draft or review positioning, an audience choice, a value proposition or marketing copy. Gives methods and recommendations; manage-product-marketing records the accepted choices. Not for technical or user documentation (technical-writing)."
 ---
-Version: 2.3.1
+Version: 3.0.0
 
 # Diagnose and improve marketing
 
