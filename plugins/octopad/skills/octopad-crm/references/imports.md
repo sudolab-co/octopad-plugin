@@ -7,4 +7,7 @@
     - Sync with `dry_run` first and show the user the plan. Pass `allow_large_drop` only after checking that the source really shrank.
   - Without source sync, use the record tools.
 - A customer's own software pushing on its own schedule: where the organization has source sync, an organization owner or admin sets the connection up in the app, and its token is shown to them once.
-- Where the organization has source sync, two active sources of one workspace never own the same field of the same record kind, and registration refuses the overlap: leave that field out, or ask an owner or admin to disable the source that owns it. When a source's value differs from a value a person set, the difference waits as a `crm_actions` proposal for a person's decision: tell the user it is there.
+- Where the organization has source sync:
+  - Two active sources of one workspace never own the same field of the same record kind, and registration refuses the overlap.
+  - Leave that field out, or ask an owner or admin to disable the source that owns it.
+  - When a source's value differs from a value a person set, the difference waits as a `crm_actions` proposal for a person's decision: tell the user it is there.
