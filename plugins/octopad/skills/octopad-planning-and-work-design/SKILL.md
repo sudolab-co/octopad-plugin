@@ -27,7 +27,12 @@ Version: 9.0.0
 - Count the deliverables before the tasks: a deliverable can be shipped, reviewed or closed on its own, and each one is a top-level task.
 - Cut each deliverable into the smallest units that make sense in the logic of its work: parts each finished and checked on its own, split at natural seams, an atomic change kept whole. Those units are its subtasks; a deliverable of one unit has none.
 - Open no top-level task whose only job is to hold the others.
-- When an existing task only repeats its stream's **Definition of Success** and delivers nothing of its own, move its subtasks to the top level. Preserve their dependencies and needed content, then delete the empty task.
+- Repair an existing umbrella only when it is top-level, its **Done when** repeats its stream's **Definition of Success**, and it delivers nothing of its own:
+  1. Read the umbrella, its children and every dependency to or from them. Preserve needed content and page/file links in the replacement task graph.
+  2. Carry each umbrella prerequisite to the promoted tasks that need it. Make each outside task waiting on the umbrella wait on the promoted tasks that now deliver what it needs. Preserve the children's other real waits.
+  3. Give each child the required top-level fields before detaching it, including **Why**, **What**, its own **Done when** and page links. Keep assignments, statuses, impact and their reasons true; follow the task tool's field requirements.
+  4. Move the children to the top level, then delete the empty umbrella only after its content and dependency graph are preserved.
+  - Apply the kernel's parent and assignee confirmation gates before detaching or deleting. When a confirmation is missing, prepare the repair and wait; detaching never bypasses that gate.
 - Where a task's scope is ambiguous at its edge, write down what it does not cover.
 - Checking a deliverable, getting it accepted and delivering it (sending, publishing, deploying) stay in its Done when. Three steps are their own tasks:
   - a chosen test;
@@ -94,7 +99,7 @@ For a launch laid out in phases, see [Launch example](references/plan-example.md
 # When an effort ends or changes shape
 
 - When the user keeps on purpose a stream that looks finished or idle, write that in its update, and why when they say, where `work_streams` offers `set_status`.
-- When the user keeps a stream open for work to come, create or reuse the task for that work now. Record what brings it back: a date they give, a dependency, `blocked` with the event it waits for, or `on_hold` when only their decision resumes it.
+- When the user keeps a stream open for named work to come, create or reuse the task for that work now. Record what brings it back: a date they give, a dependency, `blocked` with the event it waits for, or `on_hold` when only their decision resumes it.
 - Before you delete a stream that holds tasks, or archive, cancel or complete one that still holds open tasks, even when the user asked for it, propose a complete plan: each task's fate (finished, changed, cancelled, archived, trashed, moved to another stream, or kept with no stream, with a goal of its own or none) and why. Then wait for their confirmation of that plan.
 - Run the stream check when you add, reopen or close a task in a stream, move one in or out, or set one `pending_review`, or when the user gives an instruction that affects a stream.
 - Also check a stream when it is paused, completed, cancelled or archived. Once it is no longer open, check only its links to review.

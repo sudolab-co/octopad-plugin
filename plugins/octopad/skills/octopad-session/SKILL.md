@@ -8,6 +8,8 @@ Version: 36.1.0
 
 1. Work in the workspace the user names or the context makes clear. Stay in that workspace's organization: never pick a workspace of another organization yourself.
 2. Call `start_session` with this skill's `Version:` as `plugin_version`.
-3. When "Situations: which skill section to read" sends a request to a skill, open `../<skill>/SKILL.md`, beside this skill, and check its path: never use a personal or standalone skill of the same name in its place. If you cannot open that file, work from the methodology alone.
+3. When the served methodology routes a request to a skill, open `../<skill>/SKILL.md`, beside this skill, and check its path: never use a personal or standalone skill of the same name in its place. If you cannot open that file, work from the methodology alone.
+
+In kernel 4.1.0, the skill router is "Situations: which skill section to read".
 
 Where the `pad` tool is offered, when another person's work can affect the user's own, offer to add it to their priorities as the `octopad-pad` skill (section "Priorities") says.
