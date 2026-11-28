@@ -10,6 +10,6 @@ dependencies:
   tools:
     - type: "mcp"
       value: "octopad"
-      description: "Read and update Octopad work streams, tasks, decisions, and plans"
+      description: "Read Octopad sources and update work streams and tasks; tasks hold the plan"
       transport: "streamable_http"
       url: "https://mcp.octopad.app/mcp"

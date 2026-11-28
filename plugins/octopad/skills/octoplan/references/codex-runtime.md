@@ -2,7 +2,7 @@
 
 ## Routes
 
-Put the cost of an accepted result before elapsed time. Choose the effort from the judgment left after preparation, never through a ladder of attempts.
+Put the cost of an accepted result before elapsed time. These are defaults, not measured rankings. Choose the initial effort from the judgment left after preparation, rather than trying efforts in turn. Use a saved `on failed checks` continuation as planned.
 
 | Executor: judgment left after preparation | Route | Review |
 |---|---|---|
@@ -16,7 +16,7 @@ Planner, and plan repair: `gpt-6.1-sol · xhigh`, or `max` with a reason. Superv
 
 Astra (`gpt-6-astra`), unless the user chose it, serves only a bounded intervention on a particularly difficult scientific problem (tool-assisted research, specialist physics), on hard spatial or 3D reasoning under coupled geometric constraints (a provisional hypothesis, not a proven ranking), or on a reasoning failure that persists after Sol `max` with complete inputs and working tools; never on missing access, a broken configuration or an incomplete brief. Record the problem and why its benefit justifies its cost: a domain label proves nothing. Save it at `high`, `xhigh` with a reason, `max` only on a diagnosis that the lower effort fails. Sol stays the supervisor.
 
-- A user's explicit choice of an available model wins over these defaults. A saved route keeps its exact model and effort, older IDs included: defaults never reroute a running agent or an existing plan. An unavailable model holds only its agent.
+- A user's explicit choice of an available model wins over these defaults. A saved Codex route keeps its exact model and effort, older IDs included; new defaults reroute no running agent or existing plan. An unavailable model holds only its agent. Claude lanes instead follow their [family policy](claude-runtime.md#routes).
 - Where native metadata shows an agent's model and effort, a mismatch with its route, or with its part of an `on failed checks` route, pauses that agent. Where it shows none, continue and say so once in the task's closing comment.
 
 ## Native work

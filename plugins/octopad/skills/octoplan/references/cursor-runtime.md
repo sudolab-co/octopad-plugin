@@ -4,12 +4,12 @@
 
 Cursor runs the saved Claude routes, reviewer and supervisor included, chosen under [claude-runtime.md](claude-runtime.md#routes); a plan names no Cursor route.
 
-- A route becomes a model ID with its effort in brackets: `Opus 5.5 · high` is `claude-opus-5-5[effort=high]`, `Sonnet 5.5` is `claude-sonnet-5-5`, `Fable 5.1` is `claude-fable-5-1`.
+- Map a route to its model ID and bracketed effort: `Opus 5.5 · high` is `claude-opus-5-5[effort=high]`, `Sonnet 5.5` is `claude-sonnet-5-5`, `Fable 5.1` is `claude-fable-5-1`. The Fable 5.2 mapping is unverified: hold that agent until its mapping is known; use no older version instead.
 - Cursor documents `low`, `medium`, `high` and `max`; `xhigh` on a Claude model and any effort on Fable were not observed. An effort the account rejects pauses that agent.
 - Never run a route on a fast variant or a Cursor-only model (Composer, Grok, GPT, Gemini); a user's choice of one is a route change.
 - Fable also needs its data-retention policy approved in the Cursor dashboard when Privacy Mode is on.
 - Cursor may run another model without failing: when an admin blocks the model, when the plan lacks it, or on a legacy plan without Max Mode, where sub-agents run Composer. The task card shows which model ran; a mismatch pauses that agent. When you cannot read it, continue and say so once in the task's closing comment.
-- This plugin ships one lane agent per route in `cursor-agents/`, with the Claude lanes' names, each pinning its model and effort. The Task tool takes the bare name, such as `subagent_type: "octoplan-opus-high"`; check the first task card of each lane. With no matching lane, pass the route as the `model` slug; when the tool rejects it, take from its error the slug with the saved family and effort, or pause that agent.
+- Use a `cursor-agents/` lane only when its pinned model and effort match the saved route. The Task tool takes its bare name, such as `subagent_type: "octoplan-opus-high"`; check each lane's first task card. With no match, pass a verified route slug as `model`; after rejection, use a matching slug from the error, or pause that agent.
 
 ## Runtime facts
 
