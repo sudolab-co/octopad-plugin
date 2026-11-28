@@ -57,6 +57,7 @@ Put each kind of fact in its one home:
 
 - When an octobot's proposal, an outreach draft or a quarantined identity waits for a decision, decide only as the member you act for tells you. One instruction can cover a whole queue.
 - Approve or reject proposals with `crm_actions` `decide`. Where the organization has it, resolve quarantined identities with `crm_actions` `resolve_identity`.
+- Before you approve, reject or send an outreach draft, read [Sending an approved draft](references/outreach.md#sending-an-approved-draft).
 - Before a bulk decision, list what is pending, and say what an approval does when it is not obvious:
   - an approved outreach batch approves its drafts, and Octopad sends none of them: send each as [Sending an approved draft](references/outreach.md#sending-an-approved-draft) says;
   - where the organization has Scout, an approved scout batch adds every candidate in it, unless you pass `candidate_ids`.
