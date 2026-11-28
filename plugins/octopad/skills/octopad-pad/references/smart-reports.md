@@ -15,6 +15,7 @@
 - A refused save names what to fix: fix that and save the tab again.
 - A tab due for priority discovery: the skill's Priorities section says whether to propose priorities, ask what matters or do neither, and when to save them. Write the Pad meanwhile from the brief you have and, after telling the person, make the proposal or ask the question it calls for. Once their priorities are saved, `context` again, since the priorities decide what the Pad follows, and organize and write from the new brief only.
 - When the person asks to update a tab that is not due: `context` with that `tab`, then steps 2 and 4 to 6.
+- A generic request to update the Pad still starts with `context` with no `tab`. If it serves no tab, say so and ask which Smart Report to refresh; write no unspecified report.
 
 ## Organize the Pad
 
@@ -25,7 +26,8 @@ Today's brief's sections list each priority no tab serves, with its key and what
   - `get` that tab: a priority Today's brief's sections list whose streams are all among those the tab's `streams` lines and `phases` cite, at least one, is that key's priority, renamed: save its key in place of the old one, and its name as `title` when the tab serves no other priority.
   - Otherwise drop the key, and `remove` a tab left with none.
 - Group priorities that deliver the same outcome before creating tabs. Exclude refused priorities and leave unreadable tabs alone.
-  - With an existing priority tab for the group, keep one survivor. Preserve the group's keys and each tab's still-useful sources, preferences and content in that survivor; say why in its `note`.
+  - Merge only when each external source's authorization covers the survivor's activity, account and query or channel. If consolidation would lose material settings or needs a new source scope, leave the original tabs intact and ask for that change first.
+  - With a safe existing priority tab for the group, keep one survivor. Preserve the group's keys and each tab's still-useful sources, preferences and content in that survivor; say why in its `note`.
   - Save and read back the survivor before removing another priority tab of the group. Verify the survivor holds what must survive. If its save or readback fails, remove nothing.
   - Move, rename, redefine or remove no tab whose `selection.priorities` is empty unasked.
 - Create one tab for a group with no survivor once anything it follows moved or waits on the person:
@@ -121,7 +123,7 @@ Any tab but a priority tab:
 - Asked for a refused priority's report back:
   1. Save its refusal with `refused: false`.
   2. Read `context` with no `tab` and `get` with no `tab`. If that brief omits Today's brief, read `context` with `tab: "smart_report"` to get its current priority keys and sections.
-  3. Restore only the requested priority's group, if the priority remains on their list. Follow Organize the Pad's grouping and survivor-or-create steps, using that Today's brief and the current `get`; change no unrelated tab and keep every other refusal. A failed read leaves restoration pending.
+  3. Restore only the requested priority's group, if the priority remains on their list. Follow Organize the Pad's grouping and survivor-or-create steps, using that Today's brief and the current `get`; the explicit restoration request permits creation even when the priority is quiet. Change no unrelated tab and keep every other refusal. A failed read leaves restoration pending.
 - "Show me less of X here" changes that tab:
   - `get` it, then `save` the change with `expected_revision` set to its `text_revision`: narrow or drop a source or block when X is one the tab follows or shows, otherwise add the preference to its `guidance` (Today's brief: `intent` {guidance} only).
   - Fewer charts always goes to `guidance`: you write charts anew with each content.

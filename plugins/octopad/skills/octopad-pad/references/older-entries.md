@@ -2,7 +2,7 @@
 
 Convert each entry below once, in one save of its own whose reason names each entry and its outcome, then say what changed in one line. If a step fails, keep the entry as it was.
 
-- A recognizable idea for later follows the kernel's Ideas for later route, not the note conversion below: product behavior goes to its Product Spec; other ideas become `todo` tasks tagged `idea`, without a date. Keep its unique context.
+- A recognizable idea for later in `open_loops` or `context_gaps` follows the kernel's Ideas for later route, not the note conversion below: product behavior goes to its Product Spec; other ideas become `todo` tasks tagged `idea`, without a date. Keep its unique context.
   - Apply Retire and recover's audience and destination checks before promoting private content. When the request does not authorize that content and audience, keep the entry and ask; retire it only after reading its destination back.
 - Other `open_loops` or `context_gaps` entries: what passes What to write becomes a note. Progress, history and what the work's records already hold are dropped. In doubt, it becomes a note.
 - A reminder that waits on a date or an event: when a task already carries that wait (its due date, a dependency, its blocked reason), retire the reminder. Otherwise keep it, list such reminders in one line with the task each calls for, and create those tasks on the user's yes, in a workspace only they read when the reminder is private. Retire each reminder once its task reads back.
