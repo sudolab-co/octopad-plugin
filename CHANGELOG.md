@@ -1,5 +1,10 @@
 # Changelog
 
+## 36.5.0 - Unreleased
+
+- Align Octoplan with kernel 4.1.0, preserving its delivery consent, review and runtime boundaries.
+- Restore the unmeasured-defaults qualification and make planning, repair and executor context handoffs explicit.
+
 ## 36.4.0 - Unreleased
 
 - Rewrite market intelligence, product marketing, marketing diagnosis and technical writing for kernel 4.1.0, preserving their evidence, ownership and publication limits.

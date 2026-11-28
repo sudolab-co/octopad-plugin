@@ -2,7 +2,7 @@
 name: octoplan
 description: "Use when prepared work could be delivered by agents; the user wants agents to finish a stream; before proposing how agents should organize, plan or deliver a stream; or the user names, resumes or supervises an Octoplan. Opening it authorizes no delivery. Not for preparing the stream itself (octopad-planning-and-work-design) or work done with the user turn by turn."
 ---
-Version: 11.0.1
+Version: 12.0.0
 
 # Octoplan
 
