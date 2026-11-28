@@ -110,7 +110,7 @@ Preserve project identity and sibling projects through evolution.
 Before you finish, read back what you wrote and check:
 - Did the change answer the actual question without inventing a business?
 - Is ownership unambiguous by section?
-- Were established onboarding facts, unrelated projects and access boundaries preserved?
+- Were existing onboarding content, unrelated projects and access boundaries preserved?
 - Are hypotheses distinct from established facts?
 - Does each At a glance block you touched still match its page?
 
