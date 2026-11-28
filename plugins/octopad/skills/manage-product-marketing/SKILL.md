@@ -6,15 +6,15 @@ Version: 3.3.1
 
 # Maintain each offer's marketing
 
-Keep the user's marketing knowledge in Octopad on your own: whom each offer addresses, what it promises, on which terms, and what its audience says and resists.
+Keep each offer’s marketing knowledge in Octopad: its audience, promise, terms, and what its audience says and resists. Capture observations without interrupting; leave proposed choices for validation.
 
 ## Find the owner
 
-- Keep each offer's marketing in the Marketing section of its Product Overview, the head page `manage-product-documentation` keeps per offer. Products sold together to one audience at one price share one Overview; a product gets its own only when its audience or its price differs.
+- Keep each offer’s marketing in its Product Overview’s Marketing section; `manage-product-documentation` keeps that head page. Products sold together to one audience at one price share one Overview. Only a different audience or price warrants a separate one.
 - Write that section and your three At a glance keys, and nothing else on the page.
 - Create no Marketing Overview. A workspace with no offer and no audience to reach gets no marketing content.
 - Every member reads organization-level marketing: keep a client's offers, prices and messages in that client's workspace.
-- Treat Audience, Positioning and Pricing pages as optional detail: explanation, research pointers and working notes, never a competing current answer.
+- Use Audience, Positioning and Pricing pages for optional explanation, research pointers and working notes, never a competing current answer.
 - Keep brand and tone shared by several offers once, on such a page, and reference it from the offers.
 - File these pages in the Product folder of their scope.
 
@@ -27,7 +27,7 @@ Outside this skill:
 
 ## Keep useful marketing context
 
-As material arrives, answer these questions in the Marketing section, not as mandatory headings:
+As material arrives, answer in the Marketing section without imposing headings:
 1. the target and its situation;
 2. the promise and its supported difference;
 3. the terms;
@@ -48,24 +48,24 @@ Three keys of the Product Overview's At a glance block are yours:
 - Put the essential first in each key, and mark a provisional answer as such.
 - Keep proof, tone and channels on the page.
 - When a change you make on this page or elsewhere alters what these keys say, update them in the same turn.
-- Keep words that speak for the market, such as a phrase several customers use or an objection that recurs, on Market pages as short expressions with source and date, and link to them from the Marketing section.
+- Keep market-wide words, such as recurring customer phrases or objections, as short expressions with source and date on Market pages. Link them from the Marketing section.
 - Give a count ("4 of 6 interviewed customers") only with that many distinct sources.
 
 ## Separate capture from choice
 
-- File observations where they belong, without interrupting the user: one customer's words stay with their source; the Marketing section names the objection or channel result and links its sources.
+- File observations without interrupting: keep one customer’s words with their source; name the objection or channel result in the Marketing section and link its sources.
 - Show the choices you propose (target, promise, terms) for validation.
 - When the user states, accepts or rejects a choice, record a Decision; when they state it explicitly, also write it into the Marketing section without asking again.
-- Keep apart whether a claim is proven and whether it is chosen: a chosen promise can lack proof, which blocks its use in copy, not its recording.
+- Keep proven and chosen apart: a chosen promise without proof may be recorded but cannot enter copy.
 - Check every factual claim against its source before it enters copy.
 - Keep proposed, catalogue and applied prices apart.
 - Treat existing copy as proof of past wording, not of current capability.
 
 At first creation:
 1. read onboarding and the existing owners;
-2. seed only identified offers with supported information; for an offer with no Product Overview, open the `manage-product-documentation` skill, section "Administer the documentation system", and create it there.
+2. Seed only identified offers with supported information. For one without a Product Overview, open the `manage-product-documentation` skill, section "Administer the documentation system", and create it there.
 - Never let an activity's purpose set an offer's target, price or difference: mark what you infer as proposed.
-- Ask about a gap the Organization Overview shows as `missing` only when the conversation touches it, never as a questionnaire.
+- Ask about an Organization Overview answer marked `missing` only when the conversation touches it, never as a questionnaire.
 
 ## Refresh narrowly
 
@@ -76,4 +76,4 @@ When evidence changes, review the claims it affects; do not reposition:
 
 ## Finish economically
 
-Do an ordinary capture in one read of the destination, one write and one verification.
+For an ordinary capture: read the destination once, write once, then verify.
