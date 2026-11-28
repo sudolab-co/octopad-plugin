@@ -1,12 +1,12 @@
 ---
 name: octopad-knowledge-evidence
-description: "Use when a conversation surfaces something someone outside it will need: a decision, a key fact, a risk, an open question, what a customer's words establish beyond that customer, or how a system works as an analysis establishes it. Also when new evidence changes a recorded item, the user shares a file or document, a page or file is written, linked or tagged, or two sources disagree, before saying whether something is on record or answering a question about the corpus, and when the corpus is cleaned up. Chooses where each item goes and how a claim about the corpus is proved. Not for spec content (manage-product-documentation) or one customer's facts (octopad-crm)."
+description: "Use when a conversation surfaces something someone outside the current task or conversation will need: a decision, a key fact, a risk, an open question, what a customer's words establish beyond that customer, or how a system works as an analysis establishes it. Also when new evidence changes something recorded, the user shares a file or document, a page or file is written or linked, you tag a page or file, or two sources disagree; before saying whether something is on record or answering a question about what is recorded; and when the user asks to audit or clean up Key Information. Chooses where each item goes and how a claim about the corpus is proved. Not for spec content (manage-product-documentation) or one customer's facts (octopad-crm)."
 ---
-Version: 3.8.0
+Version: 4.0.0
 
 # Where knowledge is written
 
-Three branches hold durable workspace context. Choose on purpose which one each thing goes into.
+Choose where each piece of durable workspace context belongs:
 
 - `knowledge`: what someone outside the current task or conversation will need, each as one atomic item: a fact others will rely on, a choice that binds work beyond its task, a question no open task will settle, or an uncertain harm.
 - `pages`: reference that outlives the effort, such as how a system is built or what a meeting settled.
@@ -25,6 +25,7 @@ Three branches hold durable workspace context. Choose on purpose which one each 
 
 - Never keep or offer research or analysis for one decision as an ordinary page: cite the decisive sources in that Decision's rationale.
 - Put material later sessions need for bounded work on a working page of its real task or active stream.
+- Keep on a working page only what another session, or a person working on that task or stream, will need and cannot find elsewhere.
 - Move lasting findings to their proper home: Key Information, a reference page, or an open task they inform.
 - When you record a limit of a product system that whoever designs or judges it must take into account, open the `manage-product-documentation` skill, section "Record what work establishes about a system", and put the limit where it says, never on the working page.
 - When lasting knowledge has no home, create one (a page, in the folder that fits if one does, or Key Information) and say where.
@@ -63,7 +64,7 @@ When a decision you record changes a task or a stream, open the `octopad-plannin
 - When the running code contradicts a fact, or a path or a name in a decision, update the item to follow the code.
 - The code, its commit or pull request and their author show what was built, not who chose it. On that ground alone, neither supersede nor reverse a decision: it keeps its choice until a source records the new choice and its chooser.
 - Without such a source, ask the user which holds, for each decision on its own, never through a cleanup batch's confirmation.
-- When the user confirms a choice still holds, file a task for it, unless one exists.
+- When the user confirms a choice still holds, create or reuse the task that brings the code in line with that choice.
 - Update a fact in place.
 - Close a question only on a complete answer:
   - on a partial answer, keep it open with what is settled in its text;
@@ -117,7 +118,7 @@ Fit the method to what the claim has to hold up: reading all of a corpus, its su
 - Before quoting, rewriting or editing, pull the whole page with `pages` `get`, and only a page the steps above already named:
   - for a Product Spec, read as much as the `manage-product-documentation` skill (section "Work from product intent") sets;
   - reading in full replaces neither building the set nor proving the claim.
-- Report no search result as all there is: a search proves what it found, not that nothing else exists, and its results are ranked and capped, sometimes below the limit you asked for.
+- A search shows what it found, not all there is: never present a ranked or cut result as complete. Its cap may be lower than the limit you asked for.
 - Claim none or every only from a complete inventory of the scope, with each item it leaves doubtful checked; otherwise say what the answer covers.
 - Within the turn, read a source again only:
   - when its owning skill requires it fresh before a write, such as a spec's revision before you edit the spec;

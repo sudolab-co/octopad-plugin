@@ -1,8 +1,8 @@
 ---
 name: octopad-planning-and-work-design
-description: "Shapes and maintains streams, goals and tasks, and designs costly tests. Use when agreed work has an end state and needs three or more tasks over more than one sitting; a request holds several deliverables or a step another member carries out; you are about to create, change, complete, rename, merge, split or archive a stream or a goal, or learn of such a change, of a number goal's new figure, or that the user keeps on purpose a stream that looks finished; a test would launch AI sessions, take a person's time or cost money, or fails; one stream waits on another or matters to it; a task leaves its stream by archive, deletion or move; a result, a decision or a new task changes what a stream's remaining tasks assume; before laying out several tasks as a plan; and when the number of tasks, nesting, prerequisites, priority order, a date or repeating work is undecided or wrong. When prepared work could benefit from delivery by agents, such as work needing no user choice at each step, open the `octoplan` skill."
+description: "Use when agreed work has an end state and needs three or more tasks over more than one conversation; before laying out several tasks as a plan; a request holds several deliverables or a step another member carries out; you are about to create or change a stream or goal, learn of a change, or a number goal's primary signal gets a new figure; the user keeps on purpose a stream that looks finished or idle; one stream waits on another or matters to it; a task leaves its stream by archive, deletion or move; a result, decision or new task changes a fact that a stream's remaining tasks rely on; the number of tasks, nesting, prerequisites, priority order, a date or repeating work is undecided or wrong; or a test would launch AI sessions, take a person's time or cost money, or fails. Changes include completing, cancelling, deleting, renaming, merging, splitting and archiving. When prepared work could benefit from delivery by agents, open the `octoplan` skill."
 ---
-Version: 8.5.0
+Version: 9.0.0
 
 # From a need to prepared work
 
@@ -12,7 +12,8 @@ Version: 8.5.0
 
 - Read the existing stream, tasks, decisions and relevant sources first.
 - Establish the purpose, the intended result and its proof, the boundaries and constraints, the unknowns that matter and who decides the consequences.
-- Ask about a missing foundation only when it could change the result.
+- Before laying out a stream or its Octoplan, ask the user up front what settles its **Definition of Success**, scope and limits that the request and workspace leave open. Settle the brief before laying out the work.
+- For a smaller request, ask about a missing foundation only when it could change the result.
 - Play back the intended result in proportion to the request, and confirm a material interpretation before work that depends on it.
 - Create a goal, a task tree or Octoplan records only when the work needs them.
 - A stream's task count and duration never set how much autonomy agents get.
@@ -26,6 +27,12 @@ Version: 8.5.0
 - Count the deliverables before the tasks: a deliverable can be shipped, reviewed or closed on its own, and each one is a top-level task.
 - Cut each deliverable into the smallest units that make sense in the logic of its work: parts each finished and checked on its own, split at natural seams, an atomic change kept whole. Those units are its subtasks; a deliverable of one unit has none.
 - Open no top-level task whose only job is to hold the others.
+- Repair an existing umbrella only when it is top-level, its **Done when** repeats its stream's **Definition of Success**, and it delivers nothing of its own:
+  1. Read the umbrella, its children and every dependency to or from them. Preserve needed content and page/file links in the replacement task graph.
+  2. Carry each umbrella prerequisite to the promoted tasks that need it. Make each outside task waiting on the umbrella wait on the promoted tasks that now deliver what it needs. Preserve the children's other real waits.
+  3. Give each child the required top-level fields before detaching it, including **Why**, **What**, its own **Done when** and page links. Keep assignments, statuses, impact and their reasons true; follow the task tool's field requirements.
+  4. Move the children to the top level, then delete the empty umbrella only after its content and dependency graph are preserved.
+  - Apply the kernel's parent and assignee confirmation gates before detaching or deleting. When a confirmation is missing, prepare the repair and wait; detaching never bypasses that gate.
 - Where a task's scope is ambiguous at its edge, write down what it does not cover.
 - Checking a deliverable, getting it accepted and delivering it (sending, publishing, deploying) stay in its Done when. Three steps are their own tasks:
   - a chosen test;
@@ -36,7 +43,7 @@ Version: 8.5.0
 - Give a chosen test one task per system it tests, such as a signup flow or a reminder service. Put all that system's cases in its What, each with what it proves, beside its run budget, never also in a deliverable's Done when.
 - Make a test task depend on each task it tests and on each step another member runs for them.
 - Give a test its levels, such as a protocol to approve and then its runs, as subtasks, never one subtask per case. Accepting its result is its reviewer's yes, never a task.
-- A subtask never falls due after its parent.
+- Give a subtask no due date after its parent's.
 - Join two deliverables only where one truly cannot start until the other lands.
 - Dependencies carry order; priority says how much a thing matters within that order. When you want priority to make something happen sooner, find the missing dependency or the user's call on order instead.
 - Add a preparation task only for a real prerequisite the others cannot start without, such as a shared contract they must all follow; two unrelated fixes stay independent, whatever order they are done in.
@@ -51,13 +58,14 @@ Version: 8.5.0
 - Where the route is known, make the primary signal an outcome target: `nature: "number"`, the measure's current value in `baseline_value`, the threshold it must reach in `target_value` and its unit in `target_unit`.
 - Where the work is new and the route unknown, use a learning signal instead, such as "document 3 methods that work".
 - Say in the goal's own `rationale`, never only on a linked stream, why the goal matters now. Give a goal a `deadline` only when the date is real, and then say in `rationale` why that date too.
+- Write `goal_scope`, `guardrails` and `stop_condition` as concrete, checkable lines, each only when real. Examples: `Self-serve accounts; enterprise deals left out.`, `Support load stays under 20 tickets a week.`, `Fewer than 5 active accounts after the beta.`
 - When the team chooses an order between goals that no prerequisite imposes, write it, with its reason, in the `description` of each goal it concerns, which every member reads: never as an invented dependency, and never only in one person's priorities. Before you propose an order across goals, or what to pick up next among them, read the `description` of the goals concerned.
 - When part of one goal serves part of another goal of the organization, link them with `goals` `link_goal`; a goal may serve several goals or none. When a goal changes, closes or is dropped, check that its links still hold.
 - Once a goal not yet closed is the primary goal of streams and none of them is active or paused, propose closing it to the user, with the outcome they name.
 
 # Which stream work belongs to
 
-- Agreed work: reuse a goal and a stream that fit it, and open a new stream only when the work has an end state and takes three or more tasks over more than one sitting.
+- Agreed work: reuse a goal and a stream that fit it, and open a new stream only when the work has an end state and takes three or more tasks over more than one conversation.
 - Before you create a stream or a goal, read the active streams nearest to it in meaning, whatever their goal (`build_context(mode: "work_stream", query)`), then the links of each that fits (`work_stream_name`), the paused streams `work_streams` `list` shows, and the goals orientation lists: reuse one, or link the new one to it, rather than duplicate it.
 - Where no goal fits the work, propose the one that would, with its outcome and why, and create it on the user's confirmation.
 - For work that repeats, create the repeating task itself and file it like any task: a stream is where work sits, never the work.
@@ -75,27 +83,29 @@ Version: 8.5.0
 
 # Laying out a plan
 
+- Settle the brief before layout, as "Brief only what the request needs" says.
 - The plan is the task tree: top-level tasks with their dependencies, priority, impact and real due dates. Keep it there, not in a page or a list of your own.
 - Before you start the first task, land everything the ask names in one pass: the goal, the stream and every task you already know, with assignments and dependencies, in as few `batch_tasks` calls as its limits allow.
 - When a stream's whole work follows one logic, mark its main parts: start each top-level task's title with its phase, `P1 · <title>`, `P2 · <title>`. Subtasks carry no prefix, and a phase is never a parent task.
 - When parts of an effort have their own success condition, owner, gate or schedule, make each its own stream under the same goal, linked `depends_on` for order, or by a link whose line says what one takes from the other. Keep phase prefixes for parts that one Definition of Success covers.
 - When new work arrives after a stream's Definition of Success is met, or serves another result, start a new stream, linked to the first with a line saying what it takes from it.
+- When the user keeps the existing stream open for named future work, put that work's task in the existing stream instead, as "When an effort ends or changes shape" says.
 - When a later task can be written only once the task it waits for is done, say in that dependency's rationale what it takes from it. Copy no sentence across edges.
 
-**Example: laying out a five-week launch.** User, on 2026-04-26: *"Lay out the launch: research, then design, then build, then ship, across the next five weeks."*
+- After the brief is settled and the stream laid out, tell the user in a few lines what you created: its goal, its links to other streams and the order of its tasks. Give the recap even with the Desktop beside the chat.
 
-- First open the stream "Launch Q2" with its `definition_of_success`, its goal and a `target_date` of `2026-05-31`, five weeks from the ask. The user gave a rough span, not four deadlines: the span is the effort's horizon, and no task carries a date.
-- Then send the whole graph in as few `batch_tasks` calls as its limits allow, the stream given once as each call's default and `depends_on_refs` carrying every edge, an earlier call's task by its ID. Make no second pass of `tasks` `link_dependency` calls: one `tasks(action:"create")` per task and then those calls take seven round trips for one plan.
-- Start each top-level title with `P1 · ` to `P4 · `, with no parent holding them: the launch follows one logic, research then design then build then ship. Five independent fixes, each checked in its own Done when, follow no such logic: they get no phases, no umbrella, and a test task only when one is needed.
+For a launch laid out in phases, see [Launch example](references/plan-example.md#launch-example).
 
 # When an effort ends or changes shape
 
 - When the user keeps on purpose a stream that looks finished or idle, write that in its update, and why when they say, where `work_streams` offers `set_status`.
+- When the user keeps a stream open for named work to come, create or reuse the task for that work now. Record what brings it back: a date they give, a dependency, `blocked` with the event it waits for, or `on_hold` when only their decision resumes it.
 - Before you delete a stream that holds tasks, or archive, cancel or complete one that still holds open tasks, even when the user asked for it, propose a complete plan: each task's fate (finished, changed, cancelled, archived, trashed, moved to another stream, or kept with no stream, with a goal of its own or none) and why. Then wait for their confirmation of that plan.
-- When any of these happens, check each stream concerned once, even when a batch changes several of its tasks, before dependent work continues: its tasks and Definition of Success against the user's instructions and the actual results, not only against each other.
-  - A task is added to it, reopened or closed in it, moved into or out of it (for a move, check the stream it left and the one it joined), or handed over for review (`pending_review`).
-  - It is paused, completed, cancelled or archived. Once it is no longer open, check only its links to review.
-  - The user gives an instruction that affects it.
+- Run the stream check when you add, reopen or close a task in a stream, move one in or out, or set one `pending_review`, or when the user gives an instruction that affects a stream.
+- Also run the check when a result, a decision or a new task changes a fact that a stream's remaining tasks rely on.
+- Also check a stream when it is paused, completed, cancelled or archived. Once it is no longer open, check only its links to review.
+- Check each stream concerned once before dependent work continues, even when a batch changes several of its tasks. For a move, check both the stream it left and the one it joined.
+- Check its tasks and **Definition of Success** against the user's instructions and the actual results, not only against each other.
 - Run the check in three steps:
   1. Read only its Definition of Success and, for each open top-level task, its title, one-liner, status, status line and the rationale of its dependencies, and its links to other streams marked to review; open a task's description only where the check touches it.
   2. Put right what no longer matches and nothing else: the order and its dependencies; a task made false, rewritten in place; a task left short, made precise now that what it waited for exists; a task made useless, `cancelled`; a missing task, created; each link to review, handled as the read's line on links to review says; work already started on the old basis, checked before it goes further. Change a Done when or the Definition of Success only as the Octopad methodology and the `work_streams` tool say.
@@ -106,6 +116,8 @@ Version: 8.5.0
 # Design a costly test
 
 A test is costly when, over all its runs, it launches AI sessions, takes a person's time or costs money.
+
+Before proposing a costly test, weigh what a mistake would do before correction against the test's cost. Propose no test when acting and correcting cost less.
 
 Octopad imposes no test: you decide whether one is needed, under the person's own instructions. When one is chosen, run nothing before the person confirms its fields:
 

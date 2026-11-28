@@ -1,5 +1,9 @@
 # Changelog
 
+## 36.1.0 - Unreleased
+
+- Align Planning, Knowledge and Session with kernel 4.1.0. Planning keeps the stream brief, layout and recap together, repairs empty umbrella tasks without losing their work, restores concrete goal fields and captures future work in kept-open streams. Knowledge keeps its evidence, cleanup and working-page duties; Session names the router and reports the bundled version. Requires kernel 4.1.0.
+
 ## 36.0.0 - Unreleased
 
 - Align Product Documentation guidance with kernel 4.1.0 while preserving its rules and named sections. Keep preservation checks in the main skill and link each reference by its heading. Requires kernel 4.1.0.

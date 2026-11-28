@@ -65,7 +65,7 @@
       "id": 11,
       "prompt": "I'm not technical at all, I just want our customers to stop getting logged out every morning. Can you plan that?",
       "should_trigger": true,
-      "expected_behavior": "Any question it asks frames the person's intent in their words: what result they expect, how they will know it works, what must not change. It asks no technical question (no session lifetime, token, cookie or framework question) and settles the technical choices from the sources or leaves them to the tasks. It files the work itself and says where."
+      "expected_behavior": "Reads the existing work and sources, establishes the intended result and proof, boundaries and constraints, and asks about a missing foundation only when it could change the result. If the effort needs a stream, asks its framing questions up front before laying it out. Files the work itself and says where. This case imposes no special ban on technical questions."
     },
     {
       "id": 12,
@@ -89,7 +89,7 @@
       "id": 15,
       "prompt": "Leave the 'Partner portal' stream as it is, I know it looks finished but I want to keep it open for the next partner.",
       "should_trigger": true,
-      "expected_behavior": "Writes in the stream's update (`work_streams` `set_status`) that the user keeps it open on purpose and why (waiting for the next partner), so no AI proposes its cleanup again. Changes neither its status nor its tasks."
+      "expected_behavior": "Writes in the stream's update (`work_streams` `set_status`) that the user keeps it open on purpose and why (waiting for the next partner), so no AI proposes its cleanup again. Changes neither its status nor its existing tasks. If the user names future work, creates or reuses its task now and records what brings it back; without named future work, invents none."
     },
     {
       "id": 16,
@@ -119,13 +119,13 @@
       "id": 20,
       "prompt": "Don't close the 'Partner portal' stream, keep it.",
       "should_trigger": true,
-      "expected_behavior": "Writes in the stream's update (`work_streams` `set_status`) that the user keeps it open on purpose, with no invented reason since the user gave none. Changes neither its status nor its tasks."
+      "expected_behavior": "Writes in the stream's update (`work_streams` `set_status`) that the user keeps it open on purpose, with no invented reason since the user gave none. Changes neither its status nor its existing tasks. If the user names future work, creates or reuses its task now and records what brings it back; without named future work, invents none."
     },
     {
       "id": 21,
-      "prompt": "Lay out the tasks for retiring saved searches in Lists: one pull request removes them, and once it reaches production the Lists spec must mark them retired. A merge closes the pull request's task; David runs production releases in his release task.",
+      "prompt": "Lay out the tasks for retiring saved searches in Lists: one pull request removes them, and once it reaches production the Lists spec must mark them retired. A merge closes the pull request's task; the release operator runs production releases in their release task.",
       "should_trigger": true,
-      "expected_behavior": "Makes the spec edit its own task, separate from the pull request's task that the merge closes, depending on David's release task (not `blocked`, since a member's task brings the event), and names it wherever the wait is mentioned. Never leaves 'once in production' as a sentence in the code task's Done when or description."
+      "expected_behavior": "Makes the spec edit its own task, separate from the pull request's task that the merge closes, depending on the release operator's release task (not `blocked`, since a member's task brings the event), and names it wherever the wait is mentioned. Never leaves 'once in production' as a sentence in the code task's Done when or description."
     }
   ]
 }
