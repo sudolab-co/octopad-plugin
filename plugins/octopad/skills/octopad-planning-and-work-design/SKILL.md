@@ -102,6 +102,7 @@ For a launch laid out in phases, see [Launch example](references/plan-example.md
 - When the user keeps a stream open for named work to come, create or reuse the task for that work now. Record what brings it back: a date they give, a dependency, `blocked` with the event it waits for, or `on_hold` when only their decision resumes it.
 - Before you delete a stream that holds tasks, or archive, cancel or complete one that still holds open tasks, even when the user asked for it, propose a complete plan: each task's fate (finished, changed, cancelled, archived, trashed, moved to another stream, or kept with no stream, with a goal of its own or none) and why. Then wait for their confirmation of that plan.
 - Run the stream check when you add, reopen or close a task in a stream, move one in or out, or set one `pending_review`, or when the user gives an instruction that affects a stream.
+- Also run the check when a result, a decision or a new task changes a fact that a stream's remaining tasks rely on.
 - Also check a stream when it is paused, completed, cancelled or archived. Once it is no longer open, check only its links to review.
 - Check each stream concerned once before dependent work continues, even when a batch changes several of its tasks. For a move, check both the stream it left and the one it joined.
 - Check its tasks and **Definition of Success** against the user's instructions and the actual results, not only against each other.
